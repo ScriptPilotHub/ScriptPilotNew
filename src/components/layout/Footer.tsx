@@ -1,0 +1,22 @@
+import React from 'react';
+import { Logo } from '../ui/Logo';
+
+export const Footer: React.FC = () => (
+  <footer className="bg-slate-950 text-slate-400 py-12 px-4 border-t border-slate-800/50">
+    <div className="container mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6">
+      <div className="group">
+        <a href="#home" className="flex items-center justify-center md:justify-start gap-2 mb-4">
+          <div className="transform group-hover:scale-110 transition-transform duration-300">
+            <Logo />
+          </div>
+        </a>
+        <p className="text-sm group-hover:text-slate-300 transition-colors duration-300">
+          Crafting Digital Excellence, One Line at a Time.
+        </p>
+      </div>
+      <div className="text-sm text-slate-500 hover:text-slate-400 transition-colors duration-300">
+        <p>Serving businesses nationwide.</p>
+      </div>
+    </div>
+  </footer>
+);

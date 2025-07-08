@@ -46,6 +46,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onToggle, c
 
 export const FAQ: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   
   const faqs = [
     {
@@ -109,6 +110,26 @@ export const FAQ: React.FC = () => {
     { name: "Content & Design", icon: CheckCircle, color: "pink" }
   ];
 
+  // Filter FAQs based on selected category
+  const filteredFaqs = selectedCategory 
+    ? faqs.filter(faq => faq.category === selectedCategory)
+    : faqs;
+
+  // Reset open index when category changes
+  const handleCategorySelect = (categoryName: string) => {
+    if (selectedCategory === categoryName) {
+      setSelectedCategory(null);
+    } else {
+      setSelectedCategory(categoryName);
+      setOpenIndex(null);
+    }
+  };
+
+  const handleShowAll = () => {
+    setSelectedCategory(null);
+    setOpenIndex(null);
+  };
+
   return (
     <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-4 bg-slate-900 text-white relative overflow-hidden">
       {/* Background Elements */}
@@ -147,36 +168,95 @@ export const FAQ: React.FC = () => {
           </div>
         </AnimatedSection>
 
-        {/* Category Overview */}
+        {/* Category Filter */}
         <AnimatedSection delay={200}>
           <div className="mb-12">
-            <h2 className="text-2xl font-bold text-white mb-8 text-center">Browse by Category</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-              {categories.map((category, index) => (
-                <div key={category.name} className={`bg-slate-800/50 rounded-lg p-4 text-center border border-slate-700/50 hover:border-${category.color}-400/50 transition-all duration-300 group hover:scale-105`}>
-                  <category.icon className={`w-8 h-8 text-${category.color}-400 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300`} />
-                  <div className={`text-sm font-medium text-${category.color}-300 group-hover:text-${category.color}-200 transition-colors duration-300`}>
-                    {category.name}
-                  </div>
-                </div>
-              ))}
+            <div className="flex flex-col sm:flex-row items-center justify-between mb-8">
+              <h2 className="text-2xl font-bold text-white mb-4 sm:mb-0">Browse by Category</h2>
+              <button
+                onClick={handleShowAll}
+                className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
+                  !selectedCategory 
+                    ? 'bg-teal-500 text-white' 
+                    : 'bg-slate-700 text-slate-300 hover:bg-slate-600 hover:text-white'
+                }`}
+              >
+                Show All ({faqs.length})
+              </button>
             </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+              {categories.map((category, index) => {
+                const categoryCount = faqs.filter(faq => faq.category === category.name).length;
+                const isSelected = selectedCategory === category.name;
+                
+                return (
+                  <button
+                    key={category.name}
+                    onClick={() => handleCategorySelect(category.name)}
+                    className={`bg-slate-800/50 rounded-lg p-4 text-center border transition-all duration-300 group hover:scale-105 ${
+                      isSelected 
+                        ? `border-${category.color}-400 bg-${category.color}-500/20` 
+                        : `border-slate-700/50 hover:border-${category.color}-400/50`
+                    }`}
+                  >
+                    <category.icon className={`w-8 h-8 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300 ${
+                      isSelected 
+                        ? `text-${category.color}-300` 
+                        : `text-${category.color}-400`
+                    }`} />
+                    <div className={`text-sm font-medium mb-1 transition-colors duration-300 ${
+                      isSelected 
+                        ? `text-${category.color}-200` 
+                        : `text-${category.color}-300 group-hover:text-${category.color}-200`
+                    }`}>
+                      {category.name}
+                    </div>
+                    <div className="text-xs text-slate-400">
+                      {categoryCount} question{categoryCount !== 1 ? 's' : ''}
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+            
+            {/* Active Filter Indicator */}
+            {selectedCategory && (
+              <div className="mt-6 flex items-center justify-center">
+                <div className="bg-slate-800/50 rounded-full px-6 py-2 border border-slate-700/50">
+                  <span className="text-slate-300">Showing </span>
+                  <span className="text-teal-400 font-semibold">{selectedCategory}</span>
+                  <span className="text-slate-300"> questions ({filteredFaqs.length})</span>
+                  <button
+                    onClick={handleShowAll}
+                    className="ml-3 text-slate-400 hover:text-white transition-colors duration-300"
+                  >
+                    ✕
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </AnimatedSection>
         
         {/* FAQ Items */}
         <AnimatedSection delay={300}>
           <div className="max-w-4xl mx-auto">
-            {faqs.map((faq, index) => (
-              <FAQItem
-                key={index}
-                question={faq.question}
-                answer={faq.answer}
-                category={faq.category}
-                isOpen={openIndex === index}
-                onToggle={() => setOpenIndex(openIndex === index ? null : index)}
-              />
-            ))}
+            {filteredFaqs.length > 0 ? (
+              filteredFaqs.map((faq, index) => (
+                <FAQItem
+                  key={`${selectedCategory}-${index}`}
+                  question={faq.question}
+                  answer={faq.answer}
+                  category={selectedCategory ? undefined : faq.category}
+                  isOpen={openIndex === index}
+                  onToggle={() => setOpenIndex(openIndex === index ? null : index)}
+                />
+              ))
+            ) : (
+              <div className="text-center py-12">
+                <p className="text-slate-400 text-lg">No questions found for this category.</p>
+              </div>
+            )}
           </div>
         </AnimatedSection>
 

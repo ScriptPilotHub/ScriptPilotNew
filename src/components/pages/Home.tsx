@@ -41,7 +41,9 @@ export const Home: React.FC = () => (
               </span>
             </a>
             <a
-              href="#contact"
+              href="https://calendly.com/t6ckmedia/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block border-2 border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-slate-900 font-bold py-4 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out text-lg"
             >
               Get Free Consultation

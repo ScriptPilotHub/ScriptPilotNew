@@ -93,7 +93,7 @@ export const Contact: React.FC = () => {
                 Ready to discuss your project? Click the button below to open our scheduling page and find a time that works for you. We'll call you to discuss your project in detail.
               </p>
               <a
-                href="https://book.stripe.com/bJe28s5Za1Yg3CL68L9EI00"
+                href="https://calendly.com/t6ckmedia/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-gradient-to-r from-teal-500 to-sky-500 hover:from-teal-600 hover:to-sky-600 text-white font-bold py-4 px-10 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 hover:shadow-teal-500/20"

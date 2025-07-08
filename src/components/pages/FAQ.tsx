@@ -203,7 +203,7 @@ export const FAQ: React.FC = () => {
       category: "Ownership & Control",
       question: "Will I own my website and have full control over it?",
       answer: "Yes, you retain complete ownership of your website, domain, hosting accounts, and all associated assets. We provide full access credentials and documentation upon project completion. You're never locked into our services - you can take your site elsewhere at any time. We believe in transparency and client empowerment. We also provide training on how to make basic updates and can recommend other developers if needed. Your success and independence are our priorities."
-    }
+    },
     {
       category: "Ownership & Control",
       question: "What happens if I want to make changes after the website is complete?",

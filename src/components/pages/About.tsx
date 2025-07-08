@@ -19,22 +19,25 @@ export const About: React.FC = () => (
       <AnimatedSection delay={100}>
         <h2 className="text-3xl font-bold text-center text-white mb-12">Our Core Values</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-20">
-          <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-8 flex flex-col items-center group hover:scale-[1.02] hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 transform-gpu">
-            <Lightbulb className="h-12 w-12 text-blue-400 mb-4 group-hover:scale-110 transition-transform duration-300" />
-            <h3 className="text-xl font-semibold text-blue-300 mb-2 group-hover:text-blue-200 transition-colors duration-300">Innovation</h3>
-            <p className="text-sm text-slate-400 group-hover:text-slate-300 transition-colors duration-300">Pushing boundaries with modern technology and creative solutions.</p>
+          <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/50 border border-slate-700/50 rounded-xl p-8 flex flex-col items-center group hover:scale-[1.05] hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 transform-gpu relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <Lightbulb className="h-12 w-12 text-blue-400 mb-4 group-hover:scale-125 group-hover:rotate-12 transition-transform duration-500 relative z-10" />
+            <h3 className="text-xl font-semibold text-blue-300 mb-2 group-hover:text-blue-200 transition-colors duration-500 relative z-10">Innovation</h3>
+            <p className="text-sm text-slate-400 group-hover:text-slate-200 transition-colors duration-500 relative z-10">Pushing boundaries with modern technology and creative solutions.</p>
           </div>
           
-          <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-8 flex flex-col items-center group hover:scale-[1.02] hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300 transform-gpu">
-            <Users className="h-12 w-12 text-purple-400 mb-4 group-hover:scale-110 transition-transform duration-300" />
-            <h3 className="text-xl font-semibold text-purple-300 mb-2 group-hover:text-purple-200 transition-colors duration-300">Collaboration</h3>
-            <p className="text-sm text-slate-400 group-hover:text-slate-300 transition-colors duration-300">Your vision, our expertise. We build great things together.</p>
+          <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/50 border border-slate-700/50 rounded-xl p-8 flex flex-col items-center group hover:scale-[1.05] hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 transform-gpu relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <Users className="h-12 w-12 text-purple-400 mb-4 group-hover:scale-125 group-hover:rotate-12 transition-transform duration-500 relative z-10" />
+            <h3 className="text-xl font-semibold text-purple-300 mb-2 group-hover:text-purple-200 transition-colors duration-500 relative z-10">Collaboration</h3>
+            <p className="text-sm text-slate-400 group-hover:text-slate-200 transition-colors duration-500 relative z-10">Your vision, our expertise. We build great things together.</p>
           </div>
           
-          <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-8 flex flex-col items-center group hover:scale-[1.02] hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-300 transform-gpu">
-            <Award className="h-12 w-12 text-teal-400 mb-4 group-hover:scale-110 transition-transform duration-300" />
-            <h3 className="text-xl font-semibold text-teal-300 mb-2 group-hover:text-teal-200 transition-colors duration-300">Quality</h3>
-            <p className="text-sm text-slate-400 group-hover:text-slate-300 transition-colors duration-300">Uncompromising commitment to performance, design, and reliability.</p>
+          <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/50 border border-slate-700/50 rounded-xl p-8 flex flex-col items-center group hover:scale-[1.05] hover:-translate-y-2 hover:shadow-2xl hover:shadow-teal-500/20 transition-all duration-500 transform-gpu relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <Award className="h-12 w-12 text-teal-400 mb-4 group-hover:scale-125 group-hover:rotate-12 transition-transform duration-500 relative z-10" />
+            <h3 className="text-xl font-semibold text-teal-300 mb-2 group-hover:text-teal-200 transition-colors duration-500 relative z-10">Quality</h3>
+            <p className="text-sm text-slate-400 group-hover:text-slate-200 transition-colors duration-500 relative z-10">Uncompromising commitment to performance, design, and reliability.</p>
           </div>
         </div>
       </AnimatedSection>
@@ -49,12 +52,13 @@ export const About: React.FC = () => (
             { name: "Tyler Wells", role: "Developer & Sales Manager", initial: "T", delay: 400 }
           ].map(pilot => (
             <AnimatedSection delay={pilot.delay} key={pilot.name}>
-              <div className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6 text-center group hover:scale-[1.02] hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-300 transform-gpu">
-                <div className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-slate-700 group-hover:border-teal-400 group-hover:scale-110 transition-all duration-300 bg-gradient-to-br from-teal-500 to-blue-500 flex items-center justify-center">
+              <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/50 border border-slate-700/50 rounded-xl p-6 text-center group hover:scale-[1.05] hover:-translate-y-2 hover:shadow-2xl hover:shadow-teal-500/20 transition-all duration-500 transform-gpu relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-slate-700 group-hover:border-teal-400 group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 bg-gradient-to-br from-teal-500 to-blue-500 flex items-center justify-center relative z-10 shadow-lg group-hover:shadow-xl">
                   <span className="text-3xl font-bold text-white">{pilot.initial}</span>
                 </div>
-                <h3 className="text-xl font-semibold text-white group-hover:text-teal-200 transition-colors duration-300">{pilot.name}</h3>
-                <p className="text-teal-400 group-hover:text-teal-300 transition-colors duration-300">{pilot.role}</p>
+                <h3 className="text-xl font-semibold text-white group-hover:text-teal-200 transition-colors duration-500 relative z-10">{pilot.name}</h3>
+                <p className="text-teal-400 group-hover:text-teal-300 transition-colors duration-500 relative z-10">{pilot.role}</p>
               </div>
             </AnimatedSection>
           ))}

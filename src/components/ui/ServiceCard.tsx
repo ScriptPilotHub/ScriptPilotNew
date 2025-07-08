@@ -18,19 +18,20 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
 }) => {
   return (
     <div 
-      className={`group bg-gradient-to-br from-slate-800/60 to-slate-900/50 rounded-xl shadow-lg border border-slate-700/50 p-8 h-full flex flex-col hover:border-${color}-400/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-${color}-500/10 transform-gpu`}
+      className={`group bg-gradient-to-br from-slate-800/60 to-slate-900/50 rounded-xl shadow-lg border border-slate-700/50 p-8 h-full flex flex-col hover:border-${color}-400/70 transition-all duration-500 hover:scale-[1.05] hover:-translate-y-2 hover:shadow-2xl hover:shadow-${color}-500/20 transform-gpu relative overflow-hidden`}
       style={{ transitionDelay: `${delay}ms` }}
     >
-      <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300">
-        <Icon className={`w-16 h-16 text-${color}-400 group-hover:text-${color}-300 transition-colors duration-300`} />
+      <div className="absolute inset-0 bg-gradient-to-br from-transparent to-slate-800/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      <div className="mb-6 transform group-hover:scale-125 group-hover:rotate-3 transition-transform duration-500 relative z-10">
+        <Icon className={`w-16 h-16 text-${color}-400 group-hover:text-${color}-300 transition-all duration-500 drop-shadow-lg group-hover:drop-shadow-xl`} />
       </div>
-      <h3 className={`text-2xl font-semibold text-${color}-300 mb-4 group-hover:text-${color}-200 transition-colors duration-300`}>
+      <h3 className={`text-2xl font-semibold text-${color}-300 mb-4 group-hover:text-${color}-200 transition-colors duration-500 relative z-10`}>
         {title}
       </h3>
-      <p className="text-slate-400 flex-grow group-hover:text-slate-300 transition-colors duration-300">
+      <p className="text-slate-400 flex-grow group-hover:text-slate-200 transition-colors duration-500 relative z-10">
         {description}
       </p>
-      <div className={`mt-6 w-full h-0.5 bg-gradient-to-r from-${color}-500/0 via-${color}-500/50 to-${color}-500/0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+      <div className={`mt-6 w-full h-1 bg-gradient-to-r from-${color}-500/0 via-${color}-500/70 to-${color}-500/0 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-x-0 group-hover:scale-x-100 relative z-10`}></div>
     </div>
   );
 };

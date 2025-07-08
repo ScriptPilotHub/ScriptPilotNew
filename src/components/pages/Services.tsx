@@ -289,15 +289,17 @@ export const Services: React.FC = () => (
               href="https://calendly.com/t6ckmedia/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-gradient-to-r from-teal-500 to-blue-500 hover:from-teal-600 hover:to-blue-600 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-teal-500/20 transform hover:scale-105 transition-all duration-300 ease-in-out text-lg group relative overflow-hidden"
+              className="inline-block bg-gradient-to-r from-teal-500 to-blue-500 hover:from-teal-600 hover:to-blue-600 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-teal-500/30 transform hover:scale-110 hover:-translate-y-1 transition-all duration-500 ease-out text-lg group relative overflow-hidden btn-shimmer"
             >
-              <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
+              <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-500"></span>
               <span className="relative z-10">Get Free Consultation</span>
             </a>
             <a
               href="#about"
-              className="inline-block border-2 border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-slate-900 font-bold py-4 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out text-lg"
+              className="inline-block border-2 border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-slate-900 font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-purple-400/30 transform hover:scale-110 hover:-translate-y-1 transition-all duration-500 ease-out text-lg relative overflow-hidden group"
             >
+              <span className="absolute inset-0 bg-purple-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
+              <span className="relative z-10 transition-colors duration-500">Learn About Us</span>
               Learn About Us
             </a>
           </div>

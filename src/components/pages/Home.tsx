@@ -11,9 +11,9 @@ export const Home: React.FC = () => (
       <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900/80 to-slate-900"></div>
       
       {/* Animated Background Blobs */}
-      <div className="absolute top-[-25%] left-[-25%] w-96 h-96 md:w-[600px] md:h-[600px] bg-teal-500/30 rounded-full mix-blend-screen filter blur-3xl opacity-40 animate-float"></div>
-      <div className="absolute top-[0%] right-[-25%] w-96 h-96 md:w-[600px] md:h-[600px] bg-purple-500/30 rounded-full mix-blend-screen filter blur-3xl opacity-40 animate-float-delayed"></div>
-      <div className="absolute bottom-[-25%] left-[0%] w-96 h-96 md:w-[600px] md:h-[600px] bg-pink-500/30 rounded-full mix-blend-screen filter blur-3xl opacity-40 animate-float-slow"></div>
+      <div className="absolute top-[-25%] left-[-25%] w-96 h-96 md:w-[600px] md:h-[600px] bg-gradient-to-br from-teal-400/40 to-cyan-500/30 rounded-full mix-blend-screen filter blur-3xl opacity-50 animate-float transform-gpu"></div>
+      <div className="absolute top-[0%] right-[-25%] w-96 h-96 md:w-[600px] md:h-[600px] bg-gradient-to-bl from-purple-400/40 to-indigo-500/30 rounded-full mix-blend-screen filter blur-3xl opacity-50 animate-float-delayed transform-gpu"></div>
+      <div className="absolute bottom-[-25%] left-[0%] w-96 h-96 md:w-[600px] md:h-[600px] bg-gradient-to-tr from-pink-400/40 to-rose-500/30 rounded-full mix-blend-screen filter blur-3xl opacity-50 animate-float-slow transform-gpu"></div>
 
       <div className="relative z-10 max-w-4xl w-full">
         <AnimatedSection>
@@ -32,20 +32,22 @@ export const Home: React.FC = () => (
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
               href="#services"
-              className="inline-block bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-blue-500/20 transform hover:scale-105 transition-all duration-300 ease-in-out text-lg group relative overflow-hidden"
+              className="inline-block bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-blue-500/30 transform hover:scale-105 hover:-translate-y-1 transition-all duration-500 ease-out text-lg group relative overflow-hidden btn-shimmer animate-pulse-glow"
             >
-              <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
+              <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-500"></span>
               <span className="relative z-10 flex items-center gap-2">
                 Explore Our Services
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-500" />
               </span>
             </a>
             <a
               href="https://calendly.com/t6ckmedia/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block border-2 border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-slate-900 font-bold py-4 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out text-lg"
+              className="inline-block border-2 border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-slate-900 font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-teal-400/30 transform hover:scale-105 hover:-translate-y-1 transition-all duration-500 ease-out text-lg relative overflow-hidden group"
             >
+              <span className="absolute inset-0 bg-teal-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
+              <span className="relative z-10 transition-colors duration-500">Get Free Consultation</span>
               Get Free Consultation
             </a>
           </div>

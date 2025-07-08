@@ -79,7 +79,7 @@ export const Contact: React.FC = () => {
                     className="bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white font-bold py-3 px-10 rounded-full shadow-lg transform hover:scale-110 hover:-translate-y-1 transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-green-500/30 btn-shimmer relative overflow-hidden"
                   >
                     <span className="relative z-10">
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                      {isSubmitting ? 'Sending...' : 'Send Message'}
                     </span>
                   </button>
                 </div>
@@ -103,7 +103,7 @@ export const Contact: React.FC = () => {
                 className="inline-block bg-gradient-to-r from-teal-500 to-sky-500 hover:from-teal-600 hover:to-sky-600 text-white font-bold py-4 px-10 rounded-full shadow-lg transform hover:scale-110 hover:-translate-y-1 transition-all duration-500 hover:shadow-teal-500/30 btn-shimmer relative overflow-hidden"
               >
                 <span className="relative z-10">
-                Book Your Call
+                  Book Your Call
                 </span>
               </a>
             </div>

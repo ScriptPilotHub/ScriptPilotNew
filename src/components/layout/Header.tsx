@@ -24,17 +24,17 @@ export const Header: React.FC = () => {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-out ${
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
       isScrolled 
         ? 'bg-slate-900/95 backdrop-blur-xl shadow-2xl border-b border-slate-700/50' 
         : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`flex items-center justify-between transition-all duration-700 ease-out ${
+        <div className={`flex items-center justify-between transition-all duration-500 ease-out ${
           isScrolled ? 'h-16' : 'h-24'
         }`}>
           <a href="#home" className="flex items-center group">
-            <div className="transform group-hover:scale-125 group-hover:rotate-3 transition-transform duration-500 ease-out">
+            <div className="transform group-hover:scale-110 transition-transform duration-300 ease-out">
               <Logo />
             </div>
           </a>
@@ -44,14 +44,14 @@ export const Header: React.FC = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className={`relative text-base font-medium transition-all duration-500 group ${
+                className={`relative text-base font-medium transition-all duration-300 group ${
                   pathname === link.href.substring(1) || (pathname === '' && link.href === '#home')
                     ? 'text-teal-300' 
-                    : 'text-slate-300 hover:text-white hover:scale-110'
+                    : 'text-slate-300 hover:text-white hover:scale-105'
                 }`}
               >
                 {link.label}
-                <span className={`absolute bottom-[-4px] left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-teal-400 to-cyan-400 transition-all duration-500 ease-out ${
+                <span className={`absolute bottom-[-4px] left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-teal-400 to-cyan-400 transition-all duration-300 ease-out ${
                   pathname === link.href.substring(1) || (pathname === '' && link.href === '#home')
                     ? 'w-full' 
                     : 'w-0 group-hover:w-full'
@@ -63,7 +63,7 @@ export const Header: React.FC = () => {
           <div className="md:hidden">
             <button 
               onClick={() => setIsOpen(!isOpen)} 
-              className="text-slate-300 hover:text-white focus:outline-none transform hover:scale-125 hover:rotate-90 transition-transform duration-500 ease-out"
+              className="text-slate-300 hover:text-white focus:outline-none transform hover:scale-110 transition-transform duration-300 ease-out"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -72,17 +72,17 @@ export const Header: React.FC = () => {
       </div>
       
       {isOpen && (
-        <div className="md:hidden bg-slate-900/95 backdrop-blur-xl border-t border-slate-700/50 animate-in slide-in-from-top duration-500">
+        <div className="md:hidden bg-slate-900/95 backdrop-blur-xl border-t border-slate-700/50">
           <nav className="px-4 py-4 space-y-2">
             {navLinks.map(link => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className={`block px-4 py-3 rounded-lg text-base font-medium transition-all duration-500 hover:scale-105 hover:-translate-y-1 ${
+                className={`block px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 ${
                   pathname === link.href.substring(1) || (pathname === '' && link.href === '#home')
-                    ? 'bg-gradient-to-r from-slate-800 to-slate-700 text-teal-300 shadow-lg shadow-teal-500/20' 
-                    : 'text-slate-300 hover:bg-gradient-to-r hover:from-slate-700 hover:to-slate-600 hover:text-white hover:shadow-lg'
+                    ? 'bg-slate-800 text-teal-300' 
+                    : 'text-slate-300 hover:bg-slate-700 hover:text-white'
                 }`}
               >
                 {link.label}

@@ -300,7 +300,6 @@ export const Services: React.FC = () => (
             >
               <span className="absolute inset-0 bg-purple-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
               <span className="relative z-10 transition-colors duration-500">Learn About Us</span>
-              Learn About Us
             </a>
           </div>
         </div>

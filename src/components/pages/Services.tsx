@@ -98,7 +98,6 @@ export const Services: React.FC = () => (
             },
             {
               icon: Clock,
-              icon: Clock,
               title: "24/7 Sales",
               description: "Your website works around the clock, generating leads and sales while you sleep",
               color: "orange"

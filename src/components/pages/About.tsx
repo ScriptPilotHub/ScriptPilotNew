@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, Target, Award, Lightbulb, Handshake, ArrowRight } from 'lucide-react';
+import { Users, Target, Award, Lightbulb, Handshake, ArrowRight, TrendingUp } from 'lucide-react';
 import { AnimatedSection } from '../ui/AnimatedSection';
 
 export const About: React.FC = () => (
@@ -233,7 +233,7 @@ export const About: React.FC = () => (
               color: "green"
             },
             {
-              icon: Target,
+              icon: TrendingUp,
               title: "Results-Driven",
               description: "Every project is designed with your business goals in mind, ensuring measurable results and return on investment.",
               color: "purple"

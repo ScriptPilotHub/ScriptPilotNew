@@ -1,5 +1,5 @@
 import React from 'react';
-import { CreditCard, Shield, FileText } from 'lucide-react';
+import { CreditCard, Shield, FileText, ArrowRight } from 'lucide-react';
 import { AnimatedSection } from '../ui/AnimatedSection';
 
 export const PaymentPortal: React.FC = () => (

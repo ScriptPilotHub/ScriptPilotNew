@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { User, Mail, MessageCircle, Phone, MapPin, Clock } from 'lucide-react';
+import { User, Mail, MessageCircle, Phone, MapPin, Clock, ArrowRight, Shield, Users, CheckCircle } from 'lucide-react';
 import { AnimatedSection } from '../ui/AnimatedSection';
 
 export const Contact: React.FC = () => {

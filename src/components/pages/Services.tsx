@@ -39,8 +39,29 @@ export const Services: React.FC = () => (
       </div>
     </section>
 
-    {/* Why Professional Websites Matter */}
+    {/* Stats Section */}
     <section className="section bg-blue-50">
+      <div className="container">
+        <AnimatedSection delay={200}>
+          <div className="grid grid-4 text-center max-w-4xl mx-auto">
+            {[
+              { value: "200+", label: "Projects Delivered" },
+              { value: "99%", label: "Client Satisfaction" },
+              { value: "2-8", label: "Week Delivery" },
+              { value: "24/7", label: "Performance" }
+            ].map((stat, index) => (
+              <div key={index} className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="text-2xl font-bold text-blue-600">{stat.value}</div>
+                <div className="text-sm text-slate-600">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </AnimatedSection>
+      </div>
+    </section>
+
+    {/* Why Professional Websites Matter */}
+    <section className="section">
       <div className="container">
         <AnimatedSection>
           <div className="text-center space-y-4 mb-16">
@@ -102,7 +123,7 @@ export const Services: React.FC = () => (
     </section>
 
     {/* Main Service Package */}
-    <section className="section">
+    <section className="section bg-slate-50">
       <div className="container">
         <AnimatedSection>
           <div className="text-center space-y-4 mb-16">
@@ -239,7 +260,7 @@ export const Services: React.FC = () => (
     </section>
 
     {/* Perfect For Section */}
-    <section className="section bg-slate-50">
+    <section className="section">
       <div className="container">
         <AnimatedSection>
           <div className="text-center space-y-4 mb-16">
@@ -287,7 +308,7 @@ export const Services: React.FC = () => (
     </section>
 
     {/* ROI Section */}
-    <section className="section">
+    <section className="section bg-blue-50">
       <div className="container">
         <AnimatedSection>
           <div className="text-center space-y-4 mb-16">
@@ -334,6 +355,67 @@ export const Services: React.FC = () => (
                   <p className="text-slate-600">
                     {cost.description}
                   </p>
+                </div>
+              </div>
+            </AnimatedSection>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Testimonials */}
+    <section className="section">
+      <div className="container">
+        <AnimatedSection>
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="heading-2 text-slate-900">
+              Client Success Stories
+            </h2>
+            <p className="body-large max-w-3xl mx-auto">
+              See how we've helped businesses transform their digital presence 
+              and achieve measurable results.
+            </p>
+          </div>
+        </AnimatedSection>
+
+        <div className="grid grid-3 gap-8">
+          {[
+            {
+              name: "Sarah Chen",
+              company: "TechStart Solutions",
+              testimonial: "Script Pilot delivered exactly what we needed - a professional platform that perfectly represents our brand and converts visitors into clients.",
+              rating: 5
+            },
+            {
+              name: "Michael Rodriguez",
+              company: "Artisan Crafts Co.",
+              testimonial: "The team's attention to detail and technical expertise exceeded our expectations. Our new e-commerce site has driven significant growth.",
+              rating: 5
+            },
+            {
+              name: "Lisa Johnson",
+              company: "Bloom Consulting",
+              testimonial: "Professional, reliable, and results-driven. Script Pilot transformed our online presence and helped us reach new markets.",
+              rating: 5
+            }
+          ].map((testimonial, index) => (
+            <AnimatedSection delay={index * 100} key={testimonial.name}>
+              <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-all duration-300 h-full">
+                <div className="space-y-6">
+                  <div className="flex items-center gap-1">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  
+                  <blockquote className="text-slate-600 italic">
+                    "{testimonial.testimonial}"
+                  </blockquote>
+                  
+                  <div className="border-t border-slate-100 pt-4 space-y-1">
+                    <p className="font-semibold text-slate-900">{testimonial.name}</p>
+                    <p className="text-blue-600 text-sm">{testimonial.company}</p>
+                  </div>
                 </div>
               </div>
             </AnimatedSection>

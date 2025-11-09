@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, Clock, DollarSign, Shield, Users, Zap, CheckCircle, HelpCircle, MessageCircle, Phone } from 'lucide-react';
+import { ChevronDown, Clock, DollarSign, Shield, Users, Zap, CheckCircle, HelpCircle, MessageCircle, Phone, ArrowRight } from 'lucide-react';
 import { AnimatedSection } from '../ui/AnimatedSection';
 
 interface FAQItemProps {

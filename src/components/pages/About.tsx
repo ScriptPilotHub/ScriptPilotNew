@@ -19,6 +19,42 @@ export const About: React.FC = () => (
                 exceptional digital solutions that drive real business results.
               </p>
             </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+              <a href="#contact" className="btn btn-primary btn-lg group">
+                Get Started Today
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </a>
+              <a
+                href="https://calendly.com/t6ckmedia/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary btn-lg"
+              >
+                Schedule Consultation
+              </a>
+            </div>
+          </div>
+        </AnimatedSection>
+      </div>
+    </section>
+
+    {/* Stats Section */}
+    <section className="section bg-blue-50">
+      <div className="container">
+        <AnimatedSection delay={200}>
+          <div className="grid grid-4 text-center max-w-4xl mx-auto">
+            {[
+              { value: "200+", label: "Projects Delivered" },
+              { value: "99%", label: "Client Satisfaction" },
+              { value: "2-8", label: "Week Delivery" },
+              { value: "24/7", label: "Performance" }
+            ].map((stat, index) => (
+              <div key={index} className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="text-2xl font-bold text-blue-600">{stat.value}</div>
+                <div className="text-sm text-slate-600">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </AnimatedSection>
       </div>

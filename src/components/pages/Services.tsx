@@ -1,5 +1,5 @@
 import React from 'react';
-import { Monitor, ShoppingCart, Code, Rocket, TrendingUp, Users, Shield, Search, Clock, DollarSign, CheckCircle, Star, Zap } from 'lucide-react';
+import { Monitor, ShoppingCart, Code, Rocket, Search, Shield, TrendingUp, Users, Award, Clock, DollarSign, CheckCircle, Star, ArrowRight } from 'lucide-react';
 import { AnimatedSection } from '../ui/AnimatedSection';
 
 export const Services: React.FC = () => (
@@ -23,7 +23,7 @@ export const Services: React.FC = () => (
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
               <a href="#contact" className="btn btn-primary btn-lg group">
                 Get Started Today
-                <Rocket className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </a>
               <a
                 href="https://calendly.com/t6ckmedia/30min"
@@ -65,6 +65,7 @@ export const Services: React.FC = () => (
       <div className="container">
         <AnimatedSection>
           <div className="text-center space-y-4 mb-16">
+            <TrendingUp className="w-16 h-16 text-blue-600 mx-auto" />
             <h2 className="heading-2 text-slate-900">
               Why Your Business Needs a Professional Website
             </h2>
@@ -127,6 +128,7 @@ export const Services: React.FC = () => (
       <div className="container">
         <AnimatedSection>
           <div className="text-center space-y-4 mb-16">
+            <Rocket className="w-16 h-16 text-blue-600 mx-auto" />
             <h2 className="heading-2 text-slate-900">
               Your Complete Digital Solution
             </h2>
@@ -142,7 +144,6 @@ export const Services: React.FC = () => (
             {
               icon: Monitor,
               title: "Professional Website Design",
-              image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800",
               features: [
                 "Custom design tailored to your brand",
                 "Mobile-responsive on all devices",
@@ -155,7 +156,6 @@ export const Services: React.FC = () => (
             {
               icon: ShoppingCart,
               title: "E-commerce Ready",
-              image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
               features: [
                 "Secure payment processing (Stripe, PayPal)",
                 "Product catalog and inventory management",
@@ -168,7 +168,6 @@ export const Services: React.FC = () => (
             {
               icon: Code,
               title: "Custom Features",
-              image: "https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=800",
               features: [
                 "Contact forms and lead capture",
                 "Booking and appointment systems",
@@ -181,7 +180,6 @@ export const Services: React.FC = () => (
             {
               icon: Rocket,
               title: "Launch & Deployment",
-              image: "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=800",
               features: [
                 "Domain setup and DNS configuration",
                 "SSL certificate and security setup",
@@ -194,7 +192,6 @@ export const Services: React.FC = () => (
             {
               icon: Search,
               title: "SEO & Marketing",
-              image: "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800",
               features: [
                 "Search engine optimization (SEO)",
                 "Google Business Profile setup",
@@ -207,7 +204,6 @@ export const Services: React.FC = () => (
             {
               icon: Shield,
               title: "Ongoing Support",
-              image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800",
               features: [
                 "One month of free support",
                 "Security monitoring and updates",
@@ -219,39 +215,32 @@ export const Services: React.FC = () => (
             }
           ].map((service, index) => (
             <AnimatedSection delay={100 * (index + 1)} key={index}>
-              <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group h-full flex flex-col">
-                <div className="h-48 overflow-hidden">
-                  <img 
-                    src={service.image} 
-                    alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
+              <div className="bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 group h-full flex flex-col">
                 <div className="p-6 flex-1 flex flex-col">
-                <div className="space-y-4 flex-1">
-                  <div className={`w-12 h-12 bg-${service.color}-100 rounded-xl flex items-center justify-center group-hover:bg-${service.color}-600 transition-colors duration-300`}>
-                    <service.icon className={`w-6 h-6 text-${service.color}-600 group-hover:text-white transition-colors duration-300`} />
+                  <div className="space-y-4 flex-1">
+                    <div className={`w-12 h-12 bg-${service.color}-100 rounded-xl flex items-center justify-center group-hover:bg-${service.color}-600 transition-colors duration-300`}>
+                      <service.icon className={`w-6 h-6 text-${service.color}-600 group-hover:text-white transition-colors duration-300`} />
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <h3 className="heading-3 text-slate-900">
+                        {service.title}
+                      </h3>
+                      <p className="text-slate-600 text-sm">
+                        {service.description}
+                      </p>
+                    </div>
+                    
+                    <ul className="space-y-2 mt-4">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center gap-3 text-sm text-slate-600">
+                          <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  
-                  <div className="space-y-2">
-                    <h3 className="heading-3 text-slate-900">
-                      {service.title}
-                    </h3>
-                    <p className="text-slate-600 text-sm">
-                      {service.description}
-                    </p>
-                  </div>
-                  
-                  <ul className="space-y-2 mt-4">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center gap-3 text-sm text-slate-600">
-                        <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
                 </div>
-              </div>
               </div>
             </AnimatedSection>
           ))}
@@ -264,6 +253,7 @@ export const Services: React.FC = () => (
       <div className="container">
         <AnimatedSection>
           <div className="text-center space-y-4 mb-16">
+            <Users className="w-16 h-16 text-blue-600 mx-auto" />
             <h2 className="heading-2 text-slate-900">
               Perfect for Every Business
             </h2>
@@ -312,6 +302,7 @@ export const Services: React.FC = () => (
       <div className="container">
         <AnimatedSection>
           <div className="text-center space-y-4 mb-16">
+            <DollarSign className="w-16 h-16 text-blue-600 mx-auto" />
             <h2 className="heading-2 text-slate-900">
               The Cost of NOT Having a Professional Website
             </h2>
@@ -368,6 +359,7 @@ export const Services: React.FC = () => (
       <div className="container">
         <AnimatedSection>
           <div className="text-center space-y-4 mb-16">
+            <Star className="w-16 h-16 text-blue-600 mx-auto" />
             <h2 className="heading-2 text-slate-900">
               Client Success Stories
             </h2>

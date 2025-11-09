@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, Target, Award, Lightbulb, Handshake, CheckCircle, Star, ArrowRight } from 'lucide-react';
+import { Users, Target, Award, Lightbulb, Handshake, ArrowRight } from 'lucide-react';
 import { AnimatedSection } from '../ui/AnimatedSection';
 
 export const About: React.FC = () => (
@@ -89,6 +89,7 @@ export const About: React.FC = () => (
       <div className="container">
         <AnimatedSection>
           <div className="text-center space-y-4 mb-16">
+            <Award className="w-16 h-16 text-blue-600 mx-auto" />
             <h2 className="heading-2 text-slate-900">
               Our Core Values
             </h2>
@@ -205,45 +206,56 @@ export const About: React.FC = () => (
     <section className="section bg-blue-50">
       <div className="container">
         <AnimatedSection>
-          <div className="grid grid-3 gap-8">
-            {[
-              {
-                icon: Award,
-                title: "Proven Expertise",
-                description: "Years of experience delivering high-quality web solutions for businesses across diverse industries and scales.",
-                color: "blue"
-              },
-              {
-                icon: Users,
-                title: "Client-Focused Approach", 
-                description: "We prioritize clear communication, transparent processes, and delivering exactly what you need, when you need it.",
-                color: "green"
-              },
-              {
-                icon: Target,
-                title: "Results-Driven",
-                description: "Every project is designed with your business goals in mind, ensuring measurable results and return on investment.",
-                color: "purple"
-              }
-            ].map((feature, index) => (
-              <AnimatedSection delay={100 * (index + 1)} key={index}>
-                <div className="bg-white rounded-xl p-6 text-center space-y-4 shadow-sm hover:shadow-md transition-all duration-300">
-                  <div className={`w-16 h-16 bg-${feature.color}-600 rounded-2xl flex items-center justify-center mx-auto shadow-lg`}>
-                    <feature.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <div className="space-y-3">
-                    <h3 className="heading-3 text-slate-900">
-                      {feature.title}
-                    </h3>
-                    <p className="text-slate-600">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
+          <div className="text-center space-y-4 mb-16">
+            <Target className="w-16 h-16 text-blue-600 mx-auto" />
+            <h2 className="heading-2 text-slate-900">
+              Why Choose Script Pilot
+            </h2>
+            <p className="body-large max-w-3xl mx-auto">
+              We combine technical expertise with business acumen to deliver solutions 
+              that drive real results for your organization.
+            </p>
           </div>
         </AnimatedSection>
+
+        <div className="grid grid-3 gap-8">
+          {[
+            {
+              icon: Award,
+              title: "Proven Expertise",
+              description: "Years of experience delivering high-quality web solutions for businesses across diverse industries and scales.",
+              color: "blue"
+            },
+            {
+              icon: Users,
+              title: "Client-Focused Approach", 
+              description: "We prioritize clear communication, transparent processes, and delivering exactly what you need, when you need it.",
+              color: "green"
+            },
+            {
+              icon: Target,
+              title: "Results-Driven",
+              description: "Every project is designed with your business goals in mind, ensuring measurable results and return on investment.",
+              color: "purple"
+            }
+          ].map((feature, index) => (
+            <AnimatedSection delay={100 * (index + 1)} key={index}>
+              <div className="bg-white rounded-xl p-6 text-center space-y-4 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className={`w-16 h-16 bg-${feature.color}-600 rounded-2xl flex items-center justify-center mx-auto shadow-lg`}>
+                  <feature.icon className="w-8 h-8 text-white" />
+                </div>
+                <div className="space-y-3">
+                  <h3 className="heading-3 text-slate-900">
+                    {feature.title}
+                  </h3>
+                  <p className="text-slate-600">
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
+            </AnimatedSection>
+          ))}
+        </div>
       </div>
     </section>
 

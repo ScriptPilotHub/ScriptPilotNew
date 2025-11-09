@@ -174,42 +174,54 @@ export const About: React.FC = () => (
               Meet Our Team
             </h2>
             <p className="body-large max-w-3xl mx-auto">
-              Our diverse team of experts brings together years of experience in web development, 
-              design, and digital strategy.
+              Meet the founders and driving force behind Script Pilot's success. 
+              Our team combines technical expertise with business strategy to deliver exceptional results.
             </p>
           </div>
         </AnimatedSection>
 
-        <div className="grid grid-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-2 gap-8 max-w-5xl mx-auto">
           <AnimatedSection delay={200}>
-            <div className="bg-white rounded-xl border border-slate-200 p-8 text-center shadow-sm hover:shadow-md transition-all duration-300">
-              <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full mx-auto mb-6 flex items-center justify-center">
-                <Users className="w-12 h-12 text-white" />
+            <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group">
+              <div className="h-64 overflow-hidden">
+                <img 
+                  src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                  alt="David Tackett - Co-Founder"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
               </div>
-              <div className="space-y-4">
-                <h3 className="heading-3 text-slate-900">
-                  Development Team
+              <div className="p-8 text-center space-y-4">
+                <h3 className="text-2xl font-semibold text-slate-900">
+                  David Tackett
                 </h3>
+                <p className="text-blue-600 font-medium">Co-Founder & Lead Developer</p>
                 <p className="text-slate-600">
-                  Expert developers specializing in modern web technologies, ensuring your project 
-                  is built with the latest best practices and optimized for performance.
+                  David brings over 8 years of web development experience, specializing in React, 
+                  TypeScript, and modern web technologies. He leads our technical strategy and 
+                  ensures every project meets the highest standards of performance and security.
                 </p>
               </div>
             </div>
           </AnimatedSection>
 
           <AnimatedSection delay={400}>
-            <div className="bg-white rounded-xl border border-slate-200 p-8 text-center shadow-sm hover:shadow-md transition-all duration-300">
-              <div className="w-24 h-24 bg-gradient-to-br from-green-500 to-green-600 rounded-full mx-auto mb-6 flex items-center justify-center">
-                <Target className="w-12 h-12 text-white" />
+            <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group">
+              <div className="h-64 overflow-hidden">
+                <img 
+                  src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                  alt="Tyler Wells - Co-Founder"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
               </div>
-              <div className="space-y-4">
-                <h3 className="heading-3 text-slate-900">
-                  Strategy Team
+              <div className="p-8 text-center space-y-4">
+                <h3 className="text-2xl font-semibold text-slate-900">
+                  Tyler Wells
                 </h3>
+                <p className="text-blue-600 font-medium">Co-Founder & Business Strategy</p>
                 <p className="text-slate-600">
-                  Business strategists and UX experts who ensure your website not only looks great 
-                  but also achieves your business objectives and provides excellent user experience.
+                  Tyler focuses on business strategy, client relationships, and ensuring our solutions 
+                  drive real business results. With a background in digital marketing and business 
+                  development, he ensures every project aligns with our clients' growth objectives.
                 </p>
               </div>
             </div>

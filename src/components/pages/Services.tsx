@@ -142,6 +142,7 @@ export const Services: React.FC = () => (
             {
               icon: Monitor,
               title: "Professional Website Design",
+              image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800",
               features: [
                 "Custom design tailored to your brand",
                 "Mobile-responsive on all devices",
@@ -149,12 +150,12 @@ export const Services: React.FC = () => (
                 "Professional photography integration"
               ],
               description: "Custom websites designed to represent your brand professionally and convert visitors into customers.",
-              image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800",
               color: "blue"
             },
             {
               icon: ShoppingCart,
               title: "E-commerce Ready",
+              image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
               features: [
                 "Secure payment processing (Stripe, PayPal)",
                 "Product catalog and inventory management",
@@ -162,12 +163,12 @@ export const Services: React.FC = () => (
                 "Order tracking and customer accounts"
               ],
               description: "Complete e-commerce solutions that turn your website into a powerful sales machine.",
-              image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
               color: "green"
             },
             {
               icon: Code,
               title: "Custom Features",
+              image: "https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=800",
               features: [
                 "Contact forms and lead capture",
                 "Booking and appointment systems",
@@ -175,12 +176,12 @@ export const Services: React.FC = () => (
                 "Social media integration"
               ],
               description: "Tailored functionality that meets your specific business needs and workflow requirements.",
-              image: "https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=800",
               color: "purple"
             },
             {
               icon: Rocket,
               title: "Launch & Deployment",
+              image: "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=800",
               features: [
                 "Domain setup and DNS configuration",
                 "SSL certificate and security setup",
@@ -188,12 +189,12 @@ export const Services: React.FC = () => (
                 "Google Analytics and tracking"
               ],
               description: "Complete deployment and launch services to get your website live and performing optimally.",
-              image: "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=800",
               color: "orange"
             },
             {
               icon: Search,
               title: "SEO & Marketing",
+              image: "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800",
               features: [
                 "Search engine optimization (SEO)",
                 "Google Business Profile setup",
@@ -201,12 +202,12 @@ export const Services: React.FC = () => (
                 "Content optimization for search"
               ],
               description: "Strategic SEO and marketing setup to help customers find your business online.",
-              image: "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800",
               color: "yellow"
             },
             {
               icon: Shield,
               title: "Ongoing Support",
+              image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800",
               features: [
                 "One month of free support",
                 "Security monitoring and updates",
@@ -214,7 +215,6 @@ export const Services: React.FC = () => (
                 "Priority technical assistance"
               ],
               description: "Comprehensive maintenance and support to keep your website secure and running smoothly.",
-              image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800",
               color: "red"
             }
           ].map((service, index) => (

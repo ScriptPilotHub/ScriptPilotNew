@@ -11,10 +11,10 @@ interface FAQItemProps {
 }
 
 const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onToggle, category }) => (
-  <div className="card mb-4 overflow-hidden group hover:border-blue-300 transition-all duration-300">
+  <div className="bg-white rounded-xl border border-slate-200 mb-4 overflow-hidden group hover:border-blue-300 transition-all duration-300 shadow-sm hover:shadow-md">
     <button
       onClick={onToggle}
-      className="w-full flex justify-between items-center text-left py-6 px-6 hover:bg-slate-50 transition-colors duration-300"
+      className="w-full flex justify-between items-center text-left py-6 px-6 hover:bg-blue-50 transition-colors duration-300"
     >
       <div className="flex-1">
         {category && (
@@ -37,7 +37,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onToggle, c
         isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
       }`}
     >
-      <div className="px-6 pb-6 text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+      <div className="px-6 pb-6 text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
         {answer}
       </div>
     </div>
@@ -265,19 +265,19 @@ export const FAQ: React.FC = () => {
             
             {/* Quick Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
-              <div className="card p-4">
+              <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
                 <div className="text-2xl font-bold text-blue-600">100+</div>
                 <div className="text-sm text-slate-600">Projects Completed</div>
               </div>
-              <div className="card p-4">
+              <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
                 <div className="text-2xl font-bold text-blue-600">2-8</div>
                 <div className="text-sm text-slate-600">Weeks Delivery</div>
               </div>
-              <div className="card p-4">
+              <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
                 <div className="text-2xl font-bold text-blue-600">24/7</div>
                 <div className="text-sm text-slate-600">Site Performance</div>
               </div>
-              <div className="card p-4">
+              <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
                 <div className="text-2xl font-bold text-blue-600">30</div>
                 <div className="text-sm text-slate-600">Days Free Support</div>
               </div>
@@ -288,7 +288,7 @@ export const FAQ: React.FC = () => {
       </section>
 
         {/* Category Filter */}
-      <section className="section bg-slate-50">
+      <section className="section bg-blue-50">
         <div className="container">
         <AnimatedSection delay={200}>
           <div className="mb-12">
@@ -314,10 +314,10 @@ export const FAQ: React.FC = () => {
                   <button
                     key={category.name}
                     onClick={() => handleCategorySelect(category.name)}
-                    className={`card p-4 text-center transition-all duration-300 group hover:scale-105 ${
+                    className={`bg-white rounded-xl border p-4 text-center transition-all duration-300 group hover:scale-105 shadow-sm hover:shadow-md ${
                       isSelected 
                         ? `border-blue-500 bg-blue-50` 
-                        : `hover:border-blue-300`
+                        : `border-slate-200 hover:border-blue-300`
                     }`}
                   >
                     <category.icon className={`w-8 h-8 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300 ${
@@ -388,19 +388,19 @@ export const FAQ: React.FC = () => {
       </section>
 
         {/* Still Have Questions Section */}
-      <section className="section bg-slate-50">
+      <section className="section bg-blue-50">
         <div className="container">
         <AnimatedSection delay={500}>
-          <div className="card text-center max-w-4xl mx-auto">
+          <div className="bg-white rounded-xl border border-slate-200 p-8 text-center max-w-4xl mx-auto shadow-sm">
             <HelpCircle className="w-16 h-16 text-blue-600 mx-auto mb-6" />
             <h3 className="heading-3 text-slate-900 mb-4">Still Have Questions?</h3>
-            <p className="body mb-8 max-w-2xl mx-auto">
+            <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
               We're here to help! Get in touch with our team for personalized answers to your specific questions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
                 href="#contact"
-                className="btn btn-primary"
+                className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 flex items-center gap-2"
               >
                 <MessageCircle className="w-5 h-5" />
                 Send a Message
@@ -409,7 +409,7 @@ export const FAQ: React.FC = () => {
                 href="https://calendly.com/t6ckmedia/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-secondary"
+                className="border-2 border-slate-300 text-slate-700 px-6 py-3 rounded-lg font-semibold hover:border-blue-600 hover:text-blue-600 transition-colors duration-300 flex items-center gap-2"
               >
                 <Phone className="w-5 h-5" />
                 Schedule a Call
@@ -425,20 +425,20 @@ export const FAQ: React.FC = () => {
         <div className="container">
         <AnimatedSection delay={600}>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            <div className="card text-center">
+            <div className="bg-white rounded-xl border border-slate-200 p-6 text-center shadow-sm hover:shadow-md transition-all duration-300">
               <Shield className="w-12 h-12 text-green-600 mx-auto mb-4" />
               <h4 className="text-lg font-semibold text-slate-900 mb-2">Secure & Reliable</h4>
-              <p className="body-small">SSL certificates, regular backups, and enterprise-grade security for all projects.</p>
+              <p className="text-sm text-slate-600">SSL certificates, regular backups, and enterprise-grade security for all projects.</p>
             </div>
-            <div className="card text-center">
+            <div className="bg-white rounded-xl border border-slate-200 p-6 text-center shadow-sm hover:shadow-md transition-all duration-300">
               <Users className="w-12 h-12 text-blue-600 mx-auto mb-4" />
               <h4 className="text-lg font-semibold text-slate-900 mb-2">Dedicated Support</h4>
-              <p className="body-small">Personal attention from our experienced team throughout your project and beyond.</p>
+              <p className="text-sm text-slate-600">Personal attention from our experienced team throughout your project and beyond.</p>
             </div>
-            <div className="card text-center">
+            <div className="bg-white rounded-xl border border-slate-200 p-6 text-center shadow-sm hover:shadow-md transition-all duration-300">
               <CheckCircle className="w-12 h-12 text-purple-600 mx-auto mb-4" />
               <h4 className="text-lg font-semibold text-slate-900 mb-2">Proven Results</h4>
-              <p className="body-small">Hundreds of successful projects helping businesses grow their online presence.</p>
+              <p className="text-sm text-slate-600">Hundreds of successful projects helping businesses grow their online presence.</p>
             </div>
           </div>
         </AnimatedSection>

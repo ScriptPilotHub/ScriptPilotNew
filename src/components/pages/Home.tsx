@@ -3,14 +3,14 @@ import { ArrowRight, CheckCircle, Star, Users, Award, Zap, Shield, Clock, Trendi
 import { AnimatedSection } from '../ui/AnimatedSection';
 
 export const Home: React.FC = () => (
-  <div className="min-h-screen bg-white dark:bg-slate-900">
+  <div className="min-h-screen bg-white">
     {/* Hero Section */}
     <section className="section-lg pt-32">
       <div className="container">
         <AnimatedSection>
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <div className="space-y-6">
-              <h1 className="heading-1 text-slate-900 dark:text-white">
+              <h1 className="heading-1 text-slate-900">
                 Elite Web Development
                 <span className="block text-gradient">That Drives Results</span>
               </h1>
@@ -40,7 +40,7 @@ export const Home: React.FC = () => (
     </section>
 
     {/* Stats Section */}
-    <section className="section-sm bg-slate-50 dark:bg-slate-800/30">
+    <section className="section-sm bg-slate-50">
       <div className="container">
         <AnimatedSection delay={200}>
           <div className="grid grid-4 text-center max-w-4xl mx-auto">
@@ -51,7 +51,7 @@ export const Home: React.FC = () => (
               { value: "24/7", label: "Performance" }
             ].map((stat, index) => (
               <div key={index} className="space-y-2">
-                <div className="text-3xl font-bold text-slate-900 dark:text-white">{stat.value}</div>
+                <div className="text-3xl font-bold text-slate-900">{stat.value}</div>
                 <div className="body-small">{stat.label}</div>
               </div>
             ))}
@@ -65,7 +65,7 @@ export const Home: React.FC = () => (
       <div className="container">
         <AnimatedSection>
           <div className="text-center space-y-4 mb-16">
-            <h2 className="heading-2 text-slate-900 dark:text-white">
+            <h2 className="heading-2 text-slate-900">
               Complete Digital Solutions
             </h2>
             <p className="body-large max-w-3xl mx-auto">
@@ -99,12 +99,12 @@ export const Home: React.FC = () => (
             <AnimatedSection delay={100 * (index + 1)} key={index}>
               <div className="card group h-full">
                 <div className="space-y-6">
-                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/20 rounded-xl flex items-center justify-center group-hover:bg-blue-600 transition-colors duration-300">
+                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center group-hover:bg-blue-600 transition-colors duration-300">
                     <service.icon className="w-6 h-6 text-blue-600 group-hover:text-white transition-colors duration-300" />
                   </div>
                   
                   <div className="space-y-3">
-                    <h3 className="heading-3 text-slate-900 dark:text-white">
+                    <h3 className="heading-3 text-slate-900">
                       {service.title}
                     </h3>
                     <p className="body">
@@ -129,11 +129,11 @@ export const Home: React.FC = () => (
     </section>
 
     {/* Why Choose Us */}
-    <section className="section bg-slate-50 dark:bg-slate-800/30">
+    <section className="section bg-slate-50">
       <div className="container">
         <AnimatedSection>
           <div className="text-center space-y-4 mb-16">
-            <h2 className="heading-2 text-slate-900 dark:text-white">
+            <h2 className="heading-2 text-slate-900">
               Why Choose Script Pilot
             </h2>
             <p className="body-large max-w-3xl mx-auto">
@@ -170,7 +170,7 @@ export const Home: React.FC = () => (
                   <benefit.icon className="w-8 h-8 text-white" />
                 </div>
                 <div className="space-y-3">
-                  <h3 className="heading-3 text-slate-900 dark:text-white">
+                  <h3 className="heading-3 text-slate-900">
                     {benefit.title}
                   </h3>
                   <p className="body">
@@ -189,7 +189,7 @@ export const Home: React.FC = () => (
       <div className="container">
         <AnimatedSection>
           <div className="text-center space-y-4 mb-16">
-            <h2 className="heading-2 text-slate-900 dark:text-white">
+            <h2 className="heading-2 text-slate-900">
               Client Success Stories
             </h2>
             <p className="body-large max-w-3xl mx-auto">
@@ -233,8 +233,8 @@ export const Home: React.FC = () => (
                     "{testimonial.testimonial}"
                   </blockquote>
                   
-                  <div className="border-t border-slate-200 dark:border-slate-700 pt-4 space-y-1">
-                    <p className="font-semibold text-slate-900 dark:text-white">{testimonial.name}</p>
+                  <div className="border-t border-slate-200 pt-4 space-y-1">
+                    <p className="font-semibold text-slate-900">{testimonial.name}</p>
                     <p className="text-blue-600 body-small">{testimonial.company}</p>
                   </div>
                 </div>
@@ -246,7 +246,7 @@ export const Home: React.FC = () => (
     </section>
 
     {/* CTA Section */}
-    <section className="section bg-slate-900 dark:bg-slate-800">
+    <section className="section bg-slate-900">
       <div className="container text-center">
         <AnimatedSection>
           <div className="max-w-3xl mx-auto space-y-8">

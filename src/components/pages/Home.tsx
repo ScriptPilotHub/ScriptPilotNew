@@ -40,7 +40,7 @@ export const Home: React.FC = () => (
     </section>
 
     {/* Stats Section */}
-    <section className="section-sm bg-slate-50">
+    <section className="section-sm bg-blue-50">
       <div className="container">
         <AnimatedSection delay={200}>
           <div className="grid grid-4 text-center max-w-4xl mx-auto">
@@ -51,8 +51,8 @@ export const Home: React.FC = () => (
               { value: "24/7", label: "Performance" }
             ].map((stat, index) => (
               <div key={index} className="space-y-2">
-                <div className="text-3xl font-bold text-slate-900">{stat.value}</div>
-                <div className="body-small">{stat.label}</div>
+                <div className="text-3xl font-bold text-blue-600">{stat.value}</div>
+                <div className="text-sm text-slate-600">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -78,43 +78,46 @@ export const Home: React.FC = () => (
         <div className="grid grid-3 gap-8">
           {[
             {
-              icon: Code,
+              icon: Globe,
               title: "Custom Development",
               description: "Bespoke websites and applications built with modern technologies, optimized for performance and user experience.",
-              features: ["React & TypeScript", "Mobile-First Design", "Performance Optimized"]
+              features: ["React & TypeScript", "Mobile-First Design", "Performance Optimized"],
+              color: "blue"
             },
             {
-              icon: Globe,
+              icon: Code,
               title: "E-commerce Platforms",
               description: "Secure, scalable online stores with integrated payment processing, inventory management, and analytics.",
-              features: ["Stripe Integration", "Inventory Management", "Order Tracking"]
+              features: ["Stripe Integration", "Inventory Management", "Order Tracking"],
+              color: "green"
             },
             {
               icon: Shield,
               title: "Ongoing Support",
               description: "Comprehensive maintenance, security updates, and technical support to keep your digital presence running smoothly.",
-              features: ["Security Monitoring", "Regular Backups", "Performance Optimization"]
+              features: ["Security Monitoring", "Regular Backups", "Performance Optimization"],
+              color: "purple"
             }
           ].map((service, index) => (
             <AnimatedSection delay={100 * (index + 1)} key={index}>
-              <div className="card group h-full">
+              <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-all duration-300 group h-full">
                 <div className="space-y-6">
-                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center group-hover:bg-blue-600 transition-colors duration-300">
-                    <service.icon className="w-6 h-6 text-blue-600 group-hover:text-white transition-colors duration-300" />
+                  <div className={`w-12 h-12 bg-${service.color}-100 rounded-xl flex items-center justify-center group-hover:bg-${service.color}-600 transition-colors duration-300`}>
+                    <service.icon className={`w-6 h-6 text-${service.color}-600 group-hover:text-white transition-colors duration-300`} />
                   </div>
                   
                   <div className="space-y-3">
                     <h3 className="heading-3 text-slate-900">
                       {service.title}
                     </h3>
-                    <p className="body">
+                    <p className="text-slate-600">
                       {service.description}
                     </p>
                   </div>
                   
                   <ul className="space-y-2">
                     {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center gap-3 body-small">
+                      <li key={featureIndex} className="flex items-center gap-3 text-sm text-slate-600">
                         <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
                         {feature}
                       </li>
@@ -165,7 +168,7 @@ export const Home: React.FC = () => (
             }
           ].map((benefit, index) => (
             <AnimatedSection delay={100 * (index + 1)} key={index}>
-              <div className="text-center space-y-4">
+              <div className="bg-white rounded-xl p-6 text-center space-y-4 shadow-sm hover:shadow-md transition-all duration-300">
                 <div className={`w-16 h-16 bg-${benefit.color}-600 rounded-2xl flex items-center justify-center mx-auto shadow-lg`}>
                   <benefit.icon className="w-8 h-8 text-white" />
                 </div>
@@ -173,7 +176,7 @@ export const Home: React.FC = () => (
                   <h3 className="heading-3 text-slate-900">
                     {benefit.title}
                   </h3>
-                  <p className="body">
+                  <p className="text-slate-600">
                     {benefit.description}
                   </p>
                 </div>
@@ -221,7 +224,7 @@ export const Home: React.FC = () => (
             }
           ].map((testimonial, index) => (
             <AnimatedSection delay={index * 100} key={testimonial.name}>
-              <div className="card h-full">
+              <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-all duration-300 h-full">
                 <div className="space-y-6">
                   <div className="flex items-center gap-1">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -229,13 +232,13 @@ export const Home: React.FC = () => (
                     ))}
                   </div>
                   
-                  <blockquote className="body italic">
+                  <blockquote className="text-slate-600 italic">
                     "{testimonial.testimonial}"
                   </blockquote>
                   
-                  <div className="border-t border-slate-200 pt-4 space-y-1">
+                  <div className="border-t border-slate-100 pt-4 space-y-1">
                     <p className="font-semibold text-slate-900">{testimonial.name}</p>
-                    <p className="text-blue-600 body-small">{testimonial.company}</p>
+                    <p className="text-blue-600 text-sm">{testimonial.company}</p>
                   </div>
                 </div>
               </div>
@@ -246,7 +249,7 @@ export const Home: React.FC = () => (
     </section>
 
     {/* CTA Section */}
-    <section className="section bg-slate-900">
+    <section className="section bg-blue-600">
       <div className="container text-center">
         <AnimatedSection>
           <div className="max-w-3xl mx-auto space-y-8">
@@ -254,7 +257,7 @@ export const Home: React.FC = () => (
               <h2 className="heading-2 text-white">
                 Ready to Transform Your Digital Presence?
               </h2>
-              <p className="body-large text-slate-300">
+              <p className="text-lg text-blue-100">
                 Let's discuss your project and create a solution that drives real business results. 
                 Schedule a consultation to get started.
               </p>
@@ -263,13 +266,13 @@ export const Home: React.FC = () => (
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
                 href="#contact"
-                className="btn btn-primary btn-lg"
+                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-300"
               >
                 Start Your Project
               </a>
               <a
                 href="#services"
-                className="btn btn-secondary btn-lg text-slate-300 border-slate-600 hover:text-white hover:border-slate-500"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-300"
               >
                 Learn More
               </a>

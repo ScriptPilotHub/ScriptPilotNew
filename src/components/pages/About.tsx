@@ -26,7 +26,7 @@ export const About: React.FC = () => (
     </section>
 
     {/* Core Values */}
-    <section className="section bg-slate-50">
+    <section className="section bg-blue-50">
       <div className="container">
         <AnimatedSection>
           <div className="text-center space-y-4 mb-16">
@@ -62,7 +62,7 @@ export const About: React.FC = () => (
             }
           ].map((value, index) => (
             <AnimatedSection delay={100 * (index + 1)} key={index}>
-              <div className="card group h-full text-center">
+              <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-all duration-300 group h-full text-center">
                 <div className="space-y-6">
                   <div className={`w-16 h-16 bg-${value.color}-600 rounded-2xl flex items-center justify-center mx-auto shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                     <value.icon className="w-8 h-8 text-white" />
@@ -72,7 +72,7 @@ export const About: React.FC = () => (
                     <h3 className="heading-3 text-slate-900">
                       {value.title}
                     </h3>
-                    <p className="body">
+                    <p className="text-slate-600">
                       {value.description}
                     </p>
                   </div>
@@ -115,7 +115,7 @@ export const About: React.FC = () => (
             }
           ].map((pilot, index) => (
             <AnimatedSection delay={200 * (index + 1)} key={pilot.name}>
-              <div className="card group text-center">
+             <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-all duration-300 group text-center">
                 <div className="space-y-6">
                   <div className="w-24 h-24 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full mx-auto flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <span className="text-3xl font-bold text-white">{pilot.initial}</span>
@@ -128,7 +128,7 @@ export const About: React.FC = () => (
                     <p className="text-blue-600 font-medium">
                       {pilot.role}
                     </p>
-                    <p className="body">
+                   <p className="text-slate-600">
                       {pilot.description}
                     </p>
                   </div>
@@ -177,7 +177,7 @@ export const About: React.FC = () => (
             }
           ].map((approach, index) => (
             <AnimatedSection delay={100 * (index + 1)} key={index}>
-              <div className="text-center space-y-4">
+              <div className="bg-white rounded-xl p-6 text-center space-y-4 shadow-sm hover:shadow-md transition-all duration-300">
                 <div className={`w-16 h-16 bg-${approach.color}-600 rounded-2xl flex items-center justify-center mx-auto shadow-lg`}>
                   <approach.icon className="w-8 h-8 text-white" />
                 </div>
@@ -185,7 +185,7 @@ export const About: React.FC = () => (
                   <h3 className="heading-3 text-slate-900">
                     {approach.title}
                   </h3>
-                  <p className="body">
+                  <p className="text-slate-600">
                     {approach.description}
                   </p>
                 </div>
@@ -197,7 +197,7 @@ export const About: React.FC = () => (
     </section>
 
     {/* CTA Section */}
-    <section className="section bg-slate-900">
+    <section className="section bg-blue-600">
       <div className="container text-center">
         <AnimatedSection>
           <div className="max-w-3xl mx-auto space-y-8">
@@ -205,7 +205,7 @@ export const About: React.FC = () => (
               <h2 className="heading-2 text-white">
                 Ready to Work Together?
               </h2>
-              <p className="body-large text-slate-300">
+              <p className="text-lg text-blue-100">
                 Let's discuss your project and see how we can help bring your vision to life 
                 with a solution that drives real business results.
               </p>
@@ -214,13 +214,13 @@ export const About: React.FC = () => (
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
                 href="#contact"
-                className="btn btn-primary btn-lg"
+                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-300"
               >
                 Start Your Project
               </a>
               <a
                 href="#services"
-                className="btn btn-secondary btn-lg text-white border-slate-600 hover:text-white hover:border-slate-500"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-300"
               >
                 View Our Services
               </a>

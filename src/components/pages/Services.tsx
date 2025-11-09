@@ -40,7 +40,7 @@ export const Services: React.FC = () => (
     </section>
 
     {/* Why Professional Websites Matter */}
-    <section className="section bg-slate-50">
+    <section className="section bg-blue-50">
       <div className="container">
         <AnimatedSection>
           <div className="text-center space-y-4 mb-16">
@@ -82,7 +82,7 @@ export const Services: React.FC = () => (
             }
           ].map((benefit, index) => (
             <AnimatedSection delay={100 * (index + 1)} key={index}>
-              <div className="text-center space-y-4">
+              <div className="bg-white rounded-xl p-6 text-center space-y-4 shadow-sm hover:shadow-md transition-all duration-300">
                 <div className={`w-16 h-16 bg-${benefit.color}-600 rounded-2xl flex items-center justify-center mx-auto shadow-lg`}>
                   <benefit.icon className="w-8 h-8 text-white" />
                 </div>
@@ -90,7 +90,7 @@ export const Services: React.FC = () => (
                   <h3 className="heading-3 text-slate-900">
                     {benefit.title}
                   </h3>
-                  <p className="body">
+                  <p className="text-slate-600">
                     {benefit.description}
                   </p>
                 </div>
@@ -186,9 +186,9 @@ export const Services: React.FC = () => (
             }
           ].map((service, index) => (
             <AnimatedSection delay={100 * (index + 1)} key={index}>
-              <div className="card group h-full">
+              <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-all duration-300 group h-full">
                 <div className="space-y-6">
-                  <div className={`w-12 h-12 bg-${service.color}-100 dark:bg-${service.color}-900/20 rounded-xl flex items-center justify-center group-hover:bg-${service.color}-600 transition-colors duration-300`}>
+                  <div className={`w-12 h-12 bg-${service.color}-100 rounded-xl flex items-center justify-center group-hover:bg-${service.color}-600 transition-colors duration-300`}>
                     <service.icon className={`w-6 h-6 text-${service.color}-600 group-hover:text-white transition-colors duration-300`} />
                   </div>
                   
@@ -200,7 +200,7 @@ export const Services: React.FC = () => (
                   
                   <ul className="space-y-2">
                     {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center gap-3 body-small">
+                      <li key={featureIndex} className="flex items-center gap-3 text-sm text-slate-600">
                         <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
                         {feature}
                       </li>
@@ -248,11 +248,11 @@ export const Services: React.FC = () => (
             }
           ].map((business, index) => (
             <AnimatedSection delay={100 * (index + 1)} key={index}>
-              <div className="text-center space-y-3">
+              <div className="bg-white rounded-xl p-6 text-center space-y-3 shadow-sm hover:shadow-md transition-all duration-300">
                 <h3 className="heading-3 text-slate-900">
                   {business.title}
                 </h3>
-                <p className="body">
+                <p className="text-slate-600">
                   {business.description}
                 </p>
               </div>
@@ -299,7 +299,7 @@ export const Services: React.FC = () => (
             }
           ].map((cost, index) => (
             <AnimatedSection delay={100 * (index + 1)} key={index}>
-              <div className="text-center space-y-4">
+              <div className="bg-white rounded-xl p-6 text-center space-y-4 shadow-sm hover:shadow-md transition-all duration-300">
                 <div className={`w-16 h-16 bg-${cost.color}-600 rounded-2xl flex items-center justify-center mx-auto shadow-lg`}>
                   <cost.icon className="w-8 h-8 text-white" />
                 </div>
@@ -307,7 +307,7 @@ export const Services: React.FC = () => (
                   <h3 className="heading-3 text-slate-900">
                     {cost.title}
                   </h3>
-                  <p className="body">
+                  <p className="text-slate-600">
                     {cost.description}
                   </p>
                 </div>
@@ -319,7 +319,7 @@ export const Services: React.FC = () => (
     </section>
 
     {/* CTA Section */}
-    <section className="section bg-slate-900">
+    <section className="section bg-blue-600">
       <div className="container text-center">
         <AnimatedSection>
           <div className="max-w-3xl mx-auto space-y-8">
@@ -327,7 +327,7 @@ export const Services: React.FC = () => (
               <h2 className="heading-2 text-white">
                 Ready to Transform Your Business?
               </h2>
-              <p className="body-large text-slate-300">
+              <p className="text-lg text-blue-100">
                 Don't let another day pass without a professional online presence. 
                 Let's discuss how our complete solution can help your business grow.
               </p>
@@ -338,13 +338,13 @@ export const Services: React.FC = () => (
                 href="https://calendly.com/t6ckmedia/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-primary btn-lg"
+                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-300"
               >
                 Get Free Consultation
               </a>
               <a
                 href="#about"
-                className="btn btn-secondary btn-lg text-white border-slate-600 hover:text-white hover:border-slate-500"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-300"
               >
                 Learn About Us
               </a>

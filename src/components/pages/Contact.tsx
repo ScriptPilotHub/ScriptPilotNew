@@ -143,20 +143,7 @@ export const Contact: React.FC = () => {
       // Uncomment the line below to test form submission
       // testFormSubmission();
     }
-  }, []);</parameter>
-        form.reset();
-      } else {
-        setStatus('There was an error sending your message. Please try again.');
-      }
-    })
-    .catch(() => {
-      setStatus('There was an error sending your message. Please try again.');
-    })
-    .finally(() => {
-      setIsSubmitting(false);
-      setTimeout(() => setStatus(''), 5000);
-    });
-  };
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">
@@ -199,11 +186,8 @@ export const Contact: React.FC = () => {
 
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <input type="hidden" name="_to" value="t6ckmedia@gmail.com" />
-                    <input type="hidden" name="_replyto" value="t6ckmedia@gmail.com" />
                     <input type="hidden" name="_subject" value="New Contact Form Submission - Script Pilot" />
-                    <input type="hidden" name="_next" value={window.location.href} />
-                    <input type="hidden" name="_captcha" value="false" />
-                    <input type="hidden" name="_template" value="table" />
+                    <input type="hidden" name="_next" value="https://scriptpilotshop.netlify.app/#contact" />
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -212,11 +196,8 @@ export const Contact: React.FC = () => {
                         <input 
                           type="text" 
                           name="name" 
-                          value={formData.name}
-                          onChange={handleInputChange}
                           placeholder="Your Name" 
-                          className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 pl-10 pr-4 py-3 transition-colors duration-200 focus:outline-none" 
-                          autoComplete="name"
+                          className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 pl-10 pr-4 py-3 transition-colors duration-200" 
                           required 
                         />
                       </div>
@@ -227,11 +208,8 @@ export const Contact: React.FC = () => {
                         <input 
                           type="email" 
                           name="email" 
-                          value={formData.email}
-                          onChange={handleInputChange}
                           placeholder="Your Email" 
-                          className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 pl-10 pr-4 py-3 transition-colors duration-200 focus:outline-none" 
-                          autoComplete="email"
+                          className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 pl-10 pr-4 py-3 transition-colors duration-200" 
                           required 
                         />
                       </div>
@@ -239,12 +217,9 @@ export const Contact: React.FC = () => {
                     <div className="relative">
                       <textarea 
                         name="message" 
-                        value={formData.message}
-                        onChange={handleInputChange}
                         rows={5} 
                         placeholder="Tell us about your project..." 
-                        className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 px-4 py-3 transition-colors duration-200 focus:outline-none resize-vertical" 
-                        minLength={10}
+                        className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 px-4 py-3 transition-colors duration-200" 
                         required
                       />
                     </div>
@@ -252,7 +227,7 @@ export const Contact: React.FC = () => {
                       <button 
                         type="submit" 
                         disabled={isSubmitting}
-                        className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 w-full disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                        className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 w-full disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         {isSubmitting ? 'Sending...' : 'Send Message'}
                       </button>
@@ -260,17 +235,9 @@ export const Contact: React.FC = () => {
                   </form>
                   {status && (
                     <p className={`text-center font-medium ${
-                      status.includes('❌') || status.includes('error') || status.includes('Error')
+                      status.includes('error') || status.includes('Error')
                         ? 'text-red-600'
-                        : status.includes('✅')
-                        ? 'text-green-600'
-                        : 'text-blue-600'
-                    } p-4 bg-white rounded-lg border ${
-                      status.includes('❌') || status.includes('error') || status.includes('Error')
-                        ? 'border-red-200 bg-red-50'
-                        : status.includes('✅')
-                        ? 'border-green-200 bg-green-50'
-                        : 'border-blue-200 bg-blue-50'
+                        : 'text-green-600'
                     }`}>
                       {status}
                     </p>
@@ -318,12 +285,8 @@ export const Contact: React.FC = () => {
                         <Phone className="w-6 h-6 text-blue-600" />
                       </div>
                       <div>
-                        <p className="font-medium text-slate-900">Direct Contact</p>
-                        <p className="text-sm text-slate-600">
-                          <a href="mailto:t6ckmedia@gmail.com" className="text-blue-600 hover:text-blue-700">
-                            t6ckmedia@gmail.com
-                          </a>
-                        </p>
+                        <p className="font-medium text-slate-900">Phone</p>
+                        <p className="text-sm text-slate-600">Available during consultation calls</p>
                       </div>
                     </div>
                     
@@ -343,28 +306,9 @@ export const Contact: React.FC = () => {
                       </div>
                       <div>
                         <p className="font-medium text-slate-900">Response Time</p>
-                        <p className="text-sm text-slate-600">Within 24 hours guaranteed</p>
+                        <p className="text-sm text-slate-600">Within 24 hours</p>
                       </div>
                     </div>
-                    
-                    {/* Emergency Contact Notice */}
-                    <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-6">
-                      <div className="flex items-start gap-3">
-                        <div className="w-6 h-6 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <span className="text-yellow-600 text-sm font-bold">!</span>
-                        </div>
-                        <div>
-                          <p className="font-medium text-yellow-800 text-sm">Having form issues?</p>
-                          <p className="text-yellow-700 text-sm mt-1">
-                            If the contact form isn't working, please email us directly at{' '}
-                            <a href="mailto:t6ckmedia@gmail.com" className="font-medium underline">
-                              t6ckmedia@gmail.com
-                            </a>{' '}
-                            or schedule a call above. We respond to all inquiries within 24 hours.
-                          </p>
-                        </div>
-                      </div>
-                    </div></parameter>
                   </div>
                 </div>
               </div>

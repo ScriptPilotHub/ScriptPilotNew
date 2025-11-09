@@ -12,17 +12,6 @@ import { usePathname } from './hooks/usePathname';
 function App() {
   const currentRoute = usePathname();
 
-  // Add dark mode support
-  React.useEffect(() => {
-    // Check for saved theme preference or default to light mode
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-      document.documentElement.setAttribute('data-theme', 'dark');
-    }
-  }, []);
-
   const renderPage = () => {
     const baseRoute = currentRoute.split('/')[0];
 
@@ -31,7 +20,6 @@ function App() {
       case '':
         return <Home />;
       case 'services':
-      case 'web-design':
         return <Services />;
       case 'about':
         return <About />;
@@ -47,9 +35,9 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="min-h-screen bg-white">
       <Header />
-      <main className="flex-grow">
+      <main>
         {renderPage()}
       </main>
       <Footer />

@@ -29,7 +29,7 @@ export const Header: React.FC = () => {
         ? 'bg-white/95 backdrop-blur-sm shadow-sm border-b border-slate-200' 
         : 'bg-transparent'
     }`}>
-      <div className="container">
+      <div className="max-w-6xl mx-auto px-4">
         <div className={`flex items-center justify-between transition-all duration-300 ${
           isScrolled ? 'h-16' : 'h-20'
         }`}>
@@ -66,7 +66,7 @@ export const Header: React.FC = () => {
       
       {isOpen && (
         <div className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-slate-200/50">
-          <nav className="container py-4 space-y-1">
+          <nav className="max-w-6xl mx-auto px-4 py-4 space-y-1">
             {navLinks.map(link => (
               <a
                 key={link.href}

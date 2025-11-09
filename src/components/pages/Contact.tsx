@@ -305,8 +305,12 @@ export const Contact: React.FC = () => {
                         <Phone className="w-6 h-6 text-blue-600" />
                       </div>
                       <div>
-                        <p className="font-medium text-slate-900">Phone</p>
-                        <p className="text-sm text-slate-600">Available during consultation calls</p>
+                        <p className="font-medium text-slate-900">Direct Contact</p>
+                        <p className="text-sm text-slate-600">
+                          <a href="mailto:t6ckmedia@gmail.com" className="text-blue-600 hover:text-blue-700">
+                            t6ckmedia@gmail.com
+                          </a>
+                        </p>
                       </div>
                     </div>
                     
@@ -326,7 +330,26 @@ export const Contact: React.FC = () => {
                       </div>
                       <div>
                         <p className="font-medium text-slate-900">Response Time</p>
-                        <p className="text-sm text-slate-600">Within 24 hours</p>
+                        <p className="text-sm text-slate-600">Within 24 hours guaranteed</p>
+                      </div>
+                    </div>
+                    
+                    {/* Emergency Contact Notice */}
+                    <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-6">
+                      <div className="flex items-start gap-3">
+                        <div className="w-6 h-6 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <span className="text-yellow-600 text-sm font-bold">!</span>
+                        </div>
+                        <div>
+                          <p className="font-medium text-yellow-800 text-sm">Having form issues?</p>
+                          <p className="text-yellow-700 text-sm mt-1">
+                            If the contact form isn't working, please email us directly at{' '}
+                            <a href="mailto:t6ckmedia@gmail.com" className="font-medium underline">
+                              t6ckmedia@gmail.com
+                            </a>{' '}
+                            or schedule a call above. We respond to all inquiries within 24 hours.
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>

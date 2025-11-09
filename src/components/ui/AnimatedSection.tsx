@@ -17,10 +17,10 @@ export const AnimatedSection: React.FC<AnimatedSectionProps> = ({
   return (
     <div 
       ref={ref} 
-      className={`transition-all duration-700 ease-out ${
+      className={`transition-all duration-500 ease-out ${
         entry?.isIntersecting 
-          ? 'opacity-100 translate-y-0 scale-100' 
-          : 'opacity-0 translate-y-4 scale-98'
+          ? 'opacity-100 translate-y-0' 
+          : 'opacity-0 translate-y-4'
       } ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
     >

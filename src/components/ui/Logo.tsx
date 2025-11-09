@@ -1,7 +1,12 @@
 import React from 'react';
 
 export const Logo: React.FC = () => (
-  <span className="text-2xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 bg-[length:200%_200%] animate-gradient-x">
-    Script Pilot
-  </span>
+  <div className="flex items-center gap-3">
+    <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+      <span className="text-white font-bold text-sm">SP</span>
+    </div>
+    <span className="text-xl font-semibold tracking-tight text-slate-900 dark:text-white">
+      Script Pilot
+    </span>
+  </div>
 );

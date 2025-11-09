@@ -19,7 +19,6 @@ export const Footer: React.FC = () => (
               Serving businesses nationwide
             </p>
             <p className="body-small text-slate-500 dark:text-slate-500">
-            <p className="body-small text-slate-500">
               © 2025 Script Pilot. All rights reserved.
             </p>
           </div>
@@ -28,4 +27,3 @@ export const Footer: React.FC = () => (
     </div>
   </footer>
 );
-)

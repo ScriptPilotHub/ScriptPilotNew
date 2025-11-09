@@ -40,7 +40,7 @@ export const Home: React.FC = () => (
     </section>
 
     {/* Stats Section */}
-    <section className="section-sm bg-blue-50">
+    <section className="section bg-blue-50">
       <div className="container">
         <AnimatedSection delay={200}>
           <div className="grid grid-4 text-center max-w-4xl mx-auto">
@@ -50,8 +50,8 @@ export const Home: React.FC = () => (
               { value: "2-8", label: "Week Delivery" },
               { value: "24/7", label: "Performance" }
             ].map((stat, index) => (
-              <div key={index} className="space-y-2">
-                <div className="text-3xl font-bold text-blue-600">{stat.value}</div>
+              <div key={index} className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="text-2xl font-bold text-blue-600">{stat.value}</div>
                 <div className="text-sm text-slate-600">{stat.label}</div>
               </div>
             ))}

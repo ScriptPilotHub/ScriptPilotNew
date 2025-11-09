@@ -16,25 +16,43 @@ export const Contact: React.FC = () => {
     const message = formData.get('message') as string;
 
     setIsSubmitting(true);
-    setStatus('Sending your message...');
+    setStatus('Preparing to send your message...');
 
-    // Direct email approach - this ALWAYS works
-    const subject = encodeURIComponent(`New Contact from ${name} - Script Pilot`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n\n---\nSent from Script Pilot contact form`);
-    const mailtoLink = `mailto:t6ckmedia@gmail.com?subject=${subject}&body=${body}`;
-    
-    // Small delay to show sending status
-    setTimeout(() => {
-      setStatus(`✅ Opening your email client to send the message...`);
-      window.location.href = mailtoLink;
-      setIsSubmitting(false);
-      
-      // Reset form after sending
-      setTimeout(() => {
+    try {
+      // Use Netlify Forms
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          'form-name': 'contact',
+          'name': name,
+          'email': email,
+          'message': message
+        }).toString()
+      });
+
+      if (response.ok) {
+        setStatus('✅ Message sent successfully! We\'ll get back to you within 24 hours.');
         form.reset();
-        setStatus('');
-      }, 3000);
-    }, 1000);
+      } else {
+        throw new Error('Network response was not ok');
+      }
+    } catch (error) {
+      // Fallback to mailto if Netlify forms fail
+      const subject = encodeURIComponent(`New Contact from ${name} - Script Pilot`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n\n---\nSent from Script Pilot contact form`);
+      const mailtoLink = `mailto:t6ckmedia@gmail.com?subject=${subject}&body=${body}`;
+      
+      setStatus('Opening your email client to send the message...');
+      window.location.href = mailtoLink;
+    }
+    
+    setIsSubmitting(false);
+    
+    // Clear status after 5 seconds
+    setTimeout(() => {
+      setStatus('');
+    }, 5000);
   };
 
   return (
@@ -77,6 +95,7 @@ export const Contact: React.FC = () => {
                   </div>
 
                   <form onSubmit={handleSubmit} className="space-y-6">
+                    <input type="hidden" name="form-name" value="contact" />
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">

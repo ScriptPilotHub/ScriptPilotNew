@@ -53,14 +53,14 @@ export const About: React.FC = () => (
               icon: Users,
               title: "🤝 Collaboration",
               description: "Your vision, our expertise. We build great things together through clear communication and shared goals. Partnership is at the heart of everything we do.",
-              image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
+              image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800",
               color: "green"
             },
             {
               icon: Award,
               title: "🏆 Quality",
               description: "Uncompromising commitment to performance, design, and reliability in every project we deliver. Excellence is our standard, not our goal.",
-              image: "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=800",
+              image: "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=800",
               color: "purple"
             }
           ].map((value, index) => (

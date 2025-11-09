@@ -2,7 +2,7 @@ import React from 'react';
 import { CreditCard, Shield, FileText } from 'lucide-react';
 import { AnimatedSection } from '../ui/AnimatedSection';
 
-export const PaymentPortal: React.FC = () => (
+export const About: React.FC = () => (
   <div className="min-h-screen bg-white">
     {/* Hero Section */}
     <section className="section-lg pt-32">

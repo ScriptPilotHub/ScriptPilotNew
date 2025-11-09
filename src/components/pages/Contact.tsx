@@ -261,8 +261,11 @@ export const Contact: React.FC = () => {
                         <Phone className="w-6 h-6 text-blue-600" />
                       </div>
                       <div>
-                        <p className="font-medium text-slate-900">Direct Contact</p>
+                        <p className="font-medium text-slate-900">Phone & Email</p>
                         <p className="text-sm text-slate-600">
+                          <a href="tel:4174010015" className="text-blue-600 hover:text-blue-700 block">
+                            (417) 401-0015
+                          </a>
                           <a href="mailto:t6ckmedia@gmail.com" className="text-blue-600 hover:text-blue-700">
                             t6ckmedia@gmail.com
                           </a>

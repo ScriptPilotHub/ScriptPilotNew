@@ -8,17 +8,36 @@ export const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setStatus('Sending...');
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     
-    setTimeout(() => {
-      const formData = new FormData(e.currentTarget);
-      const name = formData.get('name') as string;
+    setIsSubmitting(true);
+    setStatus('Sending your message...');
+
+    // Submit to Formspree (free form handling service)
+    fetch('https://formspree.io/f/xpwzgqpv', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        const name = formData.get('name') as string;
+        setStatus(`Thank you, ${name}! Your message has been sent successfully.`);
+        form.reset();
+      } else {
+        setStatus('There was an error sending your message. Please try again.');
+      }
+    })
+    .catch(() => {
+      setStatus('There was an error sending your message. Please try again.');
+    })
+    .finally(() => {
       setIsSubmitting(false);
-      setStatus(`Thank you, ${name}! Your message has been sent.`);
-      e.currentTarget.reset();
       setTimeout(() => setStatus(''), 5000);
-    }, 1500);
+    });
   };
 
   return (
@@ -61,6 +80,9 @@ export const Contact: React.FC = () => {
                   </div>
 
                   <form onSubmit={handleSubmit} className="space-y-6">
+                    <input type="hidden" name="_to" value="t6ckmedia@gmail.com" />
+                    <input type="hidden" name="_subject" value="New Contact Form Submission - Script Pilot" />
+                    <input type="hidden" name="_next" value="https://scriptpilotshop.netlify.app/#contact" />
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -107,7 +129,11 @@ export const Contact: React.FC = () => {
                     </div>
                   </form>
                   {status && (
-                    <p className="text-center text-green-600 dark:text-green-400 font-medium">
+                    <p className={`text-center font-medium ${
+                      status.includes('error') || status.includes('Error')
+                        ? 'text-red-600 dark:text-red-400'
+                        : 'text-green-600 dark:text-green-400'
+                    }`}>
                       {status}
                     </p>
                   )}

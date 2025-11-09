@@ -44,21 +44,21 @@ export const About: React.FC = () => (
           {[
             {
               icon: Lightbulb,
-              title: "Innovation",
+              title: "💡 Innovation",
               description: "Pushing boundaries with modern technology and creative solutions that set your business apart from the competition. We stay ahead of trends to keep you competitive.",
               image: "https://images.pexels.com/photos/355948/pexels-photo-355948.jpeg?auto=compress&cs=tinysrgb&w=800",
               color: "blue"
             },
             {
               icon: Users,
-              title: "Collaboration",
+              title: "🤝 Collaboration",
               description: "Your vision, our expertise. We build great things together through clear communication and shared goals. Partnership is at the heart of everything we do.",
               image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
               color: "green"
             },
             {
               icon: Award,
-              title: "Quality",
+              title: "🏆 Quality",
               description: "Uncompromising commitment to performance, design, and reliability in every project we deliver. Excellence is our standard, not our goal.",
               image: "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=800",
               color: "purple"

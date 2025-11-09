@@ -136,7 +136,8 @@ export const Services: React.FC = () => (
                 "Secure payment processing (Stripe, PayPal)",
                 "Product catalog and inventory management",
                 "Shopping cart and checkout optimization",
-                "Order tracking and customer accounts"
+              description: "Bespoke websites and applications built with modern technologies, optimized for performance and user experience. From concept to deployment, we handle every detail.",
+              image: "https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=800",
               ],
               color: "green"
             },
@@ -169,7 +170,8 @@ export const Services: React.FC = () => (
                 "Search engine optimization (SEO)",
                 "Google Business Profile setup",
                 "Local search optimization",
-                "Email marketing integration"
+              description: "Secure, scalable online stores with integrated payment processing, inventory management, and analytics. Turn visitors into customers with optimized shopping experiences.",
+              image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
               ],
               color: "yellow"
             },
@@ -180,13 +182,22 @@ export const Services: React.FC = () => (
                 "One month of free support",
                 "Security monitoring and updates",
                 "Regular backups and maintenance",
-                "Optional monthly protection plans"
+              description: "Comprehensive maintenance, security updates, and technical support to keep your digital presence running smoothly. We're your long-term technology partners.",
+              image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800",
               ],
               color: "red"
             }
           ].map((service, index) => (
             <AnimatedSection delay={100 * (index + 1)} key={index}>
-              <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-all duration-300 group h-full">
+              <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group h-full">
+                <div className="h-48 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
                 <div className="space-y-6">
                   <div className={`w-12 h-12 bg-${service.color}-100 rounded-xl flex items-center justify-center group-hover:bg-${service.color}-600 transition-colors duration-300`}>
                     <service.icon className={`w-6 h-6 text-${service.color}-600 group-hover:text-white transition-colors duration-300`} />
@@ -207,6 +218,7 @@ export const Services: React.FC = () => (
                     ))}
                   </ul>
                 </div>
+              </div>
               </div>
             </AnimatedSection>
           ))}

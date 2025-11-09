@@ -254,194 +254,194 @@ export const FAQ: React.FC = () => {
     <div className="min-h-screen bg-white">
       <section className="section-lg pt-32">
         <div className="container">
-        <AnimatedSection>
-          <div className="text-center mb-16">
-            <h1 className="heading-1 text-slate-900 mb-6">
-              Frequently Asked Questions
-            </h1>
-            <p className="body-large max-w-3xl mx-auto mb-8">
-              Everything you need to know about working with Script Pilot. Can't find what you're looking for? We're here to help.
-            </p>
-            
-            {/* Quick Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
-              <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
-                <div className="text-2xl font-bold text-blue-600">100+</div>
-                <div className="text-sm text-slate-600">Projects Completed</div>
-              </div>
-              <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
-                <div className="text-2xl font-bold text-blue-600">2-8</div>
-                <div className="text-sm text-slate-600">Weeks Delivery</div>
-              </div>
-              <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
-                <div className="text-2xl font-bold text-blue-600">24/7</div>
-                <div className="text-sm text-slate-600">Site Performance</div>
-              </div>
-              <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
-                <div className="text-2xl font-bold text-blue-600">30</div>
-                <div className="text-sm text-slate-600">Days Free Support</div>
+          <AnimatedSection>
+            <div className="text-center mb-16">
+              <h1 className="heading-1 text-slate-900 mb-6">
+                Frequently Asked Questions
+              </h1>
+              <p className="body-large max-w-3xl mx-auto mb-8">
+                Everything you need to know about working with Script Pilot. Can't find what you're looking for? We're here to help.
+              </p>
+              
+              {/* Quick Stats */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
+                <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
+                  <div className="text-2xl font-bold text-blue-600">100+</div>
+                  <div className="text-sm text-slate-600">Projects Completed</div>
+                </div>
+                <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
+                  <div className="text-2xl font-bold text-blue-600">2-8</div>
+                  <div className="text-sm text-slate-600">Weeks Delivery</div>
+                </div>
+                <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
+                  <div className="text-2xl font-bold text-blue-600">24/7</div>
+                  <div className="text-sm text-slate-600">Site Performance</div>
+                </div>
+                <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
+                  <div className="text-2xl font-bold text-blue-600">30</div>
+                  <div className="text-sm text-slate-600">Days Free Support</div>
+                </div>
               </div>
             </div>
-          </div>
-        </AnimatedSection>
+          </AnimatedSection>
         </div>
       </section>
 
         {/* Category Filter */}
       <section className="section bg-blue-50">
         <div className="container">
-        <AnimatedSection delay={200}>
-          <div className="mb-12">
-            <div className="flex flex-col sm:flex-row items-center justify-between mb-8">
-              <h2 className="heading-2 text-slate-900 mb-4 sm:mb-0">Browse by Category</h2>
-              <button
-                onClick={handleShowAll}
-                className={`btn transition-all duration-300 ${
-                  !selectedCategory 
-                    ? 'btn-primary' 
-                    : 'btn-secondary'
-                }`}
-              >
-                Show All ({faqs.length})
-              </button>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-              {categories.map((category, index) => {
-                const categoryCount = faqs.filter(faq => faq.category === category.name).length;
-                const isSelected = selectedCategory === category.name;
-                
-                return (
-                  <button
-                    key={category.name}
-                    onClick={() => handleCategorySelect(category.name)}
-                    className={`bg-white rounded-xl border p-4 text-center transition-all duration-300 group hover:scale-105 shadow-sm hover:shadow-md ${
-                      isSelected 
-                        ? `border-blue-500 bg-blue-50` 
-                        : `border-slate-200 hover:border-blue-300`
-                    }`}
-                  >
-                    <category.icon className={`w-8 h-8 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300 ${
-                      isSelected 
-                        ? `text-blue-600` 
-                        : `text-blue-500`
-                    }`} />
-                    <div className={`text-sm font-medium mb-1 transition-colors duration-300 ${
-                      isSelected 
-                        ? `text-slate-900` 
-                        : `text-slate-700`
-                    }`}>
-                      {category.name}
-                    </div>
-                    <div className="text-xs text-slate-500">
-                      {categoryCount} question{categoryCount !== 1 ? 's' : ''}
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
-            
-            {/* Active Filter Indicator */}
-            {selectedCategory && (
-              <div className="mt-6 flex items-center justify-center">
-                <div className="bg-blue-50 rounded-full px-6 py-2 border border-blue-200">
-                  <span className="text-slate-700">Showing </span>
-                  <span className="text-blue-600 font-semibold">{selectedCategory}</span>
-                  <span className="text-slate-700"> questions ({filteredFaqs.length})</span>
-                  <button
-                    onClick={handleShowAll}
-                    className="ml-3 text-slate-500 hover:text-slate-700 transition-colors duration-300"
-                  >
-                    ✕
-                  </button>
-                </div>
+          <AnimatedSection delay={200}>
+            <div className="mb-12">
+              <div className="flex flex-col sm:flex-row items-center justify-between mb-8">
+                <h2 className="heading-2 text-slate-900 mb-4 sm:mb-0">Browse by Category</h2>
+                <button
+                  onClick={handleShowAll}
+                  className={`btn transition-all duration-300 ${
+                    !selectedCategory 
+                      ? 'btn-primary' 
+                      : 'btn-secondary'
+                  }`}
+                >
+                  Show All ({faqs.length})
+                </button>
               </div>
-            )}
-          </div>
-        </AnimatedSection>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                {categories.map((category, index) => {
+                  const categoryCount = faqs.filter(faq => faq.category === category.name).length;
+                  const isSelected = selectedCategory === category.name;
+                  
+                  return (
+                    <button
+                      key={category.name}
+                      onClick={() => handleCategorySelect(category.name)}
+                      className={`bg-white rounded-xl border p-4 text-center transition-all duration-300 group hover:scale-105 shadow-sm hover:shadow-md ${
+                        isSelected 
+                          ? `border-blue-500 bg-blue-50` 
+                          : `border-slate-200 hover:border-blue-300`
+                      }`}
+                    >
+                      <category.icon className={`w-8 h-8 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300 ${
+                        isSelected 
+                          ? `text-blue-600` 
+                          : `text-blue-500`
+                      }`} />
+                      <div className={`text-sm font-medium mb-1 transition-colors duration-300 ${
+                        isSelected 
+                          ? `text-slate-900` 
+                          : `text-slate-700`
+                      }`}>
+                        {category.name}
+                      </div>
+                      <div className="text-xs text-slate-500">
+                        {categoryCount} question{categoryCount !== 1 ? 's' : ''}
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+              
+              {/* Active Filter Indicator */}
+              {selectedCategory && (
+                <div className="mt-6 flex items-center justify-center">
+                  <div className="bg-blue-50 rounded-full px-6 py-2 border border-blue-200">
+                    <span className="text-slate-700">Showing </span>
+                    <span className="text-blue-600 font-semibold">{selectedCategory}</span>
+                    <span className="text-slate-700"> questions ({filteredFaqs.length})</span>
+                    <button
+                      onClick={handleShowAll}
+                      className="ml-3 text-slate-500 hover:text-slate-700 transition-colors duration-300"
+                    >
+                      ✕
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+          </AnimatedSection>
         </div>
       </section>
         
         {/* FAQ Items */}
       <section className="section">
         <div className="container">
-        <AnimatedSection delay={300}>
-          <div className="max-w-4xl mx-auto">
-            {filteredFaqs.length > 0 ? (
-              filteredFaqs.map((faq, index) => (
-                <FAQItem
-                  key={`${selectedCategory}-${index}`}
-                  question={faq.question}
-                  answer={faq.answer}
-                  category={selectedCategory ? undefined : faq.category}
-                  isOpen={openIndex === index}
-                  onToggle={() => setOpenIndex(openIndex === index ? null : index)}
-                />
-              ))
-            ) : (
-              <div className="text-center py-12">
-                <p className="text-slate-600 text-lg">No questions found for this category.</p>
-              </div>
-            )}
-          </div>
-        </AnimatedSection>
+          <AnimatedSection delay={300}>
+            <div className="max-w-4xl mx-auto">
+              {filteredFaqs.length > 0 ? (
+                filteredFaqs.map((faq, index) => (
+                  <FAQItem
+                    key={`${selectedCategory}-${index}`}
+                    question={faq.question}
+                    answer={faq.answer}
+                    category={selectedCategory ? undefined : faq.category}
+                    isOpen={openIndex === index}
+                    onToggle={() => setOpenIndex(openIndex === index ? null : index)}
+                  />
+                ))
+              ) : (
+                <div className="text-center py-12">
+                  <p className="text-slate-600 text-lg">No questions found for this category.</p>
+                </div>
+              )}
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
         {/* Still Have Questions Section */}
       <section className="section bg-blue-50">
         <div className="container">
-        <AnimatedSection delay={500}>
-          <div className="bg-white rounded-xl border border-slate-200 p-8 text-center max-w-4xl mx-auto shadow-sm">
-            <HelpCircle className="w-16 h-16 text-blue-600 mx-auto mb-6" />
-            <h3 className="heading-3 text-slate-900 mb-4">Still Have Questions?</h3>
-            <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
-              We're here to help! Get in touch with our team for personalized answers to your specific questions.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a
-                href="#contact"
-                className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 flex items-center gap-2"
-              >
-                <MessageCircle className="w-5 h-5" />
-                Send a Message
-              </a>
-              <a
-                href="https://calendly.com/t6ckmedia/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border-2 border-slate-300 text-slate-700 px-6 py-3 rounded-lg font-semibold hover:border-blue-600 hover:text-blue-600 transition-colors duration-300 flex items-center gap-2"
-              >
-                <Phone className="w-5 h-5" />
-                Schedule a Call
-              </a>
+          <AnimatedSection delay={500}>
+            <div className="bg-white rounded-xl border border-slate-200 p-8 text-center max-w-4xl mx-auto shadow-sm">
+              <HelpCircle className="w-16 h-16 text-blue-600 mx-auto mb-6" />
+              <h3 className="heading-3 text-slate-900 mb-4">Still Have Questions?</h3>
+              <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
+                We're here to help! Get in touch with our team for personalized answers to your specific questions.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a
+                  href="#contact"
+                  className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 flex items-center gap-2"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  Send a Message
+                </a>
+                <a
+                  href="https://calendly.com/t6ckmedia/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border-2 border-slate-300 text-slate-700 px-6 py-3 rounded-lg font-semibold hover:border-blue-600 hover:text-blue-600 transition-colors duration-300 flex items-center gap-2"
+                >
+                  <Phone className="w-5 h-5" />
+                  Schedule a Call
+                </a>
+              </div>
             </div>
-          </div>
-        </AnimatedSection>
+          </AnimatedSection>
         </div>
       </section>
 
         {/* Trust Indicators */}
       <section className="section">
         <div className="container">
-        <AnimatedSection delay={600}>
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            <div className="bg-white rounded-xl border border-slate-200 p-6 text-center shadow-sm hover:shadow-md transition-all duration-300">
-              <Shield className="w-12 h-12 text-green-600 mx-auto mb-4" />
-              <h4 className="text-lg font-semibold text-slate-900 mb-2">Secure & Reliable</h4>
-              <p className="text-sm text-slate-600">SSL certificates, regular backups, and enterprise-grade security for all projects.</p>
+          <AnimatedSection delay={600}>
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              <div className="bg-white rounded-xl border border-slate-200 p-6 text-center shadow-sm hover:shadow-md transition-all duration-300">
+                <Shield className="w-12 h-12 text-green-600 mx-auto mb-4" />
+                <h4 className="text-lg font-semibold text-slate-900 mb-2">Secure & Reliable</h4>
+                <p className="text-sm text-slate-600">SSL certificates, regular backups, and enterprise-grade security for all projects.</p>
+              </div>
+              <div className="bg-white rounded-xl border border-slate-200 p-6 text-center shadow-sm hover:shadow-md transition-all duration-300">
+                <Users className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                <h4 className="text-lg font-semibold text-slate-900 mb-2">Dedicated Support</h4>
+                <p className="text-sm text-slate-600">Personal attention from our experienced team throughout your project and beyond.</p>
+              </div>
+              <div className="bg-white rounded-xl border border-slate-200 p-6 text-center shadow-sm hover:shadow-md transition-all duration-300">
+                <CheckCircle className="w-12 h-12 text-purple-600 mx-auto mb-4" />
+                <h4 className="text-lg font-semibold text-slate-900 mb-2">Proven Results</h4>
+                <p className="text-sm text-slate-600">Hundreds of successful projects helping businesses grow their online presence.</p>
+              </div>
             </div>
-            <div className="bg-white rounded-xl border border-slate-200 p-6 text-center shadow-sm hover:shadow-md transition-all duration-300">
-              <Users className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-              <h4 className="text-lg font-semibold text-slate-900 mb-2">Dedicated Support</h4>
-              <p className="text-sm text-slate-600">Personal attention from our experienced team throughout your project and beyond.</p>
-            </div>
-            <div className="bg-white rounded-xl border border-slate-200 p-6 text-center shadow-sm hover:shadow-md transition-all duration-300">
-              <CheckCircle className="w-12 h-12 text-purple-600 mx-auto mb-4" />
-              <h4 className="text-lg font-semibold text-slate-900 mb-2">Proven Results</h4>
-              <p className="text-sm text-slate-600">Hundreds of successful projects helping businesses grow their online presence.</p>
-            </div>
-          </div>
-        </AnimatedSection>
+          </AnimatedSection>
         </div>
       </section>
     </div>

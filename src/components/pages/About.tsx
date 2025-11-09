@@ -45,24 +45,35 @@ export const About: React.FC = () => (
             {
               icon: Lightbulb,
               title: "Innovation",
-              description: "Pushing boundaries with modern technology and creative solutions that set your business apart from the competition.",
+              description: "Pushing boundaries with modern technology and creative solutions that set your business apart from the competition. We stay ahead of trends to keep you competitive.",
+              image: "https://images.pexels.com/photos/355948/pexels-photo-355948.jpeg?auto=compress&cs=tinysrgb&w=800",
               color: "blue"
             },
             {
               icon: Users,
               title: "Collaboration",
-              description: "Your vision, our expertise. We build great things together through clear communication and shared goals.",
+              description: "Your vision, our expertise. We build great things together through clear communication and shared goals. Partnership is at the heart of everything we do.",
+              image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
               color: "green"
             },
             {
               icon: Award,
               title: "Quality",
-              description: "Uncompromising commitment to performance, design, and reliability in every project we deliver.",
+              description: "Uncompromising commitment to performance, design, and reliability in every project we deliver. Excellence is our standard, not our goal.",
+              image: "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=800",
               color: "purple"
             }
           ].map((value, index) => (
             <AnimatedSection delay={100 * (index + 1)} key={index}>
-              <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-all duration-300 group h-full text-center">
+              <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group h-full">
+                <div className="h-48 overflow-hidden">
+                  <img 
+                    src={value.image} 
+                    alt={value.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6 text-center">
                 <div className="space-y-6">
                   <div className={`w-16 h-16 bg-${value.color}-600 rounded-2xl flex items-center justify-center mx-auto shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                     <value.icon className="w-8 h-8 text-white" />
@@ -77,6 +88,7 @@ export const About: React.FC = () => (
                     </p>
                   </div>
                 </div>
+              </div>
               </div>
             </AnimatedSection>
           ))}

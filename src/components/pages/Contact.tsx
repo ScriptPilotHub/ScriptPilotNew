@@ -41,14 +41,14 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-900">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="section-lg pt-32">
         <div className="container">
           <AnimatedSection>
             <div className="max-w-4xl mx-auto text-center space-y-8">
               <div className="space-y-6">
-                <h1 className="heading-1 text-slate-900 dark:text-white">
+                <h1 className="heading-1 text-slate-900">
                   Get in
                   <span className="block text-gradient">Touch</span>
                 </h1>
@@ -71,7 +71,7 @@ export const Contact: React.FC = () => {
               <div className="card">
                 <div className="space-y-6">
                   <div className="space-y-3">
-                    <h3 className="heading-3 text-slate-900 dark:text-white">
+                    <h3 className="heading-3 text-slate-900">
                       Send a Direct Message
                     </h3>
                     <p className="body">
@@ -92,7 +92,7 @@ export const Contact: React.FC = () => {
                           type="text" 
                           name="name" 
                           placeholder="Your Name" 
-                          className="w-full bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-lg border border-slate-300 dark:border-slate-600 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 pl-10 pr-4 py-3 transition-colors duration-200" 
+                          className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 pl-10 pr-4 py-3 transition-colors duration-200" 
                           required 
                         />
                       </div>
@@ -104,7 +104,7 @@ export const Contact: React.FC = () => {
                           type="email" 
                           name="email" 
                           placeholder="Your Email" 
-                          className="w-full bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-lg border border-slate-300 dark:border-slate-600 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 pl-10 pr-4 py-3 transition-colors duration-200" 
+                          className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 pl-10 pr-4 py-3 transition-colors duration-200" 
                           required 
                         />
                       </div>
@@ -114,7 +114,7 @@ export const Contact: React.FC = () => {
                         name="message" 
                         rows={5} 
                         placeholder="Tell us about your project..." 
-                        className="w-full bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-lg border border-slate-300 dark:border-slate-600 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 px-4 py-3 transition-colors duration-200" 
+                        className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 px-4 py-3 transition-colors duration-200" 
                         required
                       />
                     </div>
@@ -131,8 +131,8 @@ export const Contact: React.FC = () => {
                   {status && (
                     <p className={`text-center font-medium ${
                       status.includes('error') || status.includes('Error')
-                        ? 'text-red-600 dark:text-red-400'
-                        : 'text-green-600 dark:text-green-400'
+                        ? 'text-red-600'
+                        : 'text-green-600'
                     }`}>
                       {status}
                     </p>
@@ -180,7 +180,7 @@ export const Contact: React.FC = () => {
                         <Phone className="w-6 h-6 text-blue-600" />
                       </div>
                       <div>
-                        <p className="font-medium text-slate-900 dark:text-white">Phone</p>
+                        <p className="font-medium text-slate-900">Phone</p>
                         <p className="body-small">Available during consultation calls</p>
                       </div>
                     </div>
@@ -190,7 +190,7 @@ export const Contact: React.FC = () => {
                         <MapPin className="w-6 h-6 text-green-600" />
                       </div>
                       <div>
-                        <p className="font-medium text-slate-900 dark:text-white">Service Area</p>
+                        <p className="font-medium text-slate-900">Service Area</p>
                         <p className="body-small">Serving businesses nationwide</p>
                       </div>
                     </div>
@@ -200,7 +200,7 @@ export const Contact: React.FC = () => {
                         <Clock className="w-6 h-6 text-purple-600" />
                       </div>
                       <div>
-                        <p className="font-medium text-slate-900 dark:text-white">Response Time</p>
+                        <p className="font-medium text-slate-900">Response Time</p>
                         <p className="body-small">Within 24 hours</p>
                       </div>
                     </div>
@@ -213,12 +213,12 @@ export const Contact: React.FC = () => {
       </section>
 
       {/* FAQ Teaser */}
-      <section className="section bg-slate-50 dark:bg-slate-800/30">
+      <section className="section bg-slate-50">
         <div className="container text-center">
           <AnimatedSection>
             <div className="max-w-3xl mx-auto space-y-8">
               <div className="space-y-6">
-                <h2 className="heading-2 text-slate-900 dark:text-white">
+                <h2 className="heading-2 text-slate-900">
                   Have Questions?
                 </h2>
                 <p className="body-large">

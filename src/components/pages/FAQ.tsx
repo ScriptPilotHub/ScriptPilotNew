@@ -11,23 +11,23 @@ interface FAQItemProps {
 }
 
 const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onToggle, category }) => (
-  <div className="border border-slate-700/50 rounded-xl mb-4 overflow-hidden group hover:border-teal-400/30 transition-all duration-300 bg-slate-800/30">
+  <div className="card mb-4 overflow-hidden group hover:border-blue-300 transition-all duration-300">
     <button
       onClick={onToggle}
-      className="w-full flex justify-between items-center text-left py-6 px-6 hover:bg-slate-700/30 transition-colors duration-300"
+      className="w-full flex justify-between items-center text-left py-6 px-6 hover:bg-slate-50 transition-colors duration-300"
     >
       <div className="flex-1">
         {category && (
-          <span className="text-xs font-semibold text-teal-400 uppercase tracking-wide mb-2 block">
+          <span className="text-xs font-semibold text-blue-600 uppercase tracking-wide mb-2 block">
             {category}
           </span>
         )}
-        <span className="text-lg font-medium text-slate-200 group-hover:text-white transition-colors duration-300 pr-4">
+        <span className="text-lg font-medium text-slate-900 transition-colors duration-300 pr-4">
           {question}
         </span>
       </div>
       <ChevronDown 
-        className={`w-6 h-6 text-slate-400 transform transition-all duration-300 group-hover:text-teal-400 flex-shrink-0 ${
+        className={`w-6 h-6 text-slate-400 transform transition-all duration-300 group-hover:text-blue-600 flex-shrink-0 ${
           isOpen ? 'rotate-180' : ''
         }`} 
       />
@@ -37,7 +37,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onToggle, c
         isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
       }`}
     >
-      <div className="px-6 pb-6 text-slate-400 leading-relaxed border-t border-slate-700/30 pt-4">
+      <div className="px-6 pb-6 text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
         {answer}
       </div>
     </div>
@@ -251,54 +251,55 @@ export const FAQ: React.FC = () => {
   };
 
   return (
-    <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-4 bg-slate-900 text-white relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute top-[-25%] left-[-25%] w-96 h-96 md:w-[600px] md:h-[600px] bg-teal-500/20 rounded-full mix-blend-screen filter blur-3xl opacity-40 animate-float"></div>
-      <div className="absolute bottom-[-25%] right-[-25%] w-96 h-96 md:w-[600px] md:h-[600px] bg-purple-500/20 rounded-full mix-blend-screen filter blur-3xl opacity-40 animate-float-delayed"></div>
-      
-      <div className="container mx-auto max-w-6xl relative z-10">
+    <div className="min-h-screen bg-white">
+      <section className="section-lg pt-32">
+        <div className="container">
         <AnimatedSection>
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-300 via-sky-400 to-indigo-400 bg-[length:200%_200%] animate-gradient-x mb-6">
+            <h1 className="heading-1 text-slate-900 mb-6">
               Frequently Asked Questions
             </h1>
-            <p className="text-lg text-slate-300 max-w-3xl mx-auto mb-8">
+            <p className="body-large max-w-3xl mx-auto mb-8">
               Everything you need to know about working with Script Pilot. Can't find what you're looking for? We're here to help.
             </p>
             
             {/* Quick Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
-              <div className="bg-slate-800/50 rounded-lg p-4 border border-slate-700/50">
-                <div className="text-2xl font-bold text-teal-400">100+</div>
-                <div className="text-sm text-slate-400">Projects Completed</div>
+              <div className="card p-4">
+                <div className="text-2xl font-bold text-blue-600">100+</div>
+                <div className="text-sm text-slate-600">Projects Completed</div>
               </div>
-              <div className="bg-slate-800/50 rounded-lg p-4 border border-slate-700/50">
-                <div className="text-2xl font-bold text-blue-400">2-8</div>
-                <div className="text-sm text-slate-400">Weeks Delivery</div>
+              <div className="card p-4">
+                <div className="text-2xl font-bold text-blue-600">2-8</div>
+                <div className="text-sm text-slate-600">Weeks Delivery</div>
               </div>
-              <div className="bg-slate-800/50 rounded-lg p-4 border border-slate-700/50">
-                <div className="text-2xl font-bold text-purple-400">24/7</div>
-                <div className="text-sm text-slate-400">Site Performance</div>
+              <div className="card p-4">
+                <div className="text-2xl font-bold text-blue-600">24/7</div>
+                <div className="text-sm text-slate-600">Site Performance</div>
               </div>
-              <div className="bg-slate-800/50 rounded-lg p-4 border border-slate-700/50">
-                <div className="text-2xl font-bold text-green-400">30</div>
-                <div className="text-sm text-slate-400">Days Free Support</div>
+              <div className="card p-4">
+                <div className="text-2xl font-bold text-blue-600">30</div>
+                <div className="text-sm text-slate-600">Days Free Support</div>
               </div>
             </div>
           </div>
         </AnimatedSection>
+        </div>
+      </section>
 
         {/* Category Filter */}
+      <section className="section bg-slate-50">
+        <div className="container">
         <AnimatedSection delay={200}>
           <div className="mb-12">
             <div className="flex flex-col sm:flex-row items-center justify-between mb-8">
-              <h2 className="text-2xl font-bold text-white mb-4 sm:mb-0">Browse by Category</h2>
+              <h2 className="heading-2 text-slate-900 mb-4 sm:mb-0">Browse by Category</h2>
               <button
                 onClick={handleShowAll}
-                className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
+                className={`btn transition-all duration-300 ${
                   !selectedCategory 
-                    ? 'bg-teal-500 text-white' 
-                    : 'bg-slate-700 text-slate-300 hover:bg-slate-600 hover:text-white'
+                    ? 'btn-primary' 
+                    : 'btn-secondary'
                 }`}
               >
                 Show All ({faqs.length})
@@ -313,25 +314,25 @@ export const FAQ: React.FC = () => {
                   <button
                     key={category.name}
                     onClick={() => handleCategorySelect(category.name)}
-                    className={`bg-slate-800/50 rounded-lg p-4 text-center border transition-all duration-300 group hover:scale-105 ${
+                    className={`card p-4 text-center transition-all duration-300 group hover:scale-105 ${
                       isSelected 
-                        ? `border-${category.color}-400 bg-${category.color}-500/20` 
-                        : `border-slate-700/50 hover:border-${category.color}-400/50`
+                        ? `border-blue-500 bg-blue-50` 
+                        : `hover:border-blue-300`
                     }`}
                   >
                     <category.icon className={`w-8 h-8 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300 ${
                       isSelected 
-                        ? `text-${category.color}-300` 
-                        : `text-${category.color}-400`
+                        ? `text-blue-600` 
+                        : `text-blue-500`
                     }`} />
                     <div className={`text-sm font-medium mb-1 transition-colors duration-300 ${
                       isSelected 
-                        ? `text-${category.color}-200` 
-                        : `text-${category.color}-300 group-hover:text-${category.color}-200`
+                        ? `text-slate-900` 
+                        : `text-slate-700`
                     }`}>
                       {category.name}
                     </div>
-                    <div className="text-xs text-slate-400">
+                    <div className="text-xs text-slate-500">
                       {categoryCount} question{categoryCount !== 1 ? 's' : ''}
                     </div>
                   </button>
@@ -342,13 +343,13 @@ export const FAQ: React.FC = () => {
             {/* Active Filter Indicator */}
             {selectedCategory && (
               <div className="mt-6 flex items-center justify-center">
-                <div className="bg-slate-800/50 rounded-full px-6 py-2 border border-slate-700/50">
-                  <span className="text-slate-300">Showing </span>
-                  <span className="text-teal-400 font-semibold">{selectedCategory}</span>
-                  <span className="text-slate-300"> questions ({filteredFaqs.length})</span>
+                <div className="bg-blue-50 rounded-full px-6 py-2 border border-blue-200">
+                  <span className="text-slate-700">Showing </span>
+                  <span className="text-blue-600 font-semibold">{selectedCategory}</span>
+                  <span className="text-slate-700"> questions ({filteredFaqs.length})</span>
                   <button
                     onClick={handleShowAll}
-                    className="ml-3 text-slate-400 hover:text-white transition-colors duration-300"
+                    className="ml-3 text-slate-500 hover:text-slate-700 transition-colors duration-300"
                   >
                     ✕
                   </button>
@@ -357,8 +358,12 @@ export const FAQ: React.FC = () => {
             )}
           </div>
         </AnimatedSection>
+        </div>
+      </section>
         
         {/* FAQ Items */}
+      <section className="section">
+        <div className="container">
         <AnimatedSection delay={300}>
           <div className="max-w-4xl mx-auto">
             {filteredFaqs.length > 0 ? (
@@ -374,24 +379,28 @@ export const FAQ: React.FC = () => {
               ))
             ) : (
               <div className="text-center py-12">
-                <p className="text-slate-400 text-lg">No questions found for this category.</p>
+                <p className="text-slate-600 text-lg">No questions found for this category.</p>
               </div>
             )}
           </div>
         </AnimatedSection>
+        </div>
+      </section>
 
         {/* Still Have Questions Section */}
+      <section className="section bg-slate-50">
+        <div className="container">
         <AnimatedSection delay={500}>
-          <div className="mt-16 bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-2xl p-8 border border-slate-600/50 text-center">
-            <HelpCircle className="w-16 h-16 text-teal-400 mx-auto mb-6" />
-            <h3 className="text-2xl font-bold text-white mb-4">Still Have Questions?</h3>
-            <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
+          <div className="card text-center max-w-4xl mx-auto">
+            <HelpCircle className="w-16 h-16 text-blue-600 mx-auto mb-6" />
+            <h3 className="heading-3 text-slate-900 mb-4">Still Have Questions?</h3>
+            <p className="body mb-8 max-w-2xl mx-auto">
               We're here to help! Get in touch with our team for personalized answers to your specific questions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-500 to-blue-500 hover:from-teal-600 hover:to-blue-600 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:shadow-teal-500/20 transform hover:scale-105 transition-all duration-300"
+                className="btn btn-primary"
               >
                 <MessageCircle className="w-5 h-5" />
                 Send a Message
@@ -400,7 +409,7 @@ export const FAQ: React.FC = () => {
                 href="https://calendly.com/t6ckmedia/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border-2 border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-slate-900 font-bold py-3 px-6 rounded-full shadow-lg hover:shadow-purple-400/20 transform hover:scale-105 transition-all duration-300"
+                className="btn btn-secondary"
               >
                 <Phone className="w-5 h-5" />
                 Schedule a Call
@@ -408,28 +417,33 @@ export const FAQ: React.FC = () => {
             </div>
           </div>
         </AnimatedSection>
+        </div>
+      </section>
 
         {/* Trust Indicators */}
+      <section className="section">
+        <div className="container">
         <AnimatedSection delay={600}>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/30">
-              <Shield className="w-12 h-12 text-green-400 mx-auto mb-4" />
-              <h4 className="text-lg font-semibold text-green-300 mb-2">Secure & Reliable</h4>
-              <p className="text-slate-400 text-sm">SSL certificates, regular backups, and enterprise-grade security for all projects.</p>
+            <div className="card text-center">
+              <Shield className="w-12 h-12 text-green-600 mx-auto mb-4" />
+              <h4 className="text-lg font-semibold text-slate-900 mb-2">Secure & Reliable</h4>
+              <p className="body-small">SSL certificates, regular backups, and enterprise-grade security for all projects.</p>
             </div>
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/30">
-              <Users className="w-12 h-12 text-blue-400 mx-auto mb-4" />
-              <h4 className="text-lg font-semibold text-blue-300 mb-2">Dedicated Support</h4>
-              <p className="text-slate-400 text-sm">Personal attention from our experienced team throughout your project and beyond.</p>
+            <div className="card text-center">
+              <Users className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+              <h4 className="text-lg font-semibold text-slate-900 mb-2">Dedicated Support</h4>
+              <p className="body-small">Personal attention from our experienced team throughout your project and beyond.</p>
             </div>
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/30">
-              <CheckCircle className="w-12 h-12 text-purple-400 mx-auto mb-4" />
-              <h4 className="text-lg font-semibold text-purple-300 mb-2">Proven Results</h4>
-              <p className="text-slate-400 text-sm">Hundreds of successful projects helping businesses grow their online presence.</p>
+            <div className="card text-center">
+              <CheckCircle className="w-12 h-12 text-purple-600 mx-auto mb-4" />
+              <h4 className="text-lg font-semibold text-slate-900 mb-2">Proven Results</h4>
+              <p className="body-small">Hundreds of successful projects helping businesses grow their online presence.</p>
             </div>
           </div>
         </AnimatedSection>
-      </div>
-    </section>
+        </div>
+      </section>
+    </div>
   );
 };

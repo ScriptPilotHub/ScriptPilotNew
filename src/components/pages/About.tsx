@@ -3,14 +3,14 @@ import { Lightbulb, Users, Award, Target, Zap, Shield } from 'lucide-react';
 import { AnimatedSection } from '../ui/AnimatedSection';
 
 export const About: React.FC = () => (
-  <div className="min-h-screen bg-white dark:bg-slate-900">
+  <div className="min-h-screen bg-white">
     {/* Hero Section */}
     <section className="section-lg pt-32">
       <div className="container">
         <AnimatedSection>
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <div className="space-y-6">
-              <h1 className="heading-1 text-slate-900 dark:text-white">
+              <h1 className="heading-1 text-slate-900">
                 We are
                 <span className="block text-gradient">Script Pilot</span>
               </h1>
@@ -26,11 +26,11 @@ export const About: React.FC = () => (
     </section>
 
     {/* Core Values */}
-    <section className="section bg-slate-50 dark:bg-slate-800/30">
+    <section className="section bg-slate-50">
       <div className="container">
         <AnimatedSection>
           <div className="text-center space-y-4 mb-16">
-            <h2 className="heading-2 text-slate-900 dark:text-white">
+            <h2 className="heading-2 text-slate-900">
               Our Core Values
             </h2>
             <p className="body-large max-w-3xl mx-auto">
@@ -69,7 +69,7 @@ export const About: React.FC = () => (
                   </div>
                   
                   <div className="space-y-3">
-                    <h3 className="heading-3 text-slate-900 dark:text-white">
+                    <h3 className="heading-3 text-slate-900">
                       {value.title}
                     </h3>
                     <p className="body">
@@ -89,7 +89,7 @@ export const About: React.FC = () => (
       <div className="container">
         <AnimatedSection>
           <div className="text-center space-y-4 mb-16">
-            <h2 className="heading-2 text-slate-900 dark:text-white">
+            <h2 className="heading-2 text-slate-900">
               Meet the Pilots
             </h2>
             <p className="body-large max-w-3xl mx-auto">
@@ -122,7 +122,7 @@ export const About: React.FC = () => (
                   </div>
                   
                   <div className="space-y-3">
-                    <h3 className="heading-3 text-slate-900 dark:text-white">
+                    <h3 className="heading-3 text-slate-900">
                       {pilot.name}
                     </h3>
                     <p className="text-blue-600 font-medium">
@@ -141,11 +141,11 @@ export const About: React.FC = () => (
     </section>
 
     {/* Our Approach */}
-    <section className="section bg-slate-50 dark:bg-slate-800/30">
+    <section className="section bg-slate-50">
       <div className="container">
         <AnimatedSection>
           <div className="text-center space-y-4 mb-16">
-            <h2 className="heading-2 text-slate-900 dark:text-white">
+            <h2 className="heading-2 text-slate-900">
               Our Approach
             </h2>
             <p className="body-large max-w-3xl mx-auto">
@@ -182,7 +182,7 @@ export const About: React.FC = () => (
                   <approach.icon className="w-8 h-8 text-white" />
                 </div>
                 <div className="space-y-3">
-                  <h3 className="heading-3 text-slate-900 dark:text-white">
+                  <h3 className="heading-3 text-slate-900">
                     {approach.title}
                   </h3>
                   <p className="body">
@@ -197,7 +197,7 @@ export const About: React.FC = () => (
     </section>
 
     {/* CTA Section */}
-    <section className="section bg-slate-900 dark:bg-slate-800">
+    <section className="section bg-slate-900">
       <div className="container text-center">
         <AnimatedSection>
           <div className="max-w-3xl mx-auto space-y-8">
@@ -220,7 +220,7 @@ export const About: React.FC = () => (
               </a>
               <a
                 href="#services"
-                className="btn btn-secondary btn-lg text-slate-300 border-slate-600 hover:text-white hover:border-slate-500"
+                className="btn btn-secondary btn-lg text-white border-slate-600 hover:text-white hover:border-slate-500"
               >
                 View Our Services
               </a>

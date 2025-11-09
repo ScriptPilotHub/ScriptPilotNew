@@ -2,7 +2,7 @@ import React from 'react';
 import { Logo } from '../ui/Logo';
 
 export const Footer: React.FC = () => (
-  <footer className="bg-slate-50 dark:bg-slate-800/50 border-t border-slate-200 dark:border-slate-700/50 section-sm">
+  <footer className="bg-slate-50 border-t border-slate-200 section-sm">
     <div className="container">
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
         <div className="space-y-4 max-w-md">
@@ -19,6 +19,7 @@ export const Footer: React.FC = () => (
               Serving businesses nationwide
             </p>
             <p className="body-small text-slate-500 dark:text-slate-500">
+            <p className="body-small text-slate-500">
               © 2025 Script Pilot. All rights reserved.
             </p>
           </div>

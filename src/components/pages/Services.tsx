@@ -3,14 +3,14 @@ import { Monitor, ShoppingCart, Code, Rocket, TrendingUp, Users, Shield, Search,
 import { AnimatedSection } from '../ui/AnimatedSection';
 
 export const Services: React.FC = () => (
-  <div className="min-h-screen bg-white dark:bg-slate-900">
+  <div className="min-h-screen bg-white">
     {/* Hero Section */}
     <section className="section-lg pt-32">
       <div className="container">
         <AnimatedSection>
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <div className="space-y-6">
-              <h1 className="heading-1 text-slate-900 dark:text-white">
+              <h1 className="heading-1 text-slate-900">
                 Complete Web Solutions
                 <span className="block text-gradient">for Modern Business</span>
               </h1>
@@ -40,11 +40,11 @@ export const Services: React.FC = () => (
     </section>
 
     {/* Why Professional Websites Matter */}
-    <section className="section bg-slate-50 dark:bg-slate-800/30">
+    <section className="section bg-slate-50">
       <div className="container">
         <AnimatedSection>
           <div className="text-center space-y-4 mb-16">
-            <h2 className="heading-2 text-slate-900 dark:text-white">
+            <h2 className="heading-2 text-slate-900">
               Why Your Business Needs a Professional Website
             </h2>
             <p className="body-large max-w-3xl mx-auto">
@@ -87,7 +87,7 @@ export const Services: React.FC = () => (
                   <benefit.icon className="w-8 h-8 text-white" />
                 </div>
                 <div className="space-y-3">
-                  <h3 className="heading-3 text-slate-900 dark:text-white">
+                  <h3 className="heading-3 text-slate-900">
                     {benefit.title}
                   </h3>
                   <p className="body">
@@ -106,7 +106,7 @@ export const Services: React.FC = () => (
       <div className="container">
         <AnimatedSection>
           <div className="text-center space-y-4 mb-16">
-            <h2 className="heading-2 text-slate-900 dark:text-white">
+            <h2 className="heading-2 text-slate-900">
               Your Complete Digital Solution
             </h2>
             <p className="body-large max-w-3xl mx-auto">
@@ -193,7 +193,7 @@ export const Services: React.FC = () => (
                   </div>
                   
                   <div className="space-y-3">
-                    <h3 className="heading-3 text-slate-900 dark:text-white">
+                    <h3 className="heading-3 text-slate-900">
                       {service.title}
                     </h3>
                   </div>
@@ -215,11 +215,11 @@ export const Services: React.FC = () => (
     </section>
 
     {/* Perfect For Section */}
-    <section className="section bg-slate-50 dark:bg-slate-800/30">
+    <section className="section bg-slate-50">
       <div className="container">
         <AnimatedSection>
           <div className="text-center space-y-4 mb-16">
-            <h2 className="heading-2 text-slate-900 dark:text-white">
+            <h2 className="heading-2 text-slate-900">
               Perfect for Every Business
             </h2>
             <p className="body-large max-w-3xl mx-auto">
@@ -249,7 +249,7 @@ export const Services: React.FC = () => (
           ].map((business, index) => (
             <AnimatedSection delay={100 * (index + 1)} key={index}>
               <div className="text-center space-y-3">
-                <h3 className="heading-3 text-slate-900 dark:text-white">
+                <h3 className="heading-3 text-slate-900">
                   {business.title}
                 </h3>
                 <p className="body">
@@ -267,7 +267,7 @@ export const Services: React.FC = () => (
       <div className="container">
         <AnimatedSection>
           <div className="text-center space-y-4 mb-16">
-            <h2 className="heading-2 text-slate-900 dark:text-white">
+            <h2 className="heading-2 text-slate-900">
               The Cost of NOT Having a Professional Website
             </h2>
             <p className="body-large max-w-3xl mx-auto">
@@ -304,7 +304,7 @@ export const Services: React.FC = () => (
                   <cost.icon className="w-8 h-8 text-white" />
                 </div>
                 <div className="space-y-3">
-                  <h3 className="heading-3 text-slate-900 dark:text-white">
+                  <h3 className="heading-3 text-slate-900">
                     {cost.title}
                   </h3>
                   <p className="body">
@@ -319,7 +319,7 @@ export const Services: React.FC = () => (
     </section>
 
     {/* CTA Section */}
-    <section className="section bg-slate-900 dark:bg-slate-800">
+    <section className="section bg-slate-900">
       <div className="container text-center">
         <AnimatedSection>
           <div className="max-w-3xl mx-auto space-y-8">
@@ -344,7 +344,7 @@ export const Services: React.FC = () => (
               </a>
               <a
                 href="#about"
-                className="btn btn-secondary btn-lg text-slate-300 border-slate-600 hover:text-white hover:border-slate-500"
+                className="btn btn-secondary btn-lg text-white border-slate-600 hover:text-white hover:border-slate-500"
               >
                 Learn About Us
               </a>

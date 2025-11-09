@@ -47,7 +47,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 flex flex-col">
+    <div className="min-h-screen bg-white text-slate-900 flex flex-col">
       <Header />
       <main className="flex-grow">
         {renderPage()}
@@ -56,8 +56,5 @@ function App() {
     </div>
   );
 }
-
-// Add React import
-import React from 'react';
 
 export default App;

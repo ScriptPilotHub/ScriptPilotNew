@@ -14,7 +14,7 @@ export const Logo: React.FC = () => (
       <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white font-['Space_Grotesk']">
         Script Pilot
       </span>
-      <span className="text-xs text-slate-500 dark:text-slate-400 font-medium tracking-wide">
+      <span className="text-xs text-slate-500 dark:text-slate-400 font-medium tracking-wider">
         WEB DEVELOPMENT
       </span>
     </div>

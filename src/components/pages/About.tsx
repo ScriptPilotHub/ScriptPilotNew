@@ -1,69 +1,233 @@
 import React from 'react';
-import { Lightbulb, Users, Award } from 'lucide-react';
+import { Lightbulb, Users, Award, Target, Zap, Shield } from 'lucide-react';
 import { AnimatedSection } from '../ui/AnimatedSection';
 
 export const About: React.FC = () => (
-  <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-4 bg-slate-900 text-white">
-    <div className="container mx-auto max-w-6xl">
-      <AnimatedSection>
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-300 via-blue-400 to-purple-400 bg-[length:200%_200%] animate-gradient-x mb-4">
-            We are Script Pilot
-          </h1>
-          <p className="text-lg text-slate-300 max-w-3xl mx-auto">
-            A collective of passionate developers and designers dedicated to crafting exceptional digital experiences. We're not just a service; we're your technical co-pilots on the journey to online success.
-          </p>
-        </div>
-      </AnimatedSection>
-
-      <AnimatedSection delay={100}>
-        <h2 className="text-3xl font-bold text-center text-white mb-12">Our Core Values</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-20">
-          <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/50 border border-slate-700/50 rounded-xl p-8 flex flex-col items-center group hover:scale-[1.05] hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 transform-gpu relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <Lightbulb className="h-12 w-12 text-blue-400 mb-4 group-hover:scale-125 group-hover:rotate-12 transition-transform duration-500 relative z-10" />
-            <h3 className="text-xl font-semibold text-blue-300 mb-2 group-hover:text-blue-200 transition-colors duration-500 relative z-10">Innovation</h3>
-            <p className="text-sm text-slate-400 group-hover:text-slate-200 transition-colors duration-500 relative z-10">Pushing boundaries with modern technology and creative solutions.</p>
+  <div className="min-h-screen bg-white dark:bg-slate-900">
+    {/* Hero Section */}
+    <section className="section-lg pt-32">
+      <div className="container">
+        <AnimatedSection>
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <div className="space-y-6">
+              <h1 className="heading-1 text-slate-900 dark:text-white">
+                We are
+                <span className="block text-gradient">Script Pilot</span>
+              </h1>
+              <p className="body-large max-w-2xl mx-auto">
+                A collective of passionate developers and designers dedicated to crafting exceptional 
+                digital experiences. We're not just a service; we're your technical co-pilots on the 
+                journey to online success.
+              </p>
+            </div>
           </div>
-          
-          <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/50 border border-slate-700/50 rounded-xl p-8 flex flex-col items-center group hover:scale-[1.05] hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 transform-gpu relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <Users className="h-12 w-12 text-purple-400 mb-4 group-hover:scale-125 group-hover:rotate-12 transition-transform duration-500 relative z-10" />
-            <h3 className="text-xl font-semibold text-purple-300 mb-2 group-hover:text-purple-200 transition-colors duration-500 relative z-10">Collaboration</h3>
-            <p className="text-sm text-slate-400 group-hover:text-slate-200 transition-colors duration-500 relative z-10">Your vision, our expertise. We build great things together.</p>
-          </div>
-          
-          <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/50 border border-slate-700/50 rounded-xl p-8 flex flex-col items-center group hover:scale-[1.05] hover:-translate-y-2 hover:shadow-2xl hover:shadow-teal-500/20 transition-all duration-500 transform-gpu relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <Award className="h-12 w-12 text-teal-400 mb-4 group-hover:scale-125 group-hover:rotate-12 transition-transform duration-500 relative z-10" />
-            <h3 className="text-xl font-semibold text-teal-300 mb-2 group-hover:text-teal-200 transition-colors duration-500 relative z-10">Quality</h3>
-            <p className="text-sm text-slate-400 group-hover:text-slate-200 transition-colors duration-500 relative z-10">Uncompromising commitment to performance, design, and reliability.</p>
-          </div>
-        </div>
-      </AnimatedSection>
-      
-      <section>
-        <AnimatedSection delay={200}>
-          <h2 className="text-3xl font-bold text-center text-white mb-12">Meet the Pilots</h2>
         </AnimatedSection>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-2xl mx-auto">
+      </div>
+    </section>
+
+    {/* Core Values */}
+    <section className="section bg-slate-50 dark:bg-slate-800/30">
+      <div className="container">
+        <AnimatedSection>
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="heading-2 text-slate-900 dark:text-white">
+              Our Core Values
+            </h2>
+            <p className="body-large max-w-3xl mx-auto">
+              These principles guide everything we do and ensure we deliver 
+              exceptional results for every client.
+            </p>
+          </div>
+        </AnimatedSection>
+
+        <div className="grid grid-3 gap-8">
           {[
-            { name: "David Tackett", role: "Lead Developer & Architect", initial: "D", delay: 300 },
-            { name: "Tyler Wells", role: "Developer & Sales Manager", initial: "T", delay: 400 }
-          ].map(pilot => (
-            <AnimatedSection delay={pilot.delay} key={pilot.name}>
-              <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/50 border border-slate-700/50 rounded-xl p-6 text-center group hover:scale-[1.05] hover:-translate-y-2 hover:shadow-2xl hover:shadow-teal-500/20 transition-all duration-500 transform-gpu relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-slate-700 group-hover:border-teal-400 group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 bg-gradient-to-br from-teal-500 to-blue-500 flex items-center justify-center relative z-10 shadow-lg group-hover:shadow-xl">
-                  <span className="text-3xl font-bold text-white">{pilot.initial}</span>
+            {
+              icon: Lightbulb,
+              title: "Innovation",
+              description: "Pushing boundaries with modern technology and creative solutions that set your business apart from the competition.",
+              color: "blue"
+            },
+            {
+              icon: Users,
+              title: "Collaboration",
+              description: "Your vision, our expertise. We build great things together through clear communication and shared goals.",
+              color: "green"
+            },
+            {
+              icon: Award,
+              title: "Quality",
+              description: "Uncompromising commitment to performance, design, and reliability in every project we deliver.",
+              color: "purple"
+            }
+          ].map((value, index) => (
+            <AnimatedSection delay={100 * (index + 1)} key={index}>
+              <div className="card group h-full text-center">
+                <div className="space-y-6">
+                  <div className={`w-16 h-16 bg-${value.color}-600 rounded-2xl flex items-center justify-center mx-auto shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    <value.icon className="w-8 h-8 text-white" />
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <h3 className="heading-3 text-slate-900 dark:text-white">
+                      {value.title}
+                    </h3>
+                    <p className="body">
+                      {value.description}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold text-white group-hover:text-teal-200 transition-colors duration-500 relative z-10">{pilot.name}</h3>
-                <p className="text-teal-400 group-hover:text-teal-300 transition-colors duration-500 relative z-10">{pilot.role}</p>
               </div>
             </AnimatedSection>
           ))}
         </div>
-      </section>
-    </div>
-  </section>
+      </div>
+    </section>
+
+    {/* Meet the Team */}
+    <section className="section">
+      <div className="container">
+        <AnimatedSection>
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="heading-2 text-slate-900 dark:text-white">
+              Meet the Pilots
+            </h2>
+            <p className="body-large max-w-3xl mx-auto">
+              The experienced professionals behind Script Pilot, dedicated to 
+              your project's success.
+            </p>
+          </div>
+        </AnimatedSection>
+
+        <div className="grid grid-2 gap-8 max-w-4xl mx-auto">
+          {[
+            {
+              name: "David Tackett",
+              role: "Lead Developer & Architect",
+              initial: "D",
+              description: "Expert in modern web technologies with a passion for creating scalable, high-performance applications."
+            },
+            {
+              name: "Tyler Wells",
+              role: "Developer & Sales Manager",
+              initial: "T",
+              description: "Combines technical expertise with business acumen to deliver solutions that drive real results."
+            }
+          ].map((pilot, index) => (
+            <AnimatedSection delay={200 * (index + 1)} key={pilot.name}>
+              <div className="card group text-center">
+                <div className="space-y-6">
+                  <div className="w-24 h-24 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full mx-auto flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-3xl font-bold text-white">{pilot.initial}</span>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <h3 className="heading-3 text-slate-900 dark:text-white">
+                      {pilot.name}
+                    </h3>
+                    <p className="text-blue-600 font-medium">
+                      {pilot.role}
+                    </p>
+                    <p className="body">
+                      {pilot.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Our Approach */}
+    <section className="section bg-slate-50 dark:bg-slate-800/30">
+      <div className="container">
+        <AnimatedSection>
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="heading-2 text-slate-900 dark:text-white">
+              Our Approach
+            </h2>
+            <p className="body-large max-w-3xl mx-auto">
+              We combine technical excellence with business strategy to deliver 
+              solutions that drive real results.
+            </p>
+          </div>
+        </AnimatedSection>
+
+        <div className="grid grid-3 gap-8">
+          {[
+            {
+              icon: Target,
+              title: "Strategy First",
+              description: "We start by understanding your business goals and target audience to create a solution that delivers results.",
+              color: "red"
+            },
+            {
+              icon: Zap,
+              title: "Modern Technology",
+              description: "Using cutting-edge tools and frameworks to ensure your project is built for performance and scalability.",
+              color: "yellow"
+            },
+            {
+              icon: Shield,
+              title: "Long-term Partnership",
+              description: "We're here for the long haul, providing ongoing support and optimization to help your business grow.",
+              color: "green"
+            }
+          ].map((approach, index) => (
+            <AnimatedSection delay={100 * (index + 1)} key={index}>
+              <div className="text-center space-y-4">
+                <div className={`w-16 h-16 bg-${approach.color}-600 rounded-2xl flex items-center justify-center mx-auto shadow-lg`}>
+                  <approach.icon className="w-8 h-8 text-white" />
+                </div>
+                <div className="space-y-3">
+                  <h3 className="heading-3 text-slate-900 dark:text-white">
+                    {approach.title}
+                  </h3>
+                  <p className="body">
+                    {approach.description}
+                  </p>
+                </div>
+              </div>
+            </AnimatedSection>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* CTA Section */}
+    <section className="section bg-slate-900 dark:bg-slate-800">
+      <div className="container text-center">
+        <AnimatedSection>
+          <div className="max-w-3xl mx-auto space-y-8">
+            <div className="space-y-6">
+              <h2 className="heading-2 text-white">
+                Ready to Work Together?
+              </h2>
+              <p className="body-large text-slate-300">
+                Let's discuss your project and see how we can help bring your vision to life 
+                with a solution that drives real business results.
+              </p>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a
+                href="#contact"
+                className="btn btn-primary btn-lg"
+              >
+                Start Your Project
+              </a>
+              <a
+                href="#services"
+                className="btn btn-secondary btn-lg text-slate-300 border-slate-600 hover:text-white hover:border-slate-500"
+              >
+                View Our Services
+              </a>
+            </div>
+          </div>
+        </AnimatedSection>
+      </div>
+    </section>
+  </div>
 );

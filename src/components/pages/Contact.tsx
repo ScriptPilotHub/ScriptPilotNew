@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { User, Mail, MessageCircle } from 'lucide-react';
+import { User, Mail, MessageCircle, Phone, MapPin, Clock } from 'lucide-react';
 import { AnimatedSection } from '../ui/AnimatedSection';
 
 export const Contact: React.FC = () => {
@@ -22,94 +22,195 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-4 bg-slate-900 text-white">
-      <div className="container mx-auto max-w-6xl">
-        <AnimatedSection>
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-green-400 animate-pulse">Get in Touch</h1>
-            <p className="text-lg text-slate-300 mt-4">Book a free consultation or send us a message.</p>
-          </div>
-        </AnimatedSection>
-        
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          <AnimatedSection delay={200}>
-            <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/50 rounded-xl p-8 shadow-2xl border border-slate-700/50 h-full hover:shadow-3xl hover:shadow-green-500/20 hover:scale-[1.02] hover:-translate-y-2 transition-all duration-700 ease-out relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              <h3 className="text-2xl font-bold text-white mb-6 text-center">Send a Direct Message</h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="relative group">
-                    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                      <User className="h-5 w-5 text-slate-500 group-focus-within:text-green-400 group-focus-within:scale-110 transition-all duration-500" />
-                    </div>
-                    <input 
-                      type="text" 
-                      name="name" 
-                      placeholder="Name" 
-                      className="w-full bg-slate-700/50 text-white rounded-lg border-2 border-slate-600 focus:border-green-500 focus:ring-0 focus:scale-105 transition-all duration-500 pl-10 pr-4 py-3 hover:bg-slate-700/70 hover:shadow-lg" 
-                      required 
-                    />
-                  </div>
-                  <div className="relative group">
-                    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                      <Mail className="h-5 w-5 text-slate-500 group-focus-within:text-green-400 group-focus-within:scale-110 transition-all duration-500" />
-                    </div>
-                    <input 
-                      type="email" 
-                      name="email" 
-                      placeholder="Email" 
-                      className="w-full bg-slate-700/50 text-white rounded-lg border-2 border-slate-600 focus:border-green-500 focus:ring-0 focus:scale-105 transition-all duration-500 pl-10 pr-4 py-3 hover:bg-slate-700/70 hover:shadow-lg" 
-                      required 
-                    />
-                  </div>
-                </div>
-                <div className="relative group">
-                  <textarea 
-                    name="message" 
-                    rows={5} 
-                    placeholder="Your message..." 
-                    className="w-full bg-slate-700/50 text-white rounded-lg border-2 border-slate-600 focus:border-green-500 focus:ring-0 focus:scale-105 transition-all duration-500 px-4 py-3 hover:bg-slate-700/70 hover:shadow-lg" 
-                    required
-                  />
-                </div>
-                <div className="text-center">
-                  <button 
-                    type="submit" 
-                    disabled={isSubmitting}
-                    className="bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white font-bold py-3 px-10 rounded-full shadow-lg transform hover:scale-110 hover:-translate-y-1 transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-green-500/30 btn-shimmer relative overflow-hidden"
-                  >
-                    <span className="relative z-10">
-                      {isSubmitting ? 'Sending...' : 'Send Message'}
-                    </span>
-                  </button>
-                </div>
-              </form>
-              {status && <p className="text-center mt-6 text-green-300 animate-bounce-subtle">{status}</p>}
+    <div className="min-h-screen bg-white dark:bg-slate-900">
+      {/* Hero Section */}
+      <section className="section-lg pt-32">
+        <div className="container">
+          <AnimatedSection>
+            <div className="max-w-4xl mx-auto text-center space-y-8">
+              <div className="space-y-6">
+                <h1 className="heading-1 text-slate-900 dark:text-white">
+                  Get in
+                  <span className="block text-gradient">Touch</span>
+                </h1>
+                <p className="body-large max-w-2xl mx-auto">
+                  Ready to start your project? Book a free consultation or send us a message. 
+                  We're here to help bring your vision to life.
+                </p>
+              </div>
             </div>
           </AnimatedSection>
-          
-          <AnimatedSection delay={400}>
-            <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/50 rounded-xl p-8 shadow-2xl border border-slate-700/50 h-full text-center hover:shadow-3xl hover:shadow-teal-500/20 hover:scale-[1.02] hover:-translate-y-2 transition-all duration-700 ease-out relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              <MessageCircle className="w-16 h-16 text-teal-400 mx-auto mb-6 animate-bounce-subtle group-hover:scale-125 group-hover:rotate-12 transition-transform duration-500" />
-              <h3 className="text-2xl font-bold text-white mb-6">Book a Free Consultation</h3>
-              <p className="text-slate-400 mb-6 group-hover:text-slate-300 transition-colors duration-500">
-                Ready to discuss your project? Click the button below to open our scheduling page and find a time that works for you. We'll call you to discuss your project in detail.
-              </p>
+        </div>
+      </section>
+
+      {/* Contact Options */}
+      <section className="section">
+        <div className="container">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Contact Form */}
+            <AnimatedSection delay={200}>
+              <div className="card">
+                <div className="space-y-6">
+                  <div className="space-y-3">
+                    <h3 className="heading-3 text-slate-900 dark:text-white">
+                      Send a Direct Message
+                    </h3>
+                    <p className="body">
+                      Fill out the form below and we'll get back to you within 24 hours.
+                    </p>
+                  </div>
+
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="relative">
+                        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                          <User className="h-5 w-5 text-slate-400" />
+                        </div>
+                        <input 
+                          type="text" 
+                          name="name" 
+                          placeholder="Your Name" 
+                          className="w-full bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-lg border border-slate-300 dark:border-slate-600 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 pl-10 pr-4 py-3 transition-colors duration-200" 
+                          required 
+                        />
+                      </div>
+                      <div className="relative">
+                        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                          <Mail className="h-5 w-5 text-slate-400" />
+                        </div>
+                        <input 
+                          type="email" 
+                          name="email" 
+                          placeholder="Your Email" 
+                          className="w-full bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-lg border border-slate-300 dark:border-slate-600 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 pl-10 pr-4 py-3 transition-colors duration-200" 
+                          required 
+                        />
+                      </div>
+                    </div>
+                    <div className="relative">
+                      <textarea 
+                        name="message" 
+                        rows={5} 
+                        placeholder="Tell us about your project..." 
+                        className="w-full bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-lg border border-slate-300 dark:border-slate-600 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 px-4 py-3 transition-colors duration-200" 
+                        required
+                      />
+                    </div>
+                    <div>
+                      <button 
+                        type="submit" 
+                        disabled={isSubmitting}
+                        className="btn btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        {isSubmitting ? 'Sending...' : 'Send Message'}
+                      </button>
+                    </div>
+                  </form>
+                  {status && (
+                    <p className="text-center text-green-600 dark:text-green-400 font-medium">
+                      {status}
+                    </p>
+                  )}
+                </div>
+              </div>
+            </AnimatedSection>
+            
+            {/* Consultation Booking */}
+            <AnimatedSection delay={400}>
+              <div className="space-y-8">
+                <div className="card text-center">
+                  <div className="space-y-6">
+                    <MessageCircle className="w-16 h-16 text-blue-600 mx-auto" />
+                    <div className="space-y-3">
+                      <h3 className="heading-3 text-slate-900 dark:text-white">
+                        Book a Free Consultation
+                      </h3>
+                      <p className="body">
+                        Ready to discuss your project? Click the button below to open our scheduling 
+                        page and find a time that works for you. We'll call you to discuss your 
+                        project in detail.
+                      </p>
+                    </div>
+                    <a
+                      href="https://calendly.com/t6ckmedia/30min"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-primary btn-lg"
+                    >
+                      Schedule Your Call
+                    </a>
+                  </div>
+                </div>
+
+                {/* Contact Info */}
+                <div className="space-y-6">
+                  <h4 className="heading-3 text-slate-900 dark:text-white">
+                    Other Ways to Reach Us
+                  </h4>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/20 rounded-lg flex items-center justify-center">
+                        <Phone className="w-6 h-6 text-blue-600" />
+                      </div>
+                      <div>
+                        <p className="font-medium text-slate-900 dark:text-white">Phone</p>
+                        <p className="body-small">Available during consultation calls</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 bg-green-100 dark:bg-green-900/20 rounded-lg flex items-center justify-center">
+                        <MapPin className="w-6 h-6 text-green-600" />
+                      </div>
+                      <div>
+                        <p className="font-medium text-slate-900 dark:text-white">Service Area</p>
+                        <p className="body-small">Serving businesses nationwide</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/20 rounded-lg flex items-center justify-center">
+                        <Clock className="w-6 h-6 text-purple-600" />
+                      </div>
+                      <div>
+                        <p className="font-medium text-slate-900 dark:text-white">Response Time</p>
+                        <p className="body-small">Within 24 hours</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Teaser */}
+      <section className="section bg-slate-50 dark:bg-slate-800/30">
+        <div className="container text-center">
+          <AnimatedSection>
+            <div className="max-w-3xl mx-auto space-y-8">
+              <div className="space-y-6">
+                <h2 className="heading-2 text-slate-900 dark:text-white">
+                  Have Questions?
+                </h2>
+                <p className="body-large">
+                  Check out our comprehensive FAQ section for answers to common questions 
+                  about our process, pricing, and services.
+                </p>
+              </div>
+              
               <a
-                href="https://calendly.com/t6ckmedia/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-gradient-to-r from-teal-500 to-sky-500 hover:from-teal-600 hover:to-sky-600 text-white font-bold py-4 px-10 rounded-full shadow-lg transform hover:scale-110 hover:-translate-y-1 transition-all duration-500 hover:shadow-teal-500/30 btn-shimmer relative overflow-hidden"
+                href="#faq"
+                className="btn btn-secondary btn-lg"
               >
-                <span className="relative z-10">
-                  Book Your Call
-                </span>
+                View FAQ
               </a>
             </div>
           </AnimatedSection>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };

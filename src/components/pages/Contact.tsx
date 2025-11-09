@@ -5,27 +5,145 @@ import { AnimatedSection } from '../ui/AnimatedSection';
 export const Contact: React.FC = () => {
   const [status, setStatus] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
-    const formData = new FormData(form);
+    const submitData = new FormData(form);
     
     setIsSubmitting(true);
-    setStatus('Sending your message...');
+    setStatus('Sending your message... Please wait.');
 
-    // Submit to Formspree (free form handling service)
+    // Log form data for debugging
+    console.log('Form submission attempt:', {
+      name: submitData.get('name'),
+      email: submitData.get('email'),
+      message: submitData.get('message'),
+      timestamp: new Date().toISOString()
+    });
+
+    // Submit to Formspree with better error handling
     fetch('https://formspree.io/f/xpwzgqpv', {
       method: 'POST',
-      body: formData,
+      body: submitData,
       headers: {
-        'Accept': 'application/json'
+        'Accept': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded'
       }
     })
     .then(response => {
+      console.log('Response status:', response.status);
+      console.log('Response headers:', response.headers);
+      
       if (response.ok) {
-        const name = formData.get('name') as string;
-        setStatus(`Thank you, ${name}! Your message has been sent successfully.`);
+        return response.json().then(data => {
+          console.log('Success response:', data);
+          const name = submitData.get('name') as string;
+          setStatus(`✅ Thank you, ${name}! Your message has been sent successfully. We'll respond within 24 hours.`);
+          setFormData({ name: '', email: '', message: '' });
+          form.reset();
+        });
+      } else {
+        return response.json().then(data => {
+          console.error('Error response:', data);
+          throw new Error(data.error || 'Form submission failed');
+        });
+      }
+    })
+    .catch(error => {
+      console.error('Form submission error:', error);
+      
+      // Fallback: Try alternative submission method
+      const fallbackData = {
+        name: submitData.get('name'),
+        email: submitData.get('email'),
+        message: submitData.get('message'),
+        _subject: 'URGENT: Contact Form Submission - Script Pilot',
+        _replyto: submitData.get('email'),
+        _next: window.location.href
+      };
+      
+      // Try alternative Formspree endpoint
+      return fetch('https://formspree.io/f/xpwzgqpv', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(fallbackData)
+      })
+      .then(response => {
+        if (response.ok) {
+          const name = submitData.get('name') as string;
+          setStatus(`✅ Thank you, ${name}! Your message has been sent successfully (backup method). We'll respond within 24 hours.`);
+          setFormData({ name: '', email: '', message: '' });
+          form.reset();
+        } else {
+          throw new Error('Both submission methods failed');
+        }
+      })
+      .catch(finalError => {
+        console.error('Final submission error:', finalError);
+        setStatus(`❌ There was an error sending your message. Please try again or contact us directly at t6ckmedia@gmail.com. We apologize for the inconvenience.`);
+      });
+    })
+    .finally(() => {
+      setIsSubmitting(false);
+      // Clear status after 10 seconds for success, 15 seconds for errors
+      const clearDelay = status.includes('✅') ? 10000 : 15000;
+      setTimeout(() => setStatus(''), clearDelay);
+    });
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  // Test form submission function for debugging
+  const testFormSubmission = () => {
+    console.log('Testing form submission...');
+    fetch('https://formspree.io/f/xpwzgqpv', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: 'Test User',
+        email: 'test@example.com',
+        message: 'This is a test message to verify form functionality.',
+        _subject: 'Test Form Submission - Script Pilot'
+      })
+    })
+    .then(response => {
+      console.log('Test response:', response.status);
+      return response.json();
+    })
+    .then(data => {
+      console.log('Test data:', data);
+    })
+    .catch(error => {
+      console.error('Test error:', error);
+    });
+  };
+
+  // Run test on component mount (only in development)
+  React.useEffect(() => {
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Contact form component loaded');
+      // Uncomment the line below to test form submission
+      // testFormSubmission();
+    }
+  }, []);</parameter>
         form.reset();
       } else {
         setStatus('There was an error sending your message. Please try again.');
@@ -81,8 +199,11 @@ export const Contact: React.FC = () => {
 
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <input type="hidden" name="_to" value="t6ckmedia@gmail.com" />
+                    <input type="hidden" name="_replyto" value="t6ckmedia@gmail.com" />
                     <input type="hidden" name="_subject" value="New Contact Form Submission - Script Pilot" />
-                    <input type="hidden" name="_next" value="https://scriptpilotshop.netlify.app/#contact" />
+                    <input type="hidden" name="_next" value={window.location.href} />
+                    <input type="hidden" name="_captcha" value="false" />
+                    <input type="hidden" name="_template" value="table" />
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -91,8 +212,11 @@ export const Contact: React.FC = () => {
                         <input 
                           type="text" 
                           name="name" 
+                          value={formData.name}
+                          onChange={handleInputChange}
                           placeholder="Your Name" 
-                          className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 pl-10 pr-4 py-3 transition-colors duration-200" 
+                          className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 pl-10 pr-4 py-3 transition-colors duration-200 focus:outline-none" 
+                          autoComplete="name"
                           required 
                         />
                       </div>
@@ -103,8 +227,11 @@ export const Contact: React.FC = () => {
                         <input 
                           type="email" 
                           name="email" 
+                          value={formData.email}
+                          onChange={handleInputChange}
                           placeholder="Your Email" 
-                          className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 pl-10 pr-4 py-3 transition-colors duration-200" 
+                          className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 pl-10 pr-4 py-3 transition-colors duration-200 focus:outline-none" 
+                          autoComplete="email"
                           required 
                         />
                       </div>
@@ -112,9 +239,12 @@ export const Contact: React.FC = () => {
                     <div className="relative">
                       <textarea 
                         name="message" 
+                        value={formData.message}
+                        onChange={handleInputChange}
                         rows={5} 
                         placeholder="Tell us about your project..." 
-                        className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 px-4 py-3 transition-colors duration-200" 
+                        className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 px-4 py-3 transition-colors duration-200 focus:outline-none resize-vertical" 
+                        minLength={10}
                         required
                       />
                     </div>
@@ -122,7 +252,7 @@ export const Contact: React.FC = () => {
                       <button 
                         type="submit" 
                         disabled={isSubmitting}
-                        className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 w-full disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 w-full disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                       >
                         {isSubmitting ? 'Sending...' : 'Send Message'}
                       </button>
@@ -130,9 +260,17 @@ export const Contact: React.FC = () => {
                   </form>
                   {status && (
                     <p className={`text-center font-medium ${
-                      status.includes('error') || status.includes('Error')
+                      status.includes('❌') || status.includes('error') || status.includes('Error')
                         ? 'text-red-600'
-                        : 'text-green-600'
+                        : status.includes('✅')
+                        ? 'text-green-600'
+                        : 'text-blue-600'
+                    } p-4 bg-white rounded-lg border ${
+                      status.includes('❌') || status.includes('error') || status.includes('Error')
+                        ? 'border-red-200 bg-red-50'
+                        : status.includes('✅')
+                        ? 'border-green-200 bg-green-50'
+                        : 'border-blue-200 bg-blue-50'
                     }`}>
                       {status}
                     </p>

@@ -74,7 +74,7 @@ export const About: React.FC = () => (
                   />
                 </div>
                 <div className="p-6 text-center">
-                <div className="space-y-6">
+                <div className="space-y-4">
                   <div className={`w-16 h-16 bg-${value.color}-600 rounded-2xl flex items-center justify-center mx-auto shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                     <value.icon className="w-8 h-8 text-white" />
                   </div>

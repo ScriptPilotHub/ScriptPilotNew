@@ -127,6 +127,8 @@ export const Services: React.FC = () => (
                 "Fast loading speeds (under 3 seconds)",
                 "Professional photography integration"
               ],
+              description: "Custom websites designed to represent your brand professionally and convert visitors into customers.",
+              image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800",
               color: "blue"
             },
             {
@@ -136,9 +138,10 @@ export const Services: React.FC = () => (
                 "Secure payment processing (Stripe, PayPal)",
                 "Product catalog and inventory management",
                 "Shopping cart and checkout optimization",
-              description: "Bespoke websites and applications built with modern technologies, optimized for performance and user experience. From concept to deployment, we handle every detail.",
-              image: "https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=800",
+                "Order tracking and customer accounts"
               ],
+              description: "Complete e-commerce solutions that turn your website into a powerful sales machine.",
+              image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
               color: "green"
             },
             {
@@ -150,6 +153,8 @@ export const Services: React.FC = () => (
                 "Customer testimonials and reviews",
                 "Social media integration"
               ],
+              description: "Tailored functionality that meets your specific business needs and workflow requirements.",
+              image: "https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=800",
               color: "purple"
             },
             {
@@ -161,6 +166,8 @@ export const Services: React.FC = () => (
                 "Performance optimization",
                 "Google Analytics and tracking"
               ],
+              description: "Complete deployment and launch services to get your website live and performing optimally.",
+              image: "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=800",
               color: "orange"
             },
             {
@@ -170,9 +177,10 @@ export const Services: React.FC = () => (
                 "Search engine optimization (SEO)",
                 "Google Business Profile setup",
                 "Local search optimization",
-              description: "Secure, scalable online stores with integrated payment processing, inventory management, and analytics. Turn visitors into customers with optimized shopping experiences.",
-              image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
+                "Content optimization for search"
               ],
+              description: "Strategic SEO and marketing setup to help customers find your business online.",
+              image: "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800",
               color: "yellow"
             },
             {
@@ -182,14 +190,15 @@ export const Services: React.FC = () => (
                 "One month of free support",
                 "Security monitoring and updates",
                 "Regular backups and maintenance",
-              description: "Comprehensive maintenance, security updates, and technical support to keep your digital presence running smoothly. We're your long-term technology partners.",
-              image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800",
+                "Priority technical assistance"
               ],
+              description: "Comprehensive maintenance and support to keep your website secure and running smoothly.",
+              image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800",
               color: "red"
             }
           ].map((service, index) => (
             <AnimatedSection delay={100 * (index + 1)} key={index}>
-              <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group h-full">
+              <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group h-full flex flex-col">
                 <div className="h-48 overflow-hidden">
                   <img 
                     src={service.image} 
@@ -197,19 +206,22 @@ export const Services: React.FC = () => (
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <div className="p-6">
-                <div className="space-y-6">
+                <div className="p-6 flex-1 flex flex-col">
+                <div className="space-y-4 flex-1">
                   <div className={`w-12 h-12 bg-${service.color}-100 rounded-xl flex items-center justify-center group-hover:bg-${service.color}-600 transition-colors duration-300`}>
                     <service.icon className={`w-6 h-6 text-${service.color}-600 group-hover:text-white transition-colors duration-300`} />
                   </div>
                   
-                  <div className="space-y-3">
+                  <div className="space-y-2">
                     <h3 className="heading-3 text-slate-900">
                       {service.title}
                     </h3>
+                    <p className="text-slate-600 text-sm">
+                      {service.description}
+                    </p>
                   </div>
                   
-                  <ul className="space-y-2">
+                  <ul className="space-y-2 mt-4">
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center gap-3 text-sm text-slate-600">
                         <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />

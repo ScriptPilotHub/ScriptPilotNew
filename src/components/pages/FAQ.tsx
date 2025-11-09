@@ -291,7 +291,7 @@ export const FAQ: React.FC = () => {
       <section className="section bg-blue-50">
         <div className="container">
           <AnimatedSection delay={200}>
-            <div className="mb-12">
+            <div className="mb-16">
               <div className="flex flex-col sm:flex-row items-center justify-between mb-8">
                 <h2 className="heading-2 text-slate-900 mb-4 sm:mb-0">Browse by Category</h2>
                 <button
@@ -305,7 +305,7 @@ export const FAQ: React.FC = () => {
                   Show All ({faqs.length})
                 </button>
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
                 {categories.map((category, index) => {
                   const categoryCount = faqs.filter(faq => faq.category === category.name).length;
                   const isSelected = selectedCategory === category.name;
@@ -314,18 +314,18 @@ export const FAQ: React.FC = () => {
                     <button
                       key={category.name}
                       onClick={() => handleCategorySelect(category.name)}
-                      className={`bg-white rounded-xl border p-4 text-center transition-all duration-300 group hover:scale-105 shadow-sm hover:shadow-md ${
+                      className={`bg-white rounded-xl border p-6 text-center transition-all duration-300 group hover:scale-105 shadow-sm hover:shadow-md min-h-[120px] flex flex-col justify-center ${
                         isSelected 
                           ? `border-blue-500 bg-blue-50` 
                           : `border-slate-200 hover:border-blue-300`
                       }`}
                     >
-                      <category.icon className={`w-8 h-8 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300 ${
+                      <category.icon className={`w-8 h-8 mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 ${
                         isSelected 
                           ? `text-blue-600` 
                           : `text-blue-500`
                       }`} />
-                      <div className={`text-sm font-medium mb-1 transition-colors duration-300 ${
+                      <div className={`text-sm font-medium mb-2 transition-colors duration-300 ${
                         isSelected 
                           ? `text-slate-900` 
                           : `text-slate-700`
@@ -342,7 +342,7 @@ export const FAQ: React.FC = () => {
               
               {/* Active Filter Indicator */}
               {selectedCategory && (
-                <div className="mt-6 flex items-center justify-center">
+                <div className="mt-8 flex items-center justify-center">
                   <div className="bg-blue-50 rounded-full px-6 py-2 border border-blue-200">
                     <span className="text-slate-700">Showing </span>
                     <span className="text-blue-600 font-semibold">{selectedCategory}</span>

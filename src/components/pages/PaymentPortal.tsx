@@ -27,16 +27,16 @@ export const PaymentPortal: React.FC = () => (
     {/* Payment Options */}
     <section className="section">
       <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           <AnimatedSection delay={200}>
-            <div className="bg-white rounded-xl border border-slate-200 p-6 lg:p-8 group text-center h-full shadow-sm hover:shadow-md transition-all duration-300">
-              <div className="space-y-6">
+            <div className="bg-white rounded-xl border border-slate-200 p-8 group text-center h-full shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+              <div className="space-y-6 flex-1 flex flex-col justify-between">
                 <CreditCard className="w-16 h-16 text-purple-600 mx-auto group-hover:scale-110 transition-transform duration-300" />
-                <div className="space-y-3">
+                <div className="space-y-4 flex-1">
                   <h3 className="text-xl lg:text-2xl font-semibold text-slate-900">
                     Make a Payment
                   </h3>
-                  <p className="text-sm lg:text-base text-slate-600">
+                  <p className="text-base text-slate-600 leading-relaxed">
                     Pay your project invoices securely through our Stripe checkout.
                   </p>
                 </div>
@@ -44,7 +44,7 @@ export const PaymentPortal: React.FC = () => (
                   href="https://buy.stripe.com/5kQfZidrC8mE1uD68L9EI03"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 w-full sm:w-auto"
+                  className="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 w-full"
                 >
                   Pay Invoice
                 </a>
@@ -53,14 +53,14 @@ export const PaymentPortal: React.FC = () => (
           </AnimatedSection>
 
           <AnimatedSection delay={400}>
-            <div className="bg-white rounded-xl border border-slate-200 p-6 lg:p-8 group text-center h-full shadow-sm hover:shadow-md transition-all duration-300">
-              <div className="space-y-6">
+            <div className="bg-white rounded-xl border border-slate-200 p-8 group text-center h-full shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+              <div className="space-y-6 flex-1 flex flex-col justify-between">
                 <Shield className="w-16 h-16 text-teal-600 mx-auto group-hover:scale-110 transition-transform duration-300" />
-                <div className="space-y-3">
+                <div className="space-y-4 flex-1">
                   <h3 className="text-xl lg:text-2xl font-semibold text-slate-900">
                     Website Protection
                   </h3>
-                  <p className="text-sm lg:text-base text-slate-600">
+                  <p className="text-base text-slate-600 leading-relaxed">
                     Monthly website protection and updates package for ongoing security and maintenance.
                   </p>
                 </div>
@@ -68,7 +68,7 @@ export const PaymentPortal: React.FC = () => (
                   href="https://buy.stripe.com/3cIdRaevGauMc9h8gT9EI05"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 w-full sm:w-auto"
+                  className="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 w-full"
                 >
                   Subscribe Now
                 </a>
@@ -77,14 +77,14 @@ export const PaymentPortal: React.FC = () => (
           </AnimatedSection>
 
           <AnimatedSection delay={600}>
-            <div className="bg-white rounded-xl border border-slate-200 p-6 lg:p-8 group text-center h-full shadow-sm hover:shadow-md transition-all duration-300">
-              <div className="space-y-6">
+            <div className="bg-white rounded-xl border border-slate-200 p-8 group text-center h-full shadow-sm hover:shadow-md transition-all duration-300 flex flex-col md:col-span-2 lg:col-span-1">
+              <div className="space-y-6 flex-1 flex flex-col justify-between">
                 <FileText className="w-16 h-16 text-blue-600 mx-auto group-hover:scale-110 transition-transform duration-300" />
-                <div className="space-y-3">
+                <div className="space-y-4 flex-1">
                   <h3 className="text-xl lg:text-2xl font-semibold text-slate-900">
                     Customer Portal
                   </h3>
-                  <p className="text-sm lg:text-base text-slate-600">
+                  <p className="text-base text-slate-600 leading-relaxed">
                     View invoices, manage subscriptions, and access your billing history.
                   </p>
                 </div>
@@ -92,7 +92,7 @@ export const PaymentPortal: React.FC = () => (
                   href="https://billing.stripe.com/p/login/bJe28s5Za1Yg3CL68L9EI00"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 w-full sm:w-auto"
+                  className="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 w-full"
                 >
                   Access Portal
                 </a>

@@ -186,8 +186,11 @@ export const Contact: React.FC = () => {
 
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <input type="hidden" name="_to" value="t6ckmedia@gmail.com" />
+                    <input type="hidden" name="_replyto" value="t6ckmedia@gmail.com" />
                     <input type="hidden" name="_subject" value="New Contact Form Submission - Script Pilot" />
-                    <input type="hidden" name="_next" value="https://scriptpilotshop.netlify.app/#contact" />
+                    <input type="hidden" name="_next" value={window.location.href} />
+                    <input type="hidden" name="_captcha" value="false" />
+                    <input type="hidden" name="_template" value="table" />
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -196,8 +199,11 @@ export const Contact: React.FC = () => {
                         <input 
                           type="text" 
                           name="name" 
+                          value={formData.name}
+                          onChange={handleInputChange}
                           placeholder="Your Name" 
-                          className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 pl-10 pr-4 py-3 transition-colors duration-200" 
+                          className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 pl-10 pr-4 py-3 transition-colors duration-200 focus:outline-none" 
+                          autoComplete="name"
                           required 
                         />
                       </div>
@@ -208,8 +214,11 @@ export const Contact: React.FC = () => {
                         <input 
                           type="email" 
                           name="email" 
+                          value={formData.email}
+                          onChange={handleInputChange}
                           placeholder="Your Email" 
-                          className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 pl-10 pr-4 py-3 transition-colors duration-200" 
+                          className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 pl-10 pr-4 py-3 transition-colors duration-200 focus:outline-none" 
+                          autoComplete="email"
                           required 
                         />
                       </div>
@@ -217,9 +226,12 @@ export const Contact: React.FC = () => {
                     <div className="relative">
                       <textarea 
                         name="message" 
+                        value={formData.message}
+                        onChange={handleInputChange}
                         rows={5} 
                         placeholder="Tell us about your project..." 
-                        className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 px-4 py-3 transition-colors duration-200" 
+                        className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 px-4 py-3 transition-colors duration-200 focus:outline-none resize-vertical" 
+                        minLength={10}
                         required
                       />
                     </div>
@@ -227,7 +239,7 @@ export const Contact: React.FC = () => {
                       <button 
                         type="submit" 
                         disabled={isSubmitting}
-                        className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 w-full disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 w-full disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                       >
                         {isSubmitting ? 'Sending...' : 'Send Message'}
                       </button>
@@ -235,9 +247,17 @@ export const Contact: React.FC = () => {
                   </form>
                   {status && (
                     <p className={`text-center font-medium ${
-                      status.includes('error') || status.includes('Error')
+                      status.includes('❌') || status.includes('error') || status.includes('Error')
                         ? 'text-red-600'
-                        : 'text-green-600'
+                        : status.includes('✅')
+                        ? 'text-green-600'
+                        : 'text-blue-600'
+                    } p-4 bg-white rounded-lg border ${
+                      status.includes('❌') || status.includes('error') || status.includes('Error')
+                        ? 'border-red-200 bg-red-50'
+                        : status.includes('✅')
+                        ? 'border-green-200 bg-green-50'
+                        : 'border-blue-200 bg-blue-50'
                     }`}>
                       {status}
                     </p>

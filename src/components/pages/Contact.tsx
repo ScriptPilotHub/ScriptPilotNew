@@ -11,93 +11,81 @@ export const Contact: React.FC = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
-    const submitData = new FormData(form);
+    const formData = new FormData(form);
     
     setIsSubmitting(true);
-    setStatus('Sending your message... Please wait.');
+    setStatus('Sending your message...');
 
-    // Log form data for debugging
-    console.log('Form submission attempt:', {
-      name: submitData.get('name'),
-      email: submitData.get('email'),
-      message: submitData.get('message'),
-      timestamp: new Date().toISOString()
-    });
+    try {
+      // Method 1: Direct Formspree submission
+      const response = await fetch('https://formspree.io/f/xpwzgqpv', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
 
-    // Submit to Formspree with better error handling
-    fetch('https://formspree.io/f/xpwzgqpv', {
-      method: 'POST',
-      body: submitData,
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }
-    })
-    .then(response => {
-      console.log('Response status:', response.status);
-      console.log('Response headers:', response.headers);
-      
       if (response.ok) {
-        return response.json().then(data => {
-          console.log('Success response:', data);
-          const name = submitData.get('name') as string;
-          setStatus(`✅ Thank you, ${name}! Your message has been sent successfully. We'll respond within 24 hours.`);
-          setFormData({ name: '', email: '', message: '' });
-          form.reset();
-        });
+        const name = formData.get('name') as string;
+        setStatus(`✅ Thank you, ${name}! Your message has been sent successfully. We'll respond within 24 hours.`);
+        form.reset();
+        setFormData({ name: '', email: '', message: '' });
       } else {
-        return response.json().then(data => {
-          console.error('Error response:', data);
-          throw new Error(data.error || 'Form submission failed');
-        });
+        throw new Error('Primary method failed');
       }
-    })
-    .catch(error => {
+    } catch (error) {
       console.error('Form submission error:', error);
       
-      // Fallback: Try alternative submission method
-      const fallbackData = {
-        name: submitData.get('name'),
-        email: submitData.get('email'),
-        message: submitData.get('message'),
-        _subject: 'URGENT: Contact Form Submission - Script Pilot',
-        _replyto: submitData.get('email'),
-        _next: window.location.href
-      };
-      
-      // Try alternative Formspree endpoint
-      return fetch('https://formspree.io/f/xpwzgqpv', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(fallbackData)
-      })
-      .then(response => {
-        if (response.ok) {
-          const name = submitData.get('name') as string;
-          setStatus(`✅ Thank you, ${name}! Your message has been sent successfully (backup method). We'll respond within 24 hours.`);
-          setFormData({ name: '', email: '', message: '' });
+      try {
+        // Method 2: Alternative approach with different headers
+        const fallbackResponse = await fetch('https://formspree.io/f/xpwzgqpv', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: formData.get('name'),
+            email: formData.get('email'),
+            message: formData.get('message'),
+            _replyto: formData.get('email'),
+            _subject: 'New Contact Form Submission - Script Pilot'
+          })
+        });
+
+        if (fallbackResponse.ok) {
+          const name = formData.get('name') as string;
+          setStatus(`✅ Thank you, ${name}! Your message has been sent successfully. We'll respond within 24 hours.`);
           form.reset();
+          setFormData({ name: '', email: '', message: '' });
         } else {
-          throw new Error('Both submission methods failed');
+          throw new Error('Backup method also failed');
         }
-      })
-      .catch(finalError => {
-        console.error('Final submission error:', finalError);
-        setStatus(`❌ There was an error sending your message. Please try again or contact us directly at t6ckmedia@gmail.com. We apologize for the inconvenience.`);
-      });
-    })
-    .finally(() => {
+      } catch (finalError) {
+        console.error('All submission methods failed:', finalError);
+        
+        // Method 3: Create mailto link as ultimate fallback
+        const name = formData.get('name') as string;
+        const email = formData.get('email') as string;
+        const message = formData.get('message') as string;
+        
+        const subject = encodeURIComponent('New Contact Form Submission - Script Pilot');
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+        const mailtoLink = `mailto:t6ckmedia@gmail.com?subject=${subject}&body=${body}`;
+        
+        setStatus(`⚠️ Form submission failed. Opening your email client to send the message directly. If this doesn't work, please email us directly at t6ckmedia@gmail.com`);
+        
+        // Open mailto link
+        window.location.href = mailtoLink;
+      }
+    } finally {
       setIsSubmitting(false);
-      // Clear status after 10 seconds for success, 15 seconds for errors
-      const clearDelay = status.includes('✅') ? 10000 : 15000;
-      setTimeout(() => setStatus(''), clearDelay);
-    });
+      setTimeout(() => setStatus(''), 10000);
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -107,43 +95,6 @@ export const Contact: React.FC = () => {
       [name]: value
     }));
   };
-
-  // Test form submission function for debugging
-  const testFormSubmission = () => {
-    console.log('Testing form submission...');
-    fetch('https://formspree.io/f/xpwzgqpv', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        name: 'Test User',
-        email: 'test@example.com',
-        message: 'This is a test message to verify form functionality.',
-        _subject: 'Test Form Submission - Script Pilot'
-      })
-    })
-    .then(response => {
-      console.log('Test response:', response.status);
-      return response.json();
-    })
-    .then(data => {
-      console.log('Test data:', data);
-    })
-    .catch(error => {
-      console.error('Test error:', error);
-    });
-  };
-
-  // Run test on component mount (only in development)
-  React.useEffect(() => {
-    if (process.env.NODE_ENV === 'development') {
-      console.log('Contact form component loaded');
-      // Uncomment the line below to test form submission
-      // testFormSubmission();
-    }
-  }, []);
 
   return (
     <div className="min-h-screen bg-white">
@@ -185,12 +136,6 @@ export const Contact: React.FC = () => {
                   </div>
 
                   <form onSubmit={handleSubmit} className="space-y-6">
-                    <input type="hidden" name="_to" value="t6ckmedia@gmail.com" />
-                    <input type="hidden" name="_replyto" value="t6ckmedia@gmail.com" />
-                    <input type="hidden" name="_subject" value="New Contact Form Submission - Script Pilot" />
-                    <input type="hidden" name="_next" value={window.location.href} />
-                    <input type="hidden" name="_captcha" value="false" />
-                    <input type="hidden" name="_template" value="table" />
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -203,7 +148,6 @@ export const Contact: React.FC = () => {
                           onChange={handleInputChange}
                           placeholder="Your Name" 
                           className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 pl-10 pr-4 py-3 transition-colors duration-200 focus:outline-none" 
-                          autoComplete="name"
                           required 
                         />
                       </div>
@@ -218,7 +162,6 @@ export const Contact: React.FC = () => {
                           onChange={handleInputChange}
                           placeholder="Your Email" 
                           className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 pl-10 pr-4 py-3 transition-colors duration-200 focus:outline-none" 
-                          autoComplete="email"
                           required 
                         />
                       </div>
@@ -231,7 +174,6 @@ export const Contact: React.FC = () => {
                         rows={5} 
                         placeholder="Tell us about your project..." 
                         className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 px-4 py-3 transition-colors duration-200 focus:outline-none resize-vertical" 
-                        minLength={10}
                         required
                       />
                     </div>
@@ -245,23 +187,37 @@ export const Contact: React.FC = () => {
                       </button>
                     </div>
                   </form>
+                  
                   {status && (
-                    <p className={`text-center font-medium ${
-                      status.includes('❌') || status.includes('error') || status.includes('Error')
-                        ? 'text-red-600'
-                        : status.includes('✅')
-                        ? 'text-green-600'
-                        : 'text-blue-600'
-                    } p-4 bg-white rounded-lg border ${
-                      status.includes('❌') || status.includes('error') || status.includes('Error')
-                        ? 'border-red-200 bg-red-50'
-                        : status.includes('✅')
-                        ? 'border-green-200 bg-green-50'
-                        : 'border-blue-200 bg-blue-50'
+                    <div className={`p-4 rounded-lg border text-center font-medium ${
+                      status.includes('✅') 
+                        ? 'bg-green-50 border-green-200 text-green-700'
+                        : status.includes('⚠️')
+                        ? 'bg-yellow-50 border-yellow-200 text-yellow-700'
+                        : 'bg-blue-50 border-blue-200 text-blue-700'
                     }`}>
                       {status}
-                    </p>
+                    </div>
                   )}
+
+                  {/* Emergency Contact */}
+                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                    <div className="flex items-start gap-3">
+                      <Mail className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p className="font-medium text-blue-900 text-sm">Direct Email</p>
+                        <p className="text-blue-700 text-sm mt-1">
+                          Having issues with the form? Email us directly at{' '}
+                          <a 
+                            href="mailto:t6ckmedia@gmail.com?subject=New Contact - Script Pilot&body=Hi, I'd like to discuss a project with Script Pilot.%0D%0A%0D%0AName: %0D%0AEmail: %0D%0AProject Details: %0D%0A"
+                            className="font-medium underline hover:text-blue-800"
+                          >
+                            t6ckmedia@gmail.com
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </AnimatedSection>
@@ -331,25 +287,6 @@ export const Contact: React.FC = () => {
                       <div>
                         <p className="font-medium text-slate-900">Response Time</p>
                         <p className="text-sm text-slate-600">Within 24 hours guaranteed</p>
-                      </div>
-                    </div>
-                    
-                    {/* Emergency Contact Notice */}
-                    <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-6">
-                      <div className="flex items-start gap-3">
-                        <div className="w-6 h-6 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <span className="text-yellow-600 text-sm font-bold">!</span>
-                        </div>
-                        <div>
-                          <p className="font-medium text-yellow-800 text-sm">Having form issues?</p>
-                          <p className="text-yellow-700 text-sm mt-1">
-                            If the contact form isn't working, please email us directly at{' '}
-                            <a href="mailto:t6ckmedia@gmail.com" className="font-medium underline">
-                              t6ckmedia@gmail.com
-                            </a>{' '}
-                            or schedule a call above. We respond to all inquiries within 24 hours.
-                          </p>
-                        </div>
                       </div>
                     </div>
                   </div>

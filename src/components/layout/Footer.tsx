@@ -16,10 +16,10 @@ export const Footer: React.FC = () => (
               <div className="absolute -top-1 -right-1 w-4 h-4 bg-amber-400 rounded-full"></div>
             </div>
             <div className="flex flex-col">
-              <span className="text-2xl font-bold tracking-tight text-white font-['Space_Grotesk']">
+              <span className="text-2xl font-bold tracking-tight text-slate-900 font-['Space_Grotesk']">
                 Script Pilot
               </span>
-              <span className="text-sm text-blue-300 font-medium tracking-wider">
+              <span className="text-sm text-blue-600 font-medium tracking-wider">
                 WEB DEVELOPMENT
               </span>
             </div>

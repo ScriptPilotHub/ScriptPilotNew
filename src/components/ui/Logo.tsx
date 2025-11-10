@@ -11,10 +11,10 @@ export const Logo: React.FC = () => (
       <div className="absolute -top-1 -right-1 w-3 h-3 bg-amber-400 rounded-full"></div>
     </div>
     <div className="flex flex-col">
-      <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white font-['Space_Grotesk']">
+      <span className="text-xl font-bold tracking-tight text-slate-900 font-['Space_Grotesk']">
         Script Pilot
       </span>
-      <span className="text-xs text-slate-500 dark:text-slate-400 font-medium tracking-wider">
+      <span className="text-xs text-blue-600 font-medium tracking-wider">
         WEB DEVELOPMENT
       </span>
     </div>

@@ -229,4 +229,3 @@ export const ClientPortal: React.FC = () => (
     </section>
   </div>
 );
-</parameter>

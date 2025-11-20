@@ -115,107 +115,182 @@ export const Services: React.FC = () => (
         <div className="text-center mb-16">
           <Rocket className="w-16 h-16 text-slate-700 mx-auto mb-6" />
           <h2 className="text-4xl font-bold text-slate-900 mb-4">
-            Your Complete Digital Solution
+            Professional Web Development Services
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            We provide everything your business needs to establish a powerful online presence 
-            and drive real growth. One service, complete results.
+            Professional web development with transparent pricing and no hidden fees.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* Pricing Cards */}
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+          {/* Project Initiation */}
+          <div className="bg-white rounded-2xl border-2 border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 group">
+            <div className="p-8 text-center">
+              <div className="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+                <Rocket className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-2">Project Initiation</h3>
+              <div className="text-4xl font-bold text-slate-900 mb-4">$160</div>
+              <p className="text-slate-600 mb-6">Get started with your custom website project</p>
+              <ul className="text-left space-y-3 mb-8">
+                <li className="flex items-center gap-3 text-sm text-slate-600">
+                  <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                  Project consultation & planning
+                </li>
+                <li className="flex items-center gap-3 text-sm text-slate-600">
+                  <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                  Custom design mockups
+                </li>
+                <li className="flex items-center gap-3 text-sm text-slate-600">
+                  <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                  Development timeline
+                </li>
+                <li className="flex items-center gap-3 text-sm text-slate-600">
+                  <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                  Project roadmap
+                </li>
+              </ul>
+              <a
+                href="#contact"
+                className="w-full bg-slate-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-slate-800 transition-all duration-300 inline-block"
+              >
+                Start Project
+              </a>
+            </div>
+          </div>
+
+          {/* Final Payment */}
+          <div className="bg-white rounded-2xl border-2 border-amber-200 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 group relative">
+            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+              <span className="bg-amber-500 text-white px-4 py-2 rounded-full text-sm font-bold">COMPLETION</span>
+            </div>
+            <div className="p-8 text-center">
+              <div className="w-16 h-16 bg-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+                <CheckCircle className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-2">Deployment & Final Payment</h3>
+              <div className="text-2xl font-bold text-slate-900 mb-4">Custom Quote</div>
+              <p className="text-slate-600 mb-6">Final payment when your website is complete and deployed</p>
+              <ul className="text-left space-y-3 mb-8">
+                <li className="flex items-center gap-3 text-sm text-slate-600">
+                  <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                  Complete website development
+                </li>
+                <li className="flex items-center gap-3 text-sm text-slate-600">
+                  <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                  Domain setup & hosting
+                </li>
+                <li className="flex items-center gap-3 text-sm text-slate-600">
+                  <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                  SSL certificate & security
+                </li>
+                <li className="flex items-center gap-3 text-sm text-slate-600">
+                  <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                  Live website deployment
+                </li>
+              </ul>
+              <div className="w-full bg-amber-600 text-white px-6 py-3 rounded-lg font-semibold text-center">
+                Paid on Completion
+              </div>
+            </div>
+          </div>
+
+          {/* Maintenance */}
+          <div className="bg-white rounded-2xl border-2 border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 group">
+            <div className="p-8 text-center">
+              <div className="w-16 h-16 bg-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+                <Shield className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-2">Website Protection & Updates</h3>
+              <div className="text-4xl font-bold text-slate-900 mb-1">$150</div>
+              <div className="text-slate-500 text-sm mb-4">per month</div>
+              <p className="text-slate-600 mb-2">Keep your website secure and up-to-date</p>
+              <p className="text-sm text-emerald-600 font-semibold mb-6">Optional Service</p>
+              <ul className="text-left space-y-3 mb-8">
+                <li className="flex items-center gap-3 text-sm text-slate-600">
+                  <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                  Security monitoring & updates
+                </li>
+                <li className="flex items-center gap-3 text-sm text-slate-600">
+                  <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                  Regular backups
+                </li>
+                <li className="flex items-center gap-3 text-sm text-slate-600">
+                  <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                  Performance optimization
+                </li>
+                <li className="flex items-center gap-3 text-sm text-slate-600">
+                  <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                  Priority support
+                </li>
+              </ul>
+              <div className="w-full border-2 border-emerald-600 text-emerald-600 px-6 py-3 rounded-lg font-semibold text-center hover:bg-emerald-600 hover:text-white transition-all duration-300">
+                Optional Add-on
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* What's Included Section */}
+        <div className="bg-slate-900 rounded-2xl p-8 text-center">
+          <h3 className="text-3xl font-bold text-white mb-6">What's Included in Every Project</h3>
+          <div className="grid md:grid-cols-4 gap-6">
           {[
             {
-              icon: Monitor,
-              title: "Professional Website Design",
+              icon: Code,
+              title: "Custom Development",
               features: [
-                "Custom design tailored to your brand",
-                "Mobile-responsive on all devices",
-                "Fast loading speeds (under 3 seconds)",
-                "Professional photography integration"
+                "Custom design & development",
+                "Mobile-responsive design",
+                "Fast loading speeds",
+                "SEO optimization"
               ],
-              description: "Custom websites designed to represent your brand professionally and convert visitors into customers."
+              description: "Professional websites built from scratch"
             },
             {
               icon: ShoppingCart,
-              title: "E-commerce Ready",
+              title: "E-commerce Features",
               features: [
-                "Secure payment processing (Stripe, PayPal)",
-                "Product catalog and inventory management",
-                "Shopping cart and checkout optimization",
-                "Order tracking and customer accounts"
+                "Payment processing setup",
+                "Product catalogs",
+                "Shopping cart functionality",
+                "Order management"
               ],
-              description: "Complete e-commerce solutions that turn your website into a powerful sales machine."
-            },
-            {
-              icon: Code,
-              title: "Custom Features",
-              features: [
-                "Contact forms and lead capture",
-                "Booking and appointment systems",
-                "Customer testimonials and reviews",
-                "Social media integration"
-              ],
-              description: "Tailored functionality that meets your specific business needs and workflow requirements."
-            },
-            {
-              icon: Rocket,
-              title: "Launch & Deployment",
-              features: [
-                "Domain setup and DNS configuration",
-                "SSL certificate and security setup",
-                "Performance optimization",
-                "Google Analytics and tracking"
-              ],
-              description: "Complete deployment and launch services to get your website live and performing optimally."
-            },
-            {
-              icon: Search,
-              title: "SEO & Marketing",
-              features: [
-                "Search engine optimization (SEO)",
-                "Google Business Profile setup",
-                "Local search optimization",
-                "Content optimization for search"
-              ],
-              description: "Strategic SEO and marketing setup to help customers find your business online."
+              description: "Full e-commerce capabilities when needed"
             },
             {
               icon: Shield,
-              title: "Ongoing Support",
+              title: "Security & Performance",
               features: [
-                "One month of free support",
-                "Security monitoring and updates",
-                "Regular backups and maintenance",
-                "Priority technical assistance"
+                "SSL certificates",
+                "Security hardening",
+                "Performance optimization",
+                "Regular backups"
               ],
-              description: "Comprehensive maintenance and support to keep your website secure and running smoothly."
+              description: "Enterprise-level security and speed"
+            },
+            {
+              icon: Users,
+              title: "Support & Training",
+              features: [
+                "Website training",
+                "Documentation provided",
+                "Launch support",
+                "30-day warranty"
+              ],
+              description: "Complete support from start to finish"
             }
           ].map((service, index) => (
-           <div key={index} className="bg-white rounded-xl border border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-300 group transform hover:scale-105 hover:-translate-y-2">
-              <div className="p-8">
-               <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-slate-800 transition-all duration-300 transform group-hover:rotate-12 group-hover:scale-110">
-                 <service.icon className="w-6 h-6 text-slate-700 group-hover:text-white transition-all duration-300" />
-                </div>
-                
-                <h3 className="text-2xl font-semibold text-slate-900 mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-slate-600 text-sm mb-6">
-                  {service.description}
-                </p>
-                
-                <ul className="space-y-3">
-                  {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center gap-3 text-sm text-slate-600">
-                      <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+            <div key={index} className="text-center">
+              <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center mx-auto mb-4">
+                <service.icon className="w-6 h-6 text-slate-900" />
               </div>
+              <h4 className="text-lg font-semibold text-white mb-2">{service.title}</h4>
+              <p className="text-slate-300 text-sm">{service.description}</p>
             </div>
           ))}
+          </div>
         </div>
       </div>
     </section>

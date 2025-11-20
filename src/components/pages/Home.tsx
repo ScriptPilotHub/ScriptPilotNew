@@ -61,33 +61,35 @@ export const Home: React.FC = () => (
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-slate-900 mb-4">
-            Complete Digital Solutions
+            Professional Web Development
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            From concept to deployment, we handle every aspect of your digital presence 
-            with precision and expertise.
+            Transparent pricing, professional results. No hidden fees, no surprises.
           </p>
         </div>
         
         <div className="grid md:grid-cols-3 gap-8">
           {[
             {
-              icon: Globe,
-              title: "Custom Development",
-              description: "Bespoke websites and applications built with modern technologies, optimized for performance and user experience.",
-              features: ["React & TypeScript", "Mobile-First Design", "Performance Optimized"]
+              icon: Rocket,
+              title: "Project Initiation",
+              description: "Start your custom website project with professional consultation and planning.",
+              features: ["$160 to get started", "Custom design mockups", "Project roadmap"],
+              price: "$160"
             },
             {
-              icon: Code,
-              title: "E-commerce Platforms",
-              description: "Secure, scalable online stores with integrated payment processing, inventory management, and analytics.",
-              features: ["Stripe Integration", "Inventory Management", "Order Tracking"]
+              icon: CheckCircle,
+              title: "Deployment & Final Payment",
+              description: "Complete development and deployment when your website is finished and ready to go live.",
+              features: ["Custom quote based on scope", "Complete development", "Live deployment"],
+              price: "Custom Quote"
             },
             {
               icon: Shield,
-              title: "Ongoing Support",
-              description: "Comprehensive maintenance, security updates, and technical support to keep your digital presence running smoothly.",
-              features: ["Security Monitoring", "Regular Backups", "Performance Optimization"]
+              title: "Website Protection & Updates",
+              description: "Optional monthly service to keep your website secure, updated, and performing optimally.",
+              features: ["$150/month (optional)", "Security monitoring", "Regular updates"],
+              price: "$150/mo"
             }
           ].map((service, index) => (
            <div key={index} className="bg-white rounded-xl border border-slate-200 p-8 shadow-lg hover:shadow-2xl transition-all duration-300 group transform hover:scale-105 hover:-translate-y-2">
@@ -95,6 +97,7 @@ export const Home: React.FC = () => (
                <service.icon className="w-6 h-6 text-slate-700 group-hover:text-white transition-all duration-300" />
               </div>
               
+              <div className="text-2xl font-bold text-slate-900 mb-2">{service.price}</div>
               <h3 className="text-2xl font-semibold text-slate-900 mb-4">
                 {service.title}
               </h3>

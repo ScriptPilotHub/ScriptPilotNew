@@ -61,7 +61,7 @@ export const Contact: React.FC = () => {
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-5xl md:text-7xl font-bold text-slate-900 mb-6">
             Get in
-            <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent">
               Touch
             </span>
           </h1>
@@ -99,7 +99,7 @@ export const Contact: React.FC = () => {
                         type="text" 
                         name="name" 
                         placeholder="Your Name" 
-                        className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 pl-10 pr-4 py-3 transition-colors duration-200 focus:outline-none" 
+                        className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-slate-600 focus:ring-1 focus:ring-slate-600 pl-10 pr-4 py-3 transition-colors duration-200 focus:outline-none" 
                         required 
                       />
                     </div>
@@ -111,7 +111,7 @@ export const Contact: React.FC = () => {
                         type="email" 
                         name="email" 
                         placeholder="Your Email" 
-                        className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 pl-10 pr-4 py-3 transition-colors duration-200 focus:outline-none" 
+                        className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-slate-600 focus:ring-1 focus:ring-slate-600 pl-10 pr-4 py-3 transition-colors duration-200 focus:outline-none" 
                         required 
                       />
                     </div>
@@ -121,7 +121,7 @@ export const Contact: React.FC = () => {
                       name="message" 
                       rows={5} 
                       placeholder="Tell us about your project..." 
-                      className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 px-4 py-3 transition-colors duration-200 focus:outline-none resize-vertical" 
+                      className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-slate-600 focus:ring-1 focus:ring-slate-600 px-4 py-3 transition-colors duration-200 focus:outline-none resize-vertical" 
                       required
                     />
                   </div>
@@ -129,7 +129,7 @@ export const Contact: React.FC = () => {
                     <button 
                       type="submit" 
                       disabled={isSubmitting}
-                      className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 w-full disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                      className="bg-slate-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-slate-800 transition-all duration-300 w-full disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
                     >
                       {isSubmitting ? 'Preparing Email...' : 'Send Message'}
                     </button>
@@ -139,36 +139,36 @@ export const Contact: React.FC = () => {
                 {status && (
                   <div className={`p-4 rounded-lg border text-center font-medium ${
                     status.includes('✅') 
-                      ? 'bg-green-50 border-green-200 text-green-700'
-                      : 'bg-blue-50 border-blue-200 text-blue-700'
+                      ? 'bg-emerald-50 border-emerald-200 text-emerald-700'
+                      : 'bg-slate-50 border-slate-200 text-slate-700'
                   }`}>
                     {status}
                   </div>
                 )}
 
                 {/* Direct Contact Options */}
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-                  <h4 className="font-semibold text-blue-900 mb-4">Prefer Direct Contact?</h4>
+                <div className="bg-slate-50 border border-slate-200 rounded-lg p-6">
+                  <h4 className="font-semibold text-slate-900 mb-4">Prefer Direct Contact?</h4>
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                      <Phone className="w-5 h-5 text-slate-700 flex-shrink-0" />
                       <div>
-                        <p className="font-medium text-blue-900">Call Now</p>
+                        <p className="font-medium text-slate-900">Call Now</p>
                         <a 
                           href="tel:4174010015"
-                          className="text-blue-700 hover:text-blue-800 font-medium text-lg"
+                          className="text-slate-700 hover:text-slate-800 font-medium text-lg"
                         >
                           (417) 401-0015
                         </a>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <Mail className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                      <Mail className="w-5 h-5 text-slate-700 flex-shrink-0" />
                       <div>
-                        <p className="font-medium text-blue-900">Email Directly</p>
+                        <p className="font-medium text-slate-900">Email Directly</p>
                         <a 
                           href="mailto:t6ckmedia@gmail.com?subject=New Contact - Script Pilot&body=Hi, I'd like to discuss a project with Script Pilot.%0D%0A%0D%0AName: %0D%0AEmail: %0D%0AProject Details: %0D%0A"
-                          className="text-blue-700 hover:text-blue-800 font-medium"
+                          className="text-slate-700 hover:text-slate-800 font-medium"
                         >
                           t6ckmedia@gmail.com
                         </a>
@@ -183,7 +183,7 @@ export const Contact: React.FC = () => {
             <div className="space-y-8">
               <div className="bg-white rounded-xl border border-slate-200 p-6 text-center shadow-sm">
                 <div className="space-y-6">
-                  <MessageCircle className="w-16 h-16 text-blue-600 mx-auto" />
+                  <MessageCircle className="w-16 h-16 text-slate-700 mx-auto" />
                   <div className="space-y-3">
                     <h3 className="text-2xl font-semibold text-slate-900">
                       Book a Free Consultation
@@ -197,7 +197,7 @@ export const Contact: React.FC = () => {
                     href="https://calendly.com/t6ckmedia/30min"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300"
+                    className="inline-block bg-slate-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-slate-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
                   >
                     Schedule Your Call
                   </a>
@@ -212,16 +212,16 @@ export const Contact: React.FC = () => {
                 
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-6 h-6 text-blue-600" />
+                    <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-6 h-6 text-slate-700" />
                     </div>
                     <div>
                       <p className="font-medium text-slate-900">Phone & Email</p>
                       <div className="text-slate-600 space-y-1">
-                        <a href="tel:4174010015" className="text-blue-600 hover:text-blue-700 block">
+                        <a href="tel:4174010015" className="text-slate-700 hover:text-slate-800 block">
                           (417) 401-0015
                         </a>
-                        <a href="mailto:t6ckmedia@gmail.com" className="text-blue-600 hover:text-blue-700 block">
+                        <a href="mailto:t6ckmedia@gmail.com" className="text-slate-700 hover:text-slate-800 block">
                           t6ckmedia@gmail.com
                         </a>
                       </div>
@@ -229,8 +229,8 @@ export const Contact: React.FC = () => {
                   </div>
                   
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-6 h-6 text-green-600" />
+                    <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-6 h-6 text-amber-600" />
                     </div>
                     <div>
                       <p className="font-medium text-slate-900">Service Area</p>
@@ -239,8 +239,8 @@ export const Contact: React.FC = () => {
                   </div>
                   
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Clock className="w-6 h-6 text-purple-600" />
+                    <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Clock className="w-6 h-6 text-slate-700" />
                     </div>
                     <div>
                       <p className="font-medium text-slate-900">Response Time</p>
@@ -255,21 +255,21 @@ export const Contact: React.FC = () => {
       </section>
 
       {/* Trust Indicators */}
-      <section className="py-20 bg-blue-50">
+      <section className="py-20 bg-slate-50">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div className="bg-white rounded-xl border border-slate-200 p-6 text-center shadow-sm hover:shadow-md transition-all duration-300">
-              <Shield className="w-12 h-12 text-green-600 mx-auto mb-4" />
+              <Shield className="w-12 h-12 text-emerald-600 mx-auto mb-4" />
               <h4 className="text-lg font-semibold text-slate-900 mb-2">Secure & Reliable</h4>
               <p className="text-sm text-slate-600">SSL certificates, regular backups, and enterprise-grade security for all projects.</p>
             </div>
             <div className="bg-white rounded-xl border border-slate-200 p-6 text-center shadow-sm hover:shadow-md transition-all duration-300">
-              <Users className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+              <Users className="w-12 h-12 text-slate-700 mx-auto mb-4" />
               <h4 className="text-lg font-semibold text-slate-900 mb-2">Dedicated Support</h4>
               <p className="text-sm text-slate-600">Personal attention from our experienced team throughout your project and beyond.</p>
             </div>
             <div className="bg-white rounded-xl border border-slate-200 p-6 text-center shadow-sm hover:shadow-md transition-all duration-300">
-              <CheckCircle className="w-12 h-12 text-purple-600 mx-auto mb-4" />
+              <CheckCircle className="w-12 h-12 text-amber-600 mx-auto mb-4" />
               <h4 className="text-lg font-semibold text-slate-900 mb-2">Proven Results</h4>
               <p className="text-sm text-slate-600">Hundreds of successful projects helping businesses grow their online presence.</p>
             </div>

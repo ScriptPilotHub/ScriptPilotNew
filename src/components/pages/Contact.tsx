@@ -1,278 +1,231 @@
-import React, { useState } from 'react';
-import { User, Mail, MessageCircle, Phone, MapPin, Clock, ArrowRight, Shield, Users, CheckCircle } from 'lucide-react';
+import React from 'react';
+import { Phone, Mail, MessageCircle, MapPin, Clock, ArrowRight, Shield, Users, CheckCircle, Calendar, Zap, Award } from 'lucide-react';
 
 export const Contact: React.FC = () => {
-  const [status, setStatus] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-    
-    const name = formData.get('name') as string;
-    const email = formData.get('email') as string;
-    const message = formData.get('message') as string;
-
-    setIsSubmitting(true);
-    setStatus('Preparing to send your message...');
-
-    try {
-      // Use Netlify Forms
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({
-          'form-name': 'contact',
-          'name': name,
-          'email': email,
-          'message': message
-        }).toString()
-      });
-
-      if (response.ok) {
-        setStatus('✅ Message sent successfully! We\'ll get back to you within 24 hours.');
-        form.reset();
-      } else {
-        throw new Error('Network response was not ok');
-      }
-    } catch (error) {
-      // Fallback to mailto if Netlify forms fail
-      const subject = encodeURIComponent(`New Contact from ${name} - Script Pilot`);
-      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n\n---\nSent from Script Pilot contact form`);
-      const mailtoLink = `mailto:t6ckmedia@gmail.com?subject=${subject}&body=${body}`;
-      
-      setStatus('Opening your email client to send the message...');
-      window.location.href = mailtoLink;
-    }
-    
-    setIsSubmitting(false);
-    
-    // Clear status after 5 seconds
-    setTimeout(() => {
-      setStatus('');
-    }, 5000);
-  };
-
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-5xl md:text-7xl font-bold text-slate-900 mb-6">
-            Get in
+            Let's Build Something
             <span className="block bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent">
-              Touch
+              Extraordinary
             </span>
           </h1>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
-            Ready to start your project? Call us, send a message, or book a consultation. 
-            We're here to help bring your vision to life.
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-12">
+            Ready to transform your digital presence? Choose how you'd like to connect with us 
+            and let's start building your success story today.
           </p>
         </div>
       </section>
 
-      {/* Contact Options */}
+      {/* Primary Contact Methods */}
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Contact Form */}
-            <div className="bg-white rounded-xl border border-slate-200 p-8 shadow-sm">
-              <div className="space-y-6">
-                <div className="space-y-3">
-                  <h3 className="text-3xl font-bold text-slate-900">
-                    Send a Direct Message
-                  </h3>
-                  <p className="text-slate-600">
-                    Fill out the form below and we'll open your email client to send the message.
-                  </p>
+          <div className="grid lg:grid-cols-2 gap-8 mb-16">
+            {/* Phone Contact */}
+            <div className="group bg-white rounded-2xl border border-slate-200 p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
+              <div className="flex items-start gap-6">
+                <div className="relative">
+                  <div className="w-16 h-16 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+                    <Phone className="w-8 h-8 text-white" />
+                  </div>
+                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-emerald-500 rounded-full animate-pulse"></div>
                 </div>
-
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <input type="hidden" name="form-name" value="contact" />
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="relative">
-                      <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                        <User className="h-5 w-5 text-slate-400" />
-                      </div>
-                      <input 
-                        type="text" 
-                        name="name" 
-                        placeholder="Your Name" 
-                        className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-slate-600 focus:ring-1 focus:ring-slate-600 pl-10 pr-4 py-3 transition-colors duration-200 focus:outline-none" 
-                        required 
-                      />
-                    </div>
-                    <div className="relative">
-                      <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                        <Mail className="h-5 w-5 text-slate-400" />
-                      </div>
-                      <input 
-                        type="email" 
-                        name="email" 
-                        placeholder="Your Email" 
-                        className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-slate-600 focus:ring-1 focus:ring-slate-600 pl-10 pr-4 py-3 transition-colors duration-200 focus:outline-none" 
-                        required 
-                      />
-                    </div>
-                  </div>
-                  <div className="relative">
-                    <textarea 
-                      name="message" 
-                      rows={5} 
-                      placeholder="Tell us about your project..." 
-                      className="w-full bg-white text-slate-900 rounded-lg border border-slate-300 focus:border-slate-600 focus:ring-1 focus:ring-slate-600 px-4 py-3 transition-colors duration-200 focus:outline-none resize-vertical" 
-                      required
-                    />
-                  </div>
-                  <div>
-                    <button 
-                      type="submit" 
-                      disabled={isSubmitting}
-                      className="bg-slate-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-slate-800 transition-all duration-300 w-full disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
-                    >
-                      {isSubmitting ? 'Preparing Email...' : 'Send Message'}
-                    </button>
-                  </div>
-                </form>
-                
-                {status && (
-                  <div className={`p-4 rounded-lg border text-center font-medium ${
-                    status.includes('✅') 
-                      ? 'bg-emerald-50 border-emerald-200 text-emerald-700'
-                      : 'bg-slate-50 border-slate-200 text-slate-700'
-                  }`}>
-                    {status}
-                  </div>
-                )}
-
-                {/* Direct Contact Options */}
-                <div className="bg-slate-50 border border-slate-200 rounded-lg p-6">
-                  <h4 className="font-semibold text-slate-900 mb-4">Prefer Direct Contact?</h4>
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-slate-700 flex-shrink-0" />
-                      <div>
-                        <p className="font-medium text-slate-900">Call Now</p>
-                        <a 
-                          href="tel:4174010015"
-                          className="text-slate-700 hover:text-slate-800 font-medium text-lg"
-                        >
-                          (417) 401-0015
-                        </a>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Mail className="w-5 h-5 text-slate-700 flex-shrink-0" />
-                      <div>
-                        <p className="font-medium text-slate-900">Email Directly</p>
-                        <a 
-                          href="mailto:t6ckmedia@gmail.com?subject=New Contact - Script Pilot&body=Hi, I'd like to discuss a project with Script Pilot.%0D%0A%0D%0AName: %0D%0AEmail: %0D%0AProject Details: %0D%0A"
-                          className="text-slate-700 hover:text-slate-800 font-medium"
-                        >
-                          t6ckmedia@gmail.com
-                        </a>
-                      </div>
-                    </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-3">Call Now</h3>
+                  <p className="text-slate-600 mb-4">
+                    Speak directly with our team. Available during business hours for immediate assistance.
+                  </p>
+                  <a 
+                    href="tel:4174010015"
+                    className="inline-flex items-center gap-3 text-2xl font-bold text-slate-900 hover:text-slate-700 transition-colors duration-200 group-hover:scale-105 transform"
+                  >
+                    (417) 401-0015
+                    <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-200" />
+                  </a>
+                  <div className="mt-4 flex items-center gap-2 text-sm text-slate-500">
+                    <Clock className="w-4 h-4" />
+                    <span>Mon-Fri 9AM-6PM CST</span>
                   </div>
                 </div>
               </div>
             </div>
-            
-            {/* Consultation Booking */}
-            <div className="space-y-8">
-              <div className="bg-white rounded-xl border border-slate-200 p-6 text-center shadow-sm">
-                <div className="space-y-6">
-                  <MessageCircle className="w-16 h-16 text-slate-700 mx-auto" />
-                  <div className="space-y-3">
-                    <h3 className="text-2xl font-semibold text-slate-900">
-                      Book a Free Consultation
-                    </h3>
-                    <p className="text-slate-600 leading-relaxed">
-                      Ready to discuss your project? Schedule a call to discuss your 
-                      project in detail and get a custom quote.
-                    </p>
-                  </div>
-                  <a
-                    href="https://calendly.com/t6ckmedia/30min"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-slate-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-slate-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
-                  >
-                    Schedule Your Call
-                  </a>
-                </div>
-              </div>
 
-              {/* Contact Info */}
-              <div className="space-y-6">
-                <h4 className="text-2xl font-semibold text-slate-900">
-                  Other Ways to Reach Us
-                </h4>
-                
-                <div className="space-y-4">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-6 h-6 text-slate-700" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-slate-900">Phone & Email</p>
-                      <div className="text-slate-600 space-y-1">
-                        <a href="tel:4174010015" className="text-slate-700 hover:text-slate-800 block">
-                          (417) 401-0015
-                        </a>
-                        <a href="mailto:t6ckmedia@gmail.com" className="text-slate-700 hover:text-slate-800 block">
-                          t6ckmedia@gmail.com
-                        </a>
-                      </div>
-                    </div>
+            {/* Email Contact */}
+            <div className="group bg-white rounded-2xl border border-slate-200 p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
+              <div className="flex items-start gap-6">
+                <div className="relative">
+                  <div className="w-16 h-16 bg-gradient-to-br from-amber-600 to-amber-700 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+                    <Mail className="w-8 h-8 text-white" />
                   </div>
-                  
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-6 h-6 text-amber-600" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-slate-900">Service Area</p>
-                      <p className="text-slate-600">Serving businesses nationwide</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Clock className="w-6 h-6 text-slate-700" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-slate-900">Response Time</p>
-                      <p className="text-slate-600">Within 24 hours guaranteed</p>
-                    </div>
+                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-blue-500 rounded-full animate-bounce"></div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-3">Send Email</h3>
+                  <p className="text-slate-600 mb-4">
+                    Email us your project details and we'll respond within 24 hours with a detailed proposal.
+                  </p>
+                  <a 
+                    href="mailto:t6ckmedia@gmail.com?subject=New Project Inquiry - Script Pilot&body=Hi Script Pilot team,%0D%0A%0D%0AI'm interested in discussing a web development project.%0D%0A%0D%0AProject Type: %0D%0ABudget Range: %0D%0ATimeline: %0D%0A%0D%0APlease contact me to discuss further.%0D%0A%0D%0AThank you!"
+                    className="inline-flex items-center gap-3 text-xl font-bold text-slate-900 hover:text-slate-700 transition-colors duration-200 group-hover:scale-105 transform break-all"
+                  >
+                    t6ckmedia@gmail.com
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200 flex-shrink-0" />
+                  </a>
+                  <div className="mt-4 flex items-center gap-2 text-sm text-slate-500">
+                    <CheckCircle className="w-4 h-4" />
+                    <span>24-hour response guarantee</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          {/* Schedule Consultation */}
+          <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 text-center shadow-2xl transform hover:scale-105 transition-all duration-300">
+            <div className="max-w-3xl mx-auto">
+              <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <Calendar className="w-10 h-10 text-slate-900" />
+              </div>
+              <h3 className="text-3xl font-bold text-white mb-4">
+                Schedule a Free Strategy Session
+              </h3>
+              <p className="text-slate-300 text-lg mb-8 leading-relaxed">
+                Book a 30-minute consultation to discuss your project in detail. We'll provide expert insights, 
+                answer your questions, and create a custom roadmap for your success.
+              </p>
+              <a
+                href="https://calendly.com/t6ckmedia/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-white text-slate-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
+              >
+                <Calendar className="w-6 h-6" />
+                Book Your Free Session
+                <ArrowRight className="w-6 h-6" />
+              </a>
+              <p className="text-slate-400 text-sm mt-4">
+                No commitment required • Instant booking • 100% free
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Trust Indicators */}
+      {/* Contact Information Grid */}
       <section className="py-20 bg-slate-50">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            <div className="bg-white rounded-xl border border-slate-200 p-6 text-center shadow-sm hover:shadow-md transition-all duration-300">
-              <Shield className="w-12 h-12 text-emerald-600 mx-auto mb-4" />
-              <h4 className="text-lg font-semibold text-slate-900 mb-2">Secure & Reliable</h4>
-              <p className="text-sm text-slate-600">SSL certificates, regular backups, and enterprise-grade security for all projects.</p>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">
+              Multiple Ways to Connect
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Choose the method that works best for you. We're here to help in whatever way is most convenient.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Location */}
+            <div className="bg-white rounded-xl p-8 text-center shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+              <div className="w-16 h-16 bg-slate-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-slate-800 transition-all duration-300">
+                <MapPin className="w-8 h-8 text-slate-700 animate-bounce" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">Service Area</h3>
+              <p className="text-slate-600 mb-4">Serving businesses nationwide with remote collaboration</p>
+              <p className="text-sm text-slate-500">Based in Missouri, USA</p>
             </div>
-            <div className="bg-white rounded-xl border border-slate-200 p-6 text-center shadow-sm hover:shadow-md transition-all duration-300">
-              <Users className="w-12 h-12 text-slate-700 mx-auto mb-4" />
-              <h4 className="text-lg font-semibold text-slate-900 mb-2">Dedicated Support</h4>
-              <p className="text-sm text-slate-600">Personal attention from our experienced team throughout your project and beyond.</p>
+
+            {/* Response Time */}
+            <div className="bg-white rounded-xl p-8 text-center shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+              <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Clock className="w-8 h-8 text-emerald-600 animate-pulse" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">Quick Response</h3>
+              <p className="text-slate-600 mb-4">We respond to all inquiries within 24 hours</p>
+              <p className="text-sm text-slate-500">Usually much faster!</p>
             </div>
-            <div className="bg-white rounded-xl border border-slate-200 p-6 text-center shadow-sm hover:shadow-md transition-all duration-300">
-              <CheckCircle className="w-12 h-12 text-amber-600 mx-auto mb-4" />
-              <h4 className="text-lg font-semibold text-slate-900 mb-2">Proven Results</h4>
-              <p className="text-sm text-slate-600">Hundreds of successful projects helping businesses grow their online presence.</p>
+
+            {/* Project Timeline */}
+            <div className="bg-white rounded-xl p-8 text-center shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+              <div className="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Zap className="w-8 h-8 text-amber-600" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">Fast Delivery</h3>
+              <p className="text-slate-600 mb-4">Most projects completed in 2-8 weeks</p>
+              <p className="text-sm text-slate-500">Rush projects available</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-20">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">
+              Why Businesses Choose Script Pilot
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              We're not just developers – we're your strategic partners in digital success.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-xl border border-slate-200 p-8 text-center shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
+              <div className="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <Shield className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-semibold text-slate-900 mb-4">Proven Results</h3>
+              <p className="text-slate-600">200+ successful projects with 99% client satisfaction rate</p>
+            </div>
+
+            <div className="bg-white rounded-xl border border-slate-200 p-8 text-center shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
+              <div className="w-16 h-16 bg-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <Users className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-semibold text-slate-900 mb-4">Personal Service</h3>
+              <p className="text-slate-600">Direct access to founders and dedicated project management</p>
+            </div>
+
+            <div className="bg-white rounded-xl border border-slate-200 p-8 text-center shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
+              <div className="w-16 h-16 bg-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <Award className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-semibold text-slate-900 mb-4">Quality Guarantee</h3>
+              <p className="text-slate-600">30-day satisfaction guarantee and ongoing support included</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-20 bg-slate-900">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold text-white mb-6">
+            Ready to Get Started?
+          </h2>
+          <p className="text-xl text-slate-300 mb-12 max-w-3xl mx-auto">
+            Don't wait – every day without a professional website is potential revenue lost. 
+            Contact us today and let's build something amazing together.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <a
+              href="tel:4174010015"
+              className="bg-white text-slate-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 transform flex items-center gap-3"
+            >
+              <Phone className="w-6 h-6" />
+              Call (417) 401-0015
+            </a>
+            <a
+              href="mailto:t6ckmedia@gmail.com?subject=New Project Inquiry - Script Pilot"
+              className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-slate-900 transition-all duration-300 flex items-center gap-3"
+            >
+              <Mail className="w-6 h-6" />
+              Send Email
+            </a>
           </div>
         </div>
       </section>

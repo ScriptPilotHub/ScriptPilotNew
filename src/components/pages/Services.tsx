@@ -192,10 +192,10 @@ export const Services: React.FC = () => (
               description: "Comprehensive maintenance and support to keep your website secure and running smoothly."
             }
           ].map((service, index) => (
-            <div key={index} className="bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 group">
+           <div key={index} className="bg-white rounded-xl border border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-300 group transform hover:scale-105 hover:-translate-y-2">
               <div className="p-8">
-                <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-slate-800 transition-colors duration-300">
-                  <service.icon className="w-6 h-6 text-slate-700 group-hover:text-white transition-colors duration-300" />
+               <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-slate-800 transition-all duration-300 transform group-hover:rotate-12 group-hover:scale-110">
+                 <service.icon className="w-6 h-6 text-slate-700 group-hover:text-white transition-all duration-300" />
                 </div>
                 
                 <h3 className="text-2xl font-semibold text-slate-900 mb-3">

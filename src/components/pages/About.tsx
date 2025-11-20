@@ -110,9 +110,9 @@ export const About: React.FC = () => (
               description: "We maintain the highest standards in every aspect of our work, from code quality to user experience and customer service."
             }
           ].map((value, index) => (
-            <div key={index} className="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 group">
-              <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-slate-800 transition-colors duration-300">
-                <value.icon className="w-6 h-6 text-slate-700 group-hover:text-white transition-colors duration-300" />
+           <div key={index} className="bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 group transform hover:scale-105 hover:-translate-y-2">
+             <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-slate-800 transition-all duration-300 transform group-hover:rotate-12 group-hover:scale-110">
+               <value.icon className="w-6 h-6 text-slate-700 group-hover:text-white transition-all duration-300" />
               </div>
               
               <h3 className="text-2xl font-semibold text-slate-900 mb-4">

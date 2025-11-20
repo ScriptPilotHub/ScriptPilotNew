@@ -75,21 +75,24 @@ export const Home: React.FC = () => (
               title: "Project Initiation",
               description: "Start your custom website project with professional consultation and planning.",
               features: ["$160 to get started", "Custom design mockups", "Project roadmap"],
-              price: "$160"
+              price: "$160",
+              originalPrice: "$200"
             },
             {
               icon: CheckCircle,
               title: "Deployment & Final Payment",
               description: "Complete development and deployment when your website is finished and ready to go live.",
-              features: ["Custom quote based on scope", "Complete development", "Live deployment"],
-              price: "Custom Quote"
+              features: ["$440 final payment", "Complete development", "Live deployment"],
+              price: "$440",
+              originalPrice: "$500"
             },
             {
               icon: Shield,
               title: "Website Protection & Updates",
               description: "Optional monthly service to keep your website secure, updated, and performing optimally.",
               features: ["$150/month (optional)", "Security monitoring", "Regular updates"],
-              price: "$150/mo"
+              price: "$150/mo",
+              originalPrice: "$200/mo"
             }
           ].map((service, index) => (
            <div key={index} className="bg-white rounded-xl border border-slate-200 p-8 shadow-lg hover:shadow-2xl transition-all duration-300 group transform hover:scale-105 hover:-translate-y-2">
@@ -98,6 +101,12 @@ export const Home: React.FC = () => (
               </div>
               
               <div className="text-2xl font-bold text-slate-900 mb-2">{service.price}</div>
+              {service.originalPrice && (
+                <div className="mb-2">
+                  <span className="text-sm text-slate-500 line-through">{service.originalPrice}</span>
+                  <span className="text-emerald-600 font-semibold text-xs ml-2">Save!</span>
+                </div>
+              )}
               <h3 className="text-2xl font-semibold text-slate-900 mb-4">
                 {service.title}
               </h3>

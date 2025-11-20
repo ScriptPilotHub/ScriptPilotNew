@@ -5,6 +5,7 @@ import { Home } from './components/pages/Home';
 import { Services } from './components/pages/Services';
 import { About } from './components/pages/About';
 import { Contact } from './components/pages/Contact';
+import { ClientPortal } from './components/pages/ClientPortal';
 import { usePathname } from './hooks/usePathname';
 
 function App() {
@@ -18,6 +19,8 @@ function App() {
         return <About />;
       case 'contact':
         return <Contact />;
+      case 'payment-portal':
+        return <ClientPortal />;
       default:
         return <Home />;
     }

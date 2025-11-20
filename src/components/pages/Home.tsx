@@ -76,7 +76,7 @@ export const Home: React.FC = () => (
               description: "Start your custom website project with professional consultation and planning.",
               features: ["$160 to get started", "Custom design mockups", "Project roadmap"],
               price: "$160",
-              originalPrice: "$200"
+              originalPrice: "$250"
             },
             {
               icon: CheckCircle,
@@ -84,7 +84,7 @@ export const Home: React.FC = () => (
               description: "Complete development and deployment when your website is finished and ready to go live.",
               features: ["$440 final payment", "Complete development", "Live deployment"],
               price: "$440",
-              originalPrice: "$500"
+              originalPrice: "$600"
             },
             {
               icon: Shield,
@@ -92,7 +92,7 @@ export const Home: React.FC = () => (
               description: "Optional monthly service to keep your website secure, updated, and performing optimally.",
               features: ["$150/month (optional)", "Security monitoring", "Regular updates"],
               price: "$150/mo",
-              originalPrice: "$200/mo"
+              originalPrice: "$250/mo"
             }
           ].map((service, index) => (
            <div key={index} className="bg-white rounded-xl border border-slate-200 p-8 shadow-lg hover:shadow-2xl transition-all duration-300 group transform hover:scale-105 hover:-translate-y-2">

@@ -132,9 +132,9 @@ export const Services: React.FC = () => (
               </div>
               <h3 className="text-2xl font-bold text-slate-900 mb-2">Project Initiation</h3>
               <div className="mb-4">
-                <span className="text-lg text-slate-500 line-through">$200</span>
+                <span className="text-lg text-slate-500 line-through">$250</span>
                 <div className="text-4xl font-bold text-slate-900">$160</div>
-                <span className="text-emerald-600 font-semibold text-sm">Save $40!</span>
+                <span className="text-emerald-600 font-semibold text-sm">Save $90!</span>
               </div>
               <p className="text-slate-600 mb-6">Get started with your custom website project</p>
               <ul className="text-left space-y-3 mb-8">
@@ -175,9 +175,9 @@ export const Services: React.FC = () => (
               </div>
               <h3 className="text-2xl font-bold text-slate-900 mb-2">Deployment & Final Payment</h3>
               <div className="mb-4">
-                <span className="text-lg text-slate-500 line-through">$500</span>
+                <span className="text-lg text-slate-500 line-through">$600</span>
                 <div className="text-4xl font-bold text-slate-900">$440</div>
-                <span className="text-emerald-600 font-semibold text-sm">Save $60!</span>
+                <span className="text-emerald-600 font-semibold text-sm">Save $160!</span>
               </div>
               <p className="text-slate-600 mb-6">Final payment when your website is complete and deployed</p>
               <ul className="text-left space-y-3 mb-8">
@@ -212,10 +212,10 @@ export const Services: React.FC = () => (
               </div>
               <h3 className="text-2xl font-bold text-slate-900 mb-2">Website Protection & Updates</h3>
               <div className="mb-4">
-                <span className="text-lg text-slate-500 line-through">$200</span>
+                <span className="text-lg text-slate-500 line-through">$250</span>
                 <div className="text-4xl font-bold text-slate-900">$150</div>
                 <div className="text-slate-500 text-sm mb-1">per month</div>
-                <span className="text-emerald-600 font-semibold text-sm">Save $50/month!</span>
+                <span className="text-emerald-600 font-semibold text-sm">Save $100/month!</span>
               </div>
               <p className="text-slate-600 mb-2">Keep your website secure and up-to-date</p>
               <p className="text-sm text-emerald-600 font-semibold mb-6">Optional Service</p>

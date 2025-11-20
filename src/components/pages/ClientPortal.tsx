@@ -55,7 +55,7 @@ export const ClientPortal: React.FC = () => (
                 </li>
               </ul>
               <a
-                href="https://buy.stripe.com/28o5lE8Ry5Hy0Ug4gh"
+                href="https://buy.stripe.com/5kQfZidrC8mE1uD68L9EI03"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full bg-slate-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-slate-800 transition-all duration-300 inline-flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
@@ -101,7 +101,7 @@ export const ClientPortal: React.FC = () => (
                 </li>
               </ul>
               <a
-                href="https://buy.stripe.com/dR6aGYbdK9XO4ag9AC"
+                href="https://buy.stripe.com/5kQfZidrC8mE1uD68L9EI03"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full bg-amber-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-amber-700 transition-all duration-300 inline-flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
@@ -146,7 +146,7 @@ export const ClientPortal: React.FC = () => (
                 </li>
               </ul>
               <a
-                href="https://buy.stripe.com/5kA01k4Bi9XO5ek6oq"
+                href="https://buy.stripe.com/3cIdRaevGauMc9h8gT9EI05"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full border-2 border-emerald-600 text-emerald-600 px-6 py-3 rounded-lg font-semibold hover:bg-emerald-600 hover:text-white transition-all duration-300 inline-flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-0.5"

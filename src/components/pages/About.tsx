@@ -8,7 +8,7 @@ export const About: React.FC = () => (
       <div className="max-w-6xl mx-auto text-center">
         <h1 className="text-5xl md:text-7xl font-bold text-slate-900 mb-6">
           About
-          <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <span className="block bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent">
             Script Pilot
           </span>
         </h1>
@@ -20,7 +20,7 @@ export const About: React.FC = () => (
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a 
             href="#contact" 
-            className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 flex items-center gap-2"
+            className="bg-slate-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-slate-800 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
           >
             Get Started Today
             <ArrowRight className="w-5 h-5" />
@@ -29,7 +29,7 @@ export const About: React.FC = () => (
             href="https://calendly.com/t6ckmedia/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="border-2 border-slate-300 text-slate-700 px-8 py-4 rounded-lg font-semibold hover:border-blue-600 hover:text-blue-600 transition-colors duration-300"
+            className="border-2 border-slate-300 text-slate-700 px-8 py-4 rounded-lg font-semibold hover:border-slate-800 hover:bg-slate-800 hover:text-white transition-all duration-300"
           >
             Schedule Consultation
           </a>
@@ -38,7 +38,7 @@ export const About: React.FC = () => (
     </section>
 
     {/* Stats Section */}
-    <section className="py-20 bg-blue-50">
+    <section className="py-20 bg-slate-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
@@ -48,8 +48,8 @@ export const About: React.FC = () => (
             { value: "24/7", label: "Performance" }
           ].map((stat, index) => (
             <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
-              <div className="text-3xl font-bold text-blue-600 mb-2">{stat.value}</div>
-              <div className="text-slate-600">{stat.label}</div>
+              <div className="text-3xl font-bold text-slate-800 mb-2">{stat.value}</div>
+              <div className="text-slate-600 font-medium">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -60,7 +60,7 @@ export const About: React.FC = () => (
     <section className="py-20">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
-          <Target className="w-16 h-16 text-blue-600 mx-auto mb-6" />
+          <Target className="w-16 h-16 text-slate-700 mx-auto mb-6" />
           <h2 className="text-4xl font-bold text-slate-900 mb-4">
             Our Mission
           </h2>
@@ -82,7 +82,7 @@ export const About: React.FC = () => (
     <section className="py-20 bg-slate-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
-          <Award className="w-16 h-16 text-blue-600 mx-auto mb-6" />
+          <Award className="w-16 h-16 text-slate-700 mx-auto mb-6" />
           <h2 className="text-4xl font-bold text-slate-900 mb-4">
             Our Core Values
           </h2>
@@ -111,8 +111,8 @@ export const About: React.FC = () => (
             }
           ].map((value, index) => (
             <div key={index} className="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 group">
-              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors duration-300">
-                <value.icon className="w-6 h-6 text-blue-600 group-hover:text-white transition-colors duration-300" />
+              <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-slate-800 transition-colors duration-300">
+                <value.icon className="w-6 h-6 text-slate-700 group-hover:text-white transition-colors duration-300" />
               </div>
               
               <h3 className="text-2xl font-semibold text-slate-900 mb-4">
@@ -131,7 +131,7 @@ export const About: React.FC = () => (
     <section className="py-20">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
-          <Users className="w-16 h-16 text-blue-600 mx-auto mb-6" />
+          <Users className="w-16 h-16 text-slate-700 mx-auto mb-6" />
           <h2 className="text-4xl font-bold text-slate-900 mb-4">
             Meet Our Team
           </h2>
@@ -143,13 +143,13 @@ export const About: React.FC = () => (
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <div className="bg-white rounded-xl border border-slate-200 p-8 text-center shadow-sm hover:shadow-lg transition-all duration-300">
-            <div className="w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="w-24 h-24 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6">
               <span className="text-2xl font-bold text-white">DT</span>
             </div>
             <h3 className="text-2xl font-semibold text-slate-900 mb-2">
               David Tackett
             </h3>
-            <p className="text-blue-600 font-medium mb-4">Co-Founder & Lead Developer</p>
+            <p className="text-slate-600 font-medium mb-4">Co-Founder & Lead Developer</p>
             <p className="text-slate-600">
               David brings over 8 years of web development experience, specializing in React, 
               TypeScript, and modern web technologies. He leads our technical strategy and 
@@ -158,13 +158,13 @@ export const About: React.FC = () => (
           </div>
 
           <div className="bg-white rounded-xl border border-slate-200 p-8 text-center shadow-sm hover:shadow-lg transition-all duration-300">
-            <div className="w-24 h-24 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="w-24 h-24 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-6">
               <span className="text-2xl font-bold text-white">TW</span>
             </div>
             <h3 className="text-2xl font-semibold text-slate-900 mb-2">
               Tyler Wells
             </h3>
-            <p className="text-blue-600 font-medium mb-4">Co-Founder & Business Strategy</p>
+            <p className="text-slate-600 font-medium mb-4">Co-Founder & Business Strategy</p>
             <p className="text-slate-600">
               Tyler focuses on business strategy, client relationships, and ensuring our solutions 
               drive real business results. With a background in digital marketing and business 
@@ -176,10 +176,10 @@ export const About: React.FC = () => (
     </section>
 
     {/* Trust Indicators */}
-    <section className="py-20 bg-blue-50">
+    <section className="py-20 bg-slate-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
-          <Target className="w-16 h-16 text-blue-600 mx-auto mb-6" />
+          <Target className="w-16 h-16 text-slate-700 mx-auto mb-6" />
           <h2 className="text-4xl font-bold text-slate-900 mb-4">
             Why Choose Script Pilot
           </h2>
@@ -208,7 +208,7 @@ export const About: React.FC = () => (
             }
           ].map((feature, index) => (
             <div key={index} className="bg-white rounded-xl p-8 text-center shadow-sm hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <div className="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
                 <feature.icon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-semibold text-slate-900 mb-4">
@@ -224,12 +224,12 @@ export const About: React.FC = () => (
     </section>
 
     {/* CTA Section */}
-    <section className="py-20 bg-blue-600">
+    <section className="py-20 bg-slate-900">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold text-white mb-6">
           Ready to Work Together?
         </h2>
-        <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+        <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto">
           Let's discuss your project and see how we can help your business succeed online. 
           Schedule a free consultation to get started.
         </p>
@@ -237,7 +237,7 @@ export const About: React.FC = () => (
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a
             href="#contact"
-            className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-300 flex items-center gap-2"
+            className="bg-white text-slate-900 px-8 py-4 rounded-lg font-semibold hover:bg-slate-100 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
           >
             Get Started Today
             <ArrowRight className="w-5 h-5" />
@@ -246,7 +246,7 @@ export const About: React.FC = () => (
             href="https://calendly.com/t6ckmedia/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-300"
+            className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-slate-900 transition-all duration-300"
           >
             Schedule Consultation
           </a>

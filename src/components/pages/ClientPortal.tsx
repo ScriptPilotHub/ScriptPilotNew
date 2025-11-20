@@ -76,12 +76,13 @@ export const ClientPortal: React.FC = () => (
                 <CheckCircle className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-slate-900 mb-2">Deployment & Final Payment</h3>
+             <p className="text-sm text-amber-600 font-semibold mb-2">(Only pay when project is complete)</p>
               <div className="mb-4">
                 <span className="text-lg text-slate-500 line-through">$500</span>
                 <div className="text-4xl font-bold text-slate-900">$440</div>
                 <span className="text-emerald-600 font-semibold text-sm">Save $60!</span>
               </div>
-              <p className="text-slate-600 mb-6">Final payment when your website is complete and deployed</p>
+             <p className="text-slate-600 mb-6">Final payment made only when your website is complete and ready for deployment</p>
               <ul className="text-left space-y-3 mb-8">
                 <li className="flex items-center gap-3 text-sm text-slate-600">
                   <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />

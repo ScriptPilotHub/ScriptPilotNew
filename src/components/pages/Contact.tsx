@@ -23,7 +23,7 @@ export const Contact: React.FC = () => {
       {/* Primary Contact Methods */}
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-8 mb-16">
+          <div className="max-w-2xl mx-auto mb-16">
             {/* Phone Contact */}
             <div className="group bg-white rounded-2xl border border-slate-200 p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
               <div className="flex items-start gap-6">
@@ -48,35 +48,6 @@ export const Contact: React.FC = () => {
                   <div className="mt-4 flex items-center gap-2 text-sm text-slate-500">
                     <Clock className="w-4 h-4" />
                     <span>Mon-Fri 9AM-6PM CST</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Email Contact */}
-            <div className="group bg-white rounded-2xl border border-slate-200 p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
-              <div className="flex items-start gap-6">
-                <div className="relative">
-                  <div className="w-16 h-16 bg-gradient-to-br from-amber-600 to-amber-700 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
-                    <Mail className="w-8 h-8 text-white" />
-                  </div>
-                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-blue-500 rounded-full animate-bounce"></div>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-slate-900 mb-3">Send Email</h3>
-                  <p className="text-slate-600 mb-4">
-                    Email us your project details and we'll respond within 24 hours with a detailed proposal.
-                  </p>
-                  <a 
-                    href="mailto:t6ckmedia@gmail.com?subject=New Project Inquiry - Script Pilot&body=Hi Script Pilot team,%0D%0A%0D%0AI'm interested in discussing a web development project.%0D%0A%0D%0AProject Type: %0D%0ABudget Range: %0D%0ATimeline: %0D%0A%0D%0APlease contact me to discuss further.%0D%0A%0D%0AThank you!"
-                    className="inline-flex items-center gap-3 text-xl font-bold text-slate-900 hover:text-slate-700 transition-colors duration-200 group-hover:scale-105 transform break-all"
-                  >
-                    t6ckmedia@gmail.com
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200 flex-shrink-0" />
-                  </a>
-                  <div className="mt-4 flex items-center gap-2 text-sm text-slate-500">
-                    <CheckCircle className="w-4 h-4" />
-                    <span>24-hour response guarantee</span>
                   </div>
                 </div>
               </div>
@@ -218,13 +189,6 @@ export const Contact: React.FC = () => {
             >
               <Phone className="w-6 h-6" />
               Call (417) 401-0015
-            </a>
-            <a
-              href="mailto:t6ckmedia@gmail.com?subject=New Project Inquiry - Script Pilot"
-              className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-slate-900 transition-all duration-300 flex items-center gap-3"
-            >
-              <Mail className="w-6 h-6" />
-              Send Email
             </a>
           </div>
         </div>

@@ -219,12 +219,6 @@ export const ClientPortal: React.FC = () => (
           >
             Call (417) 401-0015
           </a>
-          <a
-            href="mailto:t6ckmedia@gmail.com?subject=Payment Support - Script Pilot"
-            className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-slate-900 transition-all duration-300"
-          >
-            Email Support
-          </a>
         </div>
       </div>
     </section>

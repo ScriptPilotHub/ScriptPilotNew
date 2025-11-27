@@ -19,7 +19,7 @@ export const Home: React.FC = () => (
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
           <a
-            href="https://calendly.com/t6ckmedia/30min"
+            href="https://calendly.com/contact-scriptpilot/30min"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto bg-slate-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-slate-800 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-0.5"

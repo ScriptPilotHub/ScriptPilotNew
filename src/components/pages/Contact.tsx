@@ -97,7 +97,7 @@ export const Contact: React.FC = () => {
                 provide technical recommendations, and outline a development plan tailored to your goals.
               </p>
               <a
-                href="https://calendly.com/t6ckmedia/30min"
+                href="https://calendly.com/contact-scriptpilot/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-white text-slate-900 px-6 sm:px-8 py-4 rounded-xl font-bold text-base sm:text-lg hover:bg-slate-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 transform"

@@ -26,7 +26,7 @@ export const About: React.FC = () => (
             <ArrowRight className="w-5 h-5" />
           </a>
           <a
-            href="https://calendly.com/t6ckmedia/30min"
+            href="https://calendly.com/contact-scriptpilot/30min"
             target="_blank"
             rel="noopener noreferrer"
             className="border-2 border-slate-300 text-slate-700 px-8 py-4 rounded-lg font-semibold hover:border-slate-800 hover:bg-slate-800 hover:text-white transition-all duration-300"

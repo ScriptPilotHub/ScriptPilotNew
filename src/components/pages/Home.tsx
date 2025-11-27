@@ -18,20 +18,20 @@ export const Home: React.FC = () => (
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a 
-            href="#services" 
-            className="bg-slate-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-slate-800 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
-          >
-            View Our Work
-            <ArrowRight className="w-5 h-5" />
-          </a>
           <a
             href="https://calendly.com/t6ckmedia/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="border-2 border-slate-300 text-slate-700 px-8 py-4 rounded-lg font-semibold hover:border-slate-800 hover:bg-slate-800 hover:text-white transition-all duration-300"
+            className="bg-slate-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-slate-800 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
           >
             Schedule Consultation
+            <ArrowRight className="w-5 h-5" />
+          </a>
+          <a
+            href="mailto:contact@scriptpilot.us?subject=Project Inquiry - Script Pilot"
+            className="border-2 border-slate-300 text-slate-700 px-8 py-4 rounded-lg font-semibold hover:border-slate-800 hover:bg-slate-800 hover:text-white transition-all duration-300"
+          >
+            Contact Us
           </a>
         </div>
       </div>

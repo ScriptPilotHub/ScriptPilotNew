@@ -32,16 +32,16 @@ export const Header: React.FC = () => {
         <div className={`flex items-center justify-between transition-all duration-300 ${
           isScrolled ? 'h-16' : 'h-20'
         }`}>
-         <a href="#home" className="flex items-center transition-all duration-300 hover:scale-105 transform hover:-translate-y-0.5">
+         <a href="#home" className="flex items-center transition-all duration-300 hover:scale-105 transform hover:-translate-y-0.5 flex-shrink-0">
             <Logo />
           </a>
           
-          <nav className="hidden lg:flex items-center space-x-1">
+          <nav className="hidden lg:flex items-center space-x-1 flex-shrink-0">
             {navLinks.map(link => (
               <a
                 key={link.href}
                 href={link.href}
-                className={`relative px-4 py-2 text-sm font-semibold rounded-md transition-all duration-200 ${
+                className={`relative px-3 py-2 text-sm font-semibold rounded-md transition-all duration-200 whitespace-nowrap ${
                   pathname === link.href.substring(1) || (pathname === '' && link.href === '#home')
                     ? 'text-slate-900 bg-slate-100' 
                     : 'text-slate-700 hover:text-slate-900 hover:bg-slate-50'
@@ -55,7 +55,7 @@ export const Header: React.FC = () => {
           <div className="lg:hidden">
             <button 
               onClick={() => setIsOpen(!isOpen)} 
-              className="p-2 text-slate-700 hover:text-slate-900 transition-colors duration-200 rounded-md hover:bg-slate-100"
+              className="p-2 text-slate-700 hover:text-slate-900 transition-colors duration-200 rounded-md hover:bg-slate-100 flex-shrink-0"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -64,14 +64,14 @@ export const Header: React.FC = () => {
       </div>
       
       {isOpen && (
-        <div className="lg:hidden bg-white/98 backdrop-blur-xl border-t border-slate-200/60">
+        <div className="lg:hidden bg-white/98 backdrop-blur-xl border-t border-slate-200/60 shadow-lg">
           <nav className="max-w-6xl mx-auto px-4 py-4 space-y-1">
             {navLinks.map(link => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className={`block px-4 py-3 rounded-md text-sm font-semibold transition-all duration-200 ${
+                className={`block px-4 py-3 rounded-md text-base font-semibold transition-all duration-200 ${
                   pathname === link.href.substring(1) || (pathname === '' && link.href === '#home')
                     ? 'bg-slate-100 text-slate-900' 
                     : 'text-slate-700 hover:text-slate-900 hover:bg-slate-50'

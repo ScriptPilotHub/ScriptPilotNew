@@ -6,30 +6,30 @@ export const Home: React.FC = () => (
     {/* Hero Section */}
     <section className="pt-32 pb-20 px-4">
       <div className="max-w-6xl mx-auto text-center">
-        <h1 className="text-5xl md:text-7xl font-bold text-slate-900 mb-6">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-slate-900 mb-6 leading-tight">
           Professional Web Development
           <span className="block bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent">
             For Growing Businesses
           </span>
         </h1>
-        <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
+        <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto mb-8 px-4">
           Custom websites and e-commerce platforms designed to grow your business. 
           Professional development with transparent pricing and proven results.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
           <a
             href="https://calendly.com/t6ckmedia/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-slate-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-slate-800 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+            className="w-full sm:w-auto bg-slate-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-slate-800 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
           >
             Schedule Consultation
             <ArrowRight className="w-5 h-5" />
           </a>
           <a
             href="mailto:contact@scriptpilot.us?subject=Project Inquiry - Script Pilot"
-            className="border-2 border-slate-300 text-slate-700 px-8 py-4 rounded-lg font-semibold hover:border-slate-800 hover:bg-slate-800 hover:text-white transition-all duration-300"
+            className="w-full sm:w-auto border-2 border-slate-300 text-slate-700 px-8 py-4 rounded-lg font-semibold hover:border-slate-800 hover:bg-slate-800 hover:text-white transition-all duration-300 text-center"
           >
             Contact Us
           </a>
@@ -60,15 +60,15 @@ export const Home: React.FC = () => (
     <section className="py-20">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-slate-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
             Professional Web Development
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto px-4">
             Transparent pricing, professional results. No hidden fees, no surprises.
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {[
             {
               icon: Rocket,
@@ -100,17 +100,17 @@ export const Home: React.FC = () => (
                <service.icon className="w-6 h-6 text-slate-700 group-hover:text-white transition-all duration-300" />
               </div>
               
-              <div className="text-2xl font-bold text-slate-900 mb-2">{service.price}</div>
+              <div className="text-xl sm:text-2xl font-bold text-slate-900 mb-2">{service.price}</div>
               {service.originalPrice && (
                 <div className="mb-2">
                   <span className="text-sm text-slate-500 line-through">{service.originalPrice}</span>
                   <span className="text-emerald-600 font-semibold text-xs ml-2">Save!</span>
                 </div>
               )}
-              <h3 className="text-2xl font-semibold text-slate-900 mb-4">
+              <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-4">
                 {service.title}
               </h3>
-              <p className="text-slate-600 mb-6">
+              <p className="text-sm sm:text-base text-slate-600 mb-6">
                 {service.description}
               </p>
               
@@ -132,15 +132,15 @@ export const Home: React.FC = () => (
     <section className="py-20 bg-slate-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-slate-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
             Why Businesses Choose Script Pilot
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto px-4">
             Professional web development with a focus on business growth and measurable results.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {[
             {
               icon: Award,
@@ -162,10 +162,10 @@ export const Home: React.FC = () => (
               <div className="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
                 <benefit.icon className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-semibold text-slate-900 mb-4">
+              <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-4">
                 {benefit.title}
               </h3>
-              <p className="text-slate-600">
+              <p className="text-sm sm:text-base text-slate-600">
                 {benefit.description}
               </p>
             </div>
@@ -178,15 +178,15 @@ export const Home: React.FC = () => (
     <section className="py-20">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-slate-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
             What Our Clients Say
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto px-4">
             Real feedback from businesses we've helped grow their online presence.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {[
             {
               name: "Sarah Chen",
@@ -214,12 +214,12 @@ export const Home: React.FC = () => (
                 ))}
               </div>
               
-              <blockquote className="text-slate-600 italic mb-6">
+              <blockquote className="text-sm sm:text-base text-slate-600 italic mb-6">
                 "{testimonial.testimonial}"
               </blockquote>
               
               <div className="border-t border-slate-100 pt-4">
-                <p className="font-semibold text-slate-900">{testimonial.name}</p>
+                <p className="text-sm sm:text-base font-semibold text-slate-900">{testimonial.name}</p>
                 <p className="text-slate-600 text-sm font-medium">{testimonial.company}</p>
               </div>
             </div>
@@ -231,24 +231,24 @@ export const Home: React.FC = () => (
     {/* CTA Section */}
     <section className="py-20 bg-slate-900">
       <div className="max-w-6xl mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold text-white mb-6">
+        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
           Ready to Grow Your Business Online?
         </h2>
-        <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto">
+        <p className="text-lg sm:text-xl text-slate-300 mb-8 max-w-3xl mx-auto px-4">
           Professional web development that helps your business succeed online. 
           Contact us to discuss your project and get a custom quote.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
           <a
             href="mailto:contact@scriptpilot.us?subject=Project Inquiry - Script Pilot"
-            className="bg-white text-slate-900 px-8 py-4 rounded-lg font-semibold hover:bg-slate-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+            className="w-full sm:w-auto bg-white text-slate-900 px-8 py-4 rounded-lg font-semibold hover:bg-slate-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-center"
           >
             Get Quote
           </a>
           <a
             href="#contact"
-            className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-slate-900 transition-all duration-300"
+            className="w-full sm:w-auto border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-slate-900 transition-all duration-300 text-center"
           >
             Contact Us
           </a>

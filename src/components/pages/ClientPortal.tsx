@@ -206,17 +206,25 @@ export const ClientPortal: React.FC = () => (
     <section className="py-20 bg-slate-900">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold text-white mb-6">
-          Need Help with Your Payment?
+          Payment Support
         </h2>
         <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto">
-          Our team is here to assist you with any questions about payments or services.
+          Contact us if you need assistance with payments or have questions about your project.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a
-            href="tel:4174010015"
-            className="bg-white text-slate-900 px-8 py-4 rounded-lg font-semibold hover:bg-slate-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+            href="mailto:contact@scriptpilot.us?subject=Payment Support - Script Pilot"
+            className="bg-white text-slate-900 px-8 py-4 rounded-lg font-semibold hover:bg-slate-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center gap-3"
           >
+            <Mail className="w-6 h-6" />
+            Email Support
+          </a>
+          <a
+            href="tel:4174010015"
+            className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-slate-900 transition-all duration-300 flex items-center gap-3"
+          >
+            <Phone className="w-6 h-6" />
             Call (417) 401-0015
           </a>
         </div>

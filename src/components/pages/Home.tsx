@@ -7,14 +7,14 @@ export const Home: React.FC = () => (
     <section className="pt-32 pb-20 px-4">
       <div className="max-w-6xl mx-auto text-center">
         <h1 className="text-5xl md:text-7xl font-bold text-slate-900 mb-6">
-          Elite Web Development
+          Professional Web Development
           <span className="block bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent">
-            That Drives Results
+            For Growing Businesses
           </span>
         </h1>
         <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
-          We craft sophisticated digital experiences for businesses that demand excellence. 
-          Custom websites, e-commerce platforms, and web applications built to perform at the highest level.
+          Custom websites and e-commerce platforms designed to grow your business. 
+          Professional development with transparent pricing and proven results.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -133,11 +133,10 @@ export const Home: React.FC = () => (
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-slate-900 mb-4">
-            Why Choose Script Pilot
+            Why Businesses Choose Script Pilot
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            We combine technical expertise with business acumen to deliver solutions 
-            that drive real results for your organization.
+            Professional web development with a focus on business growth and measurable results.
           </p>
         </div>
 
@@ -146,17 +145,17 @@ export const Home: React.FC = () => (
             {
               icon: Award,
               title: "Proven Expertise",
-              description: "Years of experience delivering high-quality web solutions for businesses across diverse industries and scales."
+              description: "Over 200 successful projects delivered across diverse industries with consistent quality and reliability."
             },
             {
               icon: Users,
               title: "Client-Focused Approach",
-              description: "We prioritize clear communication, transparent processes, and delivering exactly what you need, when you need it."
+              description: "Clear communication, transparent pricing, and dedicated support throughout your project development."
             },
             {
               icon: Zap,
               title: "Modern Technology",
-              description: "We use cutting-edge tools and frameworks to ensure your project is built for performance, scalability, and future growth."
+              description: "Current web technologies and best practices to ensure your website performs well and stays secure."
             }
           ].map((benefit, index) => (
             <div key={index} className="bg-white rounded-xl p-8 text-center shadow-sm hover:shadow-lg transition-all duration-300">
@@ -180,11 +179,10 @@ export const Home: React.FC = () => (
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-slate-900 mb-4">
-            Client Success Stories
+            What Our Clients Say
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            See how we've helped businesses transform their digital presence 
-            and achieve measurable results.
+            Real feedback from businesses we've helped grow their online presence.
           </p>
         </div>
 
@@ -193,19 +191,19 @@ export const Home: React.FC = () => (
             {
               name: "Sarah Chen",
               company: "TechStart Solutions",
-              testimonial: "Script Pilot delivered exactly what we needed - a professional platform that perfectly represents our brand and converts visitors into clients.",
+              testimonial: "Script Pilot delivered exactly what we needed - a professional website that represents our brand well and helps convert visitors into customers.",
               rating: 5
             },
             {
               name: "Michael Rodriguez",
               company: "Artisan Crafts Co.",
-              testimonial: "The team's attention to detail and technical expertise exceeded our expectations. Our new e-commerce site has driven significant growth.",
+              testimonial: "Great attention to detail and solid technical work. Our new e-commerce site has helped us reach more customers and increase sales.",
               rating: 5
             },
             {
               name: "Lisa Johnson",
               company: "Bloom Consulting",
-              testimonial: "Professional, reliable, and results-driven. Script Pilot transformed our online presence and helped us reach new markets.",
+              testimonial: "Professional service and reliable results. Script Pilot helped us create a strong online presence that attracts new clients.",
               rating: 5
             }
           ].map((testimonial, index) => (
@@ -234,25 +232,25 @@ export const Home: React.FC = () => (
     <section className="py-20 bg-slate-900">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold text-white mb-6">
-          Ready to Transform Your Digital Presence?
+          Ready to Grow Your Business Online?
         </h2>
         <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto">
-          Let's discuss your project and create a solution that drives real business results. 
-          Schedule a consultation to get started.
+          Professional web development that helps your business succeed online. 
+          Contact us to discuss your project and get a custom quote.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a
-            href="#contact"
+            href="mailto:contact@scriptpilot.us?subject=Project Inquiry - Script Pilot"
             className="bg-white text-slate-900 px-8 py-4 rounded-lg font-semibold hover:bg-slate-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
           >
-            Start Your Project
+            Get Quote
           </a>
           <a
-            href="#services"
+            href="#contact"
             className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-slate-900 transition-all duration-300"
           >
-            Learn More
+            Contact Us
           </a>
         </div>
       </div>

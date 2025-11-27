@@ -7,14 +7,14 @@ export const Services: React.FC = () => (
     <section className="pt-32 pb-20 px-4">
       <div className="max-w-6xl mx-auto text-center">
         <h1 className="text-5xl md:text-7xl font-bold text-slate-900 mb-6">
-          Complete Web Solutions
+          Professional Web Development
           <span className="block bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent">
-            for Modern Business
+            Services
           </span>
         </h1>
         <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
-          Everything your business needs to succeed online in one comprehensive package. 
-          No hidden fees, no surprises—just results that drive growth.
+          Custom websites and e-commerce platforms with transparent pricing and proven results. 
+          Professional development services designed to grow your business.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -62,11 +62,11 @@ export const Services: React.FC = () => (
         <div className="text-center mb-16">
           <TrendingUp className="w-16 h-16 text-slate-700 mx-auto mb-6" />
           <h2 className="text-4xl font-bold text-slate-900 mb-4">
-            Why Your Business Needs a Professional Website
+            The Importance of Professional Web Development
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            In today's digital landscape, your website is often the first impression 
-            customers have of your business. Make it count.
+            A professional website is essential for business growth in today's market. 
+            Quality development makes the difference between success and missed opportunities.
           </p>
         </div>
 
@@ -75,22 +75,22 @@ export const Services: React.FC = () => (
             {
               icon: TrendingUp,
               title: "Increase Revenue",
-              description: "Businesses with professional websites see 2-3x more revenue growth than those without"
+              description: "Professional websites help businesses reach more customers and increase sales opportunities"
             },
             {
               icon: Users,
               title: "Build Trust",
-              description: "75% of consumers judge business credibility based on website design"
+              description: "Professional design and functionality help establish credibility with potential customers"
             },
             {
               icon: Search,
               title: "Get Found Online",
-              description: "97% of people search online for local businesses before making a purchase"
+              description: "Most customers search online before making purchases - be where they're looking"
             },
             {
               icon: Clock,
               title: "24/7 Sales",
-              description: "Your website works around the clock, generating leads and sales while you sleep"
+              description: "Your website works continuously to generate leads and provide information to customers"
             }
           ].map((benefit, index) => (
             <div key={index} className="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-lg transition-all duration-300">
@@ -115,10 +115,10 @@ export const Services: React.FC = () => (
         <div className="text-center mb-16">
           <Rocket className="w-16 h-16 text-slate-700 mx-auto mb-6" />
           <h2 className="text-4xl font-bold text-slate-900 mb-4">
-            Professional Web Development Services
+            Web Development Pricing
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Professional web development with transparent pricing and no hidden fees.
+            Transparent pricing for professional web development services. No hidden fees or surprises.
           </p>
         </div>
 
@@ -258,7 +258,7 @@ export const Services: React.FC = () => (
                 "Fast loading speeds",
                 "SEO optimization"
               ],
-              description: "Professional websites built from scratch"
+              description: "Custom websites built specifically for your business"
             },
             {
               icon: ShoppingCart,
@@ -269,7 +269,7 @@ export const Services: React.FC = () => (
                 "Shopping cart functionality",
                 "Order management"
               ],
-              description: "Full e-commerce capabilities when needed"
+              description: "Complete online store functionality when needed"
             },
             {
               icon: Shield,
@@ -280,7 +280,7 @@ export const Services: React.FC = () => (
                 "Performance optimization",
                 "Regular backups"
               ],
-              description: "Enterprise-level security and speed"
+              description: "Professional security and performance optimization"
             },
             {
               icon: Users,
@@ -291,7 +291,7 @@ export const Services: React.FC = () => (
                 "Launch support",
                 "30-day warranty"
               ],
-              description: "Complete support from start to finish"
+              description: "Comprehensive support throughout your project"
             }
           ].map((service, index) => (
             <div key={index} className="text-center">
@@ -313,10 +313,10 @@ export const Services: React.FC = () => (
         <div className="text-center mb-16">
           <Users className="w-16 h-16 text-slate-700 mx-auto mb-6" />
           <h2 className="text-4xl font-bold text-slate-900 mb-4">
-            Perfect for Every Business
+            Suitable for All Business Types
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Our solutions are designed to work for businesses of all sizes and industries.
+            Professional web development services for businesses across all industries and sizes.
           </p>
         </div>
 
@@ -358,11 +358,11 @@ export const Services: React.FC = () => (
         <div className="text-center mb-16">
           <DollarSign className="w-16 h-16 text-slate-700 mx-auto mb-6" />
           <h2 className="text-4xl font-bold text-slate-900 mb-4">
-            The Cost of NOT Having a Professional Website
+            The Business Impact of Poor Web Presence
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Every day without a professional website is money left on the table. 
-            Here's what you're missing:
+            Without professional web development, businesses miss important growth opportunities. 
+            Here's what's at stake:
           </p>
         </div>
 
@@ -371,17 +371,17 @@ export const Services: React.FC = () => (
             {
               icon: DollarSign,
               title: "Lost Revenue",
-              description: "Potential customers can't find you online and choose competitors instead"
+              description: "Customers who can't find you online will choose competitors with better web presence"
             },
             {
               icon: Shield,
               title: "Damaged Credibility",
-              description: "Outdated or missing websites make your business appear unprofessional"
+              description: "Poor or outdated websites can make established businesses appear unprofessional"
             },
             {
               icon: TrendingUp,
               title: "Missed Growth",
-              description: "Limited reach means slower business growth and fewer opportunities"
+              description: "Limited online presence restricts business growth and market reach"
             }
           ].map((cost, index) => (
             <div key={index} className="bg-white rounded-xl p-8 text-center shadow-sm hover:shadow-lg transition-all duration-300">
@@ -406,11 +406,10 @@ export const Services: React.FC = () => (
         <div className="text-center mb-16">
           <Star className="w-16 h-16 text-amber-500 mx-auto mb-6" />
           <h2 className="text-4xl font-bold text-slate-900 mb-4">
-            Client Success Stories
+            Client Testimonials
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            See how we've helped businesses transform their digital presence 
-            and achieve measurable results.
+            Feedback from businesses we've helped improve their online presence and grow their customer base.
           </p>
         </div>
 
@@ -460,27 +459,25 @@ export const Services: React.FC = () => (
     <section className="py-20 bg-slate-900">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold text-white mb-6">
-          Ready to Transform Your Business?
+          Ready to Start Your Project?
         </h2>
         <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto">
-          Don't let another day pass without a professional online presence. 
-          Let's discuss how our complete solution can help your business grow.
+          Professional web development that helps your business succeed online. 
+          Contact us to discuss your project requirements and get started.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a
-            href="https://calendly.com/t6ckmedia/30min"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="mailto:contact@scriptpilot.us?subject=Project Inquiry - Script Pilot"
             className="bg-white text-slate-900 px-8 py-4 rounded-lg font-semibold hover:bg-slate-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
           >
-            Get Free Consultation
+            Get Quote
           </a>
           <a
-            href="#about"
+            href="#contact"
             className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-slate-900 transition-all duration-300"
           >
-            Learn About Us
+            Contact Us
           </a>
         </div>
       </div>

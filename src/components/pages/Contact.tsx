@@ -8,14 +8,14 @@ export const Contact: React.FC = () => {
       <section className="pt-32 pb-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-5xl md:text-7xl font-bold text-slate-900 mb-6">
-            Let's Build Something
+            Get Your Project
             <span className="block bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent">
-              Extraordinary
+              Started Today
             </span>
           </h1>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-12">
-            Ready to transform your digital presence? Choose how you'd like to connect with us 
-            and let's start building your success story today.
+            Ready to grow your business online? Contact us to discuss your project requirements 
+            and get a custom solution that drives real results.
           </p>
         </div>
       </section>
@@ -24,6 +24,35 @@ export const Contact: React.FC = () => {
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-4">
           <div className="max-w-2xl mx-auto mb-16">
+            {/* Email Contact */}
+            <div className="group bg-white rounded-2xl border border-slate-200 p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 mb-8">
+              <div className="flex items-start gap-6">
+                <div className="relative">
+                  <div className="w-16 h-16 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+                    <Mail className="w-8 h-8 text-white" />
+                  </div>
+                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-blue-500 rounded-full animate-pulse"></div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-3">Send Us an Email</h3>
+                  <p className="text-slate-600 mb-4">
+                    Get detailed project information and quotes. We respond to all inquiries within 24 hours.
+                  </p>
+                  <a 
+                    href="mailto:contact@scriptpilot.us?subject=Project Inquiry - Script Pilot&body=Hello,%0D%0A%0D%0AI'm interested in web development services for my business.%0D%0A%0D%0AProject Type: [Website/E-commerce/Custom Application]%0D%0ABusiness Name: %0D%0AIndustry: %0D%0ATimeline: %0D%0ABudget Range: %0D%0A%0D%0AProject Details:%0D%0A%0D%0A%0D%0AThank you,%0D%0A[Your Name]"
+                    className="inline-flex items-center gap-3 text-2xl font-bold text-slate-900 hover:text-slate-700 transition-colors duration-200 group-hover:scale-105 transform"
+                  >
+                    contact@scriptpilot.us
+                    <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-200" />
+                  </a>
+                  <div className="mt-4 flex items-center gap-2 text-sm text-slate-500">
+                    <Clock className="w-4 h-4" />
+                    <span>Response within 24 hours</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Phone Contact */}
             <div className="group bg-white rounded-2xl border border-slate-200 p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
               <div className="flex items-start gap-6">
@@ -36,7 +65,7 @@ export const Contact: React.FC = () => {
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold text-slate-900 mb-3">Call Now</h3>
                   <p className="text-slate-600 mb-4">
-                    Speak directly with our team. Available during business hours for immediate assistance.
+                    Speak directly with our development team. Available during business hours for immediate project consultation.
                   </p>
                   <a 
                     href="tel:4174010015"
@@ -64,8 +93,8 @@ export const Contact: React.FC = () => {
                 Schedule a Free Strategy Session
               </h3>
               <p className="text-slate-300 text-lg mb-8 leading-relaxed">
-                Book a 30-minute consultation to discuss your project in detail. We'll provide expert insights, 
-                answer your questions, and create a custom roadmap for your success.
+                Book a 30-minute consultation to discuss your project requirements. We'll analyze your business needs, 
+                provide technical recommendations, and outline a development plan tailored to your goals.
               </p>
               <a
                 href="https://calendly.com/t6ckmedia/30min"
@@ -90,10 +119,10 @@ export const Contact: React.FC = () => {
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-900 mb-4">
-              Multiple Ways to Connect
+              Contact Information
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Choose the method that works best for you. We're here to help in whatever way is most convenient.
+              Choose the contact method that works best for your schedule and project needs.
             </p>
           </div>
 
@@ -136,10 +165,10 @@ export const Contact: React.FC = () => {
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-900 mb-4">
-              Why Businesses Choose Script Pilot
+              Why Choose Script Pilot
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              We're not just developers – we're your strategic partners in digital success.
+              Professional web development with proven results and dedicated support.
             </p>
           </div>
 
@@ -149,7 +178,7 @@ export const Contact: React.FC = () => {
                 <Shield className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-semibold text-slate-900 mb-4">Proven Results</h3>
-              <p className="text-slate-600">200+ successful projects with 99% client satisfaction rate</p>
+              <p className="text-slate-600">Over 200 successful projects delivered with 99% client satisfaction</p>
             </div>
 
             <div className="bg-white rounded-xl border border-slate-200 p-8 text-center shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
@@ -157,7 +186,7 @@ export const Contact: React.FC = () => {
                 <Users className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-semibold text-slate-900 mb-4">Personal Service</h3>
-              <p className="text-slate-600">Direct access to founders and dedicated project management</p>
+              <p className="text-slate-600">Direct communication with our development team and dedicated project support</p>
             </div>
 
             <div className="bg-white rounded-xl border border-slate-200 p-8 text-center shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
@@ -165,7 +194,7 @@ export const Contact: React.FC = () => {
                 <Award className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-semibold text-slate-900 mb-4">Quality Guarantee</h3>
-              <p className="text-slate-600">30-day satisfaction guarantee and ongoing support included</p>
+              <p className="text-slate-600">30-day satisfaction guarantee with comprehensive testing and ongoing support</p>
             </div>
           </div>
         </div>
@@ -175,17 +204,24 @@ export const Contact: React.FC = () => {
       <section className="py-20 bg-slate-900">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
-            Ready to Get Started?
+            Start Your Project Today
           </h2>
           <p className="text-xl text-slate-300 mb-12 max-w-3xl mx-auto">
-            Don't wait – every day without a professional website is potential revenue lost. 
-            Contact us today and let's build something amazing together.
+            Professional web development that grows your business. Contact us today to discuss 
+            your project requirements and get a custom quote.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <a
-              href="tel:4174010015"
+              href="mailto:contact@scriptpilot.us?subject=Project Inquiry - Script Pilot"
               className="bg-white text-slate-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 transform flex items-center gap-3"
+            >
+              <Mail className="w-6 h-6" />
+              Email Us
+            </a>
+            <a
+              href="tel:4174010015"
+              className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-slate-900 transition-all duration-300 flex items-center gap-3"
             >
               <Phone className="w-6 h-6" />
               Call (417) 401-0015

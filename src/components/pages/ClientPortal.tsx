@@ -24,10 +24,10 @@ export const ClientPortal: React.FC = () => (
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8">
           {/* Project Initiation */}
-          <div className="group bg-white rounded-2xl border-2 border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
+          <div className="group bg-white rounded-2xl border-2 border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-3 animate-fade-in-up">
             <div className="p-8 text-center">
-              <div className="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
-                <Zap className="w-8 h-8 text-white" />
+              <div className="w-16 h-16 premium-icon rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg animate-premium-glow">
+                <Users className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-slate-900 mb-2">Project Initiation</h3>
               <div className="mb-4">
@@ -39,11 +39,11 @@ export const ClientPortal: React.FC = () => (
               <ul className="text-left space-y-3 mb-8">
                 <li className="flex items-center gap-3 text-sm text-slate-600">
                   <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                  Project consultation & planning
+                  Initial consultation & planning
                 </li>
                 <li className="flex items-center gap-3 text-sm text-slate-600">
                   <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                  Custom design mockups
+                  Requirements analysis
                 </li>
                 <li className="flex items-center gap-3 text-sm text-slate-600">
                   <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
@@ -58,7 +58,7 @@ export const ClientPortal: React.FC = () => (
                 href="https://buy.stripe.com/5kQfZidrC8mE1uD68L9EI03"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full bg-slate-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-slate-800 transition-all duration-300 inline-flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                className="w-full bg-slate-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-slate-800 transition-all duration-500 inline-flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
               >
                 <CreditCard className="w-5 h-5" />
                 Pay $160
@@ -67,12 +67,12 @@ export const ClientPortal: React.FC = () => (
           </div>
 
           {/* Deployment & Final Payment */}
-          <div className="group bg-white rounded-2xl border-2 border-amber-200 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 relative">
+          <div className="group bg-white rounded-2xl border-2 border-amber-200 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-3 relative animate-scale-in">
             <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
               <span className="bg-amber-500 text-white px-4 py-2 rounded-full text-sm font-bold">COMPLETION</span>
             </div>
             <div className="p-8 text-center">
-              <div className="w-16 h-16 bg-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+              <div className="w-16 h-16 premium-icon-accent rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg animate-premium-pulse">
                 <CheckCircle className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-slate-900 mb-2">Deployment & Final Payment</h3>
@@ -105,7 +105,7 @@ export const ClientPortal: React.FC = () => (
                 href="https://buy.stripe.com/5kQfZidrC8mE1uD68L9EI03"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full bg-amber-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-amber-700 transition-all duration-300 inline-flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                className="w-full bg-amber-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-amber-700 transition-all duration-500 inline-flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
               >
                 <CreditCard className="w-5 h-5" />
                 Pay $440
@@ -114,9 +114,9 @@ export const ClientPortal: React.FC = () => (
           </div>
 
           {/* Website Protection & Updates */}
-          <div className="group bg-white rounded-2xl border-2 border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
+          <div className="group bg-white rounded-2xl border-2 border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-3 animate-slide-in-right">
             <div className="p-8 text-center">
-              <div className="w-16 h-16 bg-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+              <div className="w-16 h-16 premium-icon-success rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg animate-premium-float">
                 <Shield className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-slate-900 mb-2">Website Protection & Updates</h3>
@@ -150,7 +150,7 @@ export const ClientPortal: React.FC = () => (
                 href="https://buy.stripe.com/3cIdRaevGauMc9h8gT9EI05"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full border-2 border-emerald-600 text-emerald-600 px-6 py-3 rounded-lg font-semibold hover:bg-emerald-600 hover:text-white transition-all duration-300 inline-flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                className="w-full border-2 border-emerald-600 text-emerald-600 px-6 py-3 rounded-lg font-semibold hover:bg-emerald-600 hover:text-white transition-all duration-500 inline-flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
               >
                 <CreditCard className="w-5 h-5" />
                 Subscribe $150/mo
@@ -175,24 +175,24 @@ export const ClientPortal: React.FC = () => (
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          <div className="bg-white rounded-xl p-8 text-center shadow-sm hover:shadow-lg transition-all duration-300">
-            <div className="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+          <div className="bg-white rounded-xl p-8 text-center shadow-sm hover:shadow-lg transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up">
+            <div className="w-16 h-16 premium-icon rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg animate-premium-float">
               <Shield className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-2xl font-semibold text-slate-900 mb-4">SSL Encrypted</h3>
             <p className="text-slate-600">All payments are processed through secure, encrypted connections</p>
           </div>
 
-          <div className="bg-white rounded-xl p-8 text-center shadow-sm hover:shadow-lg transition-all duration-300">
-            <div className="w-16 h-16 bg-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+          <div className="bg-white rounded-xl p-8 text-center shadow-sm hover:shadow-lg transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up">
+            <div className="w-16 h-16 premium-icon rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg animate-premium-float">
               <Award className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-2xl font-semibold text-slate-900 mb-4">Stripe Powered</h3>
             <p className="text-slate-600">Trusted by millions of businesses worldwide for secure payments</p>
           </div>
 
-          <div className="bg-white rounded-xl p-8 text-center shadow-sm hover:shadow-lg transition-all duration-300">
-            <div className="w-16 h-16 bg-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+          <div className="bg-white rounded-xl p-8 text-center shadow-sm hover:shadow-lg transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up">
+            <div className="w-16 h-16 premium-icon rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg animate-premium-float">
               <CheckCircle className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-2xl font-semibold text-slate-900 mb-4">Instant Confirmation</h3>
@@ -215,14 +215,14 @@ export const ClientPortal: React.FC = () => (
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a
             href="mailto:contact@scriptpilot.us?subject=Payment Support - Script Pilot"
-            className="bg-white text-slate-900 px-8 py-4 rounded-lg font-semibold hover:bg-slate-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center gap-3"
+            className="bg-white text-slate-900 px-8 py-4 rounded-lg font-semibold hover:bg-slate-100 transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center gap-3 transform"
           >
             <Mail className="w-6 h-6" />
             Email Support
           </a>
           <a
             href="tel:4174010015"
-            className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-slate-900 transition-all duration-300 flex items-center gap-3"
+            className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-slate-900 transition-all duration-500 flex items-center gap-3 transform hover:-translate-y-1"
           >
             <Phone className="w-6 h-6" />
             Call (417) 401-0015

@@ -25,13 +25,13 @@ export const Contact: React.FC = () => {
         <div className="max-w-6xl mx-auto px-4">
           <div className="max-w-2xl mx-auto mb-16">
             {/* Email Contact */}
-            <div className="group bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 mb-8">
+            <div className="group bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-3 mb-8 animate-fade-in-up">
               <div className="flex flex-col sm:flex-row items-start gap-6">
                 <div className="relative">
-                  <div className="w-16 h-16 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+                  <div className="w-16 h-16 premium-icon rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 animate-premium-glow">
                     <Mail className="w-8 h-8 text-white" />
                   </div>
-                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-blue-500 rounded-full animate-pulse"></div>
+                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-blue-500 rounded-full animate-premium-pulse"></div>
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">Send Us an Email</h3>
@@ -40,10 +40,10 @@ export const Contact: React.FC = () => {
                   </p>
                   <a 
                     href="mailto:contact@scriptpilot.us?subject=Project Inquiry - Script Pilot&body=Hello,%0D%0A%0D%0AI'm interested in web development services for my business.%0D%0A%0D%0AProject Type: [Website/E-commerce/Custom Application]%0D%0ABusiness Name: %0D%0AIndustry: %0D%0ATimeline: %0D%0ABudget Range: %0D%0A%0D%0AProject Details:%0D%0A%0D%0A%0D%0AThank you,%0D%0A[Your Name]"
-                    className="inline-flex items-center gap-3 text-lg sm:text-2xl font-bold text-slate-900 hover:text-slate-700 transition-colors duration-200 group-hover:scale-105 transform break-all"
+                    className="inline-flex items-center gap-3 text-lg sm:text-2xl font-bold text-slate-900 hover:text-slate-700 transition-colors duration-500 group-hover:scale-105 transform break-all"
                   >
                     contact@scriptpilot.us
-                    <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-200" />
+                    <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-500" />
                   </a>
                   <div className="mt-4 flex items-center gap-2 text-sm text-slate-500">
                     <Clock className="w-4 h-4" />
@@ -54,13 +54,13 @@ export const Contact: React.FC = () => {
             </div>
 
             {/* Phone Contact */}
-            <div className="group bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
+            <div className="group bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-3 animate-scale-in">
               <div className="flex flex-col sm:flex-row items-start gap-6">
                 <div className="relative">
-                  <div className="w-16 h-16 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+                  <div className="w-16 h-16 premium-icon rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 animate-premium-pulse">
                     <Phone className="w-8 h-8 text-white" />
                   </div>
-                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-emerald-500 rounded-full animate-pulse"></div>
+                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-emerald-500 rounded-full animate-premium-pulse"></div>
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">Call Now</h3>
@@ -69,10 +69,10 @@ export const Contact: React.FC = () => {
                   </p>
                   <a 
                     href="tel:4174010015"
-                    className="inline-flex items-center gap-3 text-lg sm:text-2xl font-bold text-slate-900 hover:text-slate-700 transition-colors duration-200 group-hover:scale-105 transform"
+                    className="inline-flex items-center gap-3 text-lg sm:text-2xl font-bold text-slate-900 hover:text-slate-700 transition-colors duration-500 group-hover:scale-105 transform"
                   >
                     (417) 401-0015
-                    <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-200" />
+                    <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-500" />
                   </a>
                   <div className="mt-4 flex items-center gap-2 text-sm text-slate-500">
                     <Clock className="w-4 h-4" />
@@ -84,9 +84,9 @@ export const Contact: React.FC = () => {
           </div>
 
           {/* Schedule Consultation */}
-          <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-6 sm:p-8 text-center shadow-2xl transform hover:scale-105 transition-all duration-300">
+          <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-6 sm:p-8 text-center shadow-2xl transform hover:scale-105 transition-all duration-500 animate-slide-in-right">
             <div className="max-w-3xl mx-auto">
-              <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg animate-premium-float">
                 <Calendar className="w-10 h-10 text-slate-900" />
               </div>
               <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
@@ -100,7 +100,7 @@ export const Contact: React.FC = () => {
                 href="https://calendly.com/contact-scriptpilot/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-white text-slate-900 px-6 sm:px-8 py-4 rounded-xl font-bold text-base sm:text-lg hover:bg-slate-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
+                className="inline-flex items-center gap-3 bg-white text-slate-900 px-6 sm:px-8 py-4 rounded-xl font-bold text-base sm:text-lg hover:bg-slate-100 transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
               >
                 <Calendar className="w-6 h-6" />
                 Book Your Free Session
@@ -128,9 +128,9 @@ export const Contact: React.FC = () => {
 
           <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {/* Location */}
-            <div className="bg-white rounded-xl p-6 sm:p-8 text-center shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+            <div className="bg-white rounded-xl p-6 sm:p-8 text-center shadow-sm hover:shadow-lg transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up">
               <div className="w-16 h-16 bg-slate-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-slate-800 transition-all duration-300">
-                <MapPin className="w-8 h-8 text-slate-700 animate-bounce" />
+                <MapPin className="w-8 h-8 text-slate-700 animate-premium-float" />
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-3">Service Area</h3>
               <p className="text-sm sm:text-base text-slate-600 mb-4">Serving businesses nationwide with remote collaboration</p>
@@ -173,24 +173,24 @@ export const Contact: React.FC = () => {
           </div>
 
           <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            <div className="bg-white rounded-xl border border-slate-200 p-6 sm:p-8 text-center shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
-              <div className="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+            <div className="bg-white rounded-xl border border-slate-200 p-6 sm:p-8 text-center shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-3 animate-scale-in">
+              <div className="w-16 h-16 premium-icon rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg animate-premium-pulse">
                 <Shield className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-4">Proven Results</h3>
               <p className="text-sm sm:text-base text-slate-600">Over 200 successful projects delivered with 99% client satisfaction</p>
             </div>
 
-            <div className="bg-white rounded-xl border border-slate-200 p-6 sm:p-8 text-center shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
-              <div className="w-16 h-16 bg-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+            <div className="bg-white rounded-xl border border-slate-200 p-6 sm:p-8 text-center shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-3 animate-scale-in">
+              <div className="w-16 h-16 premium-icon rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg animate-premium-pulse">
                 <Users className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-4">Personal Service</h3>
               <p className="text-sm sm:text-base text-slate-600">Direct communication with our development team and dedicated project support</p>
             </div>
 
-            <div className="bg-white rounded-xl border border-slate-200 p-6 sm:p-8 text-center shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
-              <div className="w-16 h-16 bg-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+            <div className="bg-white rounded-xl border border-slate-200 p-6 sm:p-8 text-center shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-3 animate-scale-in">
+              <div className="w-16 h-16 premium-icon rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg animate-premium-pulse">
                 <Award className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-4">Quality Guarantee</h3>
@@ -214,14 +214,14 @@ export const Contact: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center px-4">
             <a
               href="mailto:contact@scriptpilot.us?subject=Project Inquiry - Script Pilot"
-              className="w-full sm:w-auto bg-white text-slate-900 px-6 sm:px-8 py-4 rounded-xl font-bold text-base sm:text-lg hover:bg-slate-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 transform flex items-center justify-center gap-3"
+              className="w-full sm:w-auto bg-white text-slate-900 px-6 sm:px-8 py-4 rounded-xl font-bold text-base sm:text-lg hover:bg-slate-100 transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1 transform flex items-center justify-center gap-3"
             >
               <Mail className="w-6 h-6" />
               Email Us
             </a>
             <a
               href="tel:4174010015"
-              className="w-full sm:w-auto border-2 border-white text-white px-6 sm:px-8 py-4 rounded-xl font-bold text-base sm:text-lg hover:bg-white hover:text-slate-900 transition-all duration-300 flex items-center justify-center gap-3"
+              className="w-full sm:w-auto border-2 border-white text-white px-6 sm:px-8 py-4 rounded-xl font-bold text-base sm:text-lg hover:bg-white hover:text-slate-900 transition-all duration-500 flex items-center justify-center gap-3 transform hover:-translate-y-1"
             >
               <Phone className="w-6 h-6" />
               Call (417) 401-0015

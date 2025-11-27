@@ -125,10 +125,10 @@ export const Services: React.FC = () => (
         {/* Pricing Cards */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {/* Project Initiation */}
-          <div className="bg-white rounded-2xl border-2 border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 group">
+          <div className="group bg-white rounded-2xl border-2 border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-3 animate-fade-in-up">
             <div className="p-8 text-center">
-              <div className="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
-                <Rocket className="w-8 h-8 text-white" />
+              <div className="w-16 h-16 premium-icon rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg animate-premium-glow">
+                <Users className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-slate-900 mb-2">Project Initiation</h3>
               <div className="mb-4">
@@ -140,11 +140,11 @@ export const Services: React.FC = () => (
               <ul className="text-left space-y-3 mb-8">
                 <li className="flex items-center gap-3 text-sm text-slate-600">
                   <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                  Project consultation & planning
+                  Initial consultation & planning
                 </li>
                 <li className="flex items-center gap-3 text-sm text-slate-600">
                   <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                  Custom design mockups
+                  Requirements analysis
                 </li>
                 <li className="flex items-center gap-3 text-sm text-slate-600">
                   <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
@@ -157,7 +157,7 @@ export const Services: React.FC = () => (
               </ul>
               <a
                 href="#contact"
-                className="w-full bg-slate-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-slate-800 transition-all duration-300 inline-block"
+                className="w-full bg-slate-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-slate-800 transition-all duration-500 inline-block transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
               >
                 Start Project
               </a>
@@ -165,12 +165,12 @@ export const Services: React.FC = () => (
           </div>
 
           {/* Final Payment */}
-          <div className="bg-white rounded-2xl border-2 border-amber-200 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 group relative">
+          <div className="bg-white rounded-2xl border-2 border-amber-200 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-3 group relative animate-scale-in">
             <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
               <span className="bg-amber-500 text-white px-4 py-2 rounded-full text-sm font-bold">COMPLETION</span>
             </div>
             <div className="p-8 text-center">
-              <div className="w-16 h-16 bg-amber-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+              <div className="w-16 h-16 premium-icon-accent rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg animate-premium-pulse">
                 <CheckCircle className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-slate-900 mb-2">Deployment & Final Payment</h3>
@@ -198,16 +198,16 @@ export const Services: React.FC = () => (
                   Live website deployment
                 </li>
               </ul>
-              <div className="w-full bg-amber-600 text-white px-6 py-3 rounded-lg font-semibold text-center">
+              <div className="w-full bg-amber-600 text-white px-6 py-3 rounded-lg font-semibold text-center transform hover:-translate-y-1 transition-all duration-300 shadow-lg">
                 Paid on Completion
               </div>
             </div>
           </div>
 
           {/* Maintenance */}
-          <div className="bg-white rounded-2xl border-2 border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 group">
+          <div className="bg-white rounded-2xl border-2 border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-3 group animate-slide-in-right">
             <div className="p-8 text-center">
-              <div className="w-16 h-16 bg-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+              <div className="w-16 h-16 premium-icon-success rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg animate-premium-float">
                 <Shield className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-slate-900 mb-2">Website Protection & Updates</h3>
@@ -237,7 +237,7 @@ export const Services: React.FC = () => (
                   Priority support
                 </li>
               </ul>
-              <div className="w-full border-2 border-emerald-600 text-emerald-600 px-6 py-3 rounded-lg font-semibold text-center hover:bg-emerald-600 hover:text-white transition-all duration-300">
+              <div className="w-full border-2 border-emerald-600 text-emerald-600 px-6 py-3 rounded-lg font-semibold text-center hover:bg-emerald-600 hover:text-white transition-all duration-500 transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
                 Optional Add-on
               </div>
             </div>
@@ -295,7 +295,7 @@ export const Services: React.FC = () => (
             }
           ].map((service, index) => (
             <div key={index} className="text-center">
-              <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg transform hover:scale-110 transition-all duration-300">
                 <service.icon className="w-6 h-6 text-slate-900" />
               </div>
               <h4 className="text-lg font-semibold text-white mb-2">{service.title}</h4>
@@ -339,7 +339,7 @@ export const Services: React.FC = () => (
               description: "Establish credibility, showcase expertise, and generate qualified leads for your practice."
             }
           ].map((business, index) => (
-            <div key={index} className="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-lg transition-all duration-300">
+            <div key={index} className="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-lg transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up">
               <h3 className="text-xl font-semibold text-slate-900 mb-3">
                 {business.title}
               </h3>
@@ -384,8 +384,8 @@ export const Services: React.FC = () => (
               description: "Limited online presence restricts business growth and market reach"
             }
           ].map((cost, index) => (
-            <div key={index} className="bg-white rounded-xl p-8 text-center shadow-sm hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+            <div key={index} className="bg-white rounded-xl p-8 text-center shadow-sm hover:shadow-lg transition-all duration-500 transform hover:-translate-y-2 animate-scale-in">
+              <div className="w-16 h-16 premium-icon rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg animate-premium-float">
                 <cost.icon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-semibold text-slate-900 mb-4">
@@ -434,7 +434,7 @@ export const Services: React.FC = () => (
               rating: 5
             }
           ].map((testimonial, index) => (
-            <div key={index} className="bg-white rounded-xl border border-slate-200 p-8 shadow-sm hover:shadow-lg transition-all duration-300">
+            <div key={index} className="bg-white rounded-xl border border-slate-200 p-8 shadow-sm hover:shadow-lg transition-all duration-500 transform hover:-translate-y-2 animate-slide-in-right">
               <div className="flex items-center gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />

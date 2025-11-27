@@ -110,9 +110,9 @@ export const About: React.FC = () => (
               description: "Consistent quality standards in development, testing, and customer service for every project we complete."
             }
           ].map((value, index) => (
-           <div key={index} className="bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 group transform hover:scale-105 hover:-translate-y-2">
-             <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-slate-800 transition-all duration-300 transform group-hover:rotate-12 group-hover:scale-110">
-               <value.icon className="w-6 h-6 text-slate-700 group-hover:text-white transition-all duration-300" />
+           <div key={index} className="bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 group transform hover:scale-105 hover:-translate-y-3 animate-fade-in-up">
+             <div className="w-16 h-16 premium-icon rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 transform shadow-lg animate-premium-float">
+               <value.icon className="w-8 h-8 text-white transition-all duration-500" />
               </div>
               
               <h3 className="text-2xl font-semibold text-slate-900 mb-4">
@@ -207,8 +207,8 @@ export const About: React.FC = () => (
               description: "Websites designed to support your business goals with focus on performance and user experience."
             }
           ].map((feature, index) => (
-            <div key={index} className="bg-white rounded-xl p-8 text-center shadow-sm hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+            <div key={index} className="bg-white rounded-xl p-8 text-center shadow-sm hover:shadow-lg transition-all duration-500 transform hover:-translate-y-2 animate-scale-in">
+              <div className="w-16 h-16 premium-icon rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg animate-premium-pulse">
                 <feature.icon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-semibold text-slate-900 mb-4">
@@ -237,14 +237,14 @@ export const About: React.FC = () => (
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a
             href="mailto:contact@scriptpilot.us?subject=Project Inquiry - Script Pilot"
-            className="bg-white text-slate-900 px-8 py-4 rounded-lg font-semibold hover:bg-slate-100 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+            className="bg-white text-slate-900 px-8 py-4 rounded-lg font-semibold hover:bg-slate-100 transition-all duration-500 flex items-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
           >
             Get Quote
             <ArrowRight className="w-5 h-5" />
           </a>
           <a
             href="#contact"
-            className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-slate-900 transition-all duration-300"
+            className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-slate-900 transition-all duration-500 transform hover:-translate-y-1"
           >
             Contact Us
           </a>

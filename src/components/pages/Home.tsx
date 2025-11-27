@@ -71,10 +71,10 @@ export const Home: React.FC = () => (
         <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {[
             {
-              icon: Rocket,
+              icon: Users,
               title: "Project Initiation",
               description: "Start your custom website project with professional consultation and planning.",
-              features: ["$160 to get started", "Custom design mockups", "Project roadmap"],
+              features: ["$160 to get started", "Initial consultation & planning", "Project roadmap"],
               price: "$160",
               originalPrice: "$250"
             },
@@ -95,9 +95,9 @@ export const Home: React.FC = () => (
               originalPrice: "$250/mo"
             }
           ].map((service, index) => (
-           <div key={index} className="bg-white rounded-xl border border-slate-200 p-8 shadow-lg hover:shadow-2xl transition-all duration-300 group transform hover:scale-105 hover:-translate-y-2">
-             <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-slate-800 transition-all duration-300 transform group-hover:rotate-12 group-hover:scale-110">
-               <service.icon className="w-6 h-6 text-slate-700 group-hover:text-white transition-all duration-300" />
+           <div key={index} className="bg-white rounded-xl border border-slate-200 p-8 shadow-lg hover:shadow-2xl transition-all duration-500 group transform hover:scale-105 hover:-translate-y-3 animate-fade-in-up">
+             <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 premium-icon ${index === 0 ? 'premium-icon' : index === 1 ? 'premium-icon-accent' : 'premium-icon-success'} group-hover:animate-premium-pulse transition-all duration-500 transform group-hover:rotate-12 group-hover:scale-110 shadow-lg`}>
+               <service.icon className="w-8 h-8 text-white transition-all duration-500" />
               </div>
               
               <div className="text-xl sm:text-2xl font-bold text-slate-900 mb-2">{service.price}</div>
@@ -158,9 +158,9 @@ export const Home: React.FC = () => (
               description: "Current web technologies and best practices to ensure your website performs well and stays secure."
             }
           ].map((benefit, index) => (
-            <div key={index} className="bg-white rounded-xl p-8 text-center shadow-sm hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                <benefit.icon className="w-8 h-8 text-white" />
+            <div key={index} className="bg-white rounded-xl p-8 text-center shadow-sm hover:shadow-lg transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up">
+              <div className="w-16 h-16 premium-icon rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg animate-premium-float">
+                <benefit.icon className="w-8 h-8 text-white transition-all duration-300" />
               </div>
               <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-4">
                 {benefit.title}
@@ -207,7 +207,7 @@ export const Home: React.FC = () => (
               rating: 5
             }
           ].map((testimonial, index) => (
-            <div key={index} className="bg-white rounded-xl border border-slate-200 p-8 shadow-sm hover:shadow-lg transition-all duration-300">
+            <div key={index} className="bg-white rounded-xl border border-slate-200 p-8 shadow-sm hover:shadow-lg transition-all duration-500 transform hover:-translate-y-2 animate-scale-in">
               <div className="flex items-center gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />

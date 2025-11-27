@@ -1,18 +1,18 @@
 import React from 'react';
-import { CreditCard, Shield, CheckCircle, Clock, DollarSign, Star, ArrowRight, Zap, Award, Mail, Phone, Calendar } from 'lucide-react';
+import { CreditCard, Shield, CheckCircle, Clock, DollarSign, Star, ArrowRight, Zap, Award, Mail, Phone, Calendar, Users } from 'lucide-react';
 
 export const ClientPortal: React.FC = () => (
   <div className="min-h-screen bg-white">
     {/* Hero Section */}
     <section className="pt-32 pb-20 px-4">
       <div className="max-w-6xl mx-auto text-center">
-        <h1 className="text-5xl md:text-7xl font-bold text-slate-900 mb-6">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
           Client Payment
           <span className="block bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent">
             Portal
           </span>
         </h1>
-        <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
+        <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto mb-8 px-4">
           Secure payment processing for Script Pilot web development services. 
           Choose your service below to complete your payment safely and securely.
         </p>
@@ -22,20 +22,20 @@ export const ClientPortal: React.FC = () => (
     {/* Payment Options */}
     <section className="py-20">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {/* Project Initiation */}
           <div className="group bg-white rounded-2xl border-2 border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-3 animate-fade-in-up">
-            <div className="p-8 text-center">
+            <div className="p-6 sm:p-8 text-center">
               <div className="w-16 h-16 premium-icon rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg animate-premium-glow">
                 <Users className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-2">Project Initiation</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2">Project Initiation</h3>
               <div className="mb-4">
                 <span className="text-lg text-slate-500 line-through">$250</span>
-                <div className="text-4xl font-bold text-slate-900">$160</div>
+                <div className="text-3xl sm:text-4xl font-bold text-slate-900">$160</div>
                 <span className="text-emerald-600 font-semibold text-sm">Save $90!</span>
               </div>
-              <p className="text-slate-600 mb-6">Get started with your custom website project</p>
+              <p className="text-sm sm:text-base text-slate-600 mb-6">Get started with your custom website project</p>
               <ul className="text-left space-y-3 mb-8">
                 <li className="flex items-center gap-3 text-sm text-slate-600">
                   <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
@@ -71,18 +71,18 @@ export const ClientPortal: React.FC = () => (
             <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
               <span className="bg-amber-500 text-white px-4 py-2 rounded-full text-sm font-bold">COMPLETION</span>
             </div>
-            <div className="p-8 text-center">
+            <div className="p-6 sm:p-8 text-center">
               <div className="w-16 h-16 premium-icon-accent rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg animate-premium-pulse">
                 <CheckCircle className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-2">Deployment & Final Payment</h3>
-             <p className="text-sm text-amber-600 font-semibold mb-2">(Only pay when project is complete)</p>
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2">Deployment & Final Payment</h3>
+              <p className="text-sm text-amber-600 font-semibold mb-2">(Only pay when project is complete)</p>
               <div className="mb-4">
                 <span className="text-lg text-slate-500 line-through">$600</span>
-                <div className="text-4xl font-bold text-slate-900">$440</div>
+                <div className="text-3xl sm:text-4xl font-bold text-slate-900">$440</div>
                 <span className="text-emerald-600 font-semibold text-sm">Save $160!</span>
               </div>
-             <p className="text-slate-600 mb-6">Final payment made only when your website is complete and ready for deployment</p>
+              <p className="text-sm sm:text-base text-slate-600 mb-6">Final payment made only when your website is complete and ready for deployment</p>
               <ul className="text-left space-y-3 mb-8">
                 <li className="flex items-center gap-3 text-sm text-slate-600">
                   <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
@@ -115,18 +115,18 @@ export const ClientPortal: React.FC = () => (
 
           {/* Website Protection & Updates */}
           <div className="group bg-white rounded-2xl border-2 border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-3 animate-slide-in-right">
-            <div className="p-8 text-center">
+            <div className="p-6 sm:p-8 text-center">
               <div className="w-16 h-16 premium-icon-success rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg animate-premium-float">
                 <Shield className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-2">Website Protection & Updates</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2">Website Protection & Updates</h3>
               <div className="mb-4">
                 <span className="text-lg text-slate-500 line-through">$250</span>
-                <div className="text-4xl font-bold text-slate-900">$150</div>
+                <div className="text-3xl sm:text-4xl font-bold text-slate-900">$150</div>
                 <div className="text-slate-500 text-sm mb-1">per month</div>
                 <span className="text-emerald-600 font-semibold text-sm">Save $100/month!</span>
               </div>
-              <p className="text-slate-600 mb-2">Keep your website secure and up-to-date</p>
+              <p className="text-sm sm:text-base text-slate-600 mb-2">Keep your website secure and up-to-date</p>
               <p className="text-sm text-emerald-600 font-semibold mb-6">Optional Service</p>
               <ul className="text-left space-y-3 mb-8">
                 <li className="flex items-center gap-3 text-sm text-slate-600">
@@ -166,37 +166,37 @@ export const ClientPortal: React.FC = () => (
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <Shield className="w-16 h-16 text-slate-700 mx-auto mb-6" />
-          <h2 className="text-4xl font-bold text-slate-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
             Secure Payment Processing
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto px-4">
             Your payment information is protected by industry-leading security measures.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="bg-white rounded-xl p-8 text-center shadow-sm hover:shadow-lg transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up">
+        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div className="bg-white rounded-xl p-6 sm:p-8 text-center shadow-sm hover:shadow-lg transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up">
             <div className="w-16 h-16 premium-icon rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg animate-premium-float">
               <Shield className="w-8 h-8 text-white" />
             </div>
-            <h3 className="text-2xl font-semibold text-slate-900 mb-4">SSL Encrypted</h3>
-            <p className="text-slate-600">All payments are processed through secure, encrypted connections</p>
+            <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-4">SSL Encrypted</h3>
+            <p className="text-sm sm:text-base text-slate-600">All payments are processed through secure, encrypted connections</p>
           </div>
 
-          <div className="bg-white rounded-xl p-8 text-center shadow-sm hover:shadow-lg transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up">
+          <div className="bg-white rounded-xl p-6 sm:p-8 text-center shadow-sm hover:shadow-lg transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up">
             <div className="w-16 h-16 premium-icon rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg animate-premium-float">
               <Award className="w-8 h-8 text-white" />
             </div>
-            <h3 className="text-2xl font-semibold text-slate-900 mb-4">Stripe Powered</h3>
-            <p className="text-slate-600">Trusted by millions of businesses worldwide for secure payments</p>
+            <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-4">Stripe Powered</h3>
+            <p className="text-sm sm:text-base text-slate-600">Trusted by millions of businesses worldwide for secure payments</p>
           </div>
 
-          <div className="bg-white rounded-xl p-8 text-center shadow-sm hover:shadow-lg transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up">
+          <div className="bg-white rounded-xl p-6 sm:p-8 text-center shadow-sm hover:shadow-lg transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up">
             <div className="w-16 h-16 premium-icon rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg animate-premium-float">
               <CheckCircle className="w-8 h-8 text-white" />
             </div>
-            <h3 className="text-2xl font-semibold text-slate-900 mb-4">Instant Confirmation</h3>
-            <p className="text-slate-600">Receive immediate confirmation and project updates via email</p>
+            <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-4">Instant Confirmation</h3>
+            <p className="text-sm sm:text-base text-slate-600">Receive immediate confirmation and project updates via email</p>
           </div>
         </div>
       </div>
@@ -205,24 +205,24 @@ export const ClientPortal: React.FC = () => (
     {/* Contact Support */}
     <section className="py-20 bg-slate-900">
       <div className="max-w-6xl mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold text-white mb-6">
+        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
           Payment Support
         </h2>
-        <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto">
+        <p className="text-lg sm:text-xl text-slate-300 mb-8 max-w-3xl mx-auto px-4">
           Contact us if you need assistance with payments or have questions about your project.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
           <a
             href="mailto:contact@scriptpilot.us?subject=Payment Support - Script Pilot"
-            className="bg-white text-slate-900 px-8 py-4 rounded-lg font-semibold hover:bg-slate-100 transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center gap-3 transform"
+            className="w-full sm:w-auto bg-white text-slate-900 px-6 sm:px-8 py-4 rounded-lg font-semibold hover:bg-slate-100 transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-3 transform"
           >
             <Mail className="w-6 h-6" />
             Email Support
           </a>
           <a
             href="tel:4174010015"
-            className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-slate-900 transition-all duration-500 flex items-center gap-3 transform hover:-translate-y-1"
+            className="w-full sm:w-auto border-2 border-white text-white px-6 sm:px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-slate-900 transition-all duration-500 flex items-center justify-center gap-3 transform hover:-translate-y-1"
           >
             <Phone className="w-6 h-6" />
             Call (417) 401-0015

@@ -1,5 +1,5 @@
 import React from 'react';
-import { CreditCard, Shield, CheckCircle, Clock, DollarSign, Star, ArrowRight, Zap, Award } from 'lucide-react';
+import { CreditCard, Shield, CheckCircle, Clock, DollarSign, Star, ArrowRight, Zap, Award, Mail, Phone, Calendar } from 'lucide-react';
 
 export const ClientPortal: React.FC = () => (
   <div className="min-h-screen bg-white">

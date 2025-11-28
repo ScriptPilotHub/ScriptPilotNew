@@ -4,7 +4,7 @@ import { ArrowRight, CheckCircle, Star, Users, Award, Zap, Shield, Clock, Trendi
 export const Home: React.FC = () => (
   <div className="min-h-screen bg-white">
     {/* Hero Section */}
-    <section className="pt-32 pb-20 px-4">
+    <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-slate-50 to-white">
       <div className="max-w-6xl mx-auto text-center">
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-slate-900 mb-6 leading-tight">
           Professional Web Development
@@ -38,7 +38,7 @@ export const Home: React.FC = () => (
     </section>
 
     {/* Stats Section */}
-    <section className="py-20 bg-slate-50">
+    <section className="py-20 bg-gradient-to-r from-blue-50 to-indigo-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
@@ -57,7 +57,7 @@ export const Home: React.FC = () => (
     </section>
 
     {/* Services Overview */}
-    <section className="py-20">
+    <section className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
@@ -129,7 +129,7 @@ export const Home: React.FC = () => (
     </section>
 
     {/* Why Choose Us */}
-    <section className="py-20 bg-slate-50">
+    <section className="py-20 bg-gradient-to-br from-emerald-50 to-teal-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
@@ -175,7 +175,7 @@ export const Home: React.FC = () => (
     </section>
 
     {/* Testimonials */}
-    <section className="py-20">
+    <section className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
@@ -229,7 +229,7 @@ export const Home: React.FC = () => (
     </section>
 
     {/* CTA Section */}
-    <section className="py-20 bg-slate-900">
+    <section className="py-20 bg-gradient-to-r from-slate-900 to-slate-800">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
           Ready to Grow Your Business Online?

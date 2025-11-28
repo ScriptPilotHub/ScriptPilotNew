@@ -4,11 +4,11 @@ import { CreditCard, Shield, CheckCircle, Clock, DollarSign, Star, ArrowRight, Z
 export const ClientPortal: React.FC = () => (
   <div className="min-h-screen bg-white">
     {/* Hero Section */}
-    <section className="pt-32 pb-20 px-4">
+    <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-amber-50 to-orange-50">
       <div className="max-w-6xl mx-auto text-center">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-amber-900 mb-6 leading-tight">
           Client Payment
-          <span className="block bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent">
+          <span className="block bg-gradient-to-r from-amber-700 to-orange-900 bg-clip-text text-transparent">
             Portal
           </span>
         </h1>
@@ -20,7 +20,7 @@ export const ClientPortal: React.FC = () => (
     </section>
 
     {/* Payment Options */}
-    <section className="py-20">
+    <section className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {/* Project Initiation */}
@@ -162,7 +162,7 @@ export const ClientPortal: React.FC = () => (
     </section>
 
     {/* Security & Trust */}
-    <section className="py-20 bg-slate-50">
+    <section className="py-20 bg-gradient-to-r from-amber-100 to-orange-100">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <Shield className="w-16 h-16 text-slate-700 mx-auto mb-6" />
@@ -203,7 +203,7 @@ export const ClientPortal: React.FC = () => (
     </section>
 
     {/* Contact Support */}
-    <section className="py-20 bg-slate-900">
+    <section className="py-20 bg-gradient-to-r from-amber-900 to-orange-900">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
           Payment Support

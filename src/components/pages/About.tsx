@@ -4,11 +4,11 @@ import { Users, Target, Award, Lightbulb, Handshake, ArrowRight, TrendingUp } fr
 export const About: React.FC = () => (
   <div className="min-h-screen bg-white">
     {/* Hero Section */}
-    <section className="pt-32 pb-20 px-4">
+    <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-emerald-50 to-teal-50">
       <div className="max-w-6xl mx-auto text-center">
-        <h1 className="text-5xl md:text-7xl font-bold text-slate-900 mb-6">
+        <h1 className="text-5xl md:text-7xl font-bold text-emerald-900 mb-6">
           About
-          <span className="block bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent">
+          <span className="block bg-gradient-to-r from-emerald-700 to-teal-900 bg-clip-text text-transparent">
             Script Pilot
           </span>
         </h1>
@@ -20,7 +20,7 @@ export const About: React.FC = () => (
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a 
             href="#contact" 
-            className="bg-slate-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-slate-800 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+            className="bg-emerald-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-emerald-800 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
           >
             Get Started Today
             <ArrowRight className="w-5 h-5" />
@@ -29,7 +29,7 @@ export const About: React.FC = () => (
             href="https://calendly.com/contact-scriptpilot/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="border-2 border-slate-300 text-slate-700 px-8 py-4 rounded-lg font-semibold hover:border-slate-800 hover:bg-slate-800 hover:text-white transition-all duration-300"
+            className="border-2 border-emerald-300 text-emerald-700 px-8 py-4 rounded-lg font-semibold hover:border-emerald-800 hover:bg-emerald-800 hover:text-white transition-all duration-300"
           >
             Schedule Consultation
           </a>
@@ -38,7 +38,7 @@ export const About: React.FC = () => (
     </section>
 
     {/* Stats Section */}
-    <section className="py-20 bg-slate-50">
+    <section className="py-20 bg-gradient-to-r from-emerald-100 to-teal-100">
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
@@ -57,7 +57,7 @@ export const About: React.FC = () => (
     </section>
 
     {/* Mission Section */}
-    <section className="py-20">
+    <section className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <Target className="w-16 h-16 text-slate-700 mx-auto mb-6" />
@@ -79,7 +79,7 @@ export const About: React.FC = () => (
     </section>
 
     {/* Values Section */}
-    <section className="py-20 bg-slate-50">
+    <section className="py-20 bg-gradient-to-br from-emerald-50 to-green-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <Award className="w-16 h-16 text-slate-700 mx-auto mb-6" />
@@ -128,7 +128,7 @@ export const About: React.FC = () => (
     </section>
 
     {/* Team Section */}
-    <section className="py-20">
+    <section className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <Users className="w-16 h-16 text-slate-700 mx-auto mb-6" />
@@ -176,7 +176,7 @@ export const About: React.FC = () => (
     </section>
 
     {/* Trust Indicators */}
-    <section className="py-20 bg-slate-50">
+    <section className="py-20 bg-gradient-to-br from-emerald-50 to-teal-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <Target className="w-16 h-16 text-slate-700 mx-auto mb-6" />
@@ -224,7 +224,7 @@ export const About: React.FC = () => (
     </section>
 
     {/* CTA Section */}
-    <section className="py-20 bg-slate-900">
+    <section className="py-20 bg-gradient-to-r from-emerald-900 to-teal-900">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold text-white mb-6">
           Start Your Project Today

@@ -5,11 +5,11 @@ export const Contact: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4">
+      <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-blue-50 to-cyan-50">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-slate-900 mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-blue-900 mb-6 leading-tight">
             Get Your Project
-            <span className="block bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-blue-700 to-cyan-900 bg-clip-text text-transparent">
               Started Today
             </span>
           </h1>
@@ -21,7 +21,7 @@ export const Contact: React.FC = () => {
       </section>
 
       {/* Primary Contact Methods */}
-      <section className="py-20">
+      <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="max-w-2xl mx-auto mb-16">
             {/* Email Contact */}
@@ -115,7 +115,7 @@ export const Contact: React.FC = () => {
       </section>
 
       {/* Contact Information Grid */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-20 bg-gradient-to-r from-blue-100 to-cyan-100">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
@@ -161,7 +161,7 @@ export const Contact: React.FC = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20">
+      <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
@@ -201,7 +201,7 @@ export const Contact: React.FC = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-slate-900">
+      <section className="py-20 bg-gradient-to-r from-blue-900 to-cyan-900">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
             Start Your Project Today

@@ -4,11 +4,11 @@ import { Monitor, ShoppingCart, Code, Rocket, Search, Shield, TrendingUp, Users,
 export const Services: React.FC = () => (
   <div className="min-h-screen bg-white">
     {/* Hero Section */}
-    <section className="pt-32 pb-20 px-4">
+    <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-purple-50 to-indigo-50">
       <div className="max-w-6xl mx-auto text-center">
-        <h1 className="text-5xl md:text-7xl font-bold text-slate-900 mb-6">
+        <h1 className="text-5xl md:text-7xl font-bold text-purple-900 mb-6">
           Professional Web Development
-          <span className="block bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent">
+          <span className="block bg-gradient-to-r from-purple-700 to-indigo-900 bg-clip-text text-transparent">
             Services
           </span>
         </h1>
@@ -20,7 +20,7 @@ export const Services: React.FC = () => (
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a 
             href="#contact" 
-            className="bg-slate-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-slate-800 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+            className="bg-purple-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-purple-800 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
           >
             Get Started Today
             <ArrowRight className="w-5 h-5" />
@@ -29,7 +29,7 @@ export const Services: React.FC = () => (
             href="https://calendly.com/contact-scriptpilot/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="border-2 border-slate-300 text-slate-700 px-8 py-4 rounded-lg font-semibold hover:border-slate-800 hover:bg-slate-800 hover:text-white transition-all duration-300"
+            className="border-2 border-purple-300 text-purple-700 px-8 py-4 rounded-lg font-semibold hover:border-purple-800 hover:bg-purple-800 hover:text-white transition-all duration-300"
           >
             Schedule Consultation
           </a>
@@ -38,7 +38,7 @@ export const Services: React.FC = () => (
     </section>
 
     {/* Stats Section */}
-    <section className="py-20 bg-slate-50">
+    <section className="py-20 bg-gradient-to-r from-purple-100 to-indigo-100">
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
@@ -57,7 +57,7 @@ export const Services: React.FC = () => (
     </section>
 
     {/* Why Professional Websites Matter */}
-    <section className="py-20">
+    <section className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <TrendingUp className="w-16 h-16 text-slate-700 mx-auto mb-6" />
@@ -110,7 +110,7 @@ export const Services: React.FC = () => (
     </section>
 
     {/* Main Service Package */}
-    <section className="py-20 bg-slate-50">
+    <section className="py-20 bg-gradient-to-br from-purple-50 to-blue-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <Rocket className="w-16 h-16 text-slate-700 mx-auto mb-6" />
@@ -120,6 +120,20 @@ export const Services: React.FC = () => (
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Transparent pricing for professional web development services. No hidden fees or surprises.
           </p>
+          
+          {/* Springfield Photography Notice */}
+          <div className="mt-8 bg-gradient-to-r from-emerald-100 to-teal-100 border border-emerald-200 rounded-xl p-6 max-w-4xl mx-auto">
+            <div className="flex items-center justify-center gap-3 mb-3">
+              <div className="w-8 h-8 bg-emerald-600 rounded-full flex items-center justify-center">
+                <CheckCircle className="w-5 h-5 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-emerald-800">Springfield, MO Clients</h3>
+            </div>
+            <p className="text-emerald-700 font-medium">
+              <strong>FREE Professional Photography Included!</strong> For businesses located in the Springfield, Missouri area, 
+              we include professional product and business photography at no additional cost to enhance your website's visual appeal.
+            </p>
+          </div>
         </div>
 
         {/* Pricing Cards */}
@@ -308,7 +322,7 @@ export const Services: React.FC = () => (
     </section>
 
     {/* Perfect For Section */}
-    <section className="py-20">
+    <section className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <Users className="w-16 h-16 text-slate-700 mx-auto mb-6" />
@@ -353,7 +367,7 @@ export const Services: React.FC = () => (
     </section>
 
     {/* ROI Section */}
-    <section className="py-20 bg-slate-50">
+    <section className="py-20 bg-gradient-to-br from-red-50 to-orange-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <DollarSign className="w-16 h-16 text-slate-700 mx-auto mb-6" />
@@ -401,7 +415,7 @@ export const Services: React.FC = () => (
     </section>
 
     {/* Testimonials */}
-    <section className="py-20">
+    <section className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <Star className="w-16 h-16 text-amber-500 mx-auto mb-6" />
@@ -456,7 +470,7 @@ export const Services: React.FC = () => (
     </section>
 
     {/* CTA Section */}
-    <section className="py-20 bg-slate-900">
+    <section className="py-20 bg-gradient-to-r from-purple-900 to-indigo-900">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold text-white mb-6">
           Ready to Start Your Project?

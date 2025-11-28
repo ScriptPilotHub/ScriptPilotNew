@@ -39,7 +39,7 @@ export const Contact: React.FC = () => {
                     Get detailed project information and quotes. We respond to all inquiries within 24 hours.
                   </p>
                   <a 
-                    href="mailto:contact@scriptpilot.us?subject=Project Inquiry - Script Pilot&body=Hello,%0D%0A%0D%0AI'm interested in web development services for my business.%0D%0A%0D%0AProject Type: [Website/E-commerce/Custom Application]%0D%0ABusiness Name: %0D%0AIndustry: %0D%0ATimeline: %0D%0ABudget Range: %0D%0A%0D%0AProject Details:%0D%0A%0D%0A%0D%0AThank you,%0D%0A[Your Name]"
+                    href="mailto:contact@scriptpilot.us?subject=Project%20Inquiry%20-%20Script%20Pilot&body=Hello,%0D%0A%0D%0AI'm%20interested%20in%20web%20development%20services%20for%20my%20business.%0D%0A%0D%0AProject%20Type:%20[Website/E-commerce/Custom%20Application]%0D%0ABusiness%20Name:%20%0D%0AIndustry:%20%0D%0ATimeline:%20%0D%0ABudget%20Range:%20%0D%0A%0D%0AProject%20Details:%0D%0A%0D%0A%0D%0AThank%20you,%0D%0A[Your%20Name]"
                     className="inline-flex items-center gap-3 text-lg sm:text-2xl font-bold text-gray-900 hover:text-gray-700 transition-colors duration-500 group-hover:scale-105 transform break-all"
                   >
                     contact@scriptpilot.us

@@ -31,7 +31,7 @@ export const Home: React.FC = () => (
             <ArrowRight className="w-5 h-5" />
           </a>
           <a
-            href="mailto:contact@scriptpilot.us?subject=Project Inquiry - Script Pilot"
+            href="#contact"
             className="w-full sm:w-auto border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-semibold hover:border-gray-600 hover:bg-gray-600 hover:text-white transition-all duration-300 text-center"
           >
             Contact Us

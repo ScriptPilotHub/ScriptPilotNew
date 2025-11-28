@@ -232,7 +232,7 @@ export const Home: React.FC = () => (
             Get Quote
           </a>
           <a
-            href="#contact"
+            href="mailto:contact@scriptpilot.us?subject=Contact Inquiry - Script Pilot"
             className="w-full sm:w-auto border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300 text-center transform hover:-translate-y-1"
           >
             Contact Us

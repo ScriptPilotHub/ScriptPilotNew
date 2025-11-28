@@ -59,6 +59,25 @@ export const Home: React.FC = () => (
     {/* Services Overview */}
     <section className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
+        {/* Springfield Photography Highlight */}
+        <div className="mb-16 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-6 sm:p-8 text-center shadow-2xl">
+          <div className="max-w-3xl mx-auto">
+            <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+              <Users className="w-8 h-8 text-emerald-600" />
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+              FREE Professional Photography
+            </h3>
+            <p className="text-lg text-emerald-100 mb-4">
+              <strong>Springfield, MO Area:</strong> Professional product and business photography included 
+              at no cost with every web development project!
+            </p>
+            <p className="text-emerald-200 text-sm font-medium">
+              📍 Available within 50 miles of Springfield, Missouri
+            </p>
+          </div>
+        </div>
+
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
             Professional Web Development

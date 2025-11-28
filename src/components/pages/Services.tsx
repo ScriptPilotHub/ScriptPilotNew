@@ -112,6 +112,42 @@ export const Services: React.FC = () => (
     {/* Main Service Package */}
     <section className="py-20 bg-gradient-to-br from-purple-50 to-blue-50">
       <div className="max-w-6xl mx-auto px-4">
+        {/* Springfield Photography Service */}
+        <div className="mb-16 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-8 text-center shadow-2xl">
+          <div className="max-w-4xl mx-auto">
+            <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg animate-premium-float">
+              <Users className="w-10 h-10 text-emerald-600" />
+            </div>
+            <h3 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              FREE Professional Photography
+            </h3>
+            <p className="text-xl text-emerald-100 mb-6 leading-relaxed">
+              <strong>Springfield, Missouri Area Clients Only:</strong> We include professional product and business photography 
+              at no additional cost with every web development project. High-quality images that make your website stand out!
+            </p>
+            <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6 text-left">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                <CheckCircle className="w-6 h-6 text-white mb-2" />
+                <h4 className="text-lg font-semibold text-white mb-2">Product Photography</h4>
+                <p className="text-emerald-100 text-sm">Professional shots of your products for e-commerce and marketing</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                <CheckCircle className="w-6 h-6 text-white mb-2" />
+                <h4 className="text-lg font-semibold text-white mb-2">Business Photography</h4>
+                <p className="text-emerald-100 text-sm">Team photos, office spaces, and professional headshots</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                <CheckCircle className="w-6 h-6 text-white mb-2" />
+                <h4 className="text-lg font-semibold text-white mb-2">Location Shoots</h4>
+                <p className="text-emerald-100 text-sm">On-site photography sessions at your business location</p>
+              </div>
+            </div>
+            <p className="text-emerald-200 text-sm mt-6 font-medium">
+              📍 Available for businesses within 50 miles of Springfield, MO
+            </p>
+          </div>
+        </div>
+
         <div className="text-center mb-16">
           <Rocket className="w-16 h-16 text-slate-700 mx-auto mb-6" />
           <h2 className="text-4xl font-bold text-slate-900 mb-4">
@@ -120,20 +156,6 @@ export const Services: React.FC = () => (
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Transparent pricing for professional web development services. No hidden fees or surprises.
           </p>
-          
-          {/* Springfield Photography Notice */}
-          <div className="mt-8 bg-gradient-to-r from-emerald-100 to-teal-100 border border-emerald-200 rounded-xl p-6 max-w-4xl mx-auto">
-            <div className="flex items-center justify-center gap-3 mb-3">
-              <div className="w-8 h-8 bg-emerald-600 rounded-full flex items-center justify-center">
-                <CheckCircle className="w-5 h-5 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-emerald-800">Springfield, MO Clients</h3>
-            </div>
-            <p className="text-emerald-700 font-medium">
-              <strong>FREE Professional Photography Included!</strong> For businesses located in the Springfield, Missouri area, 
-              we include professional product and business photography at no additional cost to enhance your website's visual appeal.
-            </p>
-          </div>
         </div>
 
         {/* Pricing Cards */}

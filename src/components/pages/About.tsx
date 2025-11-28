@@ -6,7 +6,7 @@ export const About: React.FC = () => (
     {/* Hero Section */}
     <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">
       <div className="max-w-6xl mx-auto text-center">
-        <div className="w-20 h-20 bg-gradient-to-br from-amber-600 to-orange-600 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-2xl animate-premium-float">
+        <div className="w-20 h-20 bg-gradient-to-br from-amber-600 to-orange-600 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-2xl">
           <Building className="w-10 h-10 text-white" />
         </div>
         <h1 className="text-5xl md:text-7xl font-bold text-amber-900 mb-6">

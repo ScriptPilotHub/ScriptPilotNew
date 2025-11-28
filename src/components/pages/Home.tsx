@@ -44,7 +44,7 @@ export const Home: React.FC = () => (
     <section className="py-20 bg-gradient-to-r from-emerald-600 to-teal-600">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center">
-          <div className="w-20 h-20 bg-white rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-2xl animate-premium-float">
+          <div className="w-20 h-20 bg-white rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-2xl">
             <Camera className="w-10 h-10 text-emerald-600" />
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
@@ -194,13 +194,13 @@ export const Home: React.FC = () => (
               description: "Clear communication, transparent pricing, and dedicated support throughout your project development."
             },
             {
-              icon: Zap,
+              icon: CheckCircle,
               title: "Modern Technology",
               description: "Current web technologies and best practices to ensure your website performs well and stays secure."
             }
           ].map((benefit, index) => (
             <div key={index} className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-3">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg animate-premium-float">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
                 <benefit.icon className="w-8 h-8 text-white transition-all duration-300" />
               </div>
               <h3 className="text-xl sm:text-2xl font-semibold text-blue-900 mb-4">

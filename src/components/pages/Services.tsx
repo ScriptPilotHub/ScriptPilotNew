@@ -6,7 +6,7 @@ export const Services: React.FC = () => (
     {/* Hero Section */}
     <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50">
       <div className="max-w-6xl mx-auto text-center">
-        <div className="w-20 h-20 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-2xl animate-premium-float">
+        <div className="w-20 h-20 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-2xl">
           <Settings className="w-10 h-10 text-white" />
         </div>
         <h1 className="text-5xl md:text-7xl font-bold text-emerald-900 mb-6">
@@ -298,7 +298,7 @@ export const Services: React.FC = () => (
             }
           ].map((service, index) => (
             <div key={index} className="text-center">
-              <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg transform hover:scale-110 transition-all duration-300">
+              <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                 <service.icon className="w-6 h-6 text-emerald-900" />
               </div>
               <h4 className="text-lg font-semibold text-white mb-2">{service.title}</h4>

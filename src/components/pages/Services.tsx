@@ -1,18 +1,21 @@
 import React from 'react';
-import { Monitor, ShoppingCart, Code, Rocket, Search, Shield, TrendingUp, Users, Award, Clock, DollarSign, CheckCircle, Star, ArrowRight } from 'lucide-react';
+import { Monitor, ShoppingCart, Code, Rocket, Search, Shield, TrendingUp, Users, Award, Clock, DollarSign, CheckCircle, ArrowRight, Settings, Zap } from 'lucide-react';
 
 export const Services: React.FC = () => (
   <div className="min-h-screen bg-white">
     {/* Hero Section */}
-    <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-purple-50 to-indigo-50">
+    <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50">
       <div className="max-w-6xl mx-auto text-center">
-        <h1 className="text-5xl md:text-7xl font-bold text-purple-900 mb-6">
+        <div className="w-20 h-20 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-2xl animate-premium-float">
+          <Settings className="w-10 h-10 text-white" />
+        </div>
+        <h1 className="text-5xl md:text-7xl font-bold text-emerald-900 mb-6">
           Professional Web Development
-          <span className="block bg-gradient-to-r from-purple-700 to-indigo-900 bg-clip-text text-transparent">
+          <span className="block bg-gradient-to-r from-emerald-700 to-teal-900 bg-clip-text text-transparent">
             Services
           </span>
         </h1>
-        <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
+        <p className="text-xl text-emerald-800 max-w-3xl mx-auto mb-8">
           Custom websites and e-commerce platforms with transparent pricing and proven results. 
           Professional development services designed to grow your business.
         </p>
@@ -20,7 +23,7 @@ export const Services: React.FC = () => (
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a 
             href="#contact" 
-            className="bg-purple-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-purple-800 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+            className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-emerald-700 hover:to-teal-700 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
           >
             Get Started Today
             <ArrowRight className="w-5 h-5" />
@@ -29,7 +32,7 @@ export const Services: React.FC = () => (
             href="https://calendly.com/contact-scriptpilot/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="border-2 border-purple-300 text-purple-700 px-8 py-4 rounded-lg font-semibold hover:border-purple-800 hover:bg-purple-800 hover:text-white transition-all duration-300"
+            className="border-2 border-emerald-300 text-emerald-700 px-8 py-4 rounded-xl font-semibold hover:border-emerald-600 hover:bg-emerald-600 hover:text-white transition-all duration-300"
           >
             Schedule Consultation
           </a>
@@ -38,7 +41,7 @@ export const Services: React.FC = () => (
     </section>
 
     {/* Stats Section */}
-    <section className="py-20 bg-gradient-to-r from-purple-100 to-indigo-100">
+    <section className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
@@ -47,9 +50,9 @@ export const Services: React.FC = () => (
             { value: "2-8", label: "Week Delivery" },
             { value: "24/7", label: "Performance" }
           ].map((stat, index) => (
-            <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
-              <div className="text-3xl font-bold text-slate-800 mb-2">{stat.value}</div>
-              <div className="text-slate-600 font-medium">{stat.label}</div>
+            <div key={index} className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2">
+              <div className="text-4xl font-bold text-emerald-900 mb-3">{stat.value}</div>
+              <div className="text-emerald-700 font-semibold">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -57,14 +60,14 @@ export const Services: React.FC = () => (
     </section>
 
     {/* Why Professional Websites Matter */}
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gradient-to-br from-emerald-50 to-teal-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
-          <TrendingUp className="w-16 h-16 text-slate-700 mx-auto mb-6" />
-          <h2 className="text-4xl font-bold text-slate-900 mb-4">
+          <TrendingUp className="w-16 h-16 text-emerald-700 mx-auto mb-6" />
+          <h2 className="text-4xl font-bold text-emerald-900 mb-4">
             The Importance of Professional Web Development
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-xl text-emerald-800 max-w-3xl mx-auto">
             A professional website is essential for business growth in today's market. 
             Quality development makes the difference between success and missed opportunities.
           </p>
@@ -93,14 +96,14 @@ export const Services: React.FC = () => (
               description: "Your website works continuously to generate leads and provide information to customers"
             }
           ].map((benefit, index) => (
-            <div key={index} className="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+            <div key={index} className="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-3">
+              <div className="w-16 h-16 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
                 <benefit.icon className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">
+              <h3 className="text-xl font-semibold text-emerald-900 mb-3">
                 {benefit.title}
               </h3>
-              <p className="text-slate-600 text-sm">
+              <p className="text-emerald-700 text-sm">
                 {benefit.description}
               </p>
             </div>
@@ -110,50 +113,14 @@ export const Services: React.FC = () => (
     </section>
 
     {/* Main Service Package */}
-    <section className="py-20 bg-gradient-to-br from-purple-50 to-blue-50">
+    <section className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
-        {/* Springfield Photography Service */}
-        <div className="mb-16 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-8 text-center shadow-2xl">
-          <div className="max-w-4xl mx-auto">
-            <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg animate-premium-float">
-              <Users className="w-10 h-10 text-emerald-600" />
-            </div>
-            <h3 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              FREE Professional Photography
-            </h3>
-            <p className="text-xl text-emerald-100 mb-6 leading-relaxed">
-              <strong>Springfield, Missouri Area Clients Only:</strong> We include professional product and business photography 
-              at no additional cost with every web development project. High-quality images that make your website stand out!
-            </p>
-            <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6 text-left">
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
-                <CheckCircle className="w-6 h-6 text-white mb-2" />
-                <h4 className="text-lg font-semibold text-white mb-2">Product Photography</h4>
-                <p className="text-emerald-100 text-sm">Professional shots of your products for e-commerce and marketing</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
-                <CheckCircle className="w-6 h-6 text-white mb-2" />
-                <h4 className="text-lg font-semibold text-white mb-2">Business Photography</h4>
-                <p className="text-emerald-100 text-sm">Team photos, office spaces, and professional headshots</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
-                <CheckCircle className="w-6 h-6 text-white mb-2" />
-                <h4 className="text-lg font-semibold text-white mb-2">Location Shoots</h4>
-                <p className="text-emerald-100 text-sm">On-site photography sessions at your business location</p>
-              </div>
-            </div>
-            <p className="text-emerald-200 text-sm mt-6 font-medium">
-              📍 Available for businesses within 50 miles of Springfield, MO
-            </p>
-          </div>
-        </div>
-
         <div className="text-center mb-16">
-          <Rocket className="w-16 h-16 text-slate-700 mx-auto mb-6" />
-          <h2 className="text-4xl font-bold text-slate-900 mb-4">
+          <Rocket className="w-16 h-16 text-emerald-700 mx-auto mb-6" />
+          <h2 className="text-4xl font-bold text-emerald-900 mb-4">
             Web Development Pricing
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-xl text-emerald-800 max-w-3xl mx-auto">
             Transparent pricing for professional web development services. No hidden fees or surprises.
           </p>
         </div>
@@ -161,39 +128,39 @@ export const Services: React.FC = () => (
         {/* Pricing Cards */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {/* Project Initiation */}
-          <div className="group bg-white rounded-2xl border-2 border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-3 animate-fade-in-up">
+          <div className="group bg-white rounded-2xl border-2 border-emerald-200 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-3">
             <div className="p-8 text-center">
-              <div className="w-16 h-16 premium-icon rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg animate-premium-glow">
+              <div className="w-16 h-16 bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg">
                 <Users className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-2">Project Initiation</h3>
+              <h3 className="text-2xl font-bold text-emerald-900 mb-2">Project Initiation</h3>
               <div className="mb-4">
-                <span className="text-lg text-slate-500 line-through">$250</span>
-                <div className="text-4xl font-bold text-slate-900">$160</div>
+                <span className="text-lg text-emerald-500 line-through">$250</span>
+                <div className="text-4xl font-bold text-emerald-900">$160</div>
                 <span className="text-emerald-600 font-semibold text-sm">Save $90!</span>
               </div>
-              <p className="text-slate-600 mb-6">Get started with your custom website project</p>
+              <p className="text-emerald-700 mb-6">Get started with your custom website project</p>
               <ul className="text-left space-y-3 mb-8">
-                <li className="flex items-center gap-3 text-sm text-slate-600">
+                <li className="flex items-center gap-3 text-sm text-emerald-700">
                   <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                   Initial consultation & planning
                 </li>
-                <li className="flex items-center gap-3 text-sm text-slate-600">
+                <li className="flex items-center gap-3 text-sm text-emerald-700">
                   <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                   Requirements analysis
                 </li>
-                <li className="flex items-center gap-3 text-sm text-slate-600">
+                <li className="flex items-center gap-3 text-sm text-emerald-700">
                   <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                   Development timeline
                 </li>
-                <li className="flex items-center gap-3 text-sm text-slate-600">
+                <li className="flex items-center gap-3 text-sm text-emerald-700">
                   <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                   Project roadmap
                 </li>
               </ul>
               <a
                 href="#contact"
-                className="w-full bg-slate-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-slate-800 transition-all duration-500 inline-block transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
+                className="w-full bg-emerald-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-emerald-700 transition-all duration-500 inline-block transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
               >
                 Start Project
               </a>
@@ -201,79 +168,79 @@ export const Services: React.FC = () => (
           </div>
 
           {/* Final Payment */}
-          <div className="bg-white rounded-2xl border-2 border-amber-200 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-3 group relative animate-scale-in">
+          <div className="bg-white rounded-2xl border-2 border-teal-200 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-3 group relative">
             <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-              <span className="bg-amber-500 text-white px-4 py-2 rounded-full text-sm font-bold">COMPLETION</span>
+              <span className="bg-teal-500 text-white px-4 py-2 rounded-full text-sm font-bold">COMPLETION</span>
             </div>
             <div className="p-8 text-center">
-              <div className="w-16 h-16 premium-icon-accent rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg animate-premium-pulse">
+              <div className="w-16 h-16 bg-gradient-to-br from-teal-600 to-teal-700 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg">
                 <CheckCircle className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-2">Deployment & Final Payment</h3>
+              <h3 className="text-2xl font-bold text-emerald-900 mb-2">Deployment & Final Payment</h3>
               <div className="mb-4">
-                <span className="text-lg text-slate-500 line-through">$600</span>
-                <div className="text-4xl font-bold text-slate-900">$440</div>
+                <span className="text-lg text-emerald-500 line-through">$600</span>
+                <div className="text-4xl font-bold text-emerald-900">$440</div>
                 <span className="text-emerald-600 font-semibold text-sm">Save $160!</span>
               </div>
-              <p className="text-slate-600 mb-6">Final payment when your website is complete and deployed</p>
+              <p className="text-emerald-700 mb-6">Final payment when your website is complete and deployed</p>
               <ul className="text-left space-y-3 mb-8">
-                <li className="flex items-center gap-3 text-sm text-slate-600">
+                <li className="flex items-center gap-3 text-sm text-emerald-700">
                   <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                   Complete website development
                 </li>
-                <li className="flex items-center gap-3 text-sm text-slate-600">
+                <li className="flex items-center gap-3 text-sm text-emerald-700">
                   <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                   Domain setup & hosting
                 </li>
-                <li className="flex items-center gap-3 text-sm text-slate-600">
+                <li className="flex items-center gap-3 text-sm text-emerald-700">
                   <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                   SSL certificate & security
                 </li>
-                <li className="flex items-center gap-3 text-sm text-slate-600">
+                <li className="flex items-center gap-3 text-sm text-emerald-700">
                   <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                   Live website deployment
                 </li>
               </ul>
-              <div className="w-full bg-amber-600 text-white px-6 py-3 rounded-lg font-semibold text-center transform hover:-translate-y-1 transition-all duration-300 shadow-lg">
+              <div className="w-full bg-teal-600 text-white px-6 py-3 rounded-xl font-semibold text-center transform hover:-translate-y-1 transition-all duration-300 shadow-lg">
                 Paid on Completion
               </div>
             </div>
           </div>
 
           {/* Maintenance */}
-          <div className="bg-white rounded-2xl border-2 border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-3 group animate-slide-in-right">
+          <div className="bg-white rounded-2xl border-2 border-emerald-200 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-3 group">
             <div className="p-8 text-center">
-              <div className="w-16 h-16 premium-icon-success rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg animate-premium-float">
+              <div className="w-16 h-16 bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg">
                 <Shield className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-2">Website Protection & Updates</h3>
+              <h3 className="text-2xl font-bold text-emerald-900 mb-2">Website Protection & Updates</h3>
               <div className="mb-4">
-                <span className="text-lg text-slate-500 line-through">$250</span>
-                <div className="text-4xl font-bold text-slate-900">$150</div>
-                <div className="text-slate-500 text-sm mb-1">per month</div>
+                <span className="text-lg text-emerald-500 line-through">$250</span>
+                <div className="text-4xl font-bold text-emerald-900">$150</div>
+                <div className="text-emerald-500 text-sm mb-1">per month</div>
                 <span className="text-emerald-600 font-semibold text-sm">Save $100/month!</span>
               </div>
-              <p className="text-slate-600 mb-2">Keep your website secure and up-to-date</p>
+              <p className="text-emerald-700 mb-2">Keep your website secure and up-to-date</p>
               <p className="text-sm text-emerald-600 font-semibold mb-6">Optional Service</p>
               <ul className="text-left space-y-3 mb-8">
-                <li className="flex items-center gap-3 text-sm text-slate-600">
+                <li className="flex items-center gap-3 text-sm text-emerald-700">
                   <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                   Security monitoring & updates
                 </li>
-                <li className="flex items-center gap-3 text-sm text-slate-600">
+                <li className="flex items-center gap-3 text-sm text-emerald-700">
                   <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                   Regular backups
                 </li>
-                <li className="flex items-center gap-3 text-sm text-slate-600">
+                <li className="flex items-center gap-3 text-sm text-emerald-700">
                   <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                   Performance optimization
                 </li>
-                <li className="flex items-center gap-3 text-sm text-slate-600">
+                <li className="flex items-center gap-3 text-sm text-emerald-700">
                   <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                   Priority support
                 </li>
               </ul>
-              <div className="w-full border-2 border-emerald-600 text-emerald-600 px-6 py-3 rounded-lg font-semibold text-center hover:bg-emerald-600 hover:text-white transition-all duration-500 transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
+              <div className="w-full border-2 border-emerald-600 text-emerald-600 px-6 py-3 rounded-xl font-semibold text-center hover:bg-emerald-600 hover:text-white transition-all duration-500 transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
                 Optional Add-on
               </div>
             </div>
@@ -281,7 +248,7 @@ export const Services: React.FC = () => (
         </div>
 
         {/* What's Included Section */}
-        <div className="bg-slate-900 rounded-2xl p-8 text-center">
+        <div className="bg-gradient-to-r from-emerald-900 to-teal-900 rounded-2xl p-8 text-center">
           <h3 className="text-3xl font-bold text-white mb-6">What's Included in Every Project</h3>
           <div className="grid md:grid-cols-4 gap-6">
           {[
@@ -332,10 +299,10 @@ export const Services: React.FC = () => (
           ].map((service, index) => (
             <div key={index} className="text-center">
               <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg transform hover:scale-110 transition-all duration-300">
-                <service.icon className="w-6 h-6 text-slate-900" />
+                <service.icon className="w-6 h-6 text-emerald-900" />
               </div>
               <h4 className="text-lg font-semibold text-white mb-2">{service.title}</h4>
-              <p className="text-slate-300 text-sm">{service.description}</p>
+              <p className="text-emerald-100 text-sm">{service.description}</p>
             </div>
           ))}
           </div>
@@ -344,14 +311,14 @@ export const Services: React.FC = () => (
     </section>
 
     {/* Perfect For Section */}
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gradient-to-br from-emerald-50 to-teal-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
-          <Users className="w-16 h-16 text-slate-700 mx-auto mb-6" />
-          <h2 className="text-4xl font-bold text-slate-900 mb-4">
+          <Users className="w-16 h-16 text-emerald-700 mx-auto mb-6" />
+          <h2 className="text-4xl font-bold text-emerald-900 mb-4">
             Suitable for All Business Types
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-xl text-emerald-800 max-w-3xl mx-auto">
             Professional web development services for businesses across all industries and sizes.
           </p>
         </div>
@@ -375,11 +342,11 @@ export const Services: React.FC = () => (
               description: "Establish credibility, showcase expertise, and generate qualified leads for your practice."
             }
           ].map((business, index) => (
-            <div key={index} className="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-lg transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up">
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">
+            <div key={index} className="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-3">
+              <h3 className="text-xl font-semibold text-emerald-900 mb-3">
                 {business.title}
               </h3>
-              <p className="text-slate-600 text-sm">
+              <p className="text-emerald-700 text-sm">
                 {business.description}
               </p>
             </div>
@@ -389,14 +356,14 @@ export const Services: React.FC = () => (
     </section>
 
     {/* ROI Section */}
-    <section className="py-20 bg-gradient-to-br from-red-50 to-orange-50">
+    <section className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
-          <DollarSign className="w-16 h-16 text-slate-700 mx-auto mb-6" />
-          <h2 className="text-4xl font-bold text-slate-900 mb-4">
+          <DollarSign className="w-16 h-16 text-emerald-700 mx-auto mb-6" />
+          <h2 className="text-4xl font-bold text-emerald-900 mb-4">
             The Business Impact of Poor Web Presence
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-xl text-emerald-800 max-w-3xl mx-auto">
             Without professional web development, businesses miss important growth opportunities. 
             Here's what's at stake:
           </p>
@@ -420,14 +387,14 @@ export const Services: React.FC = () => (
               description: "Limited online presence restricts business growth and market reach"
             }
           ].map((cost, index) => (
-            <div key={index} className="bg-white rounded-xl p-8 text-center shadow-sm hover:shadow-lg transition-all duration-500 transform hover:-translate-y-2 animate-scale-in">
-              <div className="w-16 h-16 premium-icon rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg animate-premium-float">
+            <div key={index} className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-3">
+              <div className="w-16 h-16 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
                 <cost.icon className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-semibold text-slate-900 mb-4">
+              <h3 className="text-2xl font-semibold text-emerald-900 mb-4">
                 {cost.title}
               </h3>
-              <p className="text-slate-600">
+              <p className="text-emerald-700">
                 {cost.description}
               </p>
             </div>
@@ -436,68 +403,13 @@ export const Services: React.FC = () => (
       </div>
     </section>
 
-    {/* Testimonials */}
-    <section className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <Star className="w-16 h-16 text-amber-500 mx-auto mb-6" />
-          <h2 className="text-4xl font-bold text-slate-900 mb-4">
-            Client Testimonials
-          </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Feedback from businesses we've helped improve their online presence and grow their customer base.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {[
-            {
-              name: "Sarah Chen",
-              company: "TechStart Solutions",
-              testimonial: "Script Pilot delivered exactly what we needed - a professional platform that perfectly represents our brand and converts visitors into clients.",
-              rating: 5
-            },
-            {
-              name: "Michael Rodriguez",
-              company: "Artisan Crafts Co.",
-              testimonial: "The team's attention to detail and technical expertise exceeded our expectations. Our new e-commerce site has driven significant growth.",
-              rating: 5
-            },
-            {
-              name: "Lisa Johnson",
-              company: "Bloom Consulting",
-              testimonial: "Professional, reliable, and results-driven. Script Pilot transformed our online presence and helped us reach new markets.",
-              rating: 5
-            }
-          ].map((testimonial, index) => (
-            <div key={index} className="bg-white rounded-xl border border-slate-200 p-8 shadow-sm hover:shadow-lg transition-all duration-500 transform hover:-translate-y-2 animate-slide-in-right">
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                ))}
-              </div>
-              
-              <blockquote className="text-slate-600 italic mb-6">
-                "{testimonial.testimonial}"
-              </blockquote>
-              
-              <div className="border-t border-slate-100 pt-4">
-                <p className="font-semibold text-slate-900">{testimonial.name}</p>
-                <p className="text-blue-600 text-sm">{testimonial.company}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
     {/* CTA Section */}
-    <section className="py-20 bg-gradient-to-r from-purple-900 to-indigo-900">
+    <section className="py-20 bg-gradient-to-r from-emerald-900 via-teal-900 to-cyan-900">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold text-white mb-6">
           Ready to Start Your Project?
         </h2>
-        <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto">
+        <p className="text-xl text-emerald-200 mb-8 max-w-3xl mx-auto">
           Professional web development that helps your business succeed online. 
           Contact us to discuss your project requirements and get started.
         </p>
@@ -505,13 +417,13 @@ export const Services: React.FC = () => (
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a
             href="mailto:contact@scriptpilot.us?subject=Project Inquiry - Script Pilot"
-            className="bg-white text-slate-900 px-8 py-4 rounded-lg font-semibold hover:bg-slate-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+            className="bg-white text-emerald-900 px-8 py-4 rounded-xl font-semibold hover:bg-emerald-50 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
           >
             Get Quote
           </a>
           <a
             href="#contact"
-            className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-slate-900 transition-all duration-300"
+            className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-emerald-900 transition-all duration-300 transform hover:-translate-y-1"
           >
             Contact Us
           </a>

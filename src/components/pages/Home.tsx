@@ -41,16 +41,16 @@ export const Home: React.FC = () => (
     </section>
 
     {/* Springfield Photography Highlight */}
-    <section className="py-20 bg-gradient-to-r from-emerald-600 to-teal-600">
+    <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-600">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center">
           <div className="w-20 h-20 bg-white rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-2xl">
-            <Camera className="w-10 h-10 text-emerald-600" />
+            <Camera className="w-10 h-10 text-blue-600" />
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
             FREE Professional Photography
           </h2>
-          <p className="text-xl text-emerald-100 mb-8 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl text-blue-100 mb-8 max-w-4xl mx-auto leading-relaxed">
             <strong>Springfield, Missouri Area Clients:</strong> We include professional product and business photography 
             at no additional cost with every web development project. High-quality images that make your website stand out!
           </p>
@@ -58,20 +58,20 @@ export const Home: React.FC = () => (
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
               <CheckCircle className="w-8 h-8 text-white mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-white mb-3">Product Photography</h3>
-              <p className="text-emerald-100">Professional shots of your products for e-commerce and marketing</p>
+              <p className="text-blue-100">Professional shots of your products for e-commerce and marketing</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
               <CheckCircle className="w-8 h-8 text-white mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-white mb-3">Business Photography</h3>
-              <p className="text-emerald-100">Team photos, office spaces, and professional headshots</p>
+              <p className="text-blue-100">Team photos, office spaces, and professional headshots</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
               <CheckCircle className="w-8 h-8 text-white mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-white mb-3">Location Shoots</h3>
-              <p className="text-emerald-100">On-site photography sessions at your business location</p>
+              <p className="text-blue-100">On-site photography sessions at your business location</p>
             </div>
           </div>
-          <p className="text-emerald-200 text-lg mt-8 font-medium">
+          <p className="text-blue-200 text-lg mt-8 font-medium">
             📍 Available within 50 miles of Springfield, MO
           </p>
         </div>
@@ -137,7 +137,7 @@ export const Home: React.FC = () => (
             }
           ].map((service, index) => (
            <div key={index} className="bg-white rounded-2xl border-2 border-blue-200 p-8 shadow-xl hover:shadow-2xl transition-all duration-500 group transform hover:scale-105 hover:-translate-y-3">
-             <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${index === 0 ? 'bg-gradient-to-br from-blue-600 to-blue-700' : index === 1 ? 'bg-gradient-to-br from-purple-600 to-purple-700' : 'bg-gradient-to-br from-emerald-600 to-emerald-700'} group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 transform shadow-lg`}>
+             <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${index === 0 ? 'bg-gradient-to-br from-blue-600 to-blue-700' : index === 1 ? 'bg-gradient-to-br from-purple-600 to-purple-700' : 'bg-gradient-to-br from-indigo-600 to-indigo-700'} group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 transform shadow-lg`}>
                <service.icon className="w-8 h-8 text-white transition-all duration-500" />
               </div>
               
@@ -145,7 +145,7 @@ export const Home: React.FC = () => (
               {service.originalPrice && (
                 <div className="mb-2">
                   <span className="text-sm text-blue-500 line-through">{service.originalPrice}</span>
-                  <span className="text-emerald-600 font-semibold text-xs ml-2">Save!</span>
+                  <span className="text-green-600 font-semibold text-xs ml-2">Save!</span>
                 </div>
               )}
               <h3 className="text-xl sm:text-2xl font-semibold text-blue-900 mb-4">
@@ -158,7 +158,7 @@ export const Home: React.FC = () => (
               <ul className="space-y-2">
                 {service.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-center gap-3 text-sm text-blue-700">
-                    <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
                     {feature}
                   </li>
                 ))}

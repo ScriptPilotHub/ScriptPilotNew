@@ -37,41 +37,36 @@ export const Services: React.FC = () => (
       </div>
     </section>
 
-    {/* Springfield Photography Section */}
-    <section className="py-16 bg-gray-800">
+    {/* Springfield Photography - Clean Integration */}
+    <section className="py-8 bg-gray-50 border-t border-gray-200">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center">
-          <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-            <Camera className="w-8 h-8 text-gray-800" />
+        <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center">
+              <Camera className="w-4 h-4 text-gray-600" />
+            </div>
+            <h3 className="text-lg font-semibold text-gray-900">
+              FREE Basic Photography - Springfield, MO Area
+            </h3>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-            FREE Basic Photography
-          </h2>
-          <p className="text-xl text-gray-200 mb-8 max-w-4xl mx-auto leading-relaxed">
-            <strong>Springfield, Missouri Area Clients:</strong> We include basic business photography 
-            at no additional cost with every web development project. Essential images for your website!
+          <p className="text-gray-600 mb-4 text-sm">
+            Basic business photography included with web development projects within 50 miles of Springfield, MO
           </p>
-          <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
-              <CheckCircle className="w-8 h-8 text-white mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-3">Business Interior/Exterior</h3>
-              <p className="text-gray-200">Basic shots of your business location and workspace</p>
+          <div className="grid sm:grid-cols-3 gap-3 text-xs">
+            <div className="flex items-center gap-2 text-gray-600">
+              <CheckCircle className="w-3 h-3 text-gray-400" />
+              <span>Interior/exterior shots</span>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
-              <CheckCircle className="w-8 h-8 text-white mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-3">Product Photography</h3>
-              <p className="text-gray-200">Simple product shots for your website and marketing</p>
+            <div className="flex items-center gap-2 text-gray-600">
+              <CheckCircle className="w-3 h-3 text-gray-400" />
+              <span>Basic product photos</span>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
-              <CheckCircle className="w-8 h-8 text-white mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-3">Website Content Images</h3>
-              <p className="text-gray-200">Photos specifically for your website content needs</p>
+            <div className="flex items-center gap-2 text-gray-600">
+              <CheckCircle className="w-3 h-3 text-gray-400" />
+              <span>Website content images</span>
             </div>
           </div>
-          <p className="text-gray-300 text-lg mt-8 font-medium">
-            📍 Available within 50 miles of Springfield, MO
-          </p>
-          <p className="text-gray-400 text-sm mt-2">
+          <p className="text-gray-500 text-xs mt-3">
             Additional photography services (headshots, events, etc.) available at separate rates
           </p>
         </div>

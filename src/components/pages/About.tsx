@@ -11,12 +11,12 @@ export const About: React.FC<AboutProps> = ({ navigateTo }) => (
     <section className="pt-40 pb-32 px-4 bg-gradient-to-br from-gray-50 to-white">
       <div className="max-w-7xl mx-auto text-center">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-          About
-          <span className="block text-gray-600">Script Pilot</span>
+          About Script Pilot
+          <span className="block text-gray-600">Missouri Web Development Company</span>
         </h1>
         <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">
-          We're a small web development team that's been building websites for businesses since 2016. 
-          No fancy office, no huge team—just experienced developers who deliver results.
+          Professional web development company based in Missouri, serving businesses nationwide since 2020. 
+          Specializing in custom websites, e-commerce solutions, and digital marketing. 200+ successful projects delivered.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

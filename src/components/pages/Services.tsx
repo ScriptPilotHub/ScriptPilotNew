@@ -11,12 +11,12 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => (
     <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-gray-50 to-white">
       <div className="max-w-6xl mx-auto text-center">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-          Web Development
-          <span className="block text-gray-600">Services</span>
+          Professional Web Development Services
+          <span className="block text-gray-600">Custom Websites & E-commerce Solutions</span>
         </h1>
         <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">
-          Custom websites and online stores built to help your business grow. 
-          Professional results with transparent pricing.
+          Expert web development services in Missouri and nationwide. Custom business websites, 
+          e-commerce stores, and digital solutions with transparent pricing and guaranteed results.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

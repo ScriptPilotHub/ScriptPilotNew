@@ -12,12 +12,12 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight">
-            Professional Websites
-            <span className="block text-gray-600">That Drive Results</span>
+            Professional Web Development Services
+            <span className="block text-gray-600">Custom Websites That Drive Business Growth</span>
           </h1>
-          <p className="text-xl sm:text-2xl text-gray-600 mb-12 leading-relaxed">
-            We build fast, secure, and beautiful websites for businesses that want to grow online. 
-            No fluff, just results.
+          <p className="text-xl sm:text-2xl text-gray-600 mb-12 leading-relaxed" itemProp="description">
+            Missouri-based web development company specializing in custom business websites, e-commerce stores, and digital solutions. 
+            200+ successful projects delivered on time and on budget. Get started today for just $160.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">

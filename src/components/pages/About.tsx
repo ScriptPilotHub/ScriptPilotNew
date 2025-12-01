@@ -39,8 +39,8 @@ export const About: React.FC = () => (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          {[
+            { value: "200+", label: "Websites Built" },
             { value: "99%", label: "Client Satisfaction" },
             { value: "2-8", label: "Weeks to Launch" },
             { value: "8+", label: "Years Experience" }

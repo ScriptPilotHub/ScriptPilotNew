@@ -9,10 +9,10 @@ export const Footer: React.FC = () => (
             <img 
               src="/IMG_2131-Picsart-BackgroundRemover.jpeg" 
               alt="Script Pilot - Web Development" 
-              className="h-16 w-auto"
+              className="h-14 w-auto"
             />
           </div>
-          <p className="text-gray-600 leading-relaxed text-center lg:text-left">
+          <p className="text-gray-600 leading-relaxed text-center lg:text-left text-sm">
             Professional web development solutions for businesses that want to grow online. 
             Delivering results through expert craftsmanship and innovative technology.
           </p>
@@ -20,10 +20,10 @@ export const Footer: React.FC = () => (
         
         <div className="flex flex-col items-center lg:items-end gap-4">
           <div className="text-center lg:text-right space-y-2">
-            <p className="font-semibold text-gray-900">
+            <p className="font-semibold text-gray-900 text-sm">
               Serving businesses nationwide
             </p>
-            <p className="text-gray-500">
+            <p className="text-gray-500 text-sm">
               © 2025 Script Pilot. All rights reserved.
             </p>
           </div>

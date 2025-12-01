@@ -92,135 +92,6 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
     </section>
 
     {/* Live Demo Section */}
-    <section className="py-32 bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-            See Our Work in Action
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Live demos of websites we've built. Watch how fast, responsive, and professional our sites perform.
-          </p>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Video Demo 1 */}
-          <div className="group bg-gray-800 rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
-            <div className="relative overflow-hidden rounded-2xl mb-6 bg-black">
-              <video
-                className="w-full h-auto"
-                autoPlay
-                muted
-                loop
-                playsInline
-                controls={false}
-              >
-                <source src="/famous vape demo copy.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
-            </div>
-            <h3 className="text-2xl font-bold text-white mb-4">E-commerce Store Demo</h3>
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              Complete online store with product catalog, shopping cart, and secure checkout process.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Responsive Design</span>
-              <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Fast Loading</span>
-              <span className="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Mobile Optimized</span>
-            </div>
-          </div>
-
-          {/* Video Demo 2 - Placeholder */}
-          <div className="group bg-gray-800 rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
-            <div className="relative overflow-hidden rounded-2xl mb-6 bg-gray-700 flex items-center justify-center h-64">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-gray-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Play className="w-8 h-8 text-gray-400" />
-                </div>
-                <p className="text-gray-400 font-semibold">Second Demo Coming Soon</p>
-              </div>
-            </div>
-            <h3 className="text-2xl font-bold text-white mb-4">Business Website Demo</h3>
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              Professional business website with contact forms, service pages, and lead generation features.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              <span className="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-semibold">SEO Optimized</span>
-              <span className="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Lead Generation</span>
-              <span className="bg-indigo-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Professional</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="text-center mt-16">
-          <button
-            onClick={() => navigateTo('contact')}
-            className="group bg-white text-gray-900 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-all duration-300 flex items-center gap-3 shadow-xl hover:shadow-2xl hover:-translate-y-1 transform mx-auto"
-          >
-            Get Your Demo Site
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </button>
-        </div>
-      </div>
-    </section>
-
-    {/* Live Demo Section */}
-    <section className="py-32 bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-            See Our Work in Action
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Live demo of a website we built. Watch how fast, responsive, and professional our sites perform.
-          </p>
-        </div>
-
-        <div className="max-w-4xl mx-auto">
-          <div className="group bg-gray-800 rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
-            <div className="relative overflow-hidden rounded-2xl mb-6 bg-black">
-              <video
-                className="w-full h-auto"
-                autoPlay
-                muted
-                loop
-                playsInline
-                controls={false}
-              >
-                <source src="/famous vape demo copy.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
-            </div>
-            <div className="text-center">
-              <h3 className="text-2xl font-bold text-white mb-4">E-commerce Store Demo</h3>
-              <p className="text-gray-300 mb-6 leading-relaxed">
-                Complete online store with product catalog, shopping cart, and secure checkout process. 
-                Built with modern technology for optimal performance and user experience.
-              </p>
-              <div className="flex flex-wrap justify-center gap-3">
-                <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">Responsive Design</span>
-                <span className="bg-green-600 text-white px-4 py-2 rounded-full text-sm font-semibold">Fast Loading</span>
-                <span className="bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold">Mobile Optimized</span>
-                <span className="bg-orange-600 text-white px-4 py-2 rounded-full text-sm font-semibold">SEO Ready</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="text-center mt-16">
-          <button
-            onClick={() => navigateTo('contact')}
-            className="group bg-white text-gray-900 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-all duration-300 flex items-center gap-3 shadow-xl hover:shadow-2xl hover:-translate-y-1 transform mx-auto"
-          >
-            Get Your Demo Site
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </button>
-        </div>
-      </div>
-    </section>
-
     {/* Services Overview */}
     <section className="py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4">
@@ -420,6 +291,61 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
               <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Live Demo Section */}
+    <section className="py-24 bg-gray-900">
+      <div className="max-w-5xl mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            See Our Work in Action
+          </h2>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            Live demo of a complete e-commerce website we built. Watch how fast, responsive, and professional our sites perform.
+          </p>
+        </div>
+
+        <div className="max-w-3xl mx-auto">
+          <div className="group bg-gray-800 rounded-2xl p-6 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-1">
+            <div className="relative overflow-hidden rounded-xl mb-6 bg-black">
+              <video
+                className="w-full h-auto"
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls={false}
+              >
+                <source src="/famous vape demo copy.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div className="text-center">
+              <h3 className="text-xl font-bold text-white mb-3">Complete E-commerce Solution</h3>
+              <p className="text-gray-300 mb-4 leading-relaxed">
+                Full online store with product catalog, shopping cart, and secure checkout. 
+                Built with modern technology for optimal performance.
+              </p>
+              <div className="flex flex-wrap justify-center gap-2">
+                <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Responsive</span>
+                <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">Fast Loading</span>
+                <span className="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium">Mobile Ready</span>
+                <span className="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-medium">SEO Optimized</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="text-center mt-12">
+          <button
+            onClick={() => navigateTo('contact')}
+            className="group bg-white text-gray-900 px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-1 transform mx-auto"
+          >
+            Get Your Website
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </button>
         </div>
       </div>
     </section>

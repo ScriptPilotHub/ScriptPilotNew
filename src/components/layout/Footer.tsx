@@ -8,7 +8,7 @@ export const Footer: React.FC = () => (
         <div className="space-y-4 max-w-md">
           <div className="flex items-center">
             <img 
-              src="/IMG_2131.jpeg" 
+              src="/IMG_2131-Picsart-BackgroundRemover.jpeg" 
               alt="Script Pilot - Web Development" 
               className="h-14 w-auto"
             />

@@ -12,12 +12,12 @@ export const Contact: React.FC<ContactProps> = ({ navigateTo }) => {
       <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            Let's Talk About
-            <span className="block text-gray-600">Your Project</span>
+            Contact Script Pilot
+            <span className="block text-gray-600">Get Your Web Development Project Started</span>
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">
-            Ready to get a website that actually helps your business? 
-            Contact us for an honest conversation about what you need.
+            Ready to grow your business with a professional website? Contact Missouri's trusted web development team. 
+            Free consultation, transparent pricing, and guaranteed results. Get started today.
           </p>
         </div>
       </section>

@@ -83,6 +83,21 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* SEO Schema Markup */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Script Pilot",
+          "url": "https://scriptpilot.us",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://scriptpilot.us/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        })
+      }} />
+      
       <Header currentPage={currentPage} navigateTo={navigateTo} />
       <main>
         {renderPage()}

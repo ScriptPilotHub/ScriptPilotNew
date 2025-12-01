@@ -26,18 +26,19 @@ export const Footer: React.FC = () => (
           <h4 className="text-lg font-semibold text-white mb-6">Services</h4>
           <ul className="space-y-3">
             {[
-              'Business Websites',
-              'E-commerce Stores', 
-              'Custom Applications',
-              'Website Maintenance',
-              'SEO Optimization',
-              'Mobile Responsive Design'
+              { label: 'Business Websites', href: 'services' },
+              { label: 'E-commerce Stores', href: 'services' }, 
+              { label: 'Custom Applications', href: 'services' },
+              { label: 'Website Maintenance', href: 'payment-portal' }
             ].map((service, index) => (
               <li key={index}>
-                <a href="#services" className="text-gray-300 hover:text-white transition-colors text-sm flex items-center gap-2 group">
+                <button 
+                  onClick={() => window.location.hash = service.href}
+                  className="text-gray-300 hover:text-white transition-colors text-sm flex items-center gap-2 group"
+                >
                   <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  {service}
-                </a>
+                  {service.label}
+                </button>
               </li>
             ))}
           </ul>

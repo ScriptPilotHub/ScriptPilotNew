@@ -187,9 +187,6 @@ export const Home: React.FC = () => (
 
           {/* Launch Site */}
           <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border-2 border-gray-800 relative group transform scale-105">
-            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-              <span className="bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-bold">MOST POPULAR</span>
-            </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                 <Rocket className="w-8 h-8 text-gray-900" />

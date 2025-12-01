@@ -80,9 +80,6 @@ export const ClientPortal: React.FC = () => (
 
           {/* Project Completion */}
           <div className="group bg-gray-900 rounded-2xl p-6 shadow-2xl relative transform scale-105">
-            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-              <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold">COMPLETION</span>
-            </div>
             <div className="text-center">
               <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <CheckCircle className="w-8 h-8 text-gray-900" />

@@ -225,9 +225,6 @@ export const Services: React.FC = () => (
 
           {/* Launch Site */}
           <div className="bg-gray-900 rounded-2xl p-6 shadow-2xl border-2 border-gray-800 relative group transform scale-105">
-            <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-              <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold">COMPLETION</span>
-            </div>
             <div className="text-center">
               <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <Rocket className="w-6 -6 text-gray-900" />

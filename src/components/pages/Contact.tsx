@@ -11,16 +11,16 @@ export const Contact: React.FC = () => {
             <Headphones className="w-10 h-10 text-white" />
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            Get Your Project Started Today
+            Let's Talk About Your Project
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mb-12 px-4">
-            Ready to grow your business online? Contact us to discuss your project requirements 
-            and get a custom solution that drives real results.
+            Ready to get a website that actually helps your business? 
+            Contact us for an honest conversation about what you need.
           </p>
         </div>
       </section>
 
-      {/* Primary Contact Methods */}
+      {/* Contact Methods */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
           <div className="max-w-2xl mx-auto mb-16">
@@ -36,10 +36,10 @@ export const Contact: React.FC = () => {
                 <div className="flex-1">
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">Send Us an Email</h3>
                   <p className="text-sm sm:text-base text-gray-600 mb-4">
-                    Get detailed project information and quotes. We respond to all inquiries within 24 hours.
+                    Tell us about your project. We'll get back to you within 24 hours with next steps.
                   </p>
                   <a 
-                    href="mailto:contact@scriptpilot.us?subject=Project%20Inquiry%20-%20Script%20Pilot&body=Hello,%0D%0A%0D%0AI'm%20interested%20in%20web%20development%20services%20for%20my%20business.%0D%0A%0D%0AProject%20Type:%20[Website/E-commerce/Custom%20Application]%0D%0ABusiness%20Name:%20%0D%0AIndustry:%20%0D%0ATimeline:%20%0D%0ABudget%20Range:%20%0D%0A%0D%0AProject%20Details:%0D%0A%0D%0A%0D%0AThank%20you,%0D%0A[Your%20Name]"
+                    href="mailto:contact@scriptpilot.us?subject=Project%20Inquiry%20-%20Script%20Pilot&body=Hi%20there,%0D%0A%0D%0AI'm%20interested%20in%20getting%20a%20website%20for%20my%20business.%0D%0A%0D%0ABusiness%20Name:%20%0D%0AWhat%20you%20do:%20%0D%0ATimeline:%20%0D%0ABudget%20range:%20%0D%0A%0D%0ATell%20us%20about%20your%20project:%0D%0A%0D%0A%0D%0AThanks,%0D%0A[Your%20Name]"
                     className="inline-flex items-center gap-3 text-lg sm:text-2xl font-bold text-gray-900 hover:text-gray-700 transition-colors duration-500 group-hover:scale-105 transform break-all"
                   >
                     contact@scriptpilot.us
@@ -47,7 +47,7 @@ export const Contact: React.FC = () => {
                   </a>
                   <div className="mt-4 flex items-center gap-2 text-sm text-gray-600">
                     <Clock className="w-4 h-4" />
-                    <span>Response within 24 hours</span>
+                    <span>We respond within 24 hours</span>
                   </div>
                 </div>
               </div>
@@ -63,9 +63,9 @@ export const Contact: React.FC = () => {
                   <div className="absolute -top-1 -right-1 w-4 h-4 bg-gray-600 rounded-full animate-pulse"></div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">Call Now</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">Give Us a Call</h3>
                   <p className="text-sm sm:text-base text-gray-600 mb-4">
-                    Speak directly with our development team. Available during business hours for immediate project consultation.
+                    Talk directly to the people who'll build your site. Available during business hours.
                   </p>
                   <a 
                     href="tel:4174010015"
@@ -76,7 +76,7 @@ export const Contact: React.FC = () => {
                   </a>
                   <div className="mt-4 flex items-center gap-2 text-sm text-gray-600">
                     <Clock className="w-4 h-4" />
-                    <span>Mon-Fri 9AM-6PM CST</span>
+                    <span>Monday-Friday, 9AM-6PM CST</span>
                   </div>
                 </div>
               </div>
@@ -90,11 +90,11 @@ export const Contact: React.FC = () => {
                 <Calendar className="w-10 h-10 text-gray-800" />
               </div>
               <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
-                Schedule a Free Strategy Session
+                Book a Free Strategy Call
               </h3>
               <p className="text-gray-200 text-base sm:text-lg mb-8 leading-relaxed px-4">
-                Book a 30-minute consultation to discuss your project requirements. We'll analyze your business needs, 
-                provide technical recommendations, and outline a development plan tailored to your goals.
+                30 minutes to discuss your project. We'll talk about your business, your goals, 
+                and whether we're a good fit to work together. No sales pitch, just honest advice.
               </p>
               <a
                 href="https://calendly.com/contact-scriptpilot/30min"
@@ -103,26 +103,26 @@ export const Contact: React.FC = () => {
                 className="inline-flex items-center gap-3 bg-white text-gray-800 px-6 sm:px-8 py-4 rounded-xl font-bold text-base sm:text-lg hover:bg-gray-100 transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
               >
                 <Calendar className="w-6 h-6" />
-                Book Your Free Session
+                Book Your Call
                 <ArrowRight className="w-6 h-6" />
               </a>
               <p className="text-gray-300 text-sm mt-4">
-                No commitment required • Instant booking • 100% free
+                No commitment • Free advice • 30 minutes
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Contact Information Grid */}
+      {/* Contact Info */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Contact Information
+              How to Reach Us
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-              Choose the contact method that works best for your schedule and project needs.
+              Choose whatever works best for you. We're here to help.
             </p>
           </div>
 
@@ -132,9 +132,9 @@ export const Contact: React.FC = () => {
               <div className="w-16 h-16 bg-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
                 <MapPin className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3">Service Area</h3>
-              <p className="text-sm sm:text-base text-gray-600 mb-4">Serving businesses nationwide with remote collaboration</p>
-              <p className="text-sm text-gray-600">Based in Missouri, USA</p>
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3">Where We Work</h3>
+              <p className="text-sm sm:text-base text-gray-600 mb-4">We work with businesses anywhere in the US</p>
+              <p className="text-sm text-gray-600">Based in Missouri</p>
             </div>
 
             {/* Response Time */}
@@ -143,8 +143,8 @@ export const Contact: React.FC = () => {
                 <Clock className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3">Quick Response</h3>
-              <p className="text-sm sm:text-base text-gray-600 mb-4">We respond to all inquiries within 24 hours</p>
-              <p className="text-sm text-gray-600">Usually much faster!</p>
+              <p className="text-sm sm:text-base text-gray-600 mb-4">We get back to you within 24 hours</p>
+              <p className="text-sm text-gray-600">Usually much faster</p>
             </div>
 
             {/* Project Timeline */}
@@ -152,8 +152,8 @@ export const Contact: React.FC = () => {
               <div className="w-16 h-16 bg-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
                 <Zap className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3">Fast Delivery</h3>
-              <p className="text-sm sm:text-base text-gray-600 mb-4">Most projects completed in 2-8 weeks</p>
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3">Fast Turnaround</h3>
+              <p className="text-sm sm:text-base text-gray-600 mb-4">Most sites launch in 2-8 weeks</p>
               <p className="text-sm text-gray-600">Rush projects available</p>
             </div>
           </div>
@@ -165,10 +165,10 @@ export const Contact: React.FC = () => {
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose Script Pilot
+              Why Work With Us
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-              Professional web development with proven results and dedicated support.
+              We're not the biggest web development company, but we might be the most reliable.
             </p>
           </div>
 
@@ -177,24 +177,24 @@ export const Contact: React.FC = () => {
               <div className="w-16 h-16 bg-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
                 <Shield className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4">Proven Results</h3>
-              <p className="text-sm sm:text-base text-gray-600">Over 200 successful projects delivered with 99% client satisfaction</p>
+              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4">We've Done This Before</h3>
+              <p className="text-sm sm:text-base text-gray-600">200+ websites built. We know what works and what doesn't.</p>
             </div>
 
             <div className="bg-white rounded-2xl border-2 border-gray-200 p-6 sm:p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-3">
               <div className="w-16 h-16 bg-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
                 <Users className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4">Personal Service</h3>
-              <p className="text-sm sm:text-base text-gray-600">Direct communication with our development team and dedicated project support</p>
+              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4">You Talk to the Developers</h3>
+              <p className="text-sm sm:text-base text-gray-600">No middlemen. You work directly with the people building your site.</p>
             </div>
 
             <div className="bg-white rounded-2xl border-2 border-gray-200 p-6 sm:p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-3">
               <div className="w-16 h-16 bg-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
                 <Award className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4">Quality Guarantee</h3>
-              <p className="text-sm sm:text-base text-gray-600">30-day satisfaction guarantee with comprehensive testing and ongoing support</p>
+              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4">We Deliver on Time</h3>
+              <p className="text-sm sm:text-base text-gray-600">Realistic timelines that we actually stick to. No endless delays.</p>
             </div>
           </div>
         </div>
@@ -204,20 +204,20 @@ export const Contact: React.FC = () => {
       <section className="py-20 bg-gray-900">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-            Start Your Project Today
+            Let's Start Your Project
           </h2>
           <p className="text-lg sm:text-xl text-gray-300 mb-12 max-w-3xl mx-auto px-4">
-            Professional web development that grows your business. Contact us today to discuss 
-            your project requirements and get a custom quote.
+            No pressure, no sales pitch. Just an honest conversation about what you need 
+            and whether we can help.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center px-4">
             <a
-              href="mailto:contact@scriptpilot.us?subject=Project Inquiry - Script Pilot"
+              href="mailto:contact@scriptpilot.us?subject=Project%20Inquiry%20-%20Script%20Pilot"
               className="w-full sm:w-auto bg-white text-gray-900 px-6 sm:px-8 py-4 rounded-xl font-bold text-base sm:text-lg hover:bg-gray-100 transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1 transform flex items-center justify-center gap-3"
             >
               <Mail className="w-6 h-6" />
-              Email Us
+              Send Us an Email
             </a>
             <a
               href="tel:4174010015"

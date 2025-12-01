@@ -13,8 +13,8 @@ export const About: React.FC = () => (
           About Script Pilot
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-          Professional web development team focused on creating quality websites 
-          that help businesses grow and succeed online.
+          We're a small web development team that's been building websites for businesses since 2016. 
+          No fancy office, no huge team—just two guys who know how to build websites that work.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -22,7 +22,7 @@ export const About: React.FC = () => (
             href="#contact" 
             className="bg-gray-800 text-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-700 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
           >
-            Get Started Today
+            Work With Us
             <ArrowRight className="w-5 h-5" />
           </a>
           <a
@@ -31,21 +31,26 @@ export const About: React.FC = () => (
             rel="noopener noreferrer"
             className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-semibold hover:border-gray-600 hover:bg-gray-600 hover:text-white transition-all duration-300"
           >
-            Schedule Consultation
+            Book a Call
           </a>
         </div>
       </div>
     </section>
 
-    {/* Stats Section */}
+    {/* Numbers */}
     <section className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            What We've Accomplished
+          </h2>
+        </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { value: "200+", label: "Projects Delivered" },
-            { value: "99%", label: "Client Satisfaction" },
-            { value: "2-8", label: "Week Delivery" },
-            { value: "24/7", label: "Performance" }
+            { value: "200+", label: "Websites Built" },
+            { value: "99%", label: "Happy Clients" },
+            { value: "2-8", label: "Weeks to Launch" },
+            { value: "8+", label: "Years in Business" }
           ].map((stat, index) => (
             <div key={index} className="bg-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2">
               <div className="text-4xl font-bold text-gray-900 mb-3">{stat.value}</div>
@@ -56,39 +61,44 @@ export const About: React.FC = () => (
       </div>
     </section>
 
-    {/* Mission Section */}
+    {/* Our Story */}
     <section className="py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <Target className="w-16 h-16 text-gray-700 mx-auto mb-6" />
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Our Mission
+            Why We Started Script Pilot
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
-            To provide businesses with professional web development services that create 
-            effective online presence and support business growth. We believe quality 
-            web development should be accessible and results-focused.
-          </p>
-          <p className="text-gray-600 max-w-3xl mx-auto">
-            We've completed over 200 projects for businesses ranging from local shops 
-            to growing companies. Our approach focuses on understanding business needs 
-            and creating websites that support those goals.
-          </p>
+          <div className="max-w-4xl mx-auto space-y-6 text-lg text-gray-600">
+            <p>
+              Back in 2016, we were freelancers getting frustrated with how complicated 
+              web development had become. Clients were paying thousands for websites that 
+              took months to build and didn't actually help their business.
+            </p>
+            <p>
+              So we decided to do things differently. Fixed pricing. Clear timelines. 
+              No technical jargon. Just good websites that help businesses get more customers.
+            </p>
+            <p>
+              We've built over 200 websites since then. Some for local shops, some for 
+              growing companies. Every project teaches us something new about what actually 
+              works for businesses online.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    {/* Values Section */}
+    {/* How We Work */}
     <section className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <Award className="w-16 h-16 text-gray-700 mx-auto mb-6" />
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Our Core Values
+            How We Work
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            The principles that guide our work and ensure consistent quality 
-            for every client project.
+            Simple process, clear communication, quality results.
           </p>
         </div>
 
@@ -96,18 +106,18 @@ export const About: React.FC = () => (
           {[
             {
               icon: Lightbulb,
-              title: "Innovation",
-              description: "We use current web technologies and best practices to create websites that perform well and stay relevant."
+              title: "We Listen First",
+              description: "Before we write a single line of code, we understand your business, your customers, and your goals."
             },
             {
               icon: Handshake,
-              title: "Collaboration",
-              description: "Clear communication and collaboration throughout the project to ensure we deliver exactly what you need."
+              title: "We Keep You Updated",
+              description: "Regular check-ins, progress updates, and honest communication throughout your project."
             },
             {
               icon: Award,
-              title: "Quality",
-              description: "Consistent quality standards in development, testing, and customer service for every project we complete."
+              title: "We Deliver on Time",
+              description: "We give you realistic timelines and stick to them. No endless delays or scope creep."
             }
           ].map((value, index) => (
            <div key={index} className="bg-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 group transform hover:scale-105 hover:-translate-y-3">
@@ -127,17 +137,17 @@ export const About: React.FC = () => (
       </div>
     </section>
 
-    {/* Team Section */}
+    {/* Team */}
     <section className="py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <Users className="w-16 h-16 text-gray-700 mx-auto mb-6" />
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Meet Our Team
+            Meet the Team
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            The founders and development team behind Script Pilot's consistent results. 
-            Technical expertise combined with business understanding to create effective solutions.
+            Two developers who've been working together for years. 
+            We handle everything from planning to launch.
           </p>
         </div>
 
@@ -151,9 +161,9 @@ export const About: React.FC = () => (
             </h3>
             <p className="text-gray-600 font-medium mb-4">Co-Founder & Lead Developer</p>
             <p className="text-gray-600">
-              David has over 8 years of web development experience with expertise in modern 
-              web technologies including React and TypeScript. He oversees technical development 
-              and ensures all projects meet quality and performance standards.
+              David handles the technical side—coding, hosting, security, and making sure 
+              everything works perfectly. He's been building websites for 8+ years and 
+              knows how to solve problems quickly.
             </p>
           </div>
 
@@ -166,25 +176,25 @@ export const About: React.FC = () => (
             </h3>
             <p className="text-gray-600 font-medium mb-4">Co-Founder & Business Strategy</p>
             <p className="text-gray-600">
-              Tyler manages business strategy and client relationships, ensuring our web development 
-              services align with client business goals. His background in digital marketing and 
-              business development helps create websites that support business growth.
+              Tyler focuses on understanding your business and making sure your website 
+              actually helps you get more customers. He handles project planning, 
+              communication, and strategy.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    {/* Testimonials */}
+    {/* Client Feedback */}
     <section className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <Star className="w-16 h-16 text-yellow-500 mx-auto mb-6" />
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            What Our Clients Say
+            What Clients Say
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Real feedback from businesses we've helped grow their online presence and achieve their goals.
+            Real feedback from real businesses we've helped.
           </p>
         </div>
 
@@ -193,19 +203,19 @@ export const About: React.FC = () => (
             {
               name: "Sarah Chen",
               company: "TechStart Solutions",
-              testimonial: "Script Pilot delivered exactly what we needed - a professional website that represents our brand well and helps convert visitors into customers.",
+              testimonial: "They delivered exactly what they promised, on time and on budget. Our new site has helped us land several new clients.",
               rating: 5
             },
             {
               name: "Michael Rodriguez",
               company: "Artisan Crafts Co.",
-              testimonial: "Great attention to detail and solid technical work. Our new e-commerce site has helped us reach more customers and increase sales.",
+              testimonial: "Professional work and great communication. They made the whole process easy and our online sales have doubled.",
               rating: 5
             },
             {
               name: "Lisa Johnson",
               company: "Bloom Consulting",
-              testimonial: "Professional service and reliable results. Script Pilot helped us create a strong online presence that attracts new clients.",
+              testimonial: "Finally, a web team that actually listens. They built us a site that works for our business, not just looks pretty.",
               rating: 5
             }
           ].map((testimonial, index) => (
@@ -230,17 +240,16 @@ export const About: React.FC = () => (
       </div>
     </section>
 
-    {/* Trust Indicators */}
+    {/* Why Choose Us */}
     <section className="py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <Target className="w-16 h-16 text-gray-700 mx-auto mb-6" />
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Why Choose Script Pilot
+            Why Work With Us
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Professional web development with a focus on business results and 
-            long-term client relationships.
+            We're not the biggest web development company, but we might be the most reliable.
           </p>
         </div>
 
@@ -248,18 +257,18 @@ export const About: React.FC = () => (
           {[
             {
               icon: Award,
-              title: "Proven Expertise",
-              description: "Over 200 completed projects across various industries with consistent quality and client satisfaction."
+              title: "We've Done This Before",
+              description: "200+ websites built. We know what works and what doesn't. You benefit from our experience."
             },
             {
               icon: Users,
-              title: "Client-Focused Approach", 
-              description: "Clear communication, transparent pricing, and dedicated support throughout the development process."
+              title: "You Talk to the Actual Developers", 
+              description: "No account managers or middlemen. You work directly with the people building your site."
             },
             {
               icon: TrendingUp,
-              title: "Results-Driven",
-              description: "Websites designed to support your business goals with focus on performance and user experience."
+              title: "We Focus on Results",
+              description: "Pretty websites are nice, but we care more about helping your business grow online."
             }
           ].map((feature, index) => (
             <div key={index} className="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-3">
@@ -282,11 +291,11 @@ export const About: React.FC = () => (
     <section className="py-20 bg-gray-900">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold text-white mb-6">
-          Start Your Project Today
+          Let's Talk About Your Project
         </h2>
         <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-          Professional web development that helps your business grow online. 
-          Contact us to discuss your project requirements and get a custom quote.
+          No pressure, no sales pitch. Just an honest conversation about what you need 
+          and whether we're a good fit to help.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -294,7 +303,7 @@ export const About: React.FC = () => (
             href="mailto:contact@scriptpilot.us?subject=Project Inquiry - Script Pilot"
             className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-500 flex items-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
           >
-            Get Quote
+            Send Us an Email
             <ArrowRight className="w-5 h-5" />
           </a>
           <a

@@ -10,14 +10,14 @@ export const Home: React.FC = () => (
           <Rocket className="w-10 h-10 text-white" />
         </div>
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-          Professional Web Development
+          We Build Websites That
           <span className="block text-gray-700">
-            For Growing Businesses
+            Actually Work for Your Business
           </span>
         </h1>
         <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mb-8 px-4">
-          Custom websites and e-commerce platforms designed to grow your business. 
-          Professional development with transparent pricing and proven results.
+          No fluff. No endless revisions. Just clean, professional websites that help you get more customers. 
+          We've built over 200 sites for businesses like yours.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
@@ -27,7 +27,7 @@ export const Home: React.FC = () => (
             rel="noopener noreferrer"
             className="w-full sm:w-auto bg-gray-800 text-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-700 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
           >
-            Schedule Consultation
+            Book a Free Call
             <ArrowRight className="w-5 h-5" />
           </a>
           <a
@@ -49,28 +49,28 @@ export const Home: React.FC = () => (
               <Camera className="w-4 h-4 text-gray-600" />
             </div>
             <h3 className="text-lg font-semibold text-gray-900">
-              FREE Basic Photography - Springfield, MO Area
+              Free Photography for Springfield Area Clients
             </h3>
           </div>
           <p className="text-gray-600 mb-4 text-sm">
-            Basic business photography included with web development projects within 50 miles of Springfield, MO
+            If you're within 50 miles of Springfield, MO, we'll take basic photos for your website at no extra charge
           </p>
           <div className="grid sm:grid-cols-3 gap-3 text-xs">
             <div className="flex items-center gap-2 text-gray-600">
               <CheckCircle className="w-3 h-3 text-gray-400" />
-              <span>Interior/exterior shots</span>
+              <span>Storefront photos</span>
             </div>
             <div className="flex items-center gap-2 text-gray-600">
               <CheckCircle className="w-3 h-3 text-gray-400" />
-              <span>Basic product photos</span>
+              <span>Product shots</span>
             </div>
             <div className="flex items-center gap-2 text-gray-600">
               <CheckCircle className="w-3 h-3 text-gray-400" />
-              <span>Website content images</span>
+              <span>Team photos</span>
             </div>
           </div>
           <p className="text-gray-500 text-xs mt-3">
-            Additional photography services (headshots, events, etc.) available at separate rates
+            Professional headshots and event photography available separately
           </p>
         </div>
       </div>
@@ -79,12 +79,17 @@ export const Home: React.FC = () => (
     {/* Stats Section */}
     <section className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            Here's What We've Done
+          </h2>
+        </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { value: "200+", label: "Projects Delivered" },
-            { value: "99%", label: "Client Satisfaction" },
-            { value: "2-8", label: "Week Delivery" },
-            { value: "24/7", label: "Performance" }
+            { value: "200+", label: "Websites Built" },
+            { value: "99%", label: "Happy Clients" },
+            { value: "2-8", label: "Weeks to Launch" },
+            { value: "24/7", label: "Site Uptime" }
           ].map((stat, index) => (
             <div key={index} className="bg-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2">
               <div className="text-4xl font-bold text-gray-900 mb-3">{stat.value}</div>
@@ -95,15 +100,15 @@ export const Home: React.FC = () => (
       </div>
     </section>
 
-    {/* Services Overview */}
+    {/* How We Work */}
     <section className="py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Professional Web Development
+            Simple, Honest Pricing
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-            Transparent pricing, professional results. No hidden fees, no surprises.
+            No surprises. No hidden fees. Just two payments and you're done.
           </p>
         </div>
         
@@ -111,25 +116,25 @@ export const Home: React.FC = () => (
           {[
             {
               icon: Users,
-              title: "Project Initiation",
-              description: "Start your custom website project with professional consultation and planning.",
-              features: ["$160 to get started", "Initial consultation & planning", "Project roadmap"],
+              title: "Start Your Project",
+              description: "Pay $160 to get started. We'll plan your site and begin building.",
+              features: ["$160 to begin", "Strategy session", "Site planning", "Development starts"],
               price: "$160",
               originalPrice: "$250"
             },
             {
               icon: CheckCircle,
-              title: "Deployment & Final Payment",
-              description: "Complete development and deployment when your website is finished and ready to go live.",
-              features: ["$440 final payment", "Complete development", "Live deployment"],
+              title: "Launch Your Site",
+              description: "Pay $440 when we're done. Your site goes live with everything working.",
+              features: ["$440 when complete", "Finished website", "Domain & hosting setup", "Site goes live"],
               price: "$440",
               originalPrice: "$600"
             },
             {
               icon: Shield,
-              title: "Website Protection & Updates",
-              description: "Optional monthly service to keep your website secure, updated, and performing optimally.",
-              features: ["$150/month (optional)", "Security monitoring", "Regular updates"],
+              title: "Keep It Running",
+              description: "Optional monthly service to handle updates, backups, and security.",
+              features: ["$150/month (optional)", "Security updates", "Regular backups", "Performance monitoring"],
               price: "$150/mo",
               originalPrice: "$250/mo"
             }
@@ -167,15 +172,15 @@ export const Home: React.FC = () => (
       </div>
     </section>
 
-    {/* Why Choose Us */}
+    {/* What You Get */}
     <section className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Why Businesses Choose Script Pilot
+            What Makes Us Different
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-            Professional web development with a focus on business growth and measurable results.
+            We're not the cheapest, but we deliver what we promise. On time. Every time.
           </p>
         </div>
 
@@ -183,18 +188,18 @@ export const Home: React.FC = () => (
           {[
             {
               icon: Award,
-              title: "Proven Expertise",
-              description: "Over 200 successful projects delivered across diverse industries with consistent quality and reliability."
+              title: "We Actually Answer Our Phone",
+              description: "Call us during business hours and talk to a real person. No chatbots, no runaround."
             },
             {
               icon: Users,
-              title: "Client-Focused Approach",
-              description: "Clear communication, transparent pricing, and dedicated support throughout your project development."
+              title: "Fixed Pricing, No Surprises",
+              description: "The price we quote is the price you pay. No scope creep, no hidden fees."
             },
             {
               icon: CheckCircle,
-              title: "Modern Technology",
-              description: "Current web technologies and best practices to ensure your website performs well and stays secure."
+              title: "Built Right the First Time",
+              description: "Fast, secure, mobile-friendly sites that work on all devices and browsers."
             }
           ].map((benefit, index) => (
             <div key={index} className="bg-gray-50 rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-3">
@@ -217,11 +222,11 @@ export const Home: React.FC = () => (
     <section className="py-20 bg-gray-900">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-          Ready to Grow Your Business Online?
+          Ready to Get Started?
         </h2>
         <p className="text-lg sm:text-xl text-gray-300 mb-8 max-w-3xl mx-auto px-4">
-          Professional web development that helps your business succeed online. 
-          Contact us to discuss your project and get a custom quote.
+          Book a quick call to discuss your project. No sales pitch, just an honest conversation 
+          about what you need and how we can help.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
@@ -229,13 +234,13 @@ export const Home: React.FC = () => (
             href="mailto:contact@scriptpilot.us?subject=Project Inquiry - Script Pilot"
             className="w-full sm:w-auto bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 text-center transform"
           >
-            Get Quote
+            Send Us an Email
           </a>
           <a
             href="mailto:contact@scriptpilot.us?subject=Contact Inquiry - Script Pilot"
             className="w-full sm:w-auto border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300 text-center transform hover:-translate-y-1"
           >
-            Contact Us
+            Ask a Question
           </a>
         </div>
       </div>

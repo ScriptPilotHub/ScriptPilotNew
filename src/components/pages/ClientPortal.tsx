@@ -13,8 +13,8 @@ export const ClientPortal: React.FC = () => (
           Client Payment Portal
         </h1>
         <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mb-8 px-4">
-          Secure payment processing for Script Pilot web development services. 
-          Choose your service below to complete your payment safely and securely.
+          Secure payment processing for Script Pilot clients. 
+          Choose your service below to complete your payment safely.
         </p>
       </div>
     </section>
@@ -23,35 +23,35 @@ export const ClientPortal: React.FC = () => (
     <section className="py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          {/* Project Initiation */}
+          {/* Project Start */}
           <div className="group bg-white rounded-2xl border-2 border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-3">
             <div className="p-6 sm:p-8 text-center">
               <div className="w-16 h-16 bg-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg">
                 <Users className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Project Initiation</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Start Your Project</h3>
               <div className="mb-4">
                 <span className="text-lg text-gray-500 line-through">$250</span>
                 <div className="text-3xl sm:text-4xl font-bold text-gray-900">$160</div>
-                <span className="text-green-600 font-semibold text-sm">Save $90!</span>
+                <span className="text-green-600 font-semibold text-sm">Save $90</span>
               </div>
-              <p className="text-sm sm:text-base text-gray-600 mb-6">Get started with your custom website project</p>
+              <p className="text-sm sm:text-base text-gray-600 mb-6">Pay this to get started with your website project</p>
               <ul className="text-left space-y-3 mb-8">
                 <li className="flex items-center gap-3 text-sm text-gray-600">
                   <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                  Initial consultation & planning
+                  Strategy session
                 </li>
                 <li className="flex items-center gap-3 text-sm text-gray-600">
                   <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                  Requirements analysis
+                  Site planning
                 </li>
                 <li className="flex items-center gap-3 text-sm text-gray-600">
                   <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                  Development timeline
+                  Development begins
                 </li>
                 <li className="flex items-center gap-3 text-sm text-gray-600">
                   <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                  Project roadmap
+                  Regular updates
                 </li>
               </ul>
               <a
@@ -66,7 +66,7 @@ export const ClientPortal: React.FC = () => (
             </div>
           </div>
 
-          {/* Deployment & Final Payment */}
+          {/* Project Completion */}
           <div className="group bg-white rounded-2xl border-2 border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-3 relative">
             <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
               <span className="bg-gray-800 text-white px-4 py-2 rounded-full text-sm font-bold">COMPLETION</span>
@@ -75,30 +75,30 @@ export const ClientPortal: React.FC = () => (
               <div className="w-16 h-16 bg-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg">
                 <CheckCircle className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Deployment & Final Payment</h3>
-              <p className="text-sm text-gray-600 font-semibold mb-2">(Only pay when project is complete)</p>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Launch Your Site</h3>
+              <p className="text-sm text-gray-600 font-semibold mb-2">(Only pay when your site is done)</p>
               <div className="mb-4">
                 <span className="text-lg text-gray-500 line-through">$600</span>
                 <div className="text-3xl sm:text-4xl font-bold text-gray-900">$440</div>
-                <span className="text-green-600 font-semibold text-sm">Save $160!</span>
+                <span className="text-green-600 font-semibold text-sm">Save $160</span>
               </div>
-              <p className="text-sm sm:text-base text-gray-600 mb-6">Final payment made only when your website is complete and ready for deployment</p>
+              <p className="text-sm sm:text-base text-gray-600 mb-6">Final payment when your website is complete and ready to go live</p>
               <ul className="text-left space-y-3 mb-8">
                 <li className="flex items-center gap-3 text-sm text-gray-600">
                   <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                  Complete website development
+                  Finished website
                 </li>
                 <li className="flex items-center gap-3 text-sm text-gray-600">
                   <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                  Domain setup & hosting
+                  Domain & hosting setup
                 </li>
                 <li className="flex items-center gap-3 text-sm text-gray-600">
                   <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                  SSL certificate & security
+                  SSL security
                 </li>
                 <li className="flex items-center gap-3 text-sm text-gray-600">
                   <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                  Live website deployment
+                  Site goes live
                 </li>
               </ul>
               <a
@@ -113,25 +113,25 @@ export const ClientPortal: React.FC = () => (
             </div>
           </div>
 
-          {/* Website Protection & Updates */}
+          {/* Maintenance */}
           <div className="group bg-white rounded-2xl border-2 border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-3">
             <div className="p-6 sm:p-8 text-center">
               <div className="w-16 h-16 bg-gray-800 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 shadow-lg">
                 <Shield className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Website Protection & Updates</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Keep It Running</h3>
               <div className="mb-4">
                 <span className="text-lg text-gray-500 line-through">$250</span>
                 <div className="text-3xl sm:text-4xl font-bold text-gray-900">$150</div>
                 <div className="text-gray-500 text-sm mb-1">per month</div>
-                <span className="text-green-600 font-semibold text-sm">Save $100/month!</span>
+                <span className="text-green-600 font-semibold text-sm">Save $100/month</span>
               </div>
-              <p className="text-sm sm:text-base text-gray-600 mb-2">Keep your website secure and up-to-date</p>
-              <p className="text-sm text-gray-600 font-semibold mb-6">Optional Service</p>
+              <p className="text-sm sm:text-base text-gray-600 mb-2">Optional monthly service to handle updates and security</p>
+              <p className="text-sm text-gray-600 font-semibold mb-6">Completely Optional</p>
               <ul className="text-left space-y-3 mb-8">
                 <li className="flex items-center gap-3 text-sm text-gray-600">
                   <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                  Security monitoring & updates
+                  Security updates
                 </li>
                 <li className="flex items-center gap-3 text-sm text-gray-600">
                   <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
@@ -139,7 +139,7 @@ export const ClientPortal: React.FC = () => (
                 </li>
                 <li className="flex items-center gap-3 text-sm text-gray-600">
                   <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                  Performance optimization
+                  Performance monitoring
                 </li>
                 <li className="flex items-center gap-3 text-sm text-gray-600">
                   <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
@@ -161,7 +161,7 @@ export const ClientPortal: React.FC = () => (
       </div>
     </section>
 
-    {/* Security & Trust */}
+    {/* Security */}
     <section className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
@@ -170,7 +170,7 @@ export const ClientPortal: React.FC = () => (
             Secure Payment Processing
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-            Your payment information is protected by industry-leading security measures.
+            Your payment information is protected by bank-level security.
           </p>
         </div>
 
@@ -196,25 +196,25 @@ export const ClientPortal: React.FC = () => (
               <CheckCircle className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4">Instant Confirmation</h3>
-            <p className="text-sm sm:text-base text-gray-600">Receive immediate confirmation and project updates via email</p>
+            <p className="text-sm sm:text-base text-gray-600">Get immediate confirmation and project updates via email</p>
           </div>
         </div>
       </div>
     </section>
 
-    {/* Contact Support */}
+    {/* Support */}
     <section className="py-20 bg-gray-900">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-          Payment Support
+          Need Help With Payment?
         </h2>
         <p className="text-lg sm:text-xl text-gray-300 mb-8 max-w-3xl mx-auto px-4">
-          Contact us if you need assistance with payments or have questions about your project.
+          Contact us if you have questions about payments or need assistance with your project.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
           <a
-            href="mailto:contact@scriptpilot.us?subject=Payment Support - Script Pilot"
+            href="mailto:contact@scriptpilot.us?subject=Payment%20Support%20-%20Script%20Pilot"
             className="w-full sm:w-auto bg-white text-gray-900 px-6 sm:px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-3 transform"
           >
             <Mail className="w-6 h-6" />

@@ -318,7 +318,7 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
                 playsInline
                 controls={false}
               >
-                <source src="/famous vape demo copy.mp4" type="video/mp4" />
+                <source src="/2025-11-29 18-17-28 - Trim.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>

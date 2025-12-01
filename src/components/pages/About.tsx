@@ -161,9 +161,9 @@ export const About: React.FC = () => (
             </h3>
             <p className="text-gray-600 font-medium mb-4">Co-Founder & Lead Developer</p>
             <p className="text-gray-600">
-              David handles the technical side—coding, hosting, security, and making sure 
-              everything works perfectly. He's been building websites for 8+ years and 
-              knows how to solve problems quickly.
+              David handles the technical side—coding, hosting, and security. 
+              He's been building websites for 4+ years and knows how to solve 
+              problems quickly.
             </p>
           </div>
 

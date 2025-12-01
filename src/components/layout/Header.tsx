@@ -25,8 +25,8 @@ export const Header: React.FC = () => {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       isScrolled 
-        ? 'bg-gradient-to-b from-gray-900 via-gray-800 to-white/10 backdrop-blur-xl shadow-2xl border-b border-gray-200/20' 
-        : 'bg-gradient-to-b from-gray-900/98 via-gray-800/95 to-white/5 backdrop-blur-lg'
+        ? 'bg-gradient-to-b from-gray-900 via-gray-700 to-white/80 backdrop-blur-xl shadow-2xl border-b border-white/20' 
+        : 'bg-gradient-to-b from-gray-900 via-gray-700 to-white/60 backdrop-blur-lg'
     }`}>
       <div className="max-w-6xl mx-auto px-4">
         <div className={`flex items-center justify-between transition-all duration-300 ${

@@ -1,7 +1,11 @@
 import React from 'react';
 import { Phone, Mail, MessageCircle, MapPin, Clock, ArrowRight, Shield, Users, CheckCircle, Calendar, Zap, Award, Headphones } from 'lucide-react';
 
-export const Contact: React.FC = () => {
+interface ContactProps {
+  navigateTo: (page: string) => void;
+}
+
+export const Contact: React.FC<ContactProps> = ({ navigateTo }) => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}

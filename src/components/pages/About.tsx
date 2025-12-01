@@ -1,7 +1,11 @@
 import React from 'react';
 import { Users, Target, Award, Lightbulb, Handshake, ArrowRight, TrendingUp, Star, Building, Clock, Shield, CheckCircle, Phone, Mail, Calendar } from 'lucide-react';
 
-export const About: React.FC = () => (
+interface AboutProps {
+  navigateTo: (page: string) => void;
+}
+
+export const About: React.FC<AboutProps> = ({ navigateTo }) => (
   <div className="min-h-screen bg-white">
     {/* Hero Section */}
     <section className="pt-40 pb-32 px-4 bg-gradient-to-br from-gray-50 to-white">
@@ -17,7 +21,7 @@ export const About: React.FC = () => (
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button 
-            onClick={() => window.history.pushState({}, '', '/contact')}
+            onClick={() => navigateTo('contact')}
             className="group bg-gray-900 text-white px-6 py-3 rounded-xl font-semibold text-base hover:bg-gray-800 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
           >
             Work With Us

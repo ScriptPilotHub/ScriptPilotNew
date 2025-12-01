@@ -1,7 +1,11 @@
 import React from 'react';
 import { CreditCard, Shield, CheckCircle, Clock, DollarSign, Star, ArrowRight, Zap, Award, Mail, Phone, Calendar, Users, Wallet } from 'lucide-react';
 
-export const ClientPortal: React.FC = () => (
+interface ClientPortalProps {
+  navigateTo: (page: string) => void;
+}
+
+export const ClientPortal: React.FC<ClientPortalProps> = ({ navigateTo }) => (
   <div className="min-h-screen bg-white">
     {/* Hero Section */}
     <section className="pt-40 pb-32 px-4 bg-gradient-to-br from-gray-50 to-white">

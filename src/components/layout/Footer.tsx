@@ -1,7 +1,11 @@
 import React from 'react';
 import { Phone, Mail, MapPin, Clock, Globe, Shield, Award, ArrowRight } from 'lucide-react';
 
-export const Footer: React.FC = () => (
+interface FooterProps {
+  navigateTo: (page: string) => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ navigateTo }) => (
   <footer className="bg-gray-900 text-white py-16">
     <div className="max-w-7xl mx-auto px-4">
       <div className="grid lg:grid-cols-4 gap-12">
@@ -44,7 +48,7 @@ export const Footer: React.FC = () => (
                   </a>
                 ) : (
                   <button 
-                    onClick={() => window.history.pushState({}, '', `/${service.href}`)}
+                    onClick={() => navigateTo(service.href)}
                     className="text-gray-300 hover:text-white transition-colors text-sm flex items-center gap-2 group"
                   >
                     <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -104,7 +108,7 @@ export const Footer: React.FC = () => (
             ].map((link, index) => (
               <li key={index}>
                 <button 
-                  onClick={() => window.history.pushState({}, '', `/${link.href}`)}
+                  onClick={() => navigateTo(link.href)}
                   className="text-gray-300 hover:text-white transition-colors text-sm flex items-center gap-2 group"
                 >
                   <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />

@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Logo } from '../ui/Logo';
-import { usePathname } from '../../hooks/usePathname';
 
-export const Header: React.FC = () => {
+interface HeaderProps {
+  currentPage: string;
+  navigateTo: (page: string) => void;
+}
+
+export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { pathname, navigateTo } = usePathname();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
@@ -25,10 +28,6 @@ export const Header: React.FC = () => {
   const handleNavClick = (href: string) => {
     navigateTo(href);
     setIsOpen(false);
-    // Force a small delay to ensure state updates
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 50);
   };
 
   return (
@@ -51,7 +50,7 @@ export const Header: React.FC = () => {
                 key={link.href}
                 onClick={() => handleNavClick(link.href)}
                 className={`relative px-3 py-2 text-sm font-semibold rounded-md transition-all duration-200 whitespace-nowrap ${
-                  (pathname === link.href) || (pathname === '' && link.href === 'home')
+                  currentPage === link.href
                     ? 'text-white bg-white/20 backdrop-blur-sm shadow-lg' 
                     : 'text-gray-200 hover:text-white hover:bg-white/10 hover:backdrop-blur-sm'
                 }`}
@@ -80,7 +79,7 @@ export const Header: React.FC = () => {
                 key={link.href}
                 onClick={() => handleNavClick(link.href)}
                 className={`block px-4 py-3 rounded-md text-base font-semibold transition-all duration-200 w-full text-left ${
-                  (pathname === link.href) || (pathname === '' && link.href === 'home')
+                  currentPage === link.href
                     ? 'bg-white/20 text-white backdrop-blur-sm shadow-lg' 
                     : 'text-gray-200 hover:text-white hover:bg-white/10 hover:backdrop-blur-sm'
                 }`}

@@ -1,7 +1,11 @@
 import React from 'react';
 import { ArrowRight, CheckCircle, Users, Award, Zap, Shield, Clock, TrendingUp, Globe, Code, Rocket, Camera, Star, Phone, Mail, Calendar } from 'lucide-react';
 
-export const Home: React.FC = () => (
+interface HomeProps {
+  navigateTo: (page: string) => void;
+}
+
+export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
   <div className="min-h-screen bg-white">
     {/* Hero Section */}
     <section className="pt-40 pb-32 px-4 bg-gradient-to-br from-gray-50 to-white">
@@ -27,7 +31,7 @@ export const Home: React.FC = () => (
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <button
-              onClick={() => window.history.pushState({}, '', '/contact')}
+              onClick={() => navigateTo('contact')}
               className="group border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-2xl font-semibold text-lg hover:border-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-300"
             >
               Get In Touch
@@ -177,7 +181,7 @@ export const Home: React.FC = () => (
                 ))}
               </ul>
               <button
-                onClick={() => window.history.pushState({}, '', '/contact')}
+                onClick={() => navigateTo('contact')}
                 className="w-full bg-blue-600 text-white py-4 rounded-2xl font-semibold hover:bg-blue-700 transition-colors inline-block text-center"
               >
                 Start Your Project

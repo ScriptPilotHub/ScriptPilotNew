@@ -5,7 +5,7 @@ export const Logo: React.FC = () => (
     <img 
       src="/IMG_2131-Picsart-BackgroundRemover.jpeg" 
       alt="Script Pilot - Web Development" 
-      className="h-20 sm:h-24 w-auto"
+      className="h-14 sm:h-16 w-auto"
     />
   </div>
 );

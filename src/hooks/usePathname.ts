@@ -1,22 +1,23 @@
 import { useState, useEffect } from 'react';
 
 export const usePathname = () => {
-  const [pathname, setPathname] = useState('home');
+  const [pathname, setPathname] = useState('');
 
   const navigateTo = (path: string) => {
-    setPathname(path);
+    const newPath = path === 'home' ? '' : path;
+    setPathname(newPath);
     // Update URL without hashtag
-    window.history.pushState({}, '', path === 'home' ? '/' : `/${path}`);
+    window.history.pushState({}, '', newPath === '' ? '/' : `/${newPath}`);
   };
 
   useEffect(() => {
     // Get current path from URL
-    const currentPath = window.location.pathname.substring(1) || 'home';
+    const currentPath = window.location.pathname.substring(1);
     setPathname(currentPath);
 
     // Handle browser back/forward buttons
     const handlePopState = () => {
-      const path = window.location.pathname.substring(1) || 'home';
+      const path = window.location.pathname.substring(1);
       setPathname(path);
       window.scrollTo({ top: 0, behavior: 'instant' });
     };

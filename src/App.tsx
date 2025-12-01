@@ -13,6 +13,9 @@ function App() {
 
   const renderPage = () => {
     switch (currentRoute) {
+      case '':
+      case 'home':
+        return <Home />;
       case 'services':
         return <Services />;
       case 'about':

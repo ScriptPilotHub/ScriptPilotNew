@@ -26,12 +26,12 @@ export const Home: React.FC = () => (
               Book Free Consultation
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
-            <a
-              href="#contact"
+            <button
+              onClick={() => window.location.hash = 'contact'}
               className="group border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-2xl font-semibold text-lg hover:border-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-300"
             >
               Get In Touch
-            </a>
+            </button>
           </div>
 
           {/* Trust Indicators */}
@@ -176,12 +176,12 @@ export const Home: React.FC = () => (
                   </li>
                 ))}
               </ul>
-              <a
-                href="#contact"
+              <button
+                onClick={() => window.location.hash = 'contact'}
                 className="w-full bg-blue-600 text-white py-4 rounded-2xl font-semibold hover:bg-blue-700 transition-colors inline-block text-center"
               >
                 Start Your Project
-              </a>
+              </button>
             </div>
           </div>
 

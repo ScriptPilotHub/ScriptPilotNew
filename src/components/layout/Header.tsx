@@ -15,12 +15,17 @@ export const Header: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { href: "#home", label: "Home" },
-    { href: "#services", label: "Services" },
-    { href: "#about", label: "About" },
-    { href: "#contact", label: "Contact" },
-    { href: "#payment-portal", label: "Payment Portal" }
+    { href: "home", label: "Home" },
+    { href: "services", label: "Services" },
+    { href: "about", label: "About" },
+    { href: "contact", label: "Contact" },
+    { href: "payment-portal", label: "Payment Portal" }
   ];
+
+  const handleNavClick = (href: string) => {
+    window.location.hash = href;
+    setIsOpen(false);
+  };
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
@@ -32,23 +37,23 @@ export const Header: React.FC = () => {
         <div className={`flex items-center justify-between transition-all duration-300 ${
           isScrolled ? 'h-20' : 'h-24'
         }`}>
-         <a href="#home" className="flex items-center transition-all duration-300 hover:scale-105 transform hover:-translate-y-0.5 flex-shrink-0">
+         <button onClick={() => handleNavClick('home')} className="flex items-center transition-all duration-300 hover:scale-105 transform hover:-translate-y-0.5 flex-shrink-0">
             <Logo />
-          </a>
+          </button>
           
           <nav className="hidden lg:flex items-center space-x-1 flex-shrink-0">
             {navLinks.map(link => (
-              <a
+              <button
                 key={link.href}
-                href={link.href}
+                onClick={() => handleNavClick(link.href)}
                 className={`relative px-3 py-2 text-sm font-semibold rounded-md transition-all duration-200 whitespace-nowrap ${
-                  pathname === link.href.substring(1) || (pathname === '' && link.href === '#home')
+                  pathname === link.href || (pathname === '' && link.href === 'home')
                     ? 'text-white bg-white/20 backdrop-blur-sm shadow-lg' 
                     : 'text-gray-200 hover:text-white hover:bg-white/10 hover:backdrop-blur-sm'
                 }`}
               >
                 {link.label}
-              </a>
+              </button>
             ))}
           </nav>
           
@@ -67,18 +72,17 @@ export const Header: React.FC = () => {
         <div className="lg:hidden bg-gradient-to-b from-gray-800/98 via-gray-700/95 to-white/10 backdrop-blur-xl border-t border-white/20 shadow-2xl">
           <nav className="max-w-6xl mx-auto px-4 py-4 space-y-1">
             {navLinks.map(link => (
-              <a
+              <button
                 key={link.href}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
+                onClick={() => handleNavClick(link.href)}
                 className={`block px-4 py-3 rounded-md text-base font-semibold transition-all duration-200 ${
-                  pathname === link.href.substring(1) || (pathname === '' && link.href === '#home')
+                  pathname === link.href || (pathname === '' && link.href === 'home')
                     ? 'bg-white/20 text-white backdrop-blur-sm shadow-lg' 
                     : 'text-gray-200 hover:text-white hover:bg-white/10 hover:backdrop-blur-sm'
                 }`}
               >
                 {link.label}
-              </a>
+              </button>
             ))}
           </nav>
         </div>

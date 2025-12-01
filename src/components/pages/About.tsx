@@ -16,13 +16,13 @@ export const About: React.FC = () => (
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a 
-            href="#contact" 
+          <button 
+            onClick={() => window.location.hash = 'contact'}
             className="group bg-gray-900 text-white px-6 py-3 rounded-xl font-semibold text-base hover:bg-gray-800 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
           >
             Work With Us
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </a>
+          </button>
           <a
             href="https://calendly.com/contact-scriptpilot/30min"
             target="_blank"

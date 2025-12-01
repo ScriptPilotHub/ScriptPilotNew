@@ -84,19 +84,19 @@ export const Footer: React.FC = () => (
           <h4 className="text-lg font-semibold text-white mb-6">Company</h4>
           <ul className="space-y-3 mb-6">
             {[
-              { label: 'About Us', href: '#about' },
-              { label: 'Our Services', href: '#services' },
-              { label: 'Contact', href: '#contact' },
-              { label: 'Payment Portal', href: '#payment-portal' }
+              { label: 'About Us', href: 'about' },
+              { label: 'Our Services', href: 'services' },
+              { label: 'Contact', href: 'contact' },
+              { label: 'Payment Portal', href: 'payment-portal' }
             ].map((link, index) => (
               <li key={index}>
-                <a 
-                  href={link.href} 
+                <button 
+                  onClick={() => window.location.hash = link.href}
                   className="text-gray-300 hover:text-white transition-colors text-sm flex items-center gap-2 group"
                 >
                   <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                   {link.label}
-                </a>
+                </button>
               </li>
             ))}
           </ul>

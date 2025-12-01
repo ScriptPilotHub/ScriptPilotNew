@@ -16,13 +16,13 @@ export const Services: React.FC = () => (
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a 
-            href="#contact" 
+          <button 
+            onClick={() => window.location.hash = 'contact'}
             className="group bg-gray-900 text-white px-6 py-3 rounded-xl font-semibold text-base hover:bg-gray-800 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
           >
             Get Started Today
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </a>
+          </button>
           <a
             href="https://calendly.com/contact-scriptpilot/30min"
             target="_blank"
@@ -119,12 +119,12 @@ export const Services: React.FC = () => (
                   </li>
                 ))}
               </ul>
-              <a
-                href="#contact"
+              <button
+                onClick={() => window.location.hash = 'contact'}
                 className="w-full bg-gray-900 text-white py-2 rounded-xl font-semibold hover:bg-gray-800 transition-colors inline-block text-center group-hover:shadow-lg text-sm"
               >
                 Get Started
-              </a>
+              </button>
             </div>
           ))}
         </div>
@@ -214,12 +214,12 @@ export const Services: React.FC = () => (
                   </li>
                 ))}
               </ul>
-              <a
-                href="#contact"
+              <button
+                onClick={() => window.location.hash = 'contact'}
                 className="w-full bg-blue-600 text-white py-2 rounded-xl font-semibold hover:bg-blue-700 transition-colors inline-block text-center text-sm"
               >
                 Start Your Project
-              </a>
+              </button>
             </div>
           </div>
 

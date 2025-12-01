@@ -30,7 +30,7 @@ export const Header: React.FC = () => {
     }`}>
       <div className="max-w-6xl mx-auto px-4">
         <div className={`flex items-center justify-between transition-all duration-300 ${
-          isScrolled ? 'h-20' : 'h-24'
+          isScrolled ? 'h-24' : 'h-28'
         }`}>
          <a href="#home" className="flex items-center transition-all duration-300 hover:scale-105 transform hover:-translate-y-0.5 flex-shrink-0">
             <Logo />

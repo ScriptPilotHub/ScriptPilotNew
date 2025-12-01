@@ -250,7 +250,7 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => (
                   </li>
                 ))}
               </ul>
-              <div className="w-full bg-white text-gray-900 py-2 rounded-xl font-semibold text-center text-sm">
+              <div className="w-full bg-white text-gray-900 py-2 rounded-xl font-semibold text-center cursor-default">
                 Pay When Complete
               </div>
             </div>
@@ -281,7 +281,7 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => (
                   </li>
                 ))}
               </ul>
-              <div className="w-full border-2 border-green-600 text-green-600 py-2 rounded-xl font-semibold text-center hover:bg-green-600 hover:text-white transition-colors text-sm">
+              <div className="w-full border-2 border-green-600 text-green-600 py-2 rounded-xl font-semibold text-center hover:bg-green-600 hover:text-white transition-colors text-sm cursor-default">
                 Optional Service
               </div>
             </div>

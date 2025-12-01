@@ -244,7 +244,7 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
                   </li>
                 ))}
               </ul>
-              <div className="w-full border-2 border-green-600 text-green-600 py-4 rounded-2xl font-semibold text-center hover:bg-green-600 hover:text-white transition-colors">
+              <div className="w-full border-2 border-green-600 text-green-600 py-4 rounded-2xl font-semibold text-center hover:bg-green-600 hover:text-white transition-colors cursor-default">
                 Optional Service
               </div>
             </div>

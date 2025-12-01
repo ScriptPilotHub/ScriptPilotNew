@@ -94,7 +94,7 @@ export const Services: React.FC = () => (
               title: "E-commerce Stores",
               description: "Complete online stores that make it easy for customers to find and purchase your products.",
               features: ["Secure Payment Processing", "Inventory Management", "Order Tracking", "Customer Accounts", "Product Catalogs", "Shopping Cart"],
-              price: "Starting at $800"
+              price: "Starting at $600"
             },
             {
               icon: Code,

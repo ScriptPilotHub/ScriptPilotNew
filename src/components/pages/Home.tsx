@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, CheckCircle, Users, Award, Zap, Shield, Clock, TrendingUp, Globe, Code, Rocket, Camera, Star, Phone, Mail, Calendar } from 'lucide-react';
+import { ArrowRight, CheckCircle, Users, Award, Zap, Shield, Clock, TrendingUp, Globe, Code, Rocket, Camera, Star, Phone, Mail, Calendar, Play } from 'lucide-react';
 
 interface HomeProps {
   navigateTo: (page: string) => void;

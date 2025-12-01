@@ -213,14 +213,11 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
                   </li>
                 ))}
               </ul>
-              <a
-                href="https://buy.stripe.com/5kQfZidrC8mE1uD68L9EI03"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full bg-white text-gray-900 py-4 rounded-2xl font-semibold hover:bg-gray-100 transition-colors inline-block text-center"
-              >
-                Pay $440
-              </a>
+              <div className="w-full bg-white/10 border-2 border-white/20 text-white py-4 rounded-2xl font-semibold text-center backdrop-blur-sm">
+                <div className="text-sm text-gray-300 mb-1">Payment Due:</div>
+                <div className="text-lg font-bold">When Site is Launched</div>
+                <div className="text-xs text-gray-400 mt-1">We'll send you the payment link</div>
+              </div>
             </div>
           </div>
 

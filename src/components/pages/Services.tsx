@@ -293,7 +293,7 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => (
                 ))}
               </ul>
               <a
-                href="https://buy.stripe.com/3cIdRaevGauMc9h8gT9EI05"
+                href="https://buy.stripe.com/7sY5kEcnybyQc9hap19EI08"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full border-2 border-green-600 text-green-600 py-2 rounded-xl font-semibold hover:bg-green-600 hover:text-white transition-colors text-sm inline-block text-center"

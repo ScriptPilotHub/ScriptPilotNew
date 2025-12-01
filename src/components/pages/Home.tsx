@@ -263,12 +263,12 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
                 ))}
               </ul>
               <a
-                href="https://buy.stripe.com/00wcN64V6fP65KTeFh9EI06"
+                href="https://buy.stripe.com/7sY5kEcnybyQc9hap19EI08"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full border-2 border-green-600 text-green-600 py-4 rounded-2xl font-semibold hover:bg-green-600 hover:text-white transition-colors inline-block text-center"
               >
-                Pay $160 - Start Project
+                Subscribe $150/mo
               </a>
             </div>
           </div>

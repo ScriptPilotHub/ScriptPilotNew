@@ -250,12 +250,14 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => (
                   </li>
                 ))}
               </ul>
-              <button
-                onClick={() => navigateTo('payment-portal')}
-                className="w-full bg-white text-gray-900 py-2 rounded-xl font-semibold hover:bg-gray-100 transition-colors text-sm"
+              <a
+                href="https://buy.stripe.com/5kQfZidrC8mE1uD68L9EI03"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-white text-gray-900 py-2 rounded-xl font-semibold hover:bg-gray-100 transition-colors text-sm inline-block text-center"
               >
-                Pay When Complete
-              </button>
+                Pay $440
+              </a>
             </div>
           </div>
 
@@ -284,12 +286,14 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => (
                   </li>
                 ))}
               </ul>
-              <button
-                onClick={() => navigateTo('payment-portal')}
-                className="w-full border-2 border-green-600 text-green-600 py-2 rounded-xl font-semibold hover:bg-green-600 hover:text-white transition-colors text-sm"
+              <a
+                href="https://buy.stripe.com/3cIdRaevGauMc9h8gT9EI05"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full border-2 border-green-600 text-green-600 py-2 rounded-xl font-semibold hover:bg-green-600 hover:text-white transition-colors text-sm inline-block text-center"
               >
-                Optional Service
-              </button>
+                Subscribe $150/mo
+              </a>
             </div>
           </div>
         </div>

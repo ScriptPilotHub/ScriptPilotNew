@@ -10,7 +10,7 @@ export const Footer: React.FC = () => (
             <img 
               src="/IMG_2131-Picsart-BackgroundRemover.jpeg" 
               alt="Script Pilot - Web Development" 
-              className="h-14 w-auto"
+              className="h-20 w-auto"
             />
           </div>
           <p className="text-sm text-slate-600 leading-relaxed">

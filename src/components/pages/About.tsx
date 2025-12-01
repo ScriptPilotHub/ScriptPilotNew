@@ -43,7 +43,7 @@ export const About: React.FC = () => (
             { value: "200+", label: "Websites Built" },
             { value: "99%", label: "Client Satisfaction" },
             { value: "2-8", label: "Weeks to Launch" },
-            { value: "8+", label: "Years Experience" }
+            { value: "4", label: "Years Experience" }
           ].map((stat, index) => (
             <div key={index} className="group">
               <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2 group-hover:text-gray-600 transition-colors">
@@ -117,7 +117,7 @@ export const About: React.FC = () => (
             <p className="text-gray-600 font-semibold mb-4 text-sm">Co-Founder & Lead Developer</p>
             <p className="text-gray-700 leading-relaxed text-sm">
               David handles the technical side—coding, hosting, and security. 
-              He's been building websites for 8+ years and knows how to solve 
+              He's been building websites for 4 years and knows how to solve 
               problems quickly and efficiently.
             </p>
           </div>

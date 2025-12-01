@@ -40,7 +40,7 @@ export const Home: React.FC = () => (
               { value: "200+", label: "Websites Built" },
               { value: "99%", label: "Client Satisfaction" },
               { value: "2-8", label: "Weeks to Launch" },
-              { value: "8+", label: "Years Experience" }
+              { value: "4", label: "Years Experience" }
             ].map((stat, index) => (
               <div key={index} className="group">
                 <div className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2 group-hover:text-gray-600 transition-colors">

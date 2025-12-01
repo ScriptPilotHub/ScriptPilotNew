@@ -222,14 +222,7 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => (
                 onClick={() => window.open('https://buy.stripe.com/00wcN64V6fP65KTeFh9EI06', '_blank')}
                 className="w-full bg-blue-600 text-white py-2 rounded-xl font-semibold hover:bg-blue-700 transition-colors inline-block text-center text-sm"
               >
-                <a
-                  href="https://buy.stripe.com/00wcN64V6fP65KTeFh9EI06"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full h-full text-white"
-                >
-                  Start Your Project
-                Pay $160 - Start Project
+                Start Your Project
               </button>
             </div>
           </div>

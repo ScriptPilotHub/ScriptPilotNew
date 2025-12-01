@@ -250,9 +250,12 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => (
                   </li>
                 ))}
               </ul>
-              <div className="w-full bg-white text-gray-900 py-2 rounded-xl font-semibold text-center cursor-default">
+              <button
+                onClick={() => navigateTo('payment-portal')}
+                className="w-full bg-white text-gray-900 py-2 rounded-xl font-semibold hover:bg-gray-100 transition-colors text-sm"
+              >
                 Pay When Complete
-              </div>
+              </button>
             </div>
           </div>
 
@@ -281,9 +284,12 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => (
                   </li>
                 ))}
               </ul>
-              <div className="w-full border-2 border-green-600 text-green-600 py-2 rounded-xl font-semibold text-center hover:bg-green-600 hover:text-white transition-colors text-sm cursor-default">
+              <button
+                onClick={() => navigateTo('payment-portal')}
+                className="w-full border-2 border-green-600 text-green-600 py-2 rounded-xl font-semibold hover:bg-green-600 hover:text-white transition-colors text-sm"
+              >
                 Optional Service
-              </div>
+              </button>
             </div>
           </div>
         </div>

@@ -213,9 +213,12 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
                   </li>
                 ))}
               </ul>
-              <div className="w-full bg-white text-gray-900 py-4 rounded-2xl font-semibold text-center">
+              <button
+                onClick={() => navigateTo('payment-portal')}
+                className="w-full bg-white text-gray-900 py-4 rounded-2xl font-semibold hover:bg-gray-100 transition-colors"
+              >
                 Pay When Complete
-              </div>
+              </button>
             </div>
           </div>
 
@@ -244,9 +247,12 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
                   </li>
                 ))}
               </ul>
-              <div className="w-full border-2 border-green-600 text-green-600 py-4 rounded-2xl font-semibold text-center hover:bg-green-600 hover:text-white transition-colors cursor-default">
+              <button
+                onClick={() => navigateTo('payment-portal')}
+                className="w-full border-2 border-green-600 text-green-600 py-4 rounded-2xl font-semibold hover:bg-green-600 hover:text-white transition-colors"
+              >
                 Optional Service
-              </div>
+              </button>
             </div>
           </div>
         </div>

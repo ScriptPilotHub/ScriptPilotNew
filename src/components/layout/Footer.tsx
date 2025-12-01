@@ -26,9 +26,9 @@ export const Footer: React.FC = () => (
           <h4 className="text-lg font-semibold text-white mb-6">Services</h4>
           <ul className="space-y-3">
             {[
-              { label: 'Business Websites', href: 'services', type: 'internal' },
-              { label: 'E-commerce Stores', href: 'services', type: 'internal' }, 
-              { label: 'Custom Applications', href: 'services', type: 'internal' },
+              { label: 'Business Websites', href: 'payment-portal', type: 'internal' },
+              { label: 'E-commerce Stores', href: 'payment-portal', type: 'internal' }, 
+              { label: 'Custom Applications', href: 'payment-portal', type: 'internal' },
               { label: 'Website Maintenance', href: 'https://buy.stripe.com/3cIdRaevGauMc9h8gT9EI05', type: 'external' }
             ].map((service, index) => (
               <li key={index}>

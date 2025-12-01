@@ -89,7 +89,7 @@ export const Home: React.FC = () => (
             { value: "200+", label: "Websites Built" },
             { value: "99%", label: "Happy Clients" },
             { value: "2-8", label: "Weeks to Launch" },
-            { value: "24/7", label: "Site Uptime" }
+            { value: "4+", label: "Years in Business" }
           ].map((stat, index) => (
             <div key={index} className="bg-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2">
               <div className="text-4xl font-bold text-gray-900 mb-3">{stat.value}</div>

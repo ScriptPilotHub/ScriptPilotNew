@@ -27,7 +27,7 @@ export const Home: React.FC = () => (
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <button
-              onClick={() => window.location.hash = 'contact'}
+              onClick={() => window.history.pushState({}, '', '/contact')}
               className="group border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-2xl font-semibold text-lg hover:border-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-300"
             >
               Get In Touch
@@ -177,7 +177,7 @@ export const Home: React.FC = () => (
                 ))}
               </ul>
               <button
-                onClick={() => window.location.hash = 'contact'}
+                onClick={() => window.history.pushState({}, '', '/contact')}
                 className="w-full bg-blue-600 text-white py-4 rounded-2xl font-semibold hover:bg-blue-700 transition-colors inline-block text-center"
               >
                 Start Your Project
@@ -341,7 +341,7 @@ export const Home: React.FC = () => (
     </section>
 
     {/* Contact CTA */}
-    <section id="contact" className="py-32 bg-gray-900">
+    <section className="py-32 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 text-center">
         <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8">
           Ready to Get Started?

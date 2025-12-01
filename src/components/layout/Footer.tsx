@@ -44,7 +44,7 @@ export const Footer: React.FC = () => (
                   </a>
                 ) : (
                   <button 
-                    onClick={() => window.location.hash = service.href}
+                    onClick={() => window.history.pushState({}, '', `/${service.href}`)}
                     className="text-gray-300 hover:text-white transition-colors text-sm flex items-center gap-2 group"
                   >
                     <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -104,7 +104,7 @@ export const Footer: React.FC = () => (
             ].map((link, index) => (
               <li key={index}>
                 <button 
-                  onClick={() => window.location.hash = link.href}
+                  onClick={() => window.history.pushState({}, '', `/${link.href}`)}
                   className="text-gray-300 hover:text-white transition-colors text-sm flex items-center gap-2 group"
                 >
                   <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />

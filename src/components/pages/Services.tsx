@@ -17,7 +17,7 @@ export const Services: React.FC = () => (
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button 
-            onClick={() => window.location.hash = 'contact'}
+            onClick={() => window.history.pushState({}, '', '/contact')}
             className="group bg-gray-900 text-white px-6 py-3 rounded-xl font-semibold text-base hover:bg-gray-800 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
           >
             Get Started Today
@@ -120,7 +120,7 @@ export const Services: React.FC = () => (
                 ))}
               </ul>
               <button
-                onClick={() => window.location.hash = 'contact'}
+                onClick={() => window.history.pushState({}, '', '/contact')}
                 className="w-full bg-gray-900 text-white py-2 rounded-xl font-semibold hover:bg-gray-800 transition-colors inline-block text-center group-hover:shadow-lg text-sm"
               >
                 Get Started
@@ -215,7 +215,7 @@ export const Services: React.FC = () => (
                 ))}
               </ul>
               <button
-                onClick={() => window.location.hash = 'contact'}
+                onClick={() => window.history.pushState({}, '', '/contact')}
                 className="w-full bg-blue-600 text-white py-2 rounded-xl font-semibold hover:bg-blue-700 transition-colors inline-block text-center text-sm"
               >
                 Start Your Project
@@ -287,7 +287,7 @@ export const Services: React.FC = () => (
     </section>
 
     {/* Contact CTA */}
-    <section id="contact" className="py-20 bg-gray-900">
+    <section className="py-20 bg-gray-900">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
           Ready to Get Started?

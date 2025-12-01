@@ -6,7 +6,7 @@ import { usePathname } from '../../hooks/usePathname';
 export const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const pathname = usePathname();
+  const { pathname, navigateTo } = usePathname();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
@@ -23,7 +23,7 @@ export const Header: React.FC = () => {
   ];
 
   const handleNavClick = (href: string) => {
-    window.location.hash = href;
+    navigateTo(href);
     setIsOpen(false);
   };
 

@@ -9,7 +9,7 @@ import { ClientPortal } from './components/pages/ClientPortal';
 import { usePathname } from './hooks/usePathname';
 
 function App() {
-  const currentRoute = usePathname();
+  const { pathname: currentRoute } = usePathname();
 
   const renderPage = () => {
     switch (currentRoute) {

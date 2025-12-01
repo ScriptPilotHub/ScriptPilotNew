@@ -26,19 +26,31 @@ export const Footer: React.FC = () => (
           <h4 className="text-lg font-semibold text-white mb-6">Services</h4>
           <ul className="space-y-3">
             {[
-              { label: 'Business Websites', href: 'services' },
-              { label: 'E-commerce Stores', href: 'services' }, 
-              { label: 'Custom Applications', href: 'services' },
-              { label: 'Website Maintenance', href: 'payment-portal' }
+              { label: 'Business Websites', href: 'services', type: 'internal' },
+              { label: 'E-commerce Stores', href: 'services', type: 'internal' }, 
+              { label: 'Custom Applications', href: 'services', type: 'internal' },
+              { label: 'Website Maintenance', href: 'https://buy.stripe.com/3cIdRaevGauMc9h8gT9EI05', type: 'external' }
             ].map((service, index) => (
               <li key={index}>
-                <button 
-                  onClick={() => window.location.hash = service.href}
-                  className="text-gray-300 hover:text-white transition-colors text-sm flex items-center gap-2 group"
-                >
-                  <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  {service.label}
-                </button>
+                {service.type === 'external' ? (
+                  <a 
+                    href={service.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-300 hover:text-white transition-colors text-sm flex items-center gap-2 group"
+                  >
+                    <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    {service.label}
+                  </a>
+                ) : (
+                  <button 
+                    onClick={() => window.location.hash = service.href}
+                    className="text-gray-300 hover:text-white transition-colors text-sm flex items-center gap-2 group"
+                  >
+                    <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    {service.label}
+                  </button>
+                )}
               </li>
             ))}
           </ul>

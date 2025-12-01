@@ -27,4 +27,3 @@ export const usePathname = () => {
 
   return { pathname, navigateTo };
 };
-</parameter>

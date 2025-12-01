@@ -46,8 +46,8 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({ navigateTo }) => (
               <h3 className="text-xl font-bold text-gray-900 mb-2">Start Your Project</h3>
               <div className="mb-6">
                 <div className="flex items-center justify-center gap-2 mb-2">
-                  <span className="text-base text-gray-500 line-through">$250</span>
-                  <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm font-semibold">Save $90</span>
+                  <span className="text-base text-gray-500 line-through">$300</span>
+                  <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm font-semibold">Save $140</span>
                 </div>
                 <div className="text-3xl font-bold text-gray-900">$160</div>
               </div>
@@ -71,7 +71,7 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({ navigateTo }) => (
                 </li>
               </ul>
               <a
-                href="https://buy.stripe.com/5kQfZidrC8mE1uD68L9EI03"
+                href="https://buy.stripe.com/00wcN64V6fP65KTeFh9EI06"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full bg-blue-600 text-white py-3 rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 inline-flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-1 transform text-sm"
@@ -92,10 +92,10 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({ navigateTo }) => (
               <p className="text-gray-300 text-xs font-semibold mb-2">(Only pay when your site is done)</p>
               <div className="mb-6">
                 <div className="flex items-center justify-center gap-2 mb-2">
-                  <span className="text-base text-gray-400 line-through">$600</span>
+                  <span className="text-base text-gray-400 line-through">$700</span>
                   <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm font-semibold">Save $160</span>
                 </div>
-                <div className="text-3xl font-bold text-white">$440</div>
+                <div className="text-3xl font-bold text-white">$540</div>
               </div>
               <p className="text-gray-300 mb-4 text-sm">Final payment when your website is complete and ready to go live</p>
               <ul className="text-left space-y-2 mb-4">
@@ -117,13 +117,13 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({ navigateTo }) => (
                 </li>
               </ul>
               <a
-                href="https://buy.stripe.com/5kQfZidrC8mE1uD68L9EI03"
+                href="https://buy.stripe.com/7sY6oI3R29qI3CL7cP9EI07"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full bg-white text-gray-900 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 inline-flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-1 transform text-sm"
               >
                 <CreditCard className="w-5 h-5" />
-                Pay $440
+                Pay $540
               </a>
             </div>
           </div>
@@ -137,8 +137,8 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({ navigateTo }) => (
               <h3 className="text-xl font-bold text-gray-900 mb-2">Keep It Running</h3>
               <div className="mb-6">
                 <div className="flex items-center justify-center gap-2 mb-2">
-                  <span className="text-base text-gray-500 line-through">$250</span>
-                  <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm font-semibold">Save $100</span>
+                  <span className="text-base text-gray-500 line-through">$300</span>
+                  <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm font-semibold">Save $150</span>
                 </div>
                 <div className="text-3xl font-bold text-gray-900">$150</div>
                 <div className="text-gray-500">per month</div>

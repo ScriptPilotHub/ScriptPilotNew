@@ -204,8 +204,8 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => (
               <h3 className="text-xl font-bold text-gray-900 mb-2">Project Start</h3>
               <div className="mb-4">
                 <div className="flex items-center justify-center gap-2 mb-1">
-                  <span className="text-base text-gray-500 line-through">$250</span>
-                  <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold">Save $90</span>
+                  <span className="text-base text-gray-500 line-through">$300</span>
+                  <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold">Save $140</span>
                 </div>
                 <div className="text-3xl font-bold text-gray-900">$160</div>
               </div>
@@ -219,10 +219,17 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => (
                 ))}
               </ul>
               <button
-                onClick={() => navigateTo('contact')}
+                onClick={() => window.open('https://buy.stripe.com/00wcN64V6fP65KTeFh9EI06', '_blank')}
                 className="w-full bg-blue-600 text-white py-2 rounded-xl font-semibold hover:bg-blue-700 transition-colors inline-block text-center text-sm"
               >
-                Start Your Project
+                <a
+                  href="https://buy.stripe.com/00wcN64V6fP65KTeFh9EI06"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full h-full text-white"
+                >
+                  Start Your Project
+                Pay $160 - Start Project
               </button>
             </div>
           </div>
@@ -236,10 +243,10 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => (
               <h3 className="text-xl font-bold text-white mb-2">Site Launch</h3>
               <div className="mb-4">
                 <div className="flex items-center justify-center gap-2 mb-1">
-                  <span className="text-base text-gray-400 line-through">$600</span>
+                  <span className="text-base text-gray-400 line-through">$700</span>
                   <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold">Save $160</span>
                 </div>
-                <div className="text-3xl font-bold text-white">$440</div>
+                <div className="text-3xl font-bold text-white">$540</div>
               </div>
               <p className="text-gray-300 mb-4 text-sm">Pay when your site is complete and live</p>
               <ul className="space-y-2 mb-4 text-left">
@@ -253,7 +260,16 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => (
               <div className="w-full bg-white/10 border-2 border-white/20 text-white py-2 rounded-xl font-semibold text-center backdrop-blur-sm text-sm">
                 <div className="text-xs text-gray-300 mb-1">Payment Due:</div>
                 <div className="font-bold">When Site is Launched</div>
-                <div className="text-xs text-gray-400 mt-1">We'll send payment link</div>
+                <div className="text-xs text-gray-400 mt-1">
+                  <a
+                    href="https://buy.stripe.com/7sY6oI3R29qI3CL7cP9EI07"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-300 hover:text-blue-200 underline"
+                  >
+                    Payment link here
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -267,8 +283,8 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => (
               <h3 className="text-xl font-bold text-gray-900 mb-2">Maintenance</h3>
               <div className="mb-4">
                 <div className="flex items-center justify-center gap-2 mb-1">
-                  <span className="text-base text-gray-500 line-through">$250</span>
-                  <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold">Save $100</span>
+                  <span className="text-base text-gray-500 line-through">$300</span>
+                  <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold">Save $150</span>
                 </div>
                 <div className="text-3xl font-bold text-gray-900">$150</div>
                 <div className="text-gray-500 text-sm">per month</div>

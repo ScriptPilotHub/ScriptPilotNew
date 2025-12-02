@@ -11,3 +11,16 @@ html, body, #root {
   background: white !important;
   background-image: none !important;
 }
+
+a, button, div {
+  outline: none !important;
+}
+
+a:focus, button:focus, div:focus, a:focus-visible, button:focus-visible, div:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+a:hover, button:hover, div:hover {
+  outline: none !important;
+}

@@ -229,7 +229,6 @@ export const Footer: React.FC<FooterProps> = ({ navigateTo }) => {
         </div>
 
         <div style={{
-          borderTop: '1px solid #374151',
           marginTop: '3rem',
           paddingTop: '2rem',
           display: 'flex',

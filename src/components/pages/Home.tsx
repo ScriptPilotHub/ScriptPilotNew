@@ -25,14 +25,14 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
               href="https://calendly.com/contact-scriptpilot/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-gray-900 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-800 transition-all duration-300 flex items-center gap-3 shadow-xl hover:shadow-2xl hover:-translate-y-1 transform no-underline"
+              className="bg-gray-900 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-800 transition-colors flex items-center gap-3 shadow-xl no-underline"
             >
               Book Free Consultation
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-5 h-5" />
             </a>
             <button
               onClick={() => navigateTo('contact')}
-              className="group border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-2xl font-semibold text-lg hover:border-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-300"
+              className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-2xl font-semibold text-lg hover:border-gray-900 hover:bg-gray-900 hover:text-white transition-colors"
             >
               Get In Touch
             </button>
@@ -46,8 +46,8 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
               { value: "1-4", label: "Weeks to Launch" },
               { value: "4+", label: "Years Experience" }
             ].map((stat, index) => (
-              <div key={index} className="group">
-                <div className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2 group-hover:text-gray-600 transition-colors">
+              <div key={index}>
+                <div className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
                   {stat.value}
                 </div>
                 <div className="text-gray-600 font-medium">{stat.label}</div>
@@ -125,8 +125,8 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
               features: ["Custom Features", "Third-party Integrations", "Scalable Architecture", "Ongoing Support"]
             }
           ].map((service, index) => (
-            <div key={index} className="group bg-gray-50 rounded-3xl p-8 hover:bg-white hover:shadow-xl transition-all duration-500 border border-gray-100">
-              <div className="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <div key={index} className="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+              <div className="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center mb-6">
                 <service.icon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
@@ -159,9 +159,9 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
         
         <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Start Project */}
-          <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-200 group">
+          <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-200">
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Users className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Project Start</h3>
@@ -198,9 +198,9 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
           </div>
 
           {/* Launch Site */}
-          <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border-2 border-gray-800 relative group transform scale-105">
+          <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border-2 border-gray-800 relative scale-105">
             <div className="text-center">
-              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Rocket className="w-8 h-8 text-gray-900" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-2">Site Launch</h3>
@@ -238,9 +238,9 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
           </div>
 
           {/* Maintenance */}
-          <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-200 group">
+          <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-200">
             <div className="text-center">
-              <div className="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Shield className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Maintenance</h3>
@@ -307,8 +307,8 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
             }
           ].map((benefit, index) => (
             <div key={index} className="text-center group">
-              <div className="w-20 h-20 bg-gray-100 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:bg-gray-900 group-hover:scale-110 transition-all duration-300">
-                <benefit.icon className="w-10 h-10 text-gray-600 group-hover:text-white transition-colors" />
+              <div className="w-20 h-20 bg-gray-100 rounded-3xl flex items-center justify-center mx-auto mb-8">
+                <benefit.icon className="w-10 h-10 text-gray-600" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
               <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
@@ -365,11 +365,11 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
         <div className="text-center mt-12">
           <button
             onClick={() => navigateTo('contact')}
-            className="group bg-white text-gray-900 px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-1 transform mx-auto"
+            className="bg-white text-gray-900 px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors flex items-center gap-2 shadow-lg mx-auto"
             style={{border: 'none', outline: 'none'}}
           >
             Get Your Website
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4" />
           </button>
         </div>
       </div>
@@ -406,7 +406,7 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
               rating: 5
             }
           ].map((testimonial, index) => (
-            <div key={index} className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+            <div key={index} className="bg-white rounded-3xl p-8 shadow-lg">
               <div className="flex items-center gap-1 mb-6">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
@@ -439,9 +439,9 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
         <div className="grid sm:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
           <a
             href="mailto:contact@scriptpilot.us?subject=Project%20Inquiry%20-%20Script%20Pilot"
-            className="group bg-white text-gray-900 p-8 rounded-3xl hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2 transform no-underline"
+            className="bg-white text-gray-900 p-8 rounded-3xl hover:bg-gray-100 transition-colors shadow-xl no-underline"
           >
-            <Mail className="w-12 h-12 mx-auto mb-4 text-gray-900 group-hover:scale-110 transition-transform" />
+            <Mail className="w-12 h-12 mx-auto mb-4 text-gray-900" />
             <h3 className="text-xl font-bold mb-2">Email Us</h3>
             <p className="text-gray-600 mb-4">Get a response within 24 hours</p>
             <span className="text-gray-900 font-semibold">contact@scriptpilot.us</span>
@@ -449,9 +449,9 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
 
           <a
             href="tel:4174010015"
-            className="group bg-white text-gray-900 p-8 rounded-3xl hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2 transform no-underline"
+            className="bg-white text-gray-900 p-8 rounded-3xl hover:bg-gray-100 transition-colors shadow-xl no-underline"
           >
-            <Phone className="w-12 h-12 mx-auto mb-4 text-gray-900 group-hover:scale-110 transition-transform" />
+            <Phone className="w-12 h-12 mx-auto mb-4 text-gray-900" />
             <h3 className="text-xl font-bold mb-2">Call Us</h3>
             <p className="text-gray-600 mb-4">Mon-Fri, 9AM-6PM CST</p>
             <span className="text-gray-900 font-semibold">(417) 401-0015</span>
@@ -461,9 +461,9 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
             href="https://calendly.com/contact-scriptpilot/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="group bg-blue-600 text-white p-8 rounded-3xl hover:bg-blue-700 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2 transform no-underline"
+            className="bg-blue-600 text-white p-8 rounded-3xl hover:bg-blue-700 transition-colors shadow-xl no-underline"
           >
-            <Calendar className="w-12 h-12 mx-auto mb-4 text-white group-hover:scale-110 transition-transform" />
+            <Calendar className="w-12 h-12 mx-auto mb-4 text-white" />
             <h3 className="text-xl font-bold mb-2">Book a Call</h3>
             <p className="text-blue-100 mb-4">Free 30-minute consultation</p>
             <span className="text-white font-semibold">Schedule Now</span>

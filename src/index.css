@@ -7,23 +7,14 @@
   -webkit-tap-highlight-color: transparent !important;
 }
 
-*:focus {
-  outline: none !important;
-  box-shadow: none !important;
-}
-
+*:focus,
 *:focus-visible {
   outline: none !important;
-  box-shadow: none !important;
 }
 
-*:hover {
-  outline: none !important;
-}
-
-a, button, div, section {
-  outline: none !important;
-  -webkit-tap-highlight-color: transparent !important;
+.border-2.border-gray-800,
+.border-2.border-white\/20 {
+  border-color: transparent !important;
 }
 
 @layer base {

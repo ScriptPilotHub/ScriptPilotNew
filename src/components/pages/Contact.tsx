@@ -45,9 +45,9 @@ export const Contact: React.FC<ContactProps> = ({ navigateTo }) => {
                 <p className="text-gray-600 mb-4 leading-relaxed text-sm">
                   Tell us about your project. We'll get back to you within 24 hours with next steps.
                 </p>
-                <a 
+                <a
                   href="mailto:contact@scriptpilot.us?subject=Project%20Inquiry%20-%20Script%20Pilot&body=Hi%20there,%0D%0A%0D%0AI'm%20interested%20in%20getting%20a%20website%20for%20my%20business.%0D%0A%0D%0ABusiness%20Name:%20%0D%0AWhat%20you%20do:%20%0D%0ATimeline:%20%0D%0ABudget%20range:%20%0D%0A%0D%0ATell%20us%20about%20your%20project:%0D%0A%0D%0A%0D%0AThanks,%0D%0A[Your%20Name]"
-                  className="inline-flex items-center gap-2 text-base font-bold text-gray-900 hover:text-gray-700 transition-colors duration-300 group-hover:scale-105 transform mb-3"
+                  className="inline-flex items-center gap-2 text-base font-bold text-gray-900 hover:text-gray-700 transition-colors duration-300 group-hover:scale-105 transform mb-3 no-underline"
                 >
                   contact@scriptpilot.us
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -69,9 +69,9 @@ export const Contact: React.FC<ContactProps> = ({ navigateTo }) => {
                 <p className="text-gray-600 mb-4 leading-relaxed text-sm">
                   Talk directly to the people who'll build your site. Available during business hours.
                 </p>
-                <a 
+                <a
                   href="tel:4174010015"
-                  className="inline-flex items-center gap-2 text-base font-bold text-gray-900 hover:text-gray-700 transition-colors duration-300 group-hover:scale-105 transform mb-3"
+                  className="inline-flex items-center gap-2 text-base font-bold text-gray-900 hover:text-gray-700 transition-colors duration-300 group-hover:scale-105 transform mb-3 no-underline"
                 >
                   (417) 401-0015
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -212,7 +212,7 @@ export const Contact: React.FC<ContactProps> = ({ navigateTo }) => {
           <div className="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
             <a
               href="mailto:contact@scriptpilot.us?subject=Project%20Inquiry%20-%20Script%20Pilot"
-              className="group bg-white text-gray-900 p-4 rounded-2xl hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
+              className="group bg-white text-gray-900 p-4 rounded-2xl hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 transform no-underline"
             >
               <Mail className="w-8 h-8 mx-auto mb-2 text-gray-900 group-hover:scale-110 transition-transform" />
               <h3 className="text-lg font-bold mb-1">Email Us</h3>
@@ -222,7 +222,7 @@ export const Contact: React.FC<ContactProps> = ({ navigateTo }) => {
 
             <a
               href="tel:4174010015"
-              className="group bg-white text-gray-900 p-4 rounded-2xl hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
+              className="group bg-white text-gray-900 p-4 rounded-2xl hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 transform no-underline"
             >
               <Phone className="w-8 h-8 mx-auto mb-2 text-gray-900 group-hover:scale-110 transition-transform" />
               <h3 className="text-lg font-bold mb-1">Call Us</h3>
@@ -234,7 +234,7 @@ export const Contact: React.FC<ContactProps> = ({ navigateTo }) => {
               href="https://calendly.com/contact-scriptpilot/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-blue-600 text-white p-4 rounded-2xl hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
+              className="group bg-blue-600 text-white p-4 rounded-2xl hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 transform no-underline"
             >
               <Calendar className="w-8 h-8 mx-auto mb-2 text-white group-hover:scale-110 transition-transform" />
               <h3 className="text-lg font-bold mb-1">Book a Call</h3>

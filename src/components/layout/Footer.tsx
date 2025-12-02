@@ -6,24 +6,9 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ navigateTo }) => {
-  const footerStyle: React.CSSProperties = {
-    backgroundColor: '#1F2937',
-    color: '#FFFFFF',
-    padding: '4rem 1rem',
-    position: 'relative',
-    overflow: 'hidden'
-  };
-
-  const containerStyle: React.CSSProperties = {
-    maxWidth: '1280px',
-    margin: '0 auto',
-    position: 'relative',
-    zIndex: 1
-  };
-
   return (
-    <footer style={footerStyle}>
-      <div style={containerStyle}>
+    <footer style={{ backgroundColor: '#1F2937', color: '#FFFFFF', padding: '4rem 1rem' }}>
+      <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '3rem' }}>
           <div>
             <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1rem', color: '#FFFFFF' }}>

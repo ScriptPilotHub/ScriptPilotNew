@@ -2,25 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background: white !important;
-  background-image: none !important;
-}
-
-html, body, #root {
-  background: white !important;
-  background-image: none !important;
-}
-
-a, button, div {
+* {
   outline: none !important;
+  -webkit-tap-highlight-color: transparent !important;
 }
 
-a:focus, button:focus, div:focus, a:focus-visible, button:focus-visible, div:focus-visible {
+*:focus {
   outline: none !important;
   box-shadow: none !important;
 }
 
-a:hover, button:hover, div:hover {
+*:focus-visible {
   outline: none !important;
+  box-shadow: none !important;
+}
+
+*:hover {
+  outline: none !important;
+}
+
+a, button, div, section {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+@layer base {
+  * {
+    @apply focus:outline-none focus-visible:outline-none;
+  }
 }

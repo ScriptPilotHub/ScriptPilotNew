@@ -516,6 +516,18 @@
         outline-offset: 2px;
       }
       
+      /* Remove all borders and outlines from video demo section */
+      .demo-section * {
+        border: none !important;
+        outline: none !important;
+      }
+      
+      .demo-section video {
+        border: none !important;
+        outline: none !important;
+        display: block !important;
+      }
+      
       /* Mobile optimizations */
       @media (max-width: 768px) {
         .container {

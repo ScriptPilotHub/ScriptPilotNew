@@ -25,7 +25,7 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
               href="https://calendly.com/contact-scriptpilot/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-gray-900 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-800 transition-all duration-300 flex items-center gap-3 shadow-xl hover:shadow-2xl hover:-translate-y-1 transform"
+              className="group bg-gray-900 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-800 transition-all duration-300 flex items-center gap-3 shadow-xl hover:shadow-2xl hover:-translate-y-1 transform no-underline"
             >
               Book Free Consultation
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -228,7 +228,7 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
                     href="https://buy.stripe.com/7sY6oI3R29qI3CL7cP9EI07"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-300 hover:text-blue-200 underline"
+                    className="text-blue-300 hover:text-blue-200 no-underline"
                   >
                     Payment link available here
                   </a>
@@ -266,7 +266,7 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
                 href="https://buy.stripe.com/7sY5kEcnybyQc9hap19EI08"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full border-2 border-green-600 text-green-600 py-4 rounded-2xl font-semibold hover:bg-green-600 hover:text-white transition-colors inline-block text-center"
+                className="w-full border-2 border-green-600 text-green-600 py-4 rounded-2xl font-semibold hover:bg-green-600 hover:text-white transition-colors inline-block text-center no-underline"
               >
                 Subscribe $150/mo
               </a>
@@ -439,7 +439,7 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
         <div className="grid sm:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
           <a
             href="mailto:contact@scriptpilot.us?subject=Project%20Inquiry%20-%20Script%20Pilot"
-            className="group bg-white text-gray-900 p-8 rounded-3xl hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2 transform"
+            className="group bg-white text-gray-900 p-8 rounded-3xl hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2 transform no-underline"
           >
             <Mail className="w-12 h-12 mx-auto mb-4 text-gray-900 group-hover:scale-110 transition-transform" />
             <h3 className="text-xl font-bold mb-2">Email Us</h3>
@@ -449,7 +449,7 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
 
           <a
             href="tel:4174010015"
-            className="group bg-white text-gray-900 p-8 rounded-3xl hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2 transform"
+            className="group bg-white text-gray-900 p-8 rounded-3xl hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2 transform no-underline"
           >
             <Phone className="w-12 h-12 mx-auto mb-4 text-gray-900 group-hover:scale-110 transition-transform" />
             <h3 className="text-xl font-bold mb-2">Call Us</h3>
@@ -461,7 +461,7 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
             href="https://calendly.com/contact-scriptpilot/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="group bg-blue-600 text-white p-8 rounded-3xl hover:bg-blue-700 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2 transform"
+            className="group bg-blue-600 text-white p-8 rounded-3xl hover:bg-blue-700 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-2 transform no-underline"
           >
             <Calendar className="w-12 h-12 mx-auto mb-4 text-white group-hover:scale-110 transition-transform" />
             <h3 className="text-xl font-bold mb-2">Book a Call</h3>

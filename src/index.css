@@ -12,9 +12,31 @@
   outline: none !important;
 }
 
-.border-2.border-gray-800,
-.border-2.border-white\/20 {
-  border-color: transparent !important;
+.bg-gray-900 {
+  background-image: none !important;
+  background: #111827 !important;
+}
+
+.bg-gray-800 {
+  background-image: none !important;
+  background: #1f2937 !important;
+}
+
+video {
+  outline: none !important;
+  border: none !important;
+}
+
+section {
+  position: relative;
+  overflow: hidden;
+}
+
+section::before,
+section::after,
+div::before,
+div::after {
+  display: none !important;
 }
 
 @layer base {

@@ -2,32 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-*,
-*::before,
-*::after {
+* {
   outline: none !important;
   -webkit-tap-highlight-color: transparent !important;
-  background-image: none !important;
 }
 
 *:focus,
 *:focus-visible {
   outline: none !important;
-  box-shadow: none !important;
 }
 
-body, html, #root {
-  background: white !important;
-  background-image: none !important;
-}
-
-section, div, main, footer, header {
-  background-image: none !important;
-}
-
-.bg-gray-900,
-.bg-gray-800,
-.bg-gray-700 {
+footer,
+footer *,
+footer::before,
+footer::after,
+footer *::before,
+footer *::after {
   background-image: none !important;
 }
 

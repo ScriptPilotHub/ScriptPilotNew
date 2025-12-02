@@ -8,7 +8,7 @@ interface HomeProps {
 export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
   <div className="min-h-screen bg-white">
     {/* Hero Section */}
-    <section className="pt-40 pb-32 px-4 bg-gradient-to-br from-gray-50 to-white">
+    <section className="pt-40 pb-32 px-4 bg-gradient-to-br from-blue-50 via-white to-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight">
@@ -25,10 +25,10 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
               href="https://calendly.com/contact-scriptpilot/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gray-900 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-800 transition-colors flex items-center gap-3 shadow-xl no-underline"
+              className="group bg-gray-900 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-800 transition-colors flex items-center gap-3 shadow-xl no-underline"
             >
               Book Free Consultation
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <button
               onClick={() => navigateTo('contact')}
@@ -365,11 +365,11 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
         <div className="text-center mt-12">
           <button
             onClick={() => navigateTo('contact')}
-            className="bg-white text-gray-900 px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors flex items-center gap-2 shadow-lg mx-auto"
+            className="group bg-white text-gray-900 px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors flex items-center gap-2 shadow-lg mx-auto"
             style={{border: 'none', outline: 'none'}}
           >
             Get Your Website
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
       </div>

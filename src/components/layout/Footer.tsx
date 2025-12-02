@@ -6,8 +6,8 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ navigateTo }) => (
-  <footer className="bg-gray-900 text-white py-16">
-    <div className="max-w-7xl mx-auto px-4">
+  <footer className="bg-gray-900 text-white py-16" style={{backgroundImage: 'none'}}>
+    <div className="max-w-7xl mx-auto px-4" style={{backgroundImage: 'none'}}>
       <div className="grid lg:grid-cols-4 gap-12">
         {/* Company Info */}
         <div className="space-y-6">

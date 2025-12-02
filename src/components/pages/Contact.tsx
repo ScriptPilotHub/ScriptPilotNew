@@ -151,7 +151,7 @@ export const Contact: React.FC<ContactProps> = ({ navigateTo }) => {
                 <Zap className="w-8 h-8 text-gray-600 group-hover:text-white transition-colors" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Fast Turnaround</h3>
-              <p className="text-gray-600 mb-3 leading-relaxed text-sm">Most sites launch in 2-8 weeks</p>
+              <p className="text-gray-600 mb-3 leading-relaxed text-sm">Most sites launch in 1-4 weeks</p>
               <p className="text-gray-600">Rush projects available</p>
             </div>
           </div>

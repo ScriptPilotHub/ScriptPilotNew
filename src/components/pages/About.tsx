@@ -46,7 +46,7 @@ export const About: React.FC<AboutProps> = ({ navigateTo }) => (
           {[
             { value: "200+", label: "Websites Built" },
             { value: "99%", label: "Client Satisfaction" },
-            { value: "2-8", label: "Weeks to Launch" },
+            { value: "1-4", label: "Weeks to Launch" },
             { value: "4", label: "Years Experience" }
           ].map((stat, index) => (
             <div key={index} className="group">

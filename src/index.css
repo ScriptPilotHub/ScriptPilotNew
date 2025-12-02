@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  text-decoration: none !important;
+  border-image: none !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+section {
+  position: relative;
+  background-clip: padding-box !important;
+}

@@ -331,7 +331,7 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <div className="group bg-gray-800 rounded-2xl p-6 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-1" style={{border: 'none', outline: 'none', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'}}>
+          <div className="bg-gray-800 rounded-2xl p-6" style={{border: 'none', outline: 'none', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'}}>
             <div className="relative overflow-hidden rounded-xl mb-6 bg-black" style={{border: 'none', outline: 'none'}}>
               <video
                 className="w-full h-auto"

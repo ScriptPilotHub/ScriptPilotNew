@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Logo } from '../ui/Logo';
 
 interface HeaderProps {
   currentPage: string;
@@ -11,11 +10,10 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { label: 'Home', href: 'home' },
     { label: 'Services', href: 'services' },
     { label: 'About', href: 'about' },
     { label: 'Contact', href: 'contact' },
-    { label: 'Payment Portal', href: 'payment-portal' }
+    { label: 'Portal', href: 'payment-portal' }
   ];
 
   return (
@@ -25,14 +23,14 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
       left: 0,
       right: 0,
       zIndex: 50,
-      backgroundColor: '#F8FAFC',
+      backgroundColor: 'rgba(248, 250, 252, 0.8)',
       borderBottom: '1px solid #E5E7EB',
-      backdropFilter: 'blur(8px)'
+      backdropFilter: 'blur(12px)'
     }}>
       <nav style={{
-        maxWidth: '1280px',
+        maxWidth: '1400px',
         margin: '0 auto',
-        padding: '1rem 1.5rem',
+        padding: '1.5rem 1.5rem',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center'
@@ -43,60 +41,43 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
             background: 'none',
             border: 'none',
             cursor: 'pointer',
-            padding: 0
+            padding: 0,
+            fontSize: '0.75rem',
+            fontWeight: '300',
+            letterSpacing: '0.15em',
+            color: '#1E293B',
+            transition: 'opacity 0.3s'
           }}
+          onMouseEnter={(e) => e.currentTarget.style.opacity = '0.6'}
+          onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
         >
-          <Logo />
+          SCRIPT PILOT
         </button>
 
-        <div style={{ display: 'none' }} className="hidden md:flex items-center gap-8">
+        <div style={{ display: 'none' }} className="hidden md:flex items-center gap-12">
           {navItems.map(item => (
             <button
               key={item.href}
               onClick={() => navigateTo(item.href)}
               style={{
                 color: currentPage === item.href ? '#1E293B' : '#475569',
-                fontWeight: currentPage === item.href ? '500' : '300',
+                fontWeight: '300',
                 background: 'none',
                 border: 'none',
                 cursor: 'pointer',
-                padding: '0.5rem 0',
+                padding: 0,
                 fontSize: '0.875rem',
-                transition: 'color 0.2s'
+                transition: 'opacity 0.3s',
+                opacity: currentPage === item.href ? 1 : 0.6
               }}
-              onMouseEnter={(e) => e.currentTarget.style.color = '#1E293B'}
+              onMouseEnter={(e) => e.currentTarget.style.opacity = '1'}
               onMouseLeave={(e) => {
-                if (currentPage !== item.href) e.currentTarget.style.color = '#475569';
+                if (currentPage !== item.href) e.currentTarget.style.opacity = '0.6';
               }}
             >
               {item.label}
             </button>
           ))}
-          <a
-            href="https://buy.stripe.com/00wcN64V6fP65KTeFh9EI06"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              backgroundColor: '#1E293B',
-              color: '#F8FAFC',
-              padding: '0.625rem 1.5rem',
-              borderRadius: '0.5rem',
-              fontWeight: '500',
-              fontSize: '0.875rem',
-              textDecoration: 'none',
-              transition: 'all 0.2s'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
-              e.currentTarget.style.transform = 'translateY(-2px)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.boxShadow = 'none';
-              e.currentTarget.style.transform = 'translateY(0)';
-            }}
-          >
-            Get Started
-          </a>
         </div>
 
         <button
@@ -110,15 +91,16 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
             color: '#1E293B'
           }}
         >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </nav>
 
       {mobileMenuOpen && (
         <div className="md:hidden" style={{
-          backgroundColor: '#F8FAFC',
+          backgroundColor: 'rgba(248, 250, 252, 0.95)',
           borderTop: '1px solid #E5E7EB',
-          padding: '1rem'
+          padding: '1.5rem',
+          backdropFilter: 'blur(12px)'
         }}>
           {navItems.map(item => (
             <button
@@ -131,38 +113,18 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
                 display: 'block',
                 width: '100%',
                 textAlign: 'left',
-                padding: '0.75rem 0',
+                padding: '1rem 0',
                 color: currentPage === item.href ? '#1E293B' : '#475569',
-                fontWeight: currentPage === item.href ? '500' : '300',
+                fontWeight: '300',
                 background: 'none',
                 border: 'none',
                 cursor: 'pointer',
-                fontSize: '1rem'
+                fontSize: '1.125rem'
               }}
             >
               {item.label}
             </button>
           ))}
-          <a
-            href="https://buy.stripe.com/00wcN64V6fP65KTeFh9EI06"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setMobileMenuOpen(false)}
-            style={{
-              display: 'block',
-              backgroundColor: '#1E293B',
-              color: '#F8FAFC',
-              padding: '0.75rem',
-              borderRadius: '0.5rem',
-              fontWeight: '500',
-              fontSize: '1rem',
-              textAlign: 'center',
-              textDecoration: 'none',
-              marginTop: '1rem'
-            }}
-          >
-            Get Started
-          </a>
         </div>
       )}
     </header>

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Logo } from '../ui/Logo';
 
 interface FooterProps {
   navigateTo: (page: string) => void;
@@ -7,33 +6,28 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ navigateTo }) => {
   return (
-    <footer style={{ backgroundColor: '#1E293B', color: '#F8FAFC' }}>
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-          <div className="md:col-span-1">
-            <Logo />
-            <p className="text-sm mt-6 leading-relaxed font-light" style={{ color: '#CBD5E1' }}>
-              Professional web development solutions for businesses that want to grow online.
+    <footer style={{ backgroundColor: '#1E293B' }}>
+      <div className="max-w-7xl mx-auto px-6 py-20 border-t" style={{ borderColor: '#475569' }}>
+        <div className="grid md:grid-cols-4 gap-16 mb-20">
+          <div>
+            <div className="text-xs font-light tracking-widest mb-4 opacity-60" style={{ color: '#CBD5E1' }}>
+              SCRIPT PILOT
+            </div>
+            <p className="text-sm font-light leading-relaxed" style={{ color: '#CBD5E1' }}>
+              Professional web development for businesses.
             </p>
           </div>
 
           <div>
-            <h3 className="font-medium text-lg mb-4" style={{ color: '#F8FAFC' }}>Company</h3>
+            <div className="text-xs font-light tracking-widest mb-6 opacity-60" style={{ color: '#CBD5E1' }}>
+              NAVIGATE
+            </div>
             <ul className="space-y-3">
               <li>
                 <button
-                  onClick={() => navigateTo('home')}
-                  className="transition-colors text-sm font-light hover:opacity-80"
-                  style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, color: '#CBD5E1' }}
-                >
-                  Home
-                </button>
-              </li>
-              <li>
-                <button
                   onClick={() => navigateTo('services')}
-                  className="transition-colors text-sm font-light hover:opacity-80"
-                  style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, color: '#CBD5E1' }}
+                  className="text-sm font-light transition-opacity hover:opacity-60"
+                  style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, color: '#F8FAFC' }}
                 >
                   Services
                 </button>
@@ -41,8 +35,8 @@ export const Footer: React.FC<FooterProps> = ({ navigateTo }) => {
               <li>
                 <button
                   onClick={() => navigateTo('about')}
-                  className="transition-colors text-sm font-light hover:opacity-80"
-                  style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, color: '#CBD5E1' }}
+                  className="text-sm font-light transition-opacity hover:opacity-60"
+                  style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, color: '#F8FAFC' }}
                 >
                   About
                 </button>
@@ -50,65 +44,34 @@ export const Footer: React.FC<FooterProps> = ({ navigateTo }) => {
               <li>
                 <button
                   onClick={() => navigateTo('contact')}
-                  className="transition-colors text-sm font-light hover:opacity-80"
-                  style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, color: '#CBD5E1' }}
+                  className="text-sm font-light transition-opacity hover:opacity-60"
+                  style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, color: '#F8FAFC' }}
                 >
                   Contact
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-medium text-lg mb-4" style={{ color: '#F8FAFC' }}>Services</h3>
-            <ul className="space-y-3">
-              <li>
-                <button
-                  onClick={() => navigateTo('services')}
-                  className="transition-colors text-sm font-light hover:opacity-80"
-                  style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, color: '#CBD5E1' }}
-                >
-                  Business Websites
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => navigateTo('services')}
-                  className="transition-colors text-sm font-light hover:opacity-80"
-                  style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, color: '#CBD5E1' }}
-                >
-                  E-commerce Stores
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => navigateTo('services')}
-                  className="transition-colors text-sm font-light hover:opacity-80"
-                  style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, color: '#CBD5E1' }}
-                >
-                  Custom Solutions
                 </button>
               </li>
               <li>
                 <button
                   onClick={() => navigateTo('payment-portal')}
-                  className="transition-colors text-sm font-light hover:opacity-80"
-                  style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, color: '#CBD5E1' }}
+                  className="text-sm font-light transition-opacity hover:opacity-60"
+                  style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, color: '#F8FAFC' }}
                 >
-                  Payment Portal
+                  Portal
                 </button>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-medium text-lg mb-4" style={{ color: '#F8FAFC' }}>Contact</h3>
+            <div className="text-xs font-light tracking-widest mb-6 opacity-60" style={{ color: '#CBD5E1' }}>
+              CONTACT
+            </div>
             <ul className="space-y-3">
               <li>
                 <a
                   href="mailto:contact@scriptpilot.us"
-                  className="transition-opacity text-sm font-light hover:opacity-80 no-underline"
-                  style={{ color: '#CBD5E1' }}
+                  className="text-sm font-light transition-opacity hover:opacity-60 no-underline"
+                  style={{ color: '#F8FAFC' }}
                 >
                   contact@scriptpilot.us
                 </a>
@@ -116,8 +79,8 @@ export const Footer: React.FC<FooterProps> = ({ navigateTo }) => {
               <li>
                 <a
                   href="tel:4174010015"
-                  className="transition-opacity text-sm font-light hover:opacity-80 no-underline"
-                  style={{ color: '#CBD5E1' }}
+                  className="text-sm font-light transition-opacity hover:opacity-60 no-underline"
+                  style={{ color: '#F8FAFC' }}
                 >
                   (417) 401-0015
                 </a>
@@ -127,41 +90,40 @@ export const Footer: React.FC<FooterProps> = ({ navigateTo }) => {
                   href="https://calendly.com/contact-scriptpilot/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="transition-opacity text-sm font-medium hover:opacity-80 no-underline"
+                  className="text-sm font-light transition-opacity hover:opacity-60 no-underline"
                   style={{ color: '#F8FAFC' }}
                 >
-                  Book Consultation
+                  Book consultation
                 </a>
               </li>
             </ul>
-            <div className="mt-6">
-              <p className="text-xs font-light" style={{ color: '#CBD5E1' }}>
-                Based in Missouri<br />
-                Serving Nationwide
-              </p>
+          </div>
+
+          <div>
+            <div className="text-xs font-light tracking-widest mb-6 opacity-60" style={{ color: '#CBD5E1' }}>
+              LOCATION
             </div>
+            <p className="text-sm font-light leading-relaxed" style={{ color: '#F8FAFC' }}>
+              Based in Missouri
+              <br />
+              Serving nationwide
+            </p>
           </div>
         </div>
 
-        <div className="pt-8" style={{ borderTop: '1px solid #475569' }}>
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm font-light" style={{ color: '#CBD5E1' }}>
-              © 2025 Script Pilot. All rights reserved.
-            </p>
-            <div className="flex items-center gap-6">
-              <a
-                href="https://buy.stripe.com/00wcN64V6fP65KTeFh9EI06"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-opacity text-sm font-medium hover:opacity-80 no-underline"
-                style={{ color: '#F8FAFC' }}
-              >
-                Start Your Project
-              </a>
-              <span style={{ color: '#475569' }}>|</span>
-              <span className="text-sm font-light" style={{ color: '#CBD5E1' }}>Response within 24 hours</span>
-            </div>
-          </div>
+        <div className="pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4" style={{ borderColor: '#475569' }}>
+          <p className="text-xs font-light opacity-60" style={{ color: '#CBD5E1' }}>
+            © 2025 Script Pilot
+          </p>
+          <a
+            href="https://buy.stripe.com/00wcN64V6fP65KTeFh9EI06"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs font-light tracking-widest transition-opacity hover:opacity-60 no-underline"
+            style={{ color: '#F8FAFC' }}
+          >
+            START PROJECT →
+          </a>
         </div>
       </div>
     </footer>

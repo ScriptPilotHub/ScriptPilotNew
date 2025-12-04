@@ -319,7 +319,7 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
     </section>
 
     {/* Live Demo Section */}
-    <section className="py-24 bg-gray-900 overflow-hidden border-0 outline-none">
+    <section className="py-24 bg-gray-900 overflow-hidden">
       <div className="max-w-5xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -331,11 +331,10 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <div className="bg-gray-800 rounded-2xl p-6" style={{border: 'none', outline: 'none', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'}}>
-            <div className="relative overflow-hidden rounded-xl mb-6 bg-black" style={{border: 'none', outline: 'none'}}>
+          <div className="bg-gray-800 rounded-2xl p-6 shadow-2xl">
+            <div className="relative overflow-hidden rounded-xl mb-6 bg-black">
               <video
-                className="w-full h-auto"
-                style={{border: 'none', outline: 'none', display: 'block'}}
+                className="w-full h-auto block"
                 autoPlay
                 muted
                 loop
@@ -349,14 +348,14 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
             <div className="text-center">
               <h3 className="text-xl font-bold text-white mb-3">Complete E-commerce Solution</h3>
               <p className="text-gray-300 mb-4 leading-relaxed">
-                Full online store with product catalog, shopping cart, and secure checkout. 
+                Full online store with product catalog, shopping cart, and secure checkout.
                 Built with modern technology for optimal performance.
               </p>
-              <div className="flex flex-wrap justify-center gap-2" style={{border: 'none'}}>
-                <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium" style={{border: 'none', outline: 'none'}}>Responsive</span>
-                <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium" style={{border: 'none', outline: 'none'}}>Fast Loading</span>
-                <span className="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium" style={{border: 'none', outline: 'none'}}>Mobile Ready</span>
-                <span className="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-medium" style={{border: 'none', outline: 'none'}}>SEO Optimized</span>
+              <div className="flex flex-wrap justify-center gap-2">
+                <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Responsive</span>
+                <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">Fast Loading</span>
+                <span className="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium">Mobile Ready</span>
+                <span className="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-medium">SEO Optimized</span>
               </div>
             </div>
           </div>
@@ -366,7 +365,6 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
           <button
             onClick={() => navigateTo('contact')}
             className="group bg-white text-gray-900 px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors flex items-center gap-2 shadow-lg mx-auto"
-            style={{border: 'none', outline: 'none'}}
           >
             Get Your Website
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

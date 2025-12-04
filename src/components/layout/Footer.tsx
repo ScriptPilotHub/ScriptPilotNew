@@ -7,22 +7,22 @@ interface FooterProps {
 export const Footer: React.FC<FooterProps> = ({ navigateTo }) => {
   return (
     <footer style={{
-      background: 'linear-gradient(135deg, #1E293B 0%, #0F172A 100%)',
+      background: 'linear-gradient(135deg, rgba(248, 250, 252, 0.95) 0%, rgba(226, 232, 240, 0.95) 100%)',
       boxShadow: '0 -4px 6px -1px rgba(0, 0, 0, 0.1)'
     }}>
-      <div className="max-w-7xl mx-auto px-6 py-20 border-t" style={{ borderColor: '#334155' }}>
+      <div className="max-w-7xl mx-auto px-6 py-20 border-t" style={{ borderColor: '#CBD5E1' }}>
         <div className="grid md:grid-cols-4 gap-16 mb-20">
           <div>
-            <div className="text-xs font-light tracking-widest mb-4 opacity-60" style={{ color: '#CBD5E1' }}>
+            <div className="text-xs font-light tracking-widest mb-4 opacity-60" style={{ color: '#475569' }}>
               SCRIPT PILOT
             </div>
-            <p className="text-sm font-light leading-relaxed" style={{ color: '#CBD5E1' }}>
+            <p className="text-sm font-light leading-relaxed" style={{ color: '#475569' }}>
               Professional web development for businesses.
             </p>
           </div>
 
           <div>
-            <div className="text-xs font-light tracking-widest mb-6 opacity-60" style={{ color: '#CBD5E1' }}>
+            <div className="text-xs font-light tracking-widest mb-6 opacity-60" style={{ color: '#475569' }}>
               NAVIGATE
             </div>
             <ul className="space-y-3">
@@ -35,15 +35,15 @@ export const Footer: React.FC<FooterProps> = ({ navigateTo }) => {
                     border: 'none',
                     cursor: 'pointer',
                     padding: 0,
-                    color: '#F8FAFC',
+                    color: '#1E293B',
                     transition: 'all 0.3s ease'
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.color = '#CBD5E1';
+                    e.currentTarget.style.color = '#475569';
                     e.currentTarget.style.transform = 'translateX(4px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.color = '#F8FAFC';
+                    e.currentTarget.style.color = '#1E293B';
                     e.currentTarget.style.transform = 'translateX(0)';
                   }}
                 >
@@ -59,15 +59,15 @@ export const Footer: React.FC<FooterProps> = ({ navigateTo }) => {
                     border: 'none',
                     cursor: 'pointer',
                     padding: 0,
-                    color: '#F8FAFC',
+                    color: '#1E293B',
                     transition: 'all 0.3s ease'
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.color = '#CBD5E1';
+                    e.currentTarget.style.color = '#475569';
                     e.currentTarget.style.transform = 'translateX(4px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.color = '#F8FAFC';
+                    e.currentTarget.style.color = '#1E293B';
                     e.currentTarget.style.transform = 'translateX(0)';
                   }}
                 >
@@ -83,15 +83,15 @@ export const Footer: React.FC<FooterProps> = ({ navigateTo }) => {
                     border: 'none',
                     cursor: 'pointer',
                     padding: 0,
-                    color: '#F8FAFC',
+                    color: '#1E293B',
                     transition: 'all 0.3s ease'
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.color = '#CBD5E1';
+                    e.currentTarget.style.color = '#475569';
                     e.currentTarget.style.transform = 'translateX(4px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.color = '#F8FAFC';
+                    e.currentTarget.style.color = '#1E293B';
                     e.currentTarget.style.transform = 'translateX(0)';
                   }}
                 >
@@ -107,15 +107,15 @@ export const Footer: React.FC<FooterProps> = ({ navigateTo }) => {
                     border: 'none',
                     cursor: 'pointer',
                     padding: 0,
-                    color: '#F8FAFC',
+                    color: '#1E293B',
                     transition: 'all 0.3s ease'
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.color = '#CBD5E1';
+                    e.currentTarget.style.color = '#475569';
                     e.currentTarget.style.transform = 'translateX(4px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.color = '#F8FAFC';
+                    e.currentTarget.style.color = '#1E293B';
                     e.currentTarget.style.transform = 'translateX(0)';
                   }}
                 >
@@ -126,7 +126,7 @@ export const Footer: React.FC<FooterProps> = ({ navigateTo }) => {
           </div>
 
           <div>
-            <div className="text-xs font-light tracking-widest mb-6 opacity-60" style={{ color: '#CBD5E1' }}>
+            <div className="text-xs font-light tracking-widest mb-6 opacity-60" style={{ color: '#475569' }}>
               CONTACT
             </div>
             <ul className="space-y-3">
@@ -135,16 +135,16 @@ export const Footer: React.FC<FooterProps> = ({ navigateTo }) => {
                   href="mailto:contact@scriptpilot.us"
                   className="text-sm font-light no-underline"
                   style={{
-                    color: '#F8FAFC',
+                    color: '#1E293B',
                     transition: 'all 0.3s ease',
                     display: 'inline-block'
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.color = '#CBD5E1';
+                    e.currentTarget.style.color = '#475569';
                     e.currentTarget.style.transform = 'translateX(4px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.color = '#F8FAFC';
+                    e.currentTarget.style.color = '#1E293B';
                     e.currentTarget.style.transform = 'translateX(0)';
                   }}
                 >
@@ -156,16 +156,16 @@ export const Footer: React.FC<FooterProps> = ({ navigateTo }) => {
                   href="tel:4174010015"
                   className="text-sm font-light no-underline"
                   style={{
-                    color: '#F8FAFC',
+                    color: '#1E293B',
                     transition: 'all 0.3s ease',
                     display: 'inline-block'
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.color = '#CBD5E1';
+                    e.currentTarget.style.color = '#475569';
                     e.currentTarget.style.transform = 'translateX(4px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.color = '#F8FAFC';
+                    e.currentTarget.style.color = '#1E293B';
                     e.currentTarget.style.transform = 'translateX(0)';
                   }}
                 >
@@ -179,16 +179,16 @@ export const Footer: React.FC<FooterProps> = ({ navigateTo }) => {
                   rel="noopener noreferrer"
                   className="text-sm font-light no-underline"
                   style={{
-                    color: '#F8FAFC',
+                    color: '#1E293B',
                     transition: 'all 0.3s ease',
                     display: 'inline-block'
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.color = '#CBD5E1';
+                    e.currentTarget.style.color = '#475569';
                     e.currentTarget.style.transform = 'translateX(4px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.color = '#F8FAFC';
+                    e.currentTarget.style.color = '#1E293B';
                     e.currentTarget.style.transform = 'translateX(0)';
                   }}
                 >
@@ -199,10 +199,10 @@ export const Footer: React.FC<FooterProps> = ({ navigateTo }) => {
           </div>
 
           <div>
-            <div className="text-xs font-light tracking-widest mb-6 opacity-60" style={{ color: '#CBD5E1' }}>
+            <div className="text-xs font-light tracking-widest mb-6 opacity-60" style={{ color: '#475569' }}>
               LOCATION
             </div>
-            <p className="text-sm font-light leading-relaxed" style={{ color: '#F8FAFC' }}>
+            <p className="text-sm font-light leading-relaxed" style={{ color: '#1E293B' }}>
               Based in Missouri
               <br />
               Serving nationwide
@@ -210,27 +210,27 @@ export const Footer: React.FC<FooterProps> = ({ navigateTo }) => {
           </div>
         </div>
 
-        <div className="pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4" style={{ borderColor: '#334155' }}>
-          <p className="text-xs font-light opacity-60" style={{ color: '#CBD5E1' }}>
+        <div className="pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4" style={{ borderColor: '#CBD5E1' }}>
+          <p className="text-xs font-light opacity-60" style={{ color: '#475569' }}>
             © 2025 Script Pilot
           </p>
-          <a
-            href="https://buy.stripe.com/00wcN64V6fP65KTeFh9EI06"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs font-light tracking-widest no-underline"
+          <button
+            onClick={() => navigateTo('contact')}
+            className="text-xs font-light tracking-widest"
             style={{
-              color: '#F8FAFC',
+              color: '#1E293B',
               transition: 'all 0.3s ease',
               padding: '0.75rem 2rem',
-              border: '1px solid #475569',
+              border: '1px solid #CBD5E1',
               borderRadius: '0.5rem',
-              display: 'inline-block'
+              display: 'inline-block',
+              background: 'none',
+              cursor: 'pointer'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#475569';
+              e.currentTarget.style.backgroundColor = '#CBD5E1';
               e.currentTarget.style.transform = 'translateY(-2px)';
-              e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.3)';
+              e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.backgroundColor = 'transparent';
@@ -239,7 +239,7 @@ export const Footer: React.FC<FooterProps> = ({ navigateTo }) => {
             }}
           >
             START PROJECT →
-          </a>
+          </button>
         </div>
       </div>
     </footer>

@@ -41,8 +41,6 @@ export const Contact: React.FC<ContactProps> = ({ navigateTo }) => {
               color: '#475569'
             }}>
               Start your project today.
-              <br />
-              No pressure. No sales pitch.
             </p>
 
             <div className="flex flex-col gap-12 max-w-2xl">

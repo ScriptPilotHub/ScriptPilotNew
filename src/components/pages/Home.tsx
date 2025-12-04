@@ -137,12 +137,12 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
             {
               title: "Business websites",
               description: "Professional sites that convert",
-              price: "$600"
+              price: "$700"
             },
             {
               title: "E-commerce",
               description: "Complete online stores",
-              price: "$600"
+              price: "$700"
             },
             {
               title: "Custom applications",

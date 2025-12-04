@@ -40,7 +40,7 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => {
             <p className="text-3xl font-extralight mb-20 max-w-2xl leading-tight" style={{
               color: '#475569'
             }}>
-              Custom websites and e-commerce solutions.
+              Professional websites and custom applications.
               <br />
               Fixed pricing. Fast delivery.
             </p>
@@ -86,16 +86,10 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => {
           <div className="space-y-1">
             {[
               {
-                title: "Business websites",
-                description: "Professional sites that convert visitors into customers",
-                price: "$600",
-                features: ["Mobile responsive", "SEO optimized", "Contact forms", "Analytics"]
-              },
-              {
-                title: "E-commerce",
-                description: "Complete online stores with payment processing",
-                price: "$600",
-                features: ["Secure payments", "Inventory management", "Order tracking", "Customer accounts"]
+                title: "Business & E-commerce Sites",
+                description: "Professional websites and online stores that convert",
+                price: "$700",
+                features: ["Mobile responsive", "SEO optimized", "Payment processing", "Analytics"]
               },
               {
                 title: "Custom applications",

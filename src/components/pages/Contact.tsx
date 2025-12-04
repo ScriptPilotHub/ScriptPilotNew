@@ -88,11 +88,13 @@ export const Contact: React.FC<ContactProps> = ({ navigateTo }) => {
                 href="https://calendly.com/contact-scriptpilot/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-5xl font-extralight border-b-2 no-underline inline-block"
+                className="text-5xl font-extralight border-b-2 no-underline"
                 style={{
                   color: '#1E293B',
                   borderColor: '#1E293B',
-                  transition: 'all 0.3s ease'
+                  transition: 'all 0.3s ease',
+                  display: 'inline-block',
+                  width: 'fit-content'
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateX(8px)';

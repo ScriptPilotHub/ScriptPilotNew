@@ -1,16 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 interface HomeProps {
   navigateTo: (page: string) => void;
 }
 
-export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
-  <div style={{ backgroundColor: '#F8FAFC' }}>
+export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
+  const [isVisible, setIsVisible] = useState(false);
 
-    <section className="min-h-screen flex items-center px-6" style={{
-      background: 'linear-gradient(135deg, #F8FAFC 0%, #E5E7EB 100%)'
-    }}>
-      <div className="max-w-7xl mx-auto w-full py-32">
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  return (
+    <div style={{ backgroundColor: '#F8FAFC' }}>
+
+      <section className="min-h-screen flex items-center px-6" style={{
+        background: 'linear-gradient(135deg, #F8FAFC 0%, #E5E7EB 100%)'
+      }}>
+        <div
+          className="max-w-7xl mx-auto w-full py-32"
+          style={{
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+            transition: 'opacity 0.8s ease-out, transform 0.8s ease-out'
+          }}
+        >
         <div className="max-w-5xl">
           <div className="text-xs font-light tracking-widest mb-12 opacity-60" style={{ color: '#475569' }}>
             SCRIPT PILOT
@@ -37,10 +51,19 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
               href="https://calendly.com/contact-scriptpilot/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg font-light px-0 py-3 border-b-2 transition-all duration-300 no-underline hover:opacity-60"
+              className="text-lg font-light px-0 py-3 border-b-2 no-underline group"
               style={{
                 color: '#1E293B',
-                borderColor: '#1E293B'
+                borderColor: '#1E293B',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateX(4px)';
+                e.currentTarget.style.opacity = '0.7';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateX(0)';
+                e.currentTarget.style.opacity = '1';
               }}
             >
               Book consultation →
@@ -48,9 +71,16 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
 
             <a
               href="mailto:contact@scriptpilot.us"
-              className="text-lg font-light px-0 py-3 transition-all duration-300 no-underline hover:opacity-60"
+              className="text-lg font-light px-0 py-3 no-underline"
               style={{
-                color: '#475569'
+                color: '#475569',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = '#1E293B';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = '#475569';
               }}
             >
               contact@scriptpilot.us
@@ -67,7 +97,18 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
             { value: "1-4wk", label: "Timeline" },
             { value: "4yr", label: "Est. 2020" }
           ].map((stat, index) => (
-            <div key={index}>
+            <div
+              key={index}
+              style={{
+                transition: 'transform 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'scale(1.05)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'scale(1)';
+              }}
+            >
               <div className="text-5xl font-extralight mb-3" style={{ color: '#1E293B' }}>
                 {stat.value}
               </div>
@@ -111,15 +152,19 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
           ].map((service, index) => (
             <div
               key={index}
-              className="group p-12 border-b transition-all duration-500 cursor-pointer hover:bg-opacity-50"
+              className="group p-12 border-b cursor-pointer"
               style={{
-                borderColor: '#E5E7EB'
+                borderColor: '#E5E7EB',
+                transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+                transform: 'translateX(0)'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = '#F8FAFC';
+                e.currentTarget.style.transform = 'translateX(8px)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = 'transparent';
+                e.currentTarget.style.transform = 'translateX(0)';
               }}
             >
               <div className="flex items-center justify-between">
@@ -159,8 +204,29 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
             { num: "03", title: "Development", desc: "Building the solution" },
             { num: "04", title: "Launch", desc: "Deployment and support" }
           ].map((step, index) => (
-            <div key={index}>
-              <div className="text-6xl font-extralight mb-8 opacity-20" style={{ color: '#F8FAFC' }}>
+            <div
+              key={index}
+              style={{
+                transition: 'transform 0.3s ease, opacity 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-8px)';
+                const numElement = e.currentTarget.querySelector('.step-num') as HTMLElement;
+                if (numElement) numElement.style.opacity = '0.4';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                const numElement = e.currentTarget.querySelector('.step-num') as HTMLElement;
+                if (numElement) numElement.style.opacity = '0.2';
+              }}
+            >
+              <div
+                className="step-num text-6xl font-extralight mb-8 opacity-20"
+                style={{
+                  color: '#F8FAFC',
+                  transition: 'opacity 0.3s ease'
+                }}
+              >
                 {step.num}
               </div>
               <h3 className="text-2xl font-light mb-4" style={{ color: '#F8FAFC' }}>
@@ -190,10 +256,22 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
         </div>
 
         <div className="grid lg:grid-cols-3 gap-1">
-          <div className="p-16 border" style={{
-            backgroundColor: '#F8FAFC',
-            borderColor: '#E5E7EB'
-          }}>
+          <div
+            className="p-16 border"
+            style={{
+              backgroundColor: '#F8FAFC',
+              borderColor: '#E5E7EB',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'scale(1.02)';
+              e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'scale(1)';
+              e.currentTarget.style.boxShadow = 'none';
+            }}
+          >
             <div className="text-xs font-light tracking-widest mb-12 opacity-60" style={{ color: '#475569' }}>
               START
             </div>
@@ -207,20 +285,42 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
               href="https://buy.stripe.com/00wcN64V6fP65KTeFh9EI06"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg font-light border-b-2 transition-all duration-300 no-underline hover:opacity-60 inline-block"
+              className="text-lg font-light border-b-2 no-underline inline-block"
               style={{
                 color: '#1E293B',
-                borderColor: '#1E293B'
+                borderColor: '#1E293B',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateX(4px)';
+                e.currentTarget.style.opacity = '0.7';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateX(0)';
+                e.currentTarget.style.opacity = '1';
               }}
             >
               Begin project →
             </a>
           </div>
 
-          <div className="p-16 border" style={{
-            backgroundColor: '#1E293B',
-            borderColor: '#475569'
-          }}>
+          <div
+            className="p-16 border"
+            style={{
+              backgroundColor: '#1E293B',
+              borderColor: '#475569',
+              transition: 'all 0.3s ease',
+              transform: 'scale(1.05)'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'scale(1.08)';
+              e.currentTarget.style.boxShadow = '0 25px 50px -12px rgba(0, 0, 0, 0.25)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'scale(1.05)';
+              e.currentTarget.style.boxShadow = 'none';
+            }}
+          >
             <div className="text-xs font-light tracking-widest mb-12 opacity-60" style={{ color: '#CBD5E1' }}>
               LAUNCH
             </div>
@@ -234,20 +334,41 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
               href="https://buy.stripe.com/7sY6oI3R29qI3CL7cP9EI07"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg font-light border-b-2 transition-all duration-300 no-underline hover:opacity-60 inline-block"
+              className="text-lg font-light border-b-2 no-underline inline-block"
               style={{
                 color: '#F8FAFC',
-                borderColor: '#F8FAFC'
+                borderColor: '#F8FAFC',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateX(4px)';
+                e.currentTarget.style.opacity = '0.8';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateX(0)';
+                e.currentTarget.style.opacity = '1';
               }}
             >
               Payment link →
             </a>
           </div>
 
-          <div className="p-16 border" style={{
-            backgroundColor: '#F8FAFC',
-            borderColor: '#E5E7EB'
-          }}>
+          <div
+            className="p-16 border"
+            style={{
+              backgroundColor: '#F8FAFC',
+              borderColor: '#E5E7EB',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'scale(1.02)';
+              e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'scale(1)';
+              e.currentTarget.style.boxShadow = 'none';
+            }}
+          >
             <div className="text-xs font-light tracking-widest mb-12 opacity-60" style={{ color: '#475569' }}>
               MAINTAIN
             </div>
@@ -261,10 +382,19 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
               href="https://buy.stripe.com/7sY5kEcnybyQc9hap19EI08"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg font-light border-b-2 transition-all duration-300 no-underline hover:opacity-60 inline-block"
+              className="text-lg font-light border-b-2 no-underline inline-block"
               style={{
                 color: '#1E293B',
-                borderColor: '#1E293B'
+                borderColor: '#1E293B',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateX(4px)';
+                e.currentTarget.style.opacity = '0.7';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateX(0)';
+                e.currentTarget.style.opacity = '1';
               }}
             >
               Subscribe →
@@ -283,16 +413,38 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
         <div className="flex flex-col items-center gap-12 text-center">
           <a
             href="mailto:contact@scriptpilot.us"
-            className="text-3xl font-light transition-all duration-300 no-underline hover:opacity-60"
-            style={{ color: '#1E293B' }}
+            className="text-3xl font-light no-underline"
+            style={{
+              color: '#1E293B',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'scale(1.05)';
+              e.currentTarget.style.color = '#475569';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'scale(1)';
+              e.currentTarget.style.color = '#1E293B';
+            }}
           >
             contact@scriptpilot.us
           </a>
 
           <a
             href="tel:4174010015"
-            className="text-3xl font-light transition-all duration-300 no-underline hover:opacity-60"
-            style={{ color: '#1E293B' }}
+            className="text-3xl font-light no-underline"
+            style={{
+              color: '#1E293B',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'scale(1.05)';
+              e.currentTarget.style.color = '#475569';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'scale(1)';
+              e.currentTarget.style.color = '#1E293B';
+            }}
           >
             (417) 401-0015
           </a>
@@ -301,10 +453,19 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
             href="https://calendly.com/contact-scriptpilot/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-3xl font-light border-b-2 transition-all duration-300 no-underline hover:opacity-60"
+            className="text-3xl font-light border-b-2 no-underline"
             style={{
               color: '#1E293B',
-              borderColor: '#1E293B'
+              borderColor: '#1E293B',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateX(8px) scale(1.05)';
+              e.currentTarget.style.opacity = '0.7';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateX(0) scale(1)';
+              e.currentTarget.style.opacity = '1';
             }}
           >
             Book consultation →
@@ -354,4 +515,5 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
     </section>
 
   </div>
-);
+  );
+};

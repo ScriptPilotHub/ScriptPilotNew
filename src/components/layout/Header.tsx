@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Logo } from '../ui/Logo';
 
 interface HeaderProps {
   currentPage: string;
@@ -24,7 +25,8 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
       left: 0,
       right: 0,
       zIndex: 50,
-      backgroundColor: '#FFFFFF'
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
     }}>
       <nav style={{
         maxWidth: '1280px',
@@ -37,16 +39,13 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
         <button
           onClick={() => navigateTo('home')}
           style={{
-            fontSize: '1.5rem',
-            fontWeight: 'bold',
-            color: '#111827',
             background: 'none',
             border: 'none',
             cursor: 'pointer',
             padding: 0
           }}
         >
-          Script Pilot
+          <Logo />
         </button>
 
         <div style={{ display: 'none' }} className="hidden md:flex items-center gap-8">
@@ -55,7 +54,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
               key={item.href}
               onClick={() => navigateTo(item.href)}
               style={{
-                color: currentPage === item.href ? '#111827' : '#6B7280',
+                color: currentPage === item.href ? '#FFFFFF' : 'rgba(255, 255, 255, 0.8)',
                 fontWeight: currentPage === item.href ? '600' : '500',
                 background: 'none',
                 border: 'none',
@@ -64,9 +63,9 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
                 fontSize: '0.875rem',
                 transition: 'color 0.2s'
               }}
-              onMouseEnter={(e) => e.currentTarget.style.color = '#111827'}
+              onMouseEnter={(e) => e.currentTarget.style.color = '#FFFFFF'}
               onMouseLeave={(e) => {
-                if (currentPage !== item.href) e.currentTarget.style.color = '#6B7280';
+                if (currentPage !== item.href) e.currentTarget.style.color = 'rgba(255, 255, 255, 0.8)';
               }}
             >
               {item.label}
@@ -77,17 +76,23 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              backgroundColor: '#111827',
-              color: '#FFFFFF',
+              backgroundColor: '#FFFFFF',
+              color: '#667eea',
               padding: '0.5rem 1.5rem',
               borderRadius: '0.5rem',
               fontWeight: '600',
               fontSize: '0.875rem',
               textDecoration: 'none',
-              transition: 'background-color 0.2s'
+              transition: 'all 0.2s'
             }}
-            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#374151'}
-            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#111827'}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+              e.currentTarget.style.transform = 'translateY(-2px)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = '#FFFFFF';
+              e.currentTarget.style.transform = 'translateY(0)';
+            }}
           >
             Get Started
           </a>
@@ -101,7 +106,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
             border: 'none',
             cursor: 'pointer',
             padding: '0.5rem',
-            color: '#111827'
+            color: '#FFFFFF'
           }}
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -110,7 +115,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
 
       {mobileMenuOpen && (
         <div className="md:hidden" style={{
-          backgroundColor: '#FFFFFF',
+          backgroundColor: 'rgba(102, 126, 234, 0.95)',
           padding: '1rem'
         }}>
           {navItems.map(item => (
@@ -125,7 +130,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
                 width: '100%',
                 textAlign: 'left',
                 padding: '0.75rem 0',
-                color: currentPage === item.href ? '#111827' : '#6B7280',
+                color: currentPage === item.href ? '#FFFFFF' : 'rgba(255, 255, 255, 0.8)',
                 fontWeight: currentPage === item.href ? '600' : '500',
                 background: 'none',
                 border: 'none',
@@ -143,8 +148,8 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
             onClick={() => setMobileMenuOpen(false)}
             style={{
               display: 'block',
-              backgroundColor: '#111827',
-              color: '#FFFFFF',
+              backgroundColor: '#FFFFFF',
+              color: '#667eea',
               padding: '0.75rem',
               borderRadius: '0.5rem',
               fontWeight: '600',

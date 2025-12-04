@@ -89,13 +89,22 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => {
                 title: "Business & E-commerce Sites",
                 description: "Professional websites and online stores that convert",
                 price: "$700",
-                features: ["Mobile responsive", "SEO optimized", "Payment processing", "Analytics"]
+                features: ["Mobile responsive", "SEO optimized", "Payment processing", "Analytics"],
+                link: null
               },
               {
                 title: "Custom applications",
                 description: "Tailored solutions for unique requirements",
                 price: "Custom",
-                features: ["Custom functionality", "Database integration", "API connections", "Scalable"]
+                features: ["Custom functionality", "Database integration", "API connections", "Scalable"],
+                link: null
+              },
+              {
+                title: "Maintenance Package",
+                description: "Keep your website updated, secure, and running smoothly",
+                price: "$150/mo",
+                features: ["Regular updates", "Security monitoring", "Performance optimization", "Priority support"],
+                link: "https://buy.stripe.com/cNibJ2drCauM0qz7cP9EI09"
               }
             ].map((service, index) => (
               <div
@@ -114,7 +123,13 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => {
                   e.currentTarget.style.backgroundColor = 'transparent';
                   e.currentTarget.style.transform = 'translateX(0)';
                 }}
-                onClick={() => navigateTo('contact')}
+                onClick={() => {
+                  if (service.link) {
+                    window.open(service.link, '_blank');
+                  } else {
+                    navigateTo('contact');
+                  }
+                }}
               >
                 <div className="flex items-start justify-between mb-6">
                   <div className="flex-1">

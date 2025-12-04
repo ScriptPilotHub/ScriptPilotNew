@@ -24,9 +24,10 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
       left: 0,
       right: 0,
       zIndex: 50,
-      backgroundColor: 'rgba(255, 255, 255, 0.9)',
-      borderBottom: '1px solid #E5E7EB',
-      backdropFilter: 'blur(12px)'
+      background: 'linear-gradient(135deg, rgba(248, 250, 252, 0.95) 0%, rgba(226, 232, 240, 0.95) 100%)',
+      borderBottom: '1px solid #CBD5E1',
+      backdropFilter: 'blur(12px)',
+      boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)'
     }}>
       <nav style={{
         maxWidth: '1400px',
@@ -57,17 +58,17 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
               key={item.href}
               onClick={() => navigateTo(item.href)}
               style={{
-                color: '#000000',
+                color: currentPage === item.href ? '#1E293B' : '#475569',
                 fontWeight: currentPage === item.href ? '600' : '500',
                 background: 'none',
                 border: 'none',
                 cursor: 'pointer',
                 padding: 0,
                 fontSize: '1rem',
-                transition: 'color 0.3s'
+                transition: 'color 0.3s ease'
               }}
-              onMouseEnter={(e) => e.currentTarget.style.color = '#3B82F6'}
-              onMouseLeave={(e) => e.currentTarget.style.color = '#000000'}
+              onMouseEnter={(e) => e.currentTarget.style.color = '#1E293B'}
+              onMouseLeave={(e) => e.currentTarget.style.color = currentPage === item.href ? '#1E293B' : '#475569'}
             >
               {item.label}
             </button>
@@ -91,8 +92,8 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
 
       {mobileMenuOpen && (
         <div className="md:hidden" style={{
-          backgroundColor: 'rgba(248, 250, 252, 0.95)',
-          borderTop: '1px solid #E5E7EB',
+          background: 'linear-gradient(135deg, rgba(248, 250, 252, 0.98) 0%, rgba(226, 232, 240, 0.98) 100%)',
+          borderTop: '1px solid #CBD5E1',
           padding: '1.5rem',
           backdropFilter: 'blur(12px)'
         }}>
@@ -108,12 +109,13 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
                 width: '100%',
                 textAlign: 'left',
                 padding: '1rem 0',
-                color: '#000000',
+                color: currentPage === item.href ? '#1E293B' : '#475569',
                 fontWeight: currentPage === item.href ? '600' : '500',
                 background: 'none',
                 border: 'none',
                 cursor: 'pointer',
-                fontSize: '1.125rem'
+                fontSize: '1.125rem',
+                transition: 'color 0.3s ease'
               }}
             >
               {item.label}

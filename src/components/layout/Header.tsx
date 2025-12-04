@@ -25,7 +25,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
       left: 0,
       right: 0,
       zIndex: 50,
-      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      background: 'linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)',
       boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
     }}>
       <nav style={{
@@ -77,7 +77,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
             rel="noopener noreferrer"
             style={{
               backgroundColor: '#FFFFFF',
-              color: '#667eea',
+              color: '#1e40af',
               padding: '0.5rem 1.5rem',
               borderRadius: '0.5rem',
               fontWeight: '600',
@@ -115,7 +115,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
 
       {mobileMenuOpen && (
         <div className="md:hidden" style={{
-          backgroundColor: 'rgba(102, 126, 234, 0.95)',
+          backgroundColor: 'rgba(30, 64, 175, 0.95)',
           padding: '1rem'
         }}>
           {navItems.map(item => (
@@ -149,7 +149,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
             style={{
               display: 'block',
               backgroundColor: '#FFFFFF',
-              color: '#667eea',
+              color: '#1e40af',
               padding: '0.75rem',
               borderRadius: '0.5rem',
               fontWeight: '600',

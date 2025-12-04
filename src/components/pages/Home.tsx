@@ -494,18 +494,15 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
           {[
             {
               title: "Storefront & Interior",
-              description: "Professional shots of your location",
-              icon: "📸"
+              description: "Professional shots of your location"
             },
             {
               title: "Product Photography",
-              description: "High-quality images of what you sell",
-              icon: "🛍️"
+              description: "High-quality images of what you sell"
             },
             {
               title: "Team Photos",
-              description: "Capture your people and culture",
-              icon: "👥"
+              description: "Capture your people and culture"
             }
           ].map((item, index) => (
             <div
@@ -525,7 +522,6 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
                 e.currentTarget.style.transform = 'translateX(0)';
               }}
             >
-              <div className="text-6xl mb-6">{item.icon}</div>
               <h3 className="text-3xl font-light mb-3" style={{ color: '#1E293B' }}>
                 {item.title}
               </h3>

@@ -164,9 +164,9 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => {
 
           <div className="grid lg:grid-cols-3 gap-20 max-w-5xl mx-auto">
             {[
-              { title: "Storefront & Interior", icon: "📸" },
-              { title: "Product Photography", icon: "🛍️" },
-              { title: "Team Photos", icon: "👥" }
+              { title: "Storefront & Interior" },
+              { title: "Product Photography" },
+              { title: "Team Photos" }
             ].map((item, index) => (
               <div
                 key={index}
@@ -177,7 +177,6 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => {
                 onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-8px)'}
                 onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
               >
-                <div className="text-6xl mb-6">{item.icon}</div>
                 <h3 className="text-2xl font-light" style={{ color: '#F8FAFC' }}>
                   {item.title}
                 </h3>

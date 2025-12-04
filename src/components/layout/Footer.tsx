@@ -7,7 +7,7 @@ interface FooterProps {
 export const Footer: React.FC<FooterProps> = ({ navigateTo }) => {
   return (
     <footer style={{
-      background: 'linear-gradient(135deg, #1E293B 0%, #0F172A 100%)',
+      background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.98) 0%, rgba(15, 23, 42, 0.98) 100%)',
       boxShadow: '0 -4px 6px -1px rgba(0, 0, 0, 0.3)'
     }}>
       <div className="max-w-7xl mx-auto px-6 py-20 border-t" style={{ borderColor: '#334155' }}>

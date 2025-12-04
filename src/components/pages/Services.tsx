@@ -88,7 +88,7 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => {
               {
                 title: "Business & E-commerce Sites",
                 description: "Professional websites and online stores that convert",
-                price: "$600",
+                price: "$700",
                 features: ["Mobile responsive", "SEO optimized", "Payment processing", "Analytics"]
               },
               {

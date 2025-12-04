@@ -14,11 +14,11 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
   return (
     <div style={{ backgroundColor: '#F8FAFC' }}>
 
-      <section className="min-h-screen flex items-center px-6" style={{
+      <section className="min-h-screen flex items-center px-4 md:px-6" style={{
         background: 'linear-gradient(135deg, #F8FAFC 0%, #E5E7EB 100%)'
       }}>
         <div
-          className="max-w-7xl mx-auto w-full py-32"
+          className="max-w-7xl mx-auto w-full py-20 md:py-32"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
@@ -26,11 +26,11 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
           }}
         >
         <div className="max-w-5xl">
-          <div className="text-xs font-light tracking-widest mb-12 opacity-60" style={{ color: '#475569' }}>
+          <div className="text-xs font-light tracking-widest mb-8 md:mb-12 opacity-60" style={{ color: '#475569' }}>
             SCRIPT PILOT
           </div>
 
-          <h1 className="text-8xl sm:text-9xl font-extralight tracking-tighter mb-12 leading-none" style={{
+          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-extralight tracking-tighter mb-8 md:mb-12 leading-none" style={{
             color: '#1E293B'
           }}>
             Websites
@@ -38,7 +38,7 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
             Built Right
           </h1>
 
-          <p className="text-3xl font-extralight mb-20 max-w-2xl leading-tight" style={{
+          <p className="text-xl sm:text-2xl md:text-3xl font-extralight mb-12 md:mb-20 max-w-2xl leading-tight" style={{
             color: '#475569'
           }}>
             Custom web development for businesses.
@@ -46,12 +46,12 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
             $160 to start. 1-4 weeks.
           </p>
 
-          <div className="flex gap-8 items-center">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 items-start sm:items-center">
             <a
               href="https://calendly.com/contact-scriptpilot/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg font-light px-0 py-3 border-b-2 no-underline group"
+              className="text-base md:text-lg font-light px-0 py-3 border-b-2 no-underline group"
               style={{
                 color: '#1E293B',
                 borderColor: '#1E293B',
@@ -71,7 +71,7 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
 
             <a
               href="mailto:contact@scriptpilot.us"
-              className="text-lg font-light px-0 py-3 no-underline"
+              className="text-base md:text-lg font-light px-0 py-3 no-underline"
               style={{
                 color: '#475569',
                 transition: 'all 0.3s ease'
@@ -88,7 +88,7 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
           </div>
         </div>
 
-        <div className="grid grid-cols-4 gap-x-16 mt-32 pt-32 border-t max-w-4xl" style={{
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-8 md:gap-x-16 gap-y-8 mt-16 md:mt-32 pt-16 md:pt-32 border-t max-w-4xl" style={{
           borderColor: '#CBD5E1'
         }}>
           {[
@@ -109,10 +109,10 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
                 e.currentTarget.style.transform = 'scale(1)';
               }}
             >
-              <div className="text-5xl font-extralight mb-3" style={{ color: '#1E293B' }}>
+              <div className="text-3xl sm:text-4xl md:text-5xl font-extralight mb-2 md:mb-3" style={{ color: '#1E293B' }}>
                 {stat.value}
               </div>
-              <div className="text-sm font-light opacity-60" style={{ color: '#475569' }}>
+              <div className="text-xs sm:text-sm font-light opacity-60" style={{ color: '#475569' }}>
                 {stat.label}
               </div>
             </div>
@@ -121,13 +121,13 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
       </div>
     </section>
 
-    <section className="px-6 py-40" style={{ backgroundColor: 'white' }}>
+    <section className="px-4 md:px-6 py-20 md:py-40" style={{ backgroundColor: 'white' }}>
       <div className="max-w-7xl mx-auto">
-        <div className="mb-24">
+        <div className="mb-16 md:mb-24">
           <div className="text-xs font-light tracking-widest mb-6 opacity-60" style={{ color: '#475569' }}>
             SERVICES
           </div>
-          <h2 className="text-7xl font-extralight tracking-tight" style={{ color: '#1E293B' }}>
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-extralight tracking-tight" style={{ color: '#1E293B' }}>
             What we build
           </h2>
         </div>
@@ -152,7 +152,7 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
           ].map((service, index) => (
             <div
               key={index}
-              className="group p-12 border-b cursor-pointer"
+              className="group p-6 md:p-12 border-b cursor-pointer"
               style={{
                 borderColor: '#E5E7EB',
                 transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -167,16 +167,16 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
                 e.currentTarget.style.transform = 'translateX(0)';
               }}
             >
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0">
                 <div className="flex-1">
-                  <h3 className="text-4xl font-light mb-2" style={{ color: '#1E293B' }}>
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-light mb-2" style={{ color: '#1E293B' }}>
                     {service.title}
                   </h3>
-                  <p className="text-xl font-extralight" style={{ color: '#475569' }}>
+                  <p className="text-base sm:text-lg md:text-xl font-extralight" style={{ color: '#475569' }}>
                     {service.description}
                   </p>
                 </div>
-                <div className="text-4xl font-extralight" style={{ color: '#1E293B' }}>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-extralight" style={{ color: '#1E293B' }}>
                   {service.price}
                 </div>
               </div>
@@ -186,18 +186,18 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
       </div>
     </section>
 
-    <section className="px-6 py-40" style={{ backgroundColor: '#1E293B' }}>
+    <section className="px-4 md:px-6 py-20 md:py-40" style={{ backgroundColor: '#1E293B' }}>
       <div className="max-w-7xl mx-auto">
-        <div className="mb-32">
+        <div className="mb-16 md:mb-32">
           <div className="text-xs font-light tracking-widest mb-6 opacity-60" style={{ color: '#CBD5E1' }}>
             PROCESS
           </div>
-          <h2 className="text-7xl font-extralight tracking-tight" style={{ color: '#F8FAFC' }}>
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-extralight tracking-tight" style={{ color: '#F8FAFC' }}>
             How we work
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-4 gap-x-20 gap-y-16 max-w-6xl">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-12 md:gap-x-20 gap-y-12 md:gap-y-16 max-w-6xl">
           {[
             { num: "01", title: "Discovery", desc: "Understanding requirements" },
             { num: "02", title: "Planning", desc: "Strategy and architecture" },
@@ -221,7 +221,7 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
               }}
             >
               <div
-                className="step-num text-6xl font-extralight mb-8 opacity-20"
+                className="step-num text-4xl sm:text-5xl md:text-6xl font-extralight mb-6 md:mb-8 opacity-20"
                 style={{
                   color: '#F8FAFC',
                   transition: 'opacity 0.3s ease'
@@ -229,10 +229,10 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
               >
                 {step.num}
               </div>
-              <h3 className="text-2xl font-light mb-4" style={{ color: '#F8FAFC' }}>
+              <h3 className="text-xl md:text-2xl font-light mb-3 md:mb-4" style={{ color: '#F8FAFC' }}>
                 {step.title}
               </h3>
-              <p className="text-lg font-extralight opacity-70" style={{ color: '#F8FAFC' }}>
+              <p className="text-base md:text-lg font-extralight opacity-70" style={{ color: '#F8FAFC' }}>
                 {step.desc}
               </p>
             </div>
@@ -241,23 +241,23 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
       </div>
     </section>
 
-    <section className="px-6 py-40" style={{ backgroundColor: 'white' }}>
+    <section className="px-4 md:px-6 py-20 md:py-40" style={{ backgroundColor: 'white' }}>
       <div className="max-w-7xl mx-auto">
-        <div className="mb-32">
+        <div className="mb-16 md:mb-32">
           <div className="text-xs font-light tracking-widest mb-6 opacity-60" style={{ color: '#475569' }}>
             PRICING
           </div>
-          <h2 className="text-7xl font-extralight tracking-tight mb-8" style={{ color: '#1E293B' }}>
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-extralight tracking-tight mb-6 md:mb-8" style={{ color: '#1E293B' }}>
             Transparent
           </h2>
-          <p className="text-2xl font-extralight" style={{ color: '#475569' }}>
+          <p className="text-lg sm:text-xl md:text-2xl font-extralight" style={{ color: '#475569' }}>
             Two payments. No hidden fees.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-1">
+        <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-4 md:gap-1">
           <div
-            className="p-16 border"
+            className="p-8 md:p-16 border"
             style={{
               backgroundColor: '#F8FAFC',
               borderColor: '#E5E7EB',
@@ -272,20 +272,20 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
               e.currentTarget.style.boxShadow = 'none';
             }}
           >
-            <div className="text-xs font-light tracking-widest mb-12 opacity-60" style={{ color: '#475569' }}>
+            <div className="text-xs font-light tracking-widest mb-8 md:mb-12 opacity-60" style={{ color: '#475569' }}>
               START
             </div>
-            <div className="text-7xl font-extralight mb-6" style={{ color: '#1E293B' }}>
+            <div className="text-5xl md:text-7xl font-extralight mb-4 md:mb-6" style={{ color: '#1E293B' }}>
               $160
             </div>
-            <p className="text-xl font-extralight mb-16" style={{ color: '#475569' }}>
+            <p className="text-lg md:text-xl font-extralight mb-12 md:mb-16" style={{ color: '#475569' }}>
               Strategy and planning
             </p>
             <a
               href="https://buy.stripe.com/00wcN64V6fP65KTeFh9EI06"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg font-light border-b-2 no-underline inline-block"
+              className="text-base md:text-lg font-light border-b-2 no-underline inline-block"
               style={{
                 color: '#1E293B',
                 borderColor: '#1E293B',
@@ -305,36 +305,36 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
           </div>
 
           <div
-            className="p-16 border"
+            className="p-8 md:p-16 border"
             style={{
               backgroundColor: '#1E293B',
               borderColor: '#475569',
               transition: 'all 0.3s ease',
-              transform: 'scale(1.05)'
+              transform: 'scale(1)'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'scale(1.08)';
+              e.currentTarget.style.transform = 'scale(1.02)';
               e.currentTarget.style.boxShadow = '0 25px 50px -12px rgba(0, 0, 0, 0.25)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'scale(1.05)';
+              e.currentTarget.style.transform = 'scale(1)';
               e.currentTarget.style.boxShadow = 'none';
             }}
           >
-            <div className="text-xs font-light tracking-widest mb-12 opacity-60" style={{ color: '#CBD5E1' }}>
+            <div className="text-xs font-light tracking-widest mb-8 md:mb-12 opacity-60" style={{ color: '#CBD5E1' }}>
               LAUNCH
             </div>
-            <div className="text-7xl font-extralight mb-6" style={{ color: '#F8FAFC' }}>
+            <div className="text-5xl md:text-7xl font-extralight mb-4 md:mb-6" style={{ color: '#F8FAFC' }}>
               $540
             </div>
-            <p className="text-xl font-extralight mb-16" style={{ color: '#CBD5E1' }}>
+            <p className="text-lg md:text-xl font-extralight mb-12 md:mb-16" style={{ color: '#CBD5E1' }}>
               Due at completion
             </p>
             <a
               href="https://buy.stripe.com/7sY6oI3R29qI3CL7cP9EI07"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg font-light border-b-2 no-underline inline-block"
+              className="text-base md:text-lg font-light border-b-2 no-underline inline-block"
               style={{
                 color: '#F8FAFC',
                 borderColor: '#F8FAFC',
@@ -354,7 +354,7 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
           </div>
 
           <div
-            className="p-16 border"
+            className="p-8 md:p-16 border"
             style={{
               backgroundColor: '#F8FAFC',
               borderColor: '#E5E7EB',
@@ -369,20 +369,20 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
               e.currentTarget.style.boxShadow = 'none';
             }}
           >
-            <div className="text-xs font-light tracking-widest mb-12 opacity-60" style={{ color: '#475569' }}>
+            <div className="text-xs font-light tracking-widest mb-8 md:mb-12 opacity-60" style={{ color: '#475569' }}>
               MAINTAIN
             </div>
-            <div className="text-7xl font-extralight mb-6" style={{ color: '#1E293B' }}>
+            <div className="text-5xl md:text-7xl font-extralight mb-4 md:mb-6" style={{ color: '#1E293B' }}>
               $150
             </div>
-            <p className="text-xl font-extralight mb-16" style={{ color: '#475569' }}>
+            <p className="text-lg md:text-xl font-extralight mb-12 md:mb-16" style={{ color: '#475569' }}>
               Monthly (optional)
             </p>
             <a
               href="https://buy.stripe.com/7sY5kEcnybyQc9hap19EI08"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg font-light border-b-2 no-underline inline-block"
+              className="text-base md:text-lg font-light border-b-2 no-underline inline-block"
               style={{
                 color: '#1E293B',
                 borderColor: '#1E293B',
@@ -404,16 +404,16 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
       </div>
     </section>
 
-    <section className="px-6 py-40" style={{ backgroundColor: '#F8FAFC' }}>
+    <section className="px-4 md:px-6 py-20 md:py-40" style={{ backgroundColor: '#F8FAFC' }}>
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-7xl font-extralight tracking-tight mb-16 text-center" style={{ color: '#1E293B' }}>
+        <h2 className="text-4xl sm:text-5xl md:text-7xl font-extralight tracking-tight mb-12 md:mb-16 text-center" style={{ color: '#1E293B' }}>
           Get started
         </h2>
 
-        <div className="flex flex-col items-center gap-12 text-center">
+        <div className="flex flex-col items-center gap-8 md:gap-12 text-center">
           <a
             href="mailto:contact@scriptpilot.us"
-            className="text-3xl font-light no-underline"
+            className="text-xl sm:text-2xl md:text-3xl font-light no-underline"
             style={{
               color: '#1E293B',
               transition: 'all 0.3s ease'
@@ -432,7 +432,7 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
 
           <a
             href="tel:4174010015"
-            className="text-3xl font-light no-underline"
+            className="text-xl sm:text-2xl md:text-3xl font-light no-underline"
             style={{
               color: '#1E293B',
               transition: 'all 0.3s ease'
@@ -453,7 +453,7 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
             href="https://calendly.com/contact-scriptpilot/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-3xl font-light border-b-2 no-underline"
+            className="text-xl sm:text-2xl md:text-3xl font-light border-b-2 no-underline"
             style={{
               color: '#1E293B',
               borderColor: '#1E293B',
@@ -474,23 +474,23 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
       </div>
     </section>
 
-    <section className="px-6 py-40" style={{ backgroundColor: '#F8FAFC' }}>
+    <section className="px-4 md:px-6 py-20 md:py-40" style={{ backgroundColor: '#F8FAFC' }}>
       <div className="max-w-7xl mx-auto">
-        <div className="mb-24 text-center">
+        <div className="mb-16 md:mb-24 text-center">
           <div className="text-xs font-light tracking-widest mb-6 opacity-60" style={{ color: '#475569' }}>
             FREE PHOTOGRAPHY
           </div>
-          <h2 className="text-7xl font-extralight tracking-tight mb-8" style={{ color: '#1E293B' }}>
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-extralight tracking-tight mb-6 md:mb-8" style={{ color: '#1E293B' }}>
             Professional Photos
             <br />
             Included
           </h2>
-          <p className="text-2xl font-extralight max-w-3xl mx-auto" style={{ color: '#475569' }}>
+          <p className="text-lg sm:text-xl md:text-2xl font-extralight max-w-3xl mx-auto" style={{ color: '#475569' }}>
             Within 50 miles of Springfield, MO? We'll photograph your business at no extra charge.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-1">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-1">
           {[
             {
               title: "Storefront & Interior",
@@ -507,7 +507,7 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
           ].map((item, index) => (
             <div
               key={index}
-              className="p-12 border-b"
+              className="p-8 md:p-12 border-b"
               style={{
                 borderColor: '#E5E7EB',
                 transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -522,18 +522,18 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
                 e.currentTarget.style.transform = 'translateX(0)';
               }}
             >
-              <h3 className="text-3xl font-light mb-3" style={{ color: '#1E293B' }}>
+              <h3 className="text-2xl md:text-3xl font-light mb-2 md:mb-3" style={{ color: '#1E293B' }}>
                 {item.title}
               </h3>
-              <p className="text-xl font-extralight" style={{ color: '#475569' }}>
+              <p className="text-base sm:text-lg md:text-xl font-extralight" style={{ color: '#475569' }}>
                 {item.description}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="mt-20 text-center">
-          <p className="text-lg font-light" style={{ color: '#475569' }}>
+        <div className="mt-12 md:mt-20 text-center">
+          <p className="text-base sm:text-lg font-light" style={{ color: '#475569' }}>
             Save $500+ on professional photography for your website
           </p>
         </div>

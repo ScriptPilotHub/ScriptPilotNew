@@ -13,11 +13,11 @@ export const About: React.FC<AboutProps> = ({ navigateTo }) => {
 
   return (
     <div style={{ backgroundColor: '#F8FAFC' }}>
-      <section className="min-h-screen flex items-center px-6" style={{
+      <section className="min-h-screen flex items-center px-4 md:px-6" style={{
         background: 'linear-gradient(135deg, #F8FAFC 0%, #E5E7EB 100%)'
       }}>
         <div
-          className="max-w-7xl mx-auto w-full py-32"
+          className="max-w-7xl mx-auto w-full py-20 md:py-32"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
@@ -25,11 +25,11 @@ export const About: React.FC<AboutProps> = ({ navigateTo }) => {
           }}
         >
           <div className="max-w-5xl">
-            <div className="text-xs font-light tracking-widest mb-12 opacity-60" style={{ color: '#475569' }}>
+            <div className="text-xs font-light tracking-widest mb-8 md:mb-12 opacity-60" style={{ color: '#475569' }}>
               SCRIPT PILOT
             </div>
 
-            <h1 className="text-8xl sm:text-9xl font-extralight tracking-tighter mb-12 leading-none" style={{
+            <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-extralight tracking-tighter mb-8 md:mb-12 leading-none" style={{
               color: '#1E293B'
             }}>
               About
@@ -37,7 +37,7 @@ export const About: React.FC<AboutProps> = ({ navigateTo }) => {
               us
             </h1>
 
-            <p className="text-3xl font-extralight mb-20 max-w-2xl leading-tight" style={{
+            <p className="text-xl sm:text-2xl md:text-3xl font-extralight mb-12 md:mb-20 max-w-2xl leading-tight" style={{
               color: '#475569'
             }}>
               Web development company based in Missouri.
@@ -46,7 +46,7 @@ export const About: React.FC<AboutProps> = ({ navigateTo }) => {
             </p>
           </div>
 
-          <div className="grid grid-cols-4 gap-x-16 mt-32 pt-32 border-t max-w-4xl" style={{
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-8 md:gap-x-16 gap-y-8 mt-16 md:mt-32 pt-16 md:pt-32 border-t max-w-4xl" style={{
             borderColor: '#CBD5E1'
           }}>
             {[
@@ -67,10 +67,10 @@ export const About: React.FC<AboutProps> = ({ navigateTo }) => {
                   e.currentTarget.style.transform = 'scale(1)';
                 }}
               >
-                <div className="text-5xl font-extralight mb-3" style={{ color: '#1E293B' }}>
+                <div className="text-3xl sm:text-4xl md:text-5xl font-extralight mb-2 md:mb-3" style={{ color: '#1E293B' }}>
                   {stat.value}
                 </div>
-                <div className="text-sm font-light opacity-60" style={{ color: '#475569' }}>
+                <div className="text-xs sm:text-sm font-light opacity-60" style={{ color: '#475569' }}>
                   {stat.label}
                 </div>
               </div>
@@ -79,18 +79,18 @@ export const About: React.FC<AboutProps> = ({ navigateTo }) => {
         </div>
       </section>
 
-      <section className="px-6 py-40" style={{ backgroundColor: 'white' }}>
+      <section className="px-4 md:px-6 py-20 md:py-40" style={{ backgroundColor: 'white' }}>
         <div className="max-w-4xl mx-auto">
-          <div className="mb-24">
+          <div className="mb-16 md:mb-24">
             <div className="text-xs font-light tracking-widest mb-6 opacity-60" style={{ color: '#475569' }}>
               OUR STORY
             </div>
-            <h2 className="text-7xl font-extralight tracking-tight mb-16" style={{ color: '#1E293B' }}>
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-extralight tracking-tight mb-12 md:mb-16" style={{ color: '#1E293B' }}>
               How we started
             </h2>
           </div>
 
-          <div className="space-y-8 text-2xl font-extralight leading-relaxed" style={{ color: '#475569' }}>
+          <div className="space-y-6 md:space-y-8 text-lg sm:text-xl md:text-2xl font-extralight leading-relaxed" style={{ color: '#475569' }}>
             <p>
               Back in 2020, we were freelancers frustrated with how complicated web development had become.
               Clients paid thousands for websites that took months and didn't help their business.
@@ -106,18 +106,18 @@ export const About: React.FC<AboutProps> = ({ navigateTo }) => {
         </div>
       </section>
 
-      <section className="px-6 py-40" style={{ backgroundColor: '#1E293B' }}>
+      <section className="px-4 md:px-6 py-20 md:py-40" style={{ backgroundColor: '#1E293B' }}>
         <div className="max-w-7xl mx-auto">
-          <div className="mb-32 text-center">
+          <div className="mb-16 md:mb-32 text-center">
             <div className="text-xs font-light tracking-widest mb-6 opacity-60" style={{ color: '#CBD5E1' }}>
               TEAM
             </div>
-            <h2 className="text-7xl font-extralight tracking-tight" style={{ color: '#F8FAFC' }}>
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-extralight tracking-tight" style={{ color: '#F8FAFC' }}>
               Who we are
             </h2>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-20 max-w-4xl mx-auto">
+          <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 max-w-4xl mx-auto">
             {[
               {
                 initials: "DT",
@@ -140,19 +140,19 @@ export const About: React.FC<AboutProps> = ({ navigateTo }) => {
                 onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
               >
                 <div
-                  className="w-32 h-32 rounded-full flex items-center justify-center mx-auto mb-8"
+                  className="w-24 h-24 sm:w-32 sm:h-32 rounded-full flex items-center justify-center mx-auto mb-6 md:mb-8"
                   style={{
                     backgroundColor: '#475569'
                   }}
                 >
-                  <span className="text-4xl font-light" style={{ color: '#F8FAFC' }}>
+                  <span className="text-3xl sm:text-4xl font-light" style={{ color: '#F8FAFC' }}>
                     {member.initials}
                   </span>
                 </div>
-                <h3 className="text-3xl font-light mb-3" style={{ color: '#F8FAFC' }}>
+                <h3 className="text-2xl sm:text-3xl font-light mb-2 md:mb-3" style={{ color: '#F8FAFC' }}>
                   {member.name}
                 </h3>
-                <p className="text-lg font-extralight" style={{ color: '#CBD5E1' }}>
+                <p className="text-base sm:text-lg font-extralight" style={{ color: '#CBD5E1' }}>
                   {member.role}
                 </p>
               </div>
@@ -161,16 +161,16 @@ export const About: React.FC<AboutProps> = ({ navigateTo }) => {
         </div>
       </section>
 
-      <section className="px-6 py-40" style={{ backgroundColor: 'white' }}>
+      <section className="px-4 md:px-6 py-20 md:py-40" style={{ backgroundColor: 'white' }}>
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-7xl font-extralight tracking-tight mb-16" style={{ color: '#1E293B' }}>
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-extralight tracking-tight mb-12 md:mb-16" style={{ color: '#1E293B' }}>
             Work with us
           </h2>
 
-          <div className="flex flex-col items-center gap-12">
+          <div className="flex flex-col items-center gap-8 md:gap-12">
             <a
               href="mailto:contact@scriptpilot.us"
-              className="text-3xl font-light no-underline"
+              className="text-xl sm:text-2xl md:text-3xl font-light no-underline"
               style={{
                 color: '#1E293B',
                 transition: 'all 0.3s ease'
@@ -189,7 +189,7 @@ export const About: React.FC<AboutProps> = ({ navigateTo }) => {
 
             <a
               href="tel:4174010015"
-              className="text-3xl font-light no-underline"
+              className="text-xl sm:text-2xl md:text-3xl font-light no-underline"
               style={{
                 color: '#1E293B',
                 transition: 'all 0.3s ease'
@@ -210,7 +210,7 @@ export const About: React.FC<AboutProps> = ({ navigateTo }) => {
               href="https://calendly.com/contact-scriptpilot/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-3xl font-light border-b-2 no-underline"
+              className="text-xl sm:text-2xl md:text-3xl font-light border-b-2 no-underline"
               style={{
                 color: '#1E293B',
                 borderColor: '#1E293B',

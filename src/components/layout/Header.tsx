@@ -24,10 +24,10 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
       left: 0,
       right: 0,
       zIndex: 50,
-      background: 'linear-gradient(135deg, rgba(248, 250, 252, 0.95) 0%, rgba(226, 232, 240, 0.95) 100%)',
-      borderBottom: '1px solid #CBD5E1',
+      background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.98) 0%, rgba(15, 23, 42, 0.98) 100%)',
+      borderBottom: '1px solid #334155',
       backdropFilter: 'blur(12px)',
-      boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)'
+      boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.3)'
     }}>
       <nav style={{
         maxWidth: '1400px',
@@ -58,7 +58,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
               key={item.href}
               onClick={() => navigateTo(item.href)}
               style={{
-                color: currentPage === item.href ? '#1E293B' : '#475569',
+                color: currentPage === item.href ? '#F8FAFC' : '#CBD5E1',
                 fontWeight: currentPage === item.href ? '600' : '500',
                 background: 'none',
                 border: 'none',
@@ -67,8 +67,8 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
                 fontSize: '1rem',
                 transition: 'color 0.3s ease'
               }}
-              onMouseEnter={(e) => e.currentTarget.style.color = '#1E293B'}
-              onMouseLeave={(e) => e.currentTarget.style.color = currentPage === item.href ? '#1E293B' : '#475569'}
+              onMouseEnter={(e) => e.currentTarget.style.color = '#F8FAFC'}
+              onMouseLeave={(e) => e.currentTarget.style.color = currentPage === item.href ? '#F8FAFC' : '#CBD5E1'}
             >
               {item.label}
             </button>
@@ -83,7 +83,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
             border: 'none',
             cursor: 'pointer',
             padding: '0.5rem',
-            color: '#000000'
+            color: '#F8FAFC'
           }}
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -92,8 +92,8 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
 
       {mobileMenuOpen && (
         <div className="md:hidden" style={{
-          background: 'linear-gradient(135deg, rgba(248, 250, 252, 0.98) 0%, rgba(226, 232, 240, 0.98) 100%)',
-          borderTop: '1px solid #CBD5E1',
+          background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.98) 0%, rgba(15, 23, 42, 0.98) 100%)',
+          borderTop: '1px solid #334155',
           padding: '1.5rem',
           backdropFilter: 'blur(12px)'
         }}>
@@ -109,7 +109,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
                 width: '100%',
                 textAlign: 'left',
                 padding: '1rem 0',
-                color: currentPage === item.href ? '#1E293B' : '#475569',
+                color: currentPage === item.href ? '#F8FAFC' : '#CBD5E1',
                 fontWeight: currentPage === item.href ? '600' : '500',
                 background: 'none',
                 border: 'none',

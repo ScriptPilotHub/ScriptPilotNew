@@ -474,42 +474,72 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
       </div>
     </section>
 
-    <section className="px-6 py-20 border-t" style={{
-      backgroundColor: '#F8FAFC',
-      borderColor: '#E5E7EB'
-    }}>
+    <section className="px-6 py-40" style={{ backgroundColor: '#F8FAFC' }}>
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-16">
-          <div>
-            <div className="text-xs font-light tracking-widest mb-4 opacity-60" style={{ color: '#475569' }}>
-              SPRINGFIELD AREA
-            </div>
-            <p className="text-lg font-light" style={{ color: '#475569' }}>
-              Complimentary photography within 50 miles of Springfield, MO
-            </p>
+        <div className="mb-24 text-center">
+          <div className="text-xs font-light tracking-widest mb-6 opacity-60" style={{ color: '#475569' }}>
+            FREE PHOTOGRAPHY
           </div>
+          <h2 className="text-7xl font-extralight tracking-tight mb-8" style={{ color: '#1E293B' }}>
+            Professional Photos
+            <br />
+            Included
+          </h2>
+          <p className="text-2xl font-extralight max-w-3xl mx-auto" style={{ color: '#475569' }}>
+            Within 50 miles of Springfield, MO? We'll photograph your business at no extra charge.
+          </p>
+        </div>
 
-          <div>
-            <div className="text-xs font-light tracking-widest mb-4 opacity-60" style={{ color: '#475569' }}>
-              LOCATION
+        <div className="grid lg:grid-cols-3 gap-1">
+          {[
+            {
+              title: "Storefront & Interior",
+              description: "Professional shots of your location",
+              icon: "📸"
+            },
+            {
+              title: "Product Photography",
+              description: "High-quality images of what you sell",
+              icon: "🛍️"
+            },
+            {
+              title: "Team Photos",
+              description: "Capture your people and culture",
+              icon: "👥"
+            }
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="p-12 border-b"
+              style={{
+                borderColor: '#E5E7EB',
+                transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+                transform: 'translateX(0)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'white';
+                e.currentTarget.style.transform = 'translateX(8px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent';
+                e.currentTarget.style.transform = 'translateX(0)';
+              }}
+            >
+              <div className="text-6xl mb-6">{item.icon}</div>
+              <h3 className="text-3xl font-light mb-3" style={{ color: '#1E293B' }}>
+                {item.title}
+              </h3>
+              <p className="text-xl font-extralight" style={{ color: '#475569' }}>
+                {item.description}
+              </p>
             </div>
-            <p className="text-lg font-light" style={{ color: '#475569' }}>
-              Based in Missouri
-              <br />
-              Serving nationwide
-            </p>
-          </div>
+          ))}
+        </div>
 
-          <div>
-            <div className="text-xs font-light tracking-widest mb-4 opacity-60" style={{ color: '#475569' }}>
-              RESPONSE TIME
-            </div>
-            <p className="text-lg font-light" style={{ color: '#475569' }}>
-              24 hour reply
-              <br />
-              Usually much faster
-            </p>
-          </div>
+        <div className="mt-20 text-center">
+          <p className="text-lg font-light" style={{ color: '#475569' }}>
+            Save $500+ on professional photography for your website
+          </p>
         </div>
       </div>
     </section>

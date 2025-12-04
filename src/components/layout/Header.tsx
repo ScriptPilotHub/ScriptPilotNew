@@ -57,17 +57,17 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
               key={item.href}
               onClick={() => navigateTo(item.href)}
               style={{
-                color: '#1E293B',
-                fontWeight: currentPage === item.href ? '500' : '400',
+                color: '#000000',
+                fontWeight: currentPage === item.href ? '600' : '500',
                 background: 'none',
                 border: 'none',
                 cursor: 'pointer',
                 padding: 0,
-                fontSize: '0.875rem',
-                transition: 'opacity 0.3s'
+                fontSize: '1rem',
+                transition: 'color 0.3s'
               }}
-              onMouseEnter={(e) => e.currentTarget.style.opacity = '0.7'}
-              onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+              onMouseEnter={(e) => e.currentTarget.style.color = '#3B82F6'}
+              onMouseLeave={(e) => e.currentTarget.style.color = '#000000'}
             >
               {item.label}
             </button>
@@ -82,10 +82,10 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
             border: 'none',
             cursor: 'pointer',
             padding: '0.5rem',
-            color: '#1E293B'
+            color: '#000000'
           }}
         >
-          {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </nav>
 
@@ -108,8 +108,8 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
                 width: '100%',
                 textAlign: 'left',
                 padding: '1rem 0',
-                color: currentPage === item.href ? '#1E293B' : '#475569',
-                fontWeight: '300',
+                color: '#000000',
+                fontWeight: currentPage === item.href ? '600' : '500',
                 background: 'none',
                 border: 'none',
                 cursor: 'pointer',

@@ -92,7 +92,7 @@ export const About: React.FC<AboutProps> = ({ navigateTo }) => {
 
           <div className="space-y-8 text-2xl font-extralight leading-relaxed" style={{ color: '#475569' }}>
             <p>
-              Back in 2016, we were freelancers frustrated with how complicated web development had become.
+              Back in 2020, we were freelancers frustrated with how complicated web development had become.
               Clients paid thousands for websites that took months and didn't help their business.
             </p>
             <p>

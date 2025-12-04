@@ -41,6 +41,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
             fontWeight: 'bold',
             color: '#111827',
             background: 'none',
+            border: 'none',
             cursor: 'pointer',
             padding: 0
           }}
@@ -57,6 +58,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
                 color: currentPage === item.href ? '#111827' : '#6B7280',
                 fontWeight: currentPage === item.href ? '600' : '500',
                 background: 'none',
+                border: 'none',
                 cursor: 'pointer',
                 padding: '0.5rem 0',
                 fontSize: '0.875rem',
@@ -96,6 +98,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
           className="md:hidden"
           style={{
             background: 'none',
+            border: 'none',
             cursor: 'pointer',
             padding: '0.5rem',
             color: '#111827'
@@ -125,6 +128,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
                 color: currentPage === item.href ? '#111827' : '#6B7280',
                 fontWeight: currentPage === item.href ? '600' : '500',
                 background: 'none',
+                border: 'none',
                 cursor: 'pointer',
                 fontSize: '1rem'
               }}

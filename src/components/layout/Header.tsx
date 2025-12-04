@@ -25,8 +25,9 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
       left: 0,
       right: 0,
       zIndex: 50,
-      background: 'linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)',
-      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
+      backgroundColor: '#F8FAFC',
+      borderBottom: '1px solid #E5E7EB',
+      backdropFilter: 'blur(8px)'
     }}>
       <nav style={{
         maxWidth: '1280px',
@@ -54,8 +55,8 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
               key={item.href}
               onClick={() => navigateTo(item.href)}
               style={{
-                color: currentPage === item.href ? '#FFFFFF' : 'rgba(255, 255, 255, 0.8)',
-                fontWeight: currentPage === item.href ? '600' : '500',
+                color: currentPage === item.href ? '#1E293B' : '#475569',
+                fontWeight: currentPage === item.href ? '500' : '300',
                 background: 'none',
                 border: 'none',
                 cursor: 'pointer',
@@ -63,9 +64,9 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
                 fontSize: '0.875rem',
                 transition: 'color 0.2s'
               }}
-              onMouseEnter={(e) => e.currentTarget.style.color = '#FFFFFF'}
+              onMouseEnter={(e) => e.currentTarget.style.color = '#1E293B'}
               onMouseLeave={(e) => {
-                if (currentPage !== item.href) e.currentTarget.style.color = 'rgba(255, 255, 255, 0.8)';
+                if (currentPage !== item.href) e.currentTarget.style.color = '#475569';
               }}
             >
               {item.label}
@@ -76,21 +77,21 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              backgroundColor: '#FFFFFF',
-              color: '#1e40af',
-              padding: '0.5rem 1.5rem',
+              backgroundColor: '#1E293B',
+              color: '#F8FAFC',
+              padding: '0.625rem 1.5rem',
               borderRadius: '0.5rem',
-              fontWeight: '600',
+              fontWeight: '500',
               fontSize: '0.875rem',
               textDecoration: 'none',
               transition: 'all 0.2s'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+              e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
               e.currentTarget.style.transform = 'translateY(-2px)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#FFFFFF';
+              e.currentTarget.style.boxShadow = 'none';
               e.currentTarget.style.transform = 'translateY(0)';
             }}
           >
@@ -106,7 +107,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
             border: 'none',
             cursor: 'pointer',
             padding: '0.5rem',
-            color: '#FFFFFF'
+            color: '#1E293B'
           }}
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -115,7 +116,8 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
 
       {mobileMenuOpen && (
         <div className="md:hidden" style={{
-          backgroundColor: 'rgba(30, 64, 175, 0.95)',
+          backgroundColor: '#F8FAFC',
+          borderTop: '1px solid #E5E7EB',
           padding: '1rem'
         }}>
           {navItems.map(item => (
@@ -130,8 +132,8 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
                 width: '100%',
                 textAlign: 'left',
                 padding: '0.75rem 0',
-                color: currentPage === item.href ? '#FFFFFF' : 'rgba(255, 255, 255, 0.8)',
-                fontWeight: currentPage === item.href ? '600' : '500',
+                color: currentPage === item.href ? '#1E293B' : '#475569',
+                fontWeight: currentPage === item.href ? '500' : '300',
                 background: 'none',
                 border: 'none',
                 cursor: 'pointer',
@@ -148,11 +150,11 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
             onClick={() => setMobileMenuOpen(false)}
             style={{
               display: 'block',
-              backgroundColor: '#FFFFFF',
-              color: '#1e40af',
+              backgroundColor: '#1E293B',
+              color: '#F8FAFC',
               padding: '0.75rem',
               borderRadius: '0.5rem',
-              fontWeight: '600',
+              fontWeight: '500',
               fontSize: '1rem',
               textAlign: 'center',
               textDecoration: 'none',

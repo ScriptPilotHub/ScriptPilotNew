@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Logo } from '../ui/Logo';
 
 interface HeaderProps {
   currentPage: string;
@@ -23,14 +24,14 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
       left: 0,
       right: 0,
       zIndex: 50,
-      backgroundColor: 'rgba(248, 250, 252, 0.8)',
+      backgroundColor: 'rgba(255, 255, 255, 0.9)',
       borderBottom: '1px solid #E5E7EB',
       backdropFilter: 'blur(12px)'
     }}>
       <nav style={{
         maxWidth: '1400px',
         margin: '0 auto',
-        padding: '1.5rem 1.5rem',
+        padding: '1rem 1.5rem',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center'
@@ -42,16 +43,12 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
             border: 'none',
             cursor: 'pointer',
             padding: 0,
-            fontSize: '0.75rem',
-            fontWeight: '300',
-            letterSpacing: '0.15em',
-            color: '#1E293B',
             transition: 'opacity 0.3s'
           }}
-          onMouseEnter={(e) => e.currentTarget.style.opacity = '0.6'}
+          onMouseEnter={(e) => e.currentTarget.style.opacity = '0.7'}
           onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
         >
-          SCRIPT PILOT
+          <Logo />
         </button>
 
         <div style={{ display: 'none' }} className="hidden md:flex items-center gap-12">
@@ -60,20 +57,17 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
               key={item.href}
               onClick={() => navigateTo(item.href)}
               style={{
-                color: currentPage === item.href ? '#1E293B' : '#475569',
-                fontWeight: '300',
+                color: '#1E293B',
+                fontWeight: currentPage === item.href ? '500' : '400',
                 background: 'none',
                 border: 'none',
                 cursor: 'pointer',
                 padding: 0,
                 fontSize: '0.875rem',
-                transition: 'opacity 0.3s',
-                opacity: currentPage === item.href ? 1 : 0.6
+                transition: 'opacity 0.3s'
               }}
-              onMouseEnter={(e) => e.currentTarget.style.opacity = '1'}
-              onMouseLeave={(e) => {
-                if (currentPage !== item.href) e.currentTarget.style.opacity = '0.6';
-              }}
+              onMouseEnter={(e) => e.currentTarget.style.opacity = '0.7'}
+              onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
             >
               {item.label}
             </button>

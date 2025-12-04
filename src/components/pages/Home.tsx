@@ -12,8 +12,8 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight">
-            Professional Web Development Services
-            <span className="block text-gray-600">Custom Websites That Drive Business Growth</span>
+            Transform Your Business with
+            <span className="block bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">Professional Web Development</span>
           </h1>
           <p className="text-xl sm:text-2xl text-gray-600 mb-12 leading-relaxed" itemProp="description">
             Missouri-based web development company specializing in custom business websites, e-commerce stores, and digital solutions. 

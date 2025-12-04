@@ -136,7 +136,7 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({ navigateTo }) => {
             </a>
 
             <a
-              href="https://buy.stripe.com/7sY5kEcnybyQc9hap19EI08"
+              href="https://buy.stripe.com/cNibJ2drCauM0qz7cP9EI09"
               target="_blank"
               rel="noopener noreferrer"
               className="p-16 border no-underline block"
@@ -161,7 +161,7 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({ navigateTo }) => {
                 $150
               </div>
               <p className="text-xl font-extralight mb-16" style={{ color: '#475569' }}>
-                Monthly (optional)
+                Monthly maintenance
               </p>
               <div className="text-lg font-light border-b-2 inline-block" style={{
                 color: '#1E293B',

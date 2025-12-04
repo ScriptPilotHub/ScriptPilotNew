@@ -32,7 +32,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
       <nav style={{
         maxWidth: '1400px',
         margin: '0 auto',
-        padding: '1rem 1.5rem',
+        padding: '0.5rem 1.5rem',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center'
@@ -52,7 +52,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
           <Logo />
         </button>
 
-        <div style={{ display: 'none' }} className="hidden md:flex items-center gap-12">
+        <div className="hidden md:flex items-center gap-12">
           {navItems.map(item => (
             <button
               key={item.href}

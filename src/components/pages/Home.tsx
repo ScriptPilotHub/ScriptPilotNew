@@ -32,7 +32,7 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
             </a>
             <button
               onClick={() => navigateTo('contact')}
-              className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-2xl font-semibold text-lg hover:border-gray-900 hover:bg-gray-900 hover:text-white transition-colors"
+              className="bg-gray-100 text-gray-900 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-900 hover:text-white transition-colors"
             >
               Get In Touch
             </button>
@@ -59,9 +59,9 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
     </section>
 
     {/* Springfield Photography Offer */}
-    <section className="py-8 bg-blue-50 border-y border-blue-100">
+    <section className="py-8 bg-blue-50">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="bg-white rounded-3xl border border-blue-200 p-8 shadow-sm">
+        <div className="bg-white rounded-3xl p-8 shadow-sm">
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center">
               <Camera className="w-6 h-6 text-blue-600" />
@@ -125,7 +125,7 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
               features: ["Custom Features", "Third-party Integrations", "Scalable Architecture", "Ongoing Support"]
             }
           ].map((service, index) => (
-            <div key={index} className="bg-gray-50 rounded-3xl p-8 border border-gray-100">
+            <div key={index} className="bg-gray-50 rounded-3xl p-8">
               <div className="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center mb-6">
                 <service.icon className="w-8 h-8 text-white" />
               </div>
@@ -159,7 +159,7 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
         
         <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Start Project */}
-          <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-200">
+          <div className="bg-white rounded-3xl p-8 shadow-lg">
             <div className="text-center">
               <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Users className="w-8 h-8 text-white" />
@@ -198,7 +198,7 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
           </div>
 
           {/* Launch Site */}
-          <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl border-2 border-gray-800 relative scale-105">
+          <div className="bg-gray-900 rounded-3xl p-8 shadow-2xl relative scale-105">
             <div className="text-center">
               <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Rocket className="w-8 h-8 text-gray-900" />
@@ -220,7 +220,7 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
                   </li>
                 ))}
               </ul>
-              <div className="w-full bg-white/10 border-2 border-white/20 text-white py-4 rounded-2xl font-semibold text-center backdrop-blur-sm">
+              <div className="w-full bg-white/10 text-white py-4 rounded-2xl font-semibold text-center backdrop-blur-sm">
                 <div className="text-sm text-gray-300 mb-1">Payment Due:</div>
                 <div className="text-lg font-bold">When Site is Launched</div>
                 <div className="text-xs text-gray-400 mt-1">
@@ -238,7 +238,7 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
           </div>
 
           {/* Maintenance */}
-          <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-200">
+          <div className="bg-white rounded-3xl p-8 shadow-lg">
             <div className="text-center">
               <div className="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Shield className="w-8 h-8 text-white" />
@@ -266,7 +266,7 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
                 href="https://buy.stripe.com/7sY5kEcnybyQc9hap19EI08"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full border-2 border-green-600 text-green-600 py-4 rounded-2xl font-semibold hover:bg-green-600 hover:text-white transition-colors inline-block text-center no-underline"
+                className="w-full bg-green-600 text-white py-4 rounded-2xl font-semibold hover:bg-green-700 transition-colors inline-block text-center no-underline"
               >
                 Subscribe $150/mo
               </a>
@@ -415,7 +415,7 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => (
               <blockquote className="text-gray-700 text-lg mb-6 leading-relaxed">
                 "{testimonial.testimonial}"
               </blockquote>
-              <div className="border-t border-gray-100 pt-6">
+              <div className="pt-6">
                 <p className="font-bold text-gray-900">{testimonial.name}</p>
                 <p className="text-gray-600">{testimonial.company}</p>
               </div>

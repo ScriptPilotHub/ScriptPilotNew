@@ -31,7 +31,7 @@ export const About: React.FC<AboutProps> = ({ navigateTo }) => (
             href="https://calendly.com/contact-scriptpilot/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="group border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-xl font-semibold text-base hover:border-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-300"
+            className="group bg-gray-100 text-gray-900 px-6 py-3 rounded-xl font-semibold text-base hover:bg-gray-900 hover:text-white transition-all duration-300"
           >
             Book a Call
           </a>
@@ -275,7 +275,7 @@ export const About: React.FC<AboutProps> = ({ navigateTo }) => (
               <blockquote className="text-gray-700 text-base mb-4 leading-relaxed">
                 "{testimonial.testimonial}"
               </blockquote>
-              <div className="border-t border-gray-100 pt-6">
+              <div className="pt-6">
                 <p className="font-bold text-gray-900 text-sm">{testimonial.name}</p>
                 <p className="text-gray-600 text-sm">{testimonial.company}</p>
               </div>

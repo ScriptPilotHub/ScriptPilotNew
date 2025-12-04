@@ -24,8 +24,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
       left: 0,
       right: 0,
       zIndex: 50,
-      backgroundColor: '#FFFFFF',
-      borderBottom: '1px solid #E5E7EB'
+      backgroundColor: '#FFFFFF'
     }}>
       <nav style={{
         maxWidth: '1280px',
@@ -112,7 +111,6 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
       {mobileMenuOpen && (
         <div className="md:hidden" style={{
           backgroundColor: '#FFFFFF',
-          borderTop: '1px solid #E5E7EB',
           padding: '1rem'
         }}>
           {navItems.map(item => (

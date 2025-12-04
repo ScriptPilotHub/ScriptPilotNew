@@ -167,7 +167,7 @@ export const ClientPortal: React.FC<ClientPortalProps> = ({ navigateTo }) => (
                 href="https://buy.stripe.com/7sY5kEcnybyQc9hap19EI08"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full border-2 border-green-600 text-green-600 py-3 rounded-xl font-semibold hover:bg-green-600 hover:text-white transition-all duration-300 inline-flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-1 transform text-sm"
+                className="w-full bg-green-600 text-white py-3 rounded-xl font-semibold hover:bg-green-700 transition-all duration-300 inline-flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-1 transform text-sm"
               >
                 <CreditCard className="w-5 h-5" />
                 Subscribe $150/mo

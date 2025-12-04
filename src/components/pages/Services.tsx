@@ -31,7 +31,7 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => (
             href="https://calendly.com/contact-scriptpilot/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="group border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-xl font-semibold text-base hover:border-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-300"
+            className="group bg-gray-100 text-gray-900 px-6 py-3 rounded-xl font-semibold text-base hover:bg-gray-900 hover:text-white transition-all duration-300"
           >
             Book Free Consultation
           </a>
@@ -40,9 +40,9 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => (
     </section>
 
     {/* Springfield Photography */}
-    <section className="py-6 bg-blue-50 border-y border-blue-100">
+    <section className="py-6 bg-blue-50">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="bg-white rounded-2xl border border-blue-200 p-4 shadow-sm">
+        <div className="bg-white rounded-2xl p-4 shadow-sm">
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-8 h-8 bg-blue-100 rounded-xl flex items-center justify-center">
               <Camera className="w-5 h-5 text-blue-600" />
@@ -108,7 +108,7 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => (
               price: "Custom Quote"
             }
           ].map((service, index) => (
-            <div key={index} className="group bg-gray-50 rounded-2xl p-6 hover:bg-white hover:shadow-2xl transition-all duration-500 border border-gray-100">
+            <div key={index} className="group bg-gray-50 rounded-2xl p-6 hover:bg-white hover:shadow-2xl transition-all duration-500">
               <div className="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <service.icon className="w-6 h-6 text-white" />
               </div>
@@ -196,7 +196,7 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => (
         
         <div className="grid lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {/* Start Project */}
-          <div className="bg-gray-50 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-200 group">
+          <div className="bg-gray-50 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 group">
             <div className="text-center">
               <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <Users className="w-6 h-6 text-white" />
@@ -228,7 +228,7 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => (
           </div>
 
           {/* Launch Site */}
-          <div className="bg-gray-900 rounded-2xl p-6 shadow-2xl border-2 border-gray-800 relative group transform scale-105">
+          <div className="bg-gray-900 rounded-2xl p-6 shadow-2xl relative group transform scale-105">
             <div className="text-center">
               <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <Rocket className="w-6 -6 text-gray-900" />
@@ -250,7 +250,7 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => (
                   </li>
                 ))}
               </ul>
-              <div className="w-full bg-white/10 border-2 border-white/20 text-white py-2 rounded-xl font-semibold text-center backdrop-blur-sm text-sm">
+              <div className="w-full bg-white/10 text-white py-2 rounded-xl font-semibold text-center backdrop-blur-sm text-sm">
                 <div className="text-xs text-gray-300 mb-1">Payment Due:</div>
                 <div className="font-bold">When Site is Launched</div>
                 <div className="text-xs text-gray-400 mt-1">
@@ -268,7 +268,7 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => (
           </div>
 
           {/* Maintenance */}
-          <div className="bg-gray-50 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-200 group">
+          <div className="bg-gray-50 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 group">
             <div className="text-center">
               <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <Shield className="w-6 h-6 text-white" />
@@ -296,7 +296,7 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => (
                 href="https://buy.stripe.com/7sY5kEcnybyQc9hap19EI08"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full border-2 border-green-600 text-green-600 py-2 rounded-xl font-semibold hover:bg-green-600 hover:text-white transition-colors text-sm inline-block text-center"
+                className="w-full bg-green-600 text-white py-2 rounded-xl font-semibold hover:bg-green-700 transition-colors text-sm inline-block text-center"
               >
                 Subscribe $150/mo
               </a>

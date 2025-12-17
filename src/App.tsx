@@ -1,109 +1,67 @@
-import React, { useState, useEffect } from 'react';
-import { Header } from './components/layout/Header';
-import { Footer } from './components/layout/Footer';
-import { Home } from './components/pages/Home';
-import { Services } from './components/pages/Services';
-import { About } from './components/pages/About';
-import { Contact } from './components/pages/Contact';
-import { ClientPortal } from './components/pages/ClientPortal';
+import React, { useState } from 'react';
+import { AuthProvider, useAuth } from './contexts/AuthContext';
+import { Landing } from './components/pages/Landing';
+import { Login } from './components/pages/Login';
+import { Dashboard } from './components/pages/Dashboard';
+import { ScriptBuilder } from './components/pages/ScriptBuilder';
+import { ScriptLibrary } from './components/pages/ScriptLibrary';
+import { Usage } from './components/pages/Usage';
+import { Upgrade } from './components/pages/Upgrade';
 
-function App() {
-  const [currentPage, setCurrentPage] = useState('home');
+function AppContent() {
+  const { user, loading } = useAuth();
+  const [showLogin, setShowLogin] = useState(false);
+  const [currentPage, setCurrentPage] = useState('dashboard');
 
-  useEffect(() => {
-    // Get current page from URL
-    const path = window.location.pathname;
-    if (path === '/' || path === '') {
-      setCurrentPage('home');
-    } else if (path === '/services') {
-      setCurrentPage('services');
-    } else if (path === '/about') {
-      setCurrentPage('about');
-    } else if (path === '/contact') {
-      setCurrentPage('contact');
-    } else if (path === '/payment-portal') {
-      setCurrentPage('payment-portal');
-    } else {
-      setCurrentPage('home');
+  if (loading) {
+    return (
+      <div
+        className="min-h-screen flex items-center justify-center"
+        style={{ backgroundColor: '#0A0A0A' }}
+      >
+        <div className="text-center">
+          <div
+            className="animate-spin rounded-full h-12 w-12 border-b-2 mx-auto mb-4"
+            style={{ borderColor: '#FFFFFF' }}
+          />
+          <p style={{ color: '#808080' }}>Loading...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!user) {
+    if (showLogin) {
+      return <Login />;
     }
-  }, []);
-
-  const navigateTo = (page: string) => {
-    setCurrentPage(page);
-    
-    if (page === 'home') {
-      window.history.pushState({}, '', '/');
-    } else {
-      window.history.pushState({}, '', `/${page}`);
-    }
-    
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  // Handle browser back/forward
-  useEffect(() => {
-    const handlePopState = () => {
-      const path = window.location.pathname;
-      if (path === '/' || path === '') {
-        setCurrentPage('home');
-      } else if (path === '/services') {
-        setCurrentPage('services');
-      } else if (path === '/about') {
-        setCurrentPage('about');
-      } else if (path === '/contact') {
-        setCurrentPage('contact');
-      } else if (path === '/payment-portal') {
-        setCurrentPage('payment-portal');
-      } else {
-        setCurrentPage('home');
-      }
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
-
-    window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
-  }, []);
+    return <Landing onGetStarted={() => setShowLogin(true)} />;
+  }
 
   const renderPage = () => {
     switch (currentPage) {
-      case 'home':
-        return <Home navigateTo={navigateTo} />;
-      case 'services':
-        return <Services navigateTo={navigateTo} />;
-      case 'about':
-        return <About navigateTo={navigateTo} />;
-      case 'contact':
-        return <Contact navigateTo={navigateTo} />;
-      case 'payment-portal':
-        return <ClientPortal navigateTo={navigateTo} />;
+      case 'dashboard':
+        return <Dashboard onNavigate={setCurrentPage} />;
+      case 'builder':
+        return <ScriptBuilder onNavigate={setCurrentPage} />;
+      case 'library':
+        return <ScriptLibrary onNavigate={setCurrentPage} />;
+      case 'usage':
+        return <Usage onNavigate={setCurrentPage} />;
+      case 'upgrade':
+        return <Upgrade onNavigate={setCurrentPage} />;
       default:
-        return <Home navigateTo={navigateTo} />;
+        return <Dashboard onNavigate={setCurrentPage} />;
     }
   };
 
+  return <>{renderPage()}</>;
+}
+
+function App() {
   return (
-    <div className="min-h-screen bg-white">
-      {/* SEO Schema Markup */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{
-        __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          "name": "Script Pilot",
-          "url": "https://scriptpilot.us",
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://scriptpilot.us/search?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-          }
-        })
-      }} />
-      
-      <Header currentPage={currentPage} navigateTo={navigateTo} />
-      <main>
-        {renderPage()}
-      </main>
-      <Footer navigateTo={navigateTo} />
-    </div>
+    <AuthProvider>
+      <AppContent />
+    </AuthProvider>
   );
 }
 

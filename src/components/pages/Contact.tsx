@@ -13,38 +13,46 @@ export const Contact: React.FC<ContactProps> = ({ navigateTo }) => {
 
   return (
     <div style={{ backgroundColor: '#0A0A0A' }}>
-      <section className="px-6 md:px-8 py-32 md:py-48" style={{
+      <section className="px-6 md:px-8 py-40 md:py-56" style={{
         backgroundColor: '#0A0A0A',
-        position: 'relative'
+        position: 'relative',
+        overflow: 'hidden'
       }}>
         <div className="absolute inset-0" style={{
-          background: 'radial-gradient(circle at 50% 0%, rgba(255,255,255,0.03) 0%, transparent 50%)'
+          background: 'radial-gradient(circle at 50% 0%, rgba(255,255,255,0.04) 0%, transparent 60%)'
+        }} />
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px)',
+          backgroundSize: '50px 50px',
+          opacity: 0.15
         }} />
 
         <div
           className="max-w-6xl mx-auto relative z-10"
           style={{
             opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-            transition: 'opacity 1s ease-out, transform 1s ease-out'
+            transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+            transition: 'opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1)'
           }}
         >
           <div className="max-w-4xl">
             <h1
-              className="mb-8 leading-none tracking-tight"
+              className="mb-10 leading-none tracking-tight"
               style={{
                 fontSize: 'clamp(3rem, 8vw, 7rem)',
                 fontWeight: 700,
                 color: '#FFFFFF',
-                lineHeight: 0.95
+                lineHeight: 0.95,
+                letterSpacing: '-0.02em'
               }}
             >
               Let's talk
             </h1>
 
-            <p className="text-xl md:text-2xl mb-12 max-w-2xl" style={{
-              color: '#A0A0A0',
-              lineHeight: 1.5
+            <p className="text-xl md:text-2xl mb-14 max-w-2xl" style={{
+              color: '#999999',
+              lineHeight: 1.6,
+              fontWeight: 400
             }}>
               Book a free call or send an email. We respond within 24 hours.
             </p>
@@ -54,23 +62,26 @@ export const Contact: React.FC<ContactProps> = ({ navigateTo }) => {
                 href="https://calendly.com/contact-scriptpilot/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-base font-semibold px-8 py-4 no-underline text-center"
+                className="text-base font-semibold px-9 py-4 no-underline text-center"
                 style={{
                   backgroundColor: '#FFFFFF',
                   color: '#0A0A0A',
-                  transition: 'all 0.2s ease',
+                  transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
                   display: 'inline-block',
-                  border: '2px solid transparent'
+                  border: '2px solid transparent',
+                  transform: 'translateY(0)'
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor = 'transparent';
                   e.currentTarget.style.color = '#FFFFFF';
                   e.currentTarget.style.borderColor = '#FFFFFF';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = '#FFFFFF';
                   e.currentTarget.style.color = '#0A0A0A';
                   e.currentTarget.style.borderColor = 'transparent';
+                  e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
                 Book a call
@@ -78,21 +89,24 @@ export const Contact: React.FC<ContactProps> = ({ navigateTo }) => {
 
               <a
                 href="mailto:contact@scriptpilot.us"
-                className="text-base font-semibold px-8 py-4 no-underline text-center"
+                className="text-base font-semibold px-9 py-4 no-underline text-center"
                 style={{
                   backgroundColor: 'transparent',
-                  color: '#A0A0A0',
-                  border: '2px solid #2A2A2A',
-                  transition: 'all 0.2s ease',
-                  display: 'inline-block'
+                  color: '#999999',
+                  border: '2px solid rgba(255, 255, 255, 0.1)',
+                  transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+                  display: 'inline-block',
+                  transform: 'translateY(0)'
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.color = '#FFFFFF';
-                  e.currentTarget.style.borderColor = '#404040';
+                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.color = '#A0A0A0';
-                  e.currentTarget.style.borderColor = '#2A2A2A';
+                  e.currentTarget.style.color = '#999999';
+                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                  e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
                 Send email
@@ -102,9 +116,9 @@ export const Contact: React.FC<ContactProps> = ({ navigateTo }) => {
         </div>
       </section>
 
-      <section className="px-6 md:px-8 py-24 md:py-32" style={{
+      <section className="px-6 md:px-8 py-28 md:py-40" style={{
         backgroundColor: '#0A0A0A',
-        borderTop: '1px solid #1A1A1A'
+        borderTop: '1px solid rgba(255, 255, 255, 0.05)'
       }}>
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-1">
@@ -134,23 +148,35 @@ export const Contact: React.FC<ContactProps> = ({ navigateTo }) => {
                 href={item.href}
                 target={item.external ? "_blank" : undefined}
                 rel={item.external ? "noopener noreferrer" : undefined}
-                className="p-12 no-underline block text-center"
+                className="p-10 md:p-12 no-underline block text-center"
                 style={{
-                  backgroundColor: '#0F0F0F',
-                  borderBottom: '1px solid #1A1A1A',
-                  transition: 'all 0.2s ease'
+                  backgroundColor: 'rgba(255, 255, 255, 0.02)',
+                  borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  transform: 'translateY(0)'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#141414';
+                  e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.04)';
+                  e.currentTarget.style.transform = 'translateY(-4px)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#0F0F0F';
+                  e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.02)';
+                  e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
                 <div className="text-xs font-bold mb-6 tracking-wider" style={{ color: '#606060' }}>
                   {item.title}
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: '#FFFFFF' }}>
+                <h3
+                  className="text-xl md:text-2xl font-bold mb-3 tracking-tight"
+                  style={{
+                    color: '#FFFFFF',
+                    wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    hyphens: 'auto',
+                    letterSpacing: '-0.01em'
+                  }}
+                >
                   {item.content}
                 </h3>
                 <p className="text-sm" style={{ color: '#808080' }}>
@@ -162,18 +188,18 @@ export const Contact: React.FC<ContactProps> = ({ navigateTo }) => {
         </div>
       </section>
 
-      <section className="px-6 md:px-8 py-24 md:py-32" style={{
+      <section className="px-6 md:px-8 py-28 md:py-40" style={{
         backgroundColor: '#0A0A0A',
-        borderTop: '1px solid #1A1A1A'
+        borderTop: '1px solid rgba(255, 255, 255, 0.05)'
       }}>
         <div className="max-w-4xl mx-auto">
-          <div className="mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold" style={{ color: '#FFFFFF' }}>
+          <div className="mb-24">
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tight" style={{ color: '#FFFFFF', letterSpacing: '-0.02em' }}>
               What to expect
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-12 md:gap-16">
+          <div className="grid md:grid-cols-3 gap-12 md:gap-20">
             {[
               {
                 num: "01",
@@ -192,13 +218,13 @@ export const Contact: React.FC<ContactProps> = ({ navigateTo }) => {
               }
             ].map((item, index) => (
               <div key={index}>
-                <div className="text-sm font-bold mb-4" style={{ color: '#404040' }}>
+                <div className="text-xs font-bold mb-5 tracking-widest" style={{ color: '#404040' }}>
                   {item.num}
                 </div>
-                <h3 className="text-2xl font-bold mb-3" style={{ color: '#FFFFFF' }}>
+                <h3 className="text-2xl md:text-3xl font-bold mb-4 tracking-tight" style={{ color: '#FFFFFF', letterSpacing: '-0.01em' }}>
                   {item.title}
                 </h3>
-                <p className="text-base" style={{ color: '#808080', lineHeight: 1.6 }}>
+                <p className="text-base md:text-lg" style={{ color: '#808080', lineHeight: 1.7 }}>
                   {item.content}
                 </p>
               </div>
@@ -209,14 +235,14 @@ export const Contact: React.FC<ContactProps> = ({ navigateTo }) => {
 
       <section className="px-6 md:px-8 py-32 md:py-48" style={{
         backgroundColor: '#0A0A0A',
-        borderTop: '1px solid #1A1A1A'
+        borderTop: '1px solid rgba(255, 255, 255, 0.05)'
       }}>
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-4xl md:text-6xl font-bold mb-8" style={{ color: '#FFFFFF' }}>
+          <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight" style={{ color: '#FFFFFF', letterSpacing: '-0.02em' }}>
             Ready to start?
           </h2>
 
-          <p className="text-lg md:text-xl mb-12 max-w-2xl mx-auto" style={{ color: '#808080' }}>
+          <p className="text-lg md:text-xl mb-12 max-w-2xl mx-auto" style={{ color: '#808080', lineHeight: 1.6 }}>
             Book a free call. No pressure. No commitment.
           </p>
 
@@ -224,22 +250,25 @@ export const Contact: React.FC<ContactProps> = ({ navigateTo }) => {
             href="https://calendly.com/contact-scriptpilot/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-base font-semibold px-8 py-4 no-underline inline-block"
+            className="text-base font-semibold px-9 py-4 no-underline inline-block"
             style={{
               backgroundColor: '#FFFFFF',
               color: '#0A0A0A',
-              transition: 'all 0.2s ease',
-              border: '2px solid transparent'
+              transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+              border: '2px solid transparent',
+              transform: 'translateY(0)'
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = 'transparent';
               e.currentTarget.style.color = '#FFFFFF';
               e.currentTarget.style.borderColor = '#FFFFFF';
+              e.currentTarget.style.transform = 'translateY(-2px)';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.backgroundColor = '#FFFFFF';
               e.currentTarget.style.color = '#0A0A0A';
               e.currentTarget.style.borderColor = 'transparent';
+              e.currentTarget.style.transform = 'translateY(0)';
             }}
           >
             Book a call

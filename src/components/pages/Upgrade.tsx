@@ -12,7 +12,7 @@ export const Upgrade: React.FC<UpgradeProps> = ({ onNavigate }) => {
   const pricingTiers = [
     {
       name: 'Starter',
-      price: '$29',
+      price: '$25',
       period: 'month',
       credits: 100,
       color: '#10B981',
@@ -31,7 +31,7 @@ export const Upgrade: React.FC<UpgradeProps> = ({ onNavigate }) => {
     },
     {
       name: 'Pro',
-      price: '$79',
+      price: '$50',
       period: 'month',
       credits: 500,
       color: '#3B82F6',
@@ -50,7 +50,7 @@ export const Upgrade: React.FC<UpgradeProps> = ({ onNavigate }) => {
     },
     {
       name: 'Agency',
-      price: '$199',
+      price: '$299',
       period: 'month',
       credits: 2000,
       color: '#8B5CF6',

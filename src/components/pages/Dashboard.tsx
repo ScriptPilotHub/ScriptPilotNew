@@ -28,6 +28,8 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
 
   const getTierInfo = (tier: string) => {
     switch (tier) {
+      case 'free':
+        return { color: '#6B7280', label: 'Free', credits: 5 };
       case 'starter':
         return { color: '#10B981', label: 'Starter', credits: 100 };
       case 'pro':
@@ -35,11 +37,11 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
       case 'agency':
         return { color: '#8B5CF6', label: 'Agency', credits: 2000 };
       default:
-        return { color: '#6B7280', label: 'Unknown', credits: 0 };
+        return { color: '#6B7280', label: 'Free', credits: 5 };
     }
   };
 
-  const tierInfo = getTierInfo(profile?.tier || 'starter');
+  const tierInfo = getTierInfo(profile?.tier || 'free');
 
   const creditPercentage = credits
     ? (credits.credits_remaining / credits.monthly_allocation) * 100

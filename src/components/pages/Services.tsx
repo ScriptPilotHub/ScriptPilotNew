@@ -12,133 +12,150 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => {
   }, []);
 
   return (
-    <div style={{ backgroundColor: '#ffffff' }}>
-      <section className="min-h-screen flex items-center px-4 md:px-6 py-24 md:py-32" style={{
-        backgroundColor: '#F8FAFC'
+    <div style={{ backgroundColor: '#0A0A0A' }}>
+      <section className="px-6 md:px-8 py-32 md:py-48" style={{
+        backgroundColor: '#0A0A0A',
+        position: 'relative'
       }}>
+        <div className="absolute inset-0" style={{
+          background: 'radial-gradient(circle at 50% 0%, rgba(255,255,255,0.03) 0%, transparent 50%)'
+        }} />
+
         <div
-          className="max-w-5xl mx-auto w-full text-center"
+          className="max-w-6xl mx-auto relative z-10"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-            transition: 'opacity 0.8s ease-out, transform 0.8s ease-out'
+            transition: 'opacity 1s ease-out, transform 1s ease-out'
           }}
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal mb-6 md:mb-8 leading-tight" style={{
-            color: '#1E293B'
-          }}>
-            Services
-          </h1>
+          <div className="max-w-4xl">
+            <h1
+              className="mb-8 leading-none tracking-tight"
+              style={{
+                fontSize: 'clamp(3rem, 8vw, 7rem)',
+                fontWeight: 700,
+                color: '#FFFFFF',
+                lineHeight: 0.95
+              }}
+            >
+              Services
+            </h1>
 
-          <p className="text-xl sm:text-2xl md:text-3xl mb-12 md:mb-16 max-w-3xl mx-auto leading-relaxed" style={{
-            color: '#64748B',
-            fontWeight: 300
-          }}>
-            Everything you need to get your business online and growing.
-          </p>
+            <p className="text-xl md:text-2xl mb-12 max-w-2xl" style={{
+              color: '#A0A0A0',
+              lineHeight: 1.5
+            }}>
+              Everything you need to get your business online and growing.
+            </p>
 
-          <a
-            href="https://calendly.com/contact-scriptpilot/30min"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-lg font-medium px-8 py-4 no-underline rounded-lg inline-block"
-            style={{
-              backgroundColor: '#1E293B',
-              color: '#ffffff',
-              transition: 'all 0.2s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#334155';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#1E293B';
-            }}
-          >
-            Get started
-          </a>
+            <a
+              href="https://calendly.com/contact-scriptpilot/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-base font-semibold px-8 py-4 no-underline inline-block"
+              style={{
+                backgroundColor: '#FFFFFF',
+                color: '#0A0A0A',
+                transition: 'all 0.2s ease',
+                border: '2px solid transparent'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent';
+                e.currentTarget.style.color = '#FFFFFF';
+                e.currentTarget.style.borderColor = '#FFFFFF';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#FFFFFF';
+                e.currentTarget.style.color = '#0A0A0A';
+                e.currentTarget.style.borderColor = 'transparent';
+              }}
+            >
+              Get started
+            </a>
+          </div>
         </div>
       </section>
 
-      <section className="px-4 md:px-6 py-20 md:py-32" style={{ backgroundColor: '#ffffff' }}>
+      <section className="px-6 md:px-8 py-24 md:py-32" style={{
+        backgroundColor: '#0A0A0A',
+        borderTop: '1px solid #1A1A1A'
+      }}>
         <div className="max-w-6xl mx-auto">
-          <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal mb-6" style={{ color: '#1E293B' }}>
-              What we build
-            </h2>
-          </div>
-
-          <div className="space-y-6">
+          <div className="space-y-1">
             {[
               {
                 title: "Business website",
-                description: "Clean, professional design that represents your brand and converts visitors into customers. Includes all pages, contact forms, and basic SEO setup.",
+                description: "Professional design built to represent your brand and convert visitors into customers. Includes all essential pages, contact forms, and SEO setup.",
                 price: "$700",
-                features: ["5-10 pages", "Mobile responsive", "Contact forms", "SEO setup", "Fast loading"]
+                features: ["5-10 pages", "Mobile responsive", "Contact forms", "SEO ready", "Fast loading", "Free hosting first month"]
               },
               {
                 title: "E-commerce store",
-                description: "Sell products online with secure payments, inventory management, and order tracking. Everything you need to start selling today.",
+                description: "Complete online store with secure checkout, inventory management, and order tracking. Start selling in weeks.",
                 price: "$700",
-                features: ["Product catalog", "Shopping cart", "Secure checkout", "Order management", "Payment processing"]
+                features: ["Product catalog", "Shopping cart", "Secure payments", "Order management", "Inventory tracking", "Customer accounts"]
               },
               {
                 title: "Demo site",
-                description: "See your site before you commit. We build a working demo based on your requirements so you know exactly what you're getting.",
+                description: "See your site before you commit. We build a working demo based on your requirements. No obligation.",
                 price: "Free",
-                features: ["No commitment", "See before you buy", "Real working demo", "Make changes early", "Risk free"]
+                features: ["No commitment", "See before buying", "Working demo", "Early feedback", "Risk free", "Full preview"]
               },
               {
                 title: "Site audit",
-                description: "Already have a website? We'll review it and provide a detailed report on what's working and what needs improvement.",
-                price: "$150",
-                features: ["Performance review", "SEO analysis", "Design feedback", "Action items", "Priority recommendations"]
+                description: "Detailed analysis of your current website. Get actionable feedback on performance, design, and conversion.",
+                price: "Free",
+                features: ["Performance review", "SEO analysis", "Design feedback", "Priority fixes", "Action plan", "Expert insights"]
               },
               {
                 title: "Monthly maintenance",
-                description: "Keep your site updated, secure, and running smoothly. Includes hosting, security updates, backups, and priority support.",
+                description: "Keep your site secure, updated, and running fast. Includes hosting, backups, and priority support.",
                 price: "$150/mo",
-                features: ["Hosting included", "Security updates", "Regular backups", "Priority support", "Performance monitoring"]
+                features: ["Hosting included", "Security updates", "Daily backups", "Priority support", "Performance monitoring", "Content updates"]
               }
             ].map((service, index) => (
               <div
                 key={index}
-                className="p-8 md:p-10 rounded-lg"
+                className="p-8 md:p-12"
                 style={{
-                  backgroundColor: '#F8FAFC',
+                  backgroundColor: '#0F0F0F',
+                  borderBottom: '1px solid #1A1A1A',
                   transition: 'all 0.2s ease'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#F1F5F9';
+                  e.currentTarget.style.backgroundColor = '#141414';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#F8FAFC';
+                  e.currentTarget.style.backgroundColor = '#0F0F0F';
                 }}
               >
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-6">
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 mb-8">
                   <div className="flex-1">
-                    <h3 className="text-2xl md:text-3xl font-medium mb-3" style={{ color: '#1E293B' }}>
+                    <h3 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: '#FFFFFF' }}>
                       {service.title}
                     </h3>
-                    <p className="text-base md:text-lg mb-4" style={{ color: '#64748B' }}>
+                    <p className="text-base md:text-lg" style={{ color: '#808080', lineHeight: 1.6 }}>
                       {service.description}
                     </p>
                   </div>
-                  <div className="text-3xl md:text-4xl font-normal" style={{ color: '#1E293B' }}>
+                  <div className="text-3xl md:text-4xl font-bold" style={{ color: '#FFFFFF' }}>
                     {service.price}
                   </div>
                 </div>
-                <div className="flex flex-wrap gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                   {service.features.map((feature, idx) => (
-                    <span
+                    <div
                       key={idx}
-                      className="text-sm px-3 py-1 rounded"
+                      className="text-xs px-3 py-2"
                       style={{
-                        backgroundColor: '#ffffff',
-                        color: '#64748B'
+                        backgroundColor: '#0A0A0A',
+                        color: '#606060',
+                        border: '1px solid #1A1A1A'
                       }}
                     >
                       {feature}
-                    </span>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -147,54 +164,65 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => {
         </div>
       </section>
 
-      <section className="px-4 md:px-6 py-20 md:py-32" style={{ backgroundColor: '#1E293B' }}>
+      <section className="px-6 md:px-8 py-24 md:py-32" style={{
+        backgroundColor: '#0A0A0A',
+        borderTop: '1px solid #1A1A1A'
+      }}>
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal mb-6" style={{ color: '#ffffff' }}>
+          <h2 className="text-4xl md:text-6xl font-bold mb-6" style={{ color: '#FFFFFF' }}>
             Free photography
           </h2>
-          <p className="text-lg sm:text-xl md:text-2xl mb-12" style={{ color: '#CBD5E1', fontWeight: 300 }}>
-            Within 50 miles of Springfield, MO? We'll photograph your business at no extra charge.
+          <p className="text-lg md:text-xl mb-12" style={{ color: '#808080' }}>
+            Within 50 miles of Springfield, MO? We photograph your business at no charge.
           </p>
 
-          <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: "Location photos" },
-              { title: "Product shots" },
-              { title: "Team photos" }
+              "Location photos",
+              "Product shots",
+              "Team photos"
             ].map((item, index) => (
-              <div key={index} className="text-center">
-                <h3 className="text-xl md:text-2xl font-medium" style={{ color: '#ffffff' }}>
-                  {item.title}
-                </h3>
+              <div key={index} className="p-6" style={{ backgroundColor: '#0F0F0F', border: '1px solid #1A1A1A' }}>
+                <p className="text-base font-semibold" style={{ color: '#FFFFFF' }}>
+                  {item}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="px-4 md:px-6 py-20 md:py-32" style={{ backgroundColor: '#ffffff' }}>
+      <section className="px-6 md:px-8 py-32 md:py-48" style={{
+        backgroundColor: '#0A0A0A',
+        borderTop: '1px solid #1A1A1A'
+      }}>
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal mb-8" style={{ color: '#1E293B' }}>
-            Ready to start?
+          <h2 className="text-4xl md:text-6xl font-bold mb-12" style={{ color: '#FFFFFF' }}>
+            Start your project
           </h2>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <a
               href="https://calendly.com/contact-scriptpilot/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg font-medium px-8 py-4 no-underline rounded-lg"
+              className="text-base font-semibold px-8 py-4 no-underline"
               style={{
-                backgroundColor: '#1E293B',
-                color: '#ffffff',
+                backgroundColor: '#FFFFFF',
+                color: '#0A0A0A',
                 transition: 'all 0.2s ease',
-                display: 'inline-block'
+                display: 'inline-block',
+                border: '2px solid transparent'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#334155';
+                e.currentTarget.style.backgroundColor = 'transparent';
+                e.currentTarget.style.color = '#FFFFFF';
+                e.currentTarget.style.borderColor = '#FFFFFF';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#1E293B';
+                e.currentTarget.style.backgroundColor = '#FFFFFF';
+                e.currentTarget.style.color = '#0A0A0A';
+                e.currentTarget.style.borderColor = 'transparent';
               }}
             >
               Book a call
@@ -202,30 +230,33 @@ export const Services: React.FC<ServicesProps> = ({ navigateTo }) => {
 
             <a
               href="mailto:contact@scriptpilot.us"
-              className="text-lg font-medium px-8 py-4 no-underline rounded-lg"
+              className="text-base font-semibold px-8 py-4 no-underline"
               style={{
-                backgroundColor: '#F1F5F9',
-                color: '#1E293B',
+                backgroundColor: 'transparent',
+                color: '#A0A0A0',
+                border: '2px solid #2A2A2A',
                 transition: 'all 0.2s ease',
                 display: 'inline-block'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#E2E8F0';
+                e.currentTarget.style.color = '#FFFFFF';
+                e.currentTarget.style.borderColor = '#404040';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#F1F5F9';
+                e.currentTarget.style.color = '#A0A0A0';
+                e.currentTarget.style.borderColor = '#2A2A2A';
               }}
             >
               Send email
             </a>
           </div>
 
-          <div className="space-y-3">
-            <p className="text-lg md:text-xl" style={{ color: '#64748B' }}>
-              <a href="mailto:contact@scriptpilot.us" className="no-underline" style={{ color: '#1E293B' }}>contact@scriptpilot.us</a>
+          <div className="space-y-2">
+            <p className="text-base" style={{ color: '#606060' }}>
+              <a href="mailto:contact@scriptpilot.us" className="no-underline" style={{ color: '#A0A0A0' }}>contact@scriptpilot.us</a>
             </p>
-            <p className="text-lg md:text-xl" style={{ color: '#64748B' }}>
-              <a href="tel:4174010015" className="no-underline" style={{ color: '#1E293B' }}>(417) 401-0015</a>
+            <p className="text-base" style={{ color: '#606060' }}>
+              <a href="tel:4174010015" className="no-underline" style={{ color: '#A0A0A0' }}>(417) 401-0015</a>
             </p>
           </div>
         </div>

@@ -12,137 +12,162 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
   }, []);
 
   return (
-    <div style={{ backgroundColor: '#ffffff' }}>
-      <section className="min-h-screen flex items-center px-4 md:px-6 py-24 md:py-32" style={{
-        backgroundColor: '#ffffff'
+    <div style={{ backgroundColor: '#0A0A0A' }}>
+      <section className="px-6 md:px-8 py-32 md:py-48" style={{
+        backgroundColor: '#0A0A0A',
+        position: 'relative'
       }}>
+        <div className="absolute inset-0" style={{
+          background: 'radial-gradient(circle at 50% 0%, rgba(255,255,255,0.03) 0%, transparent 50%)'
+        }} />
+
         <div
-          className="max-w-5xl mx-auto w-full text-center"
+          className="max-w-6xl mx-auto relative z-10"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-            transition: 'opacity 0.8s ease-out, transform 0.8s ease-out'
+            transition: 'opacity 1s ease-out, transform 1s ease-out'
           }}
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal mb-6 md:mb-8 leading-tight" style={{
-            color: '#1E293B'
-          }}>
-            Websites that bring in customers
-          </h1>
-
-          <p className="text-xl sm:text-2xl md:text-3xl mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed" style={{
-            color: '#64748B',
-            fontWeight: 300
-          }}>
-            A professional website for your business. Fixed price. No surprises. Delivered in weeks, not months.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 md:mb-20">
-            <a
-              href="https://calendly.com/contact-scriptpilot/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-lg font-medium px-8 py-4 no-underline rounded-lg"
+          <div className="max-w-4xl">
+            <h1
+              className="mb-8 leading-none tracking-tight"
               style={{
-                backgroundColor: '#1E293B',
-                color: '#ffffff',
-                transition: 'all 0.2s ease',
-                display: 'inline-block'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#334155';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#1E293B';
+                fontSize: 'clamp(3rem, 8vw, 7rem)',
+                fontWeight: 700,
+                color: '#FFFFFF',
+                lineHeight: 0.95
               }}
             >
-              Get started
-            </a>
+              Websites that<br />bring customers
+            </h1>
 
-            <a
-              href="#pricing"
-              className="text-lg font-medium px-8 py-4 no-underline rounded-lg"
-              style={{
-                backgroundColor: '#F1F5F9',
-                color: '#1E293B',
-                transition: 'all 0.2s ease',
-                display: 'inline-block'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#E2E8F0';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#F1F5F9';
-              }}
-            >
-              See pricing
-            </a>
-          </div>
+            <div className="mb-12 max-w-2xl">
+              <p className="text-xl md:text-2xl mb-2" style={{
+                color: '#A0A0A0',
+                lineHeight: 1.5
+              }}>
+                Fixed price. No surprises.
+              </p>
+              <p className="text-xl md:text-2xl" style={{
+                color: '#A0A0A0',
+                lineHeight: 1.5
+              }}>
+                Delivered in weeks, not months.
+              </p>
+            </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            {[
-              { value: "200+", label: "Sites built" },
-              { value: "$700", label: "Fixed price" },
-              { value: "1-4 weeks", label: "Timeline" },
-              { value: "99%", label: "Client retention" }
-            ].map((stat, index) => (
-              <div key={index}>
-                <div className="text-3xl sm:text-4xl font-normal mb-2" style={{ color: '#1E293B' }}>
-                  {stat.value}
+            <div className="flex flex-col sm:flex-row gap-4 mb-20">
+              <a
+                href="https://calendly.com/contact-scriptpilot/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-base font-semibold px-8 py-4 no-underline text-center"
+                style={{
+                  backgroundColor: '#FFFFFF',
+                  color: '#0A0A0A',
+                  transition: 'all 0.2s ease',
+                  display: 'inline-block',
+                  border: '2px solid transparent'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'transparent';
+                  e.currentTarget.style.color = '#FFFFFF';
+                  e.currentTarget.style.borderColor = '#FFFFFF';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#FFFFFF';
+                  e.currentTarget.style.color = '#0A0A0A';
+                  e.currentTarget.style.borderColor = 'transparent';
+                }}
+              >
+                Get started
+              </a>
+
+              <a
+                href="mailto:contact@scriptpilot.us"
+                className="text-base font-semibold px-8 py-4 no-underline text-center"
+                style={{
+                  backgroundColor: 'transparent',
+                  color: '#A0A0A0',
+                  border: '2px solid #2A2A2A',
+                  transition: 'all 0.2s ease',
+                  display: 'inline-block'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = '#FFFFFF';
+                  e.currentTarget.style.borderColor = '#404040';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = '#A0A0A0';
+                  e.currentTarget.style.borderColor = '#2A2A2A';
+                }}
+              >
+                Send email
+              </a>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {[
+                { value: "200+", label: "Sites built" },
+                { value: "$700", label: "Fixed price" },
+                { value: "1-4 weeks", label: "Timeline" },
+                { value: "99%", label: "Client retention" }
+              ].map((stat, index) => (
+                <div key={index}>
+                  <div className="text-3xl md:text-4xl font-bold mb-1" style={{ color: '#FFFFFF' }}>
+                    {stat.value}
+                  </div>
+                  <div className="text-sm" style={{ color: '#606060' }}>
+                    {stat.label}
+                  </div>
                 </div>
-                <div className="text-sm sm:text-base" style={{ color: '#64748B' }}>
-                  {stat.label}
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="px-4 md:px-6 py-20 md:py-32" style={{ backgroundColor: '#F8FAFC' }}>
+      <section className="px-6 md:px-8 py-24 md:py-32" style={{
+        backgroundColor: '#0A0A0A',
+        borderTop: '1px solid #1A1A1A'
+      }}>
         <div className="max-w-6xl mx-auto">
-          <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal mb-6" style={{ color: '#1E293B' }}>
-              Your website pays for itself
+          <div className="mb-20">
+            <h2 className="text-4xl md:text-6xl font-bold mb-4" style={{ color: '#FFFFFF' }}>
+              One customer pays for it
             </h2>
-            <p className="text-lg sm:text-xl md:text-2xl" style={{ color: '#64748B', fontWeight: 300 }}>
-              One new customer covers the cost. Every customer after that is profit.
+            <p className="text-xl" style={{ color: '#606060' }}>
+              Every customer after that is pure profit.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+          <div className="grid md:grid-cols-3 gap-12 md:gap-16">
             {[
               {
+                num: "01",
                 title: "Build trust",
-                description: "Customers check you out online before buying. A professional site makes you credible."
+                description: "Customers research you before buying. A professional site makes you credible."
               },
               {
+                num: "02",
                 title: "Get found",
-                description: "Show up when people search for what you do. Get calls and inquiries from your area."
+                description: "Show up when people search. Get calls and inquiries from your area."
               },
               {
+                num: "03",
                 title: "Work 24/7",
-                description: "Your website answers questions and brings in leads while you sleep. No extra effort required."
+                description: "Your site answers questions and brings in leads while you sleep."
               }
             ].map((item, index) => (
-              <div
-                key={index}
-                className="p-8 rounded-lg"
-                style={{
-                  backgroundColor: '#ffffff',
-                  transition: 'transform 0.2s ease'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-4px)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                }}
-              >
-                <h3 className="text-xl md:text-2xl font-medium mb-4" style={{ color: '#1E293B' }}>
+              <div key={index}>
+                <div className="text-sm font-bold mb-4" style={{ color: '#404040' }}>
+                  {item.num}
+                </div>
+                <h3 className="text-2xl font-bold mb-3" style={{ color: '#FFFFFF' }}>
                   {item.title}
                 </h3>
-                <p className="text-base md:text-lg" style={{ color: '#64748B' }}>
+                <p className="text-base" style={{ color: '#808080', lineHeight: 1.6 }}>
                   {item.description}
                 </p>
               </div>
@@ -151,69 +176,72 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
         </div>
       </section>
 
-      <section className="px-4 md:px-6 py-20 md:py-32" style={{ backgroundColor: '#ffffff' }}>
+      <section className="px-6 md:px-8 py-24 md:py-32" style={{
+        backgroundColor: '#0A0A0A',
+        borderTop: '1px solid #1A1A1A'
+      }}>
         <div className="max-w-6xl mx-auto">
-          <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal mb-6" style={{ color: '#1E293B' }}>
+          <div className="mb-20">
+            <h2 className="text-4xl md:text-6xl font-bold" style={{ color: '#FFFFFF' }}>
               What you get
             </h2>
-            <p className="text-lg sm:text-xl md:text-2xl" style={{ color: '#64748B', fontWeight: 300 }}>
-              Everything your business needs to succeed online.
-            </p>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-1">
             {[
               {
                 title: "Business website",
-                description: "Clean, professional design that represents your brand and converts visitors into customers.",
+                description: "Professional design that represents your brand and converts visitors into customers.",
                 price: "$700"
               },
               {
                 title: "E-commerce store",
-                description: "Sell products online with secure payments, inventory management, and order tracking.",
+                description: "Sell products online with secure payments and inventory management.",
                 price: "$700"
               },
               {
                 title: "Demo site",
-                description: "See your site before you commit. We build a working demo so you know exactly what you're getting.",
+                description: "See your site before you commit. No risk, no obligation.",
                 price: "Free"
               },
               {
                 title: "Site audit",
-                description: "Already have a website? We'll review it and tell you what's working and what needs to improve.",
-                price: "$150"
+                description: "Get detailed feedback on your current website. What works, what needs fixing.",
+                price: "Free"
               },
               {
                 title: "Monthly maintenance",
-                description: "Keep your site updated, secure, and fast. Includes hosting, updates, and priority support.",
+                description: "Hosting, updates, security, and support. Keep your site running smoothly.",
                 price: "$150/mo"
               }
             ].map((service, index) => (
               <div
                 key={index}
-                className="p-6 md:p-8 rounded-lg flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+                className="p-8 md:p-10"
                 style={{
-                  backgroundColor: '#F8FAFC',
+                  backgroundColor: '#0F0F0F',
+                  borderBottom: '1px solid #1A1A1A',
                   transition: 'all 0.2s ease'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#F1F5F9';
+                  e.currentTarget.style.backgroundColor = '#141414';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#F8FAFC';
+                  e.currentTarget.style.backgroundColor = '#0F0F0F';
                 }}
               >
-                <div className="flex-1">
-                  <h3 className="text-xl md:text-2xl font-medium mb-2" style={{ color: '#1E293B' }}>
-                    {service.title}
-                  </h3>
-                  <p className="text-base md:text-lg" style={{ color: '#64748B' }}>
-                    {service.description}
-                  </p>
-                </div>
-                <div className="text-2xl md:text-3xl font-normal" style={{ color: '#1E293B' }}>
-                  {service.price}
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+                  <div className="flex-1">
+                    <h3 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: '#FFFFFF' }}>
+                      {service.title}
+                    </h3>
+                    <p className="text-base md:text-lg" style={{ color: '#808080' }}>
+                      {service.description}
+                    </p>
+                  </div>
+                  <div className="text-2xl md:text-3xl font-bold" style={{ color: '#FFFFFF' }}>
+                    {service.price}
+                  </div>
                 </div>
               </div>
             ))}
@@ -221,58 +249,64 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
         </div>
       </section>
 
-      <section id="pricing" className="px-4 md:px-6 py-20 md:py-32" style={{ backgroundColor: '#F8FAFC' }}>
+      <section id="pricing" className="px-6 md:px-8 py-24 md:py-32" style={{
+        backgroundColor: '#0A0A0A',
+        borderTop: '1px solid #1A1A1A'
+      }}>
         <div className="max-w-6xl mx-auto">
-          <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal mb-6" style={{ color: '#1E293B' }}>
+          <div className="mb-20">
+            <h2 className="text-4xl md:text-6xl font-bold mb-4" style={{ color: '#FFFFFF' }}>
               Simple pricing
             </h2>
-            <p className="text-lg sm:text-xl md:text-2xl" style={{ color: '#64748B', fontWeight: 300 }}>
-              Two payments. No hidden fees. No monthly contracts.
+            <p className="text-xl" style={{ color: '#606060' }}>
+              Two payments. $700 total. No hidden fees.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-1 max-w-5xl">
             <div
-              className="p-8 md:p-10 rounded-lg"
+              className="p-10 md:p-12"
               style={{
-                backgroundColor: '#ffffff',
-                border: '1px solid #E2E8F0',
+                backgroundColor: '#0F0F0F',
+                border: '1px solid #1A1A1A',
                 transition: 'all 0.2s ease'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-4px)';
-                e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1)';
+                e.currentTarget.style.borderColor = '#2A2A2A';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = 'none';
+                e.currentTarget.style.borderColor = '#1A1A1A';
               }}
             >
-              <div className="text-sm font-medium mb-4" style={{ color: '#64748B' }}>
+              <div className="text-xs font-bold mb-6 tracking-wider" style={{ color: '#606060' }}>
                 START
               </div>
-              <div className="text-5xl md:text-6xl font-normal mb-4" style={{ color: '#1E293B' }}>
+              <div className="text-6xl md:text-7xl font-bold mb-6" style={{ color: '#FFFFFF' }}>
                 $160
               </div>
-              <p className="text-base md:text-lg mb-8" style={{ color: '#64748B' }}>
-                Strategy and planning phase
+              <p className="text-sm mb-8" style={{ color: '#808080' }}>
+                Strategy and planning
               </p>
               <a
                 href="https://buy.stripe.com/00wcN64V6fP65KTeFh9EI06"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-base font-medium px-6 py-3 no-underline rounded-lg block text-center"
+                className="text-sm font-semibold px-6 py-3 no-underline block text-center"
                 style={{
-                  backgroundColor: '#1E293B',
-                  color: '#ffffff',
-                  transition: 'all 0.2s ease'
+                  backgroundColor: '#FFFFFF',
+                  color: '#0A0A0A',
+                  transition: 'all 0.2s ease',
+                  border: '2px solid transparent'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#334155';
+                  e.currentTarget.style.backgroundColor = 'transparent';
+                  e.currentTarget.style.color = '#FFFFFF';
+                  e.currentTarget.style.borderColor = '#FFFFFF';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#1E293B';
+                  e.currentTarget.style.backgroundColor = '#FFFFFF';
+                  e.currentTarget.style.color = '#0A0A0A';
+                  e.currentTarget.style.borderColor = 'transparent';
                 }}
               >
                 Begin project
@@ -280,45 +314,39 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
             </div>
 
             <div
-              className="p-8 md:p-10 rounded-lg"
+              className="p-10 md:p-12"
               style={{
-                backgroundColor: '#1E293B',
-                border: '2px solid #1E293B',
-                transition: 'all 0.2s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-4px)';
-                e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.2)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = 'none';
+                backgroundColor: '#FFFFFF',
+                border: '2px solid #FFFFFF'
               }}
             >
-              <div className="text-sm font-medium mb-4" style={{ color: '#94A3B8' }}>
+              <div className="text-xs font-bold mb-6 tracking-wider" style={{ color: '#606060' }}>
                 LAUNCH
               </div>
-              <div className="text-5xl md:text-6xl font-normal mb-4" style={{ color: '#ffffff' }}>
+              <div className="text-6xl md:text-7xl font-bold mb-6" style={{ color: '#0A0A0A' }}>
                 $540
               </div>
-              <p className="text-base md:text-lg mb-8" style={{ color: '#CBD5E1' }}>
+              <p className="text-sm mb-8" style={{ color: '#404040' }}>
                 Due when site is complete
               </p>
               <a
                 href="https://buy.stripe.com/7sY6oI3R29qI3CL7cP9EI07"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-base font-medium px-6 py-3 no-underline rounded-lg block text-center"
+                className="text-sm font-semibold px-6 py-3 no-underline block text-center"
                 style={{
-                  backgroundColor: '#ffffff',
-                  color: '#1E293B',
-                  transition: 'all 0.2s ease'
+                  backgroundColor: '#0A0A0A',
+                  color: '#FFFFFF',
+                  transition: 'all 0.2s ease',
+                  border: '2px solid #0A0A0A'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#F1F5F9';
+                  e.currentTarget.style.backgroundColor = 'transparent';
+                  e.currentTarget.style.color = '#0A0A0A';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#ffffff';
+                  e.currentTarget.style.backgroundColor = '#0A0A0A';
+                  e.currentTarget.style.color = '#FFFFFF';
                 }}
               >
                 Pay at launch
@@ -326,115 +354,110 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
             </div>
 
             <div
-              className="p-8 md:p-10 rounded-lg"
+              className="p-10 md:p-12"
               style={{
-                backgroundColor: '#ffffff',
-                border: '1px solid #E2E8F0',
+                backgroundColor: '#0F0F0F',
+                border: '1px solid #1A1A1A',
                 transition: 'all 0.2s ease'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-4px)';
-                e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1)';
+                e.currentTarget.style.borderColor = '#2A2A2A';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = 'none';
+                e.currentTarget.style.borderColor = '#1A1A1A';
               }}
             >
-              <div className="text-sm font-medium mb-4" style={{ color: '#64748B' }}>
+              <div className="text-xs font-bold mb-6 tracking-wider" style={{ color: '#606060' }}>
                 MAINTAIN
               </div>
-              <div className="text-5xl md:text-6xl font-normal mb-4" style={{ color: '#1E293B' }}>
+              <div className="text-6xl md:text-7xl font-bold mb-6" style={{ color: '#FFFFFF' }}>
                 $150
               </div>
-              <p className="text-base md:text-lg mb-8" style={{ color: '#64748B' }}>
-                Optional monthly maintenance
+              <p className="text-sm mb-8" style={{ color: '#808080' }}>
+                Optional monthly plan
               </p>
               <a
                 href="https://buy.stripe.com/7sY5kEcnybyQc9hap19EI08"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-base font-medium px-6 py-3 no-underline rounded-lg block text-center"
+                className="text-sm font-semibold px-6 py-3 no-underline block text-center"
                 style={{
-                  backgroundColor: '#F1F5F9',
-                  color: '#1E293B',
+                  backgroundColor: 'transparent',
+                  color: '#FFFFFF',
+                  border: '2px solid #2A2A2A',
                   transition: 'all 0.2s ease'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#E2E8F0';
+                  e.currentTarget.style.borderColor = '#FFFFFF';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#F1F5F9';
+                  e.currentTarget.style.borderColor = '#2A2A2A';
                 }}
               >
                 Subscribe
               </a>
             </div>
           </div>
-
-          <div className="text-center mt-12">
-            <p className="text-lg md:text-xl" style={{ color: '#64748B' }}>
-              Total: $700 for a complete website. Split into two easy payments.
-            </p>
-          </div>
         </div>
       </section>
 
-      <section className="px-4 md:px-6 py-20 md:py-32" style={{ backgroundColor: '#1E293B' }}>
+      <section className="px-6 md:px-8 py-24 md:py-32" style={{
+        backgroundColor: '#0A0A0A',
+        borderTop: '1px solid #1A1A1A'
+      }}>
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16 md:mb-20">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal mb-6" style={{ color: '#ffffff' }}>
+          <div className="mb-16">
+            <h2 className="text-4xl md:text-6xl font-bold" style={{ color: '#FFFFFF' }}>
               How it works
             </h2>
-            <p className="text-lg sm:text-xl md:text-2xl" style={{ color: '#CBD5E1', fontWeight: 300 }}>
-              Simple process. No confusing steps.
-            </p>
           </div>
 
-          <div className="grid sm:grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
+          <div className="space-y-12">
             {[
-              { num: "1", title: "Call", desc: "Book a free 30 minute call. We'll discuss your business and goals." },
-              { num: "2", title: "Plan", desc: "We create a plan for your site. You review and approve before we start." },
-              { num: "3", title: "Build", desc: "We build your site in 1-4 weeks. You get updates along the way." },
-              { num: "4", title: "Launch", desc: "Your site goes live. We handle all the technical details." }
+              { num: "1", title: "Call", desc: "Book a free 30 minute call. We discuss your business and goals." },
+              { num: "2", title: "Plan", desc: "We create a plan for your site. You approve before we start building." },
+              { num: "3", title: "Build", desc: "We build your site in 1-4 weeks. You get updates as we progress." },
+              { num: "4", title: "Launch", desc: "Your site goes live. We handle all technical details." }
             ].map((step, index) => (
-              <div key={index}>
-                <div className="text-5xl font-normal mb-6" style={{ color: '#64748B' }}>
+              <div key={index} className="flex gap-8 items-start">
+                <div className="text-5xl font-bold" style={{ color: '#1A1A1A' }}>
                   {step.num}
                 </div>
-                <h3 className="text-xl md:text-2xl font-medium mb-3" style={{ color: '#ffffff' }}>
-                  {step.title}
-                </h3>
-                <p className="text-base md:text-lg" style={{ color: '#CBD5E1' }}>
-                  {step.desc}
-                </p>
+                <div className="flex-1 pt-2">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: '#FFFFFF' }}>
+                    {step.title}
+                  </h3>
+                  <p className="text-base md:text-lg" style={{ color: '#808080' }}>
+                    {step.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="px-4 md:px-6 py-20 md:py-32" style={{ backgroundColor: '#ffffff' }}>
+      <section className="px-6 md:px-8 py-24 md:py-32" style={{
+        backgroundColor: '#0A0A0A',
+        borderTop: '1px solid #1A1A1A'
+      }}>
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal mb-6" style={{ color: '#1E293B' }}>
-            Free photography included
+          <h2 className="text-4xl md:text-6xl font-bold mb-6" style={{ color: '#FFFFFF' }}>
+            Free photography
           </h2>
-          <p className="text-lg sm:text-xl md:text-2xl mb-12" style={{ color: '#64748B', fontWeight: 300 }}>
-            Within 50 miles of Springfield, MO? We'll photograph your business at no extra charge. Save $500+ on professional photos.
+          <p className="text-lg md:text-xl mb-12" style={{ color: '#808080' }}>
+            Within 50 miles of Springfield, MO? We photograph your business at no charge.
           </p>
 
-          <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-8 text-left">
+          <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: "Location photos", desc: "Storefront, interior, and workspace" },
-              { title: "Product shots", desc: "High quality images of what you sell" },
-              { title: "Team photos", desc: "Professional headshots of your people" }
+              "Location photos",
+              "Product shots",
+              "Team photos"
             ].map((item, index) => (
-              <div key={index} className="p-6 rounded-lg" style={{ backgroundColor: '#F8FAFC' }}>
-                <h3 className="text-lg md:text-xl font-medium mb-2" style={{ color: '#1E293B' }}>
-                  {item.title}
-                </h3>
-                <p className="text-base" style={{ color: '#64748B' }}>
-                  {item.desc}
+              <div key={index} className="p-6" style={{ backgroundColor: '#0F0F0F', border: '1px solid #1A1A1A' }}>
+                <p className="text-base font-semibold" style={{ color: '#FFFFFF' }}>
+                  {item}
                 </p>
               </div>
             ))}
@@ -442,29 +465,37 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
         </div>
       </section>
 
-      <section className="px-4 md:px-6 py-20 md:py-32" style={{ backgroundColor: '#F8FAFC' }}>
+      <section className="px-6 md:px-8 py-32 md:py-48" style={{
+        backgroundColor: '#0A0A0A',
+        borderTop: '1px solid #1A1A1A'
+      }}>
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal mb-8" style={{ color: '#1E293B' }}>
-            Ready to get started?
+          <h2 className="text-4xl md:text-6xl font-bold mb-12" style={{ color: '#FFFFFF' }}>
+            Start your project
           </h2>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <a
               href="https://calendly.com/contact-scriptpilot/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg font-medium px-8 py-4 no-underline rounded-lg"
+              className="text-base font-semibold px-8 py-4 no-underline"
               style={{
-                backgroundColor: '#1E293B',
-                color: '#ffffff',
+                backgroundColor: '#FFFFFF',
+                color: '#0A0A0A',
                 transition: 'all 0.2s ease',
-                display: 'inline-block'
+                display: 'inline-block',
+                border: '2px solid transparent'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#334155';
+                e.currentTarget.style.backgroundColor = 'transparent';
+                e.currentTarget.style.color = '#FFFFFF';
+                e.currentTarget.style.borderColor = '#FFFFFF';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#1E293B';
+                e.currentTarget.style.backgroundColor = '#FFFFFF';
+                e.currentTarget.style.color = '#0A0A0A';
+                e.currentTarget.style.borderColor = 'transparent';
               }}
             >
               Book a call
@@ -472,31 +503,33 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
 
             <a
               href="mailto:contact@scriptpilot.us"
-              className="text-lg font-medium px-8 py-4 no-underline rounded-lg"
+              className="text-base font-semibold px-8 py-4 no-underline"
               style={{
-                backgroundColor: '#ffffff',
-                color: '#1E293B',
-                border: '1px solid #E2E8F0',
+                backgroundColor: 'transparent',
+                color: '#A0A0A0',
+                border: '2px solid #2A2A2A',
                 transition: 'all 0.2s ease',
                 display: 'inline-block'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#F8FAFC';
+                e.currentTarget.style.color = '#FFFFFF';
+                e.currentTarget.style.borderColor = '#404040';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#ffffff';
+                e.currentTarget.style.color = '#A0A0A0';
+                e.currentTarget.style.borderColor = '#2A2A2A';
               }}
             >
               Send email
             </a>
           </div>
 
-          <div className="space-y-3">
-            <p className="text-lg md:text-xl" style={{ color: '#64748B' }}>
-              <a href="mailto:contact@scriptpilot.us" className="no-underline" style={{ color: '#1E293B' }}>contact@scriptpilot.us</a>
+          <div className="space-y-2">
+            <p className="text-base" style={{ color: '#606060' }}>
+              <a href="mailto:contact@scriptpilot.us" className="no-underline" style={{ color: '#A0A0A0' }}>contact@scriptpilot.us</a>
             </p>
-            <p className="text-lg md:text-xl" style={{ color: '#64748B' }}>
-              <a href="tel:4174010015" className="no-underline" style={{ color: '#1E293B' }}>(417) 401-0015</a>
+            <p className="text-base" style={{ color: '#606060' }}>
+              <a href="tel:4174010015" className="no-underline" style={{ color: '#A0A0A0' }}>(417) 401-0015</a>
             </p>
           </div>
         </div>

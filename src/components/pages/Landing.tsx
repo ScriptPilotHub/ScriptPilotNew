@@ -122,7 +122,7 @@ export const Landing: React.FC<LandingProps> = ({ onGetStarted }) => {
                 1. Create Your Script
               </h3>
               <p style={{ color: '#808080' }}>
-                Build message templates with {{placeholders}} for names, dates, or any custom info you need
+                Build message templates with {'{{placeholders}}'} for names, dates, or any custom info you need
               </p>
             </div>
             <div className="p-8 text-center" style={{ backgroundColor: '#1A1A1A', borderRadius: '12px' }}>

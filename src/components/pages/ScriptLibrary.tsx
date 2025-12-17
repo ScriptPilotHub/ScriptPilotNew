@@ -81,10 +81,12 @@ export const ScriptLibrary: React.FC<ScriptLibraryProps> = ({ onNavigate }) => {
     }
 
     let finalText = script.message_body;
-    if (script.variables && script.variables.length > 0) {
+    if (script.variables && Array.isArray(script.variables) && script.variables.length > 0) {
       script.variables.forEach(variable => {
-        const value = variable.placeholder || `{{${variable.name}}}`;
-        finalText = finalText.replace(new RegExp(`{{${variable.name}}}`, 'g'), value);
+        if (variable && variable.name) {
+          const value = variable.placeholder || `{{${variable.name}}}`;
+          finalText = finalText.replace(new RegExp(`{{${variable.name}}}`, 'g'), value);
+        }
       });
     }
 

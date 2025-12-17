@@ -212,10 +212,47 @@ export const ScriptBuilder: React.FC<ScriptBuilderProps> = ({ onNavigate }) => {
             </div>
           )}
 
-          <div className="mb-6 p-4" style={{ backgroundColor: '#1A1A1A', borderRadius: '8px', border: '1px solid #333' }}>
-            <p className="text-sm" style={{ color: '#808080' }}>
-              <strong style={{ color: '#FFFFFF' }}>How it works:</strong> Create your message template below and use <code style={{ backgroundColor: '#0A0A0A', padding: '2px 6px', borderRadius: '4px', color: '#10B981' }}>{'{{variableName}}'}</code> for dynamic content. Running a script costs 1 credit and copies it to your clipboard. Saving is free!
-            </p>
+          <div className="mb-6 p-6 space-y-4" style={{ backgroundColor: '#1A1A1A', borderRadius: '12px', border: '1px solid #333' }}>
+            <div>
+              <h3 className="text-lg font-bold mb-2" style={{ color: '#FFFFFF' }}>
+                How to Create a Script
+              </h3>
+              <p className="text-sm mb-3" style={{ color: '#808080', lineHeight: '1.6' }}>
+                Scripts are reusable message templates that save you time. Create them once, use them forever.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-4">
+              <div className="p-4" style={{ backgroundColor: '#0A0A0A', borderRadius: '8px' }}>
+                <div className="text-2xl mb-2">1️⃣</div>
+                <h4 className="font-semibold mb-1" style={{ color: '#FFFFFF', fontSize: '14px' }}>Write Your Message</h4>
+                <p style={{ color: '#808080', fontSize: '13px' }}>
+                  Type the message you want to reuse in the Message Body field below.
+                </p>
+              </div>
+
+              <div className="p-4" style={{ backgroundColor: '#0A0A0A', borderRadius: '8px' }}>
+                <div className="text-2xl mb-2">2️⃣</div>
+                <h4 className="font-semibold mb-1" style={{ color: '#FFFFFF', fontSize: '14px' }}>Add Variables (Optional)</h4>
+                <p style={{ color: '#808080', fontSize: '13px' }}>
+                  Use <code style={{ color: '#10B981', fontSize: '12px' }}>{'{{name}}'}</code> for parts that change, like customer names or dates.
+                </p>
+              </div>
+
+              <div className="p-4" style={{ backgroundColor: '#0A0A0A', borderRadius: '8px' }}>
+                <div className="text-2xl mb-2">3️⃣</div>
+                <h4 className="font-semibold mb-1" style={{ color: '#FFFFFF', fontSize: '14px' }}>Save & Run</h4>
+                <p style={{ color: '#808080', fontSize: '13px' }}>
+                  Saving is <strong style={{ color: '#10B981' }}>FREE</strong>. Running costs 1 credit and copies to clipboard.
+                </p>
+              </div>
+            </div>
+
+            <div className="pt-3" style={{ borderTop: '1px solid #333' }}>
+              <p className="text-xs" style={{ color: '#808080' }}>
+                <strong style={{ color: '#FFFFFF' }}>Example:</strong> "Hi <code style={{ color: '#10B981' }}>{'{{name}}'}</code>, your order <code style={{ color: '#10B981' }}>{'{{orderNumber}}'}</code> ships on <code style={{ color: '#10B981' }}>{'{{date}}'}</code>"
+              </p>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -303,16 +340,25 @@ export const ScriptBuilder: React.FC<ScriptBuilderProps> = ({ onNavigate }) => {
 
             <div>
               <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-4" style={{ color: '#FFFFFF' }}>
+                <h3 className="text-lg font-semibold mb-2" style={{ color: '#FFFFFF' }}>
                   Variables
                 </h3>
+                <div className="mb-4 p-3" style={{ backgroundColor: '#0F1A2A', borderRadius: '8px', border: '1px solid #2563EB' }}>
+                  <p className="text-xs mb-2" style={{ color: '#93C5FD', lineHeight: '1.5' }}>
+                    <strong style={{ color: '#FFFFFF' }}>What are variables?</strong><br />
+                    Variables are placeholders for information that changes each time you use the script.
+                  </p>
+                  <p className="text-xs" style={{ color: '#93C5FD', lineHeight: '1.5' }}>
+                    <strong style={{ color: '#FFFFFF' }}>Example:</strong> Instead of writing "Hi John" every time, use "Hi <code style={{ color: '#10B981' }}>{'{{name}}'}</code>" and the script will fill in different names.
+                  </p>
+                </div>
                 <div className="p-4 mb-4" style={{ backgroundColor: '#1A1A1A', borderRadius: '8px' }}>
                   <div className="grid grid-cols-2 gap-3 mb-3">
                     <input
                       type="text"
                       value={newVarName}
                       onChange={(e) => setNewVarName(e.target.value)}
-                      placeholder="Variable name"
+                      placeholder="e.g., name, date, price"
                       className="px-3 py-2 outline-none text-sm"
                       style={{
                         backgroundColor: '#0F0F0F',
@@ -325,7 +371,7 @@ export const ScriptBuilder: React.FC<ScriptBuilderProps> = ({ onNavigate }) => {
                       type="text"
                       value={newVarPlaceholder}
                       onChange={(e) => setNewVarPlaceholder(e.target.value)}
-                      placeholder="Placeholder (optional)"
+                      placeholder="Default value (optional)"
                       className="px-3 py-2 outline-none text-sm"
                       style={{
                         backgroundColor: '#0F0F0F',

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Logo } from '../ui/Logo';
+import { Menu, X } from 'lucide-react';
 
 interface HeaderProps {
   currentPage: string;
@@ -7,6 +8,8 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const navItems = [
     { name: 'Home', path: 'home' },
     { name: 'Services', path: 'services' },
@@ -14,6 +17,11 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
     { name: 'Contact', path: 'contact' },
     { name: 'Portal', path: 'payment-portal' }
   ];
+
+  const handleNavClick = (path: string) => {
+    navigateTo(path);
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <header
@@ -26,7 +34,10 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <button
-          onClick={() => navigateTo('home')}
+          onClick={() => {
+            navigateTo('home');
+            setIsMobileMenuOpen(false);
+          }}
           className="flex items-center"
           style={{
             background: 'none',
@@ -117,29 +128,44 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
           >
             Start
           </a>
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="p-2"
+            style={{
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              color: '#FFFFFF'
+            }}
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </div>
 
-      <nav className="md:hidden mt-6 pt-6" style={{ borderTop: '1px solid #1A1A1A' }}>
-        <div className="flex flex-col gap-4">
-          {navItems.map((item) => (
-            <button
-              key={item.path}
-              onClick={() => navigateTo(item.path)}
-              className="text-left text-base font-semibold transition-colors"
-              style={{
-                background: 'none',
-                border: 'none',
-                cursor: 'pointer',
-                color: currentPage === item.path ? '#FFFFFF' : '#808080',
-                padding: 0
-              }}
-            >
-              {item.name}
-            </button>
-          ))}
-        </div>
-      </nav>
+      {isMobileMenuOpen && (
+        <nav className="md:hidden mt-6 pt-6" style={{ borderTop: '1px solid #1A1A1A' }}>
+          <div className="flex flex-col gap-4">
+            {navItems.map((item) => (
+              <button
+                key={item.path}
+                onClick={() => handleNavClick(item.path)}
+                className="text-left text-base font-semibold transition-colors"
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  color: currentPage === item.path ? '#FFFFFF' : '#808080',
+                  padding: 0
+                }}
+              >
+                {item.name}
+              </button>
+            ))}
+          </div>
+        </nav>
+      )}
     </header>
   );
 };

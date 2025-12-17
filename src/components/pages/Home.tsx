@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
 interface HomeProps {
-  navigateTo: (page: string) => void;
+  onNavigate: (page: string) => void;
 }
 
-export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
+export const Home: React.FC<HomeProps> = ({ onNavigate }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {

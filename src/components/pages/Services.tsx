@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
 interface ServicesProps {
-  navigateTo: (page: string) => void;
+  onNavigate: (page: string) => void;
 }
 
-export const Services: React.FC<ServicesProps> = ({ navigateTo }) => {
+export const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {

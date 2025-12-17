@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
 interface ContactProps {
-  navigateTo: (page: string) => void;
+  onNavigate: (page: string) => void;
 }
 
-export const Contact: React.FC<ContactProps> = ({ navigateTo }) => {
+export const Contact: React.FC<ContactProps> = ({ onNavigate }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {

@@ -156,20 +156,26 @@ export const ScriptBuilder: React.FC<ScriptBuilderProps> = ({ onNavigate }) => {
               <Eye size={18} />
               Preview
             </button>
+            <div className="flex items-center gap-2 px-3 py-1.5" style={{ backgroundColor: '#1A1A1A', borderRadius: '6px' }}>
+              <span className="text-sm" style={{ color: '#808080' }}>Credits:</span>
+              <span className="text-sm font-bold" style={{ color: '#FFFFFF' }}>
+                {credits?.credits_remaining || 0}
+              </span>
+            </div>
             <button
               onClick={handleRun}
-              disabled={!messageBody.trim()}
-              className="flex items-center gap-2 px-4 py-2 font-medium transition-colors"
+              disabled={!messageBody.trim() || (credits?.credits_remaining || 0) < 1}
+              className="flex items-center gap-2 px-4 py-2 font-semibold transition-colors"
               style={{
-                backgroundColor: '#2196F3',
+                backgroundColor: '#10B981',
                 color: '#FFFFFF',
                 border: 'none',
                 borderRadius: '8px',
-                opacity: !messageBody.trim() ? 0.5 : 1
+                opacity: (!messageBody.trim() || (credits?.credits_remaining || 0) < 1) ? 0.5 : 1
               }}
             >
               <Play size={18} />
-              Run (1 credit)
+              Run Script (1 credit)
             </button>
             <button
               onClick={handleSave}
@@ -193,16 +199,24 @@ export const ScriptBuilder: React.FC<ScriptBuilderProps> = ({ onNavigate }) => {
       <main className="px-6 md:px-8 py-12">
         <div className="max-w-7xl mx-auto">
           {error && (
-            <div className="mb-6 p-4" style={{ backgroundColor: '#FF4444', borderRadius: '8px' }}>
-              <p style={{ color: '#FFFFFF' }}>{error}</p>
+            <div className="mb-6 p-4 flex items-start gap-3" style={{ backgroundColor: '#FEE2E2', border: '1px solid #EF4444', borderRadius: '8px' }}>
+              <span style={{ color: '#991B1B', fontSize: '20px' }}>⚠️</span>
+              <p style={{ color: '#991B1B', flex: 1 }}>{error}</p>
             </div>
           )}
 
           {success && (
-            <div className="mb-6 p-4" style={{ backgroundColor: '#4CAF50', borderRadius: '8px' }}>
-              <p style={{ color: '#FFFFFF' }}>{success}</p>
+            <div className="mb-6 p-4 flex items-start gap-3" style={{ backgroundColor: '#D1FAE5', border: '1px solid #10B981', borderRadius: '8px' }}>
+              <span style={{ color: '#065F46', fontSize: '20px' }}>✓</span>
+              <p style={{ color: '#065F46', flex: 1 }}>{success}</p>
             </div>
           )}
+
+          <div className="mb-6 p-4" style={{ backgroundColor: '#1A1A1A', borderRadius: '8px', border: '1px solid #333' }}>
+            <p className="text-sm" style={{ color: '#808080' }}>
+              <strong style={{ color: '#FFFFFF' }}>How it works:</strong> Create your message template below and use <code style={{ backgroundColor: '#0A0A0A', padding: '2px 6px', borderRadius: '4px', color: '#10B981' }}>{'{{variableName}}'}</code> for dynamic content. Running a script costs 1 credit and copies it to your clipboard. Saving is free!
+            </p>
+          </div>
 
           <div className="grid md:grid-cols-2 gap-8">
             <div>

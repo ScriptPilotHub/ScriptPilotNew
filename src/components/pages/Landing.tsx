@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap, Code, Copy, Download, Users, TrendingUp, Check } from 'lucide-react';
+import { Zap, Code, Copy, TrendingUp, Check, Sparkles } from 'lucide-react';
 
 interface LandingProps {
   onGetStarted: () => void;
@@ -8,64 +8,51 @@ interface LandingProps {
 export const Landing: React.FC<LandingProps> = ({ onGetStarted }) => {
   const pricingTiers = [
     {
-      name: 'Free',
-      price: '$0',
-      period: 'forever',
-      features: [
-        'Create up to 3 scripts',
-        'Basic variables',
-        '0 monthly credits',
-        'Personal use only'
-      ],
-      cta: 'Get Started',
-      link: null,
-      highlighted: false
-    },
-    {
       name: 'Starter',
-      price: '$25',
-      period: 'per month',
+      price: '$29',
+      period: 'month',
       features: [
         'Unlimited scripts',
-        'Advanced variables',
-        '100 monthly credits',
-        'Export & copy features',
+        '100 credits per month',
+        'Dynamic variables',
+        'Copy to clipboard',
+        'Script library',
         'Email support'
       ],
-      cta: 'Start Free Trial',
-      link: 'https://buy.stripe.com/test_starter',
+      cta: 'Get Started',
+      link: 'https://buy.stripe.com/aFa6oIcnyeL28X59kX9EI0a',
       highlighted: false
     },
     {
       name: 'Pro',
       price: '$79',
-      period: 'per month',
+      period: 'month',
       features: [
         'Everything in Starter',
-        '500 monthly credits',
+        '500 credits per month',
         'Priority support',
-        'API access',
         'Advanced analytics',
-        'Custom integrations'
+        'Export to file',
+        'Custom categories'
       ],
-      cta: 'Start Free Trial',
-      link: 'https://buy.stripe.com/test_pro',
+      cta: 'Get Started',
+      link: 'https://buy.stripe.com/bJe9AU5ZagTaflt2Wz9EI0b',
       highlighted: true
     },
     {
-      name: 'Teams',
-      price: '$299',
-      period: 'per month',
+      name: 'Agency',
+      price: '$199',
+      period: 'month',
       features: [
         'Everything in Pro',
-        '2000 shared credits',
+        '2000 credits per month',
         'Team collaboration',
-        'Revenue tracking',
         'Dedicated support',
-        'Custom onboarding'
+        'API access',
+        'White-label options'
       ],
-      cta: 'Contact Sales',
-      link: 'https://buy.stripe.com/test_teams',
+      cta: 'Get Started',
+      link: 'https://buy.stripe.com/6oU5kEfzK7iAgpxdBd9EI0c',
       highlighted: false
     }
   ];
@@ -99,56 +86,65 @@ export const Landing: React.FC<LandingProps> = ({ onGetStarted }) => {
       <section className="px-6 md:px-8 py-20 md:py-32">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6" style={{ color: '#FFFFFF' }}>
-            Build, Reuse, and Send Scripts in Seconds
+            Stop Rewriting. Start Automating.
           </h1>
           <p className="text-xl md:text-2xl mb-12" style={{ color: '#808080' }}>
-            ScripPilot makes repetitive messages effortless for anyone
+            Create reusable message templates with smart variables. Save hours every week.
           </p>
           <button
             onClick={onGetStarted}
-            className="px-8 py-4 text-lg font-semibold transition-colors"
+            className="px-8 py-4 text-lg font-semibold transition-all hover:scale-105"
             style={{
               backgroundColor: '#FFFFFF',
               color: '#0A0A0A',
               borderRadius: '8px'
             }}
           >
-            Get Started Free
+            Get Started Now
           </button>
         </div>
       </section>
 
       <section className="px-6 md:px-8 py-20" style={{ backgroundColor: '#0F0F0F' }}>
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16" style={{ color: '#FFFFFF' }}>
-            Everything you need
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4" style={{ color: '#FFFFFF' }}>
+            How It Works
           </h2>
+          <p className="text-center mb-16 text-lg" style={{ color: '#808080' }}>
+            Three simple steps to never write the same message twice
+          </p>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-8" style={{ backgroundColor: '#1A1A1A', borderRadius: '12px' }}>
-              <Zap size={40} style={{ color: '#FFFFFF', marginBottom: '16px' }} />
+            <div className="p-8 text-center" style={{ backgroundColor: '#1A1A1A', borderRadius: '12px' }}>
+              <div className="inline-flex items-center justify-center w-16 h-16 mb-4" style={{ backgroundColor: '#0A0A0A', borderRadius: '50%' }}>
+                <Zap size={32} style={{ color: '#FFFFFF' }} />
+              </div>
               <h3 className="text-xl font-bold mb-3" style={{ color: '#FFFFFF' }}>
-                Script Creation
+                1. Create Your Script
               </h3>
               <p style={{ color: '#808080' }}>
-                Build custom scripts with dynamic variables and reuse them instantly
+                Build message templates with {{placeholders}} for names, dates, or any custom info you need
               </p>
             </div>
-            <div className="p-8" style={{ backgroundColor: '#1A1A1A', borderRadius: '12px' }}>
-              <Copy size={40} style={{ color: '#FFFFFF', marginBottom: '16px' }} />
+            <div className="p-8 text-center" style={{ backgroundColor: '#1A1A1A', borderRadius: '12px' }}>
+              <div className="inline-flex items-center justify-center w-16 h-16 mb-4" style={{ backgroundColor: '#0A0A0A', borderRadius: '50%' }}>
+                <Sparkles size={32} style={{ color: '#FFFFFF' }} />
+              </div>
               <h3 className="text-xl font-bold mb-3" style={{ color: '#FFFFFF' }}>
-                Run & Copy
+                2. Fill Variables
               </h3>
               <p style={{ color: '#808080' }}>
-                Execute scripts with one click and copy to clipboard or export
+                When you need to send a message, just fill in the blanks and your script is ready to go
               </p>
             </div>
-            <div className="p-8" style={{ backgroundColor: '#1A1A1A', borderRadius: '12px' }}>
-              <TrendingUp size={40} style={{ color: '#FFFFFF', marginBottom: '16px' }} />
+            <div className="p-8 text-center" style={{ backgroundColor: '#1A1A1A', borderRadius: '12px' }}>
+              <div className="inline-flex items-center justify-center w-16 h-16 mb-4" style={{ backgroundColor: '#0A0A0A', borderRadius: '50%' }}>
+                <Copy size={32} style={{ color: '#FFFFFF' }} />
+              </div>
               <h3 className="text-xl font-bold mb-3" style={{ color: '#FFFFFF' }}>
-                Credit Tracking
+                3. Copy & Send
               </h3>
               <p style={{ color: '#808080' }}>
-                Monitor usage and credits with transparent tracking and limits
+                One click copies your personalized message. Paste it anywhere and send
               </p>
             </div>
           </div>
@@ -166,7 +162,7 @@ export const Landing: React.FC<LandingProps> = ({ onGetStarted }) => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {pricingTiers.map((tier) => (
               <div
                 key={tier.name}
@@ -174,29 +170,30 @@ export const Landing: React.FC<LandingProps> = ({ onGetStarted }) => {
                 style={{
                   backgroundColor: tier.highlighted ? '#1A1A1A' : '#0F0F0F',
                   border: tier.highlighted ? '2px solid #FFFFFF' : '1px solid #1A1A1A',
-                  borderRadius: '12px'
+                  borderRadius: '12px',
+                  transform: tier.highlighted ? 'scale(1.05)' : 'scale(1)'
                 }}
               >
                 {tier.highlighted && (
                   <div
-                    className="absolute top-0 right-6 px-3 py-1 text-xs font-semibold"
+                    className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 text-xs font-bold"
                     style={{
                       backgroundColor: '#FFFFFF',
                       color: '#0A0A0A',
-                      borderRadius: '0 0 8px 8px'
+                      borderRadius: '12px'
                     }}
                   >
-                    POPULAR
+                    MOST POPULAR
                   </div>
                 )}
-                <h3 className="text-xl font-bold mb-2" style={{ color: '#FFFFFF' }}>
+                <h3 className="text-2xl font-bold mb-2" style={{ color: '#FFFFFF' }}>
                   {tier.name}
                 </h3>
                 <div className="mb-6">
-                  <span className="text-4xl font-bold" style={{ color: '#FFFFFF' }}>
+                  <span className="text-5xl font-bold" style={{ color: '#FFFFFF' }}>
                     {tier.price}
                   </span>
-                  <span className="text-sm ml-2" style={{ color: '#808080' }}>
+                  <span className="text-lg ml-2" style={{ color: '#808080' }}>
                     /{tier.period}
                   </span>
                 </div>
@@ -209,14 +206,8 @@ export const Landing: React.FC<LandingProps> = ({ onGetStarted }) => {
                   ))}
                 </ul>
                 <button
-                  onClick={() => {
-                    if (tier.link) {
-                      window.open(tier.link, '_blank');
-                    } else {
-                      onGetStarted();
-                    }
-                  }}
-                  className="w-full py-3 font-semibold transition-colors"
+                  onClick={() => window.open(tier.link, '_blank')}
+                  className="w-full py-3 font-semibold transition-all hover:scale-105"
                   style={{
                     backgroundColor: tier.highlighted ? '#FFFFFF' : '#1A1A1A',
                     color: tier.highlighted ? '#0A0A0A' : '#FFFFFF',
@@ -235,21 +226,21 @@ export const Landing: React.FC<LandingProps> = ({ onGetStarted }) => {
       <section className="px-6 md:px-8 py-20" style={{ backgroundColor: '#0F0F0F' }}>
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ color: '#FFFFFF' }}>
-            Ready to streamline your workflow?
+            Ready to Save Hours Every Week?
           </h2>
           <p className="text-lg mb-8" style={{ color: '#808080' }}>
-            Join thousands of users saving time with ScripPilot
+            Stop copying and pasting. Start using ScripPilot.
           </p>
           <button
             onClick={onGetStarted}
-            className="px-8 py-4 text-lg font-semibold transition-colors"
+            className="px-8 py-4 text-lg font-semibold transition-all hover:scale-105"
             style={{
               backgroundColor: '#FFFFFF',
               color: '#0A0A0A',
               borderRadius: '8px'
             }}
           >
-            Get Started Free
+            Choose Your Plan
           </button>
         </div>
       </section>

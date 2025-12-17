@@ -12,534 +12,495 @@ export const Home: React.FC<HomeProps> = ({ navigateTo }) => {
   }, []);
 
   return (
-    <div style={{ backgroundColor: '#F8FAFC' }}>
-
-      <section className="min-h-screen flex items-center px-4 md:px-6" style={{
-        background: 'linear-gradient(135deg, #F8FAFC 0%, #E5E7EB 100%)'
+    <div style={{ backgroundColor: '#ffffff' }}>
+      <section className="min-h-screen flex items-center px-4 md:px-6 py-24 md:py-32" style={{
+        backgroundColor: '#ffffff'
       }}>
         <div
-          className="max-w-7xl mx-auto w-full py-20 md:py-32"
+          className="max-w-5xl mx-auto w-full text-center"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
             transition: 'opacity 0.8s ease-out, transform 0.8s ease-out'
           }}
         >
-        <div className="max-w-5xl">
-          <div className="text-xs font-light tracking-widest mb-8 md:mb-12 opacity-60" style={{ color: '#475569' }}>
-            SCRIPT PILOT
-          </div>
-
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-extralight tracking-tighter mb-8 md:mb-12 leading-none" style={{
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal mb-6 md:mb-8 leading-tight" style={{
             color: '#1E293B'
           }}>
-            Websites
-            <br />
-            Built Right
+            Websites that bring in customers
           </h1>
 
-          <p className="text-xl sm:text-2xl md:text-3xl font-extralight mb-12 md:mb-20 max-w-2xl leading-tight" style={{
-            color: '#475569'
+          <p className="text-xl sm:text-2xl md:text-3xl mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed" style={{
+            color: '#64748B',
+            fontWeight: 300
           }}>
-            Custom web development for businesses.
-            <br />
-            $160 to start. 1-4 weeks.
+            A professional website for your business. Fixed price. No surprises. Delivered in weeks, not months.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 items-start sm:items-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 md:mb-20">
             <a
               href="https://calendly.com/contact-scriptpilot/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-base md:text-lg font-light px-0 py-3 border-b-2 no-underline group"
+              className="text-lg font-medium px-8 py-4 no-underline rounded-lg"
               style={{
-                color: '#1E293B',
-                borderColor: '#1E293B',
-                transition: 'all 0.3s ease'
+                backgroundColor: '#1E293B',
+                color: '#ffffff',
+                transition: 'all 0.2s ease',
+                display: 'inline-block'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateX(4px)';
-                e.currentTarget.style.opacity = '0.7';
+                e.currentTarget.style.backgroundColor = '#334155';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateX(0)';
-                e.currentTarget.style.opacity = '1';
+                e.currentTarget.style.backgroundColor = '#1E293B';
               }}
             >
-              Book consultation →
+              Get started
+            </a>
+
+            <a
+              href="#pricing"
+              className="text-lg font-medium px-8 py-4 no-underline rounded-lg"
+              style={{
+                backgroundColor: '#F1F5F9',
+                color: '#1E293B',
+                transition: 'all 0.2s ease',
+                display: 'inline-block'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#E2E8F0';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#F1F5F9';
+              }}
+            >
+              See pricing
+            </a>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+            {[
+              { value: "200+", label: "Sites built" },
+              { value: "$700", label: "Fixed price" },
+              { value: "1-4 weeks", label: "Timeline" },
+              { value: "99%", label: "Client retention" }
+            ].map((stat, index) => (
+              <div key={index}>
+                <div className="text-3xl sm:text-4xl font-normal mb-2" style={{ color: '#1E293B' }}>
+                  {stat.value}
+                </div>
+                <div className="text-sm sm:text-base" style={{ color: '#64748B' }}>
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 md:px-6 py-20 md:py-32" style={{ backgroundColor: '#F8FAFC' }}>
+        <div className="max-w-6xl mx-auto">
+          <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal mb-6" style={{ color: '#1E293B' }}>
+              Your website pays for itself
+            </h2>
+            <p className="text-lg sm:text-xl md:text-2xl" style={{ color: '#64748B', fontWeight: 300 }}>
+              One new customer covers the cost. Every customer after that is profit.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            {[
+              {
+                title: "Build trust",
+                description: "Customers check you out online before buying. A professional site makes you credible."
+              },
+              {
+                title: "Get found",
+                description: "Show up when people search for what you do. Get calls and inquiries from your area."
+              },
+              {
+                title: "Work 24/7",
+                description: "Your website answers questions and brings in leads while you sleep. No extra effort required."
+              }
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="p-8 rounded-lg"
+                style={{
+                  backgroundColor: '#ffffff',
+                  transition: 'transform 0.2s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-4px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
+              >
+                <h3 className="text-xl md:text-2xl font-medium mb-4" style={{ color: '#1E293B' }}>
+                  {item.title}
+                </h3>
+                <p className="text-base md:text-lg" style={{ color: '#64748B' }}>
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 md:px-6 py-20 md:py-32" style={{ backgroundColor: '#ffffff' }}>
+        <div className="max-w-6xl mx-auto">
+          <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal mb-6" style={{ color: '#1E293B' }}>
+              What you get
+            </h2>
+            <p className="text-lg sm:text-xl md:text-2xl" style={{ color: '#64748B', fontWeight: 300 }}>
+              Everything your business needs to succeed online.
+            </p>
+          </div>
+
+          <div className="space-y-6">
+            {[
+              {
+                title: "Business website",
+                description: "Clean, professional design that represents your brand and converts visitors into customers.",
+                price: "$700"
+              },
+              {
+                title: "E-commerce store",
+                description: "Sell products online with secure payments, inventory management, and order tracking.",
+                price: "$700"
+              },
+              {
+                title: "Demo site",
+                description: "See your site before you commit. We build a working demo so you know exactly what you're getting.",
+                price: "Free"
+              },
+              {
+                title: "Site audit",
+                description: "Already have a website? We'll review it and tell you what's working and what needs to improve.",
+                price: "$150"
+              },
+              {
+                title: "Monthly maintenance",
+                description: "Keep your site updated, secure, and fast. Includes hosting, updates, and priority support.",
+                price: "$150/mo"
+              }
+            ].map((service, index) => (
+              <div
+                key={index}
+                className="p-6 md:p-8 rounded-lg flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+                style={{
+                  backgroundColor: '#F8FAFC',
+                  transition: 'all 0.2s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#F1F5F9';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#F8FAFC';
+                }}
+              >
+                <div className="flex-1">
+                  <h3 className="text-xl md:text-2xl font-medium mb-2" style={{ color: '#1E293B' }}>
+                    {service.title}
+                  </h3>
+                  <p className="text-base md:text-lg" style={{ color: '#64748B' }}>
+                    {service.description}
+                  </p>
+                </div>
+                <div className="text-2xl md:text-3xl font-normal" style={{ color: '#1E293B' }}>
+                  {service.price}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" className="px-4 md:px-6 py-20 md:py-32" style={{ backgroundColor: '#F8FAFC' }}>
+        <div className="max-w-6xl mx-auto">
+          <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal mb-6" style={{ color: '#1E293B' }}>
+              Simple pricing
+            </h2>
+            <p className="text-lg sm:text-xl md:text-2xl" style={{ color: '#64748B', fontWeight: 300 }}>
+              Two payments. No hidden fees. No monthly contracts.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div
+              className="p-8 md:p-10 rounded-lg"
+              style={{
+                backgroundColor: '#ffffff',
+                border: '1px solid #E2E8F0',
+                transition: 'all 0.2s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
+            >
+              <div className="text-sm font-medium mb-4" style={{ color: '#64748B' }}>
+                START
+              </div>
+              <div className="text-5xl md:text-6xl font-normal mb-4" style={{ color: '#1E293B' }}>
+                $160
+              </div>
+              <p className="text-base md:text-lg mb-8" style={{ color: '#64748B' }}>
+                Strategy and planning phase
+              </p>
+              <a
+                href="https://buy.stripe.com/00wcN64V6fP65KTeFh9EI06"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-base font-medium px-6 py-3 no-underline rounded-lg block text-center"
+                style={{
+                  backgroundColor: '#1E293B',
+                  color: '#ffffff',
+                  transition: 'all 0.2s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#334155';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#1E293B';
+                }}
+              >
+                Begin project
+              </a>
+            </div>
+
+            <div
+              className="p-8 md:p-10 rounded-lg"
+              style={{
+                backgroundColor: '#1E293B',
+                border: '2px solid #1E293B',
+                transition: 'all 0.2s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.2)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
+            >
+              <div className="text-sm font-medium mb-4" style={{ color: '#94A3B8' }}>
+                LAUNCH
+              </div>
+              <div className="text-5xl md:text-6xl font-normal mb-4" style={{ color: '#ffffff' }}>
+                $540
+              </div>
+              <p className="text-base md:text-lg mb-8" style={{ color: '#CBD5E1' }}>
+                Due when site is complete
+              </p>
+              <a
+                href="https://buy.stripe.com/7sY6oI3R29qI3CL7cP9EI07"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-base font-medium px-6 py-3 no-underline rounded-lg block text-center"
+                style={{
+                  backgroundColor: '#ffffff',
+                  color: '#1E293B',
+                  transition: 'all 0.2s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#F1F5F9';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#ffffff';
+                }}
+              >
+                Pay at launch
+              </a>
+            </div>
+
+            <div
+              className="p-8 md:p-10 rounded-lg"
+              style={{
+                backgroundColor: '#ffffff',
+                border: '1px solid #E2E8F0',
+                transition: 'all 0.2s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
+            >
+              <div className="text-sm font-medium mb-4" style={{ color: '#64748B' }}>
+                MAINTAIN
+              </div>
+              <div className="text-5xl md:text-6xl font-normal mb-4" style={{ color: '#1E293B' }}>
+                $150
+              </div>
+              <p className="text-base md:text-lg mb-8" style={{ color: '#64748B' }}>
+                Optional monthly maintenance
+              </p>
+              <a
+                href="https://buy.stripe.com/7sY5kEcnybyQc9hap19EI08"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-base font-medium px-6 py-3 no-underline rounded-lg block text-center"
+                style={{
+                  backgroundColor: '#F1F5F9',
+                  color: '#1E293B',
+                  transition: 'all 0.2s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#E2E8F0';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#F1F5F9';
+                }}
+              >
+                Subscribe
+              </a>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-lg md:text-xl" style={{ color: '#64748B' }}>
+              Total: $700 for a complete website. Split into two easy payments.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 md:px-6 py-20 md:py-32" style={{ backgroundColor: '#1E293B' }}>
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16 md:mb-20">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal mb-6" style={{ color: '#ffffff' }}>
+              How it works
+            </h2>
+            <p className="text-lg sm:text-xl md:text-2xl" style={{ color: '#CBD5E1', fontWeight: 300 }}>
+              Simple process. No confusing steps.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
+            {[
+              { num: "1", title: "Call", desc: "Book a free 30 minute call. We'll discuss your business and goals." },
+              { num: "2", title: "Plan", desc: "We create a plan for your site. You review and approve before we start." },
+              { num: "3", title: "Build", desc: "We build your site in 1-4 weeks. You get updates along the way." },
+              { num: "4", title: "Launch", desc: "Your site goes live. We handle all the technical details." }
+            ].map((step, index) => (
+              <div key={index}>
+                <div className="text-5xl font-normal mb-6" style={{ color: '#64748B' }}>
+                  {step.num}
+                </div>
+                <h3 className="text-xl md:text-2xl font-medium mb-3" style={{ color: '#ffffff' }}>
+                  {step.title}
+                </h3>
+                <p className="text-base md:text-lg" style={{ color: '#CBD5E1' }}>
+                  {step.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 md:px-6 py-20 md:py-32" style={{ backgroundColor: '#ffffff' }}>
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal mb-6" style={{ color: '#1E293B' }}>
+            Free photography included
+          </h2>
+          <p className="text-lg sm:text-xl md:text-2xl mb-12" style={{ color: '#64748B', fontWeight: 300 }}>
+            Within 50 miles of Springfield, MO? We'll photograph your business at no extra charge. Save $500+ on professional photos.
+          </p>
+
+          <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-8 text-left">
+            {[
+              { title: "Location photos", desc: "Storefront, interior, and workspace" },
+              { title: "Product shots", desc: "High quality images of what you sell" },
+              { title: "Team photos", desc: "Professional headshots of your people" }
+            ].map((item, index) => (
+              <div key={index} className="p-6 rounded-lg" style={{ backgroundColor: '#F8FAFC' }}>
+                <h3 className="text-lg md:text-xl font-medium mb-2" style={{ color: '#1E293B' }}>
+                  {item.title}
+                </h3>
+                <p className="text-base" style={{ color: '#64748B' }}>
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 md:px-6 py-20 md:py-32" style={{ backgroundColor: '#F8FAFC' }}>
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal mb-8" style={{ color: '#1E293B' }}>
+            Ready to get started?
+          </h2>
+
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+            <a
+              href="https://calendly.com/contact-scriptpilot/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg font-medium px-8 py-4 no-underline rounded-lg"
+              style={{
+                backgroundColor: '#1E293B',
+                color: '#ffffff',
+                transition: 'all 0.2s ease',
+                display: 'inline-block'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#334155';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#1E293B';
+              }}
+            >
+              Book a call
             </a>
 
             <a
               href="mailto:contact@scriptpilot.us"
-              className="text-base md:text-lg font-light px-0 py-3 no-underline"
+              className="text-lg font-medium px-8 py-4 no-underline rounded-lg"
               style={{
-                color: '#475569',
-                transition: 'all 0.3s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = '#1E293B';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = '#475569';
-              }}
-            >
-              contact@scriptpilot.us
-            </a>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-8 md:gap-x-16 gap-y-8 mt-16 md:mt-32 pt-16 md:pt-32 border-t max-w-4xl" style={{
-          borderColor: '#CBD5E1'
-        }}>
-          {[
-            { value: "200+", label: "Projects" },
-            { value: "99%", label: "Retained" },
-            { value: "1-4wk", label: "Timeline" },
-            { value: "4yr", label: "Est. 2020" }
-          ].map((stat, index) => (
-            <div
-              key={index}
-              style={{
-                transition: 'transform 0.3s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'scale(1.05)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'scale(1)';
-              }}
-            >
-              <div className="text-3xl sm:text-4xl md:text-5xl font-extralight mb-2 md:mb-3" style={{ color: '#1E293B' }}>
-                {stat.value}
-              </div>
-              <div className="text-xs sm:text-sm font-light opacity-60" style={{ color: '#475569' }}>
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <section className="px-4 md:px-6 py-20 md:py-40" style={{ backgroundColor: 'white' }}>
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-16 md:mb-24">
-          <div className="text-xs font-light tracking-widest mb-6 opacity-60" style={{ color: '#475569' }}>
-            SERVICES
-          </div>
-          <h2 className="text-4xl sm:text-5xl md:text-7xl font-extralight tracking-tight" style={{ color: '#1E293B' }}>
-            What we build
-          </h2>
-        </div>
-
-        <div className="space-y-1">
-          {[
-            {
-              title: "Business websites",
-              description: "Professional sites that convert",
-              price: "$700"
-            },
-            {
-              title: "E-commerce",
-              description: "Complete online stores",
-              price: "$700"
-            },
-            {
-              title: "Custom applications",
-              description: "Tailored solutions",
-              price: "Custom"
-            }
-          ].map((service, index) => (
-            <div
-              key={index}
-              className="group p-6 md:p-12 border-b cursor-pointer"
-              style={{
-                borderColor: '#E5E7EB',
-                transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-                transform: 'translateX(0)'
+                backgroundColor: '#ffffff',
+                color: '#1E293B',
+                border: '1px solid #E2E8F0',
+                transition: 'all 0.2s ease',
+                display: 'inline-block'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = '#F8FAFC';
-                e.currentTarget.style.transform = 'translateX(8px)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent';
-                e.currentTarget.style.transform = 'translateX(0)';
+                e.currentTarget.style.backgroundColor = '#ffffff';
               }}
             >
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0">
-                <div className="flex-1">
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-light mb-2" style={{ color: '#1E293B' }}>
-                    {service.title}
-                  </h3>
-                  <p className="text-base sm:text-lg md:text-xl font-extralight" style={{ color: '#475569' }}>
-                    {service.description}
-                  </p>
-                </div>
-                <div className="text-2xl sm:text-3xl md:text-4xl font-extralight" style={{ color: '#1E293B' }}>
-                  {service.price}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <section className="px-4 md:px-6 py-20 md:py-40" style={{ backgroundColor: '#1E293B' }}>
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-16 md:mb-32">
-          <div className="text-xs font-light tracking-widest mb-6 opacity-60" style={{ color: '#CBD5E1' }}>
-            PROCESS
-          </div>
-          <h2 className="text-4xl sm:text-5xl md:text-7xl font-extralight tracking-tight" style={{ color: '#F8FAFC' }}>
-            How we work
-          </h2>
-        </div>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-12 md:gap-x-20 gap-y-12 md:gap-y-16 max-w-6xl">
-          {[
-            { num: "01", title: "Discovery", desc: "Understanding requirements" },
-            { num: "02", title: "Planning", desc: "Strategy and architecture" },
-            { num: "03", title: "Development", desc: "Building the solution" },
-            { num: "04", title: "Launch", desc: "Deployment and support" }
-          ].map((step, index) => (
-            <div
-              key={index}
-              style={{
-                transition: 'transform 0.3s ease, opacity 0.3s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-8px)';
-                const numElement = e.currentTarget.querySelector('.step-num') as HTMLElement;
-                if (numElement) numElement.style.opacity = '0.4';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                const numElement = e.currentTarget.querySelector('.step-num') as HTMLElement;
-                if (numElement) numElement.style.opacity = '0.2';
-              }}
-            >
-              <div
-                className="step-num text-4xl sm:text-5xl md:text-6xl font-extralight mb-6 md:mb-8 opacity-20"
-                style={{
-                  color: '#F8FAFC',
-                  transition: 'opacity 0.3s ease'
-                }}
-              >
-                {step.num}
-              </div>
-              <h3 className="text-xl md:text-2xl font-light mb-3 md:mb-4" style={{ color: '#F8FAFC' }}>
-                {step.title}
-              </h3>
-              <p className="text-base md:text-lg font-extralight opacity-70" style={{ color: '#F8FAFC' }}>
-                {step.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <section className="px-4 md:px-6 py-20 md:py-40" style={{ backgroundColor: 'white' }}>
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-16 md:mb-32">
-          <div className="text-xs font-light tracking-widest mb-6 opacity-60" style={{ color: '#475569' }}>
-            PRICING
-          </div>
-          <h2 className="text-4xl sm:text-5xl md:text-7xl font-extralight tracking-tight mb-6 md:mb-8" style={{ color: '#1E293B' }}>
-            Transparent
-          </h2>
-          <p className="text-lg sm:text-xl md:text-2xl font-extralight" style={{ color: '#475569' }}>
-            Two payments. No hidden fees.
-          </p>
-        </div>
-
-        <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-4 md:gap-1">
-          <div
-            className="p-8 md:p-16 border"
-            style={{
-              backgroundColor: '#F8FAFC',
-              borderColor: '#E5E7EB',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'scale(1.02)';
-              e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'scale(1)';
-              e.currentTarget.style.boxShadow = 'none';
-            }}
-          >
-            <div className="text-xs font-light tracking-widest mb-8 md:mb-12 opacity-60" style={{ color: '#475569' }}>
-              START
-            </div>
-            <div className="text-5xl md:text-7xl font-extralight mb-4 md:mb-6" style={{ color: '#1E293B' }}>
-              $160
-            </div>
-            <p className="text-lg md:text-xl font-extralight mb-12 md:mb-16" style={{ color: '#475569' }}>
-              Strategy and planning
-            </p>
-            <a
-              href="https://buy.stripe.com/00wcN64V6fP65KTeFh9EI06"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-base md:text-lg font-light border-b-2 no-underline inline-block"
-              style={{
-                color: '#1E293B',
-                borderColor: '#1E293B',
-                transition: 'all 0.3s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateX(4px)';
-                e.currentTarget.style.opacity = '0.7';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateX(0)';
-                e.currentTarget.style.opacity = '1';
-              }}
-            >
-              Begin project →
+              Send email
             </a>
           </div>
 
-          <div
-            className="p-8 md:p-16 border"
-            style={{
-              backgroundColor: '#1E293B',
-              borderColor: '#475569',
-              transition: 'all 0.3s ease',
-              transform: 'scale(1)'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'scale(1.02)';
-              e.currentTarget.style.boxShadow = '0 25px 50px -12px rgba(0, 0, 0, 0.25)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'scale(1)';
-              e.currentTarget.style.boxShadow = 'none';
-            }}
-          >
-            <div className="text-xs font-light tracking-widest mb-8 md:mb-12 opacity-60" style={{ color: '#CBD5E1' }}>
-              LAUNCH
-            </div>
-            <div className="text-5xl md:text-7xl font-extralight mb-4 md:mb-6" style={{ color: '#F8FAFC' }}>
-              $540
-            </div>
-            <p className="text-lg md:text-xl font-extralight mb-12 md:mb-16" style={{ color: '#CBD5E1' }}>
-              Due at completion
+          <div className="space-y-3">
+            <p className="text-lg md:text-xl" style={{ color: '#64748B' }}>
+              <a href="mailto:contact@scriptpilot.us" className="no-underline" style={{ color: '#1E293B' }}>contact@scriptpilot.us</a>
             </p>
-            <a
-              href="https://buy.stripe.com/7sY6oI3R29qI3CL7cP9EI07"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-base md:text-lg font-light border-b-2 no-underline inline-block"
-              style={{
-                color: '#F8FAFC',
-                borderColor: '#F8FAFC',
-                transition: 'all 0.3s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateX(4px)';
-                e.currentTarget.style.opacity = '0.8';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateX(0)';
-                e.currentTarget.style.opacity = '1';
-              }}
-            >
-              Payment link →
-            </a>
-          </div>
-
-          <div
-            className="p-8 md:p-16 border"
-            style={{
-              backgroundColor: '#F8FAFC',
-              borderColor: '#E5E7EB',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'scale(1.02)';
-              e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'scale(1)';
-              e.currentTarget.style.boxShadow = 'none';
-            }}
-          >
-            <div className="text-xs font-light tracking-widest mb-8 md:mb-12 opacity-60" style={{ color: '#475569' }}>
-              MAINTAIN
-            </div>
-            <div className="text-5xl md:text-7xl font-extralight mb-4 md:mb-6" style={{ color: '#1E293B' }}>
-              $150
-            </div>
-            <p className="text-lg md:text-xl font-extralight mb-12 md:mb-16" style={{ color: '#475569' }}>
-              Monthly (optional)
+            <p className="text-lg md:text-xl" style={{ color: '#64748B' }}>
+              <a href="tel:4174010015" className="no-underline" style={{ color: '#1E293B' }}>(417) 401-0015</a>
             </p>
-            <a
-              href="https://buy.stripe.com/7sY5kEcnybyQc9hap19EI08"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-base md:text-lg font-light border-b-2 no-underline inline-block"
-              style={{
-                color: '#1E293B',
-                borderColor: '#1E293B',
-                transition: 'all 0.3s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateX(4px)';
-                e.currentTarget.style.opacity = '0.7';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateX(0)';
-                e.currentTarget.style.opacity = '1';
-              }}
-            >
-              Subscribe →
-            </a>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section className="px-4 md:px-6 py-20 md:py-40" style={{ backgroundColor: '#F8FAFC' }}>
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl sm:text-5xl md:text-7xl font-extralight tracking-tight mb-12 md:mb-16 text-center" style={{ color: '#1E293B' }}>
-          Get started
-        </h2>
-
-        <div className="flex flex-col items-center gap-8 md:gap-12 text-center">
-          <a
-            href="mailto:contact@scriptpilot.us"
-            className="text-xl sm:text-2xl md:text-3xl font-light no-underline"
-            style={{
-              color: '#1E293B',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'scale(1.05)';
-              e.currentTarget.style.color = '#475569';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'scale(1)';
-              e.currentTarget.style.color = '#1E293B';
-            }}
-          >
-            contact@scriptpilot.us
-          </a>
-
-          <a
-            href="tel:4174010015"
-            className="text-xl sm:text-2xl md:text-3xl font-light no-underline"
-            style={{
-              color: '#1E293B',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'scale(1.05)';
-              e.currentTarget.style.color = '#475569';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'scale(1)';
-              e.currentTarget.style.color = '#1E293B';
-            }}
-          >
-            (417) 401-0015
-          </a>
-
-          <a
-            href="https://calendly.com/contact-scriptpilot/30min"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xl sm:text-2xl md:text-3xl font-light border-b-2 no-underline"
-            style={{
-              color: '#1E293B',
-              borderColor: '#1E293B',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'translateX(8px) scale(1.05)';
-              e.currentTarget.style.opacity = '0.7';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'translateX(0) scale(1)';
-              e.currentTarget.style.opacity = '1';
-            }}
-          >
-            Book consultation →
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section className="px-4 md:px-6 py-20 md:py-40" style={{ backgroundColor: '#F8FAFC' }}>
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-16 md:mb-24 text-center">
-          <div className="text-xs font-light tracking-widest mb-6 opacity-60" style={{ color: '#475569' }}>
-            FREE PHOTOGRAPHY
-          </div>
-          <h2 className="text-4xl sm:text-5xl md:text-7xl font-extralight tracking-tight mb-6 md:mb-8" style={{ color: '#1E293B' }}>
-            Professional Photos
-            <br />
-            Included
-          </h2>
-          <p className="text-lg sm:text-xl md:text-2xl font-extralight max-w-3xl mx-auto" style={{ color: '#475569' }}>
-            Within 50 miles of Springfield, MO? We'll photograph your business at no extra charge.
-          </p>
-        </div>
-
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-1">
-          {[
-            {
-              title: "Storefront & Interior",
-              description: "Professional shots of your location"
-            },
-            {
-              title: "Product Photography",
-              description: "High-quality images of what you sell"
-            },
-            {
-              title: "Team Photos",
-              description: "Capture your people and culture"
-            }
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="p-8 md:p-12 border-b"
-              style={{
-                borderColor: '#E5E7EB',
-                transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-                transform: 'translateX(0)'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'white';
-                e.currentTarget.style.transform = 'translateX(8px)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent';
-                e.currentTarget.style.transform = 'translateX(0)';
-              }}
-            >
-              <h3 className="text-2xl md:text-3xl font-light mb-2 md:mb-3" style={{ color: '#1E293B' }}>
-                {item.title}
-              </h3>
-              <p className="text-base sm:text-lg md:text-xl font-extralight" style={{ color: '#475569' }}>
-                {item.description}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-12 md:mt-20 text-center">
-          <p className="text-base sm:text-lg font-light" style={{ color: '#475569' }}>
-            Save $500+ on professional photography for your website
-          </p>
-        </div>
-      </div>
-    </section>
-
-  </div>
+      </section>
+    </div>
   );
 };

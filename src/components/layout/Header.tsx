@@ -27,7 +27,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <button
           onClick={() => navigateTo('home')}
-          className="flex items-center gap-3"
+          className="flex items-center"
           style={{
             background: 'none',
             border: 'none',
@@ -37,9 +37,6 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
           aria-label="ScriptPilot Home"
         >
           <Logo size={40} />
-          <span className="text-xl font-bold" style={{ color: '#FFFFFF' }}>
-            ScriptPilot
-          </span>
         </button>
 
         <nav className="hidden md:flex items-center gap-8">

@@ -8,15 +8,11 @@ import { ScriptBuilder } from './components/pages/ScriptBuilder';
 import { ScriptLibrary } from './components/pages/ScriptLibrary';
 import { Usage } from './components/pages/Usage';
 import { Upgrade } from './components/pages/Upgrade';
-import { Home } from './components/pages/Home';
-import { Services } from './components/pages/Services';
-import { About } from './components/pages/About';
-import { Contact } from './components/pages/Contact';
 
 function AppContent() {
   const { user, loading } = useAuth();
   const [showLogin, setShowLogin] = useState(false);
-  const [currentPage, setCurrentPage] = useState('home');
+  const [currentPage, setCurrentPage] = useState('dashboard');
 
   if (loading) {
     return (
@@ -44,14 +40,6 @@ function AppContent() {
 
   const renderPage = () => {
     switch (currentPage) {
-      case 'home':
-        return <Home onNavigate={setCurrentPage} />;
-      case 'services':
-        return <Services onNavigate={setCurrentPage} />;
-      case 'about':
-        return <About onNavigate={setCurrentPage} />;
-      case 'contact':
-        return <Contact onNavigate={setCurrentPage} />;
       case 'dashboard':
         return <Dashboard onNavigate={setCurrentPage} />;
       case 'builder':

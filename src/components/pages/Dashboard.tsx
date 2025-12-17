@@ -65,22 +65,10 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
       }}>
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-6">
-            <button
-              onClick={() => onNavigate('home')}
-              className="flex items-center gap-3 transition-opacity hover:opacity-80"
-              style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
-            >
+            <div className="flex items-center gap-3">
               <Code size={28} style={{ color: '#FFFFFF' }} />
-              <span className="text-xl font-bold" style={{ color: '#FFFFFF' }}>ScripPilot</span>
-            </button>
-            <nav className="hidden lg:flex items-center gap-4">
-              <button onClick={() => onNavigate('home')} className="text-sm font-medium transition-colors hover:text-white" style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#808080' }}>
-                Home
-              </button>
-              <button onClick={() => onNavigate('dashboard')} className="text-sm font-medium transition-colors hover:text-white" style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#808080' }}>
-                Dashboard
-              </button>
-            </nav>
+              <span className="text-xl font-bold" style={{ color: '#FFFFFF' }}>ScriptPilot</span>
+            </div>
             <div className="hidden md:flex items-center gap-2 px-3 py-1.5" style={{ backgroundColor: '#1A1A1A', borderRadius: '6px' }}>
               <Zap size={16} style={{ color: tierInfo.color }} />
               <span className="text-sm font-semibold" style={{ color: tierInfo.color }}>

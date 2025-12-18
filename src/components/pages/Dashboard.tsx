@@ -51,14 +51,12 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
     return (
       <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#0A0F1E' }}>
         <div className="text-center">
-          <div className="mb-6">
-            <img
-              src="/IMG_2131-Picsart-BackgroundRemover.jpeg"
-              alt="ScriptPilot Logo"
-              className="h-16 w-auto mx-auto animate-pulse"
-            />
-          </div>
-          <p className="text-slate-400">Loading your workspace...</p>
+          <img
+            src="/IMG_2131-Picsart-BackgroundRemover.jpeg"
+            alt="ScriptPilot Logo"
+            className="h-20 w-auto mx-auto mb-6 animate-pulse"
+          />
+          <p className="text-slate-400">Loading...</p>
         </div>
       </div>
     );
@@ -78,16 +76,11 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
       }}>
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-6">
-            <div className="flex items-center gap-3">
-              <img
-                src="/IMG_2131-Picsart-BackgroundRemover.jpeg"
-                alt="ScriptPilot Logo"
-                className="h-8 w-auto"
-              />
-              <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-sky-400 bg-clip-text text-transparent">
-                ScriptPilot
-              </span>
-            </div>
+            <img
+              src="/IMG_2131-Picsart-BackgroundRemover.jpeg"
+              alt="ScriptPilot Logo"
+              className="h-12 w-auto"
+            />
 
             <div className="hidden md:flex items-center gap-3 px-4 py-2 rounded-lg backdrop-blur-sm" style={{
               backgroundColor: 'rgba(15, 23, 42, 0.6)',

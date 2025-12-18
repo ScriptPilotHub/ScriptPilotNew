@@ -13,7 +13,7 @@ interface Variable {
 }
 
 export const ScriptBuilder: React.FC<ScriptBuilderProps> = ({ onNavigate }) => {
-  const { user, credits, refreshCredits } = useAuth();
+  const { user, credits, refreshCredits, profile } = useAuth();
   const [name, setName] = useState('');
   const [category, setCategory] = useState('');
   const [description, setDescription] = useState('');
@@ -24,6 +24,8 @@ export const ScriptBuilder: React.FC<ScriptBuilderProps> = ({ onNavigate }) => {
   const [showPreview, setShowPreview] = useState(false);
   const [previewValues, setPreviewValues] = useState<Record<string, string>>({});
   const [saving, setSaving] = useState(false);
+  const [generating, setGenerating] = useState(false);
+  const [aiPrompt, setAiPrompt] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
@@ -117,6 +119,67 @@ export const ScriptBuilder: React.FC<ScriptBuilderProps> = ({ onNavigate }) => {
     }
   };
 
+  const handleGenerate = async () => {
+    if (!aiPrompt.trim()) {
+      setError('Please describe the script you want to generate');
+      return;
+    }
+
+    if (credits && credits.credits_remaining < 1) {
+      setError('Insufficient credits. Please upgrade your plan.');
+      return;
+    }
+
+    setGenerating(true);
+    setError('');
+    setSuccess('');
+
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+
+      const response = await fetch(
+        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/generate-script`,
+        {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${session?.access_token}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            prompt: aiPrompt,
+            category: category
+          })
+        }
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to generate script');
+      }
+
+      setMessageBody(data.script);
+      setSuccess('Script generated successfully!');
+      refreshCredits();
+
+      const variableMatches = data.script.match(/\{\{([^}]+)\}\}/g);
+      if (variableMatches) {
+        const detectedVars = variableMatches.map((match: string) => {
+          const name = match.replace(/\{\{|\}\}/g, '');
+          return { name, placeholder: undefined };
+        });
+        const uniqueVars = Array.from(
+          new Map(detectedVars.map((v: Variable) => [v.name, v])).values()
+        );
+        setVariables(uniqueVars);
+      }
+    } catch (err: any) {
+      setError(err.message || 'Failed to generate script');
+    } finally {
+      setGenerating(false);
+    }
+  };
+
   return (
     <div className="min-h-screen relative overflow-hidden" style={{ backgroundColor: '#0A0F1E' }}>
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -139,14 +202,11 @@ export const ScriptBuilder: React.FC<ScriptBuilderProps> = ({ onNavigate }) => {
               <ArrowLeft size={24} />
             </button>
 
-            <div className="flex items-center gap-3">
-              <img
-                src="/IMG_2131-Picsart-BackgroundRemover.jpeg"
-                alt="ScriptPilot Logo"
-                className="h-8 w-auto"
-              />
-              <span className="text-xl font-bold text-white">Script Builder</span>
-            </div>
+            <img
+              src="/IMG_2131-Picsart-BackgroundRemover.jpeg"
+              alt="ScriptPilot Logo"
+              className="h-12 w-auto"
+            />
           </div>
 
           <div className="flex items-center gap-3">
@@ -331,6 +391,39 @@ export const ScriptBuilder: React.FC<ScriptBuilderProps> = ({ onNavigate }) => {
 
               <div>
                 <label className="block text-sm font-semibold mb-2 text-white">
+                  Generate with AI
+                </label>
+                <div className="flex gap-2 mb-4">
+                  <input
+                    type="text"
+                    value={aiPrompt}
+                    onChange={(e) => setAiPrompt(e.target.value)}
+                    placeholder="e.g., cold outreach email, follow-up message..."
+                    className="flex-1 px-4 py-3 rounded-xl outline-none transition-all focus:ring-2 focus:ring-cyan-500/50"
+                    style={{
+                      backgroundColor: 'rgba(15, 23, 42, 0.6)',
+                      color: '#FFFFFF',
+                      border: '1px solid rgba(148, 163, 184, 0.2)'
+                    }}
+                  />
+                  <button
+                    onClick={handleGenerate}
+                    disabled={generating || !aiPrompt.trim() || (credits?.credits_remaining || 0) < 1}
+                    className="px-6 py-3 font-semibold rounded-xl transition-all hover:scale-105"
+                    style={{
+                      background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)',
+                      color: '#FFFFFF',
+                      opacity: generating || !aiPrompt.trim() || (credits?.credits_remaining || 0) < 1 ? 0.5 : 1,
+                      boxShadow: '0 4px 20px rgba(139, 92, 246, 0.3)'
+                    }}
+                  >
+                    {generating ? 'Generating...' : 'Generate (1)'}
+                  </button>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold mb-2 text-white">
                   Message Body *
                 </label>
                 <textarea
@@ -343,7 +436,7 @@ export const ScriptBuilder: React.FC<ScriptBuilderProps> = ({ onNavigate }) => {
                     color: '#FFFFFF',
                     border: '1px solid rgba(148, 163, 184, 0.2)'
                   }}
-                  placeholder="Type your message here. Use {{variableName}} for dynamic content."
+                  placeholder="Type your message here or use AI to generate. Use {{variableName}} for dynamic content."
                 />
               </div>
             </div>

@@ -5,7 +5,7 @@ export const Logo: React.FC = () => (
     <img
       src="/IMG_2131-Picsart-BackgroundRemover.jpeg"
       alt="Script Pilot - Web Development"
-      className="h-16 sm:h-20 w-auto"
+      className="h-32 sm:h-40 w-auto"
       style={{
         filter: 'grayscale(100%) contrast(1.1)',
         transition: 'filter 0.3s ease'

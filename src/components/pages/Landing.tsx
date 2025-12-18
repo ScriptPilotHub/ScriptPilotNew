@@ -79,7 +79,7 @@ export const Landing: React.FC<LandingProps> = ({ onGetStarted }) => {
           <img
             src="/IMG_2131-Picsart-BackgroundRemover.jpeg"
             alt="ScriptPilot Logo"
-            className="h-16 w-auto"
+            className="h-32 w-auto"
           />
           <button
             onClick={onGetStarted}

@@ -54,7 +54,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
           <img
             src="/IMG_2131-Picsart-BackgroundRemover.jpeg"
             alt="ScriptPilot Logo"
-            className="h-20 w-auto mx-auto mb-6 animate-pulse"
+            className="h-40 w-auto mx-auto mb-6 animate-pulse"
           />
           <p className="text-neutral-400">Loading...</p>
         </div>
@@ -70,7 +70,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
             <img
               src="/IMG_2131-Picsart-BackgroundRemover.jpeg"
               alt="ScriptPilot Logo"
-              className="h-12 w-auto"
+              className="h-24 w-auto"
             />
 
             <div className="hidden md:flex items-center gap-3 px-4 py-2 rounded-lg bg-neutral-800 border border-neutral-700">

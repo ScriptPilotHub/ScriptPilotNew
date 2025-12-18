@@ -195,7 +195,7 @@ export const ScriptBuilder: React.FC<ScriptBuilderProps> = ({ onNavigate }) => {
             <img
               src="/IMG_2131-Picsart-BackgroundRemover.jpeg"
               alt="ScriptPilot Logo"
-              className="h-12 w-auto"
+              className="h-24 w-auto"
             />
           </div>
 

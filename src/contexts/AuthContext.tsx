@@ -33,31 +33,55 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [loading, setLoading] = useState(true);
 
   const fetchProfile = async (userId: string) => {
-    const { data, error } = await supabase
-      .from('profiles')
-      .select('*')
-      .eq('id', userId)
-      .maybeSingle();
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
 
-    if (error) {
-      console.error('Error fetching profile:', error);
+      if (!session) {
+        console.error('No active session when fetching profile');
+        return null;
+      }
+
+      const { data, error } = await supabase
+        .from('profiles')
+        .select('*')
+        .eq('id', userId)
+        .maybeSingle();
+
+      if (error) {
+        console.error('Error fetching profile:', error);
+        return null;
+      }
+      return data;
+    } catch (err) {
+      console.error('Exception fetching profile:', err);
       return null;
     }
-    return data;
   };
 
   const fetchCredits = async (userId: string) => {
-    const { data, error } = await supabase
-      .from('credits')
-      .select('*')
-      .eq('user_id', userId)
-      .maybeSingle();
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
 
-    if (error) {
-      console.error('Error fetching credits:', error);
+      if (!session) {
+        console.error('No active session when fetching credits');
+        return null;
+      }
+
+      const { data, error } = await supabase
+        .from('credits')
+        .select('*')
+        .eq('user_id', userId)
+        .maybeSingle();
+
+      if (error) {
+        console.error('Error fetching credits:', error);
+        return null;
+      }
+      return data;
+    } catch (err) {
+      console.error('Exception fetching credits:', err);
       return null;
     }
-    return data;
   };
 
   const refreshProfile = async () => {

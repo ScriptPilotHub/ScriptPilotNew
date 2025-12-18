@@ -18,7 +18,12 @@ export const ScriptLibrary: React.FC<ScriptLibraryProps> = ({ onNavigate }) => {
   const [success, setSuccess] = useState('');
 
   useEffect(() => {
-    fetchScripts();
+    if (user) {
+      fetchScripts();
+    } else {
+      setScripts([]);
+      setLoading(false);
+    }
   }, [user]);
 
   useEffect(() => {
@@ -37,17 +42,33 @@ export const ScriptLibrary: React.FC<ScriptLibraryProps> = ({ onNavigate }) => {
   const tierColor = getTierColor(profile?.tier || 'starter');
 
   const fetchScripts = async () => {
+    if (!user) {
+      setLoading(false);
+      return;
+    }
+
     try {
+      setLoading(true);
+
+      const { data: { session } } = await supabase.auth.getSession();
+
+      if (!session) {
+        setError('Please log in to view your scripts');
+        setLoading(false);
+        return;
+      }
+
       const { data, error } = await supabase
         .from('scripts')
         .select('*')
-        .eq('owner_id', user?.id)
+        .eq('owner_id', user.id)
         .eq('is_archived', false)
         .order('created_at', { ascending: false });
 
       if (error) throw error;
       setScripts(data || []);
     } catch (err: any) {
+      console.error('Error fetching scripts:', err);
       setError(err.message || 'Failed to load scripts');
     } finally {
       setLoading(false);

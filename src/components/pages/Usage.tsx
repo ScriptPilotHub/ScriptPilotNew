@@ -8,13 +8,17 @@ interface UsageProps {
 }
 
 export const Usage: React.FC<UsageProps> = ({ onNavigate }) => {
-  const { credits, profile } = useAuth();
+  const { credits, profile, user } = useAuth();
   const [logs, setLogs] = useState<UsageLog[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchUsageLogs();
-  }, []);
+    if (user) {
+      fetchUsageLogs();
+    } else {
+      setLoading(false);
+    }
+  }, [user]);
 
   const getTierColor = (tier: string) => {
     switch (tier) {
@@ -28,10 +32,24 @@ export const Usage: React.FC<UsageProps> = ({ onNavigate }) => {
   const tierColor = getTierColor(profile?.tier || 'starter');
 
   const fetchUsageLogs = async () => {
+    if (!user) {
+      setLoading(false);
+      return;
+    }
+
     try {
+      const { data: { session } } = await supabase.auth.getSession();
+
+      if (!session) {
+        console.error('No active session');
+        setLoading(false);
+        return;
+      }
+
       const { data, error } = await supabase
         .from('usage_logs')
         .select('*')
+        .eq('user_id', user.id)
         .order('created_at', { ascending: false })
         .limit(100);
 

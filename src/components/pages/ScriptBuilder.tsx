@@ -137,13 +137,18 @@ export const ScriptBuilder: React.FC<ScriptBuilderProps> = ({ onNavigate }) => {
     try {
       const { data: { session } } = await supabase.auth.getSession();
 
+      if (!session?.access_token) {
+        throw new Error('Please log in to generate scripts');
+      }
+
       const response = await fetch(
         `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/generate-script`,
         {
           method: 'POST',
           headers: {
-            'Authorization': `Bearer ${session?.access_token}`,
+            'Authorization': `Bearer ${session.access_token}`,
             'Content-Type': 'application/json',
+            'apikey': import.meta.env.VITE_SUPABASE_ANON_KEY
           },
           body: JSON.stringify({
             prompt: aiPrompt,

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { MessageSquare, Zap, TrendingUp, Check, Sparkles, ChevronRight, ArrowRight } from 'lucide-react';
+import { Zap, TrendingUp, Check, Sparkles, ChevronRight, ArrowRight } from 'lucide-react';
 
 interface LandingProps {
   onGetStarted: () => void;
@@ -44,7 +44,7 @@ export const Landing: React.FC<LandingProps> = ({ onGetStarted }) => {
     },
     {
       name: 'Starter',
-      price: '$19',
+      price: '$25',
       period: 'month',
       features: [
         '100 credits per month',
@@ -61,7 +61,7 @@ export const Landing: React.FC<LandingProps> = ({ onGetStarted }) => {
     },
     {
       name: 'Pro',
-      price: '$49',
+      price: '$50',
       period: 'month',
       features: [
         '500 credits per month',
@@ -78,7 +78,7 @@ export const Landing: React.FC<LandingProps> = ({ onGetStarted }) => {
     },
     {
       name: 'Agency',
-      price: '$149',
+      price: '$299',
       period: 'month',
       features: [
         '2000 credits per month',
@@ -110,12 +110,11 @@ export const Landing: React.FC<LandingProps> = ({ onGetStarted }) => {
       }}>
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-sky-500 rounded-lg blur opacity-50" />
-              <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 p-2 rounded-lg border border-slate-700">
-                <MessageSquare size={24} className="text-cyan-400" />
-              </div>
-            </div>
+            <img
+              src="/IMG_2131-Picsart-BackgroundRemover.jpeg"
+              alt="ScriptPilot Logo"
+              className="h-10 w-auto"
+            />
             <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-sky-400 bg-clip-text text-transparent">
               ScriptPilot
             </span>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { supabase } from '../../lib/supabase';
-import { MessageSquare, CreditCard, FileText, LogOut, PlusCircle, TrendingUp, Zap, ArrowRight } from 'lucide-react';
+import { CreditCard, FileText, LogOut, PlusCircle, TrendingUp, Zap, ArrowRight } from 'lucide-react';
 
 interface DashboardProps {
   onNavigate: (page: string) => void;
@@ -51,11 +51,12 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
     return (
       <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#0A0F1E' }}>
         <div className="text-center">
-          <div className="relative inline-block mb-6">
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-sky-500 rounded-lg blur opacity-50 animate-pulse" />
-            <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 p-4 rounded-lg border border-slate-700">
-              <MessageSquare size={48} className="text-cyan-400" />
-            </div>
+          <div className="mb-6">
+            <img
+              src="/IMG_2131-Picsart-BackgroundRemover.jpeg"
+              alt="ScriptPilot Logo"
+              className="h-16 w-auto mx-auto animate-pulse"
+            />
           </div>
           <p className="text-slate-400">Loading your workspace...</p>
         </div>
@@ -78,12 +79,11 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-3">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-sky-500 rounded-lg blur opacity-50" />
-                <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 p-2 rounded-lg border border-slate-700">
-                  <MessageSquare size={24} className="text-cyan-400" />
-                </div>
-              </div>
+              <img
+                src="/IMG_2131-Picsart-BackgroundRemover.jpeg"
+                alt="ScriptPilot Logo"
+                className="h-8 w-auto"
+              />
               <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-sky-400 bg-clip-text text-transparent">
                 ScriptPilot
               </span>

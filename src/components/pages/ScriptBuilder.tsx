@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { supabase } from '../../lib/supabase';
-import { MessageSquare, ArrowLeft, Save, Play, PlusCircle, X, Eye, Zap, CheckCircle2, AlertCircle } from 'lucide-react';
+import { ArrowLeft, Save, Play, PlusCircle, X, Eye, Zap, CheckCircle2, AlertCircle } from 'lucide-react';
 
 interface ScriptBuilderProps {
   onNavigate: (page: string) => void;
@@ -140,12 +140,11 @@ export const ScriptBuilder: React.FC<ScriptBuilderProps> = ({ onNavigate }) => {
             </button>
 
             <div className="flex items-center gap-3">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-sky-500 rounded-lg blur opacity-50" />
-                <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 p-2 rounded-lg border border-slate-700">
-                  <MessageSquare size={24} className="text-cyan-400" />
-                </div>
-              </div>
+              <img
+                src="/IMG_2131-Picsart-BackgroundRemover.jpeg"
+                alt="ScriptPilot Logo"
+                className="h-8 w-auto"
+              />
               <span className="text-xl font-bold text-white">Script Builder</span>
             </div>
           </div>

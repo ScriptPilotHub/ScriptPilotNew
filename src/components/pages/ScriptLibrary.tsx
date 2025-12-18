@@ -95,27 +95,41 @@ export const ScriptLibrary: React.FC<ScriptLibraryProps> = ({ onNavigate }) => {
   const categories = ['all', ...Array.from(new Set(scripts.map(s => s.category).filter(Boolean)))];
 
   const handleRun = async (script: Script) => {
+    if (!user) {
+      setError('Please log in to run scripts');
+      setTimeout(() => setError(''), 4000);
+      return;
+    }
+
     if (credits && credits.credits_remaining < 1) {
       setError('Not enough credits! Upgrade your plan to continue.');
       setTimeout(() => setError(''), 4000);
       return;
     }
 
-    let finalText = script.message_body;
-    if (script.variables && Array.isArray(script.variables) && script.variables.length > 0) {
-      script.variables.forEach(variable => {
-        if (variable && variable.name) {
-          const value = variable.placeholder || `{{${variable.name}}}`;
-          finalText = finalText.replace(new RegExp(`{{${variable.name}}}`, 'g'), value);
-        }
-      });
-    }
-
-    navigator.clipboard.writeText(finalText);
-
     try {
+      const { data: { session } } = await supabase.auth.getSession();
+
+      if (!session) {
+        setError('Your session has expired. Please log in again.');
+        setTimeout(() => setError(''), 4000);
+        return;
+      }
+
+      let finalText = script.message_body;
+      if (script.variables && Array.isArray(script.variables) && script.variables.length > 0) {
+        script.variables.forEach(variable => {
+          if (variable && variable.name) {
+            const value = variable.placeholder || `{{${variable.name}}}`;
+            finalText = finalText.replace(new RegExp(`{{${variable.name}}}`, 'g'), value);
+          }
+        });
+      }
+
+      await navigator.clipboard.writeText(finalText);
+
       await supabase.from('usage_logs').insert({
-        user_id: user?.id,
+        user_id: user.id,
         script_id: script.id,
         action_type: 'run',
         credits_used: 1
@@ -127,18 +141,19 @@ export const ScriptLibrary: React.FC<ScriptLibraryProps> = ({ onNavigate }) => {
           credits_used: (credits?.credits_used || 0) + 1,
           credits_remaining: (credits?.credits_remaining || 0) - 1
         })
-        .eq('user_id', user?.id);
+        .eq('user_id', user.id);
 
       await supabase
         .from('scripts')
         .update({ usage_count: script.usage_count + 1 })
         .eq('id', script.id);
 
-      refreshCredits();
-      fetchScripts();
+      await refreshCredits();
+      await fetchScripts();
       setSuccess('Copied to clipboard!');
       setTimeout(() => setSuccess(''), 2000);
     } catch (err: any) {
+      console.error('Error running script:', err);
       setError(err.message || 'Failed to run script');
       setTimeout(() => setError(''), 3000);
     }
@@ -147,7 +162,19 @@ export const ScriptLibrary: React.FC<ScriptLibraryProps> = ({ onNavigate }) => {
   const handleDelete = async (scriptId: string) => {
     if (!confirm('Delete this script? This cannot be undone.')) return;
 
+    if (!user) {
+      setError('Please log in to delete scripts');
+      return;
+    }
+
     try {
+      const { data: { session } } = await supabase.auth.getSession();
+
+      if (!session) {
+        setError('Your session has expired. Please log in again.');
+        return;
+      }
+
       await supabase
         .from('scripts')
         .delete()
@@ -155,8 +182,9 @@ export const ScriptLibrary: React.FC<ScriptLibraryProps> = ({ onNavigate }) => {
 
       setSuccess('Script deleted');
       setTimeout(() => setSuccess(''), 2000);
-      fetchScripts();
+      await fetchScripts();
     } catch (err: any) {
+      console.error('Error deleting script:', err);
       setError(err.message || 'Failed to delete script');
     }
   };

@@ -75,22 +75,35 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    supabase.auth.getSession().then(({ data: { session }, error }) => {
       (async () => {
+        if (error) {
+          console.error('Error getting session:', error);
+          setLoading(false);
+          return;
+        }
+
         setSession(session);
         setUser(session?.user ?? null);
 
         if (session?.user) {
-          const [profileData, creditsData] = await Promise.all([
-            fetchProfile(session.user.id),
-            fetchCredits(session.user.id)
-          ]);
-          setProfile(profileData);
-          setCredits(creditsData);
+          try {
+            const [profileData, creditsData] = await Promise.all([
+              fetchProfile(session.user.id),
+              fetchCredits(session.user.id)
+            ]);
+            setProfile(profileData);
+            setCredits(creditsData);
+          } catch (err) {
+            console.error('Error fetching user data:', err);
+          }
         }
 
         setLoading(false);
       })();
+    }).catch(err => {
+      console.error('Session initialization error:', err);
+      setLoading(false);
     });
 
     const {
@@ -101,12 +114,16 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setUser(session?.user ?? null);
 
         if (session?.user) {
-          const [profileData, creditsData] = await Promise.all([
-            fetchProfile(session.user.id),
-            fetchCredits(session.user.id)
-          ]);
-          setProfile(profileData);
-          setCredits(creditsData);
+          try {
+            const [profileData, creditsData] = await Promise.all([
+              fetchProfile(session.user.id),
+              fetchCredits(session.user.id)
+            ]);
+            setProfile(profileData);
+            setCredits(creditsData);
+          } catch (err) {
+            console.error('Error fetching user data on auth change:', err);
+          }
         } else {
           setProfile(null);
           setCredits(null);

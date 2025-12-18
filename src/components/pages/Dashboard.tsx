@@ -14,14 +14,31 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
 
   useEffect(() => {
     const fetchScriptsCount = async () => {
-      if (!user) return;
-      const { count } = await supabase
-        .from('scripts')
-        .select('*', { count: 'exact', head: true })
-        .eq('owner_id', user.id)
-        .eq('is_archived', false);
-      setScriptsCount(count || 0);
-      setLoading(false);
+      if (!user) {
+        setLoading(false);
+        return;
+      }
+
+      try {
+        const { data: { session } } = await supabase.auth.getSession();
+
+        if (!session) {
+          console.error('No active session');
+          setLoading(false);
+          return;
+        }
+
+        const { count } = await supabase
+          .from('scripts')
+          .select('*', { count: 'exact', head: true })
+          .eq('owner_id', user.id)
+          .eq('is_archived', false);
+        setScriptsCount(count || 0);
+      } catch (error) {
+        console.error('Error fetching scripts count:', error);
+      } finally {
+        setLoading(false);
+      }
     };
     fetchScriptsCount();
   }, [user]);

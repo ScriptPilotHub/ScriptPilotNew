@@ -16,11 +16,31 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
   },
 });
 
+export async function validateSession() {
+  try {
+    const { data: { session }, error } = await supabase.auth.getSession();
+
+    if (error) {
+      console.error('Session validation error:', error);
+      return { valid: false, session: null, error };
+    }
+
+    if (!session) {
+      return { valid: false, session: null, error: new Error('No active session') };
+    }
+
+    return { valid: true, session, error: null };
+  } catch (error) {
+    console.error('Session validation exception:', error);
+    return { valid: false, session: null, error };
+  }
+}
+
 export type Profile = {
   id: string;
   email: string;
   full_name?: string;
-  tier: 'starter' | 'pro' | 'agency';
+  tier: 'free' | 'starter' | 'pro' | 'agency';
   stripe_customer_id?: string;
   created_at: string;
   updated_at: string;
@@ -56,7 +76,7 @@ export type Script = {
 export type Subscription = {
   id: string;
   user_id: string;
-  tier: 'starter' | 'pro' | 'agency';
+  tier: 'free' | 'starter' | 'pro' | 'agency';
   stripe_subscription_id?: string;
   stripe_payment_link?: string;
   status: 'active' | 'inactive' | 'cancelled';
@@ -69,7 +89,7 @@ export type UsageLog = {
   id: string;
   user_id: string;
   script_id?: string;
-  action_type: 'run' | 'export';
+  action_type: 'run' | 'export' | 'generate';
   credits_used: number;
   created_at: string;
 };

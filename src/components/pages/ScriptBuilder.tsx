@@ -59,15 +59,28 @@ export const ScriptBuilder: React.FC<ScriptBuilderProps> = ({ onNavigate }) => {
       return;
     }
 
+    if (!user) {
+      setError('Please log in to save scripts');
+      return;
+    }
+
     setSaving(true);
     setError('');
     setSuccess('');
 
     try {
+      const { data: { session } } = await supabase.auth.getSession();
+
+      if (!session) {
+        setError('Your session has expired. Please log in again.');
+        setSaving(false);
+        return;
+      }
+
       const { error: saveError } = await supabase
         .from('scripts')
         .insert({
-          owner_id: user?.id,
+          owner_id: user.id,
           name: name.trim(),
           category: category.trim() || null,
           description: description.trim() || null,
@@ -89,17 +102,29 @@ export const ScriptBuilder: React.FC<ScriptBuilderProps> = ({ onNavigate }) => {
   };
 
   const handleRun = async () => {
+    if (!user) {
+      setError('Please log in to run scripts');
+      return;
+    }
+
     if (credits && credits.credits_remaining < 1) {
       setError('Insufficient credits. Please upgrade your plan.');
       return;
     }
 
-    const finalText = getPreviewText();
-    navigator.clipboard.writeText(finalText);
-
     try {
+      const { data: { session } } = await supabase.auth.getSession();
+
+      if (!session) {
+        setError('Your session has expired. Please log in again.');
+        return;
+      }
+
+      const finalText = getPreviewText();
+      await navigator.clipboard.writeText(finalText);
+
       await supabase.from('usage_logs').insert({
-        user_id: user?.id,
+        user_id: user.id,
         action_type: 'run',
         credits_used: 1
       });
@@ -110,11 +135,12 @@ export const ScriptBuilder: React.FC<ScriptBuilderProps> = ({ onNavigate }) => {
           credits_used: (credits?.credits_used || 0) + 1,
           credits_remaining: (credits?.credits_remaining || 0) - 1
         })
-        .eq('user_id', user?.id);
+        .eq('user_id', user.id);
 
-      refreshCredits();
+      await refreshCredits();
       setSuccess('Script executed and copied to clipboard!');
     } catch (err: any) {
+      console.error('Error running script:', err);
       setError(err.message || 'Failed to execute script');
     }
   };

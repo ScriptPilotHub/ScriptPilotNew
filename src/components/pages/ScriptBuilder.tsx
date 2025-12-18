@@ -181,23 +181,13 @@ export const ScriptBuilder: React.FC<ScriptBuilderProps> = ({ onNavigate }) => {
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden" style={{ backgroundColor: '#0A0F1E' }}>
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-5" />
-        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-sky-400 rounded-full mix-blend-multiply filter blur-3xl opacity-5" />
-      </div>
-
-      <header className="sticky top-0 z-50 px-6 md:px-8 py-4" style={{
-        backgroundColor: 'rgba(10, 15, 30, 0.8)',
-        backdropFilter: 'blur(20px) saturate(180%)',
-        borderBottom: '1px solid rgba(148, 163, 184, 0.1)'
-      }}>
+    <div className="min-h-screen bg-neutral-900">
+      <header className="sticky top-0 z-50 px-6 md:px-8 py-4 bg-black border-b border-neutral-800">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-4">
             <button
               onClick={() => onNavigate('dashboard')}
-              className="p-2 rounded-lg transition-colors hover:bg-slate-800/50"
-              style={{ color: '#94A3B8' }}
+              className="p-2 rounded-lg transition-colors hover:bg-neutral-800 text-neutral-400"
             >
               <ArrowLeft size={24} />
             </button>
@@ -212,22 +202,14 @@ export const ScriptBuilder: React.FC<ScriptBuilderProps> = ({ onNavigate }) => {
           <div className="flex items-center gap-3">
             <button
               onClick={() => setShowPreview(!showPreview)}
-              className="hidden md:flex items-center gap-2 px-4 py-2 font-medium rounded-lg transition-all hover:scale-105"
-              style={{
-                backgroundColor: 'rgba(15, 23, 42, 0.6)',
-                color: '#FFFFFF',
-                border: '1px solid rgba(148, 163, 184, 0.2)'
-              }}
+              className="hidden md:flex items-center gap-2 px-4 py-2 font-medium rounded-lg bg-neutral-800 border border-neutral-700 text-white hover:bg-neutral-700 transition-all"
             >
               <Eye size={18} />
               Preview
             </button>
 
-            <div className="flex items-center gap-2 px-3 py-2 rounded-lg" style={{
-              backgroundColor: 'rgba(15, 23, 42, 0.6)',
-              border: '1px solid rgba(148, 163, 184, 0.1)'
-            }}>
-              <Zap size={16} className="text-cyan-400" />
+            <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-neutral-800 border border-neutral-700">
+              <Zap size={16} className="text-white" />
               <span className="text-sm font-bold text-white">
                 {credits?.credits_remaining || 0}
               </span>
@@ -236,13 +218,7 @@ export const ScriptBuilder: React.FC<ScriptBuilderProps> = ({ onNavigate }) => {
             <button
               onClick={handleRun}
               disabled={!messageBody.trim() || (credits?.credits_remaining || 0) < 1}
-              className="flex items-center gap-2 px-4 py-2 font-semibold rounded-lg transition-all hover:scale-105"
-              style={{
-                background: 'linear-gradient(135deg, #10B981, #059669)',
-                color: '#FFFFFF',
-                opacity: (!messageBody.trim() || (credits?.credits_remaining || 0) < 1) ? 0.5 : 1,
-                boxShadow: '0 4px 20px rgba(16, 185, 129, 0.3)'
-              }}
+              className="flex items-center gap-2 px-4 py-2 font-semibold rounded-lg bg-white text-black hover:bg-neutral-200 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <Play size={18} />
               Run (1)
@@ -251,13 +227,7 @@ export const ScriptBuilder: React.FC<ScriptBuilderProps> = ({ onNavigate }) => {
             <button
               onClick={handleSave}
               disabled={saving || !name.trim() || !messageBody.trim()}
-              className="flex items-center gap-2 px-4 py-2 font-semibold rounded-lg transition-all hover:scale-105"
-              style={{
-                background: 'linear-gradient(135deg, #0EA5E9, #06B6D4)',
-                color: '#FFFFFF',
-                opacity: saving || !name.trim() || !messageBody.trim() ? 0.5 : 1,
-                boxShadow: '0 4px 20px rgba(6, 182, 212, 0.3)'
-              }}
+              className="flex items-center gap-2 px-4 py-2 font-semibold rounded-lg bg-neutral-800 border border-neutral-700 text-white hover:bg-neutral-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <Save size={18} />
               {saving ? 'Saving...' : 'Save'}

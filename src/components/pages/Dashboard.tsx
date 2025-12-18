@@ -49,31 +49,22 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#0A0F1E' }}>
+      <div className="min-h-screen flex items-center justify-center bg-neutral-900">
         <div className="text-center">
           <img
             src="/IMG_2131-Picsart-BackgroundRemover.jpeg"
             alt="ScriptPilot Logo"
             className="h-20 w-auto mx-auto mb-6 animate-pulse"
           />
-          <p className="text-slate-400">Loading...</p>
+          <p className="text-neutral-400">Loading...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen relative overflow-hidden" style={{ backgroundColor: '#0A0F1E' }}>
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-5" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-sky-400 rounded-full mix-blend-multiply filter blur-3xl opacity-5" />
-      </div>
-
-      <header className="sticky top-0 z-50 px-6 md:px-8 py-4" style={{
-        backgroundColor: 'rgba(10, 15, 30, 0.8)',
-        backdropFilter: 'blur(20px) saturate(180%)',
-        borderBottom: '1px solid rgba(148, 163, 184, 0.1)'
-      }}>
+    <div className="min-h-screen bg-neutral-900">
+      <header className="sticky top-0 z-50 px-6 md:px-8 py-4 bg-black border-b border-neutral-800">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-6">
             <img
@@ -82,10 +73,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
               className="h-12 w-auto"
             />
 
-            <div className="hidden md:flex items-center gap-3 px-4 py-2 rounded-lg backdrop-blur-sm" style={{
-              backgroundColor: 'rgba(15, 23, 42, 0.6)',
-              border: '1px solid rgba(148, 163, 184, 0.1)'
-            }}>
+            <div className="hidden md:flex items-center gap-3 px-4 py-2 rounded-lg bg-neutral-800 border border-neutral-700">
               <Zap size={16} style={{ color: tierInfo.color }} />
               <span className="text-sm font-semibold" style={{ color: tierInfo.color }}>
                 {tierInfo.label}
@@ -93,11 +81,11 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
             </div>
 
             <div className="hidden md:flex items-center gap-2">
-              <CreditCard size={16} className="text-slate-400" />
+              <CreditCard size={16} className="text-neutral-400" />
               <span className="text-sm font-bold text-white">
                 {credits?.credits_remaining || 0}
               </span>
-              <span className="text-sm text-slate-500">credits</span>
+              <span className="text-sm text-neutral-500">credits</span>
             </div>
           </div>
 
@@ -118,8 +106,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
 
             <button
               onClick={() => signOut()}
-              className="p-2 rounded-lg transition-colors hover:bg-slate-800/50"
-              style={{ color: '#94A3B8' }}
+              className="p-2 rounded-lg transition-colors hover:bg-neutral-800 text-neutral-400"
             >
               <LogOut size={20} />
             </button>
@@ -127,25 +114,20 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
         </div>
       </header>
 
-      <main className="px-6 md:px-8 py-12 relative">
+      <main className="px-6 md:px-8 py-12">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
             <h1 className="text-4xl font-bold mb-2 text-white">
               Welcome back!
             </h1>
-            <p className="text-slate-400">
+            <p className="text-neutral-400">
               {profile?.email}
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <div className="group relative p-6 rounded-2xl backdrop-blur-sm overflow-hidden transition-all duration-300 hover:scale-105" style={{
-              backgroundColor: 'rgba(15, 23, 42, 0.6)',
-              border: '1px solid rgba(148, 163, 184, 0.1)',
-              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)'
-            }}>
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-sky-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative z-10">
+            <div className="group p-6 rounded-xl bg-neutral-800 border border-neutral-700 transition-all duration-300 hover:border-neutral-600">
+              <div>
                 <div className="flex items-center gap-3 mb-4">
                   <div className="p-2 rounded-lg bg-gradient-to-br from-cyan-500/20 to-sky-500/20">
                     <CreditCard size={20} style={{ color: tierInfo.color }} />
@@ -176,24 +158,19 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
                   />
                 </div>
 
-                <p className="text-sm text-slate-400">
+                <p className="text-sm text-neutral-400">
                   {creditPercentage < 20 ? 'Running low! Consider upgrading.' : 'You\'re all set for this month.'}
                 </p>
               </div>
             </div>
 
-            <div className="group relative p-6 rounded-2xl backdrop-blur-sm overflow-hidden transition-all duration-300 hover:scale-105" style={{
-              backgroundColor: 'rgba(15, 23, 42, 0.6)',
-              border: '1px solid rgba(148, 163, 184, 0.1)',
-              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)'
-            }}>
-              <div className="absolute inset-0 bg-gradient-to-br from-sky-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative z-10">
+            <div className="group p-6 rounded-xl bg-neutral-800 border border-neutral-700 transition-all duration-300 hover:border-neutral-600">
+              <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 rounded-lg bg-gradient-to-br from-sky-500/20 to-blue-500/20">
-                    <FileText size={20} className="text-sky-400" />
+                  <div className="p-2 rounded-lg bg-neutral-700">
+                    <FileText size={20} className="text-white" />
                   </div>
-                  <h3 className="text-sm font-medium text-slate-400">
+                  <h3 className="text-sm font-medium text-neutral-400">
                     Your Scripts
                   </h3>
                 </div>
@@ -202,14 +179,14 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
                   <span className="text-5xl font-bold text-white">
                     {scriptsCount}
                   </span>
-                  <span className="text-2xl ml-2 text-slate-500">
+                  <span className="text-2xl ml-2 text-neutral-500">
                     saved
                   </span>
                 </div>
 
                 <button
                   onClick={() => onNavigate('library')}
-                  className="text-sm font-medium hover:underline flex items-center gap-1 text-sky-400"
+                  className="text-sm font-medium hover:underline flex items-center gap-1 text-white"
                 >
                   View all scripts
                   <ArrowRight size={14} />
@@ -217,18 +194,13 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
               </div>
             </div>
 
-            <div className="group relative p-6 rounded-2xl backdrop-blur-sm overflow-hidden transition-all duration-300 hover:scale-105" style={{
-              backgroundColor: 'rgba(15, 23, 42, 0.6)',
-              border: '1px solid rgba(148, 163, 184, 0.1)',
-              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)'
-            }}>
-              <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 to-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative z-10">
+            <div className="group p-6 rounded-xl bg-neutral-800 border border-neutral-700 transition-all duration-300 hover:border-neutral-600">
+              <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 rounded-lg bg-gradient-to-br from-teal-500/20 to-emerald-500/20">
-                    <TrendingUp size={20} className="text-teal-400" />
+                  <div className="p-2 rounded-lg bg-neutral-700">
+                    <TrendingUp size={20} className="text-white" />
                   </div>
-                  <h3 className="text-sm font-medium text-slate-400">
+                  <h3 className="text-sm font-medium text-neutral-400">
                     Credits Used
                   </h3>
                 </div>
@@ -237,14 +209,14 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
                   <span className="text-5xl font-bold text-white">
                     {credits?.credits_used || 0}
                   </span>
-                  <span className="text-2xl ml-2 text-slate-500">
+                  <span className="text-2xl ml-2 text-neutral-500">
                     this month
                   </span>
                 </div>
 
                 <button
                   onClick={() => onNavigate('usage')}
-                  className="text-sm font-medium hover:underline flex items-center gap-1 text-teal-400"
+                  className="text-sm font-medium hover:underline flex items-center gap-1 text-white"
                 >
                   View usage history
                   <ArrowRight size={14} />
@@ -256,23 +228,14 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
           <div className="grid md:grid-cols-2 gap-6">
             <button
               onClick={() => onNavigate('builder')}
-              className="group relative p-8 text-left rounded-2xl backdrop-blur-sm overflow-hidden transition-all duration-300 hover:scale-105"
-              style={{
-                backgroundColor: 'rgba(6, 182, 212, 0.05)',
-                border: '2px solid rgba(6, 182, 212, 0.3)',
-                boxShadow: '0 8px 32px rgba(6, 182, 212, 0.2)'
-              }}
+              className="group p-8 text-left rounded-xl bg-neutral-800 border-2 border-neutral-700 transition-all duration-300 hover:border-white"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-sky-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative z-10">
+              <div>
                 <div className="flex items-center justify-between mb-6">
-                  <div className="p-3 rounded-xl bg-gradient-to-br from-cyan-500/20 to-sky-500/20">
-                    <PlusCircle size={40} className="text-cyan-400" />
+                  <div className="p-3 rounded-xl bg-neutral-700">
+                    <PlusCircle size={40} className="text-white" />
                   </div>
-                  <span className="text-sm font-semibold px-3 py-1.5 rounded-lg text-cyan-400" style={{
-                    backgroundColor: 'rgba(6, 182, 212, 0.2)',
-                    border: '1px solid rgba(6, 182, 212, 0.3)'
-                  }}>
+                  <span className="text-sm font-semibold px-3 py-1.5 rounded-lg bg-neutral-700 text-white">
                     1 credit
                   </span>
                 </div>
@@ -280,11 +243,11 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
                 <h3 className="text-2xl font-bold mb-2 text-white">
                   Create New Script
                 </h3>
-                <p className="text-slate-400 mb-4">
+                <p className="text-neutral-400 mb-4">
                   Build a reusable message template with smart variables
                 </p>
 
-                <div className="flex items-center gap-2 text-cyan-400 font-medium">
+                <div className="flex items-center gap-2 text-white font-medium">
                   <span>Get started</span>
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </div>
@@ -293,20 +256,14 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
 
             <button
               onClick={() => onNavigate('library')}
-              className="group relative p-8 text-left rounded-2xl backdrop-blur-sm overflow-hidden transition-all duration-300 hover:scale-105"
-              style={{
-                backgroundColor: 'rgba(15, 23, 42, 0.6)',
-                border: '1px solid rgba(148, 163, 184, 0.2)',
-                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)'
-              }}
+              className="group p-8 text-left rounded-xl bg-neutral-800 border border-neutral-700 transition-all duration-300 hover:border-neutral-600"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-sky-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative z-10">
+              <div>
                 <div className="flex items-center justify-between mb-6">
-                  <div className="p-3 rounded-xl bg-gradient-to-br from-slate-700 to-slate-800 border border-slate-600">
-                    <FileText size={40} className="text-slate-300" />
+                  <div className="p-3 rounded-xl bg-neutral-700">
+                    <FileText size={40} className="text-white" />
                   </div>
-                  <span className="text-sm font-medium text-slate-400">
+                  <span className="text-sm font-medium text-neutral-400">
                     {scriptsCount} scripts
                   </span>
                 </div>
@@ -314,11 +271,11 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
                 <h3 className="text-2xl font-bold mb-2 text-white">
                   Script Library
                 </h3>
-                <p className="text-slate-400 mb-4">
+                <p className="text-neutral-400 mb-4">
                   Access, run, and manage all your saved scripts
                 </p>
 
-                <div className="flex items-center gap-2 text-sky-400 font-medium">
+                <div className="flex items-center gap-2 text-white font-medium">
                   <span>Browse library</span>
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </div>

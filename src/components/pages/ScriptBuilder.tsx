@@ -258,53 +258,100 @@ export const ScriptBuilder: React.FC<ScriptBuilderProps> = ({ onNavigate }) => {
             </div>
           )}
 
-          <div className="mb-8 p-6 rounded-2xl backdrop-blur-sm" style={{
-            backgroundColor: 'rgba(15, 23, 42, 0.6)',
-            border: '1px solid rgba(148, 163, 184, 0.1)'
+          <div className="mb-8 p-8 rounded-2xl backdrop-blur-sm" style={{
+            background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(124, 58, 237, 0.05))',
+            border: '2px solid rgba(139, 92, 246, 0.2)'
           }}>
-            <h3 className="text-xl font-bold mb-3 text-white">
-              How to Create a Script
-            </h3>
-            <p className="text-slate-400 mb-6 leading-relaxed">
-              Scripts are reusable message templates that save you time. Create them once, use them forever with dynamic variables.
-            </p>
+            <div className="flex items-start gap-4 mb-6">
+              <div className="p-3 rounded-xl" style={{
+                background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)'
+              }}>
+                <Zap size={24} className="text-white" />
+              </div>
+              <div className="flex-1">
+                <h3 className="text-2xl font-bold mb-2 text-white">
+                  AI Script Generator
+                </h3>
+                <p className="text-slate-300 leading-relaxed">
+                  Describe what you need and our AI will create a professional script with variables in seconds.
+                </p>
+              </div>
+            </div>
 
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-3 gap-3 mb-6">
               {[
-                {
-                  step: '1',
-                  title: 'Write Your Message',
-                  desc: 'Type the message you want to reuse in the Message Body field below.'
-                },
-                {
-                  step: '2',
-                  title: 'Add Variables',
-                  desc: 'Use {{name}} for parts that change, like customer names or dates.'
-                },
-                {
-                  step: '3',
-                  title: 'Save & Run',
-                  desc: 'Saving is FREE. Running costs 1 credit and copies to clipboard.'
-                }
-              ].map((item, i) => (
-                <div key={i} className="p-4 rounded-xl" style={{
-                  backgroundColor: 'rgba(6, 182, 212, 0.05)',
-                  border: '1px solid rgba(6, 182, 212, 0.1)'
-                }}>
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-3 text-sm font-bold text-cyan-400" style={{
-                    backgroundColor: 'rgba(6, 182, 212, 0.2)'
-                  }}>
-                    {item.step}
-                  </div>
-                  <h4 className="font-semibold text-white text-sm mb-1">{item.title}</h4>
-                  <p className="text-slate-400 text-xs leading-relaxed">{item.desc}</p>
-                </div>
+                'Follow-up email for potential clients',
+                'Cold outreach for B2B sales',
+                'Meeting request with executive',
+                'Thank you message after purchase',
+                'Product demo scheduling email',
+                'Contract proposal introduction'
+              ].map((example, i) => (
+                <button
+                  key={i}
+                  onClick={() => setAiPrompt(example)}
+                  className="text-left px-4 py-3 rounded-lg transition-all text-sm hover:scale-105"
+                  style={{
+                    backgroundColor: 'rgba(139, 92, 246, 0.1)',
+                    border: '1px solid rgba(139, 92, 246, 0.3)',
+                    color: '#E9D5FF'
+                  }}
+                >
+                  "{example}"
+                </button>
               ))}
+            </div>
+
+            <div className="flex gap-3">
+              <input
+                type="text"
+                value={aiPrompt}
+                onChange={(e) => setAiPrompt(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && !generating && aiPrompt.trim() && (credits?.credits_remaining || 0) >= 1 && handleGenerate()}
+                placeholder="Describe the script you need (e.g., 'cold email for SaaS product demo')"
+                className="flex-1 px-6 py-4 rounded-xl text-lg outline-none transition-all focus:ring-2"
+                style={{
+                  backgroundColor: 'rgba(15, 23, 42, 0.8)',
+                  color: '#FFFFFF',
+                  border: '2px solid rgba(139, 92, 246, 0.3)',
+                  borderColor: 'rgba(139, 92, 246, 0.5)'
+                }}
+              />
+              <button
+                onClick={handleGenerate}
+                disabled={generating || !aiPrompt.trim() || (credits?.credits_remaining || 0) < 1}
+                className="px-8 py-4 font-bold text-lg rounded-xl transition-all hover:scale-105 flex items-center gap-3"
+                style={{
+                  background: generating || !aiPrompt.trim() || (credits?.credits_remaining || 0) < 1
+                    ? 'rgba(139, 92, 246, 0.3)'
+                    : 'linear-gradient(135deg, #8B5CF6, #7C3AED)',
+                  color: '#FFFFFF',
+                  boxShadow: generating || !aiPrompt.trim() || (credits?.credits_remaining || 0) < 1
+                    ? 'none'
+                    : '0 8px 32px rgba(139, 92, 246, 0.4)',
+                  cursor: generating || !aiPrompt.trim() || (credits?.credits_remaining || 0) < 1 ? 'not-allowed' : 'pointer'
+                }}
+              >
+                <Zap size={20} />
+                {generating ? 'Generating...' : 'Generate (1 Credit)'}
+              </button>
+            </div>
+
+            <div className="mt-4 flex items-center gap-2 text-sm" style={{ color: '#C4B5FD' }}>
+              <CheckCircle2 size={16} />
+              <span>Press Enter to generate • Uses 1 credit • Instant results</span>
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="space-y-6">
+          <div className="mb-6 p-6 rounded-xl" style={{
+            backgroundColor: 'rgba(15, 23, 42, 0.4)',
+            border: '1px solid rgba(148, 163, 184, 0.1)'
+          }}>
+            <h3 className="text-lg font-bold mb-4 text-white flex items-center gap-2">
+              <CheckCircle2 size={20} className="text-emerald-400" />
+              Script Details
+            </h3>
+            <div className="grid md:grid-cols-3 gap-4 mb-6">
               <div>
                 <label className="block text-sm font-semibold mb-2 text-white">
                   Script Name *
@@ -313,13 +360,13 @@ export const ScriptBuilder: React.FC<ScriptBuilderProps> = ({ onNavigate }) => {
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl outline-none transition-all focus:ring-2 focus:ring-cyan-500/50"
+                  className="w-full px-4 py-3 rounded-xl outline-none transition-all focus:ring-2 focus:ring-emerald-500/50"
                   style={{
                     backgroundColor: 'rgba(15, 23, 42, 0.6)',
                     color: '#FFFFFF',
                     border: '1px solid rgba(148, 163, 184, 0.2)'
                   }}
-                  placeholder="My awesome script"
+                  placeholder="e.g., Sales Follow-up"
                 />
               </div>
 
@@ -331,7 +378,7 @@ export const ScriptBuilder: React.FC<ScriptBuilderProps> = ({ onNavigate }) => {
                   type="text"
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl outline-none transition-all focus:ring-2 focus:ring-cyan-500/50"
+                  className="w-full px-4 py-3 rounded-xl outline-none transition-all focus:ring-2 focus:ring-emerald-500/50"
                   style={{
                     backgroundColor: 'rgba(15, 23, 42, 0.6)',
                     color: '#FFFFFF',
@@ -345,167 +392,152 @@ export const ScriptBuilder: React.FC<ScriptBuilderProps> = ({ onNavigate }) => {
                 <label className="block text-sm font-semibold mb-2 text-white">
                   Description
                 </label>
-                <textarea
+                <input
+                  type="text"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
-                  rows={3}
-                  className="w-full px-4 py-3 rounded-xl outline-none transition-all focus:ring-2 focus:ring-cyan-500/50"
+                  className="w-full px-4 py-3 rounded-xl outline-none transition-all focus:ring-2 focus:ring-emerald-500/50"
                   style={{
                     backgroundColor: 'rgba(15, 23, 42, 0.6)',
                     color: '#FFFFFF',
                     border: '1px solid rgba(148, 163, 184, 0.2)'
                   }}
-                  placeholder="What does this script do?"
+                  placeholder="What does this do?"
                 />
               </div>
+            </div>
+          </div>
 
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="space-y-6">
               <div>
-                <label className="block text-sm font-semibold mb-2 text-white">
-                  Generate with AI
-                </label>
-                <div className="flex gap-2 mb-4">
-                  <input
-                    type="text"
-                    value={aiPrompt}
-                    onChange={(e) => setAiPrompt(e.target.value)}
-                    placeholder="e.g., cold outreach email, follow-up message..."
-                    className="flex-1 px-4 py-3 rounded-xl outline-none transition-all focus:ring-2 focus:ring-cyan-500/50"
-                    style={{
-                      backgroundColor: 'rgba(15, 23, 42, 0.6)',
-                      color: '#FFFFFF',
-                      border: '1px solid rgba(148, 163, 184, 0.2)'
-                    }}
-                  />
-                  <button
-                    onClick={handleGenerate}
-                    disabled={generating || !aiPrompt.trim() || (credits?.credits_remaining || 0) < 1}
-                    className="px-6 py-3 font-semibold rounded-xl transition-all hover:scale-105"
-                    style={{
-                      background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)',
-                      color: '#FFFFFF',
-                      opacity: generating || !aiPrompt.trim() || (credits?.credits_remaining || 0) < 1 ? 0.5 : 1,
-                      boxShadow: '0 4px 20px rgba(139, 92, 246, 0.3)'
-                    }}
-                  >
-                    {generating ? 'Generating...' : 'Generate (1)'}
-                  </button>
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-semibold mb-2 text-white">
-                  Message Body *
+                <label className="block text-lg font-bold mb-3 text-white flex items-center gap-2">
+                  <Eye size={20} className="text-cyan-400" />
+                  Your Script
                 </label>
                 <textarea
                   value={messageBody}
                   onChange={(e) => setMessageBody(e.target.value)}
-                  rows={12}
-                  className="w-full px-4 py-3 rounded-xl outline-none font-mono text-sm transition-all focus:ring-2 focus:ring-cyan-500/50"
+                  rows={18}
+                  className="w-full px-5 py-4 rounded-xl outline-none font-mono text-base transition-all focus:ring-2 focus:ring-cyan-500/50"
                   style={{
-                    backgroundColor: 'rgba(15, 23, 42, 0.6)',
+                    backgroundColor: 'rgba(15, 23, 42, 0.8)',
                     color: '#FFFFFF',
-                    border: '1px solid rgba(148, 163, 184, 0.2)'
+                    border: '2px solid rgba(6, 182, 212, 0.3)',
+                    lineHeight: '1.6'
                   }}
-                  placeholder="Type your message here or use AI to generate. Use {{variableName}} for dynamic content."
+                  placeholder="Your generated script will appear here, or type your own message. Use {{variableName}} for dynamic content."
                 />
+                <p className="mt-2 text-sm text-slate-400">
+                  Tip: Use <code className="text-cyan-400 bg-slate-800 px-2 py-1 rounded">{'{{variableName}}'}</code> for parts that change each time
+                </p>
               </div>
             </div>
 
             <div className="space-y-6">
               <div>
-                <h3 className="text-lg font-semibold mb-4 text-white flex items-center gap-2">
-                  <Zap size={20} className="text-cyan-400" />
-                  Variables
+                <h3 className="text-lg font-bold mb-3 text-white flex items-center gap-2">
+                  <Zap size={20} className="text-yellow-400" />
+                  Dynamic Variables
                 </h3>
 
-                <div className="mb-4 p-4 rounded-xl" style={{
-                  backgroundColor: 'rgba(6, 182, 212, 0.05)',
-                  border: '1px solid rgba(6, 182, 212, 0.2)'
+                <div className="mb-5 p-5 rounded-xl" style={{
+                  backgroundColor: 'rgba(250, 204, 21, 0.05)',
+                  border: '1px solid rgba(250, 204, 21, 0.2)'
                 }}>
-                  <p className="text-xs text-cyan-300 mb-2 leading-relaxed">
-                    <strong className="text-white">What are variables?</strong><br />
-                    Variables are placeholders for information that changes each time you use the script.
+                  <p className="text-sm text-yellow-100 mb-3 leading-relaxed">
+                    <strong>Variables let you personalize each message</strong>
                   </p>
-                  <p className="text-xs text-cyan-300 leading-relaxed">
-                    <strong className="text-white">Example:</strong> Use "Hi <code className="text-emerald-400 text-xs">{'{{name}}'}</code>" instead of "Hi John"
+                  <p className="text-xs text-yellow-200/70 leading-relaxed">
+                    Example: "Hi <code className="text-emerald-400 text-xs bg-slate-800 px-1.5 py-0.5 rounded">{'{{firstName}}'}</code>" becomes "Hi Sarah" when you run it
                   </p>
                 </div>
 
-                <div className="p-4 mb-4 rounded-xl backdrop-blur-sm" style={{
+                {variables.length > 0 && (
+                  <div className="mb-5 space-y-2">
+                    <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-3">
+                      Detected Variables ({variables.length})
+                    </p>
+                    {variables.map((variable, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center justify-between p-3 rounded-lg backdrop-blur-sm group"
+                        style={{
+                          backgroundColor: 'rgba(15, 23, 42, 0.8)',
+                          border: '1px solid rgba(250, 204, 21, 0.2)'
+                        }}
+                      >
+                        <div>
+                          <span className="font-mono text-sm text-yellow-300 font-semibold">
+                            {`{{${variable.name}}}`}
+                          </span>
+                          {variable.placeholder && (
+                            <span className="text-xs ml-2 text-slate-400">
+                              default: {variable.placeholder}
+                            </span>
+                          )}
+                        </div>
+                        <button
+                          onClick={() => removeVariable(index)}
+                          className="p-1.5 rounded-lg opacity-0 group-hover:opacity-100 hover:bg-red-500/20 transition-all"
+                          style={{ color: '#EF4444' }}
+                        >
+                          <X size={16} />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                <div className="p-5 rounded-xl" style={{
                   backgroundColor: 'rgba(15, 23, 42, 0.6)',
-                  border: '1px solid rgba(148, 163, 184, 0.1)'
+                  border: '1px solid rgba(148, 163, 184, 0.2)'
                 }}>
-                  <div className="grid grid-cols-2 gap-3 mb-3">
+                  <p className="text-sm font-semibold text-white mb-3">Add Custom Variable</p>
+                  <div className="space-y-3">
                     <input
                       type="text"
                       value={newVarName}
                       onChange={(e) => setNewVarName(e.target.value)}
-                      placeholder="e.g., name, date"
-                      className="px-3 py-2 rounded-lg outline-none text-sm transition-all focus:ring-2 focus:ring-cyan-500/50"
+                      placeholder="Variable name (e.g., companyName)"
+                      className="w-full px-4 py-2.5 rounded-lg outline-none text-sm transition-all focus:ring-2 focus:ring-yellow-500/50"
                       style={{
-                        backgroundColor: 'rgba(10, 15, 30, 0.6)',
+                        backgroundColor: 'rgba(10, 15, 30, 0.8)',
                         color: '#FFFFFF',
-                        border: '1px solid rgba(148, 163, 184, 0.2)'
+                        border: '1px solid rgba(148, 163, 184, 0.3)'
                       }}
+                      onKeyDown={(e) => e.key === 'Enter' && newVarName.trim() && addVariable()}
                     />
                     <input
                       type="text"
                       value={newVarPlaceholder}
                       onChange={(e) => setNewVarPlaceholder(e.target.value)}
-                      placeholder="Default (optional)"
-                      className="px-3 py-2 rounded-lg outline-none text-sm transition-all focus:ring-2 focus:ring-cyan-500/50"
+                      placeholder="Default value (optional)"
+                      className="w-full px-4 py-2.5 rounded-lg outline-none text-sm transition-all focus:ring-2 focus:ring-yellow-500/50"
                       style={{
-                        backgroundColor: 'rgba(10, 15, 30, 0.6)',
+                        backgroundColor: 'rgba(10, 15, 30, 0.8)',
                         color: '#FFFFFF',
-                        border: '1px solid rgba(148, 163, 184, 0.2)'
+                        border: '1px solid rgba(148, 163, 184, 0.3)'
                       }}
+                      onKeyDown={(e) => e.key === 'Enter' && newVarName.trim() && addVariable()}
                     />
-                  </div>
-                  <button
-                    onClick={addVariable}
-                    disabled={!newVarName.trim()}
-                    className="w-full flex items-center justify-center gap-2 py-2.5 text-sm font-semibold rounded-lg transition-all hover:scale-105"
-                    style={{
-                      background: 'linear-gradient(135deg, #0EA5E9, #06B6D4)',
-                      color: '#FFFFFF',
-                      opacity: !newVarName.trim() ? 0.5 : 1,
-                      boxShadow: '0 4px 16px rgba(6, 182, 212, 0.3)'
-                    }}
-                  >
-                    <PlusCircle size={16} />
-                    Add Variable
-                  </button>
-                </div>
-
-                <div className="space-y-2 mb-6">
-                  {variables.map((variable, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center justify-between p-3 rounded-xl backdrop-blur-sm"
+                    <button
+                      onClick={addVariable}
+                      disabled={!newVarName.trim()}
+                      className="w-full flex items-center justify-center gap-2 py-3 text-sm font-bold rounded-lg transition-all hover:scale-105"
                       style={{
-                        backgroundColor: 'rgba(15, 23, 42, 0.6)',
-                        border: '1px solid rgba(148, 163, 184, 0.1)'
+                        background: newVarName.trim()
+                          ? 'linear-gradient(135deg, #FBBF24, #F59E0B)'
+                          : 'rgba(148, 163, 184, 0.2)',
+                        color: '#FFFFFF',
+                        cursor: newVarName.trim() ? 'pointer' : 'not-allowed',
+                        boxShadow: newVarName.trim() ? '0 4px 16px rgba(251, 191, 36, 0.3)' : 'none'
                       }}
                     >
-                      <div>
-                        <span className="font-mono text-sm text-cyan-400">
-                          {`{{${variable.name}}}`}
-                        </span>
-                        {variable.placeholder && (
-                          <span className="text-xs ml-2 text-slate-500">
-                            ({variable.placeholder})
-                          </span>
-                        )}
-                      </div>
-                      <button
-                        onClick={() => removeVariable(index)}
-                        className="p-1.5 rounded-lg hover:bg-red-500/20 transition-colors"
-                        style={{ color: '#EF4444' }}
-                      >
-                        <X size={16} />
-                      </button>
-                    </div>
-                  ))}
+                      <PlusCircle size={18} />
+                      Add Variable to Script
+                    </button>
+                  </div>
                 </div>
               </div>
 

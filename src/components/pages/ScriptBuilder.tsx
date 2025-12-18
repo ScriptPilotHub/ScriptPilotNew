@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { supabase } from '../../lib/supabase';
-import { Code, ArrowLeft, Save, Play, PlusCircle, X, Eye } from 'lucide-react';
+import { MessageSquare, ArrowLeft, Save, Play, PlusCircle, X, Eye, Zap, CheckCircle2, AlertCircle } from 'lucide-react';
 
 interface ScriptBuilderProps {
   onNavigate: (page: string) => void;
@@ -32,7 +32,6 @@ export const ScriptBuilder: React.FC<ScriptBuilderProps> = ({ onNavigate }) => {
       setVariables([...variables, { name: newVarName.trim(), placeholder: newVarPlaceholder.trim() || undefined }]);
       setNewVarName('');
       setNewVarPlaceholder('');
-
       setMessageBody(prev => prev + `{{${newVarName.trim()}}}`);
     }
   };
@@ -119,74 +118,86 @@ export const ScriptBuilder: React.FC<ScriptBuilderProps> = ({ onNavigate }) => {
   };
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#0A0A0A' }}>
-      <header className="sticky top-0 z-50 px-6 md:px-8 py-6" style={{
-        backgroundColor: 'rgba(10, 10, 10, 0.95)',
-        backdropFilter: 'blur(10px)',
-        borderBottom: '1px solid #1A1A1A'
+    <div className="min-h-screen relative overflow-hidden" style={{ backgroundColor: '#0A0F1E' }}>
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-5" />
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-sky-400 rounded-full mix-blend-multiply filter blur-3xl opacity-5" />
+      </div>
+
+      <header className="sticky top-0 z-50 px-6 md:px-8 py-4" style={{
+        backgroundColor: 'rgba(10, 15, 30, 0.8)',
+        backdropFilter: 'blur(20px) saturate(180%)',
+        borderBottom: '1px solid rgba(148, 163, 184, 0.1)'
       }}>
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-4">
             <button
               onClick={() => onNavigate('dashboard')}
-              className="p-2"
-              style={{
-                backgroundColor: 'transparent',
-                border: 'none',
-                cursor: 'pointer',
-                color: '#808080'
-              }}
+              className="p-2 rounded-lg transition-colors hover:bg-slate-800/50"
+              style={{ color: '#94A3B8' }}
             >
               <ArrowLeft size={24} />
             </button>
-            <Code size={32} style={{ color: '#FFFFFF' }} />
-            <span className="text-2xl font-bold" style={{ color: '#FFFFFF' }}>Script Builder</span>
+
+            <div className="flex items-center gap-3">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-sky-500 rounded-lg blur opacity-50" />
+                <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 p-2 rounded-lg border border-slate-700">
+                  <MessageSquare size={24} className="text-cyan-400" />
+                </div>
+              </div>
+              <span className="text-xl font-bold text-white">Script Builder</span>
+            </div>
           </div>
+
           <div className="flex items-center gap-3">
             <button
               onClick={() => setShowPreview(!showPreview)}
-              className="flex items-center gap-2 px-4 py-2 font-medium transition-colors"
+              className="hidden md:flex items-center gap-2 px-4 py-2 font-medium rounded-lg transition-all hover:scale-105"
               style={{
-                backgroundColor: 'transparent',
+                backgroundColor: 'rgba(15, 23, 42, 0.6)',
                 color: '#FFFFFF',
-                border: '1px solid #333',
-                borderRadius: '8px'
+                border: '1px solid rgba(148, 163, 184, 0.2)'
               }}
             >
               <Eye size={18} />
               Preview
             </button>
-            <div className="flex items-center gap-2 px-3 py-1.5" style={{ backgroundColor: '#1A1A1A', borderRadius: '6px' }}>
-              <span className="text-sm" style={{ color: '#808080' }}>Credits:</span>
-              <span className="text-sm font-bold" style={{ color: '#FFFFFF' }}>
+
+            <div className="flex items-center gap-2 px-3 py-2 rounded-lg" style={{
+              backgroundColor: 'rgba(15, 23, 42, 0.6)',
+              border: '1px solid rgba(148, 163, 184, 0.1)'
+            }}>
+              <Zap size={16} className="text-cyan-400" />
+              <span className="text-sm font-bold text-white">
                 {credits?.credits_remaining || 0}
               </span>
             </div>
+
             <button
               onClick={handleRun}
               disabled={!messageBody.trim() || (credits?.credits_remaining || 0) < 1}
-              className="flex items-center gap-2 px-4 py-2 font-semibold transition-colors"
+              className="flex items-center gap-2 px-4 py-2 font-semibold rounded-lg transition-all hover:scale-105"
               style={{
-                backgroundColor: '#10B981',
+                background: 'linear-gradient(135deg, #10B981, #059669)',
                 color: '#FFFFFF',
-                border: 'none',
-                borderRadius: '8px',
-                opacity: (!messageBody.trim() || (credits?.credits_remaining || 0) < 1) ? 0.5 : 1
+                opacity: (!messageBody.trim() || (credits?.credits_remaining || 0) < 1) ? 0.5 : 1,
+                boxShadow: '0 4px 20px rgba(16, 185, 129, 0.3)'
               }}
             >
               <Play size={18} />
-              Run Script (1 credit)
+              Run (1)
             </button>
+
             <button
               onClick={handleSave}
               disabled={saving || !name.trim() || !messageBody.trim()}
-              className="flex items-center gap-2 px-4 py-2 font-semibold transition-colors"
+              className="flex items-center gap-2 px-4 py-2 font-semibold rounded-lg transition-all hover:scale-105"
               style={{
-                backgroundColor: '#FFFFFF',
-                color: '#0A0A0A',
-                border: 'none',
-                borderRadius: '8px',
-                opacity: saving || !name.trim() || !messageBody.trim() ? 0.5 : 1
+                background: 'linear-gradient(135deg, #0EA5E9, #06B6D4)',
+                color: '#FFFFFF',
+                opacity: saving || !name.trim() || !messageBody.trim() ? 0.5 : 1,
+                boxShadow: '0 4px 20px rgba(6, 182, 212, 0.3)'
               }}
             >
               <Save size={18} />
@@ -196,201 +207,207 @@ export const ScriptBuilder: React.FC<ScriptBuilderProps> = ({ onNavigate }) => {
         </div>
       </header>
 
-      <main className="px-6 md:px-8 py-12">
+      <main className="px-6 md:px-8 py-12 relative">
         <div className="max-w-7xl mx-auto">
           {error && (
-            <div className="mb-6 p-4 flex items-start gap-3" style={{ backgroundColor: '#FEE2E2', border: '1px solid #EF4444', borderRadius: '8px' }}>
-              <span style={{ color: '#991B1B', fontSize: '20px' }}>⚠️</span>
-              <p style={{ color: '#991B1B', flex: 1 }}>{error}</p>
+            <div className="mb-6 p-4 rounded-xl backdrop-blur-sm flex items-start gap-3" style={{
+              backgroundColor: 'rgba(239, 68, 68, 0.1)',
+              border: '1px solid rgba(239, 68, 68, 0.3)'
+            }}>
+              <AlertCircle size={20} className="text-red-400 flex-shrink-0 mt-0.5" />
+              <p className="text-red-300 flex-1">{error}</p>
             </div>
           )}
 
           {success && (
-            <div className="mb-6 p-4 flex items-start gap-3" style={{ backgroundColor: '#D1FAE5', border: '1px solid #10B981', borderRadius: '8px' }}>
-              <span style={{ color: '#065F46', fontSize: '20px' }}>✓</span>
-              <p style={{ color: '#065F46', flex: 1 }}>{success}</p>
+            <div className="mb-6 p-4 rounded-xl backdrop-blur-sm flex items-start gap-3" style={{
+              backgroundColor: 'rgba(16, 185, 129, 0.1)',
+              border: '1px solid rgba(16, 185, 129, 0.3)'
+            }}>
+              <CheckCircle2 size={20} className="text-emerald-400 flex-shrink-0 mt-0.5" />
+              <p className="text-emerald-300 flex-1">{success}</p>
             </div>
           )}
 
-          <div className="mb-6 p-6 space-y-4" style={{ backgroundColor: '#1A1A1A', borderRadius: '12px', border: '1px solid #333' }}>
-            <div>
-              <h3 className="text-lg font-bold mb-2" style={{ color: '#FFFFFF' }}>
-                How to Create a Script
-              </h3>
-              <p className="text-sm mb-3" style={{ color: '#808080', lineHeight: '1.6' }}>
-                Scripts are reusable message templates that save you time. Create them once, use them forever.
-              </p>
-            </div>
+          <div className="mb-8 p-6 rounded-2xl backdrop-blur-sm" style={{
+            backgroundColor: 'rgba(15, 23, 42, 0.6)',
+            border: '1px solid rgba(148, 163, 184, 0.1)'
+          }}>
+            <h3 className="text-xl font-bold mb-3 text-white">
+              How to Create a Script
+            </h3>
+            <p className="text-slate-400 mb-6 leading-relaxed">
+              Scripts are reusable message templates that save you time. Create them once, use them forever with dynamic variables.
+            </p>
 
             <div className="grid md:grid-cols-3 gap-4">
-              <div className="p-4" style={{ backgroundColor: '#0A0A0A', borderRadius: '8px' }}>
-                <div className="text-2xl mb-2">1️⃣</div>
-                <h4 className="font-semibold mb-1" style={{ color: '#FFFFFF', fontSize: '14px' }}>Write Your Message</h4>
-                <p style={{ color: '#808080', fontSize: '13px' }}>
-                  Type the message you want to reuse in the Message Body field below.
-                </p>
-              </div>
-
-              <div className="p-4" style={{ backgroundColor: '#0A0A0A', borderRadius: '8px' }}>
-                <div className="text-2xl mb-2">2️⃣</div>
-                <h4 className="font-semibold mb-1" style={{ color: '#FFFFFF', fontSize: '14px' }}>Add Variables (Optional)</h4>
-                <p style={{ color: '#808080', fontSize: '13px' }}>
-                  Use <code style={{ color: '#10B981', fontSize: '12px' }}>{'{{name}}'}</code> for parts that change, like customer names or dates.
-                </p>
-              </div>
-
-              <div className="p-4" style={{ backgroundColor: '#0A0A0A', borderRadius: '8px' }}>
-                <div className="text-2xl mb-2">3️⃣</div>
-                <h4 className="font-semibold mb-1" style={{ color: '#FFFFFF', fontSize: '14px' }}>Save & Run</h4>
-                <p style={{ color: '#808080', fontSize: '13px' }}>
-                  Saving is <strong style={{ color: '#10B981' }}>FREE</strong>. Running costs 1 credit and copies to clipboard.
-                </p>
-              </div>
-            </div>
-
-            <div className="pt-3" style={{ borderTop: '1px solid #333' }}>
-              <p className="text-xs" style={{ color: '#808080' }}>
-                <strong style={{ color: '#FFFFFF' }}>Example:</strong> "Hi <code style={{ color: '#10B981' }}>{'{{name}}'}</code>, your order <code style={{ color: '#10B981' }}>{'{{orderNumber}}'}</code> ships on <code style={{ color: '#10B981' }}>{'{{date}}'}</code>"
-              </p>
+              {[
+                {
+                  step: '1',
+                  title: 'Write Your Message',
+                  desc: 'Type the message you want to reuse in the Message Body field below.'
+                },
+                {
+                  step: '2',
+                  title: 'Add Variables',
+                  desc: 'Use {{name}} for parts that change, like customer names or dates.'
+                },
+                {
+                  step: '3',
+                  title: 'Save & Run',
+                  desc: 'Saving is FREE. Running costs 1 credit and copies to clipboard.'
+                }
+              ].map((item, i) => (
+                <div key={i} className="p-4 rounded-xl" style={{
+                  backgroundColor: 'rgba(6, 182, 212, 0.05)',
+                  border: '1px solid rgba(6, 182, 212, 0.1)'
+                }}>
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-3 text-sm font-bold text-cyan-400" style={{
+                    backgroundColor: 'rgba(6, 182, 212, 0.2)'
+                  }}>
+                    {item.step}
+                  </div>
+                  <h4 className="font-semibold text-white text-sm mb-1">{item.title}</h4>
+                  <p className="text-slate-400 text-xs leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <div className="mb-6">
-                <label htmlFor="name" className="block text-sm font-medium mb-2" style={{ color: '#FFFFFF' }}>
+            <div className="space-y-6">
+              <div>
+                <label className="block text-sm font-semibold mb-2 text-white">
                   Script Name *
                 </label>
                 <input
-                  id="name"
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full px-4 py-3 outline-none"
+                  className="w-full px-4 py-3 rounded-xl outline-none transition-all focus:ring-2 focus:ring-cyan-500/50"
                   style={{
-                    backgroundColor: '#1A1A1A',
+                    backgroundColor: 'rgba(15, 23, 42, 0.6)',
                     color: '#FFFFFF',
-                    border: '1px solid #333',
-                    borderRadius: '8px'
+                    border: '1px solid rgba(148, 163, 184, 0.2)'
                   }}
                   placeholder="My awesome script"
                 />
               </div>
 
-              <div className="mb-6">
-                <label htmlFor="category" className="block text-sm font-medium mb-2" style={{ color: '#FFFFFF' }}>
+              <div>
+                <label className="block text-sm font-semibold mb-2 text-white">
                   Category
                 </label>
                 <input
-                  id="category"
                   type="text"
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
-                  className="w-full px-4 py-3 outline-none"
+                  className="w-full px-4 py-3 rounded-xl outline-none transition-all focus:ring-2 focus:ring-cyan-500/50"
                   style={{
-                    backgroundColor: '#1A1A1A',
+                    backgroundColor: 'rgba(15, 23, 42, 0.6)',
                     color: '#FFFFFF',
-                    border: '1px solid #333',
-                    borderRadius: '8px'
+                    border: '1px solid rgba(148, 163, 184, 0.2)'
                   }}
                   placeholder="Sales, Support, etc."
                 />
               </div>
 
-              <div className="mb-6">
-                <label htmlFor="description" className="block text-sm font-medium mb-2" style={{ color: '#FFFFFF' }}>
+              <div>
+                <label className="block text-sm font-semibold mb-2 text-white">
                   Description
                 </label>
                 <textarea
-                  id="description"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                   rows={3}
-                  className="w-full px-4 py-3 outline-none"
+                  className="w-full px-4 py-3 rounded-xl outline-none transition-all focus:ring-2 focus:ring-cyan-500/50"
                   style={{
-                    backgroundColor: '#1A1A1A',
+                    backgroundColor: 'rgba(15, 23, 42, 0.6)',
                     color: '#FFFFFF',
-                    border: '1px solid #333',
-                    borderRadius: '8px'
+                    border: '1px solid rgba(148, 163, 184, 0.2)'
                   }}
                   placeholder="What does this script do?"
                 />
               </div>
 
-              <div className="mb-6">
-                <label htmlFor="messageBody" className="block text-sm font-medium mb-2" style={{ color: '#FFFFFF' }}>
+              <div>
+                <label className="block text-sm font-semibold mb-2 text-white">
                   Message Body *
                 </label>
                 <textarea
-                  id="messageBody"
                   value={messageBody}
                   onChange={(e) => setMessageBody(e.target.value)}
-                  rows={10}
-                  className="w-full px-4 py-3 outline-none font-mono text-sm"
+                  rows={12}
+                  className="w-full px-4 py-3 rounded-xl outline-none font-mono text-sm transition-all focus:ring-2 focus:ring-cyan-500/50"
                   style={{
-                    backgroundColor: '#1A1A1A',
+                    backgroundColor: 'rgba(15, 23, 42, 0.6)',
                     color: '#FFFFFF',
-                    border: '1px solid #333',
-                    borderRadius: '8px'
+                    border: '1px solid rgba(148, 163, 184, 0.2)'
                   }}
                   placeholder="Type your message here. Use {{variableName}} for dynamic content."
                 />
               </div>
             </div>
 
-            <div>
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-2" style={{ color: '#FFFFFF' }}>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-lg font-semibold mb-4 text-white flex items-center gap-2">
+                  <Zap size={20} className="text-cyan-400" />
                   Variables
                 </h3>
-                <div className="mb-4 p-3" style={{ backgroundColor: '#0F1A2A', borderRadius: '8px', border: '1px solid #2563EB' }}>
-                  <p className="text-xs mb-2" style={{ color: '#93C5FD', lineHeight: '1.5' }}>
-                    <strong style={{ color: '#FFFFFF' }}>What are variables?</strong><br />
+
+                <div className="mb-4 p-4 rounded-xl" style={{
+                  backgroundColor: 'rgba(6, 182, 212, 0.05)',
+                  border: '1px solid rgba(6, 182, 212, 0.2)'
+                }}>
+                  <p className="text-xs text-cyan-300 mb-2 leading-relaxed">
+                    <strong className="text-white">What are variables?</strong><br />
                     Variables are placeholders for information that changes each time you use the script.
                   </p>
-                  <p className="text-xs" style={{ color: '#93C5FD', lineHeight: '1.5' }}>
-                    <strong style={{ color: '#FFFFFF' }}>Example:</strong> Instead of writing "Hi John" every time, use "Hi <code style={{ color: '#10B981' }}>{'{{name}}'}</code>" and the script will fill in different names.
+                  <p className="text-xs text-cyan-300 leading-relaxed">
+                    <strong className="text-white">Example:</strong> Use "Hi <code className="text-emerald-400 text-xs">{'{{name}}'}</code>" instead of "Hi John"
                   </p>
                 </div>
-                <div className="p-4 mb-4" style={{ backgroundColor: '#1A1A1A', borderRadius: '8px' }}>
+
+                <div className="p-4 mb-4 rounded-xl backdrop-blur-sm" style={{
+                  backgroundColor: 'rgba(15, 23, 42, 0.6)',
+                  border: '1px solid rgba(148, 163, 184, 0.1)'
+                }}>
                   <div className="grid grid-cols-2 gap-3 mb-3">
                     <input
                       type="text"
                       value={newVarName}
                       onChange={(e) => setNewVarName(e.target.value)}
-                      placeholder="e.g., name, date, price"
-                      className="px-3 py-2 outline-none text-sm"
+                      placeholder="e.g., name, date"
+                      className="px-3 py-2 rounded-lg outline-none text-sm transition-all focus:ring-2 focus:ring-cyan-500/50"
                       style={{
-                        backgroundColor: '#0F0F0F',
+                        backgroundColor: 'rgba(10, 15, 30, 0.6)',
                         color: '#FFFFFF',
-                        border: '1px solid #333',
-                        borderRadius: '6px'
+                        border: '1px solid rgba(148, 163, 184, 0.2)'
                       }}
                     />
                     <input
                       type="text"
                       value={newVarPlaceholder}
                       onChange={(e) => setNewVarPlaceholder(e.target.value)}
-                      placeholder="Default value (optional)"
-                      className="px-3 py-2 outline-none text-sm"
+                      placeholder="Default (optional)"
+                      className="px-3 py-2 rounded-lg outline-none text-sm transition-all focus:ring-2 focus:ring-cyan-500/50"
                       style={{
-                        backgroundColor: '#0F0F0F',
+                        backgroundColor: 'rgba(10, 15, 30, 0.6)',
                         color: '#FFFFFF',
-                        border: '1px solid #333',
-                        borderRadius: '6px'
+                        border: '1px solid rgba(148, 163, 184, 0.2)'
                       }}
                     />
                   </div>
                   <button
                     onClick={addVariable}
                     disabled={!newVarName.trim()}
-                    className="w-full flex items-center justify-center gap-2 py-2 text-sm font-medium transition-colors"
+                    className="w-full flex items-center justify-center gap-2 py-2.5 text-sm font-semibold rounded-lg transition-all hover:scale-105"
                     style={{
-                      backgroundColor: '#2196F3',
+                      background: 'linear-gradient(135deg, #0EA5E9, #06B6D4)',
                       color: '#FFFFFF',
-                      border: 'none',
-                      borderRadius: '6px',
-                      opacity: !newVarName.trim() ? 0.5 : 1
+                      opacity: !newVarName.trim() ? 0.5 : 1,
+                      boxShadow: '0 4px 16px rgba(6, 182, 212, 0.3)'
                     }}
                   >
                     <PlusCircle size={16} />
@@ -398,46 +415,46 @@ export const ScriptBuilder: React.FC<ScriptBuilderProps> = ({ onNavigate }) => {
                   </button>
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-2 mb-6">
                   {variables.map((variable, index) => (
                     <div
                       key={index}
-                      className="flex items-center justify-between p-3"
-                      style={{ backgroundColor: '#1A1A1A', borderRadius: '8px' }}
+                      className="flex items-center justify-between p-3 rounded-xl backdrop-blur-sm"
+                      style={{
+                        backgroundColor: 'rgba(15, 23, 42, 0.6)',
+                        border: '1px solid rgba(148, 163, 184, 0.1)'
+                      }}
                     >
                       <div>
-                        <span className="font-mono text-sm" style={{ color: '#FFFFFF' }}>
+                        <span className="font-mono text-sm text-cyan-400">
                           {`{{${variable.name}}}`}
                         </span>
                         {variable.placeholder && (
-                          <span className="text-xs ml-2" style={{ color: '#808080' }}>
+                          <span className="text-xs ml-2 text-slate-500">
                             ({variable.placeholder})
                           </span>
                         )}
                       </div>
                       <button
                         onClick={() => removeVariable(index)}
-                        className="p-1"
-                        style={{
-                          backgroundColor: 'transparent',
-                          border: 'none',
-                          cursor: 'pointer',
-                          color: '#FF4444'
-                        }}
+                        className="p-1.5 rounded-lg hover:bg-red-500/20 transition-colors"
+                        style={{ color: '#EF4444' }}
                       >
-                        <X size={18} />
+                        <X size={16} />
                       </button>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {showPreview && (
+              {showPreview && variables.length > 0 && (
                 <div>
-                  <h3 className="text-lg font-semibold mb-4" style={{ color: '#FFFFFF' }}>
+                  <h3 className="text-lg font-semibold mb-4 text-white flex items-center gap-2">
+                    <Eye size={20} className="text-sky-400" />
                     Preview
                   </h3>
-                  <div className="mb-4 space-y-2">
+
+                  <div className="space-y-3 mb-4">
                     {variables.map((variable) => (
                       <input
                         key={variable.name}
@@ -445,26 +462,25 @@ export const ScriptBuilder: React.FC<ScriptBuilderProps> = ({ onNavigate }) => {
                         value={previewValues[variable.name] || ''}
                         onChange={(e) => setPreviewValues({ ...previewValues, [variable.name]: e.target.value })}
                         placeholder={variable.placeholder || variable.name}
-                        className="w-full px-3 py-2 outline-none text-sm"
+                        className="w-full px-3 py-2 rounded-lg outline-none text-sm transition-all focus:ring-2 focus:ring-sky-500/50"
                         style={{
-                          backgroundColor: '#1A1A1A',
+                          backgroundColor: 'rgba(15, 23, 42, 0.6)',
                           color: '#FFFFFF',
-                          border: '1px solid #333',
-                          borderRadius: '6px'
+                          border: '1px solid rgba(148, 163, 184, 0.2)'
                         }}
                       />
                     ))}
                   </div>
+
                   <div
-                    className="p-4"
+                    className="p-4 rounded-xl min-h-[200px]"
                     style={{
-                      backgroundColor: '#1A1A1A',
-                      borderRadius: '8px',
-                      minHeight: '200px',
+                      backgroundColor: 'rgba(15, 23, 42, 0.6)',
+                      border: '1px solid rgba(148, 163, 184, 0.2)',
                       whiteSpace: 'pre-wrap'
                     }}
                   >
-                    <p style={{ color: '#FFFFFF', fontSize: '14px' }}>
+                    <p className="text-white text-sm leading-relaxed">
                       {getPreviewText() || 'Type your message to see preview...'}
                     </p>
                   </div>

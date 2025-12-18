@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { supabase } from '../../lib/supabase';
-import { Code, CreditCard, FileText, LogOut, PlusCircle, TrendingUp, Zap } from 'lucide-react';
+import { MessageSquare, CreditCard, FileText, LogOut, PlusCircle, TrendingUp, Zap, ArrowRight } from 'lucide-react';
 
 interface DashboardProps {
   onNavigate: (page: string) => void;
@@ -29,15 +29,15 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
   const getTierInfo = (tier: string) => {
     switch (tier) {
       case 'free':
-        return { color: '#6B7280', label: 'Free', credits: 5 };
+        return { color: '#64748B', label: 'Free', gradient: 'from-slate-500 to-slate-600' };
       case 'starter':
-        return { color: '#10B981', label: 'Starter', credits: 100 };
+        return { color: '#0EA5E9', label: 'Starter', gradient: 'from-sky-500 to-blue-500' };
       case 'pro':
-        return { color: '#3B82F6', label: 'Pro', credits: 500 };
+        return { color: '#06B6D4', label: 'Pro', gradient: 'from-cyan-500 to-teal-500' };
       case 'agency':
-        return { color: '#8B5CF6', label: 'Agency', credits: 2000 };
+        return { color: '#10B981', label: 'Agency', gradient: 'from-emerald-500 to-green-500' };
       default:
-        return { color: '#6B7280', label: 'Free', credits: 5 };
+        return { color: '#64748B', label: 'Free', gradient: 'from-slate-500 to-slate-600' };
     }
   };
 
@@ -49,61 +49,84 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#0A0A0A' }}>
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#0A0F1E' }}>
         <div className="text-center">
-          <Code size={48} style={{ color: '#FFFFFF', margin: '0 auto 16px' }} />
-          <p style={{ color: '#808080' }}>Loading...</p>
+          <div className="relative inline-block mb-6">
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-sky-500 rounded-lg blur opacity-50 animate-pulse" />
+            <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 p-4 rounded-lg border border-slate-700">
+              <MessageSquare size={48} className="text-cyan-400" />
+            </div>
+          </div>
+          <p className="text-slate-400">Loading your workspace...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#0A0A0A' }}>
+    <div className="min-h-screen relative overflow-hidden" style={{ backgroundColor: '#0A0F1E' }}>
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-5" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-sky-400 rounded-full mix-blend-multiply filter blur-3xl opacity-5" />
+      </div>
+
       <header className="sticky top-0 z-50 px-6 md:px-8 py-4" style={{
-        backgroundColor: 'rgba(10, 10, 10, 0.95)',
-        backdropFilter: 'blur(10px)',
-        borderBottom: '1px solid #1A1A1A'
+        backgroundColor: 'rgba(10, 15, 30, 0.8)',
+        backdropFilter: 'blur(20px) saturate(180%)',
+        borderBottom: '1px solid rgba(148, 163, 184, 0.1)'
       }}>
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-3">
-              <Code size={28} style={{ color: '#FFFFFF' }} />
-              <span className="text-xl font-bold" style={{ color: '#FFFFFF' }}>ScriptPilot</span>
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-sky-500 rounded-lg blur opacity-50" />
+                <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 p-2 rounded-lg border border-slate-700">
+                  <MessageSquare size={24} className="text-cyan-400" />
+                </div>
+              </div>
+              <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-sky-400 bg-clip-text text-transparent">
+                ScriptPilot
+              </span>
             </div>
-            <div className="hidden md:flex items-center gap-2 px-3 py-1.5" style={{ backgroundColor: '#1A1A1A', borderRadius: '6px' }}>
+
+            <div className="hidden md:flex items-center gap-3 px-4 py-2 rounded-lg backdrop-blur-sm" style={{
+              backgroundColor: 'rgba(15, 23, 42, 0.6)',
+              border: '1px solid rgba(148, 163, 184, 0.1)'
+            }}>
               <Zap size={16} style={{ color: tierInfo.color }} />
               <span className="text-sm font-semibold" style={{ color: tierInfo.color }}>
                 {tierInfo.label}
               </span>
             </div>
+
             <div className="hidden md:flex items-center gap-2">
-              <CreditCard size={16} style={{ color: '#808080' }} />
-              <span className="text-sm font-medium" style={{ color: '#FFFFFF' }}>
+              <CreditCard size={16} className="text-slate-400" />
+              <span className="text-sm font-bold text-white">
                 {credits?.credits_remaining || 0}
               </span>
-              <span className="text-sm" style={{ color: '#808080' }}>credits left</span>
+              <span className="text-sm text-slate-500">credits</span>
             </div>
           </div>
+
           <div className="flex items-center gap-3">
             <button
               onClick={() => onNavigate('upgrade')}
-              className="px-4 py-2 text-sm font-semibold transition-colors"
+              className="group relative px-4 py-2 text-sm font-semibold text-white rounded-lg overflow-hidden transition-all duration-300 hover:scale-105"
               style={{
-                backgroundColor: tierInfo.color,
-                color: '#FFFFFF',
-                borderRadius: '6px'
+                background: `linear-gradient(135deg, ${tierInfo.color}, ${tierInfo.color}CC)`,
+                boxShadow: `0 4px 20px ${tierInfo.color}40`
               }}
             >
-              Upgrade
+              <span className="relative z-10 flex items-center gap-1">
+                Upgrade
+                <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+              </span>
             </button>
+
             <button
               onClick={() => signOut()}
-              className="p-2 transition-colors"
-              style={{
-                color: '#808080',
-                backgroundColor: 'transparent'
-              }}
+              className="p-2 rounded-lg transition-colors hover:bg-slate-800/50"
+              style={{ color: '#94A3B8' }}
             >
               <LogOut size={20} />
             </button>
@@ -111,97 +134,127 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
         </div>
       </header>
 
-      <main className="px-6 md:px-8 py-12">
+      <main className="px-6 md:px-8 py-12 relative">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-8">
-            <h1 className="text-3xl font-bold mb-2" style={{ color: '#FFFFFF' }}>
+          <div className="mb-12">
+            <h1 className="text-4xl font-bold mb-2 text-white">
               Welcome back!
             </h1>
-            <p style={{ color: '#808080' }}>
+            <p className="text-slate-400">
               {profile?.email}
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <div className="p-6 relative overflow-hidden" style={{ backgroundColor: '#1A1A1A', borderRadius: '12px' }}>
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <div className="group relative p-6 rounded-2xl backdrop-blur-sm overflow-hidden transition-all duration-300 hover:scale-105" style={{
+              backgroundColor: 'rgba(15, 23, 42, 0.6)',
+              border: '1px solid rgba(148, 163, 184, 0.1)',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)'
+            }}>
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-sky-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="relative z-10">
-                <div className="flex items-center gap-2 mb-2">
-                  <CreditCard size={20} style={{ color: tierInfo.color }} />
-                  <h3 className="text-sm font-medium" style={{ color: '#808080' }}>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 rounded-lg bg-gradient-to-br from-cyan-500/20 to-sky-500/20">
+                    <CreditCard size={20} style={{ color: tierInfo.color }} />
+                  </div>
+                  <h3 className="text-sm font-medium text-slate-400">
                     Credits Remaining
                   </h3>
                 </div>
-                <div className="mb-3">
-                  <span className="text-4xl font-bold" style={{ color: '#FFFFFF' }}>
+
+                <div className="mb-4">
+                  <span className="text-5xl font-bold text-white">
                     {credits?.credits_remaining || 0}
                   </span>
-                  <span className="text-xl ml-2" style={{ color: '#808080' }}>
+                  <span className="text-2xl ml-2 text-slate-500">
                     / {credits?.monthly_allocation || 0}
                   </span>
                 </div>
-                <div className="w-full h-2 rounded-full overflow-hidden mb-3" style={{ backgroundColor: '#0F0F0F' }}>
+
+                <div className="w-full h-2 rounded-full overflow-hidden mb-3" style={{ backgroundColor: 'rgba(15, 23, 42, 0.8)' }}>
                   <div
-                    className="h-full transition-all"
+                    className="h-full transition-all duration-500"
                     style={{
                       width: `${creditPercentage}%`,
-                      backgroundColor: creditPercentage > 20 ? tierInfo.color : '#EF4444'
+                      background: creditPercentage > 20
+                        ? `linear-gradient(90deg, ${tierInfo.color}, ${tierInfo.color}CC)`
+                        : 'linear-gradient(90deg, #EF4444, #DC2626)'
                     }}
                   />
                 </div>
-                <p className="text-sm" style={{ color: '#808080' }}>
+
+                <p className="text-sm text-slate-400">
                   {creditPercentage < 20 ? 'Running low! Consider upgrading.' : 'You\'re all set for this month.'}
                 </p>
               </div>
             </div>
 
-            <div className="p-6 relative overflow-hidden" style={{ backgroundColor: '#1A1A1A', borderRadius: '12px' }}>
+            <div className="group relative p-6 rounded-2xl backdrop-blur-sm overflow-hidden transition-all duration-300 hover:scale-105" style={{
+              backgroundColor: 'rgba(15, 23, 42, 0.6)',
+              border: '1px solid rgba(148, 163, 184, 0.1)',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)'
+            }}>
+              <div className="absolute inset-0 bg-gradient-to-br from-sky-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="relative z-10">
-                <div className="flex items-center gap-2 mb-2">
-                  <FileText size={20} style={{ color: tierInfo.color }} />
-                  <h3 className="text-sm font-medium" style={{ color: '#808080' }}>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 rounded-lg bg-gradient-to-br from-sky-500/20 to-blue-500/20">
+                    <FileText size={20} className="text-sky-400" />
+                  </div>
+                  <h3 className="text-sm font-medium text-slate-400">
                     Your Scripts
                   </h3>
                 </div>
-                <div className="mb-3">
-                  <span className="text-4xl font-bold" style={{ color: '#FFFFFF' }}>
+
+                <div className="mb-4">
+                  <span className="text-5xl font-bold text-white">
                     {scriptsCount}
                   </span>
-                  <span className="text-xl ml-2" style={{ color: '#808080' }}>
+                  <span className="text-2xl ml-2 text-slate-500">
                     saved
                   </span>
                 </div>
+
                 <button
                   onClick={() => onNavigate('library')}
-                  className="text-sm font-medium hover:underline"
-                  style={{ color: tierInfo.color }}
+                  className="text-sm font-medium hover:underline flex items-center gap-1 text-sky-400"
                 >
-                  View all scripts →
+                  View all scripts
+                  <ArrowRight size={14} />
                 </button>
               </div>
             </div>
 
-            <div className="p-6 relative overflow-hidden" style={{ backgroundColor: '#1A1A1A', borderRadius: '12px' }}>
+            <div className="group relative p-6 rounded-2xl backdrop-blur-sm overflow-hidden transition-all duration-300 hover:scale-105" style={{
+              backgroundColor: 'rgba(15, 23, 42, 0.6)',
+              border: '1px solid rgba(148, 163, 184, 0.1)',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)'
+            }}>
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 to-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="relative z-10">
-                <div className="flex items-center gap-2 mb-2">
-                  <TrendingUp size={20} style={{ color: tierInfo.color }} />
-                  <h3 className="text-sm font-medium" style={{ color: '#808080' }}>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 rounded-lg bg-gradient-to-br from-teal-500/20 to-emerald-500/20">
+                    <TrendingUp size={20} className="text-teal-400" />
+                  </div>
+                  <h3 className="text-sm font-medium text-slate-400">
                     Credits Used
                   </h3>
                 </div>
-                <div className="mb-3">
-                  <span className="text-4xl font-bold" style={{ color: '#FFFFFF' }}>
+
+                <div className="mb-4">
+                  <span className="text-5xl font-bold text-white">
                     {credits?.credits_used || 0}
                   </span>
-                  <span className="text-xl ml-2" style={{ color: '#808080' }}>
+                  <span className="text-2xl ml-2 text-slate-500">
                     this month
                   </span>
                 </div>
+
                 <button
                   onClick={() => onNavigate('usage')}
-                  className="text-sm font-medium hover:underline"
-                  style={{ color: tierInfo.color }}
+                  className="text-sm font-medium hover:underline flex items-center gap-1 text-teal-400"
                 >
-                  View usage history →
+                  View usage history
+                  <ArrowRight size={14} />
                 </button>
               </div>
             </div>
@@ -210,48 +263,73 @@ export const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
           <div className="grid md:grid-cols-2 gap-6">
             <button
               onClick={() => onNavigate('builder')}
-              className="group p-8 text-left transition-all hover:scale-105"
+              className="group relative p-8 text-left rounded-2xl backdrop-blur-sm overflow-hidden transition-all duration-300 hover:scale-105"
               style={{
-                background: `linear-gradient(135deg, ${tierInfo.color}15, #1A1A1A)`,
-                border: `1px solid ${tierInfo.color}30`,
-                borderRadius: '12px'
+                backgroundColor: 'rgba(6, 182, 212, 0.05)',
+                border: '2px solid rgba(6, 182, 212, 0.3)',
+                boxShadow: '0 8px 32px rgba(6, 182, 212, 0.2)'
               }}
             >
-              <div className="flex items-center justify-between mb-4">
-                <PlusCircle size={40} style={{ color: tierInfo.color }} />
-                <span className="text-sm font-medium px-3 py-1" style={{ backgroundColor: `${tierInfo.color}20`, color: tierInfo.color, borderRadius: '6px' }}>
-                  1 credit
-                </span>
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-sky-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="p-3 rounded-xl bg-gradient-to-br from-cyan-500/20 to-sky-500/20">
+                    <PlusCircle size={40} className="text-cyan-400" />
+                  </div>
+                  <span className="text-sm font-semibold px-3 py-1.5 rounded-lg text-cyan-400" style={{
+                    backgroundColor: 'rgba(6, 182, 212, 0.2)',
+                    border: '1px solid rgba(6, 182, 212, 0.3)'
+                  }}>
+                    1 credit
+                  </span>
+                </div>
+
+                <h3 className="text-2xl font-bold mb-2 text-white">
+                  Create New Script
+                </h3>
+                <p className="text-slate-400 mb-4">
+                  Build a reusable message template with smart variables
+                </p>
+
+                <div className="flex items-center gap-2 text-cyan-400 font-medium">
+                  <span>Get started</span>
+                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                </div>
               </div>
-              <h3 className="text-2xl font-bold mb-2" style={{ color: '#FFFFFF' }}>
-                Create New Script
-              </h3>
-              <p style={{ color: '#808080' }}>
-                Build a reusable message template with smart variables
-              </p>
             </button>
 
             <button
               onClick={() => onNavigate('library')}
-              className="group p-8 text-left transition-all hover:scale-105"
+              className="group relative p-8 text-left rounded-2xl backdrop-blur-sm overflow-hidden transition-all duration-300 hover:scale-105"
               style={{
-                backgroundColor: '#1A1A1A',
-                border: '1px solid #333',
-                borderRadius: '12px'
+                backgroundColor: 'rgba(15, 23, 42, 0.6)',
+                border: '1px solid rgba(148, 163, 184, 0.2)',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)'
               }}
             >
-              <div className="flex items-center justify-between mb-4">
-                <FileText size={40} style={{ color: '#FFFFFF' }} />
-                <span className="text-sm font-medium" style={{ color: '#808080' }}>
-                  {scriptsCount} scripts
-                </span>
+              <div className="absolute inset-0 bg-gradient-to-br from-sky-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="p-3 rounded-xl bg-gradient-to-br from-slate-700 to-slate-800 border border-slate-600">
+                    <FileText size={40} className="text-slate-300" />
+                  </div>
+                  <span className="text-sm font-medium text-slate-400">
+                    {scriptsCount} scripts
+                  </span>
+                </div>
+
+                <h3 className="text-2xl font-bold mb-2 text-white">
+                  Script Library
+                </h3>
+                <p className="text-slate-400 mb-4">
+                  Access, run, and manage all your saved scripts
+                </p>
+
+                <div className="flex items-center gap-2 text-sky-400 font-medium">
+                  <span>Browse library</span>
+                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                </div>
               </div>
-              <h3 className="text-2xl font-bold mb-2" style={{ color: '#FFFFFF' }}>
-                Script Library
-              </h3>
-              <p style={{ color: '#808080' }}>
-                Access, run, and manage all your saved scripts
-              </p>
             </button>
           </div>
         </div>

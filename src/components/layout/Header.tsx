@@ -4,22 +4,21 @@ import { Menu, X } from 'lucide-react';
 
 interface HeaderProps {
   currentPage: string;
-  navigateTo: (page: string) => void;
+  onNavigate: (page: string) => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
+export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
     { name: 'Home', path: 'home' },
     { name: 'Services', path: 'services' },
     { name: 'About', path: 'about' },
-    { name: 'Contact', path: 'contact' },
-    { name: 'Portal', path: 'payment-portal' }
+    { name: 'Contact', path: 'contact' }
   ];
 
   const handleNavClick = (path: string) => {
-    navigateTo(path);
+    onNavigate(path);
     setIsMobileMenuOpen(false);
   };
 
@@ -35,7 +34,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <button
           onClick={() => {
-            navigateTo('home');
+            onNavigate('home');
             setIsMobileMenuOpen(false);
           }}
           className="flex items-center"
@@ -54,7 +53,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
           {navItems.map((item) => (
             <button
               key={item.path}
-              onClick={() => navigateTo(item.path)}
+              onClick={() => onNavigate(item.path)}
               className="text-sm font-semibold transition-colors"
               style={{
                 background: 'none',

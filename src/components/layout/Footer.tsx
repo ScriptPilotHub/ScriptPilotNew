@@ -2,10 +2,10 @@ import React from 'react';
 import { Logo } from '../ui/Logo';
 
 interface FooterProps {
-  navigateTo: (page: string) => void;
+  onNavigate: (page: string) => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ navigateTo }) => {
+export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   return (
     <footer
       className="px-6 md:px-8 py-16"
@@ -33,10 +33,10 @@ export const Footer: React.FC<FooterProps> = ({ navigateTo }) => {
               Company
             </h3>
             <div className="flex flex-col gap-3">
-              {['Home', 'Services', 'About', 'Contact', 'Portal'].map((item) => (
+              {['Home', 'Services', 'About', 'Contact'].map((item) => (
                 <button
                   key={item}
-                  onClick={() => navigateTo(item === 'Portal' ? 'payment-portal' : item.toLowerCase())}
+                  onClick={() => onNavigate(item.toLowerCase())}
                   className="text-left text-sm transition-colors"
                   style={{
                     background: 'none',

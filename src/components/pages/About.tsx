@@ -12,13 +12,14 @@ export const About: React.FC<AboutProps> = ({ onNavigate }) => {
   }, []);
 
   return (
-    <div style={{ backgroundColor: '#0A0A0A' }}>
+    <div style={{ backgroundColor: '#0A0F1A' }}>
       <section className="px-6 md:px-8 py-32 md:py-48" style={{
-        backgroundColor: '#0A0A0A',
-        position: 'relative'
+        backgroundColor: '#0A0F1A',
+        position: 'relative',
+        overflow: 'hidden'
       }}>
         <div className="absolute inset-0" style={{
-          background: 'radial-gradient(circle at 50% 0%, rgba(255,255,255,0.03) 0%, transparent 50%)'
+          background: 'radial-gradient(circle at 30% 20%, rgba(45, 156, 219, 0.15) 0%, transparent 50%), radial-gradient(circle at 70% 60%, rgba(242, 153, 74, 0.1) 0%, transparent 50%)'
         }} />
 
         <div
@@ -35,7 +36,10 @@ export const About: React.FC<AboutProps> = ({ onNavigate }) => {
               style={{
                 fontSize: 'clamp(3rem, 8vw, 7rem)',
                 fontWeight: 700,
-                color: '#FFFFFF',
+                background: 'linear-gradient(135deg, #FFFFFF 0%, #56CCF2 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
                 lineHeight: 0.95
               }}
             >
@@ -43,7 +47,7 @@ export const About: React.FC<AboutProps> = ({ onNavigate }) => {
             </h1>
 
             <p className="text-xl md:text-2xl mb-12 max-w-2xl" style={{
-              color: '#A0A0A0',
+              color: '#8B95A5',
               lineHeight: 1.5
             }}>
               We build websites that bring in customers. Simple as that.

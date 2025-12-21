@@ -27,7 +27,7 @@ function App() {
 
   return (
     <ErrorBoundary>
-      <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#0A0A0A' }}>
+      <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#0A0F1A' }}>
         <Header currentPage={currentPage} onNavigate={setCurrentPage} />
         <main className="flex-grow">
           {renderPage()}

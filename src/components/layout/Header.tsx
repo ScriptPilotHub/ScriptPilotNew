@@ -26,9 +26,9 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
     <header
       className="sticky top-0 z-50 px-6 md:px-8 py-6"
       style={{
-        backgroundColor: 'rgba(10, 10, 10, 0.95)',
+        backgroundColor: 'rgba(10, 15, 26, 0.95)',
         backdropFilter: 'blur(10px)',
-        borderBottom: '1px solid #1A1A1A'
+        borderBottom: '1px solid rgba(45, 156, 219, 0.2)'
       }}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -59,17 +59,18 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
                 background: 'none',
                 border: 'none',
                 cursor: 'pointer',
-                color: currentPage === item.path ? '#FFFFFF' : '#808080',
-                padding: 0
+                color: currentPage === item.path ? '#56CCF2' : '#8B95A5',
+                padding: 0,
+                transition: 'all 0.2s ease'
               }}
               onMouseEnter={(e) => {
                 if (currentPage !== item.path) {
-                  e.currentTarget.style.color = '#FFFFFF';
+                  e.currentTarget.style.color = '#56CCF2';
                 }
               }}
               onMouseLeave={(e) => {
                 if (currentPage !== item.path) {
-                  e.currentTarget.style.color = '#808080';
+                  e.currentTarget.style.color = '#8B95A5';
                 }
               }}
             >
@@ -82,20 +83,21 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
             rel="noopener noreferrer"
             className="text-sm font-semibold px-6 py-2.5 no-underline"
             style={{
-              backgroundColor: '#FFFFFF',
-              color: '#0A0A0A',
-              transition: 'all 0.2s ease',
-              border: '2px solid transparent'
+              background: 'linear-gradient(135deg, #2D9CDB 0%, #56CCF2 100%)',
+              color: '#FFFFFF',
+              transition: 'all 0.3s ease',
+              border: 'none',
+              borderRadius: '6px',
+              boxShadow: '0 4px 15px rgba(45, 156, 219, 0.3)',
+              transform: 'translateY(0)'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = 'transparent';
-              e.currentTarget.style.color = '#FFFFFF';
-              e.currentTarget.style.borderColor = '#FFFFFF';
+              e.currentTarget.style.transform = 'translateY(-2px)';
+              e.currentTarget.style.boxShadow = '0 6px 20px rgba(45, 156, 219, 0.4)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#FFFFFF';
-              e.currentTarget.style.color = '#0A0A0A';
-              e.currentTarget.style.borderColor = 'transparent';
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 4px 15px rgba(45, 156, 219, 0.3)';
             }}
           >
             Get started
@@ -109,20 +111,21 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
             rel="noopener noreferrer"
             className="text-sm font-semibold px-6 py-2.5 no-underline"
             style={{
-              backgroundColor: '#FFFFFF',
-              color: '#0A0A0A',
-              transition: 'all 0.2s ease',
-              border: '2px solid transparent'
+              background: 'linear-gradient(135deg, #2D9CDB 0%, #56CCF2 100%)',
+              color: '#FFFFFF',
+              transition: 'all 0.3s ease',
+              border: 'none',
+              borderRadius: '6px',
+              boxShadow: '0 4px 15px rgba(45, 156, 219, 0.3)',
+              transform: 'translateY(0)'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = 'transparent';
-              e.currentTarget.style.color = '#FFFFFF';
-              e.currentTarget.style.borderColor = '#FFFFFF';
+              e.currentTarget.style.transform = 'translateY(-2px)';
+              e.currentTarget.style.boxShadow = '0 6px 20px rgba(45, 156, 219, 0.4)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#FFFFFF';
-              e.currentTarget.style.color = '#0A0A0A';
-              e.currentTarget.style.borderColor = 'transparent';
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 4px 15px rgba(45, 156, 219, 0.3)';
             }}
           >
             Start
@@ -144,7 +147,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
       </div>
 
       {isMobileMenuOpen && (
-        <nav className="md:hidden mt-6 pt-6" style={{ borderTop: '1px solid #1A1A1A' }}>
+        <nav className="md:hidden mt-6 pt-6" style={{ borderTop: '1px solid rgba(45, 156, 219, 0.2)' }}>
           <div className="flex flex-col gap-4">
             {navItems.map((item) => (
               <button
@@ -155,8 +158,9 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
                   background: 'none',
                   border: 'none',
                   cursor: 'pointer',
-                  color: currentPage === item.path ? '#FFFFFF' : '#808080',
-                  padding: 0
+                  color: currentPage === item.path ? '#56CCF2' : '#8B95A5',
+                  padding: 0,
+                  transition: 'all 0.2s ease'
                 }}
               >
                 {item.name}

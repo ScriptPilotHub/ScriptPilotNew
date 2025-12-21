@@ -12,19 +12,19 @@ export const Contact: React.FC<ContactProps> = ({ onNavigate }) => {
   }, []);
 
   return (
-    <div style={{ backgroundColor: '#0A0A0A' }}>
+    <div style={{ backgroundColor: '#0A0F1A' }}>
       <section className="px-6 md:px-8 py-40 md:py-56" style={{
-        backgroundColor: '#0A0A0A',
+        backgroundColor: '#0A0F1A',
         position: 'relative',
         overflow: 'hidden'
       }}>
         <div className="absolute inset-0" style={{
-          background: 'radial-gradient(circle at 50% 0%, rgba(255,255,255,0.04) 0%, transparent 60%)'
+          background: 'radial-gradient(circle at 50% 0%, rgba(45, 156, 219, 0.15) 0%, transparent 60%)'
         }} />
         <div className="absolute inset-0" style={{
-          backgroundImage: 'radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(rgba(45, 156, 219, 0.4) 1px, transparent 1px)',
           backgroundSize: '50px 50px',
-          opacity: 0.15
+          opacity: 0.1
         }} />
 
         <div
@@ -41,7 +41,10 @@ export const Contact: React.FC<ContactProps> = ({ onNavigate }) => {
               style={{
                 fontSize: 'clamp(3rem, 8vw, 7rem)',
                 fontWeight: 700,
-                color: '#FFFFFF',
+                background: 'linear-gradient(135deg, #FFFFFF 0%, #56CCF2 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
                 lineHeight: 0.95,
                 letterSpacing: '-0.02em'
               }}

@@ -363,25 +363,25 @@ export const Home = () => {
                 </div>
               </div>
               <div style={{
-                fontSize: '13px',
-                lineHeight: 2,
+                fontSize: '14px',
+                lineHeight: 1.8,
                 color: '#778DA9'
               }}>
-                <div style={{ marginBottom: '24px' }}>
-                  <div style={{ color: '#B8C5D6', marginBottom: '8px' }}>Email</div>
-                  <a href="mailto:contact@scriptpilot.us" style={{ color: '#E8B4B8', textDecoration: 'none' }}>
-                    contact@scriptpilot.us
-                  </a>
+                <div style={{ marginBottom: '32px' }}>
+                  <div style={{ color: '#B8C5D6', marginBottom: '12px', fontWeight: 600, fontSize: '15px' }}>What happens next</div>
+                  <div style={{ color: '#778DA9', marginBottom: '8px' }}>We discuss your business needs and goals</div>
+                  <div style={{ color: '#778DA9', marginBottom: '8px' }}>You get a clear timeline and deliverables list</div>
+                  <div style={{ color: '#778DA9', marginBottom: '8px' }}>Work begins within 48 hours of agreement</div>
                 </div>
-                <div style={{ marginBottom: '24px' }}>
-                  <div style={{ color: '#B8C5D6', marginBottom: '8px' }}>Phone</div>
-                  <a href="tel:4174010015" style={{ color: '#E8B4B8', textDecoration: 'none' }}>
-                    (417) 401-0015
-                  </a>
+                <div style={{ marginBottom: '32px' }}>
+                  <div style={{ color: '#B8C5D6', marginBottom: '12px', fontWeight: 600, fontSize: '15px' }}>Response time</div>
+                  <div style={{ color: '#778DA9', marginBottom: '8px' }}>Email replies within 4 business hours</div>
+                  <div style={{ color: '#778DA9', marginBottom: '8px' }}>Emergency support for active projects</div>
                 </div>
                 <div>
-                  <div style={{ color: '#B8C5D6', marginBottom: '8px' }}>Location</div>
-                  <div style={{ color: '#E8B4B8' }}>Missouri, USA</div>
+                  <div style={{ color: '#B8C5D6', marginBottom: '12px', fontWeight: 600, fontSize: '15px' }}>Based in Missouri</div>
+                  <div style={{ color: '#778DA9', marginBottom: '8px' }}>Serving businesses nationwide</div>
+                  <div style={{ color: '#778DA9' }}>Central time zone, flexible scheduling</div>
                 </div>
               </div>
             </div>

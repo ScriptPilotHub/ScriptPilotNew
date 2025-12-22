@@ -10,10 +10,12 @@ export const Process = () => {
         path="/process"
       />
 
-      <article style={{ backgroundColor: '#0A0A0A', color: '#FFFFFF' }}>
-        <section className="px-6 md:px-16 py-24 md:py-32">
+      <article style={{ backgroundColor: '#0D1B2A', color: '#F4F3EE' }}>
+        <section className="px-6 md:px-16 py-24 md:py-32" style={{
+          background: 'linear-gradient(135deg, #1B263B 0%, #0D1B2A 100%)'
+        }}>
           <div className="max-w-[1400px] mx-auto">
-            <div style={{ color: '#666666', fontSize: '13px', letterSpacing: '0.1em', marginBottom: '24px' }}>
+            <div style={{ color: '#778DA9', fontSize: '13px', letterSpacing: '0.1em', marginBottom: '24px' }}>
               PROCESS
             </div>
             <div className="grid md:grid-cols-12 gap-16">
@@ -23,7 +25,8 @@ export const Process = () => {
                   fontWeight: 700,
                   lineHeight: 1,
                   letterSpacing: '-0.03em',
-                  marginBottom: '32px'
+                  marginBottom: '32px',
+                  color: '#F4F3EE'
                 }}>
                   Simple.<br/>Transparent.<br/>Effective.
                 </h1>
@@ -32,7 +35,7 @@ export const Process = () => {
                 <p style={{
                   fontSize: '15px',
                   lineHeight: 1.8,
-                  color: '#999999'
+                  color: '#B8C5D6'
                 }}>
                   Four steps from first call to launch. No surprises. No hidden steps. Everything clearly defined upfront.
                 </p>
@@ -41,7 +44,7 @@ export const Process = () => {
           </div>
         </section>
 
-        <section className="px-6 md:px-16 py-16 md:py-24" style={{ borderTop: '1px solid #1A1A1A' }}>
+        <section className="px-6 md:px-16 py-16 md:py-24" style={{ borderTop: '1px solid rgba(120, 141, 169, 0.2)' }}>
           <div className="max-w-[1400px] mx-auto">
             {[
               {
@@ -74,17 +77,19 @@ export const Process = () => {
               }
             ].map((step, i) => (
               <div key={i} style={{
-                borderBottom: '1px solid #1A1A1A',
+                borderBottom: '1px solid rgba(120, 141, 169, 0.2)',
                 paddingTop: '56px',
-                paddingBottom: '56px'
+                paddingBottom: '56px',
+                backgroundColor: i % 2 === 1 ? '#1B263B' : 'transparent'
               }}>
-                <div className="grid md:grid-cols-12 gap-8">
+                <div className="grid md:grid-cols-12 gap-8" style={{ padding: i % 2 === 1 ? '32px' : '0' }}>
                   <div className="md:col-span-1">
                     <span style={{
                       fontSize: '56px',
                       fontWeight: 700,
-                      color: '#1A1A1A',
-                      lineHeight: 1
+                      color: '#1B263B',
+                      lineHeight: 1,
+                      WebkitTextStroke: '1px #415A77'
                     }}>
                       {step.num}
                     </span>
@@ -96,14 +101,15 @@ export const Process = () => {
                           fontSize: '32px',
                           fontWeight: 700,
                           marginBottom: '12px',
-                          letterSpacing: '-0.01em'
+                          letterSpacing: '-0.01em',
+                          color: '#E8B4B8'
                         }}>
                           {step.title}
                         </h2>
                         <div style={{
                           fontSize: '12px',
                           letterSpacing: '0.05em',
-                          color: '#666666'
+                          color: '#778DA9'
                         }}>
                           {step.timeline}
                         </div>
@@ -112,16 +118,16 @@ export const Process = () => {
                         <p style={{
                           fontSize: '15px',
                           lineHeight: 1.7,
-                          color: '#999999',
+                          color: '#B8C5D6',
                           marginBottom: '20px'
                         }}>
                           {step.desc}
                         </p>
                         <div style={{
                           fontSize: '13px',
-                          color: '#666666',
+                          color: '#778DA9',
                           paddingTop: '16px',
-                          borderTop: '1px solid #1A1A1A'
+                          borderTop: '1px solid rgba(120, 141, 169, 0.2)'
                         }}>
                           → {step.outcome}
                         </div>
@@ -134,9 +140,9 @@ export const Process = () => {
           </div>
         </section>
 
-        <section className="px-6 md:px-16 py-24 md:py-32" style={{ 
-          borderTop: '1px solid #1A1A1A',
-          backgroundColor: '#0F0F0F'
+        <section className="px-6 md:px-16 py-24 md:py-32" style={{
+          borderTop: '1px solid rgba(120, 141, 169, 0.2)',
+          backgroundColor: '#1B263B'
         }}>
           <div className="max-w-[1400px] mx-auto">
             <div className="grid md:grid-cols-2 gap-16">
@@ -145,17 +151,18 @@ export const Process = () => {
                   fontSize: 'clamp(2rem, 4vw, 3rem)',
                   fontWeight: 700,
                   marginBottom: '24px',
-                  letterSpacing: '-0.02em'
+                  letterSpacing: '-0.02em',
+                  color: '#F4F3EE'
                 }}>
                   Questions about the process?
                 </h2>
                 <p style={{
                   fontSize: '15px',
                   lineHeight: 1.7,
-                  color: '#999999',
+                  color: '#B8C5D6',
                   marginBottom: '32px'
                 }}>
-                  Book a call and we'll walk through exactly how it works for your specific project.
+                  Book a call and we will walk through exactly how it works for your specific project.
                 </p>
                 <a
                   href="https://calendly.com/contact-scriptpilot/30min"
@@ -165,48 +172,41 @@ export const Process = () => {
                     display: 'inline-block',
                     fontSize: '13px',
                     letterSpacing: '0.05em',
-                    color: '#0A0A0A',
-                    backgroundColor: '#FFFFFF',
+                    color: '#0D1B2A',
+                    backgroundColor: '#E8B4B8',
                     padding: '16px 32px',
                     textDecoration: 'none',
-                    transition: 'all 0.15s'
+                    transition: 'all 0.2s',
+                    fontWeight: 600
                   }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#0F0F0F';
-                    e.currentTarget.style.color = '#FFFFFF';
-                    e.currentTarget.style.outline = '1px solid #FFFFFF';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = '#FFFFFF';
-                    e.currentTarget.style.color = '#0A0A0A';
-                    e.currentTarget.style.outline = 'none';
-                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#C1666B'}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#E8B4B8'}
                 >
                   BOOK A CALL
                 </a>
               </div>
               <div style={{ paddingTop: '40px' }}>
                 <div style={{ marginBottom: '32px' }}>
-                  <div style={{ fontSize: '12px', letterSpacing: '0.05em', color: '#666666', marginBottom: '8px' }}>
+                  <div style={{ fontSize: '12px', letterSpacing: '0.05em', color: '#778DA9', marginBottom: '8px' }}>
                     TYPICAL TIMELINE
                   </div>
-                  <div style={{ fontSize: '24px', fontWeight: 700 }}>
+                  <div style={{ fontSize: '24px', fontWeight: 700, color: '#E8B4B8' }}>
                     1–4 weeks
                   </div>
                 </div>
                 <div style={{ marginBottom: '32px' }}>
-                  <div style={{ fontSize: '12px', letterSpacing: '0.05em', color: '#666666', marginBottom: '8px' }}>
+                  <div style={{ fontSize: '12px', letterSpacing: '0.05em', color: '#778DA9', marginBottom: '8px' }}>
                     REVISION ROUNDS
                   </div>
-                  <div style={{ fontSize: '24px', fontWeight: 700 }}>
+                  <div style={{ fontSize: '24px', fontWeight: 700, color: '#E8B4B8' }}>
                     Unlimited
                   </div>
                 </div>
                 <div>
-                  <div style={{ fontSize: '12px', letterSpacing: '0.05em', color: '#666666', marginBottom: '8px' }}>
+                  <div style={{ fontSize: '12px', letterSpacing: '0.05em', color: '#778DA9', marginBottom: '8px' }}>
                     POST-LAUNCH SUPPORT
                   </div>
-                  <div style={{ fontSize: '24px', fontWeight: 700 }}>
+                  <div style={{ fontSize: '24px', fontWeight: 700, color: '#E8B4B8' }}>
                     30 days included
                   </div>
                 </div>

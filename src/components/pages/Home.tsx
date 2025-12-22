@@ -10,20 +10,26 @@ export const Home = () => {
         path="/"
       />
 
-      <article style={{ backgroundColor: '#0A0A0A', color: '#FFFFFF' }}>
-        <section className="px-6 md:px-16 py-24 md:py-32">
+      <article style={{ backgroundColor: '#0D1B2A', color: '#F4F3EE' }}>
+        <section className="px-6 md:px-16 py-24 md:py-32" style={{
+          background: 'linear-gradient(135deg, #1B263B 0%, #0D1B2A 100%)'
+        }}>
           <div className="max-w-[1400px] mx-auto">
             <div className="grid md:grid-cols-12 gap-8 md:gap-16 items-end">
               <div className="md:col-span-8">
-                <div className="mb-6" style={{ color: '#666666', fontSize: '13px', letterSpacing: '0.1em' }}>
-                  SCRIPPILOT
+                <div className="mb-6" style={{ color: '#778DA9', fontSize: '13px', letterSpacing: '0.1em' }}>
+                  SCRIPTPILOT
                 </div>
                 <h1 style={{
                   fontSize: 'clamp(3rem, 9vw, 8rem)',
                   fontWeight: 700,
                   lineHeight: 0.95,
                   letterSpacing: '-0.04em',
-                  marginBottom: '0'
+                  marginBottom: '0',
+                  background: 'linear-gradient(to bottom, #F4F3EE 0%, #B8C5D6 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text'
                 }}>
                   Websites<br/>that work
                 </h1>
@@ -32,7 +38,7 @@ export const Home = () => {
                 <p style={{
                   fontSize: '15px',
                   lineHeight: 1.8,
-                  color: '#999999',
+                  color: '#B8C5D6',
                   marginBottom: '32px'
                 }}>
                   Professional sites for businesses that need customers. Not brochures. Not portfolios. Real tools that bring in revenue.
@@ -45,14 +51,21 @@ export const Home = () => {
                     display: 'inline-block',
                     fontSize: '13px',
                     letterSpacing: '0.05em',
-                    color: '#FFFFFF',
+                    color: '#E8B4B8',
                     textDecoration: 'none',
-                    borderBottom: '1px solid #FFFFFF',
+                    borderBottom: '2px solid #E8B4B8',
                     paddingBottom: '2px',
-                    transition: 'opacity 0.15s'
+                    transition: 'color 0.2s, border-color 0.2s',
+                    fontWeight: 600
                   }}
-                  onMouseEnter={(e) => e.currentTarget.style.opacity = '0.5'}
-                  onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = '#C1666B';
+                    e.currentTarget.style.borderColor = '#C1666B';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = '#E8B4B8';
+                    e.currentTarget.style.borderColor = '#E8B4B8';
+                  }}
                 >
                   BOOK A CALL
                 </a>
@@ -61,7 +74,7 @@ export const Home = () => {
           </div>
         </section>
 
-        <section className="px-6 md:px-16 py-16 md:py-24" style={{ borderTop: '1px solid #1A1A1A' }}>
+        <section className="px-6 md:px-16 py-16 md:py-24" style={{ borderTop: '1px solid rgba(120, 141, 169, 0.2)' }}>
           <div className="max-w-[1400px] mx-auto">
             <div className="grid md:grid-cols-3 gap-1">
               {[
@@ -71,13 +84,13 @@ export const Home = () => {
               ].map((item, i) => (
                 <div key={i} style={{
                   padding: '48px 32px',
-                  backgroundColor: '#0F0F0F',
-                  borderRight: i < 2 ? '1px solid #1A1A1A' : 'none'
+                  backgroundColor: '#1B263B',
+                  borderRight: i < 2 ? '1px solid rgba(120, 141, 169, 0.15)' : 'none'
                 }}>
                   <div style={{
                     fontSize: '11px',
                     letterSpacing: '0.12em',
-                    color: '#666666',
+                    color: '#778DA9',
                     marginBottom: '16px'
                   }}>
                     {item.label}
@@ -85,7 +98,8 @@ export const Home = () => {
                   <div style={{
                     fontSize: '42px',
                     fontWeight: 700,
-                    letterSpacing: '-0.02em'
+                    letterSpacing: '-0.02em',
+                    color: '#E8B4B8'
                   }}>
                     {item.value}
                   </div>
@@ -95,7 +109,10 @@ export const Home = () => {
           </div>
         </section>
 
-        <section className="px-6 md:px-16 py-24 md:py-40" style={{ borderTop: '1px solid #1A1A1A' }}>
+        <section className="px-6 md:px-16 py-24 md:py-40" style={{
+          borderTop: '1px solid rgba(120, 141, 169, 0.2)',
+          backgroundColor: '#0D1B2A'
+        }}>
           <div className="max-w-[1400px] mx-auto">
             <div className="grid md:grid-cols-12 gap-16">
               <div className="md:col-span-5">
@@ -104,7 +121,8 @@ export const Home = () => {
                   fontWeight: 700,
                   lineHeight: 1.1,
                   letterSpacing: '-0.02em',
-                  marginBottom: '32px'
+                  marginBottom: '32px',
+                  color: '#F4F3EE'
                 }}>
                   One customer pays for the entire site
                 </h2>
@@ -132,7 +150,7 @@ export const Home = () => {
                       <div className="col-span-2">
                         <span style={{
                           fontSize: '14px',
-                          color: '#333333',
+                          color: '#415A77',
                           fontWeight: 700
                         }}>
                           {item.num}
@@ -143,14 +161,15 @@ export const Home = () => {
                           fontSize: '22px',
                           fontWeight: 700,
                           marginBottom: '12px',
-                          letterSpacing: '-0.01em'
+                          letterSpacing: '-0.01em',
+                          color: '#E8B4B8'
                         }}>
                           {item.title}
                         </h3>
                         <p style={{
                           fontSize: '15px',
                           lineHeight: 1.7,
-                          color: '#999999'
+                          color: '#B8C5D6'
                         }}>
                           {item.body}
                         </p>
@@ -163,14 +182,18 @@ export const Home = () => {
           </div>
         </section>
 
-        <section className="px-6 md:px-16 py-24 md:py-32" style={{ borderTop: '1px solid #1A1A1A' }}>
+        <section className="px-6 md:px-16 py-24 md:py-32" style={{
+          borderTop: '1px solid rgba(120, 141, 169, 0.2)',
+          background: 'linear-gradient(to bottom, #1B263B 0%, #0D1B2A 100%)'
+        }}>
           <div className="max-w-[1400px] mx-auto">
             <div className="mb-20">
               <h2 style={{
                 fontSize: 'clamp(2rem, 4vw, 3.5rem)',
                 fontWeight: 700,
                 lineHeight: 1.1,
-                letterSpacing: '-0.02em'
+                letterSpacing: '-0.02em',
+                color: '#F4F3EE'
               }}>
                 Services
               </h2>
@@ -199,7 +222,7 @@ export const Home = () => {
                   gridTemplateColumns: '1fr auto',
                   gap: '32px',
                   padding: '40px 0',
-                  borderBottom: '1px solid #1A1A1A',
+                  borderBottom: '1px solid rgba(120, 141, 169, 0.2)',
                   alignItems: 'start'
                 }}>
                   <div>
@@ -207,13 +230,14 @@ export const Home = () => {
                       fontSize: '28px',
                       fontWeight: 700,
                       marginBottom: '8px',
-                      letterSpacing: '-0.01em'
+                      letterSpacing: '-0.01em',
+                      color: '#F4F3EE'
                     }}>
                       {service.title}
                     </h3>
                     <p style={{
                       fontSize: '15px',
-                      color: '#808080',
+                      color: '#B8C5D6',
                       lineHeight: 1.6
                     }}>
                       {service.desc}
@@ -222,7 +246,8 @@ export const Home = () => {
                   <div style={{
                     fontSize: '28px',
                     fontWeight: 700,
-                    whiteSpace: 'nowrap'
+                    whiteSpace: 'nowrap',
+                    color: '#E8B4B8'
                   }}>
                     {service.price}
                   </div>
@@ -237,14 +262,21 @@ export const Home = () => {
                   display: 'inline-block',
                   fontSize: '13px',
                   letterSpacing: '0.05em',
-                  color: '#FFFFFF',
+                  color: '#E8B4B8',
                   textDecoration: 'none',
-                  borderBottom: '1px solid #FFFFFF',
+                  borderBottom: '2px solid #E8B4B8',
                   paddingBottom: '2px',
-                  transition: 'opacity 0.15s'
+                  transition: 'color 0.2s, border-color 0.2s',
+                  fontWeight: 600
                 }}
-                onMouseEnter={(e) => e.currentTarget.style.opacity = '0.5'}
-                onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = '#C1666B';
+                  e.currentTarget.style.borderColor = '#C1666B';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = '#E8B4B8';
+                  e.currentTarget.style.borderColor = '#E8B4B8';
+                }}
               >
                 VIEW ALL SERVICES
               </Link>
@@ -252,9 +284,9 @@ export const Home = () => {
           </div>
         </section>
 
-        <section className="px-6 md:px-16 py-32 md:py-48" style={{ 
-          borderTop: '1px solid #1A1A1A',
-          backgroundColor: '#0F0F0F'
+        <section className="px-6 md:px-16 py-32 md:py-48" style={{
+          borderTop: '1px solid rgba(120, 141, 169, 0.2)',
+          backgroundColor: '#1B263B'
         }}>
           <div className="max-w-[1400px] mx-auto">
             <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
@@ -264,17 +296,18 @@ export const Home = () => {
                   fontWeight: 700,
                   lineHeight: 1,
                   letterSpacing: '-0.03em',
-                  marginBottom: '24px'
+                  marginBottom: '24px',
+                  color: '#F4F3EE'
                 }}>
                   Start your project
                 </h2>
                 <p style={{
                   fontSize: '17px',
                   lineHeight: 1.6,
-                  color: '#999999',
+                  color: '#B8C5D6',
                   marginBottom: '40px'
                 }}>
-                  Book a 30 minute call. No pressure. No commitment. We discuss your business and whether we're a good fit.
+                  Book a 30 minute call. No pressure. No commitment. We discuss your business and whether we are a good fit.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
@@ -285,22 +318,19 @@ export const Home = () => {
                       display: 'inline-block',
                       fontSize: '13px',
                       letterSpacing: '0.05em',
-                      color: '#0A0A0A',
-                      backgroundColor: '#FFFFFF',
+                      color: '#0D1B2A',
+                      backgroundColor: '#E8B4B8',
                       padding: '16px 32px',
                       textDecoration: 'none',
-                      transition: 'all 0.15s',
-                      textAlign: 'center'
+                      transition: 'all 0.2s',
+                      textAlign: 'center',
+                      fontWeight: 600
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = '#0A0A0A';
-                      e.currentTarget.style.color = '#FFFFFF';
-                      e.currentTarget.style.outline = '1px solid #FFFFFF';
+                      e.currentTarget.style.backgroundColor = '#C1666B';
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = '#FFFFFF';
-                      e.currentTarget.style.color = '#0A0A0A';
-                      e.currentTarget.style.outline = 'none';
+                      e.currentTarget.style.backgroundColor = '#E8B4B8';
                     }}
                   >
                     BOOK A CALL
@@ -311,18 +341,21 @@ export const Home = () => {
                       display: 'inline-block',
                       fontSize: '13px',
                       letterSpacing: '0.05em',
-                      color: '#FFFFFF',
+                      color: '#F4F3EE',
                       padding: '16px 32px',
                       textDecoration: 'none',
-                      outline: '1px solid #333333',
-                      transition: 'all 0.15s',
-                      textAlign: 'center'
+                      outline: '2px solid #415A77',
+                      transition: 'all 0.2s',
+                      textAlign: 'center',
+                      fontWeight: 600
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.outlineColor = '#FFFFFF';
+                      e.currentTarget.style.outlineColor = '#E8B4B8';
+                      e.currentTarget.style.color = '#E8B4B8';
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.outlineColor = '#333333';
+                      e.currentTarget.style.outlineColor = '#415A77';
+                      e.currentTarget.style.color = '#F4F3EE';
                     }}
                   >
                     VIEW PRICING
@@ -332,23 +365,23 @@ export const Home = () => {
               <div style={{
                 fontSize: '13px',
                 lineHeight: 2,
-                color: '#666666'
+                color: '#778DA9'
               }}>
                 <div style={{ marginBottom: '24px' }}>
-                  <div style={{ color: '#999999', marginBottom: '8px' }}>Email</div>
-                  <a href="mailto:contact@scriptpilot.us" style={{ color: '#FFFFFF', textDecoration: 'none' }}>
+                  <div style={{ color: '#B8C5D6', marginBottom: '8px' }}>Email</div>
+                  <a href="mailto:contact@scriptpilot.us" style={{ color: '#E8B4B8', textDecoration: 'none' }}>
                     contact@scriptpilot.us
                   </a>
                 </div>
                 <div style={{ marginBottom: '24px' }}>
-                  <div style={{ color: '#999999', marginBottom: '8px' }}>Phone</div>
-                  <a href="tel:4174010015" style={{ color: '#FFFFFF', textDecoration: 'none' }}>
+                  <div style={{ color: '#B8C5D6', marginBottom: '8px' }}>Phone</div>
+                  <a href="tel:4174010015" style={{ color: '#E8B4B8', textDecoration: 'none' }}>
                     (417) 401-0015
                   </a>
                 </div>
                 <div>
-                  <div style={{ color: '#999999', marginBottom: '8px' }}>Location</div>
-                  <div style={{ color: '#FFFFFF' }}>Missouri, USA</div>
+                  <div style={{ color: '#B8C5D6', marginBottom: '8px' }}>Location</div>
+                  <div style={{ color: '#E8B4B8' }}>Missouri, USA</div>
                 </div>
               </div>
             </div>

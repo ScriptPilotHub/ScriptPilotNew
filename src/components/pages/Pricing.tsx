@@ -9,10 +9,12 @@ export const Pricing = () => {
         path="/pricing"
       />
 
-      <article style={{ backgroundColor: '#0A0A0A', color: '#FFFFFF' }}>
-        <section className="px-6 md:px-16 py-24 md:py-32">
+      <article style={{ backgroundColor: '#0D1B2A', color: '#F4F3EE' }}>
+        <section className="px-6 md:px-16 py-24 md:py-32" style={{
+          background: 'linear-gradient(135deg, #1B263B 0%, #0D1B2A 100%)'
+        }}>
           <div className="max-w-[1400px] mx-auto">
-            <div style={{ color: '#666666', fontSize: '13px', letterSpacing: '0.1em', marginBottom: '24px' }}>
+            <div style={{ color: '#778DA9', fontSize: '13px', letterSpacing: '0.1em', marginBottom: '24px' }}>
               PRICING
             </div>
             <div className="grid md:grid-cols-12 gap-16">
@@ -22,42 +24,44 @@ export const Pricing = () => {
                   fontWeight: 700,
                   lineHeight: 1,
                   letterSpacing: '-0.03em',
-                  marginBottom: '32px'
+                  marginBottom: '32px',
+                  color: '#E8B4B8'
                 }}>
                   $700 total
                 </h1>
                 <p style={{
                   fontSize: '17px',
                   lineHeight: 1.7,
-                  color: '#999999'
+                  color: '#B8C5D6'
                 }}>
                   Two payments. First when we start. Second when we launch. No contracts. No recurring fees unless you want maintenance.
                 </p>
               </div>
               <div className="md:col-span-6 flex items-end">
-                <div style={{ fontSize: '15px', lineHeight: 1.8, color: '#808080' }}>
-                  <div style={{ marginBottom: '16px' }}>→ Unlimited revisions</div>
-                  <div style={{ marginBottom: '16px' }}>→ 30 day support included</div>
-                  <div style={{ marginBottom: '16px' }}>→ You own everything</div>
-                  <div>→ Money-back guarantee</div>
+                <div style={{ fontSize: '15px', lineHeight: 1.8, color: '#778DA9' }}>
+                  <div style={{ marginBottom: '16px', color: '#B8C5D6' }}>→ Unlimited revisions</div>
+                  <div style={{ marginBottom: '16px', color: '#B8C5D6' }}>→ 30 day support included</div>
+                  <div style={{ marginBottom: '16px', color: '#B8C5D6' }}>→ You own everything</div>
+                  <div style={{ color: '#B8C5D6' }}>→ Money-back guarantee</div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="px-6 md:px-16 py-0" style={{ borderTop: '1px solid #1A1A1A' }}>
+        <section className="px-6 md:px-16 py-0" style={{ borderTop: '1px solid rgba(120, 141, 169, 0.2)' }}>
           <div className="max-w-[1400px] mx-auto">
             <div className="grid md:grid-cols-3">
               <div style={{
                 padding: '64px 40px',
-                borderRight: '1px solid #1A1A1A',
-                borderBottom: '1px solid #1A1A1A'
+                borderRight: '1px solid rgba(120, 141, 169, 0.2)',
+                borderBottom: '1px solid rgba(120, 141, 169, 0.2)',
+                backgroundColor: '#1B263B'
               }}>
                 <div style={{
                   fontSize: '11px',
                   letterSpacing: '0.12em',
-                  color: '#666666',
+                  color: '#778DA9',
                   marginBottom: '24px'
                 }}>
                   PAYMENT 01
@@ -67,13 +71,14 @@ export const Pricing = () => {
                   fontWeight: 700,
                   lineHeight: 1,
                   letterSpacing: '-0.03em',
-                  marginBottom: '24px'
+                  marginBottom: '24px',
+                  color: '#E8B4B8'
                 }}>
                   $160
                 </div>
                 <div style={{
                   fontSize: '14px',
-                  color: '#808080',
+                  color: '#778DA9',
                   marginBottom: '40px',
                   lineHeight: 1.6
                 }}>
@@ -87,23 +92,16 @@ export const Pricing = () => {
                     display: 'block',
                     fontSize: '12px',
                     letterSpacing: '0.05em',
-                    color: '#0A0A0A',
-                    backgroundColor: '#FFFFFF',
+                    color: '#0D1B2A',
+                    backgroundColor: '#E8B4B8',
                     padding: '14px 24px',
                     textDecoration: 'none',
                     textAlign: 'center',
-                    transition: 'all 0.15s'
+                    transition: 'all 0.2s',
+                    fontWeight: 600
                   }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#0A0A0A';
-                    e.currentTarget.style.color = '#FFFFFF';
-                    e.currentTarget.style.outline = '1px solid #FFFFFF';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = '#FFFFFF';
-                    e.currentTarget.style.color = '#0A0A0A';
-                    e.currentTarget.style.outline = 'none';
-                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#C1666B'}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#E8B4B8'}
                 >
                   PAY NOW
                 </a>
@@ -111,15 +109,15 @@ export const Pricing = () => {
 
               <div style={{
                 padding: '64px 40px',
-                backgroundColor: '#FFFFFF',
-                color: '#0A0A0A',
-                borderRight: '1px solid #E0E0E0',
-                borderBottom: '1px solid #E0E0E0'
+                backgroundColor: '#E8B4B8',
+                color: '#0D1B2A',
+                borderRight: '1px solid rgba(13, 27, 42, 0.1)',
+                borderBottom: '1px solid rgba(13, 27, 42, 0.1)'
               }}>
                 <div style={{
                   fontSize: '11px',
                   letterSpacing: '0.12em',
-                  color: '#666666',
+                  color: '#1B263B',
                   marginBottom: '24px'
                 }}>
                   PAYMENT 02
@@ -135,7 +133,7 @@ export const Pricing = () => {
                 </div>
                 <div style={{
                   fontSize: '14px',
-                  color: '#404040',
+                  color: '#415A77',
                   marginBottom: '40px',
                   lineHeight: 1.6
                 }}>
@@ -149,23 +147,16 @@ export const Pricing = () => {
                     display: 'block',
                     fontSize: '12px',
                     letterSpacing: '0.05em',
-                    color: '#FFFFFF',
-                    backgroundColor: '#0A0A0A',
+                    color: '#F4F3EE',
+                    backgroundColor: '#0D1B2A',
                     padding: '14px 24px',
                     textDecoration: 'none',
                     textAlign: 'center',
-                    transition: 'all 0.15s'
+                    transition: 'all 0.2s',
+                    fontWeight: 600
                   }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#FFFFFF';
-                    e.currentTarget.style.color = '#0A0A0A';
-                    e.currentTarget.style.outline = '1px solid #0A0A0A';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = '#0A0A0A';
-                    e.currentTarget.style.color = '#FFFFFF';
-                    e.currentTarget.style.outline = 'none';
-                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1B263B'}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#0D1B2A'}
                 >
                   PAY AT LAUNCH
                 </a>
@@ -173,12 +164,13 @@ export const Pricing = () => {
 
               <div style={{
                 padding: '64px 40px',
-                borderBottom: '1px solid #1A1A1A'
+                borderBottom: '1px solid rgba(120, 141, 169, 0.2)',
+                backgroundColor: '#1B263B'
               }}>
                 <div style={{
                   fontSize: '11px',
                   letterSpacing: '0.12em',
-                  color: '#666666',
+                  color: '#778DA9',
                   marginBottom: '24px'
                 }}>
                   MAINTENANCE (OPTIONAL)
@@ -188,13 +180,14 @@ export const Pricing = () => {
                   fontWeight: 700,
                   lineHeight: 1,
                   letterSpacing: '-0.03em',
-                  marginBottom: '24px'
+                  marginBottom: '24px',
+                  color: '#C1666B'
                 }}>
                   $150
                 </div>
                 <div style={{
                   fontSize: '14px',
-                  color: '#808080',
+                  color: '#778DA9',
                   marginBottom: '40px',
                   lineHeight: 1.6
                 }}>
@@ -208,19 +201,16 @@ export const Pricing = () => {
                     display: 'block',
                     fontSize: '12px',
                     letterSpacing: '0.05em',
-                    color: '#FFFFFF',
+                    color: '#F4F3EE',
                     padding: '14px 24px',
                     textDecoration: 'none',
                     textAlign: 'center',
-                    outline: '1px solid #333333',
-                    transition: 'all 0.15s'
+                    outline: '2px solid #415A77',
+                    transition: 'all 0.2s',
+                    fontWeight: 600
                   }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.outlineColor = '#FFFFFF';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.outlineColor = '#333333';
-                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.outlineColor = '#E8B4B8'}
+                  onMouseLeave={(e) => e.currentTarget.style.outlineColor = '#415A77'}
                 >
                   SUBSCRIBE
                 </a>
@@ -229,7 +219,7 @@ export const Pricing = () => {
           </div>
         </section>
 
-        <section className="px-6 md:px-16 py-24 md:py-32" style={{ borderTop: '1px solid #1A1A1A' }}>
+        <section className="px-6 md:px-16 py-24 md:py-32" style={{ borderTop: '1px solid rgba(120, 141, 169, 0.2)' }}>
           <div className="max-w-[1400px] mx-auto">
             <div className="grid md:grid-cols-2 gap-16">
               <div>
@@ -237,11 +227,12 @@ export const Pricing = () => {
                   fontSize: '32px',
                   fontWeight: 700,
                   marginBottom: '32px',
-                  letterSpacing: '-0.01em'
+                  letterSpacing: '-0.01em',
+                  color: '#E8B4B8'
                 }}>
-                  What's included
+                  What is included
                 </h2>
-                <div style={{ fontSize: '15px', lineHeight: 2.2, color: '#999999' }}>
+                <div style={{ fontSize: '15px', lineHeight: 2.2, color: '#B8C5D6' }}>
                   {[
                     'Professional custom design',
                     'Mobile responsive layout',
@@ -256,7 +247,7 @@ export const Pricing = () => {
                     'Training documentation'
                   ].map((item, i) => (
                     <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                      <span style={{ color: '#FFFFFF' }}>—</span>
+                      <span style={{ color: '#C1666B' }}>—</span>
                       <span>{item}</span>
                     </div>
                   ))}
@@ -267,21 +258,22 @@ export const Pricing = () => {
                   fontSize: '32px',
                   fontWeight: 700,
                   marginBottom: '32px',
-                  letterSpacing: '-0.01em'
+                  letterSpacing: '-0.01em',
+                  color: '#E8B4B8'
                 }}>
                   Common questions
                 </h2>
-                <div style={{ fontSize: '15px', lineHeight: 1.7, color: '#999999' }}>
+                <div style={{ fontSize: '15px', lineHeight: 1.7, color: '#B8C5D6' }}>
                   <div style={{ marginBottom: '24px' }}>
-                    <div style={{ color: '#FFFFFF', marginBottom: '8px' }}>What if I'm not happy?</div>
-                    <div>We revise until you're satisfied. If we can't deliver what we promised, you get a full refund.</div>
+                    <div style={{ color: '#F4F3EE', marginBottom: '8px', fontWeight: 600 }}>What if I am not happy?</div>
+                    <div>We revise until you are satisfied. If we cannot deliver what we promised, you get a full refund.</div>
                   </div>
                   <div style={{ marginBottom: '24px' }}>
-                    <div style={{ color: '#FFFFFF', marginBottom: '8px' }}>Can I pay in full?</div>
-                    <div>Yes. Contact us and we'll send a single invoice for $700.</div>
+                    <div style={{ color: '#F4F3EE', marginBottom: '8px', fontWeight: 600 }}>Can I pay in full?</div>
+                    <div>Yes. Contact us and we will send a single invoice for $700.</div>
                   </div>
                   <div>
-                    <div style={{ color: '#FFFFFF', marginBottom: '8px' }}>Do I need maintenance?</div>
+                    <div style={{ color: '#F4F3EE', marginBottom: '8px', fontWeight: 600 }}>Do I need maintenance?</div>
                     <div>No. You can host and manage it yourself. Maintenance is optional but recommended.</div>
                   </div>
                 </div>
@@ -290,16 +282,17 @@ export const Pricing = () => {
           </div>
         </section>
 
-        <section className="px-6 md:px-16 py-24 md:py-32" style={{ 
-          borderTop: '1px solid #1A1A1A',
-          backgroundColor: '#0F0F0F'
+        <section className="px-6 md:px-16 py-24 md:py-32" style={{
+          borderTop: '1px solid rgba(120, 141, 169, 0.2)',
+          backgroundColor: '#1B263B'
         }}>
           <div className="max-w-[1400px] mx-auto text-center">
             <h2 style={{
               fontSize: 'clamp(2rem, 4vw, 3rem)',
               fontWeight: 700,
               marginBottom: '32px',
-              letterSpacing: '-0.02em'
+              letterSpacing: '-0.02em',
+              color: '#F4F3EE'
             }}>
               More questions?
             </h2>
@@ -311,22 +304,15 @@ export const Pricing = () => {
                 display: 'inline-block',
                 fontSize: '13px',
                 letterSpacing: '0.05em',
-                color: '#0A0A0A',
-                backgroundColor: '#FFFFFF',
+                color: '#0D1B2A',
+                backgroundColor: '#E8B4B8',
                 padding: '16px 32px',
                 textDecoration: 'none',
-                transition: 'all 0.15s'
+                transition: 'all 0.2s',
+                fontWeight: 600
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#0F0F0F';
-                e.currentTarget.style.color = '#FFFFFF';
-                e.currentTarget.style.outline = '1px solid #FFFFFF';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#FFFFFF';
-                e.currentTarget.style.color = '#0A0A0A';
-                e.currentTarget.style.outline = 'none';
-              }}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#C1666B'}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#E8B4B8'}
             >
               BOOK A CALL
             </a>

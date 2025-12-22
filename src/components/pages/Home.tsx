@@ -76,16 +76,16 @@ export const Home = () => {
 
         <section className="px-6 md:px-16 py-16 md:py-24" style={{ borderTop: '1px solid #2A2F3A' }}>
           <div className="max-w-[1400px] mx-auto">
-            <div className="grid md:grid-cols-3 gap-1">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
               {[
                 { label: 'Price', value: '$700' },
                 { label: 'Timeline', value: '1–4 wks' },
                 { label: 'Ownership', value: 'Yours' }
               ].map((item, i) => (
-                <div key={i} style={{
+                <div key={i} className={`${i < 2 ? 'md:border-r' : ''} border-b md:border-b-0`} style={{
                   padding: '48px 32px',
                   backgroundColor: '#161A22',
-                  borderRight: i < 2 ? '1px solid #2A2F3A' : 'none'
+                  borderColor: '#2A2F3A'
                 }}>
                   <div style={{
                     fontSize: '11px',
@@ -217,17 +217,14 @@ export const Home = () => {
                   price: '$150/mo'
                 }
               ].map((service, i) => (
-                <div key={i} style={{
-                  display: 'grid',
-                  gridTemplateColumns: '1fr auto',
-                  gap: '32px',
+                <div key={i} className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-4 md:gap-8" style={{
                   padding: '40px 0',
                   borderBottom: '1px solid #2A2F3A',
                   alignItems: 'start'
                 }}>
                   <div>
                     <h3 style={{
-                      fontSize: '28px',
+                      fontSize: 'clamp(22px, 4vw, 28px)',
                       fontWeight: 700,
                       marginBottom: '8px',
                       letterSpacing: '-0.01em',
@@ -244,7 +241,7 @@ export const Home = () => {
                     </p>
                   </div>
                   <div style={{
-                    fontSize: '28px',
+                    fontSize: 'clamp(22px, 4vw, 28px)',
                     fontWeight: 700,
                     whiteSpace: 'nowrap',
                     color: '#5B6CFF'

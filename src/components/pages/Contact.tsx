@@ -95,7 +95,7 @@ export const Contact = () => {
 
         <section className="px-6 md:px-16 py-0" style={{ borderTop: '1px solid #2A2F3A' }}>
           <div className="max-w-[1400px] mx-auto">
-            <div className="grid md:grid-cols-3">
+            <div className="grid grid-cols-1 md:grid-cols-3">
               {[
                 {
                   label: 'Email',
@@ -122,11 +122,11 @@ export const Contact = () => {
                   href={contact.href}
                   target={contact.external ? '_blank' : undefined}
                   rel={contact.external ? 'noopener noreferrer' : undefined}
+                  className={`border-b ${i < 2 ? 'md:border-r' : ''}`}
                   style={{
                     display: 'block',
                     padding: '56px 32px',
-                    borderRight: i < 2 ? '1px solid #2A2F3A' : 'none',
-                    borderBottom: '1px solid #2A2F3A',
+                    borderColor: '#2A2F3A',
                     textDecoration: 'none',
                     backgroundColor: '#0F1115',
                     transition: 'background-color 0.2s'
@@ -143,11 +143,12 @@ export const Contact = () => {
                     {contact.label}
                   </div>
                   <div style={{
-                    fontSize: '20px',
+                    fontSize: 'clamp(16px, 3vw, 20px)',
                     fontWeight: 600,
                     color: '#5B6CFF',
                     marginBottom: '12px',
-                    letterSpacing: '-0.01em'
+                    letterSpacing: '-0.01em',
+                    wordBreak: 'break-word'
                   }}>
                     {contact.value}
                   </div>
@@ -227,7 +228,7 @@ export const Contact = () => {
         }}>
           <div className="max-w-[1400px] mx-auto text-center">
             <div style={{
-              fontSize: '96px',
+              fontSize: 'clamp(64px, 15vw, 96px)',
               fontWeight: 700,
               lineHeight: 1,
               letterSpacing: '-0.04em',

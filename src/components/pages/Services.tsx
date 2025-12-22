@@ -88,7 +88,7 @@ export const Services = () => {
                 paddingBottom: '48px',
                 backgroundColor: i % 2 === 1 ? '#161A22' : 'transparent'
               }}>
-                <div className="grid md:grid-cols-12 gap-8 md:gap-12" style={{ padding: i % 2 === 1 ? '32px' : '0' }}>
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12" style={{ padding: i % 2 === 1 ? '16px' : '0', paddingTop: 0, paddingBottom: 0 }}>
                   <div className="md:col-span-1">
                     <span style={{ fontSize: '14px', color: '#2A2F3A', fontWeight: 700 }}>
                       {service.num}
@@ -96,7 +96,7 @@ export const Services = () => {
                   </div>
                   <div className="md:col-span-6">
                     <h2 style={{
-                      fontSize: '32px',
+                      fontSize: 'clamp(24px, 5vw, 32px)',
                       fontWeight: 700,
                       marginBottom: '16px',
                       letterSpacing: '-0.01em',
@@ -126,9 +126,9 @@ export const Services = () => {
                       ))}
                     </div>
                   </div>
-                  <div className="md:col-span-5 flex md:justify-end items-start">
+                  <div className="md:col-span-5 flex md:justify-end items-start mt-4 md:mt-0">
                     <div style={{
-                      fontSize: '42px',
+                      fontSize: 'clamp(32px, 6vw, 42px)',
                       fontWeight: 700,
                       letterSpacing: '-0.02em',
                       color: '#5B6CFF'

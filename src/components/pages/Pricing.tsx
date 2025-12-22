@@ -51,11 +51,10 @@ export const Pricing = () => {
 
         <section className="px-6 md:px-16 py-0" style={{ borderTop: '1px solid #2A2F3A' }}>
           <div className="max-w-[1400px] mx-auto">
-            <div className="grid md:grid-cols-3">
-              <div style={{
+            <div className="grid grid-cols-1 md:grid-cols-3">
+              <div className="md:border-r border-b" style={{
                 padding: '64px 40px',
-                borderRight: '1px solid #2A2F3A',
-                borderBottom: '1px solid #2A2F3A',
+                borderColor: '#2A2F3A',
                 backgroundColor: '#161A22'
               }}>
                 <div style={{
@@ -67,7 +66,7 @@ export const Pricing = () => {
                   PAYMENT 01
                 </div>
                 <div style={{
-                  fontSize: '72px',
+                  fontSize: 'clamp(52px, 10vw, 72px)',
                   fontWeight: 700,
                   lineHeight: 1,
                   letterSpacing: '-0.03em',
@@ -107,12 +106,11 @@ export const Pricing = () => {
                 </a>
               </div>
 
-              <div style={{
+              <div className="md:border-r border-b" style={{
                 padding: '64px 40px',
                 backgroundColor: '#5B6CFF',
                 color: '#F5F7FA',
-                borderRight: '1px solid #2A2F3A',
-                borderBottom: '1px solid #2A2F3A'
+                borderColor: '#2A2F3A'
               }}>
                 <div style={{
                   fontSize: '11px',
@@ -123,7 +121,7 @@ export const Pricing = () => {
                   PAYMENT 02
                 </div>
                 <div style={{
-                  fontSize: '72px',
+                  fontSize: 'clamp(52px, 10vw, 72px)',
                   fontWeight: 700,
                   lineHeight: 1,
                   letterSpacing: '-0.03em',
@@ -162,9 +160,9 @@ export const Pricing = () => {
                 </a>
               </div>
 
-              <div style={{
+              <div className="border-b md:border-b" style={{
                 padding: '64px 40px',
-                borderBottom: '1px solid #2A2F3A',
+                borderColor: '#2A2F3A',
                 backgroundColor: '#161A22'
               }}>
                 <div style={{
@@ -176,7 +174,7 @@ export const Pricing = () => {
                   MAINTENANCE (OPTIONAL)
                 </div>
                 <div style={{
-                  fontSize: '72px',
+                  fontSize: 'clamp(52px, 10vw, 72px)',
                   fontWeight: 700,
                   lineHeight: 1,
                   letterSpacing: '-0.03em',

@@ -82,10 +82,10 @@ export const Process = () => {
                 paddingBottom: '56px',
                 backgroundColor: i % 2 === 1 ? '#161A22' : 'transparent'
               }}>
-                <div className="grid md:grid-cols-12 gap-8" style={{ padding: i % 2 === 1 ? '32px' : '0' }}>
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-8" style={{ padding: i % 2 === 1 ? '16px' : '0', paddingTop: 0, paddingBottom: 0 }}>
                   <div className="md:col-span-1">
                     <span style={{
-                      fontSize: '56px',
+                      fontSize: 'clamp(40px, 8vw, 56px)',
                       fontWeight: 700,
                       color: '#161A22',
                       lineHeight: 1,
@@ -95,10 +95,10 @@ export const Process = () => {
                     </span>
                   </div>
                   <div className="md:col-span-11">
-                    <div className="grid md:grid-cols-12 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
                       <div className="md:col-span-4">
                         <h2 style={{
-                          fontSize: '32px',
+                          fontSize: 'clamp(24px, 5vw, 32px)',
                           fontWeight: 700,
                           marginBottom: '12px',
                           letterSpacing: '-0.01em',

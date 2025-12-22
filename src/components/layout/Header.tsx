@@ -19,25 +19,25 @@ export const Header = () => {
       position: 'sticky',
       top: 0,
       zIndex: 50,
-      backgroundColor: '#0D1B2A',
-      borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+      backgroundColor: '#0A0E27',
+      borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
     }}>
       <div style={{
         position: 'absolute',
-        bottom: 0,
+        bottom: '-80px',
         left: 0,
         right: 0,
-        height: '40px',
-        background: 'linear-gradient(to bottom, transparent, rgba(13, 27, 42, 0.3))',
+        height: '80px',
+        background: 'linear-gradient(to bottom, rgba(10, 14, 39, 0.9) 0%, rgba(10, 14, 39, 0.6) 40%, transparent 100%)',
         pointerEvents: 'none'
       }} />
-      
+
       <div className="max-w-[1400px] mx-auto px-6 md:px-16" style={{ position: 'relative', zIndex: 1 }}>
         <nav style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          height: '64px'
+          height: '90px'
         }}>
           <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
             <Logo />
@@ -49,17 +49,17 @@ export const Header = () => {
                 key={link.path}
                 to={link.path}
                 style={{
-                  fontSize: '13px',
+                  fontSize: '14px',
                   letterSpacing: '0.03em',
-                  color: location.pathname === link.path ? '#E8B4B8' : '#B8C5D6',
+                  color: location.pathname === link.path ? '#00D9FF' : '#E0E6ED',
                   textDecoration: 'none',
                   transition: 'color 0.2s',
                   fontWeight: 500
                 }}
-                onMouseEnter={(e) => e.currentTarget.style.color = '#E8B4B8'}
+                onMouseEnter={(e) => e.currentTarget.style.color = '#00D9FF'}
                 onMouseLeave={(e) => {
                   if (location.pathname !== link.path) {
-                    e.currentTarget.style.color = '#B8C5D6';
+                    e.currentTarget.style.color = '#E0E6ED';
                   }
                 }}
               >
@@ -71,20 +71,21 @@ export const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                fontSize: '12px',
+                fontSize: '13px',
                 letterSpacing: '0.05em',
-                color: '#0D1B2A',
-                backgroundColor: '#E8B4B8',
-                padding: '10px 20px',
+                color: '#0A0E27',
+                backgroundColor: '#00D9FF',
+                padding: '12px 24px',
                 textDecoration: 'none',
                 transition: 'all 0.2s',
-                fontWeight: 600
+                fontWeight: 600,
+                borderRadius: '2px'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#C89BA0';
+                e.currentTarget.style.backgroundColor = '#00B8D4';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#E8B4B8';
+                e.currentTarget.style.backgroundColor = '#00D9FF';
               }}
             >
               BOOK CALL
@@ -97,7 +98,7 @@ export const Header = () => {
             style={{
               background: 'none',
               border: 'none',
-              color: '#B8C5D6',
+              color: '#E0E6ED',
               cursor: 'pointer',
               padding: '8px'
             }}
@@ -109,11 +110,11 @@ export const Header = () => {
         {mobileMenuOpen && (
           <div style={{
             position: 'absolute',
-            top: '64px',
+            top: '90px',
             left: 0,
             right: 0,
-            backgroundColor: '#0D1B2A',
-            borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+            backgroundColor: '#0A0E27',
+            borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
             padding: '24px'
           }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
@@ -125,7 +126,7 @@ export const Header = () => {
                   style={{
                     fontSize: '14px',
                     letterSpacing: '0.03em',
-                    color: location.pathname === link.path ? '#E8B4B8' : '#B8C5D6',
+                    color: location.pathname === link.path ? '#00D9FF' : '#E0E6ED',
                     textDecoration: 'none',
                     fontWeight: 500
                   }}
@@ -138,14 +139,15 @@ export const Header = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  fontSize: '12px',
+                  fontSize: '13px',
                   letterSpacing: '0.05em',
-                  color: '#0D1B2A',
-                  backgroundColor: '#E8B4B8',
+                  color: '#0A0E27',
+                  backgroundColor: '#00D9FF',
                   padding: '12px 20px',
                   textDecoration: 'none',
                   textAlign: 'center',
-                  fontWeight: 600
+                  fontWeight: 600,
+                  borderRadius: '2px'
                 }}
               >
                 BOOK CALL

@@ -10,132 +10,207 @@ export const Process = () => {
         path="/process"
       />
 
-      <article style={{ backgroundColor: '#0A0A0A' }}>
-        <section className="px-6 md:px-12 py-32 md:py-48">
-          <div className="max-w-5xl mx-auto">
-            <h1
-              className="mb-8 leading-tight"
-              style={{
-                fontSize: 'clamp(2.5rem, 7vw, 6rem)',
-                fontWeight: 700,
-                color: '#FFFFFF',
-                letterSpacing: '-0.03em',
-                lineHeight: 1.1
-              }}
-            >
-              How it works
-            </h1>
-
-            <p className="text-xl md:text-2xl mb-12 max-w-2xl" style={{
-              color: '#999999',
-              lineHeight: 1.5
-            }}>
-              Simple process. No surprises. Launch in 1-4 weeks.
-            </p>
+      <article style={{ backgroundColor: '#0A0A0A', color: '#FFFFFF' }}>
+        <section className="px-6 md:px-16 py-24 md:py-32">
+          <div className="max-w-[1400px] mx-auto">
+            <div style={{ color: '#666666', fontSize: '13px', letterSpacing: '0.1em', marginBottom: '24px' }}>
+              PROCESS
+            </div>
+            <div className="grid md:grid-cols-12 gap-16">
+              <div className="md:col-span-8">
+                <h1 style={{
+                  fontSize: 'clamp(2.5rem, 6vw, 5.5rem)',
+                  fontWeight: 700,
+                  lineHeight: 1,
+                  letterSpacing: '-0.03em',
+                  marginBottom: '32px'
+                }}>
+                  Simple.<br/>Transparent.<br/>Effective.
+                </h1>
+              </div>
+              <div className="md:col-span-4 flex items-end">
+                <p style={{
+                  fontSize: '15px',
+                  lineHeight: 1.8,
+                  color: '#999999'
+                }}>
+                  Four steps from first call to launch. No surprises. No hidden steps. Everything clearly defined upfront.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
-        <section className="px-6 md:px-12 py-24" style={{
-          borderTop: '1px solid #1A1A1A'
-        }}>
-          <div className="max-w-4xl mx-auto space-y-16">
+        <section className="px-6 md:px-16 py-16 md:py-24" style={{ borderTop: '1px solid #1A1A1A' }}>
+          <div className="max-w-[1400px] mx-auto">
             {[
               {
-                num: "01",
-                title: "Book a call",
-                description: "30 minute call. We talk about your business, your goals, what you need from a website."
+                num: '01',
+                title: 'Discovery call',
+                timeline: 'Day 1',
+                desc: '30 minute call. We discuss your business, your goals, your target customers. No sales pitch. Just conversation to see if we are a good fit.',
+                outcome: 'Clear understanding of your needs'
               },
               {
-                num: "02",
-                title: "Approve the plan",
-                description: "We create a plan for your site. You see exactly what you're getting before we start building."
+                num: '02',
+                title: 'Strategy & approval',
+                timeline: 'Days 2-3',
+                desc: 'We create a detailed plan. Site structure. Page layouts. Content strategy. You review everything. We revise until you approve.',
+                outcome: 'Approved plan before any building starts'
               },
               {
-                num: "03",
-                title: "We build it",
-                description: "1-4 weeks depending on complexity. You get progress updates. We make revisions until you're happy."
+                num: '03',
+                title: 'Build & review',
+                timeline: 'Weeks 1-4',
+                desc: 'We build your site. You get progress updates. We send review links. You request changes. We iterate until you are completely satisfied.',
+                outcome: 'Finished site ready to launch'
               },
               {
-                num: "04",
-                title: "You launch it",
-                description: "Site goes live. We handle all the technical details. You own everything."
+                num: '04',
+                title: 'Launch & handoff',
+                timeline: 'Final day',
+                desc: 'Site goes live. We handle all technical details. DNS. SSL. Hosting. You get training materials. Support for 30 days included.',
+                outcome: 'Live site with full ownership'
               }
-            ].map((step, index) => (
-              <div key={index} className="flex gap-12 items-start">
-                <div
-                  className="text-6xl font-bold flex-shrink-0"
-                  style={{
-                    color: '#1A1A1A'
-                  }}
-                >
-                  {step.num}
-                </div>
-                <div className="flex-1 pt-3">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#FFFFFF' }}>
-                    {step.title}
-                  </h2>
-                  <p className="text-lg" style={{ color: '#808080', lineHeight: 1.7 }}>
-                    {step.description}
-                  </p>
+            ].map((step, i) => (
+              <div key={i} style={{
+                borderBottom: '1px solid #1A1A1A',
+                paddingTop: '56px',
+                paddingBottom: '56px'
+              }}>
+                <div className="grid md:grid-cols-12 gap-8">
+                  <div className="md:col-span-1">
+                    <span style={{
+                      fontSize: '56px',
+                      fontWeight: 700,
+                      color: '#1A1A1A',
+                      lineHeight: 1
+                    }}>
+                      {step.num}
+                    </span>
+                  </div>
+                  <div className="md:col-span-11">
+                    <div className="grid md:grid-cols-12 gap-8">
+                      <div className="md:col-span-4">
+                        <h2 style={{
+                          fontSize: '32px',
+                          fontWeight: 700,
+                          marginBottom: '12px',
+                          letterSpacing: '-0.01em'
+                        }}>
+                          {step.title}
+                        </h2>
+                        <div style={{
+                          fontSize: '12px',
+                          letterSpacing: '0.05em',
+                          color: '#666666'
+                        }}>
+                          {step.timeline}
+                        </div>
+                      </div>
+                      <div className="md:col-span-5">
+                        <p style={{
+                          fontSize: '15px',
+                          lineHeight: 1.7,
+                          color: '#999999',
+                          marginBottom: '20px'
+                        }}>
+                          {step.desc}
+                        </p>
+                        <div style={{
+                          fontSize: '13px',
+                          color: '#666666',
+                          paddingTop: '16px',
+                          borderTop: '1px solid #1A1A1A'
+                        }}>
+                          → {step.outcome}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </section>
 
-        <section className="px-6 md:px-12 py-32" style={{
-          borderTop: '1px solid #1A1A1A'
+        <section className="px-6 md:px-16 py-24 md:py-32" style={{ 
+          borderTop: '1px solid #1A1A1A',
+          backgroundColor: '#0F0F0F'
         }}>
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12" style={{ color: '#FFFFFF' }}>
-              Ready to start?
-            </h2>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="https://calendly.com/contact-scriptpilot/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-base font-medium px-8 py-4 no-underline"
-                style={{
-                  backgroundColor: '#FFFFFF',
-                  color: '#0A0A0A',
-                  transition: 'all 0.12s ease'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = 'transparent';
-                  e.currentTarget.style.color = '#FFFFFF';
-                  e.currentTarget.style.outline = '1px solid #FFFFFF';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#FFFFFF';
-                  e.currentTarget.style.color = '#0A0A0A';
-                  e.currentTarget.style.outline = 'none';
-                }}
-              >
-                Book a call
-              </a>
-
-              <Link
-                to="/pricing"
-                className="text-base font-medium px-8 py-4 no-underline"
-                style={{
-                  backgroundColor: 'transparent',
+          <div className="max-w-[1400px] mx-auto">
+            <div className="grid md:grid-cols-2 gap-16">
+              <div>
+                <h2 style={{
+                  fontSize: 'clamp(2rem, 4vw, 3rem)',
+                  fontWeight: 700,
+                  marginBottom: '24px',
+                  letterSpacing: '-0.02em'
+                }}>
+                  Questions about the process?
+                </h2>
+                <p style={{
+                  fontSize: '15px',
+                  lineHeight: 1.7,
                   color: '#999999',
-                  outline: '1px solid #2A2A2A',
-                  transition: 'all 0.12s ease'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = '#FFFFFF';
-                  e.currentTarget.style.outlineColor = '#404040';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = '#999999';
-                  e.currentTarget.style.outlineColor = '#2A2A2A';
-                }}
-              >
-                View pricing
-              </Link>
+                  marginBottom: '32px'
+                }}>
+                  Book a call and we'll walk through exactly how it works for your specific project.
+                </p>
+                <a
+                  href="https://calendly.com/contact-scriptpilot/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-block',
+                    fontSize: '13px',
+                    letterSpacing: '0.05em',
+                    color: '#0A0A0A',
+                    backgroundColor: '#FFFFFF',
+                    padding: '16px 32px',
+                    textDecoration: 'none',
+                    transition: 'all 0.15s'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = '#0F0F0F';
+                    e.currentTarget.style.color = '#FFFFFF';
+                    e.currentTarget.style.outline = '1px solid #FFFFFF';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = '#FFFFFF';
+                    e.currentTarget.style.color = '#0A0A0A';
+                    e.currentTarget.style.outline = 'none';
+                  }}
+                >
+                  BOOK A CALL
+                </a>
+              </div>
+              <div style={{ paddingTop: '40px' }}>
+                <div style={{ marginBottom: '32px' }}>
+                  <div style={{ fontSize: '12px', letterSpacing: '0.05em', color: '#666666', marginBottom: '8px' }}>
+                    TYPICAL TIMELINE
+                  </div>
+                  <div style={{ fontSize: '24px', fontWeight: 700 }}>
+                    1–4 weeks
+                  </div>
+                </div>
+                <div style={{ marginBottom: '32px' }}>
+                  <div style={{ fontSize: '12px', letterSpacing: '0.05em', color: '#666666', marginBottom: '8px' }}>
+                    REVISION ROUNDS
+                  </div>
+                  <div style={{ fontSize: '24px', fontWeight: 700 }}>
+                    Unlimited
+                  </div>
+                </div>
+                <div>
+                  <div style={{ fontSize: '12px', letterSpacing: '0.05em', color: '#666666', marginBottom: '8px' }}>
+                    POST-LAUNCH SUPPORT
+                  </div>
+                  <div style={{ fontSize: '24px', fontWeight: 700 }}>
+                    30 days included
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

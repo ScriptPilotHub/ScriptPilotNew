@@ -9,212 +9,250 @@ export const Contact = () => {
         path="/contact"
       />
 
-      <article style={{ backgroundColor: '#0A0A0A' }}>
-        <section className="px-6 md:px-12 py-40 md:py-56">
-          <div className="max-w-5xl mx-auto">
-            <h1
-              className="mb-12 leading-tight"
-              style={{
-                fontSize: 'clamp(2.5rem, 7vw, 6rem)',
-                fontWeight: 700,
-                color: '#FFFFFF',
-                letterSpacing: '-0.03em',
-                lineHeight: 1.1
-              }}
-            >
-              Let's talk
-            </h1>
-
-            <p className="text-xl md:text-2xl mb-16 max-w-2xl" style={{
-              color: '#999999',
-              lineHeight: 1.6
-            }}>
-              Book a free call or send an email. We respond within 24 hours.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="https://calendly.com/contact-scriptpilot/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-base font-medium px-9 py-4 no-underline text-center"
-                style={{
-                  backgroundColor: '#FFFFFF',
-                  color: '#0A0A0A',
-                  transition: 'all 0.12s ease'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = 'transparent';
-                  e.currentTarget.style.color = '#FFFFFF';
-                  e.currentTarget.style.outline = '1px solid #FFFFFF';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#FFFFFF';
-                  e.currentTarget.style.color = '#0A0A0A';
-                  e.currentTarget.style.outline = 'none';
-                }}
-              >
-                Book a call
-              </a>
-
-              <a
-                href="mailto:contact@scriptpilot.us"
-                className="text-base font-medium px-9 py-4 no-underline text-center"
-                style={{
-                  backgroundColor: 'transparent',
-                  color: '#999999',
-                  outline: '1px solid #2A2A2A',
-                  transition: 'all 0.12s ease'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = '#FFFFFF';
-                  e.currentTarget.style.outlineColor = '#404040';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = '#999999';
-                  e.currentTarget.style.outlineColor = '#2A2A2A';
-                }}
-              >
-                Send email
-              </a>
+      <article style={{ backgroundColor: '#0A0A0A', color: '#FFFFFF' }}>
+        <section className="px-6 md:px-16 py-24 md:py-32">
+          <div className="max-w-[1400px] mx-auto">
+            <div style={{ color: '#666666', fontSize: '13px', letterSpacing: '0.1em', marginBottom: '24px' }}>
+              CONTACT
+            </div>
+            <div className="grid md:grid-cols-12 gap-16">
+              <div className="md:col-span-7">
+                <h1 style={{
+                  fontSize: 'clamp(2.5rem, 6vw, 5.5rem)',
+                  fontWeight: 700,
+                  lineHeight: 1,
+                  letterSpacing: '-0.03em',
+                  marginBottom: '40px'
+                }}>
+                  Let's work<br/>together
+                </h1>
+                <div className="space-y-6">
+                  <a
+                    href="https://calendly.com/contact-scriptpilot/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'inline-block',
+                      fontSize: '13px',
+                      letterSpacing: '0.05em',
+                      color: '#0A0A0A',
+                      backgroundColor: '#FFFFFF',
+                      padding: '16px 40px',
+                      textDecoration: 'none',
+                      transition: 'all 0.15s',
+                      marginRight: '16px'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = '#0A0A0A';
+                      e.currentTarget.style.color = '#FFFFFF';
+                      e.currentTarget.style.outline = '1px solid #FFFFFF';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = '#FFFFFF';
+                      e.currentTarget.style.color = '#0A0A0A';
+                      e.currentTarget.style.outline = 'none';
+                    }}
+                  >
+                    BOOK A CALL
+                  </a>
+                  <a
+                    href="mailto:contact@scriptpilot.us"
+                    style={{
+                      display: 'inline-block',
+                      fontSize: '13px',
+                      letterSpacing: '0.05em',
+                      color: '#FFFFFF',
+                      padding: '16px 40px',
+                      textDecoration: 'none',
+                      outline: '1px solid #333333',
+                      transition: 'all 0.15s'
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.outlineColor = '#FFFFFF'}
+                    onMouseLeave={(e) => e.currentTarget.style.outlineColor = '#333333'}
+                  >
+                    SEND EMAIL
+                  </a>
+                </div>
+              </div>
+              <div className="md:col-span-5 flex items-end">
+                <div style={{ fontSize: '15px', lineHeight: 2, color: '#808080' }}>
+                  <div style={{ marginBottom: '8px', color: '#666666' }}>Response time</div>
+                  <div style={{ marginBottom: '32px', color: '#FFFFFF' }}>Within 24 hours</div>
+                  
+                  <div style={{ marginBottom: '8px', color: '#666666' }}>Typical timeline</div>
+                  <div style={{ marginBottom: '32px', color: '#FFFFFF' }}>1–4 weeks</div>
+                  
+                  <div style={{ marginBottom: '8px', color: '#666666' }}>Free consultation</div>
+                  <div style={{ color: '#FFFFFF' }}>30 minutes</div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="px-6 md:px-12 py-28" style={{
-          borderTop: '1px solid #1A1A1A'
-        }}>
-          <div className="max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-1">
+        <section className="px-6 md:px-16 py-0" style={{ borderTop: '1px solid #1A1A1A' }}>
+          <div className="max-w-[1400px] mx-auto">
+            <div className="grid md:grid-cols-3">
               {[
                 {
-                  title: "Email",
-                  content: "contact@scriptpilot.us",
-                  detail: "24 hour response time",
-                  href: "mailto:contact@scriptpilot.us"
+                  label: 'Email',
+                  value: 'contact@scriptpilot.us',
+                  detail: '24 hour response',
+                  href: 'mailto:contact@scriptpilot.us'
                 },
                 {
-                  title: "Phone",
-                  content: "(417) 401-0015",
-                  detail: "Mon-Fri, 9am-6pm CST",
-                  href: "tel:4174010015"
+                  label: 'Phone',
+                  value: '(417) 401-0015',
+                  detail: 'Mon–Fri, 9am–6pm CST',
+                  href: 'tel:4174010015'
                 },
                 {
-                  title: "Schedule",
-                  content: "Book 30 min call",
-                  detail: "Free consultation",
-                  href: "https://calendly.com/contact-scriptpilot/30min",
+                  label: 'Schedule',
+                  value: 'Book 30 min call',
+                  detail: 'Free consultation',
+                  href: 'https://calendly.com/contact-scriptpilot/30min',
                   external: true
                 }
-              ].map((item, index) => (
+              ].map((contact, i) => (
                 <a
-                  key={index}
-                  href={item.href}
-                  target={item.external ? "_blank" : undefined}
-                  rel={item.external ? "noopener noreferrer" : undefined}
-                  className="p-10 md:p-12 no-underline block text-center"
+                  key={i}
+                  href={contact.href}
+                  target={contact.external ? '_blank' : undefined}
+                  rel={contact.external ? 'noopener noreferrer' : undefined}
                   style={{
-                    backgroundColor: '#0F0F0F',
-                    borderBottom: '1px solid #1A1A1A'
+                    display: 'block',
+                    padding: '56px 32px',
+                    borderRight: i < 2 ? '1px solid #1A1A1A' : 'none',
+                    borderBottom: '1px solid #1A1A1A',
+                    textDecoration: 'none',
+                    backgroundColor: '#0A0A0A',
+                    transition: 'background-color 0.15s'
                   }}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#0F0F0F'}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#0A0A0A'}
                 >
-                  <div className="text-xs font-bold mb-6 tracking-wider" style={{ color: '#606060' }}>
-                    {item.title}
+                  <div style={{
+                    fontSize: '11px',
+                    letterSpacing: '0.12em',
+                    color: '#666666',
+                    marginBottom: '20px'
+                  }}>
+                    {contact.label}
                   </div>
-                  <h2
-                    className="text-xl md:text-2xl font-bold mb-3 tracking-tight"
-                    style={{
-                      color: '#FFFFFF',
-                      wordBreak: 'break-word'
-                    }}
-                  >
-                    {item.content}
-                  </h2>
-                  <p className="text-sm" style={{ color: '#808080' }}>
-                    {item.detail}
-                  </p>
+                  <div style={{
+                    fontSize: '20px',
+                    fontWeight: 600,
+                    color: '#FFFFFF',
+                    marginBottom: '12px',
+                    letterSpacing: '-0.01em'
+                  }}>
+                    {contact.value}
+                  </div>
+                  <div style={{
+                    fontSize: '13px',
+                    color: '#808080'
+                  }}>
+                    {contact.detail}
+                  </div>
                 </a>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="px-6 md:px-12 py-28" style={{
-          borderTop: '1px solid #1A1A1A'
-        }}>
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold mb-16 tracking-tight" style={{ color: '#FFFFFF', letterSpacing: '-0.02em' }}>
-              What to expect
-            </h2>
-
-            <div className="grid md:grid-cols-3 gap-12 md:gap-20">
-              {[
-                {
-                  num: "01",
-                  title: "Location",
-                  content: "Based in Missouri. Serving clients nationwide."
-                },
-                {
-                  num: "02",
-                  title: "Response time",
-                  content: "All inquiries answered within 24 hours."
-                },
-                {
-                  num: "03",
-                  title: "Timeline",
-                  content: "Most websites launch in 1-4 weeks."
-                }
-              ].map((item, index) => (
-                <div key={index}>
-                  <div className="text-xs font-bold mb-5 tracking-widest" style={{ color: '#404040' }}>
-                    {item.num}
+        <section className="px-6 md:px-16 py-24 md:py-32" style={{ borderTop: '1px solid #1A1A1A' }}>
+          <div className="max-w-[1400px] mx-auto">
+            <div className="grid md:grid-cols-12 gap-16">
+              <div className="md:col-span-6">
+                <h2 style={{
+                  fontSize: '32px',
+                  fontWeight: 700,
+                  marginBottom: '24px',
+                  letterSpacing: '-0.01em'
+                }}>
+                  What happens next
+                </h2>
+                <div style={{ fontSize: '15px', lineHeight: 1.8, color: '#999999' }}>
+                  <div style={{ marginBottom: '24px' }}>
+                    <div style={{ color: '#FFFFFF', marginBottom: '8px' }}>01 — We respond</div>
+                    <div>Usually within a few hours. Always within 24 hours. We'll answer your questions and schedule a call if it makes sense.</div>
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4 tracking-tight" style={{ color: '#FFFFFF', letterSpacing: '-0.01em' }}>
-                    {item.title}
-                  </h3>
-                  <p className="text-base md:text-lg" style={{ color: '#808080', lineHeight: 1.7 }}>
-                    {item.content}
-                  </p>
+                  <div style={{ marginBottom: '24px' }}>
+                    <div style={{ color: '#FFFFFF', marginBottom: '8px' }}>02 — Discovery call</div>
+                    <div>30 minutes. We discuss your business, your goals, what you need. No sales pitch. Just conversation.</div>
+                  </div>
+                  <div>
+                    <div style={{ color: '#FFFFFF', marginBottom: '8px' }}>03 — Proposal</div>
+                    <div>If we're a good fit, we send a detailed proposal. Clear scope. Fixed price. Estimated timeline.</div>
+                  </div>
                 </div>
-              ))}
+              </div>
+              <div className="md:col-span-6">
+                <h2 style={{
+                  fontSize: '32px',
+                  fontWeight: 700,
+                  marginBottom: '24px',
+                  letterSpacing: '-0.01em'
+                }}>
+                  About us
+                </h2>
+                <p style={{
+                  fontSize: '15px',
+                  lineHeight: 1.8,
+                  color: '#999999',
+                  marginBottom: '24px'
+                }}>
+                  Based in Missouri. Serving clients nationwide. We've built websites for businesses in retail, services, healthcare, and more.
+                </p>
+                <p style={{
+                  fontSize: '15px',
+                  lineHeight: 1.8,
+                  color: '#999999'
+                }}>
+                  We don't use templates or page builders. Everything is custom coded. Clean. Fast. Built to last.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="px-6 md:px-12 py-32 md:py-48" style={{
-          borderTop: '1px solid #1A1A1A'
+        <section className="px-6 md:px-16 py-32 md:py-48" style={{ 
+          borderTop: '1px solid #1A1A1A',
+          backgroundColor: '#0F0F0F'
         }}>
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 tracking-tight" style={{ color: '#FFFFFF', letterSpacing: '-0.02em' }}>
-              Ready to start?
-            </h2>
-
-            <p className="text-lg md:text-xl mb-12 max-w-2xl mx-auto" style={{ color: '#808080', lineHeight: 1.6 }}>
-              Book a free call. No pressure. No commitment.
-            </p>
-
+          <div className="max-w-[1400px] mx-auto text-center">
+            <div style={{
+              fontSize: '96px',
+              fontWeight: 700,
+              lineHeight: 1,
+              letterSpacing: '-0.04em',
+              marginBottom: '32px',
+              color: '#1A1A1A'
+            }}>
+              417
+            </div>
+            <div style={{
+              fontSize: '15px',
+              color: '#808080',
+              marginBottom: '48px'
+            }}>
+              Missouri area code. Where we're based.
+            </div>
             <a
-              href="https://calendly.com/contact-scriptpilot/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-base font-medium px-9 py-4 no-underline inline-block"
+              href="tel:4174010015"
               style={{
-                backgroundColor: '#FFFFFF',
-                color: '#0A0A0A',
-                transition: 'all 0.12s ease'
+                fontSize: '13px',
+                letterSpacing: '0.05em',
+                color: '#FFFFFF',
+                textDecoration: 'none',
+                borderBottom: '1px solid #FFFFFF',
+                paddingBottom: '2px',
+                transition: 'opacity 0.15s'
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent';
-                e.currentTarget.style.color = '#FFFFFF';
-                e.currentTarget.style.outline = '1px solid #FFFFFF';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#FFFFFF';
-                e.currentTarget.style.color = '#0A0A0A';
-                e.currentTarget.style.outline = 'none';
-              }}
+              onMouseEnter={(e) => e.currentTarget.style.opacity = '0.5'}
+              onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
             >
-              Book a call
+              CALL (417) 401-0015
             </a>
           </div>
         </section>

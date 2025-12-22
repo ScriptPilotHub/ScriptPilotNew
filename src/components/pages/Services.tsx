@@ -10,100 +10,124 @@ export const Services = () => {
         path="/services"
       />
 
-      <article style={{ backgroundColor: '#0A0A0A' }}>
-        <section className="px-6 md:px-12 py-32 md:py-48">
-          <div className="max-w-5xl mx-auto">
-            <h1
-              className="mb-8 leading-tight"
-              style={{
-                fontSize: 'clamp(2.5rem, 7vw, 6rem)',
-                fontWeight: 700,
-                color: '#FFFFFF',
-                letterSpacing: '-0.03em',
-                lineHeight: 1.1
-              }}
-            >
-              Services
-            </h1>
-
-            <p className="text-xl md:text-2xl mb-12 max-w-2xl" style={{
-              color: '#999999',
-              lineHeight: 1.5
-            }}>
-              Everything you need to get online and start bringing in customers.
-            </p>
+      <article style={{ backgroundColor: '#0A0A0A', color: '#FFFFFF' }}>
+        <section className="px-6 md:px-16 py-24 md:py-32">
+          <div className="max-w-[1400px] mx-auto">
+            <div className="grid md:grid-cols-12 gap-16">
+              <div className="md:col-span-7">
+                <div style={{ color: '#666666', fontSize: '13px', letterSpacing: '0.1em', marginBottom: '24px' }}>
+                  SERVICES
+                </div>
+                <h1 style={{
+                  fontSize: 'clamp(2.5rem, 6vw, 5.5rem)',
+                  fontWeight: 700,
+                  lineHeight: 1,
+                  letterSpacing: '-0.03em'
+                }}>
+                  What we build
+                </h1>
+              </div>
+              <div className="md:col-span-5 flex items-end">
+                <p style={{
+                  fontSize: '15px',
+                  lineHeight: 1.8,
+                  color: '#999999'
+                }}>
+                  We specialize in websites that generate revenue. Everything is built custom. No templates. No page builders. Just clean code and clear strategy.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
-        <section className="px-6 md:px-12 py-16" style={{
-          borderTop: '1px solid #1A1A1A'
-        }}>
-          <div className="max-w-5xl mx-auto space-y-1">
+        <section className="px-6 md:px-16 py-16 md:py-20" style={{ borderTop: '1px solid #1A1A1A' }}>
+          <div className="max-w-[1400px] mx-auto">
             {[
               {
-                title: "Business website",
-                description: "Professional site built for your business. Everything you need to get customers online.",
-                price: "$700",
-                features: ["5-10 pages", "Mobile responsive", "Contact forms", "SEO setup", "Fast loading"]
+                num: '01',
+                title: 'Business website',
+                desc: 'Professional site built for your business. Clean design. Fast loading. Mobile responsive. Optimized for search engines.',
+                features: ['5-10 pages', 'Contact forms', 'SEO setup', 'Google Analytics', '30 day support'],
+                price: '$700'
               },
               {
-                title: "E-commerce store",
-                description: "Complete online store. Sell products, manage orders, process payments.",
-                price: "$700",
-                features: ["Product catalog", "Shopping cart", "Secure checkout", "Order management", "Inventory"]
+                num: '02',
+                title: 'E-commerce store',
+                desc: 'Complete online store. Sell physical or digital products. Secure payment processing. Inventory management. Order tracking.',
+                features: ['Product catalog', 'Shopping cart', 'Secure checkout', 'Order management', 'Customer accounts'],
+                price: '$700'
               },
               {
-                title: "Demo site",
-                description: "See your site before you commit. We build a working demo. No obligation.",
-                price: "Free",
-                features: ["No commitment", "Working demo", "Real preview", "Early feedback"]
+                num: '03',
+                title: 'Demo site',
+                desc: 'See your site before committing. We build a working demo based on your requirements. No obligation. No risk.',
+                features: ['Working prototype', 'Real content', 'Interactive demo', 'Early feedback'],
+                price: 'Free'
               },
               {
-                title: "Site audit",
-                description: "Detailed review of your current website. Get clear feedback on what works and what doesn't.",
-                price: "Free",
-                features: ["Performance review", "SEO analysis", "Design feedback", "Priority fixes"]
+                num: '04',
+                title: 'Site audit',
+                desc: 'Detailed analysis of your current website. Performance review. SEO evaluation. Design critique. Prioritized recommendations.',
+                features: ['Performance test', 'SEO analysis', 'Security scan', 'Usability review', 'Action plan'],
+                price: 'Free'
               },
               {
-                title: "Monthly maintenance",
-                description: "Keep your site secure, fast, and running smooth. Includes hosting and support.",
-                price: "$150/mo",
-                features: ["Hosting included", "Security updates", "Daily backups", "Priority support"]
+                num: '05',
+                title: 'Monthly maintenance',
+                desc: 'Keep your site secure and running smooth. Includes hosting, security updates, daily backups, and priority support.',
+                features: ['Managed hosting', 'Security updates', 'Daily backups', 'Uptime monitoring', 'Priority support'],
+                price: '$150/mo'
               }
-            ].map((service, index) => (
-              <div
-                key={index}
-                className="p-10 md:p-12"
-                style={{
-                  backgroundColor: '#0F0F0F',
-                  borderBottom: '1px solid #1A1A1A'
-                }}
-              >
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 mb-8">
-                  <div className="flex-1">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: '#FFFFFF' }}>
+            ].map((service, i) => (
+              <div key={i} style={{
+                borderBottom: '1px solid #1A1A1A',
+                paddingTop: '48px',
+                paddingBottom: '48px'
+              }}>
+                <div className="grid md:grid-cols-12 gap-8 md:gap-12">
+                  <div className="md:col-span-1">
+                    <span style={{ fontSize: '14px', color: '#333333', fontWeight: 700 }}>
+                      {service.num}
+                    </span>
+                  </div>
+                  <div className="md:col-span-6">
+                    <h2 style={{
+                      fontSize: '32px',
+                      fontWeight: 700,
+                      marginBottom: '16px',
+                      letterSpacing: '-0.01em'
+                    }}>
                       {service.title}
                     </h2>
-                    <p className="text-base md:text-lg mb-6" style={{ color: '#808080', lineHeight: 1.6 }}>
-                      {service.description}
+                    <p style={{
+                      fontSize: '15px',
+                      lineHeight: 1.7,
+                      color: '#999999',
+                      marginBottom: '24px'
+                    }}>
+                      {service.desc}
                     </p>
-                    <div className="flex flex-wrap gap-2">
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                       {service.features.map((feature, idx) => (
-                        <span
-                          key={idx}
-                          className="text-xs px-3 py-1.5"
-                          style={{
-                            backgroundColor: '#1A1A1A',
-                            color: '#999999'
-                          }}
-                        >
+                        <span key={idx} style={{
+                          fontSize: '12px',
+                          padding: '6px 12px',
+                          backgroundColor: '#1A1A1A',
+                          color: '#808080'
+                        }}>
                           {feature}
                         </span>
                       ))}
                     </div>
                   </div>
-                  <div className="text-3xl md:text-4xl font-bold" style={{ color: '#FFFFFF' }}>
-                    {service.price}
+                  <div className="md:col-span-5 flex md:justify-end items-start">
+                    <div style={{
+                      fontSize: '42px',
+                      fontWeight: 700,
+                      letterSpacing: '-0.02em'
+                    }}>
+                      {service.price}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -111,27 +135,36 @@ export const Services = () => {
           </div>
         </section>
 
-        <section className="px-6 md:px-12 py-32" style={{
-          borderTop: '1px solid #1A1A1A'
+        <section className="px-6 md:px-16 py-24 md:py-32" style={{ 
+          borderTop: '1px solid #1A1A1A',
+          backgroundColor: '#0F0F0F'
         }}>
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12" style={{ color: '#FFFFFF' }}>
+          <div className="max-w-[1400px] mx-auto text-center">
+            <h2 style={{
+              fontSize: 'clamp(2rem, 4vw, 3rem)',
+              fontWeight: 700,
+              marginBottom: '32px',
+              letterSpacing: '-0.02em'
+            }}>
               Ready to start?
             </h2>
-
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="https://calendly.com/contact-scriptpilot/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-base font-medium px-8 py-4 no-underline"
                 style={{
-                  backgroundColor: '#FFFFFF',
+                  display: 'inline-block',
+                  fontSize: '13px',
+                  letterSpacing: '0.05em',
                   color: '#0A0A0A',
-                  transition: 'all 0.12s ease'
+                  backgroundColor: '#FFFFFF',
+                  padding: '16px 32px',
+                  textDecoration: 'none',
+                  transition: 'all 0.15s'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = 'transparent';
+                  e.currentTarget.style.backgroundColor = '#0F0F0F';
                   e.currentTarget.style.color = '#FFFFFF';
                   e.currentTarget.style.outline = '1px solid #FFFFFF';
                 }}
@@ -141,28 +174,24 @@ export const Services = () => {
                   e.currentTarget.style.outline = 'none';
                 }}
               >
-                Book a call
+                BOOK A CALL
               </a>
-
               <Link
                 to="/contact"
-                className="text-base font-medium px-8 py-4 no-underline"
                 style={{
-                  backgroundColor: 'transparent',
-                  color: '#999999',
-                  outline: '1px solid #2A2A2A',
-                  transition: 'all 0.12s ease'
+                  display: 'inline-block',
+                  fontSize: '13px',
+                  letterSpacing: '0.05em',
+                  color: '#FFFFFF',
+                  padding: '16px 32px',
+                  textDecoration: 'none',
+                  outline: '1px solid #333333',
+                  transition: 'all 0.15s'
                 }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = '#FFFFFF';
-                  e.currentTarget.style.outlineColor = '#404040';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = '#999999';
-                  e.currentTarget.style.outlineColor = '#2A2A2A';
-                }}
+                onMouseEnter={(e) => e.currentTarget.style.outlineColor = '#FFFFFF'}
+                onMouseLeave={(e) => e.currentTarget.style.outlineColor = '#333333'}
               >
-                Get in touch
+                GET IN TOUCH
               </Link>
             </div>
           </div>

@@ -6,6 +6,8 @@ import { Services } from './components/pages/Services';
 import { Process } from './components/pages/Process';
 import { Pricing } from './components/pages/Pricing';
 import { Contact } from './components/pages/Contact';
+import FAQ from './components/pages/FAQ';
+import Chatbot from './components/Chatbot';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { useEffect } from 'react';
 
@@ -31,10 +33,12 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/process" element={<Process />} />
             <Route path="/pricing" element={<Pricing />} />
+            <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
         <Footer />
+        <Chatbot />
       </div>
     </ErrorBoundary>
   );

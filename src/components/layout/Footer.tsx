@@ -88,7 +88,7 @@ export const Footer = () => {
                 contact@scriptpilot.us
               </a>
               <a
-                href="tel:4174010015"
+                href="tel:4174131978"
                 className="text-sm no-underline"
                 style={{ color: '#9AA0A6', transition: 'color 0.15s ease' }}
                 onMouseEnter={(e) => {
@@ -98,7 +98,7 @@ export const Footer = () => {
                   e.currentTarget.style.color = '#9AA0A6';
                 }}
               >
-                (417) 401-0015
+                (417) 413-1978
               </a>
               <a
                 href="https://calendly.com/contact-scriptpilot/30min"

@@ -105,9 +105,9 @@ export const Contact = () => {
                 },
                 {
                   label: 'Phone',
-                  value: '(417) 401-0015',
+                  value: '(417) 413-1978',
                   detail: 'Mon–Fri, 9am–6pm CST',
-                  href: 'tel:4174010015'
+                  href: 'tel:4174131978'
                 },
                 {
                   label: 'Schedule',
@@ -245,7 +245,7 @@ export const Contact = () => {
               Missouri area code. Where we are based.
             </div>
             <a
-              href="tel:4174010015"
+              href="tel:4174131978"
               style={{
                 fontSize: '13px',
                 letterSpacing: '0.05em',
@@ -265,7 +265,7 @@ export const Contact = () => {
                 e.currentTarget.style.borderColor = '#5B6CFF';
               }}
             >
-              CALL (417) 401-0015
+              CALL (417) 413-1978
             </a>
           </div>
         </section>

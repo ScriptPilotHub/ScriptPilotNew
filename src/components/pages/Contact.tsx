@@ -9,12 +9,12 @@ export const Contact = () => {
         path="/contact"
       />
 
-      <article style={{ backgroundColor: '#0D1B2A', color: '#F4F3EE' }}>
+      <article style={{ backgroundColor: '#0F1115', color: '#F5F7FA' }}>
         <section className="px-6 md:px-16 py-24 md:py-32" style={{
-          background: 'linear-gradient(135deg, #1B263B 0%, #0D1B2A 100%)'
+          background: 'linear-gradient(135deg, #161A22 0%, #0F1115 100%)'
         }}>
           <div className="max-w-[1400px] mx-auto">
-            <div style={{ color: '#778DA9', fontSize: '13px', letterSpacing: '0.1em', marginBottom: '24px' }}>
+            <div style={{ color: '#9AA0A6', fontSize: '13px', letterSpacing: '0.1em', marginBottom: '24px' }}>
               CONTACT
             </div>
             <div className="grid md:grid-cols-12 gap-16">
@@ -25,7 +25,7 @@ export const Contact = () => {
                   lineHeight: 1,
                   letterSpacing: '-0.03em',
                   marginBottom: '40px',
-                  color: '#F4F3EE'
+                  color: '#F5F7FA'
                 }}>
                   Let us work<br/>together
                 </h1>
@@ -38,16 +38,16 @@ export const Contact = () => {
                       display: 'inline-block',
                       fontSize: '13px',
                       letterSpacing: '0.05em',
-                      color: '#0D1B2A',
-                      backgroundColor: '#E8B4B8',
+                      color: '#F5F7FA',
+                      backgroundColor: '#5B6CFF',
                       padding: '16px 40px',
                       textDecoration: 'none',
                       transition: 'all 0.2s',
                       marginRight: '16px',
                       fontWeight: 600
                     }}
-                    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#C1666B'}
-                    onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#E8B4B8'}
+                    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#4A5AE8'}
+                    onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#5B6CFF'}
                   >
                     BOOK A CALL
                   </a>
@@ -57,20 +57,20 @@ export const Contact = () => {
                       display: 'inline-block',
                       fontSize: '13px',
                       letterSpacing: '0.05em',
-                      color: '#F4F3EE',
+                      color: '#F5F7FA',
                       padding: '16px 40px',
                       textDecoration: 'none',
-                      outline: '2px solid #415A77',
+                      outline: '2px solid #2A2F3A',
                       transition: 'all 0.2s',
                       fontWeight: 600
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.outlineColor = '#E8B4B8';
-                      e.currentTarget.style.color = '#E8B4B8';
+                      e.currentTarget.style.outlineColor = '#5B6CFF';
+                      e.currentTarget.style.color = '#5B6CFF';
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.outlineColor = '#415A77';
-                      e.currentTarget.style.color = '#F4F3EE';
+                      e.currentTarget.style.outlineColor = '#2A2F3A';
+                      e.currentTarget.style.color = '#F5F7FA';
                     }}
                   >
                     SEND EMAIL
@@ -78,22 +78,22 @@ export const Contact = () => {
                 </div>
               </div>
               <div className="md:col-span-5 flex items-end">
-                <div style={{ fontSize: '15px', lineHeight: 2, color: '#778DA9' }}>
-                  <div style={{ marginBottom: '8px', color: '#778DA9' }}>Response time</div>
-                  <div style={{ marginBottom: '32px', color: '#E8B4B8' }}>Within 24 hours</div>
-                  
-                  <div style={{ marginBottom: '8px', color: '#778DA9' }}>Typical timeline</div>
-                  <div style={{ marginBottom: '32px', color: '#E8B4B8' }}>1–4 weeks</div>
-                  
-                  <div style={{ marginBottom: '8px', color: '#778DA9' }}>Free consultation</div>
-                  <div style={{ color: '#E8B4B8' }}>30 minutes</div>
+                <div style={{ fontSize: '15px', lineHeight: 2, color: '#9AA0A6' }}>
+                  <div style={{ marginBottom: '8px', color: '#9AA0A6' }}>Response time</div>
+                  <div style={{ marginBottom: '32px', color: '#5B6CFF' }}>Within 24 hours</div>
+
+                  <div style={{ marginBottom: '8px', color: '#9AA0A6' }}>Typical timeline</div>
+                  <div style={{ marginBottom: '32px', color: '#5B6CFF' }}>1–4 weeks</div>
+
+                  <div style={{ marginBottom: '8px', color: '#9AA0A6' }}>Free consultation</div>
+                  <div style={{ color: '#5B6CFF' }}>30 minutes</div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="px-6 md:px-16 py-0" style={{ borderTop: '1px solid rgba(120, 141, 169, 0.2)' }}>
+        <section className="px-6 md:px-16 py-0" style={{ borderTop: '1px solid #2A2F3A' }}>
           <div className="max-w-[1400px] mx-auto">
             <div className="grid md:grid-cols-3">
               {[
@@ -125,19 +125,19 @@ export const Contact = () => {
                   style={{
                     display: 'block',
                     padding: '56px 32px',
-                    borderRight: i < 2 ? '1px solid rgba(120, 141, 169, 0.2)' : 'none',
-                    borderBottom: '1px solid rgba(120, 141, 169, 0.2)',
+                    borderRight: i < 2 ? '1px solid #2A2F3A' : 'none',
+                    borderBottom: '1px solid #2A2F3A',
                     textDecoration: 'none',
-                    backgroundColor: '#0D1B2A',
+                    backgroundColor: '#0F1115',
                     transition: 'background-color 0.2s'
                   }}
-                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1B263B'}
-                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#0D1B2A'}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#161A22'}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#0F1115'}
                 >
                   <div style={{
                     fontSize: '11px',
                     letterSpacing: '0.12em',
-                    color: '#778DA9',
+                    color: '#9AA0A6',
                     marginBottom: '20px'
                   }}>
                     {contact.label}
@@ -145,7 +145,7 @@ export const Contact = () => {
                   <div style={{
                     fontSize: '20px',
                     fontWeight: 600,
-                    color: '#E8B4B8',
+                    color: '#5B6CFF',
                     marginBottom: '12px',
                     letterSpacing: '-0.01em'
                   }}>
@@ -153,7 +153,7 @@ export const Contact = () => {
                   </div>
                   <div style={{
                     fontSize: '13px',
-                    color: '#778DA9'
+                    color: '#9AA0A6'
                   }}>
                     {contact.detail}
                   </div>
@@ -163,7 +163,7 @@ export const Contact = () => {
           </div>
         </section>
 
-        <section className="px-6 md:px-16 py-24 md:py-32" style={{ borderTop: '1px solid rgba(120, 141, 169, 0.2)' }}>
+        <section className="px-6 md:px-16 py-24 md:py-32" style={{ borderTop: '1px solid #2A2F3A' }}>
           <div className="max-w-[1400px] mx-auto">
             <div className="grid md:grid-cols-12 gap-16">
               <div className="md:col-span-6">
@@ -172,21 +172,21 @@ export const Contact = () => {
                   fontWeight: 700,
                   marginBottom: '24px',
                   letterSpacing: '-0.01em',
-                  color: '#E8B4B8'
+                  color: '#5B6CFF'
                 }}>
                   What happens next
                 </h2>
-                <div style={{ fontSize: '15px', lineHeight: 1.8, color: '#B8C5D6' }}>
+                <div style={{ fontSize: '15px', lineHeight: 1.8, color: '#9AA0A6' }}>
                   <div style={{ marginBottom: '24px' }}>
-                    <div style={{ color: '#F4F3EE', marginBottom: '8px', fontWeight: 600 }}>01 — We respond</div>
+                    <div style={{ color: '#F5F7FA', marginBottom: '8px', fontWeight: 600 }}>01 — We respond</div>
                     <div>Usually within a few hours. Always within 24 hours. We will answer your questions and schedule a call if it makes sense.</div>
                   </div>
                   <div style={{ marginBottom: '24px' }}>
-                    <div style={{ color: '#F4F3EE', marginBottom: '8px', fontWeight: 600 }}>02 — Discovery call</div>
+                    <div style={{ color: '#F5F7FA', marginBottom: '8px', fontWeight: 600 }}>02 — Discovery call</div>
                     <div>30 minutes. We discuss your business, your goals, what you need. No sales pitch. Just conversation.</div>
                   </div>
                   <div>
-                    <div style={{ color: '#F4F3EE', marginBottom: '8px', fontWeight: 600 }}>03 — Proposal</div>
+                    <div style={{ color: '#F5F7FA', marginBottom: '8px', fontWeight: 600 }}>03 — Proposal</div>
                     <div>If we are a good fit, we send a detailed proposal. Clear scope. Fixed price. Estimated timeline.</div>
                   </div>
                 </div>
@@ -197,14 +197,14 @@ export const Contact = () => {
                   fontWeight: 700,
                   marginBottom: '24px',
                   letterSpacing: '-0.01em',
-                  color: '#E8B4B8'
+                  color: '#5B6CFF'
                 }}>
                   About us
                 </h2>
                 <p style={{
                   fontSize: '15px',
                   lineHeight: 1.8,
-                  color: '#B8C5D6',
+                  color: '#9AA0A6',
                   marginBottom: '24px'
                 }}>
                   Based in Missouri. Serving clients nationwide. We have built websites for businesses in retail, services, healthcare, and more.
@@ -212,7 +212,7 @@ export const Contact = () => {
                 <p style={{
                   fontSize: '15px',
                   lineHeight: 1.8,
-                  color: '#B8C5D6'
+                  color: '#9AA0A6'
                 }}>
                   We do not use templates or page builders. Everything is custom coded. Clean. Fast. Built to last.
                 </p>
@@ -222,8 +222,8 @@ export const Contact = () => {
         </section>
 
         <section className="px-6 md:px-16 py-32 md:py-48" style={{
-          borderTop: '1px solid rgba(120, 141, 169, 0.2)',
-          backgroundColor: '#1B263B'
+          borderTop: '1px solid #2A2F3A',
+          backgroundColor: '#161A22'
         }}>
           <div className="max-w-[1400px] mx-auto text-center">
             <div style={{
@@ -233,13 +233,13 @@ export const Contact = () => {
               letterSpacing: '-0.04em',
               marginBottom: '32px',
               color: 'transparent',
-              WebkitTextStroke: '2px #415A77'
+              WebkitTextStroke: '2px #2A2F3A'
             }}>
               417
             </div>
             <div style={{
               fontSize: '15px',
-              color: '#778DA9',
+              color: '#9AA0A6',
               marginBottom: '48px'
             }}>
               Missouri area code. Where we are based.
@@ -249,20 +249,20 @@ export const Contact = () => {
               style={{
                 fontSize: '13px',
                 letterSpacing: '0.05em',
-                color: '#E8B4B8',
+                color: '#5B6CFF',
                 textDecoration: 'none',
-                borderBottom: '2px solid #E8B4B8',
+                borderBottom: '2px solid #5B6CFF',
                 paddingBottom: '2px',
                 transition: 'color 0.2s, border-color 0.2s',
                 fontWeight: 600
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.color = '#C1666B';
-                e.currentTarget.style.borderColor = '#C1666B';
+                e.currentTarget.style.color = '#4A5AE8';
+                e.currentTarget.style.borderColor = '#4A5AE8';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.color = '#E8B4B8';
-                e.currentTarget.style.borderColor = '#E8B4B8';
+                e.currentTarget.style.color = '#5B6CFF';
+                e.currentTarget.style.borderColor = '#5B6CFF';
               }}
             >
               CALL (417) 401-0015

@@ -19,8 +19,8 @@ export const Header = () => {
       position: 'sticky',
       top: 0,
       zIndex: 50,
-      backgroundColor: '#0A0E27',
-      borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+      backgroundColor: '#0F1115',
+      borderBottom: '1px solid #2A2F3A',
     }}>
       <div style={{
         position: 'absolute',
@@ -28,7 +28,7 @@ export const Header = () => {
         left: 0,
         right: 0,
         height: '80px',
-        background: 'linear-gradient(to bottom, rgba(10, 14, 39, 0.9) 0%, rgba(10, 14, 39, 0.6) 40%, transparent 100%)',
+        background: 'linear-gradient(to bottom, rgba(15, 17, 21, 0.9) 0%, rgba(15, 17, 21, 0.6) 40%, transparent 100%)',
         pointerEvents: 'none'
       }} />
 
@@ -51,15 +51,15 @@ export const Header = () => {
                 style={{
                   fontSize: '14px',
                   letterSpacing: '0.03em',
-                  color: location.pathname === link.path ? '#00D9FF' : '#E0E6ED',
+                  color: location.pathname === link.path ? '#5B6CFF' : '#F5F7FA',
                   textDecoration: 'none',
                   transition: 'color 0.2s',
                   fontWeight: 500
                 }}
-                onMouseEnter={(e) => e.currentTarget.style.color = '#00D9FF'}
+                onMouseEnter={(e) => e.currentTarget.style.color = '#5B6CFF'}
                 onMouseLeave={(e) => {
                   if (location.pathname !== link.path) {
-                    e.currentTarget.style.color = '#E0E6ED';
+                    e.currentTarget.style.color = '#F5F7FA';
                   }
                 }}
               >
@@ -73,8 +73,8 @@ export const Header = () => {
               style={{
                 fontSize: '13px',
                 letterSpacing: '0.05em',
-                color: '#0A0E27',
-                backgroundColor: '#00D9FF',
+                color: '#F5F7FA',
+                backgroundColor: '#5B6CFF',
                 padding: '12px 24px',
                 textDecoration: 'none',
                 transition: 'all 0.2s',
@@ -82,10 +82,10 @@ export const Header = () => {
                 borderRadius: '2px'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#00B8D4';
+                e.currentTarget.style.backgroundColor = '#4A5AE8';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#00D9FF';
+                e.currentTarget.style.backgroundColor = '#5B6CFF';
               }}
             >
               BOOK CALL
@@ -98,7 +98,7 @@ export const Header = () => {
             style={{
               background: 'none',
               border: 'none',
-              color: '#E0E6ED',
+              color: '#F5F7FA',
               cursor: 'pointer',
               padding: '8px'
             }}
@@ -113,8 +113,8 @@ export const Header = () => {
             top: '90px',
             left: 0,
             right: 0,
-            backgroundColor: '#0A0E27',
-            borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+            backgroundColor: '#0F1115',
+            borderBottom: '1px solid #2A2F3A',
             padding: '24px'
           }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
@@ -126,7 +126,7 @@ export const Header = () => {
                   style={{
                     fontSize: '14px',
                     letterSpacing: '0.03em',
-                    color: location.pathname === link.path ? '#00D9FF' : '#E0E6ED',
+                    color: location.pathname === link.path ? '#5B6CFF' : '#F5F7FA',
                     textDecoration: 'none',
                     fontWeight: 500
                   }}
@@ -141,8 +141,8 @@ export const Header = () => {
                 style={{
                   fontSize: '13px',
                   letterSpacing: '0.05em',
-                  color: '#0A0E27',
-                  backgroundColor: '#00D9FF',
+                  color: '#F5F7FA',
+                  backgroundColor: '#5B6CFF',
                   padding: '12px 20px',
                   textDecoration: 'none',
                   textAlign: 'center',

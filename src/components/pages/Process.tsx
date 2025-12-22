@@ -10,12 +10,12 @@ export const Process = () => {
         path="/process"
       />
 
-      <article style={{ backgroundColor: '#0D1B2A', color: '#F4F3EE' }}>
+      <article style={{ backgroundColor: '#0F1115', color: '#F5F7FA' }}>
         <section className="px-6 md:px-16 py-24 md:py-32" style={{
-          background: 'linear-gradient(135deg, #1B263B 0%, #0D1B2A 100%)'
+          background: 'linear-gradient(135deg, #161A22 0%, #0F1115 100%)'
         }}>
           <div className="max-w-[1400px] mx-auto">
-            <div style={{ color: '#778DA9', fontSize: '13px', letterSpacing: '0.1em', marginBottom: '24px' }}>
+            <div style={{ color: '#9AA0A6', fontSize: '13px', letterSpacing: '0.1em', marginBottom: '24px' }}>
               PROCESS
             </div>
             <div className="grid md:grid-cols-12 gap-16">
@@ -26,7 +26,7 @@ export const Process = () => {
                   lineHeight: 1,
                   letterSpacing: '-0.03em',
                   marginBottom: '32px',
-                  color: '#F4F3EE'
+                  color: '#F5F7FA'
                 }}>
                   Simple.<br/>Transparent.<br/>Effective.
                 </h1>
@@ -35,7 +35,7 @@ export const Process = () => {
                 <p style={{
                   fontSize: '15px',
                   lineHeight: 1.8,
-                  color: '#B8C5D6'
+                  color: '#9AA0A6'
                 }}>
                   Four steps from first call to launch. No surprises. No hidden steps. Everything clearly defined upfront.
                 </p>
@@ -44,7 +44,7 @@ export const Process = () => {
           </div>
         </section>
 
-        <section className="px-6 md:px-16 py-16 md:py-24" style={{ borderTop: '1px solid rgba(120, 141, 169, 0.2)' }}>
+        <section className="px-6 md:px-16 py-16 md:py-24" style={{ borderTop: '1px solid #2A2F3A' }}>
           <div className="max-w-[1400px] mx-auto">
             {[
               {
@@ -77,19 +77,19 @@ export const Process = () => {
               }
             ].map((step, i) => (
               <div key={i} style={{
-                borderBottom: '1px solid rgba(120, 141, 169, 0.2)',
+                borderBottom: '1px solid #2A2F3A',
                 paddingTop: '56px',
                 paddingBottom: '56px',
-                backgroundColor: i % 2 === 1 ? '#1B263B' : 'transparent'
+                backgroundColor: i % 2 === 1 ? '#161A22' : 'transparent'
               }}>
                 <div className="grid md:grid-cols-12 gap-8" style={{ padding: i % 2 === 1 ? '32px' : '0' }}>
                   <div className="md:col-span-1">
                     <span style={{
                       fontSize: '56px',
                       fontWeight: 700,
-                      color: '#1B263B',
+                      color: '#161A22',
                       lineHeight: 1,
-                      WebkitTextStroke: '1px #415A77'
+                      WebkitTextStroke: '1px #2A2F3A'
                     }}>
                       {step.num}
                     </span>
@@ -102,14 +102,14 @@ export const Process = () => {
                           fontWeight: 700,
                           marginBottom: '12px',
                           letterSpacing: '-0.01em',
-                          color: '#E8B4B8'
+                          color: '#5B6CFF'
                         }}>
                           {step.title}
                         </h2>
                         <div style={{
                           fontSize: '12px',
                           letterSpacing: '0.05em',
-                          color: '#778DA9'
+                          color: '#9AA0A6'
                         }}>
                           {step.timeline}
                         </div>
@@ -118,16 +118,16 @@ export const Process = () => {
                         <p style={{
                           fontSize: '15px',
                           lineHeight: 1.7,
-                          color: '#B8C5D6',
+                          color: '#9AA0A6',
                           marginBottom: '20px'
                         }}>
                           {step.desc}
                         </p>
                         <div style={{
                           fontSize: '13px',
-                          color: '#778DA9',
+                          color: '#9AA0A6',
                           paddingTop: '16px',
-                          borderTop: '1px solid rgba(120, 141, 169, 0.2)'
+                          borderTop: '1px solid #2A2F3A'
                         }}>
                           → {step.outcome}
                         </div>
@@ -141,8 +141,8 @@ export const Process = () => {
         </section>
 
         <section className="px-6 md:px-16 py-24 md:py-32" style={{
-          borderTop: '1px solid rgba(120, 141, 169, 0.2)',
-          backgroundColor: '#1B263B'
+          borderTop: '1px solid #2A2F3A',
+          backgroundColor: '#161A22'
         }}>
           <div className="max-w-[1400px] mx-auto">
             <div className="grid md:grid-cols-2 gap-16">
@@ -152,14 +152,14 @@ export const Process = () => {
                   fontWeight: 700,
                   marginBottom: '24px',
                   letterSpacing: '-0.02em',
-                  color: '#F4F3EE'
+                  color: '#F5F7FA'
                 }}>
                   Questions about the process?
                 </h2>
                 <p style={{
                   fontSize: '15px',
                   lineHeight: 1.7,
-                  color: '#B8C5D6',
+                  color: '#9AA0A6',
                   marginBottom: '32px'
                 }}>
                   Book a call and we will walk through exactly how it works for your specific project.
@@ -172,41 +172,41 @@ export const Process = () => {
                     display: 'inline-block',
                     fontSize: '13px',
                     letterSpacing: '0.05em',
-                    color: '#0D1B2A',
-                    backgroundColor: '#E8B4B8',
+                    color: '#F5F7FA',
+                    backgroundColor: '#5B6CFF',
                     padding: '16px 32px',
                     textDecoration: 'none',
                     transition: 'all 0.2s',
                     fontWeight: 600
                   }}
-                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#C1666B'}
-                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#E8B4B8'}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#4A5AE8'}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#5B6CFF'}
                 >
                   BOOK A CALL
                 </a>
               </div>
               <div style={{ paddingTop: '40px' }}>
                 <div style={{ marginBottom: '32px' }}>
-                  <div style={{ fontSize: '12px', letterSpacing: '0.05em', color: '#778DA9', marginBottom: '8px' }}>
+                  <div style={{ fontSize: '12px', letterSpacing: '0.05em', color: '#9AA0A6', marginBottom: '8px' }}>
                     TYPICAL TIMELINE
                   </div>
-                  <div style={{ fontSize: '24px', fontWeight: 700, color: '#E8B4B8' }}>
+                  <div style={{ fontSize: '24px', fontWeight: 700, color: '#5B6CFF' }}>
                     1–4 weeks
                   </div>
                 </div>
                 <div style={{ marginBottom: '32px' }}>
-                  <div style={{ fontSize: '12px', letterSpacing: '0.05em', color: '#778DA9', marginBottom: '8px' }}>
+                  <div style={{ fontSize: '12px', letterSpacing: '0.05em', color: '#9AA0A6', marginBottom: '8px' }}>
                     REVISION ROUNDS
                   </div>
-                  <div style={{ fontSize: '24px', fontWeight: 700, color: '#E8B4B8' }}>
+                  <div style={{ fontSize: '24px', fontWeight: 700, color: '#5B6CFF' }}>
                     Unlimited
                   </div>
                 </div>
                 <div>
-                  <div style={{ fontSize: '12px', letterSpacing: '0.05em', color: '#778DA9', marginBottom: '8px' }}>
+                  <div style={{ fontSize: '12px', letterSpacing: '0.05em', color: '#9AA0A6', marginBottom: '8px' }}>
                     POST-LAUNCH SUPPORT
                   </div>
-                  <div style={{ fontSize: '24px', fontWeight: 700, color: '#E8B4B8' }}>
+                  <div style={{ fontSize: '24px', fontWeight: 700, color: '#5B6CFF' }}>
                     30 days included
                   </div>
                 </div>

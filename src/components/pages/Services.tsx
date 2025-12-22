@@ -10,14 +10,14 @@ export const Services = () => {
         path="/services"
       />
 
-      <article style={{ backgroundColor: '#0D1B2A', color: '#F4F3EE' }}>
+      <article style={{ backgroundColor: '#0F1115', color: '#F5F7FA' }}>
         <section className="px-6 md:px-16 py-24 md:py-32" style={{
-          background: 'linear-gradient(135deg, #1B263B 0%, #0D1B2A 100%)'
+          background: 'linear-gradient(135deg, #161A22 0%, #0F1115 100%)'
         }}>
           <div className="max-w-[1400px] mx-auto">
             <div className="grid md:grid-cols-12 gap-16">
               <div className="md:col-span-7">
-                <div style={{ color: '#778DA9', fontSize: '13px', letterSpacing: '0.1em', marginBottom: '24px' }}>
+                <div style={{ color: '#9AA0A6', fontSize: '13px', letterSpacing: '0.1em', marginBottom: '24px' }}>
                   SERVICES
                 </div>
                 <h1 style={{
@@ -25,7 +25,7 @@ export const Services = () => {
                   fontWeight: 700,
                   lineHeight: 1,
                   letterSpacing: '-0.03em',
-                  color: '#F4F3EE'
+                  color: '#F5F7FA'
                 }}>
                   What we build
                 </h1>
@@ -34,7 +34,7 @@ export const Services = () => {
                 <p style={{
                   fontSize: '15px',
                   lineHeight: 1.8,
-                  color: '#B8C5D6'
+                  color: '#9AA0A6'
                 }}>
                   We specialize in websites that generate revenue. Everything is built custom. No templates. No page builders. Just clean code and clear strategy.
                 </p>
@@ -43,7 +43,7 @@ export const Services = () => {
           </div>
         </section>
 
-        <section className="px-6 md:px-16 py-16 md:py-20" style={{ borderTop: '1px solid rgba(120, 141, 169, 0.2)' }}>
+        <section className="px-6 md:px-16 py-16 md:py-20" style={{ borderTop: '1px solid #2A2F3A' }}>
           <div className="max-w-[1400px] mx-auto">
             {[
               {
@@ -83,14 +83,14 @@ export const Services = () => {
               }
             ].map((service, i) => (
               <div key={i} style={{
-                borderBottom: '1px solid rgba(120, 141, 169, 0.2)',
+                borderBottom: '1px solid #2A2F3A',
                 paddingTop: '48px',
                 paddingBottom: '48px',
-                backgroundColor: i % 2 === 1 ? '#1B263B' : 'transparent'
+                backgroundColor: i % 2 === 1 ? '#161A22' : 'transparent'
               }}>
                 <div className="grid md:grid-cols-12 gap-8 md:gap-12" style={{ padding: i % 2 === 1 ? '32px' : '0' }}>
                   <div className="md:col-span-1">
-                    <span style={{ fontSize: '14px', color: '#415A77', fontWeight: 700 }}>
+                    <span style={{ fontSize: '14px', color: '#2A2F3A', fontWeight: 700 }}>
                       {service.num}
                     </span>
                   </div>
@@ -100,14 +100,14 @@ export const Services = () => {
                       fontWeight: 700,
                       marginBottom: '16px',
                       letterSpacing: '-0.01em',
-                      color: '#E8B4B8'
+                      color: '#5B6CFF'
                     }}>
                       {service.title}
                     </h2>
                     <p style={{
                       fontSize: '15px',
                       lineHeight: 1.7,
-                      color: '#B8C5D6',
+                      color: '#9AA0A6',
                       marginBottom: '24px'
                     }}>
                       {service.desc}
@@ -117,9 +117,9 @@ export const Services = () => {
                         <span key={idx} style={{
                           fontSize: '12px',
                           padding: '6px 12px',
-                          backgroundColor: '#0D1B2A',
-                          color: '#778DA9',
-                          border: '1px solid rgba(120, 141, 169, 0.2)'
+                          backgroundColor: '#0F1115',
+                          color: '#9AA0A6',
+                          border: '1px solid #2A2F3A'
                         }}>
                           {feature}
                         </span>
@@ -131,7 +131,7 @@ export const Services = () => {
                       fontSize: '42px',
                       fontWeight: 700,
                       letterSpacing: '-0.02em',
-                      color: '#C1666B'
+                      color: '#5B6CFF'
                     }}>
                       {service.price}
                     </div>
@@ -143,8 +143,8 @@ export const Services = () => {
         </section>
 
         <section className="px-6 md:px-16 py-24 md:py-32" style={{
-          borderTop: '1px solid rgba(120, 141, 169, 0.2)',
-          backgroundColor: '#1B263B'
+          borderTop: '1px solid #2A2F3A',
+          backgroundColor: '#161A22'
         }}>
           <div className="max-w-[1400px] mx-auto text-center">
             <h2 style={{
@@ -152,7 +152,7 @@ export const Services = () => {
               fontWeight: 700,
               marginBottom: '32px',
               letterSpacing: '-0.02em',
-              color: '#F4F3EE'
+              color: '#F5F7FA'
             }}>
               Ready to start?
             </h2>
@@ -165,15 +165,15 @@ export const Services = () => {
                   display: 'inline-block',
                   fontSize: '13px',
                   letterSpacing: '0.05em',
-                  color: '#0D1B2A',
-                  backgroundColor: '#E8B4B8',
+                  color: '#F5F7FA',
+                  backgroundColor: '#5B6CFF',
                   padding: '16px 32px',
                   textDecoration: 'none',
                   transition: 'all 0.2s',
                   fontWeight: 600
                 }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#C1666B'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#E8B4B8'}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#4A5AE8'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#5B6CFF'}
               >
                 BOOK A CALL
               </a>
@@ -183,20 +183,20 @@ export const Services = () => {
                   display: 'inline-block',
                   fontSize: '13px',
                   letterSpacing: '0.05em',
-                  color: '#F4F3EE',
+                  color: '#F5F7FA',
                   padding: '16px 32px',
                   textDecoration: 'none',
-                  outline: '2px solid #415A77',
+                  outline: '2px solid #2A2F3A',
                   transition: 'all 0.2s',
                   fontWeight: 600
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.outlineColor = '#E8B4B8';
-                  e.currentTarget.style.color = '#E8B4B8';
+                  e.currentTarget.style.outlineColor = '#5B6CFF';
+                  e.currentTarget.style.color = '#5B6CFF';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.outlineColor = '#415A77';
-                  e.currentTarget.style.color = '#F4F3EE';
+                  e.currentTarget.style.outlineColor = '#2A2F3A';
+                  e.currentTarget.style.color = '#F5F7FA';
                 }}
               >
                 GET IN TOUCH

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Favicons</title>
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            padding: 40px;
+            background: #0f1115;
+            color: #f5f7fa;
+        }
+        canvas {
+            border: 2px solid #2a2f3a;
+            margin: 20px 0;
+            display: block;
+        }
+        button {
+            background: #5b6cff;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 14px;
+            cursor: pointer;
+            margin: 10px 10px 10px 0;
+            border-radius: 4px;
+        }
+        button:hover {
+            background: #4a5ae8;
+        }
+        .info {
+            background: #161a22;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Favicon Generator</h1>
+    <p>Click the buttons below to download each favicon size:</p>
+
+    <h3>512x512 PNG (for manifest/high-res)</h3>
+    <canvas id="canvas512" width="512" height="512"></canvas>
+    <button onclick="download('canvas512', 'favicon-512.png')">Download favicon-512.png</button>
+
+    <h3>180x180 PNG (for Apple Touch Icon)</h3>
+    <canvas id="canvas180" width="180" height="180"></canvas>
+    <button onclick="download('canvas180', 'apple-touch-icon.png')">Download apple-touch-icon.png</button>
+
+    <h3>32x32 ICO (standard favicon)</h3>
+    <canvas id="canvas32" width="32" height="32"></canvas>
+    <button onclick="download('canvas32', 'favicon-32x32.png')">Download favicon-32x32.png</button>
+
+    <div class="info">
+        <h3>Instructions:</h3>
+        <ol>
+            <li>Download all three files using the buttons above</li>
+            <li>Replace the files in your public/ folder</li>
+            <li>For the .ico file, you'll need to convert the 32x32 PNG to ICO format using an online tool</li>
+        </ol>
+    </div>
+
+    <script>
+        function drawFavicon(canvas) {
+            const ctx = canvas.getContext('2d');
+            const size = canvas.width;
+
+            ctx.fillStyle = '#161A22';
+            ctx.fillRect(0, 0, size, size);
+
+            const scale = size / 512;
+
+            ctx.strokeStyle = '#5B6CFF';
+            ctx.lineWidth = 32 * scale;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+
+            ctx.beginPath();
+            ctx.moveTo(160 * scale, 180 * scale);
+            ctx.lineTo(220 * scale, 256 * scale);
+            ctx.lineTo(160 * scale, 332 * scale);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(352 * scale, 180 * scale);
+            ctx.lineTo(292 * scale, 256 * scale);
+            ctx.lineTo(352 * scale, 332 * scale);
+            ctx.stroke();
+
+            ctx.fillStyle = '#5B6CFF';
+            ctx.beginPath();
+            ctx.arc(256 * scale, 256 * scale, 16 * scale, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        drawFavicon(document.getElementById('canvas512'));
+        drawFavicon(document.getElementById('canvas180'));
+        drawFavicon(document.getElementById('canvas32'));
+
+        function download(canvasId, filename) {
+            const canvas = document.getElementById(canvasId);
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+    </script>
+</body>
+</html>

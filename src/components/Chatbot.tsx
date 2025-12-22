@@ -2,10 +2,12 @@ import { useState, useEffect, useRef } from 'react';
 import { MessageCircle, X, Send } from 'lucide-react';
 import { createClient } from '@supabase/supabase-js';
 
-const supabase = createClient(
-  import.meta.env.VITE_SUPABASE_URL,
-  import.meta.env.VITE_SUPABASE_ANON_KEY
-);
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+const supabase = supabaseUrl && supabaseKey
+  ? createClient(supabaseUrl, supabaseKey)
+  : null;
 
 interface Message {
   id: string;
@@ -20,6 +22,57 @@ interface FAQ {
   answer: string;
   keywords: string[];
 }
+
+const fallbackFaqs: FAQ[] = [
+  {
+    id: '1',
+    question: 'How much does a website cost?',
+    answer: 'Our websites start at $700 total, with $160 to start and $540 on delivery. This covers everything: design, development, hosting setup, and launch. Monthly maintenance is optional at $150/month.',
+    keywords: ['price', 'cost', 'payment', 'how much', 'expensive', 'cheap', 'budget', '$', 'dollar', 'money', 'affordable']
+  },
+  {
+    id: '2',
+    question: 'How long does it take to build a website?',
+    answer: 'Most projects take 1-4 weeks from start to launch, depending on complexity. Simple business sites typically take 1-2 weeks, while e-commerce stores may take 3-4 weeks.',
+    keywords: ['time', 'duration', 'how long', 'timeline', 'schedule', 'when', 'weeks', 'days', 'fast', 'quick']
+  },
+  {
+    id: '3',
+    question: 'Do you offer payment plans?',
+    answer: 'Yes! We split payments into two parts: $160 to start your project, and the remaining $540 when we deliver your completed website. This makes it easier to get started.',
+    keywords: ['payment plan', 'installment', 'split', 'pay', 'financing', 'deposit', 'upfront']
+  },
+  {
+    id: '4',
+    question: 'Can I update the website myself?',
+    answer: 'Yes! We can build your site with a content management system that makes it easy to update text and images without technical knowledge. Or you can choose our maintenance plan where we handle all updates for you.',
+    keywords: ['update', 'edit', 'change', 'modify', 'cms', 'content', 'myself', 'manage']
+  },
+  {
+    id: '5',
+    question: 'What is included in the maintenance plan?',
+    answer: 'Our $150/month maintenance plan includes unlimited edits, 24/7 hosting, security updates, regular backups, and priority support. You can request changes anytime and we handle everything.',
+    keywords: ['maintenance', 'hosting', 'support', 'updates', 'monthly', 'ongoing', 'care']
+  },
+  {
+    id: '6',
+    question: 'Will my website be mobile-friendly?',
+    answer: 'Absolutely! All our websites are fully responsive and optimized for mobile devices, tablets, and desktops. Your site will look great on any screen size.',
+    keywords: ['mobile', 'responsive', 'phone', 'tablet', 'device', 'smartphone', 'iphone', 'android']
+  },
+  {
+    id: '7',
+    question: 'Do you help with SEO?',
+    answer: 'Yes! All our websites are built with SEO best practices, including fast loading, proper structure, and mobile optimization. We also offer SEO audits to help improve your search rankings.',
+    keywords: ['seo', 'google', 'search', 'ranking', 'optimization', 'traffic', 'visibility', 'found']
+  },
+  {
+    id: '8',
+    question: 'What do I need to provide?',
+    answer: 'We need your branding materials (logo, colors), content (text, images), and any specific features you want. Don\'t worry if you don\'t have everything ready - we can help create content too!',
+    keywords: ['need', 'provide', 'required', 'logo', 'content', 'images', 'text', 'branding']
+  }
+];
 
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,14 +100,22 @@ export default function Chatbot() {
 
   const fetchFaqs = async () => {
     try {
-      const { data, error } = await supabase
-        .from('faqs')
-        .select('id, question, answer, keywords');
+      if (supabase) {
+        const { data, error } = await supabase
+          .from('faqs')
+          .select('id, question, answer, keywords');
 
-      if (error) throw error;
-      setFaqs(data || []);
+        if (error) throw error;
+        if (data && data.length > 0) {
+          setFaqs(data);
+          return;
+        }
+      }
+
+      setFaqs(fallbackFaqs);
     } catch (error) {
       console.error('Error fetching FAQs:', error);
+      setFaqs(fallbackFaqs);
     }
   };
 

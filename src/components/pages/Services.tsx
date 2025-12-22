@@ -48,34 +48,27 @@ export const Services = () => {
             {[
               {
                 num: '01',
-                title: 'Business website',
-                desc: 'Professional site built for your business. Clean design. Fast loading. Mobile responsive. Optimized for search engines.',
-                features: ['5-10 pages', 'Contact forms', 'SEO setup', 'Google Analytics', '30 day support'],
+                title: 'Complete website',
+                desc: 'Full-service web design from start to finish. Business sites, e-commerce stores, or both - we handle everything. Professional design, clean code, and built to convert visitors into customers.',
+                features: ['Business or e-commerce', 'Custom design', 'Mobile responsive', 'SEO optimized', 'Payment processing', 'Product catalogs', 'Contact forms', '30 day support'],
                 price: '$700'
               },
               {
                 num: '02',
-                title: 'E-commerce store',
-                desc: 'Complete online store. Sell physical or digital products. Secure payment processing. Inventory management. Order tracking.',
-                features: ['Product catalog', 'Shopping cart', 'Secure checkout', 'Order management', 'Customer accounts'],
-                price: '$700'
-              },
-              {
-                num: '03',
                 title: 'Demo site',
                 desc: 'See your site before committing. We build a working demo based on your requirements. No obligation. No risk.',
                 features: ['Working prototype', 'Real content', 'Interactive demo', 'Early feedback'],
                 price: 'Free'
               },
               {
-                num: '04',
+                num: '03',
                 title: 'Site audit',
                 desc: 'Detailed analysis of your current website. Performance review. SEO evaluation. Design critique. Prioritized recommendations.',
                 features: ['Performance test', 'SEO analysis', 'Security scan', 'Usability review', 'Action plan'],
                 price: 'Free'
               },
               {
-                num: '05',
+                num: '04',
                 title: 'Monthly maintenance',
                 desc: 'Keep your site secure and running smooth. Includes hosting, security updates, daily backups, and priority support.',
                 features: ['Managed hosting', 'Security updates', 'Daily backups', 'Uptime monitoring', 'Priority support'],

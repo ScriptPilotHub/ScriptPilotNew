@@ -39,7 +39,7 @@ const fallbackFaqs: FAQ[] = [
   {
     id: '3',
     question: 'What services do you offer?',
-    answer: 'We offer: Business websites ($700), E-commerce stores ($700), Demo sites (free - see your site before committing), Site audits (free - performance and SEO analysis), and Monthly maintenance ($150/month - hosting, updates, and support).',
+    answer: 'We build complete websites for $700 - whether you need a business site, e-commerce store, or both. We handle the whole deal from start to finish. We also offer free demos (see your site before committing), free site audits (performance and SEO analysis), and optional monthly maintenance ($150/month).',
     keywords: ['services', 'offer', 'provide', 'what do you', 'build', 'make', 'do', 'types', 'options', 'ecommerce', 'store', 'shop']
   },
   {
@@ -105,7 +105,7 @@ const fallbackFaqs: FAQ[] = [
   {
     id: '14',
     question: 'Can you build an e-commerce store?',
-    answer: 'Yes! Our e-commerce package ($700) includes: product catalog, shopping cart, secure payment processing with Stripe, inventory management, order tracking, and customer accounts. Perfect for selling physical or digital products.',
+    answer: 'Yes! For $700 we build complete e-commerce solutions from start to finish: product catalog, shopping cart, secure payment processing with Stripe, inventory management, order tracking, and customer accounts. We can also combine e-commerce with your business site - all for the same price.',
     keywords: ['ecommerce', 'e-commerce', 'store', 'shop', 'sell', 'products', 'payment', 'stripe', 'cart', 'online store']
   },
   {

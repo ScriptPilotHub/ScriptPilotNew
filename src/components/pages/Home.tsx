@@ -202,13 +202,8 @@ export const Home = () => {
             <div className="space-y-1">
               {[
                 {
-                  title: 'Business website',
-                  desc: 'Professional design. Mobile responsive. Contact forms. SEO setup.',
-                  price: '$700'
-                },
-                {
-                  title: 'E-commerce',
-                  desc: 'Complete online store. Product catalog. Secure payments. Order management.',
+                  title: 'Complete website',
+                  desc: 'Business sites, e-commerce stores, or both. We handle the whole deal from start to finish.',
                   price: '$700'
                 },
                 {

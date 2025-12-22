@@ -33,6 +33,7 @@ export const Footer = () => {
                 { name: 'Services', path: '/services' },
                 { name: 'Process', path: '/process' },
                 { name: 'Pricing', path: '/pricing' },
+                { name: 'FAQ', path: '/faq' },
                 { name: 'Contact', path: '/contact' }
               ].map((item) => (
                 <Link

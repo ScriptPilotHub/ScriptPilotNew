@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ChevronDown, ChevronUp, Search } from 'lucide-react';
 import { createClient } from '@supabase/supabase-js';
 
@@ -176,12 +177,12 @@ export default function FAQ() {
           <p className="text-slate-600 mb-6">
             Try our chatbot in the bottom right corner for instant answers, or schedule a call to discuss your project.
           </p>
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg"
           >
             Get in Touch
-          </a>
+          </Link>
         </div>
       </div>
     </div>

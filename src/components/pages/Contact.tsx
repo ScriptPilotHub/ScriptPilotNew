@@ -5,7 +5,7 @@ export const Contact = () => {
     <>
       <SEO
         title="Contact"
-        description="Get in touch with ScriptPilot. Book a free 30 minute call or send us an email. We respond within 24 hours."
+        description="Get in touch with Script Pilot. Book a free 30 minute call or send us an email. We respond within 24 hours."
         path="/contact"
       />
 

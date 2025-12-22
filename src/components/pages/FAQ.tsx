@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown, ChevronUp, Search } from 'lucide-react';
 import { createClient } from '@supabase/supabase-js';
+import { SEO } from '../SEO';
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
@@ -183,7 +184,13 @@ export default function FAQ() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+    <>
+      <SEO
+        title="FAQ"
+        description="Script Pilot frequently asked questions. Learn about pricing, process, timeline, and services for professional web development."
+        path="/faq"
+      />
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
@@ -272,5 +279,6 @@ export default function FAQ() {
         </div>
       </div>
     </div>
+    </>
   );
 }

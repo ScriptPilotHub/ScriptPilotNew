@@ -6,7 +6,7 @@ export const Process = () => {
     <>
       <SEO
         title="How It Works"
-        description="Our straightforward process: book a call, approve the plan, we build it, you launch it. 1-4 weeks from start to finish."
+        description="Script Pilot's straightforward process: book a call, approve the plan, we build it, you launch it. 1-4 weeks from start to finish."
         path="/process"
       />
 

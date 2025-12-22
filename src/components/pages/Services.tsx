@@ -6,7 +6,7 @@ export const Services = () => {
     <>
       <SEO
         title="Web Design Services"
-        description="Professional websites, e-commerce stores, site audits, and maintenance. Fixed pricing, transparent process."
+        description="Script Pilot offers professional websites, e-commerce stores, site audits, and maintenance. Fixed pricing, transparent process."
         path="/services"
       />
 

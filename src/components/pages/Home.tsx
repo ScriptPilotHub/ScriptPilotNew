@@ -6,7 +6,7 @@ export const Home = () => {
     <>
       <SEO
         title="Professional Websites That Bring In Customers"
-        description="ScriptPilot builds clean, professional websites for small businesses. Fixed price, fixed timeline. Based in Missouri, serving nationwide."
+        description="Script Pilot builds clean, professional websites for small businesses. Fixed price, fixed timeline. Based in Missouri, serving nationwide."
         path="/"
       />
 

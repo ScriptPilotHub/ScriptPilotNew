@@ -5,7 +5,7 @@ export const Pricing = () => {
     <>
       <SEO
         title="Pricing"
-        description="Transparent, fixed pricing. $700 total for professional websites. $160 to start, $540 at launch. Optional $150/month maintenance."
+        description="Script Pilot transparent, fixed pricing. $700 total for professional websites. $160 to start, $540 at launch. Optional $150/month maintenance."
         path="/pricing"
       />
 

@@ -1,29 +1,25 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 import { Logo } from '../ui/Logo';
 
-interface FooterProps {
-  onNavigate: (page: string) => void;
-}
-
-export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
+export const Footer = () => {
   return (
     <footer
-      className="px-6 md:px-8 py-12"
+      className="px-6 md:px-8 py-16"
       style={{
-        backgroundColor: '#050811',
-        borderTop: '1px solid rgba(45, 156, 219, 0.2)'
+        backgroundColor: '#050505',
+        borderTop: '1px solid #1A1A1A'
       }}
     >
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-4 gap-10 mb-12">
+        <div className="grid md:grid-cols-4 gap-12 mb-16">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <Logo size={28} />
+              <Logo size={32} />
               <span className="text-base font-bold" style={{ color: '#FFFFFF' }}>
                 ScriptPilot
               </span>
             </div>
-            <p className="text-sm" style={{ color: '#8B95A5' }}>
+            <p className="text-sm" style={{ color: '#606060' }}>
               Websites that bring in customers.
             </p>
           </div>
@@ -33,28 +29,29 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               Company
             </h3>
             <div className="flex flex-col gap-3">
-              {['Home', 'Services', 'About', 'Contact'].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => onNavigate(item.toLowerCase())}
-                  className="text-left text-sm transition-colors"
+              {[
+                { name: 'Services', path: '/services' },
+                { name: 'Process', path: '/process' },
+                { name: 'Pricing', path: '/pricing' },
+                { name: 'Contact', path: '/contact' }
+              ].map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className="text-sm no-underline"
                   style={{
-                    background: 'none',
-                    border: 'none',
-                    cursor: 'pointer',
-                    color: '#8B95A5',
-                    padding: 0,
-                    transition: 'all 0.2s ease'
+                    color: '#808080',
+                    transition: 'color 0.15s ease'
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.color = '#56CCF2';
+                    e.currentTarget.style.color = '#FFFFFF';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.color = '#8B95A5';
+                    e.currentTarget.style.color = '#808080';
                   }}
                 >
-                  {item}
-                </button>
+                  {item.name}
+                </Link>
               ))}
             </div>
           </div>
@@ -64,8 +61,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               Services
             </h3>
             <div className="flex flex-col gap-3">
-              {['Business websites', 'E-commerce stores', 'Demo sites', 'Site audits', 'Maintenance'].map((service) => (
-                <p key={service} className="text-sm" style={{ color: '#8B95A5' }}>
+              {['Business websites', 'E-commerce', 'Site audits', 'Maintenance'].map((service) => (
+                <p key={service} className="text-sm" style={{ color: '#606060' }}>
                   {service}
                 </p>
               ))}
@@ -79,26 +76,26 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <div className="flex flex-col gap-3">
               <a
                 href="mailto:contact@scriptpilot.us"
-                className="text-sm no-underline transition-colors"
-                style={{ color: '#8B95A5', transition: 'all 0.2s ease' }}
+                className="text-sm no-underline"
+                style={{ color: '#808080', transition: 'color 0.15s ease' }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.color = '#56CCF2';
+                  e.currentTarget.style.color = '#FFFFFF';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.color = '#8B95A5';
+                  e.currentTarget.style.color = '#808080';
                 }}
               >
                 contact@scriptpilot.us
               </a>
               <a
                 href="tel:4174010015"
-                className="text-sm no-underline transition-colors"
-                style={{ color: '#8B95A5', transition: 'all 0.2s ease' }}
+                className="text-sm no-underline"
+                style={{ color: '#808080', transition: 'color 0.15s ease' }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.color = '#56CCF2';
+                  e.currentTarget.style.color = '#FFFFFF';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.color = '#8B95A5';
+                  e.currentTarget.style.color = '#808080';
                 }}
               >
                 (417) 401-0015
@@ -107,13 +104,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 href="https://calendly.com/contact-scriptpilot/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm no-underline transition-colors"
-                style={{ color: '#8B95A5', transition: 'all 0.2s ease' }}
+                className="text-sm no-underline"
+                style={{ color: '#808080', transition: 'color 0.15s ease' }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.color = '#56CCF2';
+                  e.currentTarget.style.color = '#FFFFFF';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.color = '#8B95A5';
+                  e.currentTarget.style.color = '#808080';
                 }}
               >
                 Book a call
@@ -123,14 +120,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         </div>
 
         <div
-          className="pt-6 flex flex-col md:flex-row justify-between items-center gap-4"
-          style={{ borderTop: '1px solid rgba(45, 156, 219, 0.1)' }}
+          className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+          style={{ borderTop: '1px solid #1A1A1A' }}
         >
-          <p className="text-sm" style={{ color: '#8B95A5' }}>
+          <p className="text-sm" style={{ color: '#606060' }}>
             © {new Date().getFullYear()} ScriptPilot. All rights reserved.
           </p>
-          <p className="text-sm" style={{ color: '#8B95A5' }}>
-            Based in Missouri. Serving clients nationwide.
+          <p className="text-sm" style={{ color: '#606060' }}>
+            Missouri. Serving nationwide.
           </p>
         </div>
       </div>

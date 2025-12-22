@@ -1,38 +1,28 @@
-import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
 import { Home } from './components/pages/Home';
 import { Services } from './components/pages/Services';
-import { About } from './components/pages/About';
+import { Process } from './components/pages/Process';
+import { Pricing } from './components/pages/Pricing';
 import { Contact } from './components/pages/Contact';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('home');
-
-  const renderPage = () => {
-    switch (currentPage) {
-      case 'home':
-        return <Home onNavigate={setCurrentPage} />;
-      case 'services':
-        return <Services onNavigate={setCurrentPage} />;
-      case 'about':
-        return <About onNavigate={setCurrentPage} />;
-      case 'contact':
-        return <Contact onNavigate={setCurrentPage} />;
-      default:
-        return <Home onNavigate={setCurrentPage} />;
-    }
-  };
-
   return (
     <ErrorBoundary>
-      <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#0A0F1A' }}>
-        <Header currentPage={currentPage} onNavigate={setCurrentPage} />
+      <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#0A0A0A' }}>
+        <Header />
         <main className="flex-grow">
-          {renderPage()}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/process" element={<Process />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
         </main>
-        <Footer onNavigate={setCurrentPage} />
+        <Footer />
       </div>
     </ErrorBoundary>
   );

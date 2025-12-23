@@ -78,7 +78,7 @@ export const Services = () => {
               {
                 num: '05',
                 title: 'Event photography',
-                desc: 'Professional photography for business events, storefronts, and product shots. Perfect add-on for clients who need quality photos for their new website or social media.',
+                desc: 'Professional photography for business events, storefronts, and product shots. Available bundled with web design or as a standalone service.',
                 features: ['Event coverage', 'Storefront photos', 'Product photography', 'Food & beverage', 'Professional editing', 'High resolution files'],
                 price: '$150'
               }
@@ -189,7 +189,7 @@ export const Services = () => {
                   lineHeight: 1.8
                 }}>
                   <p style={{ marginBottom: '12px' }}>
-                    Standalone photography service offered separately from web design. They work hand in hand but are not bundled together.
+                    Available bundled with web design services or as a standalone offering.
                   </p>
                   <p style={{ color: '#5B6CFF', fontWeight: 600 }}>
                     Perfect for businesses needing quality photos for their website, social media, or marketing materials.
@@ -198,43 +198,44 @@ export const Services = () => {
               </div>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
                 {
                   src: '/photography-examples/guitar.jpg',
-                  alt: 'Live jazz performance at The 1906',
-                  span: 'md:row-span-2',
+                  alt: 'Live jazz performance',
                   delay: 0.1
                 },
                 {
                   src: '/photography-examples/brushata.jpg',
-                  alt: 'Artisan bruschetta food photography',
-                  span: 'md:col-span-2',
+                  alt: 'Artisan food',
                   delay: 0.2
                 },
                 {
-                  src: '/photography-examples/p1050094-enhanced-nr.jpg',
-                  alt: 'Specialty cocktail with strawberry garnish',
-                  span: 'md:col-span-2',
+                  src: '/photography-examples/drink_2.jpg',
+                  alt: 'Craft cocktails',
                   delay: 0.3
+                },
+                {
+                  src: '/photography-examples/p1050094-enhanced-nr.jpg',
+                  alt: 'Signature drinks',
+                  delay: 0.4
                 }
               ].map((photo, i) => (
                 <motion.div
                   key={i}
-                  className={photo.span}
                   style={{
                     position: 'relative',
                     overflow: 'hidden',
-                    minHeight: i === 0 ? '600px' : '300px',
+                    aspectRatio: '1/1',
                     backgroundColor: '#161A22',
                     border: '1px solid #2A2F3A'
                   }}
-                  initial={{ opacity: 0, y: 40 }}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-100px' }}
-                  transition={{ duration: 0.6, delay: photo.delay }}
+                  viewport={{ once: true, margin: '-50px' }}
+                  transition={{ duration: 0.5, delay: photo.delay }}
                   whileHover={{
-                    scale: 1.02,
+                    scale: 1.05,
                     borderColor: '#5B6CFF',
                     transition: { duration: 0.3 }
                   }}
@@ -247,7 +248,7 @@ export const Services = () => {
                       height: '100%',
                       objectFit: 'cover'
                     }}
-                    whileHover={{ scale: 1.05 }}
+                    whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.4 }}
                   />
                   <motion.div
@@ -256,10 +257,10 @@ export const Services = () => {
                       bottom: 0,
                       left: 0,
                       right: 0,
-                      padding: '24px',
+                      padding: '16px',
                       background: 'linear-gradient(to top, rgba(15, 17, 21, 0.95), transparent)',
                       color: '#F5F7FA',
-                      fontSize: '13px',
+                      fontSize: '12px',
                       opacity: 0
                     }}
                     whileHover={{ opacity: 1 }}
@@ -273,30 +274,23 @@ export const Services = () => {
 
             <motion.div
               style={{
-                marginTop: '48px',
+                marginTop: '32px',
                 textAlign: 'center',
-                padding: '32px',
+                padding: '24px',
                 backgroundColor: '#161A22',
                 border: '1px solid #2A2F3A'
               }}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
             >
               <p style={{
-                fontSize: '14px',
-                color: '#9AA0A6',
-                marginBottom: '8px'
-              }}>
-                Available as a separate service
-              </p>
-              <p style={{
-                fontSize: '16px',
+                fontSize: '15px',
                 color: '#F5F7FA',
                 fontWeight: 600
               }}>
-                $150 per event session
+                $150 per session
               </p>
             </motion.div>
           </div>

@@ -6,7 +6,7 @@ export const Services = () => {
     <>
       <SEO
         title="Web Design Services"
-        description="Script Pilot offers professional websites, e-commerce stores, site audits, and maintenance. Fixed pricing, transparent process."
+        description="Script Pilot offers professional websites, e-commerce stores, site audits, maintenance, and event photography. Fixed pricing, transparent process."
         path="/services"
       />
 
@@ -73,6 +73,13 @@ export const Services = () => {
                 desc: 'Optional upgrade to your lifetime hosting. Adds priority support, daily backups, proactive monitoring, and ongoing content updates.',
                 features: ['Priority support', 'Daily backups', 'Security updates', 'Uptime monitoring', 'Content updates'],
                 price: '$150/mo'
+              },
+              {
+                num: '05',
+                title: 'Event photography',
+                desc: 'Professional photography for business events, storefronts, and product shots. Perfect add-on for clients who need quality photos for their new website or social media.',
+                features: ['Event coverage', 'Storefront photos', 'Product photography', 'Food & beverage', 'Professional editing', 'High resolution files'],
+                price: '$150'
               }
             ].map((service, i) => (
               <div key={i} style={{
@@ -132,6 +139,92 @@ export const Services = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        <section className="px-6 md:px-16 py-16 md:py-24" style={{
+          borderTop: '1px solid #2A2F3A',
+          backgroundColor: '#0F1115'
+        }}>
+          <div className="max-w-[1400px] mx-auto">
+            <div style={{ marginBottom: '48px' }}>
+              <div style={{
+                fontSize: '11px',
+                letterSpacing: '0.12em',
+                color: '#9AA0A6',
+                marginBottom: '16px'
+              }}>
+                PHOTOGRAPHY PORTFOLIO
+              </div>
+              <h2 style={{
+                fontSize: 'clamp(1.75rem, 3vw, 2.5rem)',
+                fontWeight: 700,
+                letterSpacing: '-0.02em',
+                color: '#F5F7FA',
+                marginBottom: '12px'
+              }}>
+                Recent work
+              </h2>
+              <p style={{
+                fontSize: '15px',
+                color: '#9AA0A6',
+                maxWidth: '600px'
+              }}>
+                Professional photography from The 1906 special event featuring craft cocktails, artisan food, and live jazz.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {[
+                { src: '/photography-examples/guitar.jpg', alt: 'Live jazz performance at The 1906' },
+                { src: '/photography-examples/drink_2.jpg', alt: 'Craft cocktail photography' },
+                { src: '/photography-examples/brushata.jpg', alt: 'Artisan bruschetta food photography' },
+                { src: '/photography-examples/p1050094-enhanced-nr.jpg', alt: 'Specialty cocktail with strawberry garnish' }
+              ].map((photo, i) => (
+                <div
+                  key={i}
+                  style={{
+                    position: 'relative',
+                    overflow: 'hidden',
+                    aspectRatio: i === 0 || i === 2 ? '16/9' : '4/3',
+                    backgroundColor: '#161A22',
+                    border: '1px solid #2A2F3A',
+                    transition: 'all 0.3s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = '#5B6CFF';
+                    const img = e.currentTarget.querySelector('img');
+                    if (img) img.style.transform = 'scale(1.05)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = '#2A2F3A';
+                    const img = e.currentTarget.querySelector('img');
+                    if (img) img.style.transform = 'scale(1)';
+                  }}
+                >
+                  <img
+                    src={photo.src}
+                    alt={photo.alt}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      transition: 'transform 0.3s ease'
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+
+            <div style={{ marginTop: '32px', textAlign: 'center' }}>
+              <p style={{
+                fontSize: '13px',
+                color: '#9AA0A6',
+                fontStyle: 'italic'
+              }}>
+                Photography services available as an add-on to web design projects
+              </p>
+            </div>
           </div>
         </section>
 

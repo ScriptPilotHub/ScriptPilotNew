@@ -322,6 +322,11 @@ export const Home = () => {
                   title: 'Maintenance',
                   desc: 'Hosting. Updates. Security. Backups. Priority support.',
                   price: '$150/mo'
+                },
+                {
+                  title: 'Event photography',
+                  desc: 'Professional photos for events, storefronts, products. Available as an add-on.',
+                  price: '$150'
                 }
               ].map((service, i) => (
                 <motion.div

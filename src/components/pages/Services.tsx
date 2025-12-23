@@ -49,8 +49,8 @@ export const Services = () => {
               {
                 num: '01',
                 title: 'Complete website',
-                desc: 'Full-service web design from start to finish. Business sites, e-commerce stores, or both - we handle everything. Professional design, clean code, and built to convert visitors into customers.',
-                features: ['Business or e-commerce', 'Custom design', 'Mobile responsive', 'SEO optimized', 'Payment processing', 'Product catalogs', 'Contact forms', '30 day support'],
+                desc: 'Full-service web design from start to finish. Business sites, e-commerce stores, or both - we handle everything. Professional design, clean code, and built to convert visitors into customers. Includes lifetime hosting.',
+                features: ['Business or e-commerce', 'Custom design', 'Mobile responsive', 'SEO optimized', 'Payment processing', 'Product catalogs', 'Contact forms', 'Lifetime hosting', '30 day support'],
                 price: '$700'
               },
               {
@@ -70,8 +70,8 @@ export const Services = () => {
               {
                 num: '04',
                 title: 'Monthly maintenance',
-                desc: 'Keep your site secure and running smooth. Includes hosting, security updates, daily backups, and priority support.',
-                features: ['Managed hosting', 'Security updates', 'Daily backups', 'Uptime monitoring', 'Priority support'],
+                desc: 'Optional upgrade to your lifetime hosting. Adds priority support, daily backups, proactive monitoring, and ongoing content updates.',
+                features: ['Priority support', 'Daily backups', 'Security updates', 'Uptime monitoring', 'Content updates'],
                 price: '$150/mo'
               }
             ].map((service, i) => (

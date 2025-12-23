@@ -35,7 +35,7 @@ export const Pricing = () => {
                   lineHeight: 1.7,
                   color: '#9AA0A6'
                 }}>
-                  Two payments. First when we start. Second when we launch. No contracts. No recurring fees unless you want maintenance.
+                  Two payments. First when we start. Second when we launch. Includes lifetime hosting on our servers. No contracts. No recurring fees unless you want maintenance.
                 </p>
               </div>
               <div className="md:col-span-6 flex items-end">
@@ -190,7 +190,7 @@ export const Pricing = () => {
                   marginBottom: '40px',
                   lineHeight: 1.6
                 }}>
-                  Monthly plan. Hosting, updates, security, backups. Cancel anytime.
+                  Optional upgrade to lifetime hosting. Priority support, daily backups, proactive updates, content changes. Cancel anytime.
                 </div>
                 <a
                   href="https://buy.stripe.com/cNibJ2drCauM0qz7cP9EI09"
@@ -240,7 +240,7 @@ export const Pricing = () => {
                     'Fast page load speeds',
                     'SSL certificate',
                     'Google Analytics setup',
-                    'First month hosting free',
+                    'Lifetime hosting included',
                     'Unlimited revision rounds',
                     '30 days post-launch support',
                     'Training documentation'
@@ -273,7 +273,7 @@ export const Pricing = () => {
                   </div>
                   <div>
                     <div style={{ color: '#F5F7FA', marginBottom: '8px', fontWeight: 600 }}>Do I need maintenance?</div>
-                    <div>No. You can host and manage it yourself. Maintenance is optional but recommended.</div>
+                    <div>No. We host your site for life even without maintenance. The optional plan adds priority support, daily backups, and ongoing updates.</div>
                   </div>
                 </div>
               </div>

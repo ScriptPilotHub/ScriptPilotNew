@@ -59,7 +59,7 @@ export const PricingCalculator = () => {
           color: '#9AA0A6',
           lineHeight: 1.6
         }}>
-          All projects are $700 total. No upsells. No hidden fees. You get a professional website that works.
+          All projects are $700 total. Includes lifetime hosting on our servers. No upsells. No hidden fees.
         </p>
       </motion.div>
 
@@ -171,7 +171,7 @@ export const PricingCalculator = () => {
           marginBottom: '24px',
           lineHeight: 1.6
         }}>
-          $160 to start, $540 at launch. Unlimited revisions. 30 day support. Money-back guarantee.
+          $160 to start, $540 at launch. Unlimited revisions. Lifetime hosting included. 30 day support. Money-back guarantee.
         </p>
         <a
           href="https://calendly.com/contact-scriptpilot/30min"

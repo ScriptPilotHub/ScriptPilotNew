@@ -13,11 +13,8 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           <div>
-            <div className="flex items-center gap-3 mb-4">
+            <div className="mb-4">
               <Logo size={32} />
-              <span className="text-base font-bold" style={{ color: '#F5F7FA' }}>
-                ScriptPilot
-              </span>
             </div>
             <p className="text-sm" style={{ color: '#9AA0A6' }}>
               Websites that bring in customers.

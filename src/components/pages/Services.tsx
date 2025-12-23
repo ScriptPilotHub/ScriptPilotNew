@@ -198,58 +198,83 @@ export const Services = () => {
               </div>
             </motion.div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[
-                {
-                  src: '/photography-examples/guitar.jpg',
-                  alt: 'Live jazz performance',
-                  delay: 0.1
-                },
-                {
-                  src: '/photography-examples/brushata.jpg',
-                  alt: 'Artisan food',
-                  delay: 0.2
-                },
-                {
-                  src: '/photography-examples/drink_2.jpg',
-                  alt: 'Craft cocktails',
-                  delay: 0.3
-                },
-                {
-                  src: '/photography-examples/p1050094-enhanced-nr.jpg',
-                  alt: 'Signature drinks',
-                  delay: 0.4
-                }
-              ].map((photo, i) => (
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6">
+              <motion.div
+                className="md:col-span-5"
+                style={{
+                  position: 'relative',
+                  overflow: 'hidden',
+                  aspectRatio: '3/4',
+                  backgroundColor: '#161A22',
+                  border: '1px solid #2A2F3A'
+                }}
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ duration: 0.6 }}
+                whileHover={{
+                  borderColor: '#5B6CFF',
+                  transition: { duration: 0.3 }
+                }}
+              >
+                <motion.img
+                  src="/photography-examples/guitar.jpg"
+                  alt="Live jazz performance"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover'
+                  }}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.6 }}
+                />
                 <motion.div
-                  key={i}
+                  style={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    padding: '24px',
+                    background: 'linear-gradient(to top, rgba(15, 17, 21, 0.95), transparent)',
+                    color: '#F5F7FA',
+                    fontSize: '13px',
+                    opacity: 0
+                  }}
+                  whileHover={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  Live jazz performance
+                </motion.div>
+              </motion.div>
+
+              <div className="md:col-span-7 grid grid-cols-1 gap-4 md:gap-6">
+                <motion.div
                   style={{
                     position: 'relative',
                     overflow: 'hidden',
-                    aspectRatio: '1/1',
+                    aspectRatio: '16/9',
                     backgroundColor: '#161A22',
                     border: '1px solid #2A2F3A'
                   }}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: -40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-50px' }}
-                  transition={{ duration: 0.5, delay: photo.delay }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
                   whileHover={{
-                    scale: 1.05,
                     borderColor: '#5B6CFF',
                     transition: { duration: 0.3 }
                   }}
                 >
                   <motion.img
-                    src={photo.src}
-                    alt={photo.alt}
+                    src="/photography-examples/brushata.jpg"
+                    alt="Artisan food"
                     style={{
                       width: '100%',
                       height: '100%',
                       objectFit: 'cover'
                     }}
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.4 }}
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.6 }}
                   />
                   <motion.div
                     style={{
@@ -257,19 +282,66 @@ export const Services = () => {
                       bottom: 0,
                       left: 0,
                       right: 0,
-                      padding: '16px',
+                      padding: '24px',
                       background: 'linear-gradient(to top, rgba(15, 17, 21, 0.95), transparent)',
                       color: '#F5F7FA',
-                      fontSize: '12px',
+                      fontSize: '13px',
                       opacity: 0
                     }}
                     whileHover={{ opacity: 1 }}
                     transition={{ duration: 0.3 }}
                   >
-                    {photo.alt}
+                    Artisan food
                   </motion.div>
                 </motion.div>
-              ))}
+
+                <motion.div
+                  style={{
+                    position: 'relative',
+                    overflow: 'hidden',
+                    aspectRatio: '16/9',
+                    backgroundColor: '#161A22',
+                    border: '1px solid #2A2F3A'
+                  }}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-50px' }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  whileHover={{
+                    borderColor: '#5B6CFF',
+                    transition: { duration: 0.3 }
+                  }}
+                >
+                  <motion.img
+                    src="/photography-examples/p1050094-enhanced-nr.jpg"
+                    alt="Signature drinks"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover'
+                    }}
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.6 }}
+                  />
+                  <motion.div
+                    style={{
+                      position: 'absolute',
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      padding: '24px',
+                      background: 'linear-gradient(to top, rgba(15, 17, 21, 0.95), transparent)',
+                      color: '#F5F7FA',
+                      fontSize: '13px',
+                      opacity: 0
+                    }}
+                    whileHover={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    Signature drinks
+                  </motion.div>
+                </motion.div>
+              </div>
             </div>
 
             <motion.div

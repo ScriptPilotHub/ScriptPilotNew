@@ -1,5 +1,6 @@
 import { SEO } from '../SEO';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 export const Services = () => {
   return (
@@ -142,12 +143,18 @@ export const Services = () => {
           </div>
         </section>
 
-        <section className="px-6 md:px-16 py-16 md:py-24" style={{
+        <section className="px-6 md:px-16 py-20 md:py-32" style={{
           borderTop: '1px solid #2A2F3A',
           backgroundColor: '#0F1115'
         }}>
           <div className="max-w-[1400px] mx-auto">
-            <div style={{ marginBottom: '48px' }}>
+            <motion.div
+              style={{ marginBottom: '64px' }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
               <div style={{
                 fontSize: '11px',
                 letterSpacing: '0.12em',
@@ -156,75 +163,142 @@ export const Services = () => {
               }}>
                 PHOTOGRAPHY PORTFOLIO
               </div>
-              <h2 style={{
-                fontSize: 'clamp(1.75rem, 3vw, 2.5rem)',
-                fontWeight: 700,
-                letterSpacing: '-0.02em',
-                color: '#F5F7FA',
-                marginBottom: '12px'
-              }}>
-                Recent work
-              </h2>
-              <p style={{
-                fontSize: '15px',
-                color: '#9AA0A6',
-                maxWidth: '600px'
-              }}>
-                Professional photography from The 1906 special event featuring craft cocktails, artisan food, and live jazz.
-              </p>
-            </div>
+              <div className="grid md:grid-cols-2 gap-12 items-end">
+                <div>
+                  <h2 style={{
+                    fontSize: 'clamp(2rem, 4vw, 3.5rem)',
+                    fontWeight: 700,
+                    letterSpacing: '-0.02em',
+                    color: '#F5F7FA',
+                    marginBottom: '16px',
+                    lineHeight: 1.1
+                  }}>
+                    Professional event photography
+                  </h2>
+                  <p style={{
+                    fontSize: '15px',
+                    color: '#9AA0A6',
+                    lineHeight: 1.7
+                  }}>
+                    Showcase from The 1906 featuring craft cocktails, artisan food, and live jazz performance.
+                  </p>
+                </div>
+                <div style={{
+                  fontSize: '14px',
+                  color: '#9AA0A6',
+                  lineHeight: 1.8
+                }}>
+                  <p style={{ marginBottom: '12px' }}>
+                    Standalone photography service offered separately from web design. They work hand in hand but are not bundled together.
+                  </p>
+                  <p style={{ color: '#5B6CFF', fontWeight: 600 }}>
+                    Perfect for businesses needing quality photos for their website, social media, or marketing materials.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { src: '/photography-examples/guitar.jpg', alt: 'Live jazz performance at The 1906' },
-                { src: '/photography-examples/drink_2.jpg', alt: 'Craft cocktail photography' },
-                { src: '/photography-examples/brushata.jpg', alt: 'Artisan bruschetta food photography' },
-                { src: '/photography-examples/p1050094-enhanced-nr.jpg', alt: 'Specialty cocktail with strawberry garnish' }
+                {
+                  src: '/photography-examples/guitar.jpg',
+                  alt: 'Live jazz performance at The 1906',
+                  span: 'md:row-span-2',
+                  delay: 0.1
+                },
+                {
+                  src: '/photography-examples/brushata.jpg',
+                  alt: 'Artisan bruschetta food photography',
+                  span: 'md:col-span-2',
+                  delay: 0.2
+                },
+                {
+                  src: '/photography-examples/p1050094-enhanced-nr.jpg',
+                  alt: 'Specialty cocktail with strawberry garnish',
+                  span: 'md:col-span-2',
+                  delay: 0.3
+                }
               ].map((photo, i) => (
-                <div
+                <motion.div
                   key={i}
+                  className={photo.span}
                   style={{
                     position: 'relative',
                     overflow: 'hidden',
-                    aspectRatio: i === 0 || i === 2 ? '16/9' : '4/3',
+                    minHeight: i === 0 ? '600px' : '300px',
                     backgroundColor: '#161A22',
-                    border: '1px solid #2A2F3A',
-                    transition: 'all 0.3s ease'
+                    border: '1px solid #2A2F3A'
                   }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#5B6CFF';
-                    const img = e.currentTarget.querySelector('img');
-                    if (img) img.style.transform = 'scale(1.05)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = '#2A2F3A';
-                    const img = e.currentTarget.querySelector('img');
-                    if (img) img.style.transform = 'scale(1)';
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-100px' }}
+                  transition={{ duration: 0.6, delay: photo.delay }}
+                  whileHover={{
+                    scale: 1.02,
+                    borderColor: '#5B6CFF',
+                    transition: { duration: 0.3 }
                   }}
                 >
-                  <img
+                  <motion.img
                     src={photo.src}
                     alt={photo.alt}
                     style={{
                       width: '100%',
                       height: '100%',
-                      objectFit: 'cover',
-                      transition: 'transform 0.3s ease'
+                      objectFit: 'cover'
                     }}
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.4 }}
                   />
-                </div>
+                  <motion.div
+                    style={{
+                      position: 'absolute',
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      padding: '24px',
+                      background: 'linear-gradient(to top, rgba(15, 17, 21, 0.95), transparent)',
+                      color: '#F5F7FA',
+                      fontSize: '13px',
+                      opacity: 0
+                    }}
+                    whileHover={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {photo.alt}
+                  </motion.div>
+                </motion.div>
               ))}
             </div>
 
-            <div style={{ marginTop: '32px', textAlign: 'center' }}>
+            <motion.div
+              style={{
+                marginTop: '48px',
+                textAlign: 'center',
+                padding: '32px',
+                backgroundColor: '#161A22',
+                border: '1px solid #2A2F3A'
+              }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
               <p style={{
-                fontSize: '13px',
+                fontSize: '14px',
                 color: '#9AA0A6',
-                fontStyle: 'italic'
+                marginBottom: '8px'
               }}>
-                Photography services available as an add-on to web design projects
+                Available as a separate service
               </p>
-            </div>
+              <p style={{
+                fontSize: '16px',
+                color: '#F5F7FA',
+                fontWeight: 600
+              }}>
+                $150 per event session
+              </p>
+            </motion.div>
           </div>
         </section>
 

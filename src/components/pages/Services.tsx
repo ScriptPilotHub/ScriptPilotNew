@@ -318,7 +318,8 @@ export const Services = () => {
                     style={{
                       width: '100%',
                       height: '100%',
-                      objectFit: 'cover'
+                      objectFit: 'cover',
+                      objectPosition: 'center 60%'
                     }}
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.6 }}

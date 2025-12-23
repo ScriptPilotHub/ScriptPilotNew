@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown, ChevronUp, Search } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { createClient } from '@supabase/supabase-js';
 import { SEO } from '../SEO';
 
@@ -177,8 +178,8 @@ export default function FAQ() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center">
-        <div className="text-lg text-slate-600">Loading FAQs...</div>
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#0F1115' }}>
+        <div className="text-lg" style={{ color: '#9AA0A6' }}>Loading FAQs...</div>
       </div>
     );
   }
@@ -190,95 +191,160 @@ export default function FAQ() {
         description="Script Pilot frequently asked questions. Learn about pricing, process, timeline, and services for professional web development."
         path="/faq"
       />
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-            Frequently Asked Questions
-          </h1>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Everything you need to know about working with us. Can't find what you're looking for? Just ask our chatbot or reach out directly.
-          </p>
-        </div>
-
-        <div className="mb-8 space-y-4">
-          <div className="relative">
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5" />
-            <input
-              type="text"
-              placeholder="Search questions..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            />
-          </div>
-
-          <div className="flex flex-wrap gap-2">
-            {categories.map(category => (
-              <button
-                key={category.value}
-                onClick={() => setSelectedCategory(category.value)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                  selectedCategory === category.value
-                    ? 'bg-blue-600 text-white shadow-md'
-                    : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
-                }`}
-              >
-                {category.label}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {filteredFaqs.length === 0 ? (
-          <div className="text-center py-12 bg-white rounded-lg shadow-sm">
-            <p className="text-slate-600">No questions found matching your search.</p>
-          </div>
-        ) : (
-          <div className="space-y-4">
-            {filteredFaqs.map((faq) => (
-              <div
-                key={faq.id}
-                className="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden transition-all hover:shadow-md"
-              >
-                <button
-                  onClick={() => toggleItem(faq.id)}
-                  className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 hover:bg-slate-50 transition-colors"
-                >
-                  <span className="text-lg font-semibold text-slate-900 flex-1">
-                    {faq.question}
-                  </span>
-                  {openItems.has(faq.id) ? (
-                    <ChevronUp className="w-5 h-5 text-slate-500 flex-shrink-0" />
-                  ) : (
-                    <ChevronDown className="w-5 h-5 text-slate-500 flex-shrink-0" />
-                  )}
-                </button>
-
-                {openItems.has(faq.id) && (
-                  <div className="px-6 pb-5 text-slate-600 leading-relaxed">
-                    {faq.answer}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        )}
-
-        <div className="mt-12 text-center bg-white rounded-lg shadow-sm border border-slate-200 p-8">
-          <h2 className="text-2xl font-bold text-slate-900 mb-3">Still have questions?</h2>
-          <p className="text-slate-600 mb-6">
-            Try our chatbot in the bottom right corner for instant answers, or schedule a call to discuss your project.
-          </p>
-          <Link
-            to="/contact"
-            className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg"
+      <div className="min-h-screen" style={{ backgroundColor: '#0F1115' }}>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
           >
-            Get in Touch
-          </Link>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: '#F5F7FA' }}>
+              Frequently Asked Questions
+            </h1>
+            <p className="text-xl max-w-2xl mx-auto" style={{ color: '#9AA0A6' }}>
+              Everything you need to know about working with us. Can't find what you're looking for? Just ask our chatbot or reach out directly.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="mb-8 space-y-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <div className="relative">
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5" style={{ color: '#9AA0A6' }} />
+              <input
+                type="text"
+                placeholder="Search questions..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full pl-12 pr-4 py-3 rounded-lg focus:outline-none"
+                style={{
+                  backgroundColor: '#161A22',
+                  border: '1px solid #2A2F3A',
+                  color: '#F5F7FA',
+                  transition: 'border-color 0.2s'
+                }}
+                onFocus={(e) => e.currentTarget.style.borderColor = '#5B6CFF'}
+                onBlur={(e) => e.currentTarget.style.borderColor = '#2A2F3A'}
+              />
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              {categories.map(category => (
+                <motion.button
+                  key={category.value}
+                  onClick={() => setSelectedCategory(category.value)}
+                  className="px-4 py-2 rounded-full text-sm font-medium transition-all"
+                  style={{
+                    backgroundColor: selectedCategory === category.value ? '#5B6CFF' : '#161A22',
+                    color: selectedCategory === category.value ? '#F5F7FA' : '#9AA0A6',
+                    border: selectedCategory === category.value ? 'none' : '1px solid #2A2F3A'
+                  }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {category.label}
+                </motion.button>
+              ))}
+            </div>
+          </motion.div>
+
+          {filteredFaqs.length === 0 ? (
+            <motion.div
+              className="text-center py-12 rounded-lg"
+              style={{ backgroundColor: '#161A22', border: '1px solid #2A2F3A' }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
+              <p style={{ color: '#9AA0A6' }}>No questions found matching your search.</p>
+            </motion.div>
+          ) : (
+            <div className="space-y-4">
+              {filteredFaqs.map((faq, index) => (
+                <motion.div
+                  key={faq.id}
+                  className="rounded-lg overflow-hidden transition-all"
+                  style={{
+                    backgroundColor: '#161A22',
+                    border: '1px solid #2A2F3A'
+                  }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.05 }}
+                  whileHover={{ borderColor: '#5B6CFF' }}
+                >
+                  <button
+                    onClick={() => toggleItem(faq.id)}
+                    className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 transition-colors"
+                    style={{ backgroundColor: 'transparent' }}
+                    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1A1F2B'}
+                    onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+                  >
+                    <span className="text-lg font-semibold flex-1" style={{ color: '#F5F7FA' }}>
+                      {faq.question}
+                    </span>
+                    {openItems.has(faq.id) ? (
+                      <ChevronUp className="w-5 h-5 flex-shrink-0" style={{ color: '#5B6CFF' }} />
+                    ) : (
+                      <ChevronDown className="w-5 h-5 flex-shrink-0" style={{ color: '#9AA0A6' }} />
+                    )}
+                  </button>
+
+                  {openItems.has(faq.id) && (
+                    <motion.div
+                      className="px-6 pb-5 leading-relaxed"
+                      style={{ color: '#9AA0A6' }}
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      {faq.answer}
+                    </motion.div>
+                  )}
+                </motion.div>
+              ))}
+            </div>
+          )}
+
+          <motion.div
+            className="mt-12 text-center rounded-lg p-8"
+            style={{
+              backgroundColor: '#161A22',
+              border: '1px solid #2A2F3A'
+            }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-2xl font-bold mb-3" style={{ color: '#F5F7FA' }}>
+              Still have questions?
+            </h2>
+            <p className="mb-6" style={{ color: '#9AA0A6' }}>
+              Try our chatbot in the bottom right corner for instant answers, or schedule a call to discuss your project.
+            </p>
+            <motion.div style={{ display: 'inline-block' }}>
+              <Link
+                to="/contact"
+                className="inline-block px-8 py-3 rounded-lg font-semibold transition-colors"
+                style={{
+                  backgroundColor: '#5B6CFF',
+                  color: '#F5F7FA',
+                  textDecoration: 'none'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#4A5AE8'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#5B6CFF'}
+              >
+                Get in Touch
+              </Link>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
-    </div>
     </>
   );
 }

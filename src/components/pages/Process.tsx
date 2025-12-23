@@ -1,7 +1,11 @@
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { SEO } from '../SEO';
-import { Link } from 'react-router-dom';
+import { ChevronDown, Check } from 'lucide-react';
 
 export const Process = () => {
+  const [activeStep, setActiveStep] = useState<number | null>(null);
+
   return (
     <>
       <SEO
@@ -52,91 +56,231 @@ export const Process = () => {
                 title: 'Discovery call',
                 timeline: 'Day 1',
                 desc: '30 minute call. We discuss your business, your goals, your target customers. No sales pitch. Just conversation to see if we are a good fit.',
-                outcome: 'Clear understanding of your needs'
+                outcome: 'Clear understanding of your needs',
+                details: [
+                  'Understand your business model and target audience',
+                  'Identify key features and functionality needs',
+                  'Discuss design preferences and brand guidelines',
+                  'Set clear expectations and timelines'
+                ]
               },
               {
                 num: '02',
                 title: 'Strategy & approval',
                 timeline: 'Days 2-3',
                 desc: 'We create a detailed plan. Site structure. Page layouts. Content strategy. You review everything. We revise until you approve.',
-                outcome: 'Approved plan before any building starts'
+                outcome: 'Approved plan before any building starts',
+                details: [
+                  'Create detailed sitemap and page structure',
+                  'Design wireframes for all major pages',
+                  'Plan content strategy and SEO approach',
+                  'Get your approval before development begins'
+                ]
               },
               {
                 num: '03',
                 title: 'Build & review',
                 timeline: 'Weeks 1-4',
                 desc: 'We build your site. You get progress updates. We send review links. You request changes. We iterate until you are completely satisfied.',
-                outcome: 'Finished site ready to launch'
+                outcome: 'Finished site ready to launch',
+                details: [
+                  'Build all pages with mobile-responsive design',
+                  'Implement forms, animations, and functionality',
+                  'Regular progress updates with review links',
+                  'Unlimited revision rounds until perfect'
+                ]
               },
               {
                 num: '04',
                 title: 'Launch & handoff',
                 timeline: 'Final day',
                 desc: 'Site goes live. We handle all technical details. DNS. SSL. Hosting. You get training materials. Support for 30 days included.',
-                outcome: 'Live site with full ownership'
+                outcome: 'Live site with full ownership',
+                details: [
+                  'Configure domain, hosting, and SSL certificate',
+                  'Final testing across all devices and browsers',
+                  'Provide training materials and documentation',
+                  '30 days of post-launch support included'
+                ]
               }
-            ].map((step, i) => (
-              <div key={i} style={{
-                borderBottom: '1px solid #2A2F3A',
-                paddingTop: '56px',
-                paddingBottom: '56px',
-                backgroundColor: i % 2 === 1 ? '#161A22' : 'transparent'
-              }}>
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-8" style={{ padding: i % 2 === 1 ? '16px' : '0', paddingTop: 0, paddingBottom: 0 }}>
-                  <div className="md:col-span-1">
-                    <span style={{
-                      fontSize: 'clamp(40px, 8vw, 56px)',
-                      fontWeight: 700,
-                      color: '#161A22',
-                      lineHeight: 1,
-                      WebkitTextStroke: '1px #2A2F3A'
-                    }}>
-                      {step.num}
-                    </span>
-                  </div>
-                  <div className="md:col-span-11">
-                    <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-                      <div className="md:col-span-4">
-                        <h2 style={{
-                          fontSize: 'clamp(24px, 5vw, 32px)',
-                          fontWeight: 700,
-                          marginBottom: '12px',
-                          letterSpacing: '-0.01em',
-                          color: '#5B6CFF'
-                        }}>
-                          {step.title}
-                        </h2>
-                        <div style={{
-                          fontSize: '12px',
-                          letterSpacing: '0.05em',
-                          color: '#9AA0A6'
-                        }}>
-                          {step.timeline}
-                        </div>
+            ].map((step, i) => {
+              const isActive = activeStep === i;
+              const isCompleted = activeStep !== null && activeStep > i;
+
+              return (
+                <motion.div
+                  key={i}
+                  style={{
+                    borderBottom: '1px solid #2A2F3A',
+                    cursor: 'pointer',
+                    position: 'relative'
+                  }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-50px' }}
+                  transition={{ duration: 0.4, delay: i * 0.1 }}
+                  onClick={() => setActiveStep(isActive ? null : i)}
+                >
+                  <div
+                    style={{
+                      padding: '40px 0',
+                      backgroundColor: isActive ? '#161A22' : 'transparent',
+                      transition: 'background-color 0.3s'
+                    }}
+                  >
+                    <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                      <div className="md:col-span-1">
+                        <motion.div
+                          style={{
+                            width: '56px',
+                            height: '56px',
+                            borderRadius: '50%',
+                            border: `2px solid ${isActive ? '#5B6CFF' : isCompleted ? '#5B6CFF' : '#2A2F3A'}`,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            backgroundColor: isCompleted ? '#5B6CFF' : 'transparent',
+                            transition: 'all 0.3s'
+                          }}
+                          whileHover={{ scale: 1.1 }}
+                        >
+                          {isCompleted ? (
+                            <motion.div
+                              initial={{ scale: 0 }}
+                              animate={{ scale: 1 }}
+                              transition={{ duration: 0.3, type: 'spring' }}
+                            >
+                              <Check size={24} color="#F5F7FA" />
+                            </motion.div>
+                          ) : (
+                            <span style={{
+                              fontSize: '18px',
+                              fontWeight: 700,
+                              color: isActive ? '#5B6CFF' : '#9AA0A6'
+                            }}>
+                              {step.num}
+                            </span>
+                          )}
+                        </motion.div>
                       </div>
-                      <div className="md:col-span-5">
-                        <p style={{
-                          fontSize: '15px',
-                          lineHeight: 1.7,
-                          color: '#9AA0A6',
-                          marginBottom: '20px'
-                        }}>
-                          {step.desc}
-                        </p>
-                        <div style={{
-                          fontSize: '13px',
-                          color: '#9AA0A6',
-                          paddingTop: '16px',
-                          borderTop: '1px solid #2A2F3A'
-                        }}>
-                          → {step.outcome}
+                      <div className="md:col-span-10">
+                        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                          <div className="md:col-span-4">
+                            <h2 style={{
+                              fontSize: 'clamp(22px, 4vw, 28px)',
+                              fontWeight: 700,
+                              marginBottom: '8px',
+                              letterSpacing: '-0.01em',
+                              color: isActive ? '#5B6CFF' : '#F5F7FA',
+                              transition: 'color 0.3s'
+                            }}>
+                              {step.title}
+                            </h2>
+                            <div style={{
+                              fontSize: '12px',
+                              letterSpacing: '0.05em',
+                              color: '#9AA0A6'
+                            }}>
+                              {step.timeline}
+                            </div>
+                          </div>
+                          <div className="md:col-span-7">
+                            <p style={{
+                              fontSize: '15px',
+                              lineHeight: 1.7,
+                              color: '#9AA0A6'
+                            }}>
+                              {step.desc}
+                            </p>
+                          </div>
+                          <div className="md:col-span-1 flex justify-end">
+                            <motion.div
+                              animate={{ rotate: isActive ? 180 : 0 }}
+                              transition={{ duration: 0.3 }}
+                            >
+                              <ChevronDown size={24} color="#9AA0A6" />
+                            </motion.div>
+                          </div>
                         </div>
                       </div>
                     </div>
+
+                    <AnimatePresence>
+                      {isActive && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3 }}
+                          style={{ overflow: 'hidden' }}
+                        >
+                          <div className="grid grid-cols-1 md:grid-cols-12 gap-8" style={{ marginTop: '32px' }}>
+                            <div className="md:col-span-1"></div>
+                            <div className="md:col-span-11">
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-8" style={{
+                                padding: '32px',
+                                backgroundColor: '#0F1115',
+                                border: '1px solid #2A2F3A'
+                              }}>
+                                <div>
+                                  <h3 style={{
+                                    fontSize: '14px',
+                                    letterSpacing: '0.05em',
+                                    color: '#5B6CFF',
+                                    marginBottom: '16px',
+                                    fontWeight: 600
+                                  }}>
+                                    WHAT WE DO
+                                  </h3>
+                                  <div style={{ fontSize: '14px', lineHeight: 1.8, color: '#9AA0A6' }}>
+                                    {step.details.map((detail, idx) => (
+                                      <motion.div
+                                        key={idx}
+                                        initial={{ opacity: 0, x: -10 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.3, delay: idx * 0.05 }}
+                                        style={{
+                                          display: 'flex',
+                                          gap: '12px',
+                                          marginBottom: '12px',
+                                          alignItems: 'flex-start'
+                                        }}
+                                      >
+                                        <span style={{ color: '#5B6CFF', marginTop: '4px' }}>•</span>
+                                        <span>{detail}</span>
+                                      </motion.div>
+                                    ))}
+                                  </div>
+                                </div>
+                                <div>
+                                  <h3 style={{
+                                    fontSize: '14px',
+                                    letterSpacing: '0.05em',
+                                    color: '#5B6CFF',
+                                    marginBottom: '16px',
+                                    fontWeight: 600
+                                  }}>
+                                    OUTCOME
+                                  </h3>
+                                  <div style={{
+                                    fontSize: '18px',
+                                    fontWeight: 600,
+                                    color: '#F5F7FA',
+                                    lineHeight: 1.5
+                                  }}>
+                                    {step.outcome}
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
-                </div>
-              </div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
         </section>
 

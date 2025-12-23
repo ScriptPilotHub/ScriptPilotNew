@@ -1,4 +1,5 @@
 import { SEO } from '../SEO';
+import { PricingCalculator } from '../ui/PricingCalculator';
 
 export const Pricing = () => {
   return (
@@ -277,6 +278,8 @@ export const Pricing = () => {
                 </div>
               </div>
             </div>
+
+            <PricingCalculator />
           </div>
         </section>
 

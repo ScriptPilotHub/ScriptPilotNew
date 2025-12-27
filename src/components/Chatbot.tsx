@@ -117,7 +117,7 @@ const fallbackFaqs: FAQ[] = [
   {
     id: '16',
     question: 'How do I get started?',
-    answer: 'Book a free 30-minute discovery call at calendly.com/contact-scriptpilot/30min or email us at contact@scriptpilot.us. We will discuss your business, goals, and see if we are a good fit. No pressure, no sales pitch.',
+    answer: 'Book a free 30-minute discovery call at wellpin.io/scriptpilot or email us at contact@scriptpilot.us. We will discuss your business, goals, and see if we are a good fit. No pressure, no sales pitch.',
     keywords: ['start', 'begin', 'contact', 'get started', 'book', 'call', 'meeting', 'consultation', 'first step', 'reach out']
   },
   {
@@ -264,7 +264,7 @@ export default function Chatbot() {
       addBotMessage(match.answer, 1000);
     } else {
       addBotMessage(
-        "I'm not sure about that specific question, but I'd love to help! You can book a free call at calendly.com/contact-scriptpilot/30min or check our FAQ page for more details. Feel free to ask me something else too!",
+        "I'm not sure about that specific question, but I'd love to help! You can book a free call at wellpin.io/scriptpilot or check our FAQ page for more details. Feel free to ask me something else too!",
         1000
       );
     }

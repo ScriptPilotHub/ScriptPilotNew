@@ -80,7 +80,7 @@ export const Home = () => {
                   Professional sites for businesses that need customers. Not brochures. Not portfolios. Real tools that bring in revenue.
                 </p>
                 <motion.a
-                  href="https://calendly.com/contact-scriptpilot/30min"
+                  href="https://wellpin.io/scriptpilot"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
@@ -450,7 +450,7 @@ export const Home = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <motion.a
-                    href="https://calendly.com/contact-scriptpilot/30min"
+                    href="https://wellpin.io/scriptpilot"
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{

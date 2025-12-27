@@ -99,7 +99,7 @@ export const Footer = () => {
                 (417) 413-1978
               </a>
               <a
-                href="https://calendly.com/contact-scriptpilot/30min"
+                href="https://wellpin.io/scriptpilot"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm no-underline"

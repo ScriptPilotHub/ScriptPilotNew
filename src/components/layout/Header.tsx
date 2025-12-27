@@ -68,7 +68,7 @@ export const Header = () => {
               </Link>
             ))}
             <a
-              href="https://calendly.com/contact-scriptpilot/30min"
+              href="https://wellpin.io/scriptpilot"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -136,7 +136,7 @@ export const Header = () => {
                 </Link>
               ))}
               <a
-                href="https://calendly.com/contact-scriptpilot/30min"
+                href="https://wellpin.io/scriptpilot"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

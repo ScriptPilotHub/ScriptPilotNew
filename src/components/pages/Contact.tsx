@@ -31,7 +31,7 @@ export const Contact = () => {
                 </h1>
                 <div className="space-y-6">
                   <a
-                    href="https://calendly.com/contact-scriptpilot/30min"
+                    href="https://wellpin.io/scriptpilot"
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
@@ -113,7 +113,7 @@ export const Contact = () => {
                   label: 'Schedule',
                   value: 'Book 30 min call',
                   detail: 'Free consultation',
-                  href: 'https://calendly.com/contact-scriptpilot/30min',
+                  href: 'https://wellpin.io/scriptpilot',
                   external: true
                 }
               ].map((contact, i) => (

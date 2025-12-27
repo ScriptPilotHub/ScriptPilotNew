@@ -159,7 +159,7 @@ export const Services = () => {
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://calendly.com/contact-scriptpilot/30min"
+                href="https://wellpin.io/scriptpilot"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

@@ -309,7 +309,7 @@ export const Process = () => {
                   Book a call and we will walk through exactly how it works for your specific project.
                 </p>
                 <a
-                  href="https://calendly.com/contact-scriptpilot/30min"
+                  href="https://wellpin.io/scriptpilot"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{

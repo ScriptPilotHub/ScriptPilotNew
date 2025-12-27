@@ -174,7 +174,7 @@ export const PricingCalculator = () => {
           $160 to start, $540 at launch. Unlimited revisions. Lifetime hosting included. 30 day support. Money-back guarantee.
         </p>
         <a
-          href="https://calendly.com/contact-scriptpilot/30min"
+          href="https://wellpin.io/scriptpilot"
           target="_blank"
           rel="noopener noreferrer"
           style={{
